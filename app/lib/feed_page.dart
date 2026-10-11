@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'liked_page.dart';
 import 'search_page.dart';
 import 'theme.dart';
 import 'video_card.dart';
@@ -26,6 +27,11 @@ class _FeedPageState extends State<FeedPage> {
         PageTitle(
           'Каталог',
           actions: [
+            IconButton(
+              tooltip: 'Любимое',
+              icon: Icon(Icons.favorite_border_rounded, size: 24, color: cText),
+              onPressed: () => openLiked(context),
+            ),
             IconButton(
               tooltip: 'Поиск',
               icon: Icon(Icons.search_rounded, size: 24, color: cText),

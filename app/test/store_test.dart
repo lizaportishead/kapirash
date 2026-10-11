@@ -54,4 +54,40 @@ void main() {
     expect(parseVideoId('dxE0__WvLBU'), 'dxE0__WvLBU');
     expect(parseVideoId('привет'), isNull);
   });
+
+  test('сердечко ставится, снимается и сохраняется', () async {
+    SharedPreferences.setMockInitialValues({});
+    final s = AppStore();
+    await s.load();
+    s.toggleLike('a');
+    s.toggleLike('b');
+    s.toggleLike('a');
+    expect(s.liked, ['b']);
+    expect(s.isLiked('b'), true);
+    expect(s.isLiked('a'), false);
+
+    final again = AppStore();
+    await again.load();
+    expect(again.liked, ['b']);
+  });
+
+  test('история помнит открытые ролики, последний — в конце', () async {
+    SharedPreferences.setMockInitialValues({});
+    final s = AppStore();
+    await s.load();
+    s.markWatched('a');
+    s.markWatched('b');
+    s.markWatched('a');
+    expect(s.history, ['b', 'a']);
+    expect(s.isWatched('b'), true);
+    expect(s.isWatched('c'), false);
+
+    s.add(SavedWord(key: 'zdravo', tr: 'привет', ctx: '', t: 0, video: 'a'));
+    expect(s.wordCount('a'), 1);
+    expect(s.wordCount('b'), 0);
+
+    final again = AppStore();
+    await again.load();
+    expect(again.history, ['b', 'a']);
+  });
 }

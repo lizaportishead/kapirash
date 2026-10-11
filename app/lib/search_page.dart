@@ -32,7 +32,7 @@ class _SearchPageState extends State<SearchPage> {
   List<Video> get _found {
     final q = _norm(_search.text.trim());
     if (q.isEmpty) return videos;
-    return videos.where((v) => _norm('${v.title} ${v.channel} ${v.topic} ${v.level}').contains(q)).toList();
+    return videos.where((v) => _norm('${v.title} ${v.channel} ${v.topic}').contains(q)).toList();
   }
 
   @override

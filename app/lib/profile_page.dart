@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'auth_page.dart';
+import 'history_page.dart';
 import 'store.dart';
 import 'theme.dart';
 
@@ -93,9 +94,9 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ]),
       SizedBox(height: 12),
-      _Group([
-        _Row(icon: Icons.logout_rounded, title: 'Выйти', onTap: store.signOut),
-      ]),
+      _Group([_Row(icon: Icons.history_rounded, title: 'История', onTap: () => openHistory(context))]),
+      SizedBox(height: 12),
+      _Group([_Row(icon: Icons.logout_rounded, title: 'Выйти', onTap: store.signOut)]),
     ];
   }
 }

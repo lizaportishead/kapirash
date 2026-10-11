@@ -12,7 +12,7 @@ void openCreator(BuildContext context, String channel) {
   ).push(MaterialPageRoute<void>(builder: (_) => CreatorPage(channel: channel)));
 }
 
-String _plural(int n, String one, String few, String many) {
+String plural(int n, String one, String few, String many) {
   final d = n % 10, h = n % 100;
   if (d == 1 && h != 11) return one;
   if (d >= 2 && d <= 4 && (h < 12 || h > 14)) return few;
@@ -26,7 +26,6 @@ class CreatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = videos.where((v) => v.channel == channel).toList();
-    final levels = ({for (final v in list) v.level}.toList()..sort()).join(', ');
     final topics = {for (final v in list) v.topic}.join(', ');
     return Scaffold(
       body: SafeArea(
@@ -80,7 +79,7 @@ class CreatorPage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 2),
                                   Text(
-                                    '${list.length} ${_plural(list.length, 'ролик', 'ролика', 'роликов')} · $levels',
+                                    '${list.length} ${plural(list.length, 'ролик', 'ролика', 'роликов')}',
                                     style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cMuted),
                                   ),
                                   Text(

@@ -55,6 +55,12 @@ class AppStore extends ChangeNotifier {
   SharedPreferences? _prefs;
   List<SavedWord> words = [];
   List<MyVideo> myVideos = [];
+
+  /// Id открытых роликов, последний открытый — в конце.
+  List<String> history = [];
+
+  /// Id роликов с сердечком, последний отмеченный — в конце.
+  List<String> liked = [];
   bool cyr = false, dark = false;
 
   /// Онбординг пройден; показываем его один раз.
@@ -75,6 +81,8 @@ class AppStore extends ChangeNotifier {
     myVideos = (jsonDecode(prefs.getString('kap.my') ?? '[]') as List)
         .map((e) => MyVideo.fromJson(e as Map<String, dynamic>))
         .toList();
+    history = (jsonDecode(prefs.getString('kap.history') ?? '[]') as List).cast<String>();
+    liked = (jsonDecode(prefs.getString('kap.liked') ?? '[]') as List).cast<String>();
     notifyListeners();
     // Генерация могла оборваться вместе с приложением — запускаем её заново.
     for (final m in myVideos.where((m) => m.status == SubsStatus.processing).toList()) {
@@ -94,6 +102,30 @@ class AppStore extends ChangeNotifier {
   void remove(String key) {
     words.removeWhere((x) => x.key == key);
     _saveWords();
+  }
+
+  int wordCount(String videoId) => words.where((w) => w.video == videoId).length;
+
+  // ---- история ----
+
+  bool isWatched(String videoId) => history.contains(videoId);
+
+  /// Ролик считается просмотренным, как только его открыли.
+  void markWatched(String videoId) {
+    if (history.isNotEmpty && history.last == videoId) return;
+    history
+      ..remove(videoId)
+      ..add(videoId);
+    _saveHistory();
+  }
+
+  // ---- сердечки ----
+
+  bool isLiked(String videoId) => liked.contains(videoId);
+
+  void toggleLike(String videoId) {
+    if (!liked.remove(videoId)) liked.add(videoId);
+    _saveLiked();
   }
 
   void setCyr(bool v) {
@@ -151,6 +183,8 @@ class AppStore extends ChangeNotifier {
   void removeVideo(String id) {
     myVideos.removeWhere((m) => m.video.id == id);
     _prefs?.remove('kap.subs.$id');
+    if (history.remove(id)) _prefs?.setString('kap.history', jsonEncode(history));
+    if (liked.remove(id)) _prefs?.setString('kap.liked', jsonEncode(liked));
     _saveMy();
   }
 
@@ -191,6 +225,16 @@ class AppStore extends ChangeNotifier {
 
   void _saveMy() {
     _prefs?.setString('kap.my', jsonEncode(myVideos));
+    notifyListeners();
+  }
+
+  void _saveHistory() {
+    _prefs?.setString('kap.history', jsonEncode(history));
+    notifyListeners();
+  }
+
+  void _saveLiked() {
+    _prefs?.setString('kap.liked', jsonEncode(liked));
     notifyListeners();
   }
 

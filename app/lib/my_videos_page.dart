@@ -52,13 +52,21 @@ class MyVideosPage extends StatelessWidget {
             Expanded(
               child: list.isEmpty
                   ? Padding(
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
+                          Flexible(
+                            child: ExcludeSemantics(
+                              child: Image.asset('assets/onboarding_rocket.png', height: 260),
+                            ),
+                          ),
+                          SizedBox(height: 16),
                           Text(
                             'Пока пусто. Добавь свой ролик с YouTube — мы подготовим к нему субтитры, '
                             'перевод и словарик. Твои ролики видны только тебе.',
+                            textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                           ),
                           SizedBox(height: 14),

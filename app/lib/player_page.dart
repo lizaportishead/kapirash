@@ -9,10 +9,12 @@ import 'icons.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
+import 'video_card.dart';
 import 'videos.dart';
 
 /// Открывает плеер поверх таббара.
 void openVideo(BuildContext context, Video v, {double? startAt}) {
+  store.markWatched(v.id);
   Navigator.of(context, rootNavigator: true).push(
     MaterialPageRoute<void>(
       builder: (_) => PlayerPage(video: v, startAt: startAt),
@@ -237,7 +239,7 @@ class _PlayerPageState extends State<PlayerPage> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 12),
+                      LikeButton(widget.video.id),
                     ],
                   ),
                   ClipRRect(
