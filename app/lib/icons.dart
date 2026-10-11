@@ -13,4 +13,6 @@ abstract final class KIcons {
   static const profileOn = IconData(0xe4c2, fontFamily: 'Phosphor');
   static const plus = IconData(0xe3d4, fontFamily: 'Phosphor');
   static const refresh = IconData(0xe036, fontFamily: 'Phosphor');
+  static const arrowLeft = IconData(0xe058, fontFamily: 'Phosphor');
+  static const arrowRight = IconData(0xe06c, fontFamily: 'Phosphor');
 }

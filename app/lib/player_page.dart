@@ -239,35 +239,13 @@ class _PlayerPageState extends State<PlayerPage> {
                                 widget.video.title,
                                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
                               ),
-                              SizedBox(height: 2),
-                              Text(
-                                widget.video.channel,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(fontSize: 13, color: cMuted),
-                              ),
+                              SizedBox(height: 6),
+                              _channel(),
                             ],
                           ),
                         ),
                       ),
-                      if (widget.video.mine)
-                        SizedBox(width: 12)
-                      else
-                        Semantics(
-                          button: true,
-                          label: 'Канал ${widget.video.channel}',
-                          child: InkWell(
-                            customBorder: CircleBorder(),
-                            onTap: () {
-                              _yt.pauseVideo();
-                              openCreator(context, widget.video.channel);
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.all(8),
-                              child: CreatorAvatar(widget.video.channel, size: 28),
-                            ),
-                          ),
-                        ),
+                      SizedBox(width: 12),
                     ],
                   ),
                   ClipRRect(
@@ -289,14 +267,47 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
+  // Аватарка и имя автора; у чужих роликов ведут на страницу канала.
+  Widget _channel() {
+    final name = widget.video.channel;
+    final row = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        CreatorAvatar(name, size: 22),
+        SizedBox(width: 7),
+        Flexible(
+          child: Text(
+            name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 13, color: cMuted),
+          ),
+        ),
+      ],
+    );
+    if (widget.video.mine) return row;
+    return Semantics(
+      button: true,
+      label: 'Канал $name',
+      child: InkWell(
+        borderRadius: BorderRadius.circular(999),
+        onTap: () {
+          _yt.pauseVideo();
+          openCreator(context, name);
+        },
+        child: Padding(padding: EdgeInsets.symmetric(vertical: 3), child: row),
+      ),
+    );
+  }
+
   Widget _controls() {
     return Row(
       children: [
-        Expanded(child: Pill('‹', label: 'Предыдущая фраза', onTap: () => _step(-1))),
+        Expanded(child: Pill('', icon: KIcons.arrowLeft, label: 'Предыдущая фраза', onTap: () => _step(-1))),
         SizedBox(width: 6),
         Expanded(child: Pill('Ещё раз', icon: KIcons.refresh, onTap: () => _step(0))),
         SizedBox(width: 6),
-        Expanded(child: Pill('›', label: 'Следующая фраза', onTap: () => _step(1))),
+        Expanded(child: Pill('', icon: KIcons.arrowRight, label: 'Следующая фраза', onTap: () => _step(1))),
       ],
     );
   }

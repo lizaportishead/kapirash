@@ -52,14 +52,14 @@ class Pill extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (icon != null) ...[
-                  Icon(icon, size: 16, color: on ? cBg : cText),
-                  SizedBox(width: 6),
-                ],
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
-                ),
+                // Без текста — кнопка-иконка, значок крупнее.
+                if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? cBg : cText),
+                if (icon != null && text.isNotEmpty) SizedBox(width: 6),
+                if (text.isNotEmpty)
+                  Text(
+                    text,
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
+                  ),
               ],
             ),
           ),
