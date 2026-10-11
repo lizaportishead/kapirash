@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import 'creator_page.dart';
+import 'icons.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
@@ -33,7 +34,8 @@ class _PlayerPageState extends State<PlayerPage> {
   StreamSubscription<YoutubeVideoState>? _sub;
   List<Cue> _sr = [], _ru = [];
   Map<String, dynamic> _dict = {};
-  bool _showSr = true, _showRu = true;
+  // Переключатели SR/RU пока убраны с экрана: обе строки показываются всегда.
+  final _showSr = true, _showRu = true;
   int _cur = -1, _tab = 0;
   final _rowKeys = <int, GlobalKey>{};
 
@@ -290,15 +292,11 @@ class _PlayerPageState extends State<PlayerPage> {
   Widget _controls() {
     return Row(
       children: [
-        Pill('SR', on: _showSr, onTap: () => setState(() => _showSr = !_showSr)),
+        Expanded(child: Pill('‹', label: 'Предыдущая фраза', onTap: () => _step(-1))),
         SizedBox(width: 6),
-        Pill('RU', on: _showRu, onTap: () => setState(() => _showRu = !_showRu)),
-        Spacer(),
-        Pill('‹', label: 'Предыдущая фраза', onTap: () => _step(-1)),
+        Expanded(child: Pill('Ещё раз', icon: KIcons.refresh, onTap: () => _step(0))),
         SizedBox(width: 6),
-        Pill('Ещё раз', onTap: () => _step(0)),
-        SizedBox(width: 6),
-        Pill('›', label: 'Следующая фраза', onTap: () => _step(1)),
+        Expanded(child: Pill('›', label: 'Следующая фраза', onTap: () => _step(1))),
       ],
     );
   }
@@ -308,7 +306,7 @@ class _PlayerPageState extends State<PlayerPage> {
     return Container(
       constraints: BoxConstraints(minHeight: 96),
       padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -317,7 +315,7 @@ class _PlayerPageState extends State<PlayerPage> {
               store.myVideo(videoId)?.status == SubsStatus.failed
                   ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
                   : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
-              style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+              style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
             ),
           if (cue != null && _showSr)
             Wrap(
@@ -334,10 +332,10 @@ class _PlayerPageState extends State<PlayerPage> {
                           fontSize: 22,
                           fontWeight: FontWeight.w700,
                           height: 1.3,
-                          color: cText,
+                          color: cInk,
                           decoration: TextDecoration.underline,
                           decorationThickness: 2,
-                          decorationColor: _isSaved(w) ? cAccentText : cText.withValues(alpha: 0.25),
+                          decorationColor: _isSaved(w) ? cViolet : cInk.withValues(alpha: 0.25),
                         ),
                       ),
                     ),
@@ -348,7 +346,7 @@ class _PlayerPageState extends State<PlayerPage> {
             SizedBox(height: 6),
             Text(
               ru,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, height: 1.4, color: cAccentText),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, height: 1.4, color: cInk.withValues(alpha: 0.72)),
             ),
           ],
         ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import 'add_video.dart';
 import 'auth_page.dart';
 import 'feed_page.dart';
+import 'icons.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
@@ -159,26 +159,26 @@ class _HomeShellState extends State<HomeShell> {
                 onDestinationSelected: (i) => i == _plus ? _addVideo() : setState(() => _tab = i < _plus ? i : i - 1),
                 destinations: [
                   NavigationDestination(
-                    icon: Icon(PhosphorIconsLight.squaresFour),
-                    selectedIcon: Icon(PhosphorIconsRegular.squaresFour),
+                    icon: Icon(KIcons.catalog),
+                    selectedIcon: Icon(KIcons.catalogOn),
                     label: 'Каталог',
                   ),
                   NavigationDestination(
-                    icon: Icon(PhosphorIconsLight.filmSlate),
-                    selectedIcon: Icon(PhosphorIconsRegular.filmSlate),
+                    icon: Icon(KIcons.videos),
+                    selectedIcon: Icon(KIcons.videosOn),
                     label: 'Мои ролики',
                   ),
                   ExcludeSemantics(
                     child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
                   ),
                   NavigationDestination(
-                    icon: _wordsIcon(PhosphorIconsLight.bookmarkSimple),
-                    selectedIcon: _wordsIcon(PhosphorIconsRegular.bookmarkSimple),
+                    icon: _wordsIcon(KIcons.words),
+                    selectedIcon: _wordsIcon(KIcons.wordsOn),
                     label: 'Мои слова',
                   ),
                   NavigationDestination(
-                    icon: Icon(PhosphorIconsLight.user),
-                    selectedIcon: Icon(PhosphorIconsRegular.user),
+                    icon: Icon(KIcons.profile),
+                    selectedIcon: Icon(KIcons.profileOn),
                     label: 'Профиль',
                   ),
                 ],
@@ -194,11 +194,7 @@ class _HomeShellState extends State<HomeShell> {
                     clipBehavior: Clip.antiAlias,
                     child: InkWell(
                       onTap: _addVideo,
-                      child: SizedBox(
-                        width: 52,
-                        height: 52,
-                        child: Icon(PhosphorIconsRegular.plus, size: 26, color: cOnViolet),
-                      ),
+                      child: SizedBox(width: 52, height: 52, child: Icon(KIcons.plus, size: 26, color: cOnViolet)),
                     ),
                   ),
                 ),

@@ -26,8 +26,9 @@ const cInk = Color(0xFF111114);
 const cOnInk = Color(0xFFFFFFFF);
 
 class Pill extends StatelessWidget {
-  const Pill(this.text, {super.key, this.on = false, this.label, required this.onTap});
+  const Pill(this.text, {super.key, this.on = false, this.label, this.icon, required this.onTap});
   final String text;
+  final IconData? icon;
   final String? label;
   final bool on;
   final VoidCallback onTap;
@@ -48,9 +49,18 @@ class Pill extends StatelessWidget {
             constraints: BoxConstraints(minWidth: 42),
             padding: EdgeInsets.symmetric(horizontal: 14),
             alignment: Alignment.center,
-            child: Text(
-              text,
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (icon != null) ...[
+                  Icon(icon, size: 16, color: on ? cBg : cText),
+                  SizedBox(width: 6),
+                ],
+                Text(
+                  text,
+                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
+                ),
+              ],
             ),
           ),
         ),
