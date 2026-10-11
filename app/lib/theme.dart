@@ -125,22 +125,45 @@ class Headline extends StatelessWidget {
               child: FittedBox(fit: BoxFit.scaleDown, child: w),
             );
             final parts = text.split('*');
+            // Неразрывный пробел (\u00A0) склеивает соседние слова: вместе переносятся и вместе ужимаются.
+            final groups = <List<Widget>>[];
+            var glue = false;
+            void add(Widget w) {
+              if (glue && groups.isNotEmpty) {
+                groups.last.add(w);
+              } else {
+                groups.add([w]);
+              }
+              glue = false;
+            }
+
+            for (var i = 0; i < parts.length; i++) {
+              if (i.isOdd) {
+                add(
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: size * 0.2),
+                    decoration: BoxDecoration(color: mark, borderRadius: BorderRadius.circular(size * 0.36)),
+                    child: Text(parts[i], style: style.copyWith(color: onMark)),
+                  ),
+                );
+              } else {
+                if (parts[i].startsWith('\u00A0')) glue = true;
+                for (final w in parts[i].split(' ')) {
+                  if (w.trim().isNotEmpty) add(Text(w.trim(), style: style));
+                }
+                if (parts[i].endsWith('\u00A0')) glue = true;
+              }
+            }
             return Wrap(
               spacing: size * 0.26,
               runSpacing: size * 0.04,
               children: [
-                for (var i = 0; i < parts.length; i++)
-                  if (i.isOdd)
-                    fit(
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: size * 0.2),
-                        decoration: BoxDecoration(color: mark, borderRadius: BorderRadius.circular(size * 0.36)),
-                        child: Text(parts[i], style: style.copyWith(color: onMark)),
-                      ),
-                    )
-                  else
-                    for (final w in parts[i].split(' '))
-                      if (w.isNotEmpty) fit(Text(w, style: style)),
+                for (final g in groups)
+                  fit(
+                    g.length == 1
+                        ? g.single
+                        : Row(mainAxisSize: MainAxisSize.min, spacing: size * 0.26, children: g),
+                  ),
               ],
             );
           },
