@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kapiras-player",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8090"
+      ],
+      "port": 8090
+    },
+    {
+      "name": "kapiras-app-web",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8091",
+        "--directory",
+        "/Users/elizavetamatveeva/projects/kapiras-player/app/build/web"
+      ],
+      "port": 8091
+    }
+  ]
+}

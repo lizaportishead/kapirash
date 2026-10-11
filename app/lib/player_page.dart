@@ -1,0 +1,514 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+
+import 'creator_page.dart';
+import 'store.dart';
+import 'subs.dart';
+import 'theme.dart';
+import 'videos.dart';
+
+/// Открывает плеер поверх таббара.
+void openVideo(BuildContext context, Video v, {double? startAt}) {
+  Navigator.of(context, rootNavigator: true).push(
+    MaterialPageRoute<void>(
+      builder: (_) => PlayerPage(video: v, startAt: startAt),
+    ),
+  );
+}
+
+class PlayerPage extends StatefulWidget {
+  const PlayerPage({super.key, required this.video, this.startAt});
+  final Video video;
+  final double? startAt;
+
+  @override
+  State<PlayerPage> createState() => _PlayerPageState();
+}
+
+class _PlayerPageState extends State<PlayerPage> {
+  late final YoutubePlayerController _yt;
+  StreamSubscription<YoutubeVideoState>? _sub;
+  List<Cue> _sr = [], _ru = [];
+  Map<String, dynamic> _dict = {};
+  bool _showSr = true, _showRu = true;
+  int _cur = -1, _tab = 0;
+  final _rowKeys = <int, GlobalKey>{};
+
+  String get videoId => widget.video.id;
+  // На странице ролика — только слова, сохранённые из него.
+  List<SavedWord> get _words => store.words.where((w) => w.video == videoId).toList();
+  bool get _cyr => store.cyr;
+  void _onStore() {
+    setState(() {});
+    // Субтитры своего ролика могут доготовиться, пока плеер открыт.
+    if (_sr.isEmpty && widget.video.mine) _load();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    store.addListener(_onStore);
+    _yt = YoutubePlayerController(
+      params: YoutubePlayerParams(
+        enableCaption: false,
+        interfaceLanguage: 'ru',
+        strictRelatedVideos: true,
+        showFullscreenButton: true,
+      ),
+    );
+    _cueVideo();
+    _sub = _yt.videoStateStream.listen((s) => _onTime(s.position.inMilliseconds / 1000));
+    _load();
+  }
+
+  // Плеер в WebView может стартовать дольше 30 секунд, которые ждёт пакет, — тогда пробуем ещё раз.
+  Future<void> _cueVideo() async {
+    for (var i = 0; i < 6 && mounted; i++) {
+      try {
+        await _yt.cueVideoById(videoId: videoId, startSeconds: widget.startAt);
+        return;
+      } on TimeoutException {
+        continue;
+      }
+    }
+  }
+
+  Future<void> _load() async {
+    final subs = await store.loadSubs(widget.video);
+    if (!mounted || subs == null) return;
+    setState(() {
+      _sr = parseSubs(subs.sr);
+      _ru = parseSubs(subs.ru);
+      _dict = subs.dict;
+      if (_cur < 0 && _sr.isNotEmpty) _cur = 0;
+    });
+  }
+
+  @override
+  void dispose() {
+    store.removeListener(_onStore);
+    _sub?.cancel();
+    _yt.close();
+    super.dispose();
+  }
+
+  String _conv(String s) => store.conv(s);
+  bool _isSaved(String w) => store.isSaved(toLat(cleanWord(w)).toLowerCase());
+
+  void _onTime(double t) {
+    if (_sr.isEmpty) return;
+    var i = cueAt(_sr, t);
+    if (i < 0) {
+      for (var k = _sr.length - 1; k >= 0; k--) {
+        if (_sr[k].start <= t) {
+          i = k;
+          break;
+        }
+      }
+    }
+    if (i < 0 || i == _cur) return;
+    setState(() => _cur = i);
+    _scrollToCur();
+  }
+
+  void _scrollToCur() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final ctx = _rowKeys[_cur]?.currentContext;
+      if (ctx != null) {
+        Scrollable.ensureVisible(ctx, alignment: 0.3, duration: Duration(milliseconds: 250));
+      }
+    });
+  }
+
+  void _seek(double t) {
+    _yt.seekTo(seconds: t < 0.15 ? 0 : t - 0.15, allowSeekAhead: true);
+    _yt.playVideo();
+  }
+
+  void _step(int d) {
+    if (_sr.isEmpty) return;
+    final i = ((_cur < 0 ? 0 : _cur) + d).clamp(0, _sr.length - 1);
+    _seek(_sr[i].start);
+  }
+
+  String _ruFor(Cue c) {
+    final j = cueAt(_ru, (c.start + c.end) / 2);
+    return j >= 0 ? _ru[j].text : '';
+  }
+
+  void _openWord(String raw, Cue cue) {
+    final word = cleanWord(raw);
+    if (word.isEmpty) return;
+    _yt.pauseVideo();
+    final lat = toLat(word), cyr = toCyr(lat), key = lat.toLowerCase();
+    final entry = _dict[key] as List?;
+    final tr = entry == null ? '' : entry[0] as String;
+    final note = entry == null ? '' : entry[1] as String;
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: cBg,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
+      builder: (ctx) => SafeArea(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                _cyr ? cyr : lat,
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w800,
+                  height: 1.1,
+                  letterSpacing: -0.6,
+                  color: cText,
+                ),
+              ),
+              SizedBox(height: 6),
+              Text('${_cyr ? lat : cyr} · ${fmtTime(cue.start)}', style: TextStyle(fontSize: 15, color: cMuted)),
+              SizedBox(height: 14),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
+                child: Text(_conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
+              ),
+              SizedBox(height: 14),
+              if (entry == null)
+                Text('Этого слова нет в словарике ролика.', style: TextStyle(fontSize: 14, color: cMuted))
+              else ...[
+                Text(
+                  tr,
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
+                ),
+                if (note.isNotEmpty) ...[
+                  SizedBox(height: 4),
+                  Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
+                ],
+              ],
+              SizedBox(height: 16),
+              BigButton(
+                _isSaved(word) ? 'Уже в моих словах' : 'Добавить в мои слова',
+                onTap: () {
+                  store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId));
+                  Navigator.pop(ctx);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final cue = _cur >= 0 && _cur < _sr.length ? _sr[_cur] : null;
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 720),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        tooltip: 'Назад',
+                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 13, bottom: 8),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                widget.video.title,
+                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                              ),
+                              SizedBox(height: 2),
+                              Text(
+                                widget.video.channel,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(fontSize: 13, color: cMuted),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      if (widget.video.mine)
+                        SizedBox(width: 12)
+                      else
+                        Semantics(
+                          button: true,
+                          label: 'Канал ${widget.video.channel}',
+                          child: InkWell(
+                            customBorder: CircleBorder(),
+                            onTap: () {
+                              _yt.pauseVideo();
+                              openCreator(context, widget.video.channel);
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.all(8),
+                              child: CreatorAvatar(widget.video.channel, size: 28),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: YoutubePlayer(controller: _yt),
+                  ),
+                  SizedBox(height: 10),
+                  _controls(),
+                  SizedBox(height: 10),
+                  _current(cue),
+                  SizedBox(height: 10),
+                  Expanded(child: _panel()),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _controls() {
+    return Row(
+      children: [
+        Pill('SR', on: _showSr, onTap: () => setState(() => _showSr = !_showSr)),
+        SizedBox(width: 6),
+        Pill('RU', on: _showRu, onTap: () => setState(() => _showRu = !_showRu)),
+        Spacer(),
+        Pill('‹', label: 'Предыдущая фраза', onTap: () => _step(-1)),
+        SizedBox(width: 6),
+        Pill('Ещё раз', onTap: () => _step(0)),
+        SizedBox(width: 6),
+        Pill('›', label: 'Следующая фраза', onTap: () => _step(1)),
+      ],
+    );
+  }
+
+  Widget _current(Cue? cue) {
+    final ru = cue != null && _showRu ? _ruFor(cue) : '';
+    return Container(
+      constraints: BoxConstraints(minHeight: 96),
+      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (_sr.isEmpty && widget.video.mine)
+            Text(
+              store.myVideo(videoId)?.status == SubsStatus.failed
+                  ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
+                  : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
+              style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+            ),
+          if (cue != null && _showSr)
+            Wrap(
+              spacing: 7,
+              children: [
+                for (final w in cue.text.split(' '))
+                  GestureDetector(
+                    onTap: () => _openWord(w, cue),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        _conv(w),
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          height: 1.3,
+                          color: cText,
+                          decoration: TextDecoration.underline,
+                          decorationThickness: 2,
+                          decorationColor: _isSaved(w) ? cAccentText : cText.withValues(alpha: 0.25),
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          if (ru.isNotEmpty) ...[
+            SizedBox(height: 6),
+            Text(
+              ru,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, height: 1.4, color: cAccentText),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _panel() {
+    return Container(
+      decoration: BoxDecoration(
+        color: cCard,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 4),
+            child: Row(
+              children: [
+                Pill(
+                  'Весь текст',
+                  on: _tab == 0,
+                  onTap: () {
+                    setState(() => _tab = 0);
+                    _scrollToCur();
+                  },
+                ),
+                SizedBox(width: 6),
+                Pill(
+                  'Мои слова${_words.isEmpty ? '' : ' · ${_words.length}'}',
+                  on: _tab == 1,
+                  onTap: () => setState(() => _tab = 1),
+                ),
+                Spacer(),
+                if (_tab == 1 && _words.isNotEmpty)
+                  Pill(
+                    'Скопировать',
+                    onTap: () {
+                      Clipboard.setData(
+                        ClipboardData(text: _words.map((w) => '${w.key}\t${w.tr}\t${w.ctx}').join('\n')),
+                      );
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text('Скопировано'), duration: Duration(milliseconds: 1200)));
+                    },
+                  ),
+              ],
+            ),
+          ),
+          Expanded(child: _tab == 0 ? _transcript() : _wordList()),
+        ],
+      ),
+    );
+  }
+
+  Widget _transcript() {
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(8, 4, 8, 12 + MediaQuery.paddingOf(context).bottom),
+      child: Column(
+        children: [
+          for (var i = 0; i < _sr.length; i++)
+            InkWell(
+              key: _rowKeys.putIfAbsent(i, GlobalKey.new),
+              borderRadius: BorderRadius.circular(14),
+              onTap: () => _seek(_sr[i].start),
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(color: i == _cur ? cCard2 : null, borderRadius: BorderRadius.circular(14)),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 44,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 2),
+                        child: Text(
+                          fmtTime(_sr[i].start),
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            _conv(_sr[i].text),
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              height: 1.35,
+                              color: i == _cur ? cText : cMuted,
+                            ),
+                          ),
+                          if (_showRu && _ruFor(_sr[i]).isNotEmpty)
+                            Text(_ruFor(_sr[i]), style: TextStyle(fontSize: 13, height: 1.35, color: cMuted)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _wordList() {
+    if (_words.isEmpty) {
+      return Padding(
+        padding: EdgeInsets.all(16),
+        child: Text('Нажми на слово в субтитрах и сохрани его.', style: TextStyle(fontSize: 14, color: cMuted)),
+      );
+    }
+    final list = _words.reversed.toList();
+    return ListView.separated(
+      padding: EdgeInsets.fromLTRB(16, 4, 8, 12 + MediaQuery.paddingOf(context).bottom),
+      itemCount: list.length,
+      separatorBuilder: (_, _) => Divider(height: 1, color: cLine),
+      itemBuilder: (_, i) {
+        final w = list[i];
+        return Row(
+          children: [
+            Expanded(
+              child: InkWell(
+                onTap: () => _seek(w.t),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        _conv(w.key),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: cText),
+                      ),
+                      if (w.tr.isNotEmpty)
+                        Text(
+                          w.tr,
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cAccentText),
+                        ),
+                      Text(
+                        _conv(w.ctx),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 12, color: cFaint),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            IconButton(
+              tooltip: 'Удалить ${w.key}',
+              icon: Icon(Icons.close, size: 18, color: cMuted),
+              onPressed: () => store.remove(w.key),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
