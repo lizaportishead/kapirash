@@ -27,7 +27,7 @@ const _slides = [
     onMark: cOnViolet,
     title: 'Учи *сербский* по\u00A0живым роликам',
     text: 'Блогеры, путешествия, еда — с субтитрами и переводом на русский.',
-    art: _ImageArt('assets/onboarding_rocket.png'),
+    art: _ImageArt('assets/ill_onboarding.png'),
   ),
   _Slide(
     bg: cViolet,
