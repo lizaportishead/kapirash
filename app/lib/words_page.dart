@@ -1,55 +1,145 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+import 'learn_page.dart';
 import 'player_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'videos.dart';
 
-class WordsPage extends StatelessWidget {
+class WordsPage extends StatefulWidget {
   const WordsPage({super.key});
+
+  @override
+  State<WordsPage> createState() => _WordsPageState();
+}
+
+class _WordsPageState extends State<WordsPage> {
+  final _search = TextEditingController();
+  bool _searching = false;
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
+
+  // Поиск не различает латиницу и кириллицу: «село» находит «sela».
+  static String _norm(String s) => toLat(s.toLowerCase());
+
+  void _toggleSearch() => setState(() {
+    _searching = !_searching;
+    _search.clear();
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
       listenable: store,
       builder: (context, _) {
-        final list = store.words.reversed.toList();
+        final all = store.words.reversed.toList();
+        final q = _norm(_search.text.trim());
+        final list = q.isEmpty ? all : all.where((w) => _norm('${w.key} ${w.tr} ${w.ctx}').contains(q)).toList();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             PageTitle(
-              'Мои слова${list.isEmpty ? '' : ' · ${list.length}'}',
+              'Мои слова${all.isEmpty ? '' : ' · ${all.length}'}',
               actions: [
-                if (list.isNotEmpty)
-                  Pill(
-                    'Скопировать',
-                    onTap: () {
-                      Clipboard.setData(
-                        ClipboardData(text: store.words.map((w) => '${w.key}\t${w.tr}\t${w.ctx}').join('\n')),
-                      );
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text('Скопировано'), duration: Duration(milliseconds: 1200)));
-                    },
+                if (all.isNotEmpty)
+                  IconButton(
+                    tooltip: _searching ? 'Закрыть поиск' : 'Поиск',
+                    icon: Icon(_searching ? Icons.close : Icons.search_rounded, size: 24, color: cText),
+                    onPressed: _toggleSearch,
                   ),
               ],
             ),
+            if (_searching && all.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
+                child: TextField(
+                  controller: _search,
+                  autofocus: true,
+                  onChanged: (_) => setState(() {}),
+                  textInputAction: TextInputAction.search,
+                  style: TextStyle(fontSize: 15, color: cText),
+                  cursorColor: cViolet,
+                  decoration: InputDecoration(
+                    hintText: 'Поиск по словам',
+                    hintStyle: TextStyle(color: cFaint),
+                    prefixIcon: Icon(Icons.search_rounded, color: cFaint),
+                    filled: true,
+                    fillColor: cCard,
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(vertical: 14),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(999), borderSide: BorderSide.none),
+                  ),
+                ),
+              ),
             Expanded(
-              child: list.isEmpty
-                  ? Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Text(
-                        'Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.',
-                        style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+              child: Stack(
+                children: [
+                  all.isEmpty
+                      ? Padding(
+                          padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
+                              Flexible(
+                                child: ExcludeSemantics(
+                                  child: Image.asset('assets/onboarding_rocket.png', height: 260),
+                                ),
+                              ),
+                              SizedBox(height: 16),
+                              Text(
+                                'Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                              ),
+                            ],
+                          ),
+                        )
+                      : list.isEmpty
+                      ? Padding(
+                          padding: EdgeInsets.all(24),
+                          child: Text(
+                            'Ничего не нашлось. Попробуй другой запрос.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 14, color: cMuted),
+                          ),
+                        )
+                      : ListView.separated(
+                          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                          // Снизу запас под плавающую кнопку.
+                          padding: EdgeInsets.fromLTRB(12, 0, 12, _searching ? 16 : 72),
+                          itemCount: list.length,
+                          separatorBuilder: (_, _) => SizedBox(height: 8),
+                          itemBuilder: (_, i) => _WordCard(list[i]),
+                        ),
+                  if (all.isNotEmpty && !_searching)
+                    Positioned(
+                      left: 0,
+                      right: 0,
+                      bottom: 16,
+                      child: Center(
+                        child: FilledButton(
+                          style: FilledButton.styleFrom(
+                            backgroundColor: cText,
+                            foregroundColor: cBg,
+                            elevation: 6,
+                            minimumSize: Size(0, 44),
+                            padding: EdgeInsets.symmetric(horizontal: 22),
+                            shape: StadiumBorder(),
+                            textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w700),
+                          ),
+                          onPressed: () => openLearn(context),
+                          child: Text('Учить слова'),
+                        ),
                       ),
-                    )
-                  : ListView.separated(
-                      padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-                      itemCount: list.length,
-                      separatorBuilder: (_, _) => SizedBox(height: 8),
-                      itemBuilder: (_, i) => _WordCard(list[i]),
                     ),
+                ],
+              ),
             ),
           ],
         );

@@ -108,17 +108,6 @@ class _HomeShellState extends State<HomeShell> {
     if (await showAddVideo(context) && mounted) setState(() => _tab = 1);
   }
 
-  Widget _wordsIcon(IconData icon) => ListenableBuilder(
-    listenable: store,
-    builder: (_, _) => Badge(
-      isLabelVisible: store.words.isNotEmpty,
-      backgroundColor: cText,
-      textColor: cBg,
-      label: Text('${store.words.length}'),
-      child: Icon(icon),
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,7 +132,7 @@ class _HomeShellState extends State<HomeShell> {
             labelTextStyle: WidgetStateProperty.resolveWith(
               (s) => TextStyle(
                 fontSize: 11,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w500,
                 color: s.contains(WidgetState.selected) ? cText : cFaint,
               ),
             ),
@@ -172,8 +161,8 @@ class _HomeShellState extends State<HomeShell> {
                     child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
                   ),
                   NavigationDestination(
-                    icon: _wordsIcon(KIcons.words),
-                    selectedIcon: _wordsIcon(KIcons.wordsOn),
+                    icon: Icon(KIcons.words),
+                    selectedIcon: Icon(KIcons.wordsOn),
                     label: 'Мои слова',
                   ),
                   NavigationDestination(

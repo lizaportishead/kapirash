@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import 'creator_page.dart';
@@ -36,8 +36,9 @@ class _PlayerPageState extends State<PlayerPage> {
   Map<String, dynamic> _dict = {};
   // Переключатели SR/RU пока убраны с экрана: обе строки показываются всегда.
   final _showSr = true, _showRu = true;
-  int _cur = -1, _tab = 0;
-  final _rowKeys = <int, GlobalKey>{};
+  // Текущая фраза; за ней следит и открытый поверх плеера экран с полным текстом.
+  final _curN = ValueNotifier<int>(-1);
+  int get _cur => _curN.value;
 
   String get videoId => widget.video.id;
   // На странице ролика — только слова, сохранённые из него.
@@ -85,7 +86,7 @@ class _PlayerPageState extends State<PlayerPage> {
       _sr = parseSubs(subs.sr);
       _ru = parseSubs(subs.ru);
       _dict = subs.dict;
-      if (_cur < 0 && _sr.isNotEmpty) _cur = 0;
+      if (_cur < 0 && _sr.isNotEmpty) _curN.value = 0;
     });
   }
 
@@ -94,6 +95,7 @@ class _PlayerPageState extends State<PlayerPage> {
     store.removeListener(_onStore);
     _sub?.cancel();
     _yt.close();
+    _curN.dispose();
     super.dispose();
   }
 
@@ -112,17 +114,7 @@ class _PlayerPageState extends State<PlayerPage> {
       }
     }
     if (i < 0 || i == _cur) return;
-    setState(() => _cur = i);
-    _scrollToCur();
-  }
-
-  void _scrollToCur() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final ctx = _rowKeys[_cur]?.currentContext;
-      if (ctx != null) {
-        Scrollable.ensureVisible(ctx, alignment: 0.3, duration: Duration(milliseconds: 250));
-      }
-    });
+    setState(() => _curN.value = i);
   }
 
   void _seek(double t) {
@@ -255,9 +247,10 @@ class _PlayerPageState extends State<PlayerPage> {
                   SizedBox(height: 10),
                   _controls(),
                   SizedBox(height: 10),
-                  _current(cue),
+                  Expanded(child: SingleChildScrollView(child: _current(cue))),
                   SizedBox(height: 10),
-                  Expanded(child: _panel()),
+                  _links(),
+                  SizedBox(height: 12 + MediaQuery.paddingOf(context).bottom),
                 ],
               ),
             ),
@@ -365,67 +358,145 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
-  Widget _panel() {
-    return Container(
-      decoration: BoxDecoration(
-        color: cCard,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 4),
-            child: Row(
-              children: [
-                Pill(
-                  'Весь текст',
-                  on: _tab == 0,
-                  onTap: () {
-                    setState(() => _tab = 0);
-                    _scrollToCur();
-                  },
-                ),
-                SizedBox(width: 6),
-                Pill(
-                  'Мои слова${_words.isEmpty ? '' : ' · ${_words.length}'}',
-                  on: _tab == 1,
-                  onTap: () => setState(() => _tab = 1),
-                ),
-                Spacer(),
-                if (_tab == 1 && _words.isNotEmpty)
-                  Pill(
-                    'Скопировать',
-                    onTap: () {
-                      Clipboard.setData(
-                        ClipboardData(text: _words.map((w) => '${w.key}\t${w.tr}\t${w.ctx}').join('\n')),
-                      );
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text('Скопировано'), duration: Duration(milliseconds: 1200)));
-                    },
-                  ),
-              ],
+  // Полный текст и слова ролика открываются отдельными экранами.
+  Widget _links() {
+    return Row(
+      children: [
+        Expanded(
+          child: Pill(
+            'Весь текст',
+            onTap: () => _push(
+              _SubPage(
+                title: 'Весь текст',
+                child: _Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek),
+              ),
             ),
           ),
-          Expanded(child: _tab == 0 ? _transcript() : _wordList()),
-        ],
-      ),
+        ),
+        SizedBox(width: 6),
+        Expanded(
+          child: Pill(
+            'Мои слова${_words.isEmpty ? '' : ' · ${_words.length}'}',
+            onTap: () => _push(
+              _SubPage(
+                title: 'Мои слова',
+                child: _WordList(videoId: videoId, onSeek: _seek),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
-  Widget _transcript() {
+  void _push(Widget page) {
+    Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
+  }
+}
+
+/// Экран поверх плеера: кнопка «Назад», заголовок и содержимое.
+class _SubPage extends StatelessWidget {
+  const _SubPage({required this.title, required this.child});
+  final String title;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 720),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 12, right: 12),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        tooltip: 'Назад',
+                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                      Expanded(
+                        child: Text(
+                          title,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(child: child),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Весь текст ролика; нажатие на фразу возвращает в плеер и включает её.
+class _Transcript extends StatefulWidget {
+  const _Transcript({required this.sr, required this.cur, required this.ruFor, required this.onSeek});
+  final List<Cue> sr;
+  final ValueListenable<int> cur;
+  final String Function(Cue) ruFor;
+  final void Function(double) onSeek;
+
+  @override
+  State<_Transcript> createState() => _TranscriptState();
+}
+
+class _TranscriptState extends State<_Transcript> {
+  final _rowKeys = <int, GlobalKey>{};
+
+  @override
+  void initState() {
+    super.initState();
+    widget.cur.addListener(_onCur);
+    _scrollToCur(Duration.zero);
+  }
+
+  @override
+  void dispose() {
+    widget.cur.removeListener(_onCur);
+    super.dispose();
+  }
+
+  void _onCur() {
+    setState(() {});
+    _scrollToCur(Duration(milliseconds: 250));
+  }
+
+  void _scrollToCur(Duration duration) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final ctx = _rowKeys[widget.cur.value]?.currentContext;
+      if (ctx != null) Scrollable.ensureVisible(ctx, alignment: 0.3, duration: duration);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final sr = widget.sr, cur = widget.cur.value;
     return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(8, 4, 8, 12 + MediaQuery.paddingOf(context).bottom),
+      padding: EdgeInsets.fromLTRB(12, 4, 12, 12 + MediaQuery.paddingOf(context).bottom),
       child: Column(
         children: [
-          for (var i = 0; i < _sr.length; i++)
+          for (var i = 0; i < sr.length; i++)
             InkWell(
               key: _rowKeys.putIfAbsent(i, GlobalKey.new),
               borderRadius: BorderRadius.circular(14),
-              onTap: () => _seek(_sr[i].start),
+              onTap: () {
+                Navigator.pop(context);
+                widget.onSeek(sr[i].start);
+              },
               child: Container(
                 padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(color: i == _cur ? cCard2 : null, borderRadius: BorderRadius.circular(14)),
+                decoration: BoxDecoration(color: i == cur ? cCard : null, borderRadius: BorderRadius.circular(14)),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -434,7 +505,7 @@ class _PlayerPageState extends State<PlayerPage> {
                       child: Padding(
                         padding: EdgeInsets.only(top: 2),
                         child: Text(
-                          fmtTime(_sr[i].start),
+                          fmtTime(sr[i].start),
                           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
                         ),
                       ),
@@ -444,16 +515,16 @@ class _PlayerPageState extends State<PlayerPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _conv(_sr[i].text),
+                            store.conv(sr[i].text),
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w700,
                               height: 1.35,
-                              color: i == _cur ? cText : cMuted,
+                              color: i == cur ? cText : cMuted,
                             ),
                           ),
-                          if (_showRu && _ruFor(_sr[i]).isNotEmpty)
-                            Text(_ruFor(_sr[i]), style: TextStyle(fontSize: 13, height: 1.35, color: cMuted)),
+                          if (widget.ruFor(sr[i]).isNotEmpty)
+                            Text(widget.ruFor(sr[i]), style: TextStyle(fontSize: 13, height: 1.35, color: cMuted)),
                         ],
                       ),
                     ),
@@ -465,57 +536,73 @@ class _PlayerPageState extends State<PlayerPage> {
       ),
     );
   }
+}
 
-  Widget _wordList() {
-    if (_words.isEmpty) {
-      return Padding(
-        padding: EdgeInsets.all(16),
-        child: Text('Нажми на слово в субтитрах и сохрани его.', style: TextStyle(fontSize: 14, color: cMuted)),
-      );
-    }
-    final list = _words.reversed.toList();
-    return ListView.separated(
-      padding: EdgeInsets.fromLTRB(16, 4, 8, 12 + MediaQuery.paddingOf(context).bottom),
-      itemCount: list.length,
-      separatorBuilder: (_, _) => Divider(height: 1, color: cLine),
-      itemBuilder: (_, i) {
-        final w = list[i];
-        return Row(
-          children: [
-            Expanded(
-              child: InkWell(
-                onTap: () => _seek(w.t),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        _conv(w.key),
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: cText),
+/// Слова, сохранённые из этого ролика; нажатие возвращает в плеер к месту, где слово прозвучало.
+class _WordList extends StatelessWidget {
+  const _WordList({required this.videoId, required this.onSeek});
+  final String videoId;
+  final void Function(double) onSeek;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListenableBuilder(
+      listenable: store,
+      builder: (context, _) {
+        final list = store.words.where((w) => w.video == videoId).toList().reversed.toList();
+        if (list.isEmpty) {
+          return Padding(
+            padding: EdgeInsets.all(24),
+            child: Text('Нажми на слово в субтитрах и сохрани его.', style: TextStyle(fontSize: 14, color: cMuted)),
+          );
+        }
+        return ListView.separated(
+          padding: EdgeInsets.fromLTRB(24, 4, 12, 12 + MediaQuery.paddingOf(context).bottom),
+          itemCount: list.length,
+          separatorBuilder: (_, _) => Divider(height: 1, color: cLine),
+          itemBuilder: (_, i) {
+            final w = list[i];
+            return Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                      onSeek(w.t);
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            store.conv(w.key),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: cText),
+                          ),
+                          if (w.tr.isNotEmpty)
+                            Text(
+                              w.tr,
+                              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cAccentText),
+                            ),
+                          Text(
+                            store.conv(w.ctx),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 12, color: cFaint),
+                          ),
+                        ],
                       ),
-                      if (w.tr.isNotEmpty)
-                        Text(
-                          w.tr,
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cAccentText),
-                        ),
-                      Text(
-                        _conv(w.ctx),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 12, color: cFaint),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-            IconButton(
-              tooltip: 'Удалить ${w.key}',
-              icon: Icon(Icons.close, size: 18, color: cMuted),
-              onPressed: () => store.remove(w.key),
-            ),
-          ],
+                IconButton(
+                  tooltip: 'Удалить ${w.key}',
+                  icon: Icon(Icons.close, size: 18, color: cMuted),
+                  onPressed: () => store.remove(w.key),
+                ),
+              ],
+            );
+          },
         );
       },
     );
