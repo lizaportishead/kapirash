@@ -5,9 +5,6 @@ import 'history_page.dart';
 import 'store.dart';
 import 'theme.dart';
 
-// Вход замокан, поэтому и профиль тоже: имя берём из почты.
-const _mockName = 'Аня Смирнова';
-
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -70,7 +67,8 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Widget _account(String email) {
-    final name = email == mockEmail ? _mockName : email.split('@').first;
+    // Имени в аккаунте нет — берём его из почты.
+    final name = email.split('@').first;
     return Row(
       children: [
         CircleAvatar(
@@ -125,7 +123,8 @@ class _SignIn extends StatelessWidget {
           ),
           SizedBox(height: 6),
           Text(
-            'Смотреть ролики можно и без входа.',
+            'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон или '
+            'переустановишь приложение. Смотреть ролики можно и без входа.',
             style: TextStyle(fontSize: 14, height: 1.4, color: cMuted),
           ),
           SizedBox(height: 16),

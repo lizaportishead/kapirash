@@ -14,6 +14,15 @@ class Video {
 
   /// Ролик добавил сам пользователь: его нет в каталоге, а субтитры лежат на устройстве.
   final bool mine;
+
+  static Video fromJson(Map<String, dynamic> j) => Video(
+    id: j['id'],
+    title: j['title'],
+    channel: j['channel'],
+    topic: j['topic'] ?? '',
+    level: j['level'] ?? '',
+    duration: j['duration'] ?? '',
+  );
 }
 
 /// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
@@ -25,7 +34,21 @@ class Creator {
   String get avatar => 'https://yt3.googleusercontent.com/$avatarId=s176-c-k-c0x00ffffff-no-rj';
 }
 
-const creators = <String, Creator>{
+// Каталог живёт в Supabase (таблицы videos и creators). Списки ниже — то, с чем приложение собрано:
+// их видно, пока каталог ни разу не загрузился.
+Map<String, Creator> creators = _builtInCreators;
+List<Video> videos = _builtInVideos;
+
+/// Подменяет каталог строками из Supabase или их копией с устройства.
+void setCatalog(Map<String, dynamic> j) {
+  videos = [for (final v in j['videos'] as List) Video.fromJson(v as Map<String, dynamic>)];
+  creators = {
+    for (final c in (j['creators'] as List).cast<Map<String, dynamic>>())
+      if (c['handle'] != null && c['avatar_id'] != null) c['name']: Creator(c['handle'], c['avatar_id']),
+  };
+}
+
+const _builtInCreators = <String, Creator>{
   'notAleksa': Creator('noaleksa', '5cXh0bO0fYWZZY7M9A-GYlN_xH7OpQF9tmUMFqxuxsPXtJLKdi7JsRLH78_53Fa2YbPQkH4Btw'),
   'Dario Kesegi': Creator(
     'DarioKesegiG0CA',
@@ -42,7 +65,7 @@ const creators = <String, Creator>{
   'KCNS': Creator('KCnovisad', 'ytc/AIdro_mvjIgdbC1NmmEpUTnaGDXRzWaP_9wCXpIcjvN-MuQcfg'),
 };
 
-const videos = <Video>[
+const _builtInVideos = <Video>[
   Video(
     id: 'dxE0__WvLBU',
     title: 'Obišao Sam Sela sa Najsmešnijim Imenima u Srbiji',

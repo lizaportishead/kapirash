@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'add_video.dart';
 import 'feed_page.dart';
@@ -8,11 +9,16 @@ import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
 import 'store.dart';
+import 'supabase_config.dart';
 import 'theme.dart';
 import 'words_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (supabaseKey.isNotEmpty) {
+    await Supabase.initialize(url: supabaseUrl, publishableKey: supabaseKey);
+    cloud = Supabase.instance.client;
+  }
   await store.load();
   runApp(KapirasApp());
 }
@@ -97,6 +103,22 @@ class _HomeShellState extends State<HomeShell> {
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
   static const _plus = kAddVideoEnabled ? 2 : 99;
 
+  static const _profile = kAddVideoEnabled ? 3 : 2;
+
+  // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
+  int _profileTaps = 0;
+  DateTime _lastProfileTap = DateTime(0);
+
+  void _select(int tab) {
+    final now = DateTime.now();
+    _profileTaps = tab == _profile && now.difference(_lastProfileTap) < Duration(milliseconds: 500)
+        ? _profileTaps + 1
+        : (tab == _profile ? 1 : 0);
+    _lastProfileTap = now;
+    if (_profileTaps == 3) return store.replayOnboarding();
+    setState(() => _tab = tab);
+  }
+
   Future<void> _addVideo() async {
     if (await showAddVideo(context) && mounted) setState(() => _tab = 1);
   }
@@ -141,7 +163,7 @@ class _HomeShellState extends State<HomeShell> {
             children: [
               NavigationBar(
                 selectedIndex: _tab < _plus ? _tab : _tab + 1,
-                onDestinationSelected: (i) => i == _plus ? _addVideo() : setState(() => _tab = i < _plus ? i : i - 1),
+                onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
                 destinations: [
                   NavigationDestination(
                     icon: Icon(KIcons.catalog),

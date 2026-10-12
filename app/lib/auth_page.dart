@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 
 import 'store.dart';
+import 'supabase_config.dart';
 import 'theme.dart';
-
-/// Аккаунт, под которым «входят» кнопки Apple и Google.
-const mockEmail = 'anya@example.com';
 
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
 
@@ -13,7 +12,7 @@ void openAuth(BuildContext context) {
   Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => AuthPage()));
 }
 
-// Бэкенда пока нет — вход замокан: любая почта и обе кнопки сразу «входят» и возвращают назад.
+// Вход в два шага: почта, затем ссылка или код из письма.
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
 
@@ -22,27 +21,84 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  final _email = TextEditingController();
+  final _email = TextEditingController(), _code = TextEditingController();
+
+  /// Почта, на которую ушёл код; null — код ещё не просили.
+  String? _sentTo;
   String? _error;
+  bool _busy = false;
+
+  @override
+  void initState() {
+    super.initState();
+    store.addListener(_onStore);
+  }
+
+  // Вошли — по коду или по ссылке из письма, пока экран был открыт.
+  void _onStore() {
+    if (store.user != null && mounted) Navigator.pop(context);
+  }
 
   @override
   void dispose() {
+    store.removeListener(_onStore);
     _email.dispose();
+    _code.dispose();
     super.dispose();
   }
 
-  void _submit() {
+  Future<void> _sendCode() async {
     final email = _email.text.trim();
     if (!_emailRe.hasMatch(email)) {
       setState(() => _error = email.isEmpty ? 'Введи почту.' : 'Похоже, в почте опечатка.');
       return;
     }
-    _signIn(email);
+    if (!store.canSignIn) {
+      setState(() => _error = 'Вход пока не подключён.');
+      return;
+    }
+    if (await _run(() => store.sendCode(email)) && mounted) setState(() => _sentTo = email);
   }
 
-  void _signIn(String email) {
-    store.signIn(email);
-    Navigator.pop(context);
+  Future<void> _verify() async {
+    final code = _code.text.trim();
+    if (code.isEmpty) {
+      setState(() => _error = 'Введи код из письма.');
+      return;
+    }
+    await _run(() => store.verifyCode(_sentTo!, code));
+  }
+
+  /// true — запрос прошёл.
+  Future<bool> _run(Future<void> Function() request) async {
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    String? error;
+    try {
+      await request();
+    } on AuthException catch (e) {
+      error = e.statusCode == '429'
+          ? 'Слишком часто. Попробуй через минуту.'
+          : (_sentTo == null ? 'Не получилось отправить код.' : 'Код не подошёл или устарел.');
+    } catch (_) {
+      error = 'Нет связи. Попробуй ещё раз.';
+    }
+    if (!mounted) return error == null;
+    setState(() {
+      _busy = false;
+      _error = error;
+    });
+    return error == null;
+  }
+
+  void _changeEmail() {
+    _code.clear();
+    setState(() {
+      _sentTo = null;
+      _error = null;
+    });
   }
 
   @override
@@ -73,101 +129,88 @@ class _AuthPageState extends State<AuthPage> {
                   child: Sticker('Kapiraš', color: cViolet, fg: cOnViolet, angle: -0.07),
                 ),
                 SizedBox(height: 28),
-                Headline('ВОЙДИ В *АККАУНТ.*', color: cText, mark: cAccent),
+                Headline(
+                  _sentTo == null ? 'ВОЙДИ В *АККАУНТ.*' : (kEmailCode ? 'ВВЕДИ *КОД.*' : 'ПРОВЕРЬ *ПОЧТУ.*'),
+                  color: cText,
+                  mark: cAccent,
+                ),
                 SizedBox(height: 14),
                 Text(
-                  'Хватит почты — пароль придумывать не нужно.',
+                  _sentTo == null
+                      ? 'Хватит почты — пароль придумывать не нужно.'
+                      : (kEmailCode
+                            ? 'Отправили код на $_sentTo. Письмо может идти пару минут.'
+                            : 'Отправили ссылку на $_sentTo. Открой её на этом телефоне — и ты войдёшь.'),
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
                 ),
                 SizedBox(height: 28),
-                TextField(
-                  controller: _email,
-                  autocorrect: false,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.done,
-                  autofillHints: [AutofillHints.email],
-                  onChanged: (_) => setState(() => _error = null),
-                  onSubmitted: (_) => _submit(),
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
-                  cursorColor: cViolet,
-                  decoration: InputDecoration(
-                    hintText: 'Почта',
-                    hintStyle: TextStyle(color: cFaint),
-                    errorText: _error,
-                    filled: true,
-                    fillColor: cCard,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide.none),
+                if (_sentTo == null) ...[
+                  TextField(
+                    key: ValueKey('Почта'),
+                    controller: _email,
+                    autocorrect: false,
+                    keyboardType: TextInputType.emailAddress,
+                    autofillHints: [AutofillHints.email],
+                    textInputAction: TextInputAction.done,
+                    onChanged: (_) => setState(() => _error = null),
+                    onSubmitted: (_) => _sendCode(),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
+                    cursorColor: cViolet,
+                    decoration: InputDecoration(
+                      hintText: 'Почта',
+                      hintStyle: TextStyle(color: cFaint),
+                      errorText: _error,
+                      filled: true,
+                      fillColor: cCard,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide.none),
+                    ),
                   ),
-                ),
-                SizedBox(height: 12),
-                BigButton('Продолжить', onTap: _submit),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 18),
-                  child: Row(
-                    children: [
-                      Expanded(child: Divider(color: cLine)),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 12),
-                        child: Text(
-                          'или',
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cFaint),
+                  SizedBox(height: 12),
+                  BigButton('Продолжить', onTap: _busy ? null : _sendCode),
+                ] else ...[
+                  if (kEmailCode) ...[
+                    TextField(
+                      key: ValueKey('Код из письма'),
+                      controller: _code,
+                      autocorrect: false,
+                      autofocus: true,
+                      keyboardType: TextInputType.number,
+                      autofillHints: [AutofillHints.oneTimeCode],
+                      textInputAction: TextInputAction.done,
+                      onChanged: (_) => setState(() => _error = null),
+                      onSubmitted: (_) => _verify(),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
+                      cursorColor: cViolet,
+                      decoration: InputDecoration(
+                        hintText: 'Код из письма',
+                        hintStyle: TextStyle(color: cFaint),
+                        errorText: _error,
+                        filled: true,
+                        fillColor: cCard,
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide.none,
                         ),
                       ),
-                      Expanded(child: Divider(color: cLine)),
-                    ],
+                    ),
+                    SizedBox(height: 12),
+                    BigButton('Войти', onTap: _busy ? null : _verify),
+                    SizedBox(height: 4),
+                  ],
+                  TextButton(
+                    onPressed: _busy ? null : _changeEmail,
+                    style: TextButton.styleFrom(
+                      foregroundColor: cMuted,
+                      textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                    child: Text('Другая почта'),
                   ),
-                ),
-                _Social(
-                  icon: Icon(Icons.apple, size: 24, color: cText),
-                  text: 'Продолжить с Apple',
-                  onTap: () => _signIn(mockEmail),
-                ),
-                SizedBox(height: 10),
-                _Social(
-                  icon: Text(
-                    'G',
-                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800, height: 1, color: cText),
-                  ),
-                  text: 'Продолжить с Google',
-                  onTap: () => _signIn(mockEmail),
-                ),
+                ],
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class _Social extends StatelessWidget {
-  const _Social({required this.icon, required this.text, required this.onTap});
-  final Widget icon;
-  final String text;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 56,
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          foregroundColor: cText,
-          side: BorderSide(color: cLine, width: 1.5),
-          shape: StadiumBorder(),
-          textStyle: TextStyle(fontFamily: kFont, fontSize: 16, fontWeight: FontWeight.w700),
-        ),
-        onPressed: onTap,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ExcludeSemantics(
-              child: SizedBox(width: 24, child: Center(child: icon)),
-            ),
-            SizedBox(width: 10),
-            Text(text),
-          ],
         ),
       ),
     );
