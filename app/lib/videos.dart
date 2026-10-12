@@ -251,6 +251,38 @@ const videos = <Video>[
     level: 'B2',
     duration: '14:53',
   ),
+  Video(
+    id: '4csv5_G5FF0',
+    title: 'Hipkon Lajt 2020 | Novi (normalni) rad - Tamara Kojić',
+    channel: 'Heapspace',
+    topic: 'IT',
+    level: 'B2',
+    duration: '30:14',
+  ),
+  Video(
+    id: '20D5N4Vjm9I',
+    title: 'MAKEUP ZA SVAKI DAN 🫵',
+    channel: 'Andjela Markovic',
+    topic: 'Красота',
+    level: 'B1',
+    duration: '10:39',
+  ),
+  Video(
+    id: 'iKhNlMwn4aw',
+    title: 'Hipkon Lajt 2020 | Design thinking - Kako da stvarate proizvode koje ljudi žele - Milovan Dekić',
+    channel: 'Heapspace',
+    topic: 'Дизайн',
+    level: 'B2',
+    duration: '32:20',
+  ),
+  Video(
+    id: 'oz6xKCTAgYU',
+    title: 'Kako postati HAKER',
+    channel: 'Štreberi',
+    topic: 'IT',
+    level: 'B1',
+    duration: '7:27',
+  ),
 ];
 
 Video? videoById(String id) {

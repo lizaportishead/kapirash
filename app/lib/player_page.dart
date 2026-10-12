@@ -319,11 +319,29 @@ class _PlayerPageState extends State<PlayerPage> {
             child: SafeArea(
               top: false,
               minimum: EdgeInsets.only(bottom: 4),
-              child: SizedBox(height: 70, child: Center(child: _strip(cue))),
+              child: SizedBox(
+                height: 70,
+                // Стрелки по бокам листают фразы, как кнопки под видео в вертикальном режиме.
+                child: Row(
+                  children: [
+                    _stepArrow(-1),
+                    Expanded(child: Center(child: _strip(cue))),
+                    _stepArrow(1),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _stepArrow(int d) {
+    return IconButton(
+      tooltip: d < 0 ? 'Предыдущая фраза' : 'Следующая фраза',
+      icon: Icon(d < 0 ? KIcons.arrowLeft : KIcons.arrowRight, size: 24, color: cInk),
+      onPressed: () => _step(d),
     );
   }
 

@@ -8,7 +8,12 @@ const mockEmail = 'anya@example.com';
 
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
 
-// Бэкенда пока нет — вход замокан: любая почта и обе кнопки сразу пускают в приложение.
+/// Открывает вход поверх таббара.
+void openAuth(BuildContext context) {
+  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => AuthPage()));
+}
+
+// Бэкенда пока нет — вход замокан: любая почта и обе кнопки сразу «входят» и возвращают назад.
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
 
@@ -32,7 +37,12 @@ class _AuthPageState extends State<AuthPage> {
       setState(() => _error = email.isEmpty ? 'Введи почту.' : 'Похоже, в почте опечатка.');
       return;
     }
+    _signIn(email);
+  }
+
+  void _signIn(String email) {
     store.signIn(email);
+    Navigator.pop(context);
   }
 
   @override
@@ -44,17 +54,29 @@ class _AuthPageState extends State<AuthPage> {
             constraints: BoxConstraints(maxWidth: 480),
             child: ListView(
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              padding: EdgeInsets.fromLTRB(24, 32, 24, 24),
+              padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
               children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Transform.translate(
+                    offset: Offset(-12, 0),
+                    child: IconButton(
+                      tooltip: 'Назад',
+                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 12),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Sticker('Kapiraš', color: cViolet, fg: cOnViolet, angle: -0.07),
                 ),
                 SizedBox(height: 28),
-                Headline('ВОЙДИ, ЧТОБЫ *НАЧАТЬ.*', color: cText, mark: cAccent),
+                Headline('ВОЙДИ В *АККАУНТ.*', color: cText, mark: cAccent),
                 SizedBox(height: 14),
                 Text(
-                  'Осталось представиться — и можно смотреть.',
+                  'Хватит почты — пароль придумывать не нужно.',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
                 ),
                 SizedBox(height: 28),
@@ -99,7 +121,7 @@ class _AuthPageState extends State<AuthPage> {
                 _Social(
                   icon: Icon(Icons.apple, size: 24, color: cText),
                   text: 'Продолжить с Apple',
-                  onTap: () => store.signIn(mockEmail),
+                  onTap: () => _signIn(mockEmail),
                 ),
                 SizedBox(height: 10),
                 _Social(
@@ -108,7 +130,7 @@ class _AuthPageState extends State<AuthPage> {
                     style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800, height: 1, color: cText),
                   ),
                   text: 'Продолжить с Google',
-                  onTap: () => store.signIn(mockEmail),
+                  onTap: () => _signIn(mockEmail),
                 ),
               ],
             ),

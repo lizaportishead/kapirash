@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'store.dart';
+import 'main.dart' show kAddVideoEnabled;
 import 'theme.dart';
 
 class _Slide {
@@ -43,8 +44,10 @@ const _slides = [
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: 'Собирай слова. *Добавляй* свои ролики.',
-    text: 'Сохранённые слова ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.',
+    title: kAddVideoEnabled ? 'Собирай слова. *Добавляй* свои ролики.' : 'Собирай *слова* из\u00A0роликов.',
+    text: kAddVideoEnabled
+        ? 'Сохранённые слова ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.'
+        : 'Сохранённые слова ждут в словарике — повторяй их, когда удобно.',
     art: _CardsArt(),
   ),
 ];

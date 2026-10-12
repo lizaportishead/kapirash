@@ -199,12 +199,10 @@ class AppStore extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Слова и свои ролики остаются на устройстве. После выхода снова показываем онбординг.
+  /// Слова и свои ролики остаются на устройстве, приложением можно пользоваться и без входа.
   void signOut() {
     user = null;
-    onboarded = false;
     _prefs?.remove('kap.user');
-    _prefs?.remove('kap.onboarded');
     notifyListeners();
   }
 

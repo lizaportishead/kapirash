@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'add_video.dart';
-import 'auth_page.dart';
 import 'feed_page.dart';
 import 'icons.dart';
 import 'my_videos_page.dart';
@@ -27,14 +26,7 @@ class KapirasApp extends StatefulWidget {
 
 class _KapirasAppState extends State<KapirasApp> {
   bool _dark = store.dark;
-  int _stage = _stageNow;
-
-  // Что показываем: онбординг, вход или само приложение.
-  static int get _stageNow => !store.onboarded
-      ? 0
-      : store.user == null
-      ? 1
-      : 2;
+  bool _onboarded = store.onboarded;
 
   @override
   void initState() {
@@ -51,7 +43,7 @@ class _KapirasAppState extends State<KapirasApp> {
   // Цвета в theme.dart — глобальные геттеры, поэтому при смене темы перестраиваем всё дерево,
   // включая const-виджеты и открытые поверх экраны.
   void _onStore() {
-    if (_stageNow != _stage) setState(() => _stage = _stageNow);
+    if (store.onboarded != _onboarded) setState(() => _onboarded = store.onboarded);
     if (store.dark == _dark) return;
     setState(() => _dark = store.dark);
     void visit(Element e) {
@@ -81,15 +73,15 @@ class _KapirasAppState extends State<KapirasApp> {
       ),
       home: AnimatedSwitcher(
         duration: Duration(milliseconds: 250),
-        child: switch (_stage) {
-          0 => OnboardingPage(),
-          1 => AuthPage(),
-          _ => HomeShell(),
-        },
+        // Вход необязателен: после онбординга сразу каталог, войти можно из профиля.
+        child: _onboarded ? HomeShell() : OnboardingPage(),
       ),
     );
   }
 }
+
+/// Добавление своих роликов временно скрыто: без него нет ни кнопки «плюс», ни вкладки «Мои ролики».
+const kAddVideoEnabled = false;
 
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
@@ -102,7 +94,8 @@ class _HomeShellState extends State<HomeShell> {
   int _tab = 0;
 
   // В середине таббара — пустая ячейка под кнопку «плюс», поэтому индексы справа от неё сдвинуты.
-  static const _plus = 2;
+  // Пока добавление скрыто, ячейки нет и сдвигать нечего.
+  static const _plus = kAddVideoEnabled ? 2 : 99;
 
   Future<void> _addVideo() async {
     if (await showAddVideo(context) && mounted) setState(() => _tab = 1);
@@ -116,7 +109,10 @@ class _HomeShellState extends State<HomeShell> {
         child: Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 720),
-            child: IndexedStack(index: _tab, children: [FeedPage(), MyVideosPage(), WordsPage(), ProfilePage()]),
+            child: IndexedStack(
+              index: _tab,
+              children: [FeedPage(), if (kAddVideoEnabled) MyVideosPage(), WordsPage(), ProfilePage()],
+            ),
           ),
         ),
       ),
@@ -152,14 +148,16 @@ class _HomeShellState extends State<HomeShell> {
                     selectedIcon: Icon(KIcons.catalogOn),
                     label: 'Каталог',
                   ),
-                  NavigationDestination(
-                    icon: Icon(KIcons.videos),
-                    selectedIcon: Icon(KIcons.videosOn),
-                    label: 'Мои ролики',
-                  ),
-                  ExcludeSemantics(
-                    child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
-                  ),
+                  if (kAddVideoEnabled) ...[
+                    NavigationDestination(
+                      icon: Icon(KIcons.videos),
+                      selectedIcon: Icon(KIcons.videosOn),
+                      label: 'Мои ролики',
+                    ),
+                    ExcludeSemantics(
+                      child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
+                    ),
+                  ],
                   NavigationDestination(
                     icon: Icon(KIcons.words),
                     selectedIcon: Icon(KIcons.wordsOn),
@@ -172,22 +170,23 @@ class _HomeShellState extends State<HomeShell> {
                   ),
                 ],
               ),
-              SafeArea(
-                top: false,
-                child: Semantics(
-                  button: true,
-                  label: 'Добавить ролик',
-                  child: Material(
-                    color: cViolet,
-                    shape: CircleBorder(),
-                    clipBehavior: Clip.antiAlias,
-                    child: InkWell(
-                      onTap: _addVideo,
-                      child: SizedBox(width: 52, height: 52, child: Icon(KIcons.plus, size: 26, color: cOnViolet)),
+              if (kAddVideoEnabled)
+                SafeArea(
+                  top: false,
+                  child: Semantics(
+                    button: true,
+                    label: 'Добавить ролик',
+                    child: Material(
+                      color: cViolet,
+                      shape: CircleBorder(),
+                      clipBehavior: Clip.antiAlias,
+                      child: InkWell(
+                        onTap: _addVideo,
+                        child: SizedBox(width: 52, height: 52, child: Icon(KIcons.plus, size: 26, color: cOnViolet)),
+                      ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         ),

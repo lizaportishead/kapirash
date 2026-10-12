@@ -32,42 +32,9 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   List<Widget> _body() {
-    final email = store.user ?? mockEmail;
-    final name = email == mockEmail ? _mockName : email.split('@').first;
+    final email = store.user;
     return [
-      Row(
-        children: [
-          CircleAvatar(
-            radius: 32,
-            backgroundColor: cAccent,
-            child: Text(
-              name.characters.first.toUpperCase(),
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: cInk),
-            ),
-          ),
-          SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
-                ),
-                SizedBox(height: 2),
-                Text(
-                  email,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 14, color: cMuted),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      if (email == null) _SignIn() else _account(email),
       SizedBox(height: 18),
       _Group([
         _Row(
@@ -95,9 +62,77 @@ class _ProfilePageState extends State<ProfilePage> {
       ]),
       SizedBox(height: 12),
       _Group([_Row(icon: Icons.history_rounded, title: 'История', onTap: () => openHistory(context))]),
-      SizedBox(height: 12),
-      _Group([_Row(icon: Icons.logout_rounded, title: 'Выйти', onTap: store.signOut)]),
+      if (email != null) ...[
+        SizedBox(height: 12),
+        _Group([_Row(icon: Icons.logout_rounded, title: 'Выйти', onTap: store.signOut)]),
+      ],
     ];
+  }
+
+  Widget _account(String email) {
+    final name = email == mockEmail ? _mockName : email.split('@').first;
+    return Row(
+      children: [
+        CircleAvatar(
+          radius: 32,
+          backgroundColor: cAccent,
+          child: Text(
+            name.characters.first.toUpperCase(),
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: cInk),
+          ),
+        ),
+        SizedBox(width: 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
+              ),
+              SizedBox(height: 2),
+              Text(
+                email,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 14, color: cMuted),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Блок для тех, кто не вошёл: вход необязателен, поэтому зовём, а не требуем.
+class _SignIn extends StatelessWidget {
+  const _SignIn();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            'Войди в аккаунт',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
+          ),
+          SizedBox(height: 6),
+          Text(
+            'Смотреть ролики можно и без входа.',
+            style: TextStyle(fontSize: 14, height: 1.4, color: cMuted),
+          ),
+          SizedBox(height: 16),
+          BigButton('Войти', onTap: () => openAuth(context)),
+        ],
+      ),
+    );
   }
 }
 

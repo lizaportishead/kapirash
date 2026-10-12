@@ -1,0 +1,2789 @@
+WEBVTT
+
+1
+00:00:05.970 --> 00:00:11.790
+I da ste spremni za našeg sledećeg predavača, u pitanju je Milovan Dekić,
+
+2
+00:00:11.790 --> 00:00:14.730
+koji će nam pričati o design thinkingu.
+
+3
+00:00:14.730 --> 00:00:19.390
+Milovan je inače koautor knjige o ovome
+
+4
+00:00:19.390 --> 00:00:24.150
+i vođa grupe za istraživanja korisnika pri Nordeusu.
+
+5
+00:00:24.150 --> 00:00:28.530
+Evo, izvoli, scena je tvoja.
+
+6
+00:00:40.140 --> 00:00:44.740
+Hvala vam što ste došli. Hvala organizatorima na pozivu.
+
+7
+00:00:44.740 --> 00:00:53.500
+Znači, moje ime je Milovan Dekić, i ideja je da danas pričamo o nečemu što se zove design thinking.
+
+8
+00:00:53.500 --> 00:00:58.660
+Pre nego što krenemo, recite mi, možete da se javite:
+
+9
+00:00:58.660 --> 00:01:04.160
+ko od vas ima iskustva sa design thinkingom? Kul.
+
+10
+00:01:05.020 --> 00:01:14.420
+Nema nas puno. Okej. Tako da, umesto da sad ovde teoretišem, zato što je jako obimna i glomazna tema,
+
+11
+00:01:14.420 --> 00:01:18.460
+ja ću samo pokušati da naglasim neke osnovne lekcije,
+
+12
+00:01:18.460 --> 00:01:26.240
+odnosno neke stvari koje, ukoliko želite da rešavate neki problem ili nečiji problem, ili da kreirate neki proizvod,
+
+13
+00:01:26.240 --> 00:01:33.540
+u suštini neki hintovi koje možete da iskoristite kako biste možda donosili bolje odluke
+
+14
+00:01:33.540 --> 00:01:36.300
+prilikom rešavanja tog problema ili kreiranja proizvoda.
+
+15
+00:01:39.290 --> 00:01:45.800
+Da, napisali smo ovo kolega Marko Jevtić, izvršni producent iz Nordeusa, i ja,
+
+16
+00:01:45.800 --> 00:01:50.500
+mi smo zajedno napisali knjigu koja se zove „Design thinking: kako da stvarate proizvode koje ljudi žele“.
+
+17
+00:01:54.420 --> 00:02:01.580
+Za početak, samo jedan primer. Na čemu insistira design thinking?
+
+18
+00:02:01.580 --> 00:02:09.400
+Zamislite, možemo da se stavimo u poziciju IBM-a, koji je razvijao softver za voice recognition.
+
+19
+00:02:10.760 --> 00:02:15.680
+Kako to može da se uradi? Tako što sednete i razvijate softver za voice recognition.
+
+20
+00:02:16.780 --> 00:02:24.660
+Međutim, to može da bude skupo, teško, i na kraju možete zapravo da napravite nešto što ne treba ljudima.
+
+21
+00:02:24.660 --> 00:02:31.640
+I onda design thinking u suštini savetuje da probate da prototipujete,
+
+22
+00:02:31.640 --> 00:02:36.200
+ili da na neki način fejkujete, izlažirate to iskustvo,
+
+23
+00:02:36.340 --> 00:02:41.240
+i da vidite kako će finalni korisnik da reaguje na tako nešto.
+
+24
+00:02:41.240 --> 00:02:44.680
+Ukoliko reaguje loše, odnosno ako pravite nešto što je njemu nepotrebno,
+
+25
+00:02:44.680 --> 00:02:47.060
+onda unapred znate da ne treba možda time da se bavite.
+
+26
+00:02:47.860 --> 00:02:55.000
+Tako da IBM, u suštini, kad je krenuo da radi na softveru za speech recognition,
+
+27
+00:02:56.020 --> 00:03:01.200
+čovek je samo trebalo da priča u mikrofon, i u suštini se na ekranu pojavljuje tekst.
+
+28
+00:03:01.460 --> 00:03:03.280
+I, kao, svi su bili, kao: vrhunska stvar.
+
+29
+00:03:03.780 --> 00:03:05.420
+Ali kako se zapravo to događalo?
+
+30
+00:03:05.700 --> 00:03:11.300
+Događalo se tako što je daktilografkinja sedela sakrivena u ćošku, i ono što ovaj priča, ona je kucala.
+
+31
+00:03:11.300 --> 00:03:14.660
+Dakle, niste razvijali softver, nego ste fejkovali to iskustvo.
+
+32
+00:03:15.700 --> 00:03:18.980
+I onda neko ko to doživi može da vam kaže da li mu se sviđa ili ne.
+
+33
+00:03:19.620 --> 00:03:25.140
+Tako da to je jedna od stvari, zapravo jedan primer design thinkinga.
+
+34
+00:03:25.260 --> 00:03:30.820
+Probajte da simulirate iskustvo koje želite da pravite pre nego što odmah skočite u njegovo razvijanje.
+
+35
+00:03:31.600 --> 00:03:35.920
+Dakle, u suštini, design thinking je: možete da se skupite kao tim
+
+36
+00:03:35.920 --> 00:03:40.640
+i da probate da kreativno rešite nekakav problem koji imate,
+
+37
+00:03:40.640 --> 00:03:45.840
+a u suštini osnovni cilj je da rešite problem korisnika ili da zadovoljite nekakvu njegovu potrebu.
+
+38
+00:03:46.560 --> 00:03:50.200
+E sad, design thinking ima nekoliko faza.
+
+39
+00:03:50.340 --> 00:03:51.860
+I sad prvi hint ili prva ideja.
+
+40
+00:03:51.960 --> 00:03:57.760
+Ukoliko želite da pravite nešto za nekoga, recimo mobilnu igru ili šta god, ili neki softver,
+
+41
+00:03:58.930 --> 00:04:02.060
+ti ljudi koji će to da koriste — budite malo zajedno s njima.
+
+42
+00:04:02.380 --> 00:04:06.020
+Vidite šta rade, kako rade, i malo pričajte sa njima.
+
+43
+00:04:06.020 --> 00:04:07.440
+To je ideja empatije.
+
+44
+00:04:08.060 --> 00:04:12.520
+Ako se vratimo na poznati primer Airbnb-a: kad su startovali, niko živ nije iznajmljivao stanove.
+
+45
+00:04:12.840 --> 00:04:18.400
+Kad su se vlasnici stavili u kožu i onih likova koji izdaju stan
+
+46
+00:04:18.400 --> 00:04:22.900
+i ovih koji treba da iznajme stan, skapirali su da je celo iskustvo katastrofalno.
+
+47
+00:04:23.200 --> 00:04:27.780
+Prvo, ljudi koji su iznajmljivali stanove uopšte nisu imali kvalitetne aparate da slikaju
+
+48
+00:04:27.780 --> 00:04:30.900
+ove svoje stanove; s druge strane, onaj ko pogleda krš sliku,
+
+49
+00:04:31.200 --> 00:04:32.180
+normalno da neće da iznajmi.
+
+50
+00:04:32.840 --> 00:04:37.940
+I onda im je neko iz Y Combinatora rekao: idite da pričate sa svojim korisnicima.
+
+51
+00:04:37.980 --> 00:04:43.940
+Onda su skapirali, i onda im je, nakon nekih promena, skočio biznis za 400%.
+
+52
+00:04:43.940 --> 00:04:47.080
+Tako da, u suštini, to vam savetuje design thinking.
+
+53
+00:04:48.140 --> 00:04:50.480
+Daću vam jedan primer sad koji je u formi videa.
+
+54
+00:04:50.600 --> 00:04:54.600
+Tako da ne bi bilo loše da pokušamo da ga poslušamo, traje pet minuta.
+
+55
+00:04:54.920 --> 00:04:56.940
+Ne znam da li je neko čuo šta je milkšejk marketing.
+
+56
+00:04:58.740 --> 00:05:03.020
+Klejton Kristensen — mislim da danas izlazi prevod njegove knjige „Dilema inovatora“ —
+
+57
+00:05:03.300 --> 00:05:04.840
+je radio za Mekdonalds.
+
+58
+00:05:06.140 --> 00:05:10.340
+Mekdonalds ga je zvao i rekli su: okej, kako da poboljšamo milkšejkove koje prodajemo?
+
+59
+00:05:10.540 --> 00:05:12.100
+Hoćemo više para, realno.
+
+60
+00:05:12.580 --> 00:05:15.280
+Ajde da povećamo prodaju za 15 ili 20%.
+
+61
+00:05:15.280 --> 00:05:17.740
+Šta je prva ideja koja pada na pamet?
+
+62
+00:05:20.360 --> 00:05:22.000
+Stavi više šećera, na primer.
+
+63
+00:05:23.420 --> 00:05:27.880
+Okej, sad, umesto da prepričavam, ja bih hteo da poslušamo jedan video
+
+64
+00:05:27.880 --> 00:05:31.160
+gde Kristensen objašnjava šta su zapravo oni uradili,
+
+65
+00:05:31.240 --> 00:05:33.620
+a što je savršen primer design thinkinga.
+
+66
+00:05:33.760 --> 00:05:34.640
+Ako može video.
+
+67
+00:10:33.480 --> 00:10:35.340
+Pa, je l' pada nekome na pamet,
+
+68
+00:10:35.340 --> 00:10:36.860
+na osnovu svega ovoga što je rekao?
+
+69
+00:10:37.060 --> 00:10:37.660
+Dakle, ono što kaže —
+
+70
+00:10:37.860 --> 00:10:38.820
+postoji nešto u marketingu:
+
+71
+00:10:38.820 --> 00:10:39.960
+kad ljudi kupe bušilicu,
+
+72
+00:10:40.200 --> 00:10:41.800
+ne treba im bušilica kao takva,
+
+73
+00:10:41.840 --> 00:10:42.900
+nego im treba rupa na zidu.
+
+74
+00:10:44.640 --> 00:10:46.920
+I onda, šta je Mekdonalds mogao da uradi?
+
+75
+00:11:08.800 --> 00:11:10.140
+Napravili su ga gušćim,
+
+76
+00:11:10.200 --> 00:11:11.420
+da zapravo može duže
+
+77
+00:11:11.440 --> 00:11:11.860
+da traje,
+
+78
+00:11:12.020 --> 00:11:12.640
+ukoliko vam je
+
+79
+00:11:14.840 --> 00:11:16.240
+put do posla duži.
+
+80
+00:11:16.680 --> 00:11:17.900
+Tako da, u suštini,
+
+81
+00:11:18.440 --> 00:11:20.180
+ovo vam pomaže da zapravo
+
+82
+00:11:20.180 --> 00:11:21.300
+izbegnete svoju intuiciju:
+
+83
+00:11:21.400 --> 00:11:22.060
+pa da, realno,
+
+84
+00:11:22.100 --> 00:11:22.940
+dodamo još neki ukus,
+
+85
+00:11:22.940 --> 00:11:23.700
+i onda prodaja ne ide.
+
+86
+00:11:25.040 --> 00:11:26.200
+Ono što design thinking kaže:
+
+87
+00:11:26.300 --> 00:11:27.740
+idite malo, pogledajte te ljude
+
+88
+00:11:28.940 --> 00:11:31.140
+koji zapravo upošljavaju proizvod
+
+89
+00:11:31.220 --> 00:11:32.040
+da završe posao.
+
+90
+00:11:32.040 --> 00:11:34.320
+I ovde još jedna važna implikacija,
+
+91
+00:11:34.340 --> 00:11:35.380
+mislim da je to što
+
+92
+00:11:39.480 --> 00:11:40.600
+vaš glavni konkurent
+
+93
+00:11:40.600 --> 00:11:41.520
+ne mora da bude uopšte
+
+94
+00:11:41.520 --> 00:11:42.340
+iz vaše oblasti.
+
+95
+00:11:42.620 --> 00:11:43.420
+Sad, ne znam ko je slušao,
+
+96
+00:11:43.440 --> 00:11:43.700
+recimo,
+
+97
+00:11:43.780 --> 00:11:44.960
+Rida Hejstingsa iz Netfliksa.
+
+98
+00:11:45.920 --> 00:11:47.180
+Ko je glavni konkurent Netfliksu?
+
+99
+00:11:57.310 --> 00:11:57.950
+Kablovska, da.
+
+100
+00:11:58.350 --> 00:11:59.390
+Pa, oni idu malo dalje,
+
+101
+00:11:59.450 --> 00:12:00.010
+on kaže: san.
+
+102
+00:12:01.790 --> 00:12:03.250
+Ili ispijanje flaše vina.
+
+103
+00:12:06.310 --> 00:12:08.050
+Ili sve drugo što radite
+
+104
+00:12:08.050 --> 00:12:09.150
+kad ne gledate Netfliks.
+
+105
+00:12:10.690 --> 00:12:11.630
+Fortnajt, mislim,
+
+106
+00:12:11.750 --> 00:12:13.410
+čak u njihovom zvaničnom izveštaju
+
+107
+00:12:13.410 --> 00:12:15.170
+stoji da su oni prošle godine
+
+108
+00:12:15.170 --> 00:12:16.330
+izgubili od Fortnajta.
+
+109
+00:12:19.490 --> 00:12:20.370
+Ali prva ideja je to:
+
+110
+00:12:20.510 --> 00:12:21.670
+budite malo s tim ljudima,
+
+111
+00:12:21.790 --> 00:12:22.470
+pričajte sa njima,
+
+112
+00:12:22.610 --> 00:12:23.550
+posmatrajte ih,
+
+113
+00:12:23.550 --> 00:12:25.250
+i verovatno će to da vam otvori
+
+114
+00:12:25.250 --> 00:12:25.930
+neke perspektive.
+
+115
+00:12:26.750 --> 00:12:27.630
+Definisanje problema.
+
+116
+00:12:28.270 --> 00:12:30.790
+Kad vam ljudi nešto ispričaju,
+
+117
+00:12:30.970 --> 00:12:34.170
+kad posmatrate kako oni doživljavaju stvari,
+
+118
+00:12:36.010 --> 00:12:37.470
+opet, morate zapravo da skapirate
+
+119
+00:12:37.470 --> 00:12:39.330
+šta je problem koji neko ima.
+
+120
+00:12:39.730 --> 00:12:42.450
+E sad, kad čekate lift —
+
+121
+00:12:42.730 --> 00:12:44.050
+sad zamislite da imate firmu
+
+122
+00:12:44.050 --> 00:12:44.990
+gde vam ljudi kažu:
+
+123
+00:12:44.990 --> 00:12:46.410
+spor lift.
+
+124
+00:12:47.730 --> 00:12:48.750
+Šta je rešenje?
+
+125
+00:12:50.430 --> 00:12:51.250
+Brži lift.
+
+126
+00:12:51.390 --> 00:12:52.110
+Muzika, tako je.
+
+127
+00:13:00.270 --> 00:13:01.370
+Design thinking vam savetuje,
+
+128
+00:13:01.430 --> 00:13:02.370
+ako pričate s tim ljudima,
+
+129
+00:13:03.350 --> 00:13:04.010
+five whys,
+
+130
+00:13:04.390 --> 00:13:05.290
+pet puta ih pitajte:
+
+131
+00:13:05.350 --> 00:13:06.310
+zašto ti je to problem?
+
+132
+00:13:06.550 --> 00:13:08.230
+To zna da bude dosta mučno,
+
+133
+00:13:08.350 --> 00:13:09.710
+ako stvarno intervjuišete ljude
+
+134
+00:13:09.710 --> 00:13:10.230
+na taj način,
+
+135
+00:13:10.310 --> 00:13:11.830
+ja sam to iskusio milijardu puta.
+
+136
+00:13:14.710 --> 00:13:15.710
+Ali shvatite da njihov problem
+
+137
+00:13:15.710 --> 00:13:16.430
+zapravo može da bude
+
+138
+00:13:16.430 --> 00:13:17.710
+da oni zapravo nemaju šta da rade.
+
+139
+00:13:17.910 --> 00:13:19.750
+Što opet vodi ka implikaciji
+
+140
+00:13:19.750 --> 00:13:20.970
+da ne morate da ulupate
+
+141
+00:13:20.970 --> 00:13:22.230
+ne znam koliko hiljada evra
+
+142
+00:13:22.230 --> 00:13:22.890
+u brži lift,
+
+143
+00:13:23.310 --> 00:13:25.430
+nego samo da iskustvo čekanja
+
+144
+00:13:25.430 --> 00:13:26.590
+učinite manje mučnim
+
+145
+00:13:26.590 --> 00:13:27.470
+ili manje dosadnim.
+
+146
+00:13:28.270 --> 00:13:29.130
+I jedan startap je, recimo,
+
+147
+00:13:29.130 --> 00:13:30.110
+to uradio u Nemačkoj.
+
+148
+00:13:31.270 --> 00:13:32.070
+Gomila je primera:
+
+149
+00:13:32.150 --> 00:13:32.870
+kad čekate bus,
+
+150
+00:13:33.030 --> 00:13:34.050
+pa ste anksiozni —
+
+151
+00:13:34.150 --> 00:13:34.630
+znači, šta je problem,
+
+152
+00:13:34.630 --> 00:13:35.630
+recimo, kad nema busa?
+
+153
+00:13:36.350 --> 00:13:37.590
+Šta može da bude rešenje?
+
+154
+00:13:37.590 --> 00:13:38.910
+Više autobusa
+
+155
+00:13:38.910 --> 00:13:40.110
+ili brži autobusi,
+
+156
+00:13:40.330 --> 00:13:41.590
+a u stvari samo može da bude
+
+157
+00:13:41.590 --> 00:13:42.610
+problem vaša anksioznost,
+
+158
+00:13:42.610 --> 00:13:44.230
+što zapravo ne znate kad će.
+
+159
+00:13:44.430 --> 00:13:45.510
+I onda ova ideja
+
+160
+00:13:45.510 --> 00:13:46.510
+sa prikazivanjem
+
+161
+00:13:46.510 --> 00:13:48.190
+„za toliko minuta“ je vrhunska,
+
+162
+00:13:48.190 --> 00:13:50.230
+jer rešava problem anksioznosti.
+
+163
+00:13:52.030 --> 00:13:53.330
+Problem može da bude:
+
+164
+00:13:53.330 --> 00:13:54.490
+dosadno mi je da čekam.
+
+165
+00:13:54.910 --> 00:13:56.050
+I onda, okej,
+
+166
+00:13:56.190 --> 00:13:57.050
+svašta može da se uradi,
+
+167
+00:13:57.130 --> 00:13:58.590
+ali ono što je uradio ovaj startap
+
+168
+00:13:58.590 --> 00:13:59.130
+bilo je: okej,
+
+169
+00:13:59.250 --> 00:14:02.270
+ajde da iskustvo čekanja na prevoz
+
+170
+00:14:02.270 --> 00:14:03.250
+učinimo zanimljivim.
+
+171
+00:14:03.470 --> 00:14:04.470
+I onda su napravili
+
+172
+00:14:06.210 --> 00:14:07.150
+igranje ping-ponga
+
+173
+00:14:08.130 --> 00:14:09.430
+sa dve različite strane.
+
+174
+00:14:12.110 --> 00:14:14.450
+Uvek kad vam ljudi nešto saopšte,
+
+175
+00:14:14.770 --> 00:14:16.370
+probajte da ih dodatno ispitate
+
+176
+00:14:16.370 --> 00:14:17.870
+šta je zapravo problem sa tim.
+
+177
+00:14:17.970 --> 00:14:19.050
+Šta je problem što čekaš?
+
+178
+00:14:19.130 --> 00:14:20.110
+Pa dosadno mi je,
+
+179
+00:14:20.130 --> 00:14:21.110
+ili anksiozan sam.
+
+180
+00:14:21.810 --> 00:14:22.950
+Cela fora je u tome
+
+181
+00:14:22.950 --> 00:14:25.190
+da kad dobro razumete taj problem,
+
+182
+00:14:25.710 --> 00:14:27.110
+mnogo bolja rešenja,
+
+183
+00:14:27.110 --> 00:14:28.230
+i jako često,
+
+184
+00:14:28.350 --> 00:14:29.510
+možda, jeftinija rešenja
+
+185
+00:14:29.510 --> 00:14:30.770
+mogu da vam padnu na pamet
+
+186
+00:14:30.770 --> 00:14:31.730
+nego ona kompleksna
+
+187
+00:14:31.730 --> 00:14:33.150
+koja rešavaju neki kompleksan,
+
+188
+00:14:33.880 --> 00:14:36.230
+a eventualno lažan problem.
+
+189
+00:14:36.870 --> 00:14:38.790
+Tako da to vam opet savetuje
+
+190
+00:14:38.790 --> 00:14:39.570
+design thinking.
+
+191
+00:14:40.170 --> 00:14:40.750
+Ideacija.
+
+192
+00:14:42.190 --> 00:14:42.810
+Ideacija
+
+193
+00:14:43.450 --> 00:14:44.070
+podrazumeva —
+
+194
+00:14:44.350 --> 00:14:45.710
+s tim smo verovatno svi upoznati,
+
+195
+00:14:45.810 --> 00:14:46.590
+svako je od nas
+
+196
+00:14:46.590 --> 00:14:48.630
+makar jednom bio na nekom vorkšopu
+
+197
+00:14:49.350 --> 00:14:50.930
+gde generišemo ideje.
+
+198
+00:14:51.270 --> 00:14:52.570
+Pa ja mislim da treba ovo,
+
+199
+00:14:52.710 --> 00:14:53.510
+ovo, ovo.
+
+200
+00:14:53.510 --> 00:14:55.430
+Cela fora sa tim brejnstormingom
+
+201
+00:14:55.430 --> 00:14:56.530
+je da se to radi
+
+202
+00:14:56.530 --> 00:14:57.330
+sistematično
+
+203
+00:14:59.340 --> 00:15:01.160
+i da dosta odete u širinu.
+
+204
+00:15:02.500 --> 00:15:03.160
+Šta je, recimo,
+
+205
+00:15:03.260 --> 00:15:03.960
+dosta dobar primer?
+
+206
+00:15:13.720 --> 00:15:14.100
+Ali, recimo,
+
+207
+00:15:14.180 --> 00:15:15.520
+šta je zanimljivo u Fortnajtu?
+
+208
+00:15:17.920 --> 00:15:18.900
+Šta nam prvo pada na pamet
+
+209
+00:15:18.900 --> 00:15:20.220
+kad uđete u neku pucačinu,
+
+210
+00:15:20.220 --> 00:15:21.640
+da li PUBG ili Fortnajt:
+
+211
+00:15:21.760 --> 00:15:22.980
+ono, kao, idete da se rokate,
+
+212
+00:15:23.440 --> 00:15:23.840
+kompetitivno,
+
+213
+00:15:23.920 --> 00:15:24.360
+hoćete da pobedite,
+
+214
+00:15:24.440 --> 00:15:25.200
+hoćete da budete prvi.
+
+215
+00:15:25.500 --> 00:15:26.600
+Fortnajt je dosta promenio
+
+216
+00:15:26.600 --> 00:15:27.980
+stvari u kompetitivnom žanru,
+
+217
+00:15:27.980 --> 00:15:29.440
+što uopšte više nije poenta
+
+218
+00:15:29.440 --> 00:15:29.980
+da budeš prvi,
+
+219
+00:15:30.100 --> 00:15:31.080
+nego da se dobro zezaš.
+
+220
+00:15:32.240 --> 00:15:33.000
+Samo dobro zezanje.
+
+221
+00:15:36.080 --> 00:15:36.760
+Sve je to dobar fan.
+
+222
+00:15:37.080 --> 00:15:37.760
+I onda su oni rekli:
+
+223
+00:15:37.760 --> 00:15:39.340
+okej, šta još može da bude fan?
+
+224
+00:15:39.600 --> 00:15:40.320
+Pa može da bude fan
+
+225
+00:15:40.320 --> 00:15:41.620
+da napravimo žurku u igri.
+
+226
+00:15:41.860 --> 00:15:42.720
+I onda se na kraju
+
+227
+00:15:42.720 --> 00:15:43.320
+stiglo do toga
+
+228
+00:15:43.320 --> 00:15:44.340
+da zapravo u Fortnajtu
+
+229
+00:15:44.340 --> 00:15:45.660
+imate odvojeni party mod.
+
+230
+00:15:46.080 --> 00:15:47.300
+I onda kopiraju drugi.
+
+231
+00:15:50.400 --> 00:15:51.340
+To, opet, ja mislim,
+
+232
+00:15:51.400 --> 00:15:51.760
+ne bi moglo
+
+233
+00:15:51.760 --> 00:15:53.320
+tek tako da vam padne na pamet,
+
+234
+00:15:53.320 --> 00:15:54.700
+zato što, ako samo gajite
+
+235
+00:15:54.700 --> 00:15:56.380
+svoje osnovne pretpostavke —
+
+236
+00:15:56.460 --> 00:15:57.200
+pa da, ljudi su tu
+
+237
+00:15:57.200 --> 00:15:58.000
+da se pucaju,
+
+238
+00:15:58.140 --> 00:15:58.820
+da budu prvi —
+
+239
+00:15:58.980 --> 00:16:00.880
+a to je uglavnom intuicija,
+
+240
+00:16:01.580 --> 00:16:02.920
+ako relativno površno
+
+241
+00:16:02.920 --> 00:16:03.900
+razmišljate o problemu.
+
+242
+00:16:04.200 --> 00:16:05.120
+I onda ovde stvarno
+
+243
+00:16:05.120 --> 00:16:05.800
+treba da se trudite
+
+244
+00:16:05.800 --> 00:16:06.560
+i da odete u širinu
+
+245
+00:16:06.560 --> 00:16:07.380
+kako biste dobili
+
+246
+00:16:07.380 --> 00:16:08.060
+bolje ideje,
+
+247
+00:16:08.060 --> 00:16:09.540
+koje na kraju
+
+248
+00:16:09.540 --> 00:16:10.660
+bolje treba da reše probleme
+
+249
+00:16:10.660 --> 00:16:11.520
+i zarade vam više para.
+
+250
+00:16:13.140 --> 00:16:13.580
+Prototip.
+
+251
+00:16:15.780 --> 00:16:16.820
+Slobodno postavljajte pitanja,
+
+252
+00:16:19.500 --> 00:16:20.060
+mogu da odgovorim
+
+253
+00:16:20.060 --> 00:16:20.760
+dok ovo pričam,
+
+254
+00:16:20.800 --> 00:16:21.580
+eventualno na kraju.
+
+255
+00:16:21.960 --> 00:16:22.980
+Možemo da se vratimo na to.
+
+256
+00:16:50.420 --> 00:16:52.420
+Tu je na kraju nekako poslednja faza,
+
+257
+00:16:52.540 --> 00:16:53.440
+baš testiranje,
+
+258
+00:16:53.680 --> 00:16:55.240
+ali pre toga, opet, šta je ideja,
+
+259
+00:16:55.320 --> 00:16:56.420
+kao što je uradio IBM —
+
+260
+00:16:56.560 --> 00:16:57.420
+ispričaću vam jedan,
+
+261
+00:16:57.460 --> 00:16:58.440
+ovaj, moj neki slučaj.
+
+262
+00:16:59.260 --> 00:17:01.580
+Meni je opet pala na pamet neka ideja za aplikaciju,
+
+263
+00:17:01.860 --> 00:17:02.940
+i sad, šta sam uradio?
+
+264
+00:17:03.400 --> 00:17:05.560
+Odete na App Store ili na Google Play
+
+265
+00:17:05.560 --> 00:17:08.860
+i samo skinete prosto aplikaciju
+
+266
+00:17:08.860 --> 00:17:10.820
+za prototajpovanje aplikacija.
+
+267
+00:17:11.200 --> 00:17:12.580
+Sad se ne sećam kako se beše zove,
+
+268
+00:17:13.120 --> 00:17:15.680
+ali vi tu bukvalno prototip aplikacije
+
+269
+00:17:15.680 --> 00:17:17.100
+možete da napravite za,
+
+270
+00:17:17.240 --> 00:17:18.000
+pa, pet do šest minuta.
+
+271
+00:17:20.580 --> 00:17:21.740
+I onda ideja, umesto:
+
+272
+00:17:21.860 --> 00:17:23.220
+okej, šta sad treba da uradim?
+
+273
+00:17:23.280 --> 00:17:24.820
+Pa daj da, ono, odvojimo, ne znam,
+
+274
+00:17:24.900 --> 00:17:26.480
+15.000 evra, 20.000 evra,
+
+275
+00:17:26.580 --> 00:17:27.760
+ili 100, ili koliko god.
+
+276
+00:17:27.980 --> 00:17:29.760
+Daj da se razvija to godinu dana.
+
+277
+00:17:31.830 --> 00:17:32.810
+To ljudima treba.
+
+278
+00:17:36.430 --> 00:17:38.510
+Iako se ovde dosta radi o zdravom razumu,
+
+279
+00:17:38.770 --> 00:17:39.910
+nije ništa, kao, vau,
+
+280
+00:17:41.150 --> 00:17:42.930
+samo što je jako teško da se poštuje common sense.
+
+281
+00:17:50.630 --> 00:17:52.290
+Dropbox, znači, video-eksplejner
+
+282
+00:17:52.290 --> 00:17:53.470
+koji je ovaj ostavio,
+
+283
+00:17:53.650 --> 00:17:55.170
+bila je neka opcija prijave,
+
+284
+00:17:55.170 --> 00:17:56.530
+i on, kad se probudio sutra ujutru —
+
+285
+00:17:57.230 --> 00:17:58.930
+ako je on zacrtao kao uspeh:
+
+286
+00:17:58.970 --> 00:18:00.330
+hej, pa hiljadu ljudi da mi se prijavi,
+
+287
+00:18:00.490 --> 00:18:02.030
+to je dobar signal da nastavim dalje, —
+
+288
+00:18:02.110 --> 00:18:03.170
+neka se prijavilo deset hiljada,
+
+289
+00:18:03.270 --> 00:18:04.190
+sad lupam, nemam pojma.
+
+290
+00:18:04.850 --> 00:18:06.050
+Ima još gomila takvih primera.
+
+291
+00:18:06.530 --> 00:18:08.070
+Šta savetuje prototajpovanje?
+
+292
+00:18:08.550 --> 00:18:11.930
+Probajte da što brže i što jeftinije —
+
+293
+00:18:12.570 --> 00:18:13.550
+sad ne znam šta je prava reč,
+
+294
+00:18:13.550 --> 00:18:15.130
+ali simulirate to iskustvo
+
+295
+00:18:15.130 --> 00:18:17.090
+u koje planirate da uložite vreme,
+
+296
+00:18:17.230 --> 00:18:19.770
+pare, ljude, energiju i ostalo.
+
+297
+00:18:20.690 --> 00:18:22.230
+I onda treba da testirate.
+
+298
+00:18:23.650 --> 00:18:26.050
+U suštini, i ovo je verovatno svima poznato,
+
+299
+00:18:26.490 --> 00:18:29.150
+dakle, ukoliko napravite prototip svog rešenja,
+
+300
+00:18:29.310 --> 00:18:32.890
+on vam u suštini smanjuje cenu
+
+301
+00:18:32.890 --> 00:18:34.250
+potencijalne greške.
+
+302
+00:18:34.310 --> 00:18:35.710
+Ako ste uložili sto hiljada evra,
+
+303
+00:18:36.050 --> 00:18:37.810
+potrošili deset ljudi na godinu dana,
+
+304
+00:18:38.450 --> 00:18:38.670
+okej,
+
+305
+00:18:39.290 --> 00:18:40.190
+ali s druge strane,
+
+306
+00:18:40.270 --> 00:18:41.490
+to ste možda mogli da uradite
+
+307
+00:18:42.430 --> 00:18:44.110
+sami za dve nedelje
+
+308
+00:18:44.110 --> 00:18:46.550
+i da znate da li uopšte treba da nastavite dalje.
+
+309
+00:18:47.330 --> 00:18:49.470
+U suštini, da, to se zove sad MVP
+
+310
+00:18:49.970 --> 00:18:52.070
+ili minimum viable product,
+
+311
+00:18:52.290 --> 00:18:53.370
+koji, kad ga pravite,
+
+312
+00:18:53.450 --> 00:18:54.450
+on samo treba da ima,
+
+313
+00:18:55.530 --> 00:18:57.930
+tu treba da bude prisutno nekoliko osnovnih dimenzija.
+
+314
+00:18:59.470 --> 00:19:00.720
+Verovatno najvažnija je funkcionalnost.
+
+315
+00:19:01.430 --> 00:19:04.730
+Kad sam, recimo, ja pravio prototip te aplikacije,
+
+316
+00:19:05.110 --> 00:19:06.970
+ona je u suštini bila klikabilna.
+
+317
+00:19:15.470 --> 00:19:17.330
+I imate mogućnost da kliknete
+
+318
+00:19:17.330 --> 00:19:18.550
+na sve stvari,
+
+319
+00:19:18.730 --> 00:19:19.510
+da skrolujete,
+
+320
+00:19:19.730 --> 00:19:20.730
+to prilično deluje,
+
+321
+00:19:20.870 --> 00:19:21.630
+kao, onako,
+
+322
+00:19:21.750 --> 00:19:22.190
+okej,
+
+323
+00:19:22.650 --> 00:19:24.330
+da neko stekne utisak
+
+324
+00:19:24.330 --> 00:19:25.630
+čime se vi bavite.
+
+325
+00:19:26.070 --> 00:19:27.570
+Šta to hoćete zapravo da uradite.
+
+326
+00:19:28.430 --> 00:19:29.690
+Tako da treba da obezbedite
+
+327
+00:19:29.690 --> 00:19:30.810
+osnovne funkcionalnosti,
+
+328
+00:19:30.890 --> 00:19:31.410
+pouzdanost,
+
+329
+00:19:31.570 --> 00:19:32.270
+upotrebljivost,
+
+330
+00:19:32.310 --> 00:19:32.830
+da ljudi znaju
+
+331
+00:19:32.830 --> 00:19:34.450
+da se snađu,
+
+332
+00:19:34.450 --> 00:19:35.330
+i u suštini
+
+333
+00:19:35.330 --> 00:19:36.650
+neki minimalni užitak.
+
+334
+00:19:36.750 --> 00:19:37.830
+Aha, to tako treba.
+
+335
+00:19:37.970 --> 00:19:38.710
+U, sviđa mi se,
+
+336
+00:19:38.810 --> 00:19:39.290
+je l' ima ovo?
+
+337
+00:19:39.490 --> 00:19:39.850
+I tako dalje.
+
+338
+00:19:40.350 --> 00:19:41.270
+Sad, naravno, tu je primera
+
+339
+00:19:41.950 --> 00:19:42.350
+bezbroj.
+
+340
+00:19:42.910 --> 00:19:44.170
+Da krenemo od ovog ovde.
+
+341
+00:19:44.510 --> 00:19:45.190
+Ne znam ko od vas
+
+342
+00:19:45.190 --> 00:19:46.130
+posećuje Product Hunt.
+
+343
+00:19:47.690 --> 00:19:48.650
+E, ekstra.
+
+344
+00:19:51.570 --> 00:19:52.730
+Ali taj Rajan Huver,
+
+345
+00:19:52.870 --> 00:19:53.810
+koji ga je napravio,
+
+346
+00:19:54.090 --> 00:19:55.170
+i on je mogao da krene
+
+347
+00:19:55.170 --> 00:19:56.050
+da pravi platformu.
+
+348
+00:19:56.990 --> 00:19:58.190
+Ali, u suštini, šta je on?
+
+349
+00:19:58.350 --> 00:19:59.450
+On je samo napravio
+
+350
+00:19:59.450 --> 00:20:00.630
+običnu mejling listu
+
+351
+00:20:02.150 --> 00:20:03.390
+i okačio na Tviter.
+
+352
+00:20:03.670 --> 00:20:04.230
+I kaže:
+
+353
+00:20:04.390 --> 00:20:05.670
+ako ljudima treba
+
+354
+00:20:05.670 --> 00:20:06.790
+ovo što ja pravim,
+
+355
+00:20:06.950 --> 00:20:08.650
+prijaviće se na listu,
+
+356
+00:20:08.690 --> 00:20:08.890
+je l' da?
+
+357
+00:20:17.630 --> 00:20:18.750
+On je tvitovao,
+
+358
+00:20:18.750 --> 00:20:19.670
+i opet, sad tu treba
+
+359
+00:20:19.670 --> 00:20:21.490
+da imate nekakav cilj.
+
+360
+00:20:21.710 --> 00:20:22.650
+Znači, ako se prijavi
+
+361
+00:20:22.650 --> 00:20:23.530
+i sto ljudi,
+
+362
+00:20:24.310 --> 00:20:25.490
+okej, znači, postoji,
+
+363
+00:20:25.710 --> 00:20:26.550
+što bi se reklo,
+
+364
+00:20:26.630 --> 00:20:28.010
+potražnja na tržištu.
+
+365
+00:20:29.730 --> 00:20:30.810
+I onda je on okačio
+
+366
+00:20:30.810 --> 00:20:31.430
+i opet
+
+367
+00:20:32.470 --> 00:20:33.270
+dosta probio
+
+368
+00:20:33.270 --> 00:20:34.350
+ta svoja očekivanja.
+
+369
+00:20:35.030 --> 00:20:35.850
+Umesto sto,
+
+370
+00:20:35.990 --> 00:20:37.210
+neka se prijavilo 150 ljudi.
+
+371
+00:20:37.410 --> 00:20:38.310
+Šta to vama znači?
+
+372
+00:20:38.390 --> 00:20:39.010
+To vama znači
+
+373
+00:20:39.010 --> 00:20:40.350
+da to što vi pravite
+
+374
+00:20:41.030 --> 00:20:41.810
+ima smisla
+
+375
+00:20:41.810 --> 00:20:42.690
+za neke korisnike
+
+376
+00:20:42.690 --> 00:20:43.610
+za koje biste zapravo
+
+377
+00:20:43.610 --> 00:20:44.530
+to hteli da pravite
+
+378
+00:20:44.530 --> 00:20:45.230
+u potpunosti,
+
+379
+00:20:45.270 --> 00:20:46.310
+developujete i tako dalje.
+
+380
+00:20:48.050 --> 00:20:49.010
+To je bio jedan primer.
+
+381
+00:20:49.550 --> 00:20:50.250
+Ovo je drugi primer,
+
+382
+00:20:50.250 --> 00:20:51.750
+neka rudimentarna verzija
+
+383
+00:20:51.750 --> 00:20:52.710
+nekog iPad-a
+
+384
+00:20:52.710 --> 00:20:54.170
+ili ovog smart telefona,
+
+385
+00:20:54.170 --> 00:20:55.150
+i to je nešto
+
+386
+00:20:55.150 --> 00:20:56.330
+kao što sam, recimo,
+
+387
+00:20:56.330 --> 00:20:57.770
+ja bio pokušao da pravim.
+
+388
+00:20:58.150 --> 00:20:59.430
+Čovek koji je osmislio
+
+389
+00:20:59.430 --> 00:21:00.810
+ovo — ovo ispod, belo,
+
+390
+00:21:00.810 --> 00:21:01.990
+je zapravo drvo.
+
+391
+00:21:02.670 --> 00:21:03.610
+I on je imao
+
+392
+00:21:03.610 --> 00:21:05.570
+parče drveta u džepu
+
+393
+00:21:05.570 --> 00:21:06.950
+sa zalepljenim
+
+394
+00:21:06.950 --> 00:21:08.250
+ovim, kao, kalendarom.
+
+395
+00:21:09.510 --> 00:21:11.230
+I onda, kad se nađe
+
+396
+00:21:11.230 --> 00:21:12.390
+sa nekim prijateljima,
+
+397
+00:21:13.050 --> 00:21:14.410
+on samo to izvuče.
+
+398
+00:21:14.550 --> 00:21:15.270
+E, kao, gleda.
+
+399
+00:21:16.110 --> 00:21:17.090
+I onda ga pitaju: šta ti je to?
+
+400
+00:21:17.610 --> 00:21:19.490
+Ma, kao, imam, ja sam nešto napravio,
+
+401
+00:21:19.490 --> 00:21:20.690
+rešava taj problem,
+
+402
+00:21:20.690 --> 00:21:21.470
+odlično je.
+
+403
+00:21:21.630 --> 00:21:23.430
+I vi tu, u suštini, idealno,
+
+404
+00:21:23.430 --> 00:21:24.570
+na osnovu tih reakcija
+
+405
+00:21:24.570 --> 00:21:25.390
+treba da provalite
+
+406
+00:21:25.390 --> 00:21:26.430
+da li je to nešto
+
+407
+00:21:26.430 --> 00:21:27.430
+što je ljudima zanimljivo.
+
+408
+00:21:29.440 --> 00:21:30.380
+To vam već daje
+
+409
+00:21:30.380 --> 00:21:31.460
+inicijalne signale, pre
+
+410
+00:21:31.460 --> 00:21:31.920
+nego da mislite
+
+411
+00:21:31.920 --> 00:21:33.120
+da ste najpametniji na svetu,
+
+412
+00:21:33.120 --> 00:21:34.000
+da razumete sve,
+
+413
+00:21:34.720 --> 00:21:35.820
+i da se upropastite
+
+414
+00:21:35.820 --> 00:21:36.960
+na neki način finansijski
+
+415
+00:21:38.120 --> 00:21:39.660
+ili mentalno i emotivno.
+
+416
+00:21:40.340 --> 00:21:41.660
+Tako da to je neka osnovna ideja.
+
+417
+00:21:41.780 --> 00:21:43.420
+Kad imate ideju,
+
+418
+00:21:43.640 --> 00:21:44.880
+baš tu ideju,
+
+419
+00:21:45.080 --> 00:21:46.320
+probajte da napravite
+
+420
+00:21:46.320 --> 00:21:47.680
+nešto opipljivo,
+
+421
+00:21:47.680 --> 00:21:48.960
+što u suštini
+
+422
+00:21:50.200 --> 00:21:50.900
+simulira to.
+
+423
+00:21:58.330 --> 00:21:59.810
+Kad ljudi nešto probaju
+
+424
+00:21:59.810 --> 00:22:00.410
+i dožive —
+
+425
+00:22:00.950 --> 00:22:01.910
+zato je važno
+
+426
+00:22:01.910 --> 00:22:02.950
+da donekle uđete
+
+427
+00:22:02.950 --> 00:22:03.690
+u neke detalje —
+
+428
+00:22:04.170 --> 00:22:05.410
+tek onda oni znaju
+
+429
+00:22:05.410 --> 00:22:06.030
+da li ga hoće.
+
+430
+00:22:06.130 --> 00:22:07.050
+I sad, onda, opet
+
+431
+00:22:07.050 --> 00:22:07.870
+onaj klasični argument
+
+432
+00:22:07.870 --> 00:22:08.410
+njegov protiv
+
+433
+00:22:08.410 --> 00:22:09.370
+fokus grupa.
+
+434
+00:22:09.650 --> 00:22:10.450
+Sad, tu se možda slažemo
+
+435
+00:22:10.450 --> 00:22:11.270
+verovatno pola-pola.
+
+436
+00:22:11.450 --> 00:22:12.030
+Ljudi ne znaju
+
+437
+00:22:12.030 --> 00:22:12.610
+šta hoće.
+
+438
+00:22:13.410 --> 00:22:14.430
+Sad, vi odete, recimo,
+
+439
+00:22:14.430 --> 00:22:15.030
+na fokus grupu,
+
+440
+00:22:15.030 --> 00:22:16.110
+kao što je uradio Mekdonalds:
+
+441
+00:22:16.110 --> 00:22:16.930
+je l' hoćeš sa, ne znam,
+
+442
+00:22:16.930 --> 00:22:17.930
+dodatom jagodom? Hoću.
+
+443
+00:22:19.750 --> 00:22:20.970
+Odličan primer je ovo,
+
+444
+00:22:21.570 --> 00:22:22.490
+App Library
+
+445
+00:22:22.490 --> 00:22:23.790
+na ovom najnovijem
+
+446
+00:22:23.790 --> 00:22:25.350
+apdejtu iOS-ovom.
+
+447
+00:22:25.690 --> 00:22:26.370
+Znači, mene da je neko
+
+448
+00:22:26.370 --> 00:22:27.170
+pitao na fokus grupi —
+
+449
+00:22:27.170 --> 00:22:28.690
+vrlo nepotrebna stvar skroz.
+
+450
+00:22:29.790 --> 00:22:30.910
+Kad sam instalirao,
+
+451
+00:22:30.910 --> 00:22:32.150
+ja mislim da se sigurno
+
+452
+00:22:32.150 --> 00:22:32.770
+moj screen time
+
+453
+00:22:32.770 --> 00:22:33.630
+povećao, nemam pojma.
+
+454
+00:22:34.030 --> 00:22:34.610
+Zato što ja
+
+455
+00:22:34.610 --> 00:22:35.790
+brauzujem, brauzujem, brauzujem,
+
+456
+00:22:35.790 --> 00:22:36.730
+i na kraju završim
+
+457
+00:22:36.730 --> 00:22:38.010
+opet u istoj aplikaciji.
+
+458
+00:22:44.110 --> 00:22:45.290
+Tako da, kad objašnjavate
+
+459
+00:22:45.290 --> 00:22:45.810
+ljudima ideje,
+
+460
+00:22:45.810 --> 00:22:46.510
+oni mogu da kažu:
+
+461
+00:22:46.510 --> 00:22:47.630
+ne sviđa mi se,
+
+462
+00:22:47.630 --> 00:22:47.990
+nemam pojma.
+
+463
+00:22:48.190 --> 00:22:49.650
+A zapravo, kad dožive,
+
+464
+00:22:49.650 --> 00:22:50.670
+to može da bude
+
+465
+00:22:50.670 --> 00:22:51.710
+potpuno drugačiji fidbek.
+
+466
+00:22:51.950 --> 00:22:52.950
+Tako da ta fokus grupa
+
+467
+00:22:52.950 --> 00:22:53.970
+prosto ima potencijala,
+
+468
+00:22:53.970 --> 00:22:54.890
+ako je ne vodite
+
+469
+00:22:54.890 --> 00:22:56.010
+ispravno, da vas zavara.
+
+470
+00:22:57.010 --> 00:22:57.710
+I na kraju,
+
+471
+00:22:59.270 --> 00:22:59.750
+testiranje.
+
+472
+00:23:13.230 --> 00:23:14.090
+Vi pravite to
+
+473
+00:23:14.090 --> 00:23:15.110
+zato što verujete
+
+474
+00:23:15.110 --> 00:23:15.870
+da nekom treba.
+
+475
+00:23:19.670 --> 00:23:20.530
+I u suštini
+
+476
+00:23:20.530 --> 00:23:20.930
+to je samo,
+
+477
+00:23:20.930 --> 00:23:21.610
+ništa drugo,
+
+478
+00:23:21.610 --> 00:23:22.290
+do vaša vera.
+
+479
+00:24:17.820 --> 00:24:18.580
+Pa, pazite,
+
+480
+00:24:20.760 --> 00:24:21.940
+ima gomila proizvoda
+
+481
+00:24:21.940 --> 00:24:22.600
+koja je napravljena,
+
+482
+00:24:22.740 --> 00:24:23.780
+ali sad tu treba biti,
+
+483
+00:24:23.780 --> 00:24:24.380
+opet, dovoljno,
+
+484
+00:24:24.380 --> 00:24:24.740
+ja mislim,
+
+485
+00:24:25.200 --> 00:24:25.640
+introspektivan.
+
+486
+00:24:27.040 --> 00:24:27.480
+Recimo,
+
+487
+00:24:27.640 --> 00:24:28.300
+taj prototip
+
+488
+00:24:28.300 --> 00:24:29.120
+koji sam ja razvio,
+
+489
+00:24:29.480 --> 00:24:29.980
+ja sam nešto
+
+490
+00:24:29.980 --> 00:24:30.520
+u vezi knjiga.
+
+491
+00:24:31.320 --> 00:24:32.240
+Pošto volim knjige.
+
+492
+00:24:33.100 --> 00:24:33.900
+I ne mogu,
+
+493
+00:24:33.900 --> 00:24:34.340
+ne mogu lako
+
+494
+00:24:34.340 --> 00:24:34.920
+da nađem knjige.
+
+495
+00:24:35.000 --> 00:24:35.680
+Okej, Goodreads,
+
+496
+00:24:36.740 --> 00:24:37.780
+fali mu gomila stvari,
+
+497
+00:24:37.860 --> 00:24:38.440
+ali završava posao.
+
+498
+00:24:39.220 --> 00:24:39.960
+I onda sam ja
+
+499
+00:24:39.960 --> 00:24:40.680
+dosta dugo razmišljao
+
+500
+00:24:40.680 --> 00:24:41.620
+šta je moj problem
+
+501
+00:24:41.620 --> 00:24:42.500
+s tim što ne mogu
+
+502
+00:24:42.500 --> 00:24:42.980
+da pronađem
+
+503
+00:24:42.980 --> 00:24:43.600
+vrhunske knjige
+
+504
+00:24:43.600 --> 00:24:44.020
+na netu.
+
+505
+00:24:48.660 --> 00:24:49.100
+Naravno,
+
+506
+00:24:49.200 --> 00:24:50.040
+dešava se da u stvari
+
+507
+00:24:50.040 --> 00:24:51.200
+vi hoćete da rešite
+
+508
+00:24:51.200 --> 00:24:52.260
+vaš duboko
+
+509
+00:24:52.260 --> 00:24:53.300
+intimni problem,
+
+510
+00:24:53.300 --> 00:24:54.380
+i da zapravo
+
+511
+00:24:54.380 --> 00:24:55.260
+na marketu postoji
+
+512
+00:24:55.260 --> 00:24:56.160
+ogroman broj ljudi
+
+513
+00:24:56.780 --> 00:24:58.020
+koji deli vaš problem.
+
+514
+00:24:58.400 --> 00:24:58.940
+Jer, u suštini,
+
+515
+00:24:58.940 --> 00:24:59.320
+kad pogledate,
+
+516
+00:24:59.400 --> 00:24:59.960
+svi smo mi isti.
+
+517
+00:25:00.520 --> 00:25:00.960
+Ljudi.
+
+518
+00:25:01.860 --> 00:25:03.140
+Neka bazična ljudska priroda.
+
+519
+00:25:05.080 --> 00:25:05.840
+Odlično pitanje,
+
+520
+00:25:05.840 --> 00:25:06.300
+kako mi
+
+521
+00:25:06.300 --> 00:25:07.380
+prototipujemo igre,
+
+522
+00:25:07.880 --> 00:25:08.580
+sad ću da se vratim
+
+523
+00:25:08.580 --> 00:25:09.180
+na to, pošto imamo
+
+524
+00:25:09.180 --> 00:25:09.940
+još pet i po minuta.
+
+525
+00:25:10.400 --> 00:25:11.020
+Dakle, testiranje.
+
+526
+00:25:16.540 --> 00:25:17.260
+Kako smo mi, recimo,
+
+527
+00:25:17.260 --> 00:25:18.300
+testirali jednu igru
+
+528
+00:25:19.140 --> 00:25:20.000
+koja je na kraju
+
+529
+00:25:20.000 --> 00:25:20.760
+završila na ovom
+
+530
+00:25:20.760 --> 00:25:21.080
+instant
+
+531
+00:25:23.380 --> 00:25:23.940
+Fejsbukovom
+
+532
+00:25:23.940 --> 00:25:24.660
+gejmingu,
+
+533
+00:25:24.660 --> 00:25:25.800
+i koja je
+
+534
+00:25:25.800 --> 00:25:26.480
+stvarno vrhunski
+
+535
+00:25:26.480 --> 00:25:27.180
+performovala.
+
+536
+00:25:33.150 --> 00:25:33.810
+Slično ovako.
+
+537
+00:25:35.710 --> 00:25:36.450
+U suštini,
+
+538
+00:25:36.450 --> 00:25:37.370
+uzeli smo
+
+539
+00:25:37.370 --> 00:25:37.810
+dva
+
+540
+00:25:38.550 --> 00:25:38.830
+telefona
+
+541
+00:25:39.230 --> 00:25:40.050
+koji imaju
+
+542
+00:25:40.050 --> 00:25:40.610
+prototip,
+
+543
+00:25:40.610 --> 00:25:41.570
+i s Novog Beograda
+
+544
+00:25:41.570 --> 00:25:42.010
+smo došli
+
+545
+00:25:42.010 --> 00:25:42.750
+na Obilićev venac.
+
+546
+00:25:44.210 --> 00:25:44.470
+U stvari,
+
+547
+00:25:44.530 --> 00:25:45.130
+smo prvo krenuli
+
+548
+00:25:45.130 --> 00:25:46.550
+u neku kladionicu
+
+549
+00:25:46.550 --> 00:25:47.210
+na Novom Beogradu,
+
+550
+00:25:47.210 --> 00:25:48.010
+ali su nas izbacili,
+
+551
+00:25:48.710 --> 00:25:49.690
+jer smo rekli, kao,
+
+552
+00:25:49.690 --> 00:25:50.630
+pošto se tu vrte
+
+553
+00:25:50.630 --> 00:25:51.490
+fudbalski fanovi,
+
+554
+00:25:51.490 --> 00:25:52.030
+je l' možemo nešto
+
+555
+00:25:52.030 --> 00:25:52.450
+da probamo?
+
+556
+00:25:52.450 --> 00:25:52.970
+Nema šanse,
+
+557
+00:25:52.970 --> 00:25:53.830
+kao, palite.
+
+558
+00:25:54.790 --> 00:25:55.470
+I onda smo
+
+559
+00:25:55.470 --> 00:25:57.150
+otišli iz kladionice.
+
+560
+00:25:57.330 --> 00:25:58.630
+Šta nam je sledeća opcija?
+
+561
+00:25:58.690 --> 00:25:59.010
+Otišli smo
+
+562
+00:25:59.010 --> 00:25:59.810
+na Obilićev venac.
+
+563
+00:26:01.190 --> 00:26:01.430
+Zato što smo
+
+564
+00:26:01.430 --> 00:26:02.010
+pretpostavili
+
+565
+00:26:02.010 --> 00:26:02.750
+da tu možda sede
+
+566
+00:26:02.750 --> 00:26:03.410
+i piju pivo
+
+567
+00:26:03.410 --> 00:26:04.470
+ljudi koji vole fudbal.
+
+568
+00:26:06.030 --> 00:26:06.710
+I onda smo
+
+569
+00:26:06.710 --> 00:26:07.450
+jednostavno prišli.
+
+570
+00:26:07.830 --> 00:26:08.490
+Ćao, ćao.
+
+571
+00:26:09.990 --> 00:26:10.710
+Pratiš možda
+
+572
+00:26:10.710 --> 00:26:11.290
+fudbal?
+
+573
+00:26:11.610 --> 00:26:12.030
+Je l' igraš
+
+574
+00:26:12.030 --> 00:26:12.770
+neku igru?
+
+575
+00:26:20.610 --> 00:26:21.270
+Je l' igraš nešto?
+
+576
+00:26:21.350 --> 00:26:22.070
+Igram.
+
+577
+00:26:23.330 --> 00:26:24.390
+Je l' možeš da odvojiš
+
+578
+00:26:24.830 --> 00:26:26.070
+20 minuta za mene,
+
+579
+00:26:27.350 --> 00:26:28.470
+i ja te častim pivom?
+
+580
+00:26:28.870 --> 00:26:29.310
+Može.
+
+581
+00:26:29.690 --> 00:26:30.650
+Nešto su napravili
+
+582
+00:26:30.650 --> 00:26:31.250
+moji drugari.
+
+583
+00:26:31.650 --> 00:26:32.510
+Je l' možeš da probaš?
+
+584
+00:26:32.590 --> 00:26:32.910
+Hoću.
+
+585
+00:26:33.190 --> 00:26:34.190
+I onda sednemo.
+
+586
+00:26:34.250 --> 00:26:35.210
+I tako smo sedeli danima
+
+587
+00:26:35.210 --> 00:26:36.130
+s ljudima
+
+588
+00:26:36.130 --> 00:26:36.970
+na Obilićevom vencu,
+
+589
+00:26:36.970 --> 00:26:37.970
+na Studentskom trgu.
+
+590
+00:26:38.750 --> 00:26:39.730
+I ljudi su igrali.
+
+591
+00:26:39.890 --> 00:26:40.430
+I tu smo —
+
+592
+00:26:40.430 --> 00:26:41.370
+opet, kad se radi
+
+593
+00:26:41.370 --> 00:26:42.050
+o testiranju,
+
+594
+00:26:42.890 --> 00:26:43.470
+najvažnije je
+
+595
+00:26:43.470 --> 00:26:44.110
+razmišljati
+
+596
+00:26:44.110 --> 00:26:46.190
+o tom ponašanju.
+
+597
+00:26:46.190 --> 00:26:47.030
+Može njima da se sviđa
+
+598
+00:26:47.030 --> 00:26:47.710
+ili ne sviđa,
+
+599
+00:26:47.710 --> 00:26:48.750
+ali odlična ideja
+
+600
+00:26:48.750 --> 00:26:49.750
+je zapravo da vidite
+
+601
+00:26:49.750 --> 00:26:50.490
+da li znaju
+
+602
+00:26:50.490 --> 00:26:51.410
+da koriste
+
+603
+00:26:51.410 --> 00:26:52.390
+to što ste im dali,
+
+604
+00:26:52.390 --> 00:26:53.150
+i u suštini
+
+605
+00:26:53.150 --> 00:26:54.030
+na kraju da ih pitate:
+
+606
+00:26:54.870 --> 00:26:56.250
+je li ovo nešto što bi igrao?
+
+607
+00:26:56.630 --> 00:26:57.250
+Zašto da?
+
+608
+00:26:57.330 --> 00:26:57.690
+Zašto ne?
+
+609
+00:26:59.010 --> 00:26:59.810
+Imamo još
+
+610
+00:26:59.810 --> 00:27:00.670
+tri i po minuta.
+
+611
+00:27:04.130 --> 00:27:05.050
+Design sprint
+
+612
+00:27:05.050 --> 00:27:06.790
+možda možete da izguglate,
+
+613
+00:27:06.790 --> 00:27:07.750
+ali u suštini
+
+614
+00:27:07.750 --> 00:27:09.310
+to je nekakva ideja
+
+615
+00:27:09.310 --> 00:27:10.330
+koja vam savetuje
+
+616
+00:27:10.330 --> 00:27:11.170
+kako da sve ovo
+
+617
+00:27:11.170 --> 00:27:11.710
+što sam pričao
+
+618
+00:27:11.710 --> 00:27:12.590
+uradite za nedelju dana.
+
+619
+00:27:14.370 --> 00:27:14.970
+Izvodljivo je.
+
+620
+00:27:17.600 --> 00:27:18.640
+I na kraju, da.
+
+621
+00:27:22.440 --> 00:27:24.440
+Ako hoćete da pravite nešto,
+
+622
+00:27:24.440 --> 00:27:25.540
+provedite vreme
+
+623
+00:27:25.540 --> 00:27:25.960
+s ljudima
+
+624
+00:27:25.960 --> 00:27:26.840
+za koje to pravite.
+
+625
+00:27:30.380 --> 00:27:31.400
+Razumite problem
+
+626
+00:27:31.400 --> 00:27:32.340
+koji rešavate,
+
+627
+00:27:32.340 --> 00:27:32.820
+tako što,
+
+628
+00:27:32.820 --> 00:27:34.100
+opet, sedite malo više
+
+629
+00:27:34.100 --> 00:27:34.360
+s njima,
+
+630
+00:27:34.360 --> 00:27:35.000
+postavite im
+
+631
+00:27:35.000 --> 00:27:35.960
+dodatno potpitanje.
+
+632
+00:27:35.960 --> 00:27:37.100
+Idite slobodno
+
+633
+00:27:37.100 --> 00:27:37.800
+široko
+
+634
+00:27:37.800 --> 00:27:38.780
+sa idejama
+
+635
+00:27:38.780 --> 00:27:40.320
+za rešenje tog problema.
+
+636
+00:27:41.120 --> 00:27:42.180
+Probajte da napravite
+
+637
+00:27:42.180 --> 00:27:42.840
+rudimentarno,
+
+638
+00:27:45.740 --> 00:27:46.620
+da oni to,
+
+639
+00:27:46.620 --> 00:27:47.800
+da ljudi to zapravo
+
+640
+00:27:47.800 --> 00:27:48.480
+mogu da probaju,
+
+641
+00:27:48.480 --> 00:27:48.980
+odnosno
+
+642
+00:27:48.980 --> 00:27:49.600
+iskuse,
+
+643
+00:27:49.600 --> 00:27:50.520
+to je ključna reč,
+
+644
+00:27:50.520 --> 00:27:51.260
+i na kraju
+
+645
+00:27:51.260 --> 00:27:52.200
+dajte to ljudima,
+
+646
+00:27:52.200 --> 00:27:53.060
+kako bi oni mogli
+
+647
+00:27:53.060 --> 00:27:54.260
+da vide kako im se sve to čini.
+
+648
+00:27:56.300 --> 00:27:56.980
+To je to.
+
+649
+00:28:00.220 --> 00:28:01.180
+Na kraju je bilo ovde
+
+650
+00:28:01.180 --> 00:28:01.740
+jedno pitanje:
+
+651
+00:28:01.740 --> 00:28:02.780
+kako prototajpujemo
+
+652
+00:28:02.780 --> 00:28:03.600
+igre u Nordeusu.
+
+653
+00:28:04.380 --> 00:28:05.180
+Sad, igre su
+
+654
+00:28:05.180 --> 00:28:06.500
+dosta specifične
+
+655
+00:28:06.500 --> 00:28:08.360
+iz razloga što tu zapravo,
+
+656
+00:28:08.820 --> 00:28:09.580
+da bi ona
+
+657
+00:28:10.180 --> 00:28:11.300
+ličila na igru,
+
+658
+00:28:11.300 --> 00:28:12.560
+ona mora da se
+
+659
+00:28:12.560 --> 00:28:13.100
+developuje.
+
+660
+00:28:13.600 --> 00:28:14.400
+Tako da se ona
+
+661
+00:28:14.400 --> 00:28:15.020
+developuje,
+
+662
+00:28:15.020 --> 00:28:16.100
+ali opet gledamo da to bude
+
+663
+00:28:16.100 --> 00:28:16.540
+jako malo,
+
+664
+00:28:16.540 --> 00:28:17.540
+neka su to dve-tri nedelje.
+
+665
+00:28:17.900 --> 00:28:18.420
+S druge strane,
+
+666
+00:28:18.420 --> 00:28:19.240
+ako testirate
+
+667
+00:28:19.240 --> 00:28:19.840
+fičere,
+
+668
+00:28:19.840 --> 00:28:20.960
+odnosno stvari
+
+669
+00:28:20.960 --> 00:28:22.300
+koje su nekako statične —
+
+670
+00:28:24.040 --> 00:28:24.480
+meni,
+
+671
+00:28:25.420 --> 00:28:25.860
+ikone
+
+672
+00:28:25.860 --> 00:28:26.660
+i tako dalje —
+
+673
+00:28:26.660 --> 00:28:27.740
+to lako može da se napravi
+
+674
+00:28:27.740 --> 00:28:28.420
+u XD-u,
+
+675
+00:28:29.160 --> 00:28:30.220
+i onda je dobro
+
+676
+00:28:30.220 --> 00:28:30.940
+da to zapravo
+
+677
+00:28:30.940 --> 00:28:31.760
+bude povezano, opet,
+
+678
+00:28:31.760 --> 00:28:32.720
+sa nekim drugim ekranima,
+
+679
+00:28:32.720 --> 00:28:33.680
+i mi pozovemo ljude:
+
+680
+00:28:34.740 --> 00:28:35.560
+Ćao, ćao,
+
+681
+00:28:36.660 --> 00:28:38.280
+evo ti ovo, igraj.
+
+682
+00:28:39.400 --> 00:28:40.020
+Šta je?
+
+683
+00:28:40.020 --> 00:28:40.600
+Pa, kao, nemam pojma
+
+684
+00:28:40.600 --> 00:28:40.820
+šta je,
+
+685
+00:28:40.820 --> 00:28:41.280
+probaj da igraš,
+
+686
+00:28:41.280 --> 00:28:42.180
+pa mi ti kaži šta je.
+
+687
+00:28:42.180 --> 00:28:43.100
+I onda tu opet
+
+688
+00:28:43.100 --> 00:28:44.380
+sakupite gomilu informacija
+
+689
+00:28:44.380 --> 00:28:45.400
+iz njihove perspektive:
+
+690
+00:28:45.400 --> 00:28:46.800
+šta je to što vi pravite
+
+691
+00:28:46.800 --> 00:28:48.040
+i kako se njima čini.
+
+692
+00:28:49.970 --> 00:28:50.930
+Ekstra, završili smo
+
+693
+00:28:50.930 --> 00:28:52.450
+za manje od 30 minuta,
+
+694
+00:28:52.450 --> 00:28:52.930
+tako da
+
+695
+00:28:52.930 --> 00:28:53.670
+slobodno možete
+
+696
+00:28:53.670 --> 00:28:54.950
+da mi postavite
+
+697
+00:28:54.950 --> 00:28:55.590
+neko pitanje.
