@@ -7,11 +7,11 @@ import 'theme.dart';
 import 'videos.dart';
 
 /// Карточка ролика в списке. Имя канала ведёт на страницу креатора, если [showChannel] включён.
-/// Открытые ролики помечены «Просмотрено» — в истории эта метка лишняя, там её выключает [showWatched].
+/// Внизу превью — шкала просмотра, как на YouTube.
 class VideoCard extends StatelessWidget {
-  const VideoCard(this.v, {super.key, this.showChannel = true, this.showWatched = true});
+  const VideoCard(this.v, {super.key, this.showChannel = true});
   final Video v;
-  final bool showChannel, showWatched;
+  final bool showChannel;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class VideoCard extends StatelessWidget {
         onTap: () => openVideo(context, v),
         child: Padding(
           padding: EdgeInsets.all(8),
-          // Метки меняются, пока карточка на экране: ролик открыли, сохранили из него слово.
+          // Метки и шкала меняются, пока карточка на экране: ролик посмотрели, сохранили из него слово.
           child: ListenableBuilder(listenable: store, builder: (context, _) => _body(context, placeholder)),
         ),
       ),
@@ -37,7 +37,7 @@ class VideoCard extends StatelessWidget {
   Widget _body(BuildContext context, Widget placeholder) {
     // У своего ролика — состояние субтитров. Уровень (B1, B2) пока не показываем.
     final tag = v.mine ? (store.myVideo(v.id)?.status.label ?? '') : '';
-    final watched = showWatched && store.isWatched(v.id);
+    final progress = store.progressOf(v);
     final words = store.wordCount(v.id);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,21 +56,26 @@ class VideoCard extends StatelessWidget {
                   errorBuilder: (_, _, _) => placeholder,
                 ),
                 if (tag.isNotEmpty) Positioned(left: 10, top: 10, child: _Tag(tag, accent: true)),
-                if (watched || words > 0)
+                if (words > 0)
                   Positioned(
                     left: 10,
-                    right: 70,
                     bottom: 10,
-                    child: Wrap(
-                      spacing: 6,
-                      runSpacing: 6,
-                      children: [
-                        if (watched) _Tag('Просмотрено', icon: Icons.check_rounded),
-                        if (words > 0) _Tag('$words ${plural(words, 'слово', 'слова', 'слов')}', accent: true),
-                      ],
-                    ),
+                    child: _Tag('$words ${plural(words, 'слово', 'слова', 'слов')}', accent: true),
                   ),
                 if (v.duration.isNotEmpty) Positioned(right: 10, bottom: 10, child: _Tag(v.duration)),
+                if (progress > 0)
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: LinearProgressIndicator(
+                      // Едва начатый ролик всё равно должен показать заметный кусочек шкалы.
+                      value: progress < 0.03 ? 0.03 : progress,
+                      minHeight: 4,
+                      color: cViolet,
+                      backgroundColor: cOnInk.withValues(alpha: 0.35),
+                    ),
+                  ),
               ],
             ),
           ),
@@ -150,10 +155,9 @@ class VideoCard extends StatelessWidget {
 }
 
 class _Tag extends StatelessWidget {
-  const _Tag(this.text, {this.accent = false, this.icon});
+  const _Tag(this.text, {this.accent = false});
   final String text;
   final bool accent;
-  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -163,15 +167,9 @@ class _Tag extends StatelessWidget {
         color: accent ? cViolet : cInk.withValues(alpha: 0.85),
         borderRadius: BorderRadius.circular(999),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (icon != null) ...[Icon(icon, size: 14, color: accent ? cOnViolet : cOnInk), SizedBox(width: 4)],
-          Text(
-            text,
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: accent ? cOnViolet : cOnInk),
-          ),
-        ],
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: accent ? cOnViolet : cOnInk),
       ),
     );
   }

@@ -1,0 +1,601 @@
+WEBVTT
+
+1
+00:00:00.080 --> 00:00:04.080
+Sedite u kafiću i gledate kako se stvara ogroman red.
+
+2
+00:00:04.080 --> 00:00:09.120
+Ulaze ljudi koji su na pauzi na poslu i koji žele da naruče sebi kafu.
+
+3
+00:00:09.120 --> 00:00:11.060
+Razmišljate kako su verovatno svi nervozni,
+
+4
+00:00:11.060 --> 00:00:14.300
+jer će im sad cela pauza otići na čekanje u redu za kafu,
+
+5
+00:00:14.300 --> 00:00:17.040
+i odlučujete da istražite ovaj problem.
+
+6
+00:00:18.480 --> 00:00:23.340
+Ćao, ljudi, danas pričamo o tome kako da što više saznate iz svojih intervjua
+
+7
+00:00:23.340 --> 00:00:26.240
+i kako da strukturirate dobijene podatke.
+
+8
+00:00:26.240 --> 00:00:27.180
+Pa hajde da krenemo.
+
+9
+00:00:27.180 --> 00:00:29.300
+Hajde da se vratimo na prethodni primer.
+
+10
+00:00:29.300 --> 00:00:32.840
+Sad razmislite sa kojim to sve ljudima možete da pričate o ovom problemu.
+
+11
+00:00:33.140 --> 00:00:35.480
+Ko sve to može da ima ovaj problem?
+
+12
+00:00:35.480 --> 00:00:38.400
+Da ga jako nervira to što mora dugo da čeka u redu.
+
+13
+00:00:39.200 --> 00:00:42.420
+I tako pronađete 10 osoba sa kojima ćete da obavite intervju.
+
+14
+00:00:42.660 --> 00:00:47.360
+Okej, obavite intervju, ali tokom intervjua vi imate vrlo malo vremena.
+
+15
+00:00:47.360 --> 00:00:51.260
+Jedino što stižete jeste brzo da zabeležite neke stvari koje čujete
+
+16
+00:00:51.260 --> 00:00:56.460
+i da zabeležite što više stvari, ali kasnije ta forma nije pregledna.
+
+17
+00:00:56.460 --> 00:00:59.800
+I da biste dobili neka saznanja iz ovih intervjua,
+
+18
+00:00:59.800 --> 00:01:03.700
+sada morate da nekako strukturirate ove podatke kako biste saznali nešto novo.
+
+19
+00:01:04.100 --> 00:01:09.700
+Jedna od tehnika koju koriste UX istraživači da bi ovo uradili jeste mapa empatije.
+
+20
+00:01:09.700 --> 00:01:13.280
+Da biste što bolje razumeli šta je mapa empatije,
+
+21
+00:01:13.280 --> 00:01:15.100
+pokazaću vam na jednom praktičnom primeru.
+
+22
+00:01:15.380 --> 00:01:20.400
+Ja ću za ovaj primer koristiti Figmu, ali bitno je da zapamtite da to nije obavezno.
+
+23
+00:01:20.400 --> 00:01:22.660
+Vi mapu empatije možete da napravite na papiru.
+
+24
+00:01:22.940 --> 00:01:28.020
+Prvo u brauzeru ukucate „Figma“, i ako nemate nalog, prvo napravite nalog,
+
+25
+00:01:28.020 --> 00:01:32.280
+a kada napravite nalog, odvešće vas na ovu neku početnu stranicu.
+
+26
+00:01:32.280 --> 00:01:38.000
+U sekciji FigJam and Templates možete da izaberete Empathy Map
+
+27
+00:01:38.000 --> 00:01:40.520
+i kliknete Use Template.
+
+28
+00:01:42.580 --> 00:01:48.860
+Figma će vam sada otvoriti taj templejt, i sa leve strane imate neka bazična uputstva.
+
+29
+00:01:49.060 --> 00:01:52.380
+Pored toga su Persona information,
+
+30
+00:01:52.380 --> 00:01:55.420
+to su informacije koje su vezane za osobu koju intervjuišete.
+
+31
+00:01:56.030 --> 00:01:58.420
+I pored toga je mapa empatije.
+
+32
+00:01:58.420 --> 00:02:03.940
+Bitno je da zapamtite da nema svaki resurs isti izgled svoje mape empatije,
+
+33
+00:02:03.940 --> 00:02:09.220
+odnosno neko ima četiri sekcije, neko ima šest sekcija, u zavisnosti kako njima odgovara.
+
+34
+00:02:09.720 --> 00:02:12.880
+U Figmi dobijate šest sekcija,
+
+35
+00:02:12.880 --> 00:02:16.680
+ali na primeru koji ću vam ja pokazati, ja sam koristila četiri sekcije.
+
+36
+00:02:16.920 --> 00:02:20.080
+Sada ću preći na primer koji sam ja obrađivala.
+
+37
+00:02:21.500 --> 00:02:28.100
+Hajde da kažemo da smo za potrebe ovog malopređašnjeg problema ispitivali Saru Sarić.
+
+38
+00:02:29.080 --> 00:02:35.140
+Sara Sarić ima 27 godina, živi u velikom gradu, neka to bude Beograd.
+
+39
+00:02:36.240 --> 00:02:40.920
+Ima natrpan raspored na poslu, znači, stalno u nekoj gužvi, puno radi.
+
+40
+00:02:41.620 --> 00:02:44.300
+I Sara brine o zdravlju i fitnesu.
+
+41
+00:02:45.780 --> 00:02:51.520
+E sad, sa desne strane možete da vidite otprilike neke moje beleške
+
+42
+00:02:51.520 --> 00:02:54.260
+koje sam uhvatila dok sam pričala sa Sarom.
+
+43
+00:02:54.260 --> 00:02:55.840
+I sad ću vam pročitati.
+
+44
+00:03:25.840 --> 00:03:27.220
+U toku intervjua.
+
+45
+00:03:27.780 --> 00:03:32.820
+E sad, moja mapa empatije sastoji se iz četiri sekcije.
+
+46
+00:03:33.180 --> 00:03:37.280
+Prva sekcija je „kaže“, druga sekcija je „misli“,
+
+47
+00:03:37.280 --> 00:03:41.120
+treća sekcija je „radi“ i četvrta sekcija je „oseća“.
+
+48
+00:03:41.120 --> 00:03:47.320
+U sredini možete da vidite malu sličicu Sare, kako bi ona bila u nekom fokusu.
+
+49
+00:03:48.480 --> 00:03:50.880
+Sad ćemo proći postupno kroz svaku sekciju
+
+50
+00:03:50.880 --> 00:03:53.800
+i objasniti šta treba da sadrži svaka sekcija.
+
+51
+00:03:54.960 --> 00:03:59.100
+Mape empatije obično konstruišete uz pomoć onih sticky notova.
+
+52
+00:03:59.420 --> 00:04:04.060
+Odnosno, ovde u Figmi ih prevlačite, a ako biste koristili papir,
+
+53
+00:04:04.060 --> 00:04:08.740
+kupili biste mali set sticky notova i zalepili biste ih u svako od polja.
+
+54
+00:04:09.760 --> 00:04:12.500
+E sad, prva sekcija je „kaže“.
+
+55
+00:04:12.500 --> 00:04:20.260
+U „kaže“ sekciju treba da na sticky notove zapišemo sve ono što nam je Sara rekla,
+
+56
+00:04:20.260 --> 00:04:23.760
+a nama je na neki način zazvučalo značajno.
+
+57
+00:04:24.380 --> 00:04:27.080
+Odnosno, na neki način nam je privuklo više pažnje.
+
+58
+00:04:27.480 --> 00:04:31.800
+Ono što sam ja stavila na svoje sticky notove u sekciju „kaže“
+
+59
+00:04:31.800 --> 00:04:34.640
+jeste da je Sara rekla: koristi aplikaciju.
+
+60
+00:04:35.720 --> 00:04:40.660
+Druga stvar koju je Sara rekla je da voli jednostavnost.
+
+61
+00:04:43.090 --> 00:04:47.010
+Onda, Sara je takođe rekla da voli domaću kafu.
+
+62
+00:04:48.250 --> 00:04:55.310
+I neka četvrta stvar koja je meni zapala, koja je meni zazvučala značajno,
+
+63
+00:04:55.310 --> 00:04:57.870
+jeste da ona pazi da ne prospe kafu.
+
+64
+00:04:58.110 --> 00:05:01.250
+Za vas će ovi sticky notovi možda izgledati drugačije,
+
+65
+00:05:01.250 --> 00:05:08.030
+ali ovo je nešto kako sam ja shvatila taj naš razgovor i ono što je meni zazvučalo bitno.
+
+66
+00:05:08.030 --> 00:05:13.290
+Druga sekcija je sekcija „misli“, i možete da primetite da u odnosu na prvu sekciju
+
+67
+00:05:13.290 --> 00:05:17.270
+koristim drugu boju sticky notova da bih ih nekako razdvojila.
+
+68
+00:05:18.710 --> 00:05:25.150
+Drugu boju sticky nota u Figmi možete da izaberete samo pomoću ove strelice pored sticky nota.
+
+69
+00:05:26.250 --> 00:05:32.370
+A u sekciji „misli“ treba da napišete šta su to neka Sarina uverenja,
+
+70
+00:05:32.370 --> 00:05:37.270
+odnosno šta je to što je ona implicitno rekla.
+
+71
+00:05:37.490 --> 00:05:42.790
+Znači, nije vam rekla konkretno, ali ste mogli da zaključite na osnovu onoga što vam je rekla.
+
+72
+00:05:43.410 --> 00:05:47.430
+E sad, da bih vam lakše to objasnila, ispričaću vam kroz primere.
+
+73
+00:05:47.970 --> 00:05:52.390
+Znači, Sara je rekla da je bitno da ima fizičku aktivnost u toku dana.
+
+74
+00:05:52.650 --> 00:05:53.970
+Kako sam ja ovo zaključila?
+
+75
+00:05:54.330 --> 00:05:59.090
+Pa, Sara je rekla da na posao ide bajsom, jer ne stiže radnim danima da ode na trening.
+
+76
+00:05:59.470 --> 00:06:02.670
+Znači, iz toga sam ja zaključila da je njoj bitna fizička aktivnost.
+
+77
+00:06:03.390 --> 00:06:08.070
+Druga stvar koju sam ja zaključila jeste da misli da joj treba kafa čim ustane.
+
+78
+00:06:08.630 --> 00:06:12.450
+Znači, Sara je rekla da svaki dan pre posla ona ide prvo po kafu.
+
+79
+00:06:12.450 --> 00:06:16.910
+I treća stvar koju sam zaključila jeste da misli da nema vremena.
+
+80
+00:06:17.210 --> 00:06:23.590
+Odnosno, Sara, kada je rekla zašto ne ide u obližnji kafić, nego uzima kafu u Starbaksu,
+
+81
+00:06:23.590 --> 00:06:27.010
+ona je rekla da onda neće čekati red.
+
+82
+00:06:27.230 --> 00:06:29.670
+Okej, kada smo popunili prve dve sekcije,
+
+83
+00:06:29.670 --> 00:06:32.510
+prelazimo na treću sekciju, a to je sekcija „radi“.
+
+84
+00:06:33.070 --> 00:06:35.610
+Odnosno, šta je nama Sara rekla da radi?
+
+85
+00:06:36.530 --> 00:06:39.350
+Pa, u ovoj sekciji ja sam izdvojila tri stvari.
+
+86
+00:06:39.350 --> 00:06:43.590
+Znači, Sara je nama rekla da vozi bajs, odnosno vozi bajs kada ide na posao.
+
+87
+00:06:44.110 --> 00:06:48.690
+Sara je nama rekla da pije kafu, kupuje kafu svaki dan pre posla.
+
+88
+00:06:49.750 --> 00:06:53.510
+I Sara je nama rekla da koristi dosta telefon.
+
+89
+00:06:53.690 --> 00:06:58.110
+E sad, ovo nije eksplicitno rekla, ali možete nekako da zaključite,
+
+90
+00:06:58.110 --> 00:07:03.710
+zato što ima posebnu aplikaciju koju koristi samo da bi naručila sebi kafu pre posla.
+
+91
+00:07:03.710 --> 00:07:09.170
+Sad, kad smo završili ovu treću sekciju „radi“, prelazimo na četvrtu i poslednju sekciju,
+
+92
+00:07:09.310 --> 00:07:11.010
+i to je sekcija „oseća“.
+
+93
+00:07:11.070 --> 00:07:15.350
+Ovo su neka osećanja koja Sara ima kada se susreće sa ovim problemom.
+
+94
+00:07:16.350 --> 00:07:21.790
+Osećanja koja sam ja izdvojila ovde: da se Sara oseća užurbano,
+
+95
+00:07:21.790 --> 00:07:24.350
+jer svaki dan žuri na posao.
+
+96
+00:07:25.830 --> 00:07:29.850
+Onda, Sara je nestrpljiva, zato što nema vremena da čeka u redu.
+
+97
+00:07:31.430 --> 00:07:36.770
+I Sara je posvećena, zato što Sara i dalje ide bajsom na posao,
+
+98
+00:07:36.970 --> 00:07:40.490
+iako kasni, ali samo da bi imala neku fizičku aktivnost u toku dana.
+
+99
+00:07:40.590 --> 00:07:45.830
+Sad, kada smo ovo sve lepo izdvojili u ta četiri segmenta ili četiri sekcije,
+
+100
+00:07:46.430 --> 00:07:49.710
+možemo da potražimo šta su to naša nova saznanja,
+
+101
+00:07:49.710 --> 00:07:54.750
+ili kako se Sara nosi sa tim problemom koji mi istražujemo.
+
+102
+00:07:56.010 --> 00:08:00.670
+Pa, možemo da vidimo da Sara stvarno ima taj problem,
+
+103
+00:08:01.070 --> 00:08:04.170
+odnosno da je verovatno pre čekala u redu,
+
+104
+00:08:04.610 --> 00:08:06.810
+ali je našla sebi rešenje.
+
+105
+00:08:07.050 --> 00:08:10.710
+Ona je našla rešenje u vidu Starbaksove aplikacije,
+
+106
+00:08:11.150 --> 00:08:13.730
+ali i dalje nije u potpunosti zadovoljna.
+
+107
+00:08:13.930 --> 00:08:16.870
+Zašto? Zato što je Sara rekla da voli domaću kafu.
+
+108
+00:08:16.930 --> 00:08:19.150
+I verovatno, kada bi postojalo neko rešenje
+
+109
+00:08:19.150 --> 00:08:22.170
+koje bi njoj omogućilo da pije domaću kafu,
+
+110
+00:08:22.270 --> 00:08:23.970
+ali da ne mora da čeka u redu,
+
+111
+00:08:24.610 --> 00:08:26.290
+verovatno bi ga koristila.
+
+112
+00:08:26.450 --> 00:08:29.970
+Pored toga, saznali smo još neke nove zanimljive stvari.
+
+113
+00:08:30.170 --> 00:08:32.950
+Na primer, da Sara koristi aplikacije.
+
+114
+00:08:33.070 --> 00:08:36.170
+Znači, nije joj problem da skine aplikaciju sebi na telefon.
+
+115
+00:08:36.390 --> 00:08:39.070
+Uz to, saznali smo da je bitno zdravlje
+
+116
+00:08:39.070 --> 00:08:42.950
+i da je bitna fizička aktivnost, jer vozi bicikl do posla.
+
+117
+00:08:42.950 --> 00:08:46.070
+A neki zanimljivi insajti koje bih ja izdvojila
+
+118
+00:08:46.170 --> 00:08:47.990
+jeste da je ona rekla da voli jednostavnost
+
+119
+00:08:48.590 --> 00:08:50.670
+i da pazi da ne prospe kafu.
+
+120
+00:08:50.950 --> 00:08:53.230
+Znači, bitno je da je rešenje jednostavno,
+
+121
+00:08:53.870 --> 00:08:56.470
+a kada kaže da pazi da ne prospe kafu,
+
+122
+00:08:56.550 --> 00:08:59.630
+to može da vam sugeriše da je možda nekada imala problema,
+
+123
+00:08:59.630 --> 00:09:01.510
+da je tako prosipala kafu.
+
+124
+00:09:01.590 --> 00:09:04.450
+I onda zbog toga sada malo više pažnje obraća na to.
+
+125
+00:09:04.450 --> 00:09:07.130
+Ovo je primer kako možete da koristite mapu empatije
+
+126
+00:09:07.130 --> 00:09:09.450
+kako biste više saznali iz svojih intervjua
+
+127
+00:09:09.450 --> 00:09:13.370
+i kako biste na neki način strukturirali informacije koje ste dobili.
+
+128
+00:09:13.510 --> 00:09:17.470
+Mape empatije koriste nam kako bismo više saznali iz naših intervjua.
+
+129
+00:09:17.650 --> 00:09:21.170
+Kako se naši ispitanici zapravo nose sa tim problemom,
+
+130
+00:09:21.170 --> 00:09:23.650
+ili da li već imaju neka postojeća rešenja
+
+131
+00:09:23.650 --> 00:09:26.710
+i koji su sada njihovi utisci sa tim postojećim rešenjima.
+
+132
+00:09:26.950 --> 00:09:30.350
+Mapu empatije ne morate da kreirate za svakog korisnika posebno.
+
+133
+00:09:30.510 --> 00:09:32.650
+Možete da izdvojite neke slične korisnike
+
+134
+00:09:32.650 --> 00:09:36.110
+i da na osnovu toga napravite samo jednu mapu empatije.
+
+135
+00:09:36.190 --> 00:09:40.070
+Takođe, mape empatije evoluiraju sa našim korisnicima.
+
+136
+00:09:40.250 --> 00:09:40.930
+Šta to znači?
+
+137
+00:09:41.290 --> 00:09:44.750
+Pa, ako se na tržištu nađe neko novo rešenje za taj njihov problem,
+
+138
+00:09:44.750 --> 00:09:50.150
+možda će se njihove navike, odnosno način na koji oni rešavaju sebi taj problem, promeniti.
+
+139
+00:09:50.330 --> 00:09:53.610
+Pa ćete i vi vašu mapu empatije morati da promenite.
+
+140
+00:09:53.690 --> 00:09:57.670
+Ovo je samo jedan od načina kako možete da strukturirate svoje podatke
+
+141
+00:09:57.670 --> 00:09:59.010
+koje ste dobili iz intervjua,
+
+142
+00:09:59.010 --> 00:10:02.030
+i predstavlja jednu od tehnika design thinkinga.
+
+143
+00:10:02.030 --> 00:10:06.250
+Ako vi imate neki drugi način kako organizujete svoja istraživanja
+
+144
+00:10:06.250 --> 00:10:07.910
+i možda je bolji od ovog,
+
+145
+00:10:07.910 --> 00:10:09.770
+napišite nam dole u komentare,
+
+146
+00:10:09.770 --> 00:10:11.950
+i takođe, značilo bi nam
+
+147
+00:10:11.950 --> 00:10:15.710
+ako biste nam rekli da li vas zanima više tema design thinkinga
+
+148
+00:10:15.710 --> 00:10:18.290
+i da li da je više obrađujemo u narednom periodu.
+
+149
+00:10:18.490 --> 00:10:20.470
+I to bi bilo sve od mene za danas.
+
+150
+00:10:20.670 --> 00:10:22.250
+Vidimo se sledeći put. Ćao!

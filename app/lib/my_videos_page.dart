@@ -59,7 +59,7 @@ class MyVideosPage extends StatelessWidget {
                           // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
                           Flexible(
                             child: ExcludeSemantics(
-                              child: Image.asset('assets/ill_my_videos.png', height: 260),
+                              child: Image.asset('assets/ill_my_videos.png', height: 173),
                             ),
                           ),
                           SizedBox(height: 16),

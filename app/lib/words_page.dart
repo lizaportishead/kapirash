@@ -88,7 +88,7 @@ class _WordsPageState extends State<WordsPage> {
                               // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
                               Flexible(
                                 child: ExcludeSemantics(
-                                  child: Image.asset('assets/ill_words.png', height: 260),
+                                  child: Image.asset('assets/ill_words.png', height: 173),
                                 ),
                               ),
                               SizedBox(height: 16),

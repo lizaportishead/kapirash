@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import 'icons.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
@@ -27,6 +29,7 @@ class CreatorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final list = videos.where((v) => v.channel == channel).toList();
     final topics = {for (final v in list) v.topic}.join(', ');
+    final url = creators[channel]?.url;
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -91,6 +94,12 @@ class CreatorPage extends StatelessWidget {
                                 ],
                               ),
                             ),
+                            if (url != null)
+                              IconButton(
+                                tooltip: 'Канал на YouTube',
+                                icon: Icon(KIcons.youtube, size: 26, color: cText),
+                                onPressed: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
+                              ),
                           ],
                         ),
                       );
@@ -106,7 +115,7 @@ class CreatorPage extends StatelessWidget {
   }
 }
 
-/// Кружок с первой буквой канала вместо аватарки.
+/// Аватарка канала с YouTube; пока она грузится или если её нет — кружок с первой буквой.
 class CreatorAvatar extends StatelessWidget {
   const CreatorAvatar(this.channel, {super.key, required this.size});
   final String channel;
@@ -114,15 +123,30 @@ class CreatorAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final avatar = creators[channel]?.avatar;
     return Container(
       width: size,
       height: size,
       alignment: Alignment.center,
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(color: cAccent, shape: BoxShape.circle),
-      child: Text(
-        channel.characters.first.toUpperCase(),
-        style: TextStyle(fontSize: size * 0.5, fontWeight: FontWeight.w800, height: 1, color: cInk),
-      ),
+      child: avatar == null
+          ? _letter()
+          : Image.network(
+              avatar,
+              width: size,
+              height: size,
+              fit: BoxFit.cover,
+              frameBuilder: (_, child, frame, _) => frame == null ? _letter() : child,
+              errorBuilder: (_, _, _) => _letter(),
+            ),
+    );
+  }
+
+  Widget _letter() {
+    return Text(
+      channel.characters.first.toUpperCase(),
+      style: TextStyle(fontSize: size * 0.5, fontWeight: FontWeight.w800, height: 1, color: cInk),
     );
   }
 }

@@ -90,4 +90,34 @@ void main() {
     await again.load();
     expect(again.history, ['b', 'a']);
   });
+
+  test('место остановки сохраняется, у досмотренного ролика — сбрасывается', () async {
+    SharedPreferences.setMockInitialValues({});
+    final s = AppStore();
+    await s.load();
+    expect(s.positionOf('a'), isNull);
+    s.setPosition('a', 42.5);
+    s.setPosition('b', 7);
+    s.setPosition('b', null);
+
+    final again = AppStore();
+    await again.load();
+    expect(again.positionOf('a'), 42.5);
+    expect(again.positionOf('b'), isNull);
+  });
+
+  test('шкала просмотра сохраняется, у старых роликов считается по месту остановки', () async {
+    SharedPreferences.setMockInitialValues({});
+    final s = AppStore();
+    await s.load();
+    const v = Video(id: 'a', title: '', channel: '', topic: '', duration: '1:40');
+    expect(s.progressOf(v), 0);
+    s.setPosition('a', 25);
+    expect(s.progressOf(v), 0.25);
+    s.setProgress('a', 1);
+
+    final again = AppStore();
+    await again.load();
+    expect(again.progressOf(v), 1);
+  });
 }

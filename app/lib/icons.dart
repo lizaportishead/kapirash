@@ -15,4 +15,5 @@ abstract final class KIcons {
   static const refresh = IconData(0xe036, fontFamily: 'Phosphor');
   static const arrowLeft = IconData(0xe058, fontFamily: 'Phosphor');
   static const arrowRight = IconData(0xe06c, fontFamily: 'Phosphor');
+  static const youtube = IconData(0xe4fc, fontFamily: 'Phosphor');
 }

@@ -41,6 +41,11 @@ class _PlayerPageState extends State<PlayerPage> {
   // Текущая фраза; за ней следит и открытый поверх плеера экран с полным текстом.
   final _curN = ValueNotifier<int>(-1);
   int get _cur => _curN.value;
+  // Где сейчас плеер; null, пока ролик не запускали, — чтобы не затереть сохранённое место нулём.
+  double? _pos;
+  double _savedPos = -1;
+  // Ключ не даёт плееру перезагрузиться, когда поворот экрана переставляет его в другую раскладку.
+  final _playerKey = GlobalKey();
 
   String get videoId => widget.video.id;
   // На странице ролика — только слова, сохранённые из него.
@@ -73,7 +78,8 @@ class _PlayerPageState extends State<PlayerPage> {
   Future<void> _cueVideo() async {
     for (var i = 0; i < 6 && mounted; i++) {
       try {
-        await _yt.cueVideoById(videoId: videoId, startSeconds: widget.startAt);
+        // Без явного места открываем там, где остановились в прошлый раз.
+        await _yt.cueVideoById(videoId: videoId, startSeconds: widget.startAt ?? store.positionOf(videoId));
         return;
       } on TimeoutException {
         continue;
@@ -95,6 +101,7 @@ class _PlayerPageState extends State<PlayerPage> {
   @override
   void dispose() {
     store.removeListener(_onStore);
+    _savePos(leaving: true);
     _sub?.cancel();
     _yt.close();
     _curN.dispose();
@@ -104,7 +111,24 @@ class _PlayerPageState extends State<PlayerPage> {
   String _conv(String s) => store.conv(s);
   bool _isSaved(String w) => store.isSaved(toLat(cleanWord(w)).toLowerCase());
 
+  void _savePos({bool leaving = false}) {
+    final t = _pos;
+    if (t == null) return;
+    final total = _yt.value.metaData.duration.inSeconds;
+    // Досмотренный до конца (или почти) ролик в следующий раз начинаем сначала.
+    final done = _yt.value.playerState == PlayerState.ended || (total > 0 && t > total - 5);
+    store.setPosition(videoId, done ? null : t);
+    // Шкала на превью: досмотренный ролик закрашен целиком.
+    if (done || total > 0) store.setProgress(videoId, done ? 1 : t / total, notify: leaving);
+    _savedPos = t;
+  }
+
   void _onTime(double t) {
+    if (_pos != null || _yt.value.playerState == PlayerState.playing) {
+      _pos = t;
+      // Приложение могут закрыть без dispose, поэтому сохраняем и по ходу просмотра.
+      if ((t - _savedPos).abs() >= 5) _savePos();
+    }
     if (_sr.isEmpty) return;
     var i = cueAt(_sr, t);
     if (i < 0) {
@@ -151,50 +175,53 @@ class _PlayerPageState extends State<PlayerPage> {
       builder: (ctx) => SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                _cyr ? cyr : lat,
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w800,
-                  height: 1.1,
-                  letterSpacing: -0.6,
-                  color: cText,
-                ),
-              ),
-              SizedBox(height: 6),
-              Text('${_cyr ? lat : cyr} · ${fmtTime(cue.start)}', style: TextStyle(fontSize: 15, color: cMuted)),
-              SizedBox(height: 14),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
-                child: Text(_conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
-              ),
-              SizedBox(height: 14),
-              if (entry == null)
-                Text('Этого слова нет в словарике ролика.', style: TextStyle(fontSize: 14, color: cMuted))
-              else ...[
+          // В горизонтальном режиме карточка может не поместиться по высоте.
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
                 Text(
-                  tr,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
+                  _cyr ? cyr : lat,
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800,
+                    height: 1.1,
+                    letterSpacing: -0.6,
+                    color: cText,
+                  ),
                 ),
-                if (note.isNotEmpty) ...[
-                  SizedBox(height: 4),
-                  Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
+                SizedBox(height: 6),
+                Text('${_cyr ? lat : cyr} · ${fmtTime(cue.start)}', style: TextStyle(fontSize: 15, color: cMuted)),
+                SizedBox(height: 14),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
+                  child: Text(_conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
+                ),
+                SizedBox(height: 14),
+                if (entry == null)
+                  Text('Этого слова нет в словарике ролика.', style: TextStyle(fontSize: 14, color: cMuted))
+                else ...[
+                  Text(
+                    tr,
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
+                  ),
+                  if (note.isNotEmpty) ...[
+                    SizedBox(height: 4),
+                    Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
+                  ],
                 ],
+                SizedBox(height: 16),
+                BigButton(
+                  _isSaved(word) ? 'Уже в моих словах' : 'Добавить в мои слова',
+                  onTap: () {
+                    store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId));
+                    Navigator.pop(ctx);
+                  },
+                ),
               ],
-              SizedBox(height: 16),
-              BigButton(
-                _isSaved(word) ? 'Уже в моих словах' : 'Добавить в мои слова',
-                onTap: () {
-                  store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId));
-                  Navigator.pop(ctx);
-                },
-              ),
-            ],
+            ),
           ),
         ),
       ),
@@ -204,6 +231,14 @@ class _PlayerPageState extends State<PlayerPage> {
   @override
   Widget build(BuildContext context) {
     final cue = _cur >= 0 && _cur < _sr.length ? _sr[_cur] : null;
+    final size = MediaQuery.sizeOf(context);
+    // Свою раскладку показываем вместо полноэкранного режима плеера, поэтому autoFullScreen выключен.
+    final player = ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: YoutubePlayer(key: _playerKey, controller: _yt, autoFullScreen: false),
+    );
+    // На планшете и в горизонтальном положении хватает высоты для обычной раскладки.
+    if (size.width > size.height && size.height < 600) return _landscape(player, cue);
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -218,11 +253,7 @@ class _PlayerPageState extends State<PlayerPage> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconButton(
-                        tooltip: 'Назад',
-                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                        onPressed: () => Navigator.pop(context),
-                      ),
+                      _back(),
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(top: 13, bottom: 8),
@@ -242,10 +273,7 @@ class _PlayerPageState extends State<PlayerPage> {
                       LikeButton(widget.video.id),
                     ],
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: YoutubePlayer(controller: _yt),
-                  ),
+                  player,
                   SizedBox(height: 10),
                   _controls(),
                   SizedBox(height: 10),
@@ -259,6 +287,100 @@ class _PlayerPageState extends State<PlayerPage> {
           ),
         ),
       ),
+    );
+  }
+
+  // Горизонтальный телефон: видео как можно крупнее, под ним — только строка субтитров.
+  Widget _landscape(Widget player, Cue? cue) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            // По бокам от видео — чёрные поля до самых краёв экрана, как в полноэкранном плеере.
+            child: ColoredBox(
+              color: Colors.black,
+              child: SafeArea(
+                bottom: false,
+                // Кнопка «назад» стоит сбоку от видео, где всё равно пусто; отступ справа держит видео по центру.
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _back(color: cOnInk),
+                    Expanded(child: Center(child: player)),
+                    SizedBox(width: 48),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // Высота постоянная, чтобы видео не прыгало от фразы к фразе.
+          ColoredBox(
+            color: cAccent,
+            child: SafeArea(
+              top: false,
+              minimum: EdgeInsets.only(bottom: 4),
+              child: SizedBox(height: 70, child: Center(child: _strip(cue))),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _strip(Cue? cue) {
+    if (cue == null) return SizedBox.shrink();
+    final ru = _showRu ? _ruFor(cue) : '';
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (_showSr)
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 5,
+              children: [
+                for (final w in cue.text.split(' '))
+                  GestureDetector(
+                    onTap: () => _openWord(w, cue),
+                    child: Text(
+                      _conv(w),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        height: 1.35,
+                        color: cInk,
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 2,
+                        decorationColor: _isSaved(w) ? cViolet : cInk.withValues(alpha: 0.25),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          if (ru.isNotEmpty)
+            Text(
+              ru,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                height: 1.3,
+                color: cInk.withValues(alpha: 0.72),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _back({Color? color}) {
+    return IconButton(
+      tooltip: 'Назад',
+      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: color ?? cText),
+      onPressed: () => Navigator.pop(context),
     );
   }
 
@@ -298,11 +420,17 @@ class _PlayerPageState extends State<PlayerPage> {
   Widget _controls() {
     return Row(
       children: [
-        Expanded(child: Pill('', icon: KIcons.arrowLeft, label: 'Предыдущая фраза', onTap: () => _step(-1))),
+        Expanded(
+          child: Pill('', icon: KIcons.arrowLeft, label: 'Предыдущая фраза', onTap: () => _step(-1)),
+        ),
         SizedBox(width: 6),
-        Expanded(child: Pill('Ещё раз', icon: KIcons.refresh, onTap: () => _step(0))),
+        Expanded(
+          child: Pill('Ещё раз', icon: KIcons.refresh, onTap: () => _step(0)),
+        ),
         SizedBox(width: 6),
-        Expanded(child: Pill('', icon: KIcons.arrowRight, label: 'Следующая фраза', onTap: () => _step(1))),
+        Expanded(
+          child: Pill('', icon: KIcons.arrowRight, label: 'Следующая фраза', onTap: () => _step(1)),
+        ),
       ],
     );
   }
@@ -352,7 +480,12 @@ class _PlayerPageState extends State<PlayerPage> {
             SizedBox(height: 6),
             Text(
               ru,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, height: 1.4, color: cInk.withValues(alpha: 0.72)),
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                height: 1.4,
+                color: cInk.withValues(alpha: 0.72),
+              ),
             ),
           ],
         ],

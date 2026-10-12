@@ -205,7 +205,7 @@ class _ImageArt extends StatelessWidget {
   final String asset;
 
   @override
-  Widget build(BuildContext context) => Image.asset(asset, height: 300);
+  Widget build(BuildContext context) => Image.asset(asset, height: 170);
 }
 
 /// Строка субтитров с подсвеченным словом и его переводом.

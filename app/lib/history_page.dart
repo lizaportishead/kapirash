@@ -57,7 +57,7 @@ class HistoryPage extends StatelessWidget {
                               padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
                               itemCount: list.length,
                               separatorBuilder: (_, _) => SizedBox(height: 12),
-                              itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id), showWatched: false),
+                              itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
                             ),
                     ),
                   ],

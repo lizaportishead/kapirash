@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -61,6 +62,12 @@ class AppStore extends ChangeNotifier {
 
   /// Id роликов с сердечком, последний отмеченный — в конце.
   List<String> liked = [];
+
+  /// Секунда, на которой остановились в ролике; досмотренных роликов здесь нет.
+  Map<String, double> positions = {};
+
+  /// Просмотренная доля ролика, 0..1; у досмотренного — 1.
+  Map<String, double> progress = {};
   bool cyr = false, dark = false;
 
   /// Онбординг пройден; показываем его один раз.
@@ -83,6 +90,12 @@ class AppStore extends ChangeNotifier {
         .toList();
     history = (jsonDecode(prefs.getString('kap.history') ?? '[]') as List).cast<String>();
     liked = (jsonDecode(prefs.getString('kap.liked') ?? '[]') as List).cast<String>();
+    positions = (jsonDecode(prefs.getString('kap.pos') ?? '{}') as Map<String, dynamic>).map(
+      (k, v) => MapEntry(k, (v as num).toDouble()),
+    );
+    progress = (jsonDecode(prefs.getString('kap.progress') ?? '{}') as Map<String, dynamic>).map(
+      (k, v) => MapEntry(k, (v as num).toDouble()),
+    );
     notifyListeners();
     // Генерация могла оборваться вместе с приложением — запускаем её заново.
     for (final m in myVideos.where((m) => m.status == SubsStatus.processing).toList()) {
@@ -117,6 +130,39 @@ class AppStore extends ChangeNotifier {
       ..remove(videoId)
       ..add(videoId);
     _saveHistory();
+  }
+
+  // ---- место остановки ----
+
+  double? positionOf(String videoId) => positions[videoId];
+
+  /// null — ролик досмотрен, в следующий раз начнём сначала.
+  // Экраны позицию не показывают, поэтому слушателей не будим: плеер зовёт это каждые несколько секунд.
+  void setPosition(String videoId, double? t) {
+    if (positions[videoId] == t) return;
+    t == null ? positions.remove(videoId) : positions[videoId] = t;
+    _prefs?.setString('kap.pos', jsonEncode(positions));
+  }
+
+  // ---- шкала просмотра ----
+
+  /// Доля для шкалы на превью. У роликов, открытых до появления шкалы, считаем её по месту остановки.
+  double progressOf(Video v) {
+    final p = progress[v.id];
+    if (p != null) return p;
+    final t = positions[v.id];
+    final total = v.duration.split(':').fold(0, (s, x) => s * 60 + (int.tryParse(x) ?? 0));
+    return t == null || total == 0 ? 0 : (t / total).clamp(0, 1).toDouble();
+  }
+
+  /// Плеер зовёт это каждые несколько секунд, поэтому слушателей будим только по [notify] — при выходе из ролика.
+  // Выход — это dispose, дерево в этот момент заперто, так что будим после него.
+  void setProgress(String videoId, double p, {bool notify = false}) {
+    if (progress[videoId] != p) {
+      progress[videoId] = p;
+      _prefs?.setString('kap.progress', jsonEncode(progress));
+    }
+    if (notify) scheduleMicrotask(notifyListeners);
   }
 
   // ---- сердечки ----
@@ -185,6 +231,8 @@ class AppStore extends ChangeNotifier {
     _prefs?.remove('kap.subs.$id');
     if (history.remove(id)) _prefs?.setString('kap.history', jsonEncode(history));
     if (liked.remove(id)) _prefs?.setString('kap.liked', jsonEncode(liked));
+    setPosition(id, null);
+    if (progress.remove(id) != null) _prefs?.setString('kap.progress', jsonEncode(progress));
     _saveMy();
   }
 

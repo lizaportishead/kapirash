@@ -16,6 +16,32 @@ class Video {
   final bool mine;
 }
 
+/// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
+class Creator {
+  const Creator(this.handle, this.avatarId);
+  final String handle, avatarId;
+
+  String get url => 'https://www.youtube.com/@$handle';
+  String get avatar => 'https://yt3.googleusercontent.com/$avatarId=s176-c-k-c0x00ffffff-no-rj';
+}
+
+const creators = <String, Creator>{
+  'notAleksa': Creator('noaleksa', '5cXh0bO0fYWZZY7M9A-GYlN_xH7OpQF9tmUMFqxuxsPXtJLKdi7JsRLH78_53Fa2YbPQkH4Btw'),
+  'Dario Kesegi': Creator(
+    'DarioKesegiG0CA',
+    'F4iTufu9dOsfJkPp8jUnbiwghDpgAw3qlkowKHyNA6mef34pfXqC7mKdzz-NfX6hkNJnU4kI2g',
+  ),
+  'vuk1vuk': Creator('vuk1vuk', 'ytc/AIdro_nb3tc3jOWi6Lc2aIi4_HOuPJVSEOxFrnKcSJ--G9f2ZaY'),
+  'Potrošački savetnik': Creator('potrosackisavetnik', 'ytc/AIdro_l2-5Y_pwsirmV9Tmy2ldh6oS4ahlk_KXIX-9mttinPCA'),
+  'emisija Farma': Creator('emisijafarma', 'ytc/AIdro_mcvvLUDrn7BGid392GKyiuebmx_na6VvS73aw8a3v1krw'),
+  'Južne vesti': Creator('juznevesti', 'ytc/AIdro_mf-BKRpXx3RLqm9uQn3l0E3Ba_KnCUN7bSGXJKrXWAwec'),
+  'Even M&N': Creator('evenmandn', '07q6K9QKEBYOtrOxGi1Dyf75VukTEvDJMdmjV8TDmA6J_Qn1_0oX-lZEwNcdXRhmqnHFlLqlvw'),
+  'Ana Marija & Saša': Creator('anamarijasasa9486', 'ytc/AIdro_kiKflXXGUaqZpvD05mp_1_zcF3s5HPNkdcrnwaGvQyaw'),
+  'Tomi tamas': Creator('kulacity', 'ytc/AIdro_nudmK7fH0b6TVfYxDQQynF9fbEagmHJzcW5yA-2sr9qJ8'),
+  'What Do You Want / Šta hoćeš': Creator('WdoyouwOrg', 'ytc/AIdro_mdX8JUKCLbtD7DwTZwHq5s-BWVlSHasDmu68_CLxiaxQ'),
+  'KCNS': Creator('KCnovisad', 'ytc/AIdro_mvjIgdbC1NmmEpUTnaGDXRzWaP_9wCXpIcjvN-MuQcfg'),
+};
+
 const videos = <Video>[
   Video(
     id: 'dxE0__WvLBU',
@@ -192,6 +218,38 @@ const videos = <Video>[
     topic: 'Культура',
     level: 'B2',
     duration: '36:30',
+  ),
+  Video(
+    id: '2Yu3pKxNY5Q',
+    title: 'Šta je startap?',
+    channel: 'StudentFounders',
+    topic: 'IT',
+    level: 'B1',
+    duration: '5:26',
+  ),
+  Video(
+    id: '1BNwsNIp31E',
+    title: 'Kako saznati ko je Vaš idealan kupac | Mapa Empatije',
+    channel: 'StudentFounders',
+    topic: 'Дизайн',
+    level: 'B1',
+    duration: '10:33',
+  ),
+  Video(
+    id: 'XVbTD_qhPL8',
+    title: 'Slavimir Stojanović - Za Beograd (Aleksandra Simić)',
+    channel: 'Nasa Televizija',
+    topic: 'Дизайн',
+    level: 'B2',
+    duration: '12:28',
+  ),
+  Video(
+    id: 'D9Fc77qeKdQ',
+    title: 'VEŠTAČKA INTELIGENCIJA, Tatjana Gligorić',
+    channel: 'SINGIDUNUM VALJEVO',
+    topic: 'IT',
+    level: 'B2',
+    duration: '14:53',
   ),
 ];
 
