@@ -3,11 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'add_video.dart';
+import 'clips_page.dart';
 import 'feed_page.dart';
 import 'icons.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
+import 'stories_page.dart';
 import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
@@ -79,7 +81,7 @@ class _KapirasAppState extends State<KapirasApp> {
       ),
       home: AnimatedSwitcher(
         duration: Duration(milliseconds: 250),
-        // Вход необязателен: после онбординга сразу каталог, войти можно из профиля.
+        // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
         child: _onboarded ? HomeShell() : OnboardingPage(),
       ),
     );
@@ -103,7 +105,7 @@ class _HomeShellState extends State<HomeShell> {
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
   static const _plus = kAddVideoEnabled ? 2 : 99;
 
-  static const _profile = kAddVideoEnabled ? 3 : 2;
+  static const _profile = kAddVideoEnabled ? 5 : 4;
 
   // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
   int _profileTaps = 0;
@@ -133,7 +135,7 @@ class _HomeShellState extends State<HomeShell> {
             constraints: BoxConstraints(maxWidth: 720),
             child: IndexedStack(
               index: _tab,
-              children: [FeedPage(), if (kAddVideoEnabled) MyVideosPage(), WordsPage(), ProfilePage()],
+              children: [FeedPage(), if (kAddVideoEnabled) MyVideosPage(), ClipsPage(), StoriesPage(), WordsPage(), ProfilePage()],
             ),
           ),
         ),
@@ -180,6 +182,12 @@ class _HomeShellState extends State<HomeShell> {
                       child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
                     ),
                   ],
+                  NavigationDestination(icon: Icon(KIcons.clips), selectedIcon: Icon(KIcons.clipsOn), label: 'Клипы'),
+                  NavigationDestination(
+                    icon: Icon(KIcons.stories),
+                    selectedIcon: Icon(KIcons.storiesOn),
+                    label: 'Рассказы',
+                  ),
                   NavigationDestination(
                     icon: Icon(KIcons.words),
                     selectedIcon: Icon(KIcons.wordsOn),

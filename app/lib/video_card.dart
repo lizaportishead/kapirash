@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'clips_page.dart';
 import 'creator_page.dart';
 import 'player_page.dart';
 import 'store.dart';
@@ -49,20 +50,23 @@ class VideoCard extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.network(
-                  'https://i.ytimg.com/vi/${v.id}/hqdefault.jpg',
-                  fit: BoxFit.cover,
-                  webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
-                  errorBuilder: (_, _, _) => placeholder,
-                ),
-                if (tag.isNotEmpty) Positioned(left: 10, top: 10, child: _Tag(tag, accent: true)),
+                if (v.tiktok)
+                  ClipCover(v)
+                else
+                  Image.network(
+                    'https://i.ytimg.com/vi/${v.id}/hqdefault.jpg',
+                    fit: BoxFit.cover,
+                    webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
+                    errorBuilder: (_, _, _) => placeholder,
+                  ),
+                if (tag.isNotEmpty) Positioned(left: 10, top: 10, child: VideoTag(tag, accent: true)),
                 if (words > 0)
                   Positioned(
                     left: 10,
                     bottom: 10,
-                    child: _Tag('$words ${plural(words, 'слово', 'слова', 'слов')}', accent: true),
+                    child: VideoTag('$words ${plural(words, 'слово', 'слова', 'слов')}', accent: true),
                   ),
-                if (v.duration.isNotEmpty) Positioned(right: 10, bottom: 10, child: _Tag(v.duration)),
+                if (v.duration.isNotEmpty) Positioned(right: 10, bottom: 10, child: VideoTag(v.duration)),
                 if (progress > 0)
                   Positioned(
                     left: 0,
@@ -154,8 +158,8 @@ class VideoCard extends StatelessWidget {
   }
 }
 
-class _Tag extends StatelessWidget {
-  const _Tag(this.text, {this.accent = false});
+class VideoTag extends StatelessWidget {
+  const VideoTag(this.text, {super.key, this.accent = false});
   final String text;
   final bool accent;
 

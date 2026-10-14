@@ -39,6 +39,10 @@ dependencies:
   http: ^1.6.0
   url_launcher: ^6.3.3
   supabase_flutter: ^2.18.3
+  # Плеер TikTok: WebView на телефоне, iframe в вебе.
+  webview_flutter: ^4.14.1
+  webview_flutter_wkwebview: ^3.27.0
+  web: ^1.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

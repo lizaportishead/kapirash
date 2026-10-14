@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'clips_page.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
 
-/// Открывает экран поиска по каталогу поверх таббара.
-void openSearch(BuildContext context) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => SearchPage()));
+/// Открывает экран поиска поверх таббара: по каталогу, а с [clips] — по клипам.
+void openSearch(BuildContext context, {bool clips = false}) {
+  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => SearchPage(clips: clips)));
 }
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
+  const SearchPage({super.key, this.clips = false});
+  final bool clips;
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -31,8 +33,9 @@ class _SearchPageState extends State<SearchPage> {
 
   List<Video> get _found {
     final q = _norm(_search.text.trim());
-    if (q.isEmpty) return videos;
-    return videos.where((v) => _norm('${v.title} ${v.channel} ${v.topic}').contains(q)).toList();
+    final all = widget.clips ? clips : videos;
+    if (q.isEmpty) return all;
+    return all.where((v) => _norm('${v.title} ${v.channel} ${v.topic}').contains(q)).toList();
   }
 
   @override
@@ -66,7 +69,7 @@ class _SearchPageState extends State<SearchPage> {
                           style: TextStyle(fontSize: 15, color: cText),
                           cursorColor: cViolet,
                           decoration: InputDecoration(
-                            hintText: 'Поиск по роликам',
+                            hintText: widget.clips ? 'Поиск по клипам' : 'Поиск по роликам',
                             hintStyle: TextStyle(color: cFaint),
                             prefixIcon: Icon(Icons.search_rounded, color: cFaint),
                             suffixIcon: _search.text.isEmpty
@@ -99,6 +102,14 @@ class _SearchPageState extends State<SearchPage> {
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, color: cMuted),
                           ),
+                        )
+                      : widget.clips
+                      ? GridView.builder(
+                          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                          padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                          gridDelegate: clipGrid,
+                          itemCount: list.length,
+                          itemBuilder: (_, i) => ClipTile(list[i], among: list),
                         )
                       : ListView.separated(
                           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,

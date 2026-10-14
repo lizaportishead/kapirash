@@ -78,7 +78,8 @@ class BigButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bg = this.bg ?? cText, fg = this.fg ?? cBg;
+    // Главная кнопка экрана всегда фиолетовая; другие цвета — только для второстепенных.
+    final bg = this.bg ?? cViolet, fg = this.fg ?? cOnViolet;
     return SizedBox(
       height: 56,
       child: FilledButton(
@@ -97,7 +98,7 @@ class BigButton extends StatelessWidget {
   }
 }
 
-/// Крупный заголовок капсом; слова между звёздочками подсвечены плашкой.
+/// Крупный заголовок; слова между звёздочками подсвечены плашкой.
 class Headline extends StatelessWidget {
   const Headline(this.text, {super.key, required this.color, required this.mark, this.onMark = cInk});
   final String text;
@@ -160,9 +161,7 @@ class Headline extends StatelessWidget {
               children: [
                 for (final g in groups)
                   fit(
-                    g.length == 1
-                        ? g.single
-                        : Row(mainAxisSize: MainAxisSize.min, spacing: size * 0.26, children: g),
+                    g.length == 1 ? g.single : Row(mainAxisSize: MainAxisSize.min, spacing: size * 0.26, children: g),
                   ),
               ],
             );

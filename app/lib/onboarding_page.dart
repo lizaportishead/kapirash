@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'auth_page.dart';
 import 'store.dart';
 import 'main.dart' show kAddVideoEnabled;
 import 'theme.dart';
@@ -70,9 +71,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
     super.dispose();
   }
 
+  void _finish() {
+    // Вход необязателен: зовём один раз поверх каталога, экран можно закрыть.
+    if (store.user == null && store.canSignIn) openAuth(context, intro: true);
+    store.finishOnboarding();
+  }
+
   void _next() {
     if (_i == _slides.length - 1) {
-      store.finishOnboarding();
+      _finish();
     } else {
       _pages.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeOut);
     }
@@ -106,7 +113,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           maintainAnimation: true,
                           maintainState: true,
                           child: TextButton(
-                            onPressed: store.finishOnboarding,
+                            onPressed: _finish,
                             style: TextButton.styleFrom(
                               foregroundColor: s.fg,
                               textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),

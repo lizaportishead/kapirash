@@ -113,19 +113,19 @@ class _SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             'Войди в аккаунт',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cInk),
           ),
           SizedBox(height: 6),
           Text(
             'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон или '
-            'переустановишь приложение. Смотреть ролики можно и без входа.',
-            style: TextStyle(fontSize: 14, height: 1.4, color: cMuted),
+            'переустановишь приложение.',
+            style: TextStyle(fontSize: 14, height: 1.4, color: cInk),
           ),
           SizedBox(height: 16),
           BigButton('Войти', onTap: () => openAuth(context)),

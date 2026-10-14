@@ -7,14 +7,17 @@ import 'theme.dart';
 
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
 
-/// Открывает вход поверх таббара.
-void openAuth(BuildContext context) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => AuthPage()));
+/// Открывает вход поверх таббара. [intro] — первый показ сразу после онбординга.
+void openAuth(BuildContext context, {bool intro = false}) {
+  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => AuthPage(intro: intro)));
 }
 
 // Вход в два шага: почта, затем ссылка или код из письма.
 class AuthPage extends StatefulWidget {
-  const AuthPage({super.key});
+  const AuthPage({super.key, this.intro = false});
+
+  /// После онбординга: объясняем, зачем входить, и даём уйти без входа.
+  final bool intro;
 
   @override
   State<AuthPage> createState() => _AuthPageState();
@@ -112,37 +115,39 @@ class _AuthPageState extends State<AuthPage> {
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
               children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Transform.translate(
-                    offset: Offset(-12, 0),
-                    child: IconButton(
-                      tooltip: 'Назад',
-                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                      onPressed: () => Navigator.pop(context),
+                if (widget.intro)
+                  SizedBox(height: 48)
+                else
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Transform.translate(
+                      offset: Offset(-12, 0),
+                      child: IconButton(
+                        tooltip: 'Назад',
+                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                        onPressed: () => Navigator.pop(context),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 12),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Sticker('Kapiraš', color: cViolet, fg: cOnViolet, angle: -0.07),
-                ),
-                SizedBox(height: 28),
+                ExcludeSemantics(child: Image.asset('assets/ill_my_videos.png', height: 150)),
+                SizedBox(height: 24),
                 Headline(
-                  _sentTo == null ? 'ВОЙДИ В *АККАУНТ.*' : (kEmailCode ? 'ВВЕДИ *КОД.*' : 'ПРОВЕРЬ *ПОЧТУ.*'),
+                  _sentTo == null ? 'Войди в *аккаунт*' : (kEmailCode ? 'Введи *код*' : 'Проверь *почту*'),
                   color: cText,
                   mark: cAccent,
                 ),
-                SizedBox(height: 14),
-                Text(
-                  _sentTo == null
-                      ? 'Хватит почты — пароль придумывать не нужно.'
-                      : (kEmailCode
-                            ? 'Отправили код на $_sentTo. Письмо может идти пару минут.'
-                            : 'Отправили ссылку на $_sentTo. Открой её на этом телефоне — и ты войдёшь.'),
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
-                ),
+                if (_sentTo != null || widget.intro) ...[
+                  SizedBox(height: 14),
+                  Text(
+                    _sentTo == null
+                        ? 'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон '
+                              'или переустановишь приложение.'
+                        : (kEmailCode
+                              ? 'Отправили код на $_sentTo. Письмо может идти пару минут.'
+                              : 'Отправили ссылку на $_sentTo. Открой её на этом телефоне — и ты войдёшь.'),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
+                  ),
+                ],
                 SizedBox(height: 28),
                 if (_sentTo == null) ...[
                   TextField(
@@ -206,6 +211,17 @@ class _AuthPageState extends State<AuthPage> {
                       textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
                     ),
                     child: Text('Другая почта'),
+                  ),
+                ],
+                if (widget.intro) ...[
+                  SizedBox(height: 4),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    style: TextButton.styleFrom(
+                      foregroundColor: cMuted,
+                      textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                    child: Text('Смотреть без авторизации'),
                   ),
                 ],
               ],

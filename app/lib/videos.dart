@@ -8,9 +8,20 @@ class Video {
     this.topic = '',
     this.level = '',
     this.duration = '',
+    this.kind = '',
     this.mine = false,
   });
   final String id, title, channel, topic, level, duration;
+
+  /// Откуда ролик: пусто — YouTube, 'tiktok' — вертикальный клип из TikTok.
+  final String kind;
+  bool get tiktok => kind == 'tiktok';
+
+  /// Заглушка для примерки ленты клипов, см. [kClipMocks]: обложка есть, самого ролика нет.
+  bool get mock => id.startsWith('mock-');
+
+  /// Страница клипа в TikTok; имя автора в адресе не обязательно.
+  String get tiktokUrl => 'https://www.tiktok.com/@_/video/$id';
 
   /// Ролик добавил сам пользователь: его нет в каталоге, а субтитры лежат на устройстве.
   final bool mine;
@@ -22,6 +33,7 @@ class Video {
     topic: j['topic'] ?? '',
     level: j['level'] ?? '',
     duration: j['duration'] ?? '',
+    kind: j['kind'] ?? '',
   );
 }
 
@@ -39,9 +51,22 @@ class Creator {
 Map<String, Creator> creators = _builtInCreators;
 List<Video> videos = _builtInVideos;
 
+/// Временно: заглушки в ленте клипов, чтобы посмотреть, как она выглядит заполненной. Перед релизом выключить.
+const kClipMocks = true;
+
+/// Клипы из TikTok: у них своя вкладка и вертикальный плеер, в каталоге их нет.
+List<Video> clips = [..._builtInClips, if (kClipMocks) ..._mockClips];
+
 /// Подменяет каталог строками из Supabase или их копией с устройства.
 void setCatalog(Map<String, dynamic> j) {
-  videos = [for (final v in j['videos'] as List) Video.fromJson(v as Map<String, dynamic>)];
+  final all = [for (final v in j['videos'] as List) Video.fromJson(v as Map<String, dynamic>)];
+  videos = all.where((v) => !v.tiktok).toList();
+  // Клипы из сборки остаются, даже если в облаке их ещё нет.
+  clips = [
+    ...all.where((v) => v.tiktok),
+    ..._builtInClips.where((c) => !all.any((v) => v.id == c.id)),
+    if (kClipMocks) ..._mockClips,
+  ];
   creators = {
     for (final c in (j['creators'] as List).cast<Map<String, dynamic>>())
       if (c['handle'] != null && c['avatar_id'] != null) c['name']: Creator(c['handle'], c['avatar_id']),
@@ -308,8 +333,188 @@ const _builtInVideos = <Video>[
   ),
 ];
 
+const _builtInClips = <Video>[
+  Video(
+    id: '7663466480683519265',
+    title: 'Najgora pljačka u karijeri',
+    channel: 'Realno',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '1:04',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7684326403902360852',
+    title: 'Koliko smo sada lepše',
+    channel: 'Elena',
+    topic: 'Красота',
+    level: 'B1',
+    duration: '2:12',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7691370106257034504',
+    title: 'Prvi alpaka kafe u Srbiji',
+    channel: 'milli',
+    topic: 'Путешествия',
+    level: 'B1',
+    duration: '0:45',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7695697222444387604',
+    title: 'Zgrada koja izgleda kao Toblerone',
+    channel: 'Ljudi Beograda',
+    topic: 'Город',
+    level: 'B1',
+    duration: '0:44',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7691647020758502662',
+    title: 'Sto godina pijace Zeleni venac',
+    channel: 'Ljudi Beograda',
+    topic: 'Город',
+    level: 'B1',
+    duration: '0:50',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7691254334730226964',
+    title: 'Topolska 18: adresa dve kultne serije',
+    channel: 'Ljudi Beograda',
+    topic: 'Культура',
+    level: 'B1',
+    duration: '1:02',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7636300414652026120',
+    title: 'Ledene kocke',
+    channel: 'Nespretna domaćica',
+    topic: 'Еда',
+    level: 'B1',
+    duration: '0:38',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7685347257029348626',
+    title: 'Najmekša proja',
+    channel: 'Lelina kuhinjica',
+    topic: 'Еда',
+    level: 'B1',
+    duration: '0:30',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7640223671985900818',
+    title: 'Domaće ćufte u paradajz sosu',
+    channel: 'Poklopac i lonac',
+    topic: 'Еда',
+    level: 'B1',
+    duration: '0:33',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7694709604017507591',
+    title: 'Teorija nevidljive žice',
+    channel: 'Đole · Pametni kutak',
+    topic: 'Психология',
+    level: 'B1',
+    duration: '0:46',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7495076935429672247',
+    title: 'Savršeni jednodnevni izlet u Srbiji',
+    channel: 'Tragom horizonta',
+    topic: 'Путешествия',
+    level: 'B1',
+    duration: '0:40',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7627473268941016341',
+    title: 'Tortilja pita iz rerne',
+    channel: 'Ema Pumpalović',
+    topic: 'Еда',
+    level: 'B1',
+    duration: '0:34',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: '7485479524428156166',
+    title: 'Život u studentskom domu',
+    channel: 'Aleksandra Tepavac',
+    topic: 'Быт',
+    level: 'B1',
+    duration: '0:38',
+    kind: 'tiktok',
+  ),
+];
+
+// Обложки заглушек — кадры роликов из каталога: в id после «mock-» стоит id ролика на YouTube.
+const _mockClips = <Video>[
+  Video(
+    id: 'mock-Q6VsddwnvqY',
+    title: 'Kad odeš na selo kod bake',
+    topic: 'Юмор',
+    channel: 'Realno',
+    duration: '0:48',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: 'mock-MZcZFyhKNKw',
+    title: 'Šta jedem u jednom danu',
+    topic: 'Еда',
+    channel: 'Mila kuva',
+    duration: '0:35',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: 'mock-0Kc3ASUSPc0',
+    title: 'Pitao sam prolaznike gde je centar',
+    topic: 'Юмор',
+    channel: 'Ulična anketa',
+    duration: '1:12',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: 'mock-HSh_hA97o7c',
+    title: 'Tipovi komšija u zgradi',
+    channel: 'Realno',
+    topic: 'Юмор',
+    duration: '0:52',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: 'mock-XkYKK0qIm-E',
+    title: 'Kampovanje: očekivanja i stvarnost',
+    topic: 'Путешествия',
+    channel: 'Napolju',
+    duration: '0:41',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: 'mock-YBwhDmteusg',
+    title: 'Tri reči koje stranci uvek pogreše',
+    topic: 'Язык',
+    channel: 'Srpski za minut',
+    duration: '0:58',
+    kind: 'tiktok',
+  ),
+  Video(
+    id: 'mock-psx84hGjqds',
+    title: 'Trening u parku za 5 minuta',
+    topic: 'Спорт',
+    channel: 'Vežbaj sa mnom',
+    duration: '1:05',
+    kind: 'tiktok',
+  ),
+];
+
 Video? videoById(String id) {
-  for (final v in videos) {
+  for (final v in videos.followedBy(clips)) {
     if (v.id == id) return v;
   }
   return store.myVideo(id)?.video;

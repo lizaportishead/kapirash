@@ -1,0 +1,415 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'icons.dart';
+import 'phrase.dart';
+import 'store.dart';
+import 'subs.dart';
+import 'theme.dart';
+
+/// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
+class Story {
+  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.asset});
+  final String id, title, author, blurb;
+  final String? asset;
+
+  bool get ready => asset != null;
+
+  // Слова из рассказа в «Моих словах» помнят его по этому id.
+  String get wordKey => 'story:$id';
+}
+
+const stories = [
+  Story(
+    id: 'crvene-cipele',
+    title: 'Crvene cipele',
+    author: 'Hans Kristijan Andersen',
+    blurb:
+        'Priča za decu H. K. Andersena o devojčici Karin koja je silno htela crvene cipele, '
+        'a kad ih je dobila više nije mogla da ih skine već je morala u njima zauvek da pleše.',
+    asset: 'story_crvene_cipele',
+  ),
+  Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
+  Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
+  Story(id: 'snezna-kraljica', title: 'Snežna kraljica', author: 'Hans Kristijan Andersen'),
+  Story(id: 'palcica', title: 'Palčica', author: 'Hans Kristijan Andersen'),
+];
+
+Story? storyById(String wordKey) {
+  for (final s in stories) {
+    if (s.wordKey == wordKey) return s;
+  }
+  return null;
+}
+
+/// Открывает читалку поверх таббара; [page] — страница, на которой слово было сохранено.
+void openStory(BuildContext context, Story s, {int page = 0}) {
+  if (!s.ready) return;
+  Navigator.of(context, rootNavigator: true).push(
+    MaterialPageRoute<void>(builder: (_) => StoryReader(story: s, page: page)),
+  );
+}
+
+class StoriesPage extends StatelessWidget {
+  const StoriesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        PageTitle('Рассказы'),
+        Expanded(
+          child: ListView.separated(
+            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+            itemCount: stories.length,
+            separatorBuilder: (_, _) => SizedBox(height: 12),
+            itemBuilder: (_, i) => _StoryCard(stories[i]),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _StoryCard extends StatelessWidget {
+  const _StoryCard(this.story);
+  final Story story;
+
+  @override
+  Widget build(BuildContext context) {
+    final ready = story.ready;
+    final body = Padding(
+      padding: EdgeInsets.all(12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: SizedBox(
+              width: 112,
+              height: 112,
+              child: ready
+                  ? ExcludeSemantics(child: Image.asset('assets/${story.asset}.png', fit: BoxFit.cover))
+                  : ColoredBox(
+                      color: cCard2,
+                      child: Icon(KIcons.stories, size: 36, color: cFaint),
+                    ),
+            ),
+          ),
+          SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 2),
+                Text(
+                  store.conv(story.title),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+                ),
+                SizedBox(height: 4),
+                Text(story.author, style: TextStyle(fontSize: 13, color: cMuted)),
+                SizedBox(height: 8),
+                if (ready)
+                  Text(
+                    store.conv(story.blurb),
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 13, height: 1.4, color: cMuted),
+                  )
+                else
+                  Text('Скоро', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+    if (!ready) {
+      // Заглушка: не нажимается и приглушена.
+      return Semantics(
+        label: '${story.title}, скоро',
+        child: ExcludeSemantics(
+          child: Opacity(
+            opacity: 0.55,
+            child: Material(color: cCard, borderRadius: BorderRadius.circular(24), child: body),
+          ),
+        ),
+      );
+    }
+    return Material(
+      color: cCard,
+      borderRadius: BorderRadius.circular(24),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(24),
+        onTap: () => openStory(context, story),
+        child: body,
+      ),
+    );
+  }
+}
+
+/// Одно слово текста и предложение, в котором оно стоит, — его покажем в карточке слова.
+class _Token {
+  const _Token(this.word, this.sentence);
+  final String word, sentence;
+}
+
+class StoryReader extends StatefulWidget {
+  const StoryReader({super.key, required this.story, this.page = 0});
+  final Story story;
+  final int page;
+
+  @override
+  State<StoryReader> createState() => _StoryReaderState();
+}
+
+class _StoryReaderState extends State<StoryReader> {
+  // Страницы текста: на каждой несколько абзацев, а каждый абзац — список слов с предложениями.
+  List<List<List<_Token>>> _pages = [];
+  Map<String, dynamic> _dict = {};
+  late final PageController _ctl;
+  late int _i = widget.page;
+  bool _failed = false;
+
+  // Страница 0 — обложка, дальше текст.
+  int get _count => _pages.length + 1;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctl = PageController(initialPage: widget.page);
+    _load();
+  }
+
+  @override
+  void dispose() {
+    _ctl.dispose();
+    super.dispose();
+  }
+
+  Future<void> _load() async {
+    try {
+      final asset = widget.story.asset!;
+      final text = await rootBundle.loadString('assets/$asset.txt');
+      final dict = jsonDecode(await rootBundle.loadString('assets/$asset.dict.json')) as Map<String, dynamic>;
+      if (!mounted) return;
+      setState(() {
+        _pages = _paginate(text);
+        _dict = dict;
+        _i = _i.clamp(0, _pages.length);
+      });
+    } catch (_) {
+      if (mounted) setState(() => _failed = true);
+    }
+  }
+
+  // Абзацы набираем на страницу, пока не наберётся около 550 знаков.
+  static List<List<List<_Token>>> _paginate(String text) {
+    final pages = <List<List<_Token>>>[];
+    var page = <List<_Token>>[];
+    var size = 0;
+    for (final p in text.split(RegExp(r'\n\s*\n'))) {
+      final para = p.trim();
+      if (para.isEmpty) continue;
+      if (page.isNotEmpty && size + para.length > 560) {
+        pages.add(page);
+        page = [];
+        size = 0;
+      }
+      page.add([
+        for (final s in para.split(RegExp(r'(?<=[.!?])\s+')))
+          for (final w in s.split(' ')) _Token(w, s),
+      ]);
+      size += para.length;
+    }
+    if (page.isNotEmpty) pages.add(page);
+    return pages;
+  }
+
+  void _go(int d) {
+    final to = (_i + d).clamp(0, _count - 1);
+    if (to == _i) return;
+    _ctl.animateToPage(to, duration: Duration(milliseconds: 250), curve: Curves.easeOut);
+  }
+
+  void _openWord(_Token t) {
+    // Тире и прочие значки без букв не слова.
+    if (!RegExp(r'\p{L}', unicode: true).hasMatch(t.word)) return;
+    showWord(
+      context,
+      raw: t.word,
+      cue: Cue(_i.toDouble(), _i.toDouble(), t.sentence),
+      dict: _dict,
+      videoId: widget.story.wordKey,
+      place: 'стр. $_i',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = widget.story;
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 720),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 12, right: 12),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        tooltip: 'Назад',
+                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                      Expanded(
+                        child: Text(
+                          store.conv(s.title),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: _failed
+                      ? Padding(
+                          padding: EdgeInsets.all(24),
+                          child: Text('Не удалось открыть рассказ.', style: TextStyle(fontSize: 14, color: cMuted)),
+                        )
+                      : _pages.isEmpty
+                      ? SizedBox.shrink()
+                      : ListenableBuilder(
+                          // Слова, сохранённые прямо сейчас, подчёркиваются сразу.
+                          listenable: store,
+                          builder: (context, _) => PageView.builder(
+                            controller: _ctl,
+                            itemCount: _count,
+                            onPageChanged: (i) => setState(() => _i = i),
+                            itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1]),
+                          ),
+                        ),
+                ),
+                if (_pages.isNotEmpty) _footer(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _cover() {
+    final s = widget.story;
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(24),
+            child: ExcludeSemantics(
+              child: AspectRatio(
+                aspectRatio: 4 / 3,
+                child: Image.asset('assets/${s.asset}.png', fit: BoxFit.cover),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            store.conv(s.title),
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
+          ),
+          SizedBox(height: 4),
+          Text(s.author, style: TextStyle(fontSize: 14, color: cMuted)),
+          SizedBox(height: 14),
+          Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
+          SizedBox(height: 14),
+          Text(
+            'Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.',
+            style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _text(List<List<_Token>> paragraphs) {
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (final para in paragraphs)
+            Padding(
+              padding: EdgeInsets.only(bottom: 16),
+              child: Wrap(
+                spacing: 6,
+                children: [for (final t in para) _word(t)],
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _word(_Token t) {
+    final key = toLat(cleanWord(t.word)).toLowerCase();
+    final saved = key.isNotEmpty && store.isSaved(key);
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => _openWord(t),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 2),
+        child: Text(
+          store.conv(t.word),
+          style: TextStyle(
+            fontSize: 19,
+            height: 1.5,
+            color: cText,
+            // Сохранённые слова подчёркнуты фиолетовым, как в субтитрах.
+            decoration: saved ? TextDecoration.underline : null,
+            decorationColor: cViolet,
+            decorationThickness: 2,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _footer() {
+    Widget arrow(int d, IconData icon, String label) {
+      final off = d < 0 ? _i == 0 : _i == _count - 1;
+      return Opacity(
+        opacity: off ? 0.35 : 1,
+        child: Pill('', icon: icon, label: label, onTap: () => _go(d)),
+      );
+    }
+
+    return Padding(
+      padding: EdgeInsets.fromLTRB(16, 8, 16, 12),
+      child: Row(
+        children: [
+          arrow(-1, KIcons.arrowLeft, 'Предыдущая страница'),
+          Expanded(
+            child: Center(
+              child: Text(
+                _i == 0 ? 'Начало' : '$_i из ${_count - 1}',
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+              ),
+            ),
+          ),
+          arrow(1, KIcons.arrowRight, 'Следующая страница'),
+        ],
+      ),
+    );
+  }
+}

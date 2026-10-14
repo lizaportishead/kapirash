@@ -74,6 +74,9 @@ class AppStore extends ChangeNotifier {
 
   /// Просмотренная доля ролика, 0..1; у досмотренного — 1.
   Map<String, double> progress = {};
+
+  /// Результаты заданий: «ролик/раздел» → [верных ответов, всего вопросов]. Хранятся только на устройстве.
+  Map<String, List<int>> quiz = {};
   bool cyr = false, dark = false;
 
   /// Онбординг пройден; показываем его один раз.
@@ -114,6 +117,9 @@ class AppStore extends ChangeNotifier {
     );
     progress = (jsonDecode(prefs.getString('kap.progress') ?? '{}') as Map<String, dynamic>).map(
       (k, v) => MapEntry(k, (v as num).toDouble()),
+    );
+    quiz = (jsonDecode(prefs.getString('kap.quiz') ?? '{}') as Map<String, dynamic>).map(
+      (k, v) => MapEntry(k, (v as List).cast<int>()),
     );
     final catalog = prefs.getString('kap.catalog');
     if (catalog != null) setCatalog(jsonDecode(catalog) as Map<String, dynamic>);
@@ -190,6 +196,16 @@ class AppStore extends ChangeNotifier {
     if (notify) scheduleMicrotask(notifyListeners);
   }
 
+  // ---- задания ----
+
+  List<int>? quizResult(String videoId, String section) => quiz['$videoId/$section'];
+
+  void setQuizResult(String videoId, String section, int right, int total) {
+    quiz['$videoId/$section'] = [right, total];
+    _prefs?.setString('kap.quiz', jsonEncode(quiz));
+    notifyListeners();
+  }
+
   // ---- сердечки ----
 
   bool isLiked(String videoId) => liked.contains(videoId);
@@ -230,7 +246,8 @@ class AppStore extends ChangeNotifier {
   Future<void> _refreshCatalog() async {
     try {
       final catalog = {
-        'videos': await cloud!.from('videos').select('id,title,channel,topic,level,duration').order('sort'),
+        // Все столбцы: kind появился позже остальных, и в старой базе его может не быть.
+        'videos': await cloud!.from('videos').select().order('sort'),
         'creators': await cloud!.from('creators').select(),
       };
       // Пустой каталог — скорее ошибка настройки, чем правда: остаёмся с прежним.

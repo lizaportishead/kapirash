@@ -4,16 +4,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
+import 'clips_page.dart';
 import 'creator_page.dart';
 import 'icons.dart';
+import 'phrase.dart';
+import 'quiz_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
 
-/// Открывает плеер поверх таббара.
+/// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
 void openVideo(BuildContext context, Video v, {double? startAt}) {
+  if (v.tiktok) return openClip(context, v, startAt: startAt);
   store.markWatched(v.id);
   Navigator.of(context, rootNavigator: true).push(
     MaterialPageRoute<void>(
@@ -36,6 +40,7 @@ class _PlayerPageState extends State<PlayerPage> {
   StreamSubscription<YoutubeVideoState>? _sub;
   List<Cue> _sr = [], _ru = [];
   Map<String, dynamic> _dict = {};
+  List<QuizSection> _quiz = [];
   // Переключатели SR/RU пока убраны с экрана: обе строки показываются всегда.
   final _showSr = true, _showRu = true;
   // Текущая фраза; за ней следит и открытый поверх плеера экран с полным текстом.
@@ -50,7 +55,6 @@ class _PlayerPageState extends State<PlayerPage> {
   String get videoId => widget.video.id;
   // На странице ролика — только слова, сохранённые из него.
   List<SavedWord> get _words => store.words.where((w) => w.video == videoId).toList();
-  bool get _cyr => store.cyr;
   void _onStore() {
     setState(() {});
     // Субтитры своего ролика могут доготовиться, пока плеер открыт.
@@ -72,6 +76,9 @@ class _PlayerPageState extends State<PlayerPage> {
     _cueVideo();
     _sub = _yt.videoStateStream.listen((s) => _onTime(s.position.inMilliseconds / 1000));
     _load();
+    loadQuiz(videoId).then((q) {
+      if (mounted && q.isNotEmpty) setState(() => _quiz = q);
+    });
   }
 
   // Плеер в WebView может стартовать дольше 30 секунд, которые ждёт пакет, — тогда пробуем ещё раз.
@@ -107,9 +114,6 @@ class _PlayerPageState extends State<PlayerPage> {
     _curN.dispose();
     super.dispose();
   }
-
-  String _conv(String s) => store.conv(s);
-  bool _isSaved(String w) => store.isSaved(toLat(cleanWord(w)).toLowerCase());
 
   void _savePos({bool leaving = false}) {
     final t = _pos;
@@ -160,72 +164,9 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   void _openWord(String raw, Cue cue) {
-    final word = cleanWord(raw);
-    if (word.isEmpty) return;
+    if (cleanWord(raw).isEmpty) return;
     _yt.pauseVideo();
-    final lat = toLat(word), cyr = toCyr(lat), key = lat.toLowerCase();
-    final entry = _dict[key] as List?;
-    final tr = entry == null ? '' : entry[0] as String;
-    final note = entry == null ? '' : entry[1] as String;
-    showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: cBg,
-      isScrollControlled: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
-      builder: (ctx) => SafeArea(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
-          // В горизонтальном режиме карточка может не поместиться по высоте.
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  _cyr ? cyr : lat,
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w800,
-                    height: 1.1,
-                    letterSpacing: -0.6,
-                    color: cText,
-                  ),
-                ),
-                SizedBox(height: 6),
-                Text('${_cyr ? lat : cyr} · ${fmtTime(cue.start)}', style: TextStyle(fontSize: 15, color: cMuted)),
-                SizedBox(height: 14),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                  decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
-                  child: Text(_conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
-                ),
-                SizedBox(height: 14),
-                if (entry == null)
-                  Text('Этого слова нет в словарике ролика.', style: TextStyle(fontSize: 14, color: cMuted))
-                else ...[
-                  Text(
-                    tr,
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
-                  ),
-                  if (note.isNotEmpty) ...[
-                    SizedBox(height: 4),
-                    Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
-                  ],
-                ],
-                SizedBox(height: 16),
-                BigButton(
-                  _isSaved(word) ? 'Уже в моих словах' : 'Добавить в мои слова',
-                  onTap: () {
-                    store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId));
-                    Navigator.pop(ctx);
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
+    showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId);
   }
 
   @override
@@ -275,9 +216,9 @@ class _PlayerPageState extends State<PlayerPage> {
                   ),
                   player,
                   SizedBox(height: 10),
-                  _controls(),
-                  SizedBox(height: 10),
-                  Expanded(child: SingleChildScrollView(child: _current(cue))),
+                  Expanded(
+                    child: Align(alignment: Alignment.topCenter, child: _current(cue)),
+                  ),
                   SizedBox(height: 10),
                   _links(),
                   SizedBox(height: 12 + MediaQuery.paddingOf(context).bottom),
@@ -353,29 +294,7 @@ class _PlayerPageState extends State<PlayerPage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (_showSr)
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 5,
-              children: [
-                for (final w in cue.text.split(' '))
-                  GestureDetector(
-                    onTap: () => _openWord(w, cue),
-                    child: Text(
-                      _conv(w),
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        height: 1.35,
-                        color: cInk,
-                        decoration: TextDecoration.underline,
-                        decorationThickness: 2,
-                        decorationColor: _isSaved(w) ? cViolet : cInk.withValues(alpha: 0.25),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
+          if (_showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: 16, spacing: 5, pad: 0, center: true),
           if (ru.isNotEmpty)
             Text(
               ru,
@@ -435,109 +354,145 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
+  // Кнопки листают фразы, поэтому живут на карточке фразы — сверху, чтобы не прыгать вместе с её высотой.
   Widget _controls() {
+    Widget button(int d, IconData icon, String label, {String text = ''}) {
+      return Expanded(
+        child: Semantics(
+          button: true,
+          label: label,
+          child: InkWell(
+            customBorder: StadiumBorder(),
+            onTap: () => _step(d),
+            child: Ink(
+              height: 38,
+              decoration: ShapeDecoration(
+                shape: StadiumBorder(side: BorderSide(color: cInk.withValues(alpha: 0.16), width: 1.5)),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, size: text.isEmpty ? 24 : 16, color: cInk),
+                  if (text.isNotEmpty) ...[
+                    SizedBox(width: 6),
+                    Text(
+                      text,
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cInk),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
     return Row(
+      spacing: 6,
       children: [
-        Expanded(
-          child: Pill('', icon: KIcons.arrowLeft, label: 'Предыдущая фраза', onTap: () => _step(-1)),
-        ),
-        SizedBox(width: 6),
-        Expanded(
-          child: Pill('Ещё раз', icon: KIcons.refresh, onTap: () => _step(0)),
-        ),
-        SizedBox(width: 6),
-        Expanded(
-          child: Pill('', icon: KIcons.arrowRight, label: 'Следующая фраза', onTap: () => _step(1)),
-        ),
+        button(-1, KIcons.arrowLeft, 'Предыдущая фраза'),
+        button(0, KIcons.refresh, 'Ещё раз', text: 'Ещё раз'),
+        button(1, KIcons.arrowRight, 'Следующая фраза'),
       ],
     );
   }
 
   Widget _current(Cue? cue) {
     final ru = cue != null && _showRu ? _ruFor(cue) : '';
-    return Container(
-      constraints: BoxConstraints(minHeight: 96),
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
+    return Material(
+      color: cAccent,
+      borderRadius: BorderRadius.circular(24),
+      clipBehavior: Clip.antiAlias,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (_sr.isEmpty && widget.video.mine)
-            Text(
-              store.myVideo(videoId)?.status == SubsStatus.failed
-                  ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
-                  : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
-              style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
-            ),
-          if (cue != null && _showSr)
-            Wrap(
-              spacing: 7,
-              children: [
-                for (final w in cue.text.split(' '))
-                  GestureDetector(
-                    onTap: () => _openWord(w, cue),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 4),
-                      child: Text(
-                        _conv(w),
+          Padding(padding: EdgeInsets.fromLTRB(12, 12, 12, 0), child: _controls()),
+          Flexible(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: 68),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (_sr.isEmpty && widget.video.mine)
+                      Text(
+                        store.myVideo(videoId)?.status == SubsStatus.failed
+                            ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
+                            : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
+                        style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
+                      ),
+                    if (cue != null && _showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue)),
+                    if (ru.isNotEmpty) ...[
+                      SizedBox(height: 6),
+                      Text(
+                        ru,
                         style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          height: 1.3,
-                          color: cInk,
-                          decoration: TextDecoration.underline,
-                          decorationThickness: 2,
-                          decorationColor: _isSaved(w) ? cViolet : cInk.withValues(alpha: 0.25),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          height: 1.4,
+                          color: cInk.withValues(alpha: 0.72),
                         ),
                       ),
-                    ),
-                  ),
-              ],
-            ),
-          if (ru.isNotEmpty) ...[
-            SizedBox(height: 6),
-            Text(
-              ru,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                height: 1.4,
-                color: cInk.withValues(alpha: 0.72),
+                    ],
+                  ],
+                ),
               ),
             ),
-          ],
+          ),
         ],
       ),
     );
   }
 
-  // Полный текст и слова ролика открываются отдельными экранами.
+  // Полный текст, слова и задания ролика открываются отдельными экранами.
   Widget _links() {
     return Row(
+      spacing: 6,
       children: [
         Expanded(
           child: Pill(
-            'Весь текст',
+            'Текст',
+            icon: KIcons.text,
             onTap: () => _push(
-              _SubPage(
+              SubPage(
                 title: 'Весь текст',
-                child: _Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek),
+                child: Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek),
               ),
             ),
           ),
         ),
-        SizedBox(width: 6),
         Expanded(
           child: Pill(
-            'Мои слова${_words.isEmpty ? '' : ' · ${_words.length}'}',
+            'Слова${_words.isEmpty ? '' : ' · ${_words.length}'}',
+            icon: KIcons.wordsOn,
             onTap: () => _push(
-              _SubPage(
+              SubPage(
                 title: 'Мои слова',
-                child: _WordList(videoId: videoId, onSeek: _seek),
+                child: WordList(videoId: videoId, onSeek: _seek),
               ),
             ),
           ),
         ),
+        // Задания есть не у всех роликов.
+        if (_quiz.isNotEmpty)
+          Expanded(
+            child: Pill(
+              'Задания',
+              icon: KIcons.tasks,
+              onTap: () {
+                _yt.pauseVideo();
+                _push(
+                  SubPage(
+                    title: 'Задания',
+                    child: QuizList(videoId: videoId, sections: _quiz),
+                  ),
+                );
+              },
+            ),
+          ),
       ],
     );
   }
@@ -548,8 +503,8 @@ class _PlayerPageState extends State<PlayerPage> {
 }
 
 /// Экран поверх плеера: кнопка «Назад», заголовок и содержимое.
-class _SubPage extends StatelessWidget {
-  const _SubPage({required this.title, required this.child});
+class SubPage extends StatelessWidget {
+  const SubPage({super.key, required this.title, required this.child});
   final String title;
   final Widget child;
 
@@ -593,18 +548,18 @@ class _SubPage extends StatelessWidget {
 }
 
 /// Весь текст ролика; нажатие на фразу возвращает в плеер и включает её.
-class _Transcript extends StatefulWidget {
-  const _Transcript({required this.sr, required this.cur, required this.ruFor, required this.onSeek});
+class Transcript extends StatefulWidget {
+  const Transcript({super.key, required this.sr, required this.cur, required this.ruFor, required this.onSeek});
   final List<Cue> sr;
   final ValueListenable<int> cur;
   final String Function(Cue) ruFor;
   final void Function(double) onSeek;
 
   @override
-  State<_Transcript> createState() => _TranscriptState();
+  State<Transcript> createState() => _TranscriptState();
 }
 
-class _TranscriptState extends State<_Transcript> {
+class _TranscriptState extends State<Transcript> {
   final _rowKeys = <int, GlobalKey>{};
 
   @override
@@ -692,8 +647,8 @@ class _TranscriptState extends State<_Transcript> {
 }
 
 /// Слова, сохранённые из этого ролика; нажатие возвращает в плеер к месту, где слово прозвучало.
-class _WordList extends StatelessWidget {
-  const _WordList({required this.videoId, required this.onSeek});
+class WordList extends StatelessWidget {
+  const WordList({super.key, required this.videoId, required this.onSeek});
   final String videoId;
   final void Function(double) onSeek;
 

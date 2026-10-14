@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'learn_page.dart';
 import 'player_page.dart';
+import 'stories_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
@@ -155,12 +156,17 @@ class _WordCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final video = videoById(w.video);
+    final story = storyById(w.video);
     return Material(
       color: cCard,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
         borderRadius: BorderRadius.circular(24),
-        onTap: video == null ? null : () => openVideo(context, video, startAt: w.t),
+        onTap: video != null
+            ? () => openVideo(context, video, startAt: w.t)
+            : story != null
+            ? () => openStory(context, story, page: w.t.toInt())
+            : null,
         child: Padding(
           padding: EdgeInsets.fromLTRB(18, 14, 6, 14),
           child: Row(
@@ -190,6 +196,12 @@ class _WordCard extends StatelessWidget {
                       SizedBox(height: 6),
                       Text(
                         '${video.channel} · ${fmtTime(w.t)}',
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
+                      ),
+                    ] else if (story != null) ...[
+                      SizedBox(height: 6),
+                      Text(
+                        '${story.title} · стр. ${w.t.toInt()}',
                         style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
                       ),
                     ],
