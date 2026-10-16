@@ -17,7 +17,7 @@ import 'videos.dart';
 
 /// Открывает клип поверх таббара; свайпом вверх и вниз листаются соседние — из [among], а без него все клипы.
 void openClip(BuildContext context, Video v, {double? startAt, List<Video>? among}) {
-  Navigator.of(context, rootNavigator: true).push(
+  Navigator.of(context).push(
     MaterialPageRoute<void>(
       builder: (_) => ClipViewer(video: v, startAt: startAt, among: among),
     ),

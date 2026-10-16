@@ -7,7 +7,7 @@ import 'theme.dart';
 
 /// Открывает режим «Учить слова» поверх таббара.
 void openLearn(BuildContext context) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => LearnPage()));
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => LearnPage()));
 }
 
 /// Карточки по сохранённым словам: переворачиваем, отвечаем «знаю» или «ещё учу».

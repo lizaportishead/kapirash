@@ -117,7 +117,7 @@ void showWord(
               BigButton(
                 store.isSaved(key) ? 'Уже в моих словах' : 'Добавить в мои слова',
                 onTap: () {
-                  store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId));
+                  store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId)..setLemmaFrom(dict));
                   Navigator.pop(ctx);
                 },
               ),

@@ -99,7 +99,10 @@ class HomeShell extends StatefulWidget {
 }
 
 class _HomeShellState extends State<HomeShell> {
-  int _tab = 0;
+  final _tabN = ValueNotifier<int>(0);
+  final _navKey = GlobalKey<NavigatorState>();
+  int get _tab => _tabN.value;
+  set _tab(int v) => _tabN.value = v;
 
   // В середине таббара — пустая ячейка под кнопку «плюс», поэтому индексы справа от неё сдвинуты.
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
@@ -118,6 +121,7 @@ class _HomeShellState extends State<HomeShell> {
         : (tab == _profile ? 1 : 0);
     _lastProfileTap = now;
     if (_profileTaps == 3) return store.replayOnboarding();
+    _navKey.currentState?.popUntil((r) => r.isFirst);
     setState(() => _tab = tab);
   }
 
@@ -129,7 +133,7 @@ class _HomeShellState extends State<HomeShell> {
   Widget build(BuildContext context) {
     // Десктоп и широкий планшет: меню слева, контент шире. Телефон: таббар снизу.
     final wide = MediaQuery.sizeOf(context).width >= 900;
-    final pages = IndexedStack(
+    Widget buildPages() => IndexedStack(
       index: _tab,
       children: [
         FeedPage(),
@@ -140,7 +144,8 @@ class _HomeShellState extends State<HomeShell> {
         ProfilePage(),
       ],
     );
-    if (wide) return _wideShell(pages);
+    if (wide) return _wideShell(buildPages);
+    final pages = buildPages();
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -232,7 +237,7 @@ class _HomeShellState extends State<HomeShell> {
     );
   }
 
-  Widget _wideShell(Widget pages) {
+  Widget _wideShell(Widget Function() buildPages) {
     final items = <(int, IconData, IconData, String)>[
       (0, KIcons.catalog, KIcons.catalogOn, 'Каталог'),
       if (kAddVideoEnabled) (1, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
@@ -315,7 +320,16 @@ class _HomeShellState extends State<HomeShell> {
           Expanded(
             child: SafeArea(
               child: Center(
-                child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: pages),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 1200),
+                  // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
+                  child: Navigator(
+                    key: _navKey,
+                    onGenerateRoute: (_) => MaterialPageRoute<void>(
+                      builder: (_) => ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

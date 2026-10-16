@@ -20,6 +20,12 @@ class _WordsPageState extends State<WordsPage> {
   bool _searching = false;
 
   @override
+  void initState() {
+    super.initState();
+    store.fillLemmas();
+  }
+
+  @override
   void dispose() {
     _search.dispose();
     super.dispose();
@@ -40,7 +46,7 @@ class _WordsPageState extends State<WordsPage> {
       builder: (context, _) {
         final all = store.words.reversed.toList();
         final q = _norm(_search.text.trim());
-        final list = q.isEmpty ? all : all.where((w) => _norm('${w.key} ${w.tr} ${w.ctx}').contains(q)).toList();
+        final list = q.isEmpty ? all : all.where((w) => _norm('${w.key} ${w.lemma ?? ''} ${w.tr} ${w.lemmaTr} ${w.ctx}').contains(q)).toList();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -180,6 +186,14 @@ class _WordCard extends StatelessWidget {
                       store.conv(w.key),
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
                     ),
+                    if (w.lemma != null && w.lemma != w.key)
+                      Padding(
+                        padding: EdgeInsets.only(top: 2),
+                        child: Text(
+                          'нач. форма: ${store.conv(w.lemma!)}${w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'}',
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cViolet),
+                        ),
+                      ),
                     if (w.tr.isNotEmpty)
                       Text(
                         w.tr,

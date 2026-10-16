@@ -41,7 +41,6 @@ insert into public.creators (name, handle, avatar_id) values
   ('KCNS', 'KCnovisad', 'ytc/AIdro_mvjIgdbC1NmmEpUTnaGDXRzWaP_9wCXpIcjvN-MuQcfg'),
   ('StudentFounders', null, null),
   ('Nasa Televizija', null, null),
-  ('SINGIDUNUM VALJEVO', null, null),
   ('Heapspace', null, null),
   ('Andjela Markovic', null, null),
   ('Štreberi', null, null);
@@ -72,7 +71,6 @@ insert into public.videos (id, title, channel, topic, level, duration) values
   ('2Yu3pKxNY5Q', 'Šta je startap?', 'StudentFounders', 'IT', 'B1', '5:26'),
   ('1BNwsNIp31E', 'Kako saznati ko je Vaš idealan kupac | Mapa Empatije', 'StudentFounders', 'Дизайн', 'B1', '10:33'),
   ('XVbTD_qhPL8', 'Slavimir Stojanović - Za Beograd (Aleksandra Simić)', 'Nasa Televizija', 'Дизайн', 'B2', '12:28'),
-  ('D9Fc77qeKdQ', 'VEŠTAČKA INTELIGENCIJA, Tatjana Gligorić', 'SINGIDUNUM VALJEVO', 'IT', 'B2', '14:53'),
   ('4csv5_G5FF0', 'Hipkon Lajt 2020 | Novi (normalni) rad - Tamara Kojić', 'Heapspace', 'IT', 'B2', '30:14'),
   ('20D5N4Vjm9I', 'MAKEUP ZA SVAKI DAN 🫵', 'Andjela Markovic', 'Красота', 'B1', '10:39'),
   ('iKhNlMwn4aw', 'Hipkon Lajt 2020 | Design thinking - Kako da stvarate proizvode koje ljudi žele - Milovan Dekić', 'Heapspace', 'Дизайн', 'B2', '32:20'),

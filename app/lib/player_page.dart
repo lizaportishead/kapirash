@@ -19,7 +19,7 @@ import 'videos.dart';
 void openVideo(BuildContext context, Video v, {double? startAt}) {
   if (v.tiktok) return openClip(context, v, startAt: startAt);
   store.markWatched(v.id);
-  Navigator.of(context, rootNavigator: true).push(
+  Navigator.of(context).push(
     MaterialPageRoute<void>(
       builder: (_) => PlayerPage(video: v, startAt: startAt),
     ),

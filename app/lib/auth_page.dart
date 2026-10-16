@@ -9,7 +9,7 @@ final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
 
 /// Открывает вход поверх таббара. [intro] — первый показ сразу после онбординга.
 void openAuth(BuildContext context, {bool intro = false}) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => AuthPage(intro: intro)));
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => AuthPage(intro: intro)));
 }
 
 // Вход в два шага: почта, затем ссылка или код из письма.

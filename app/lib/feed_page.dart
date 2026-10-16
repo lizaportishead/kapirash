@@ -19,6 +19,7 @@ class FeedPage extends StatelessWidget {
   Widget _feed(BuildContext context) {
     // Новые ролики добавляются в конец списка, поэтому «последние» — это хвост.
     final newest = videos.reversed.toList();
+    final popular = (videos.toList()..sort((a, b) => b.views.compareTo(a.views))).take(_perSection).toList();
     final topics = <String>[
       for (final v in videos)
         if (v.topic.isNotEmpty) v.topic,
@@ -46,6 +47,7 @@ class FeedPage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 16),
             children: [
               _Section(title: 'Новое', list: newest.take(_perSection).toList()),
+              _Section(title: 'Популярное', list: popular),
               for (final t in topics)
                 _Section(
                   title: t,
@@ -61,7 +63,7 @@ class FeedPage extends StatelessWidget {
 }
 
 // Высота карточки: превью 16:9 плюс подпись.
-double _cardHeight(double w) => (w - 16) * 9 / 16 + 135;
+double _cardHeight(double w) => (w - 16) * 9 / 16 + 108;
 
 /// Заголовок темы со ссылкой «Смотреть все» и горизонтальная полоса из последних роликов.
 class _Section extends StatelessWidget {
@@ -125,7 +127,7 @@ class _Section extends StatelessWidget {
 
 /// Все ролики одной темы поверх таббара.
 void openTopic(BuildContext context, String topic) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => TopicPage(topic)));
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => TopicPage(topic)));
 }
 
 class TopicPage extends StatelessWidget {

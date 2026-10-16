@@ -7,24 +7,61 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'stories_page.dart';
 import 'subs.dart';
 import 'subs_generator.dart';
 import 'supabase_config.dart';
 import 'videos.dart';
 
 class SavedWord {
-  SavedWord({required this.key, required this.tr, required this.ctx, required this.t, required this.video});
+  SavedWord({
+    required this.key,
+    required this.tr,
+    required this.ctx,
+    required this.t,
+    required this.video,
+    this.lemma,
+    this.lemmaTr = '',
+  });
   final String key, tr, ctx, video;
   final double t;
 
-  Map<String, dynamic> toJson() => {'key': key, 'tr': tr, 'ctx': ctx, 't': t, 'video': video};
+  /// Начальная форма (им. п. ед. ч., инфинитив) и её перевод. null — ещё не определена.
+  String? lemma;
+  String lemmaTr;
+
+  Map<String, dynamic> toJson() => {
+    'key': key,
+    'tr': tr,
+    'ctx': ctx,
+    't': t,
+    'video': video,
+    if (lemma != null) 'lemma': lemma,
+    if (lemmaTr.isNotEmpty) 'lemmaTr': lemmaTr,
+  };
   static SavedWord fromJson(Map<String, dynamic> j) => SavedWord(
     key: j['key'],
     tr: j['tr'] ?? '',
     ctx: j['ctx'] ?? '',
     t: (j['t'] as num).toDouble(),
     video: j['video'] ?? '',
+    lemma: j['lemma'],
+    lemmaTr: j['lemmaTr'] ?? '',
   );
+
+  /// Заполняет [lemma] по записи словарика: заметка вида «pas; вин. падеж» называет начальную форму,
+  /// а заметка без неё («сущ. м. р.», «инфинитив», «наречие») значит, что слово уже в начальной форме.
+  void setLemmaFrom(Map<String, dynamic> dict) {
+    final entry = dict[key] as List?;
+    final note = entry != null && entry.length > 1 ? entry[1] as String : '';
+    final m = RegExp(r"^([\p{L}'-]+)(?:\s*\(se\))?\s*(?:$|[;—–,:(])", unicode: true).firstMatch(note);
+    final head = m?.group(1)?.toLowerCase();
+    final isLatin = head != null && RegExp(r'^[a-zčćžšđ]', unicode: true).hasMatch(head);
+    lemma = isLatin ? toLat(head) : key;
+    final own = lemma == key ? tr : '';
+    final other = dict[lemma] as List?;
+    lemmaTr = other != null ? other[0] as String : own;
+  }
 }
 
 enum SubsStatus {
@@ -146,6 +183,37 @@ class AppStore extends ChangeNotifier {
     _saveWords();
   }
 
+  /// Дописывает начальную форму у слов, сохранённых до того, как она появилась.
+  Future<void> fillLemmas() async {
+    final todo = words.where((w) => w.lemma == null).toList();
+    if (todo.isEmpty) return;
+    final byVideo = <String, List<SavedWord>>{};
+    for (final w in todo) {
+      (byVideo[w.video] ??= []).add(w);
+    }
+    for (final e in byVideo.entries) {
+      Map<String, dynamic>? dict;
+      try {
+        final story = storyById(e.key);
+        final video = videoById(e.key);
+        if (story?.asset != null) {
+          dict = jsonDecode(await rootBundle.loadString('assets/${story!.asset}.dict.json')) as Map<String, dynamic>;
+        } else if (video != null) {
+          dict = (await loadSubs(video))?.dict;
+        }
+      } catch (_) {}
+      for (final w in e.value) {
+        if (dict != null) {
+          w.setLemmaFrom(dict);
+        } else {
+          w.lemma = w.key;
+          w.lemmaTr = w.tr;
+        }
+      }
+    }
+    _saveWords();
+  }
+
   int wordCount(String videoId) => words.where((w) => w.video == videoId).length;
 
   // ---- история ----
@@ -247,7 +315,7 @@ class AppStore extends ChangeNotifier {
     try {
       final catalog = {
         // Все столбцы: kind появился позже остальных, и в старой базе его может не быть.
-        'videos': await cloud!.from('videos').select().order('sort'),
+        'videos': await cloud!.from('videos').select().order('sort', ascending: true),
         'creators': await cloud!.from('creators').select(),
       };
       // Пустой каталог — скорее ошибка настройки, чем правда: остаёмся с прежним.

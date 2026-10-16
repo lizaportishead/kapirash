@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Какие три типа хакеров называет автор?",
+     "o": [
+      "White hat, black hat и grey hat",
+      "Школьники, студенты и профессионалы",
+      "Честные, бедные и богатые",
+      "Красные, синие и зелёные"
+     ],
+     "a": 0,
+     "e": "В ролике: «white hat hakeri... black hat hakeri... i grey hat hakeri, koji su zapravo nešto između»."
+    },
+    {
+     "q": "Что нужно сделать в первую очередь?",
+     "o": [
+      "Придумать крутое хакерское имя",
+      "Купить компьютер",
+      "Найти работу",
+      "Выучить английский"
+     ],
+     "a": 0,
+     "e": "В ролике: «Prvo što je potrebno je da smislite cool hacking ime. Zato što onda izgledate opasno»."
+    },
+    {
+     "q": "Что, по словам автора, показывает, что вы умнее и лучше как хакер?",
+     "o": [
+      "Длинное имя",
+      "Больше букв, заменённых цифрами",
+      "Одна заглавная буква",
+      "Имя на сербском"
+     ],
+     "a": 1,
+     "e": "В ролике: «što više slova zamenite brojevima, to znači da ste inteligentniji i da ste bolji haker»."
+    },
+    {
+     "q": "Почему нужна «Лумикс» (Linux)?",
+     "o": [
+      "Она быстрее Windows",
+      "Она бесплатная",
+      "Она красивая",
+      "В ней уже установлены нужные инструменты"
+     ],
+     "a": 3,
+     "e": "В ролике: «Zato što on ima preinstalirane tulove, kao terminal, koji su potrebni za hakovanje»."
+    },
+    {
+     "q": "Что скрывается за буквами HS в ITHS?",
+     "o": [
+      "High score",
+      "Hacking school, а не high school",
+      "Home security",
+      "Hot spot"
+     ],
+     "a": 1,
+     "e": "В ролике: «a iza tog HS se zapravo krije high school... zapravo to HS nije za high school, već hacking school»."
+    },
+    {
+     "q": "Что нужно носить, чтобы стать профессиональным хакером?",
+     "o": [
+      "Белый халат",
+      "Худи с капюшоном и перчатки",
+      "Очки и шарф",
+      "Костюм"
+     ],
+     "a": 1,
+     "e": "В ролике: «da biste postali profesionalni haker, morate imati hudi i one hakerske rukavice»."
+    },
+    {
+     "q": "Сколько мониторов у «лучшего хакера в мире» Cold Frozen?",
+     "o": [
+      "20",
+      "5",
+      "100",
+      "2"
+     ],
+     "a": 0,
+     "e": "В ролике: «najbolji haker na svetu, Cold Frozen, ima čak 20 monitora»."
+    },
+    {
+     "q": "Почему хакеры не используют мышь?",
+     "o": [
+      "Мыши дорого стоят",
+      "Мышь можно взломать",
+      "Чтобы не терять время, переключаясь на мышь",
+      "Мышь шумит"
+     ],
+     "a": 2,
+     "e": "В ролике: «ukoliko vam treba miš, vi morate prekinuti, preći na miša i onda se vratiti na hakovanje. I tu gubite vreme»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaki *klinac* sanja da postane haker.",
+     "o": [
+      "директор",
+      "учитель",
+      "пацан, подросток",
+      "игрок"
+     ],
+     "a": 2,
+     "e": "Klinac — разговорное «пацан, подросток»."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Potreban vam je veliki *trud* i veliko ulaganje vremena.",
+     "o": [
+      "усилие, труд",
+      "талант",
+      "диплом",
+      "компьютер"
+     ],
+     "a": 0,
+     "e": "Trud — усилие, старание."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo jedan *oprez* što se tiče ovog sistema.",
+     "o": [
+      "приз",
+      "совет",
+      "осторожность",
+      "шанс"
+     ],
+     "a": 2,
+     "e": "Oprez — осторожность."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li ste videli hakera koji ne nosi *kapuljaču*?",
+     "o": [
+      "очки",
+      "капюшон",
+      "маску",
+      "шапку"
+     ],
+     "a": 1,
+     "e": "Kapuljača — капюшон."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Postoje neke *glasine* da najbolji haker ima 20 monitora.",
+     "o": [
+      "фильмы",
+      "законы",
+      "новости",
+      "слухи"
+     ],
+     "a": 3,
+     "e": "Glasina — слух."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Morate ići u *zatvor* ili biti bar na FBI poternici.",
+     "o": [
+      "отпуск",
+      "армию",
+      "тюрьму",
+      "школу"
+     ],
+     "a": 2,
+     "e": "Zatvor — тюрьма; zatvoriti — закрыть."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Biti na FBI *poternici*.",
+     "o": [
+      "в розыске",
+      "в кадре",
+      "в рейтинге",
+      "на задании"
+     ],
+     "a": 0,
+     "e": "Poternica — ордер на арест, объявление о розыске."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kakav biste haker bili da vam desktop izgleda *uredno*?",
+     "o": [
+      "быстро",
+      "аккуратно",
+      "странно",
+      "дорого"
+     ],
+     "a": 1,
+     "e": "Uredan — аккуратный; red — порядок."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Što više slova zamenite ___, to ste bolji haker.",
+     "o": [
+      "brojevima",
+      "brojeve",
+      "brojevi",
+      "brojeva"
+     ],
+     "a": 0,
+     "e": "Zameniti чем — творительный падеж: slova zamenite brojevima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvo što je potrebno je da ___ cool hacking ime.",
+     "o": [
+      "smisli",
+      "smislim",
+      "smisle",
+      "smislite"
+     ],
+     "a": 3,
+     "e": "Обращение к «вы», множественное число: da smislite."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Uz pomoć tih ___ možete hakovati bilo koju vladu.",
+     "o": [
+      "tulova",
+      "tulovi",
+      "tulove",
+      "tulovima"
+     ],
+     "a": 0,
+     "e": "Uz pomoć («с помощью») требует родительного падежа: tih tulova."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Najbolje je da upišete neku hacking ___.",
+     "o": [
+      "školom",
+      "škola",
+      "škole",
+      "školu"
+     ],
+     "a": 3,
+     "e": "Upisati что — винительный падеж: školu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Verovatno i ta škola mora biti ___.",
+     "o": [
+      "nelegalno",
+      "nelegalni",
+      "nelegalnu",
+      "nelegalna"
+     ],
+     "a": 3,
+     "e": "Прилагательное согласуется с školom — женский род, именительный падеж: nelegalna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Naučite da ne koristite ___.",
+     "o": [
+      "mišem",
+      "mišu",
+      "miša",
+      "miš"
+     ],
+     "a": 2,
+     "e": "Koristiti что — винительный падеж. У одушевлённых мужского рода он совпадает с родительным: miša."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hakujte u što manje ___.",
+     "o": [
+      "svetla",
+      "svetlom",
+      "svetlo",
+      "svetlu"
+     ],
+     "a": 0,
+     "e": "После što manje ставится родительный падеж: što manje svetla."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Treba da slušate hakersku ___.",
+     "o": [
+      "muzikom",
+      "muzike",
+      "muziku",
+      "muzika"
+     ],
+     "a": 2,
+     "e": "Slušati что — винительный падеж: hakersku muziku."
+    }
+   ]
+  }
+ ]
+}

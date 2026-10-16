@@ -8,10 +8,7 @@ import 'videos.dart';
 
 /// Открывает страницу креатора поверх таббара.
 void openCreator(BuildContext context, String channel) {
-  Navigator.of(
-    context,
-    rootNavigator: true,
-  ).push(MaterialPageRoute<void>(builder: (_) => CreatorPage(channel: channel)));
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => CreatorPage(channel: channel)));
 }
 
 String plural(int n, String one, String few, String many) {

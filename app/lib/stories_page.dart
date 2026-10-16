@@ -31,6 +31,42 @@ const stories = [
         'a kad ih je dobila više nije mogla da ih skine već je morala u njima zauvek da pleše.',
     asset: 'story_crvene_cipele',
   ),
+  Story(
+    id: 'staklena-kula',
+    title: 'Staklena kula',
+    author: 'Autor nepoznat',
+    blurb:
+        'Priča o devojci Ilzi koja je da bi spasla bolesnog oca otišla u staklenu kulu veštice Prelje, '
+        'gde se prede ljudske sudbine, i čistom pesmom razbila njenu čaroliju.',
+    asset: 'story_staklena_kula',
+  ),
+  Story(
+    id: 'ogledalo-bez-odsjaja',
+    title: 'Ogledalo bez odsjaja',
+    author: 'Autor nepoznat',
+    blurb:
+        'Psihološki detektiv: inspektor Marko istražuje nestanak slikarke Sofije iz zaključane vile '
+        'i pod ultraljubičastim svetlom otkriva istinu o njenom mužu.',
+    asset: 'story_ogledalo_bez_odsjaja',
+  ),
+  Story(
+    id: 'tkacica-zaboravljenih-snova',
+    title: 'Tkačica zaboravljenih snova',
+    author: 'Autor nepoznat',
+    blurb:
+        'Priča o mladiću Radovanu koji je otišao u pećinu tkačice Morane da zaboravi bol za izgubljenim bratom, '
+        'ali je shvatio da je bol cena ljubavi.',
+    asset: 'story_tkacica_zaboravljenih_snova',
+  ),
+  Story(
+    id: 'poslednje-eho',
+    title: 'Poslednje eho sa planete Aeron',
+    author: 'Autor nepoznat',
+    blurb:
+        'Naučnofantastična priča o ksenoarheologu Viktoru Lazareviću koji na izumrloj planeti Aeron '
+        'pronalazi oca zarobljenog u kristalu sećanja i mora da odluči da li da ga vrati kući.',
+    asset: 'story_poslednje_eho',
+  ),
   Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
   Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
   Story(id: 'snezna-kraljica', title: 'Snežna kraljica', author: 'Hans Kristijan Andersen'),
@@ -45,9 +81,9 @@ Story? storyById(String wordKey) {
 }
 
 /// Открывает читалку поверх таббара; [page] — страница, на которой слово было сохранено.
-void openStory(BuildContext context, Story s, {int page = 0}) {
+void openStory(BuildContext context, Story s, {int? page}) {
   if (!s.ready) return;
-  Navigator.of(context, rootNavigator: true).push(
+  Navigator.of(context).push(
     MaterialPageRoute<void>(builder: (_) => StoryReader(story: s, page: page)),
   );
 }
@@ -92,7 +128,14 @@ class _StoryCard extends StatelessWidget {
               width: 112,
               height: 112,
               child: ready
-                  ? ExcludeSemantics(child: Image.asset('assets/${story.asset}.png', fit: BoxFit.cover))
+                  ? ExcludeSemantics(
+                      child: Image.asset(
+                        'assets/${story.asset}.png',
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, _, _) =>
+                            ColoredBox(color: cCard2, child: Icon(KIcons.stories, size: 36, color: cFaint)),
+                      ),
+                    )
                   : ColoredBox(
                       color: cCard2,
                       child: Icon(KIcons.stories, size: 36, color: cFaint),
@@ -158,9 +201,10 @@ class _Token {
 }
 
 class StoryReader extends StatefulWidget {
-  const StoryReader({super.key, required this.story, this.page = 0});
+  const StoryReader({super.key, required this.story, this.page});
   final Story story;
-  final int page;
+  // null — продолжить с места, где остановились.
+  final int? page;
 
   @override
   State<StoryReader> createState() => _StoryReaderState();
@@ -171,7 +215,7 @@ class _StoryReaderState extends State<StoryReader> {
   List<List<List<_Token>>> _pages = [];
   Map<String, dynamic> _dict = {};
   late final PageController _ctl;
-  late int _i = widget.page;
+  late int _i = widget.page ?? store.positionOf(widget.story.wordKey)?.toInt() ?? 0;
   bool _failed = false;
 
   // Страница 0 — обложка, дальше текст.
@@ -180,7 +224,7 @@ class _StoryReaderState extends State<StoryReader> {
   @override
   void initState() {
     super.initState();
-    _ctl = PageController(initialPage: widget.page);
+    _ctl = PageController(initialPage: _i);
     _load();
   }
 
@@ -235,6 +279,54 @@ class _StoryReaderState extends State<StoryReader> {
     _ctl.animateToPage(to, duration: Duration(milliseconds: 250), curve: Curves.easeOut);
   }
 
+  // Слова из этого рассказа; нажатие переносит на страницу, где слово было сохранено.
+  void _showWords() {
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: cCard,
+      isScrollControlled: true,
+      builder: (ctx) => ListenableBuilder(
+        listenable: store,
+        builder: (ctx, _) {
+          final list = store.words.where((w) => w.video == widget.story.wordKey).toList().reversed.toList();
+          return SafeArea(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: MediaQuery.of(ctx).size.height * 0.7),
+              child: list.isEmpty
+                  ? Padding(
+                      padding: EdgeInsets.all(24),
+                      child: Text(
+                        'Пока нет слов. Нажми на слово в тексте, чтобы добавить его.',
+                        style: TextStyle(fontSize: 14, color: cMuted),
+                      ),
+                    )
+                  : ListView(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      children: [
+                        for (final w in list)
+                          ListTile(
+                            title: Text(
+                              store.conv(w.key),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: cText),
+                            ),
+                            subtitle: Text(w.tr, style: TextStyle(fontSize: 14, color: cMuted)),
+                            trailing: Text('стр. ${w.t.toInt()}', style: TextStyle(fontSize: 12, color: cFaint)),
+                            onTap: () {
+                              Navigator.pop(ctx);
+                              final to = w.t.toInt().clamp(0, _count - 1);
+                              if (_ctl.hasClients) _ctl.jumpToPage(to);
+                            },
+                          ),
+                      ],
+                    ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   void _openWord(_Token t) {
     // Тире и прочие значки без букв не слова.
     if (!RegExp(r'\p{L}', unicode: true).hasMatch(t.word)) return;
@@ -276,6 +368,22 @@ class _StoryReaderState extends State<StoryReader> {
                           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
                         ),
                       ),
+                      ListenableBuilder(
+                        listenable: store,
+                        builder: (context, _) {
+                          final n = store.wordCount(s.wordKey);
+                          return IconButton(
+                            tooltip: 'Добавленные слова',
+                            icon: Badge(
+                              isLabelVisible: n > 0,
+                              label: Text('$n'),
+                              backgroundColor: cViolet,
+                              child: Icon(Icons.bookmark_border_rounded, size: 24, color: cText),
+                            ),
+                            onPressed: _showWords,
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -293,7 +401,10 @@ class _StoryReaderState extends State<StoryReader> {
                           builder: (context, _) => PageView.builder(
                             controller: _ctl,
                             itemCount: _count,
-                            onPageChanged: (i) => setState(() => _i = i),
+                            onPageChanged: (i) {
+                              setState(() => _i = i);
+                              store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
+                            },
                             itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1]),
                           ),
                         ),
@@ -317,10 +428,8 @@ class _StoryReaderState extends State<StoryReader> {
           ClipRRect(
             borderRadius: BorderRadius.circular(24),
             child: ExcludeSemantics(
-              child: AspectRatio(
-                aspectRatio: 4 / 3,
-                child: Image.asset('assets/${s.asset}.png', fit: BoxFit.cover),
-              ),
+              // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
+              child: Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),
             ),
           ),
           SizedBox(height: 20),

@@ -7,7 +7,7 @@ import 'videos.dart';
 
 /// Открывает историю просмотров поверх таббара.
 void openHistory(BuildContext context) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => HistoryPage()));
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => HistoryPage()));
 }
 
 class HistoryPage extends StatelessWidget {

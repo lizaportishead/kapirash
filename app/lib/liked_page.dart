@@ -7,7 +7,7 @@ import 'videos.dart';
 
 /// Открывает ролики с сердечком поверх таббара.
 void openLiked(BuildContext context) {
-  Navigator.of(context, rootNavigator: true).push(MaterialPageRoute<void>(builder: (_) => LikedPage()));
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => LikedPage()));
 }
 
 class LikedPage extends StatelessWidget {

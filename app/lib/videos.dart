@@ -15,6 +15,8 @@ class Video {
 
   /// Откуда ролик: пусто — YouTube, 'tiktok' — вертикальный клип из TikTok.
   final String kind;
+
+  int get views => _ytViews[id] ?? 0;
   bool get tiktok => kind == 'tiktok';
 
   /// Заглушка для примерки ленты клипов, см. [kClipMocks]: обложка есть, самого ролика нет.
@@ -36,6 +38,39 @@ class Video {
     kind: j['kind'] ?? '',
   );
 }
+
+/// Просмотры на YouTube на 17.10.2026 — по ним собирается «Популярное». Для новых роликов без записи считаем 0.
+const _ytViews = <String, int>{
+  'dxE0__WvLBU': 235847,
+  '0Kc3ASUSPc0': 22299,
+  'XkYKK0qIm-E': 173286,
+  'HSh_hA97o7c': 46599,
+  'YBwhDmteusg': 24812,
+  'wA7VR4Uo0oc': 22655,
+  'srODDPxGYkY': 221116,
+  'Q6VsddwnvqY': 224150,
+  'HONqKSLx680': 1018304,
+  'psx84hGjqds': 60581,
+  'MZcZFyhKNKw': 111606,
+  'cBHmdB67ci4': 194857,
+  'APgc8-Vd__c': 6213,
+  'Lyg2xhXM9KI': 10438,
+  'fUbZYP9j0CY': 604,
+  'RLSLcmL-mEY': 902,
+  'nAXBTBNoL1s': 115,
+  'A4d3e9zh64c': 3690,
+  'hBS0MniD5b4': 3687,
+  'LPyDl0VGO8M': 1769,
+  'NlAc-GePGh8': 47263,
+  'j4Dn9F_sIg0': 1366,
+  '2Yu3pKxNY5Q': 627,
+  '1BNwsNIp31E': 146,
+  'XVbTD_qhPL8': 493,
+  '4csv5_G5FF0': 172,
+  '20D5N4Vjm9I': 412,
+  'iKhNlMwn4aw': 123,
+  'oz6xKCTAgYU': 155584,
+};
 
 /// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
 class Creator {
@@ -290,14 +325,6 @@ const _builtInVideos = <Video>[
     topic: 'Дизайн',
     level: 'B2',
     duration: '12:28',
-  ),
-  Video(
-    id: 'D9Fc77qeKdQ',
-    title: 'VEŠTAČKA INTELIGENCIJA, Tatjana Gligorić',
-    channel: 'SINGIDUNUM VALJEVO',
-    topic: 'IT',
-    level: 'B2',
-    duration: '14:53',
   ),
   Video(
     id: '4csv5_G5FF0',
