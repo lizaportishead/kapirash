@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "О чём предупреждает министр Милан Крковабич?",
+     "o": [
+      "Что более 1200 сёл на юге Сербии на грани исчезновения",
+      "Что нужно строить новые заводы",
+      "Что цены на землю падают",
+      "Что в городах мало людей"
+     ],
+     "a": 0,
+     "e": "В ролике: «upozorava na poraznu demografsku statistiku u selima na jugu Srbije, gde je više od 1200 ruralnih zajednica na pragu gašenja»."
+    },
+    {
+     "q": "Сколько сёл Национальная команда выбрала для спасения?",
+     "o": [
+      "Три",
+      "Десять",
+      "Сто",
+      "Тысячу"
+     ],
+     "a": 2,
+     "e": "В ролике: «Nacionalni tim za spas sela definisao njih stotinu koja imaju šansu da opstanu»."
+    },
+    {
+     "q": "Что изменилось с количеством овец в Пироте за 30 лет?",
+     "o": [
+      "Было свыше 60 тысяч, стало около 10 тысяч",
+      "Овец не осталось",
+      "Не изменилось",
+      "Выросло вдвое"
+     ],
+     "a": 0,
+     "e": "В ролике: «Grad Pirot je imao preko 60 hiljada ovaca. Mi danas u Pirotu... imamo negde svega oko 10 hiljada ovaca»."
+    },
+    {
+     "q": "Чем необычен план бывшего директора «Тигра»?",
+     "o": [
+      "Он строит отель",
+      "Он делает сыр",
+      "Он выращивает виноград",
+      "Он варит ремесленное пиво, но производство построил в Пироте, а не в селе"
+     ],
+     "a": 3,
+     "e": "В ролике: «je, na primer, bivši direktor u pirotskom Tigru odlučio da proizvodi zanatsko pivo i prodaje ga isključivo u svom rodnom selu Dojkinci.»."
+    },
+    {
+     "q": "Какая главная проблема для бизнеса в селе?",
+     "o": [
+      "Нет клиентов",
+      "Налоги",
+      "Нехватка рабочей силы",
+      "Нет земли"
+     ],
+     "a": 2,
+     "e": "В ролике: «Jednostavno, najveći problem gore jeste radna snaga»."
+    },
+    {
+     "q": "Что такое Гостуша?",
+     "o": [
+      "Монастырь",
+      "Каменное село с домами без раствора и крышами из каменных плит",
+      "Лыжный центр",
+      "Современный курорт"
+     ],
+     "a": 1,
+     "e": "В ролике: «kameno selo Gostuša, u kome je očuvana gradnja kuća bez vezivnog materijala i sa krovovima od kamenih ploča»."
+    },
+    {
+     "q": "Что угрожает облику Гостуши?",
+     "o": [
+      "Туристы",
+      "Пожар",
+      "Местные меняют каменные плиты на красную черепицу",
+      "Наводнение"
+     ],
+     "a": 2,
+     "e": "В ролике: «umesto kamenih ploča na kućama se crveni crep, što narušava arhitektonsku celinu»."
+    },
+    {
+     "q": "Что такое Вурдиада?",
+     "o": [
+      "Концерт",
+      "Фестиваль молочного продукта вурда в Бабушнице",
+      "Ярмарка машин",
+      "Футбольный матч"
+     ],
+     "a": 1,
+     "e": "В ролике: «Vurdijadu, manifestaciju posvećenu promociji ovdašnjeg mlečnog specijaliteta»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Poljoprivredno domaćinstvo, objedinjeno u *zadruge*.",
+     "o": [
+      "парки",
+      "банки",
+      "школы",
+      "кооперативы"
+     ],
+     "a": 3,
+     "e": "Zadruga — кооператив."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogu da budu *zamajac* razvoja.",
+     "o": [
+      "двигатель",
+      "цель",
+      "препятствие",
+      "остановка"
+     ],
+     "a": 0,
+     "e": "Zamajac — маховик; в переносном смысле двигатель."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sela koja imaju šansu da *opstanu*.",
+     "o": [
+      "купятся",
+      "выживут",
+      "разрастутся",
+      "исчезнут"
+     ],
+     "a": 1,
+     "e": "Opstati — выжить, сохраниться."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stara planina obiluje nepreglednim *pašnjacima*.",
+     "o": [
+      "пастбищами",
+      "полями",
+      "лесами",
+      "озёрами"
+     ],
+     "a": 0,
+     "e": "Pašnjak — пастбище; pasti — пастись."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na kućama se crveni *crep*.",
+     "o": [
+      "кирпич",
+      "черепица",
+      "стекло",
+      "железо"
+     ],
+     "a": 1,
+     "e": "Crep — черепица."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve veći broj *meštana* obnavlja pradedovska ognjišta.",
+     "o": [
+      "туристов",
+      "местных жителей",
+      "чиновников",
+      "строителей"
+     ],
+     "a": 1,
+     "e": "Meštanin — местный житель."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Privrednici *oklevaju* da investiraju.",
+     "o": [
+      "радуются",
+      "спешат",
+      "отказываются навсегда",
+      "колеблются"
+     ],
+     "a": 3,
+     "e": "Oklevati — колебаться, медлить."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To bi bio najveći *mamac* za mlade ljude.",
+     "o": [
+      "препятствие",
+      "дар",
+      "приманка",
+      "угроза"
+     ],
+     "a": 2,
+     "e": "Mamac — приманка, наживка."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ministar upozorava na poraznu demografsku ___.",
+     "o": [
+      "statistika",
+      "statistike",
+      "statistiku",
+      "statistikom"
+     ],
+     "a": 2,
+     "e": "Upozoriti na + винительный падеж: na statistiku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Više od 1200 ruralnih ___ na pragu gašenja.",
+     "o": [
+      "zajednica",
+      "zajednice",
+      "zajednicu",
+      "zajednicama"
+     ],
+     "a": 0,
+     "e": "После чисел от 5 ставится родительный падеж множественного числа: zajednica."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ministar je saopštio plan pre 3 ___.",
+     "o": [
+      "mesecima",
+      "mesec",
+      "meseci",
+      "meseca"
+     ],
+     "a": 3,
+     "e": "После числа 3 ставится родительный падеж единственного числа: pre 3 meseca."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na Saboru zadrugara u ___.",
+     "o": [
+      "Niša",
+      "Niš",
+      "Nišom",
+      "Nišu"
+     ],
+     "a": 3,
+     "e": "U на вопрос «где?» — местный падеж: u Nišu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pirot se bori sa poraznim ___.",
+     "o": [
+      "statistikama",
+      "statistike",
+      "statistici",
+      "statistika"
+     ],
+     "a": 0,
+     "e": "Boriti se sa («бороться с») требует творительного падежа: sa statistikama."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U Pirotu imamo svega oko 10 ___ ovaca.",
+     "o": [
+      "hiljade",
+      "hiljadama",
+      "hiljada",
+      "hiljadu"
+     ],
+     "a": 2,
+     "e": "После числа 10 ставится родительный падеж множественного числа: hiljada."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovce su se spustile u sela pored ___.",
+     "o": [
+      "grad",
+      "gradu",
+      "grada",
+      "gradom"
+     ],
+     "a": 2,
+     "e": "Pored («рядом с») требует родительного падежа: pored grada."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Projekat je dobio 2016. ___ Evropa Nostra.",
+     "o": [
+      "nagradu",
+      "nagradom",
+      "nagrade",
+      "nagrada"
+     ],
+     "a": 0,
+     "e": "Dobiti что — винительный падеж: nagradu."
+    }
+   ]
+  }
+ ]
+}

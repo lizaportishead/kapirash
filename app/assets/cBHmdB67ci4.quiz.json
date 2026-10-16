@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Какую машину покупатели хотели приобрести?",
+     "o": [
+      "Fiat 500L у официального дилера MSD Trade",
+      "Volkswagen Golf",
+      "Renault Clio",
+      "Yugo"
+     ],
+     "a": 0,
+     "e": "В ролике: «Fiat 500L hteli da kupe preko ovlašćenog Fiatovog dilera, firme MSD Trade iz Obrenovca»."
+    },
+    {
+     "q": "Почему покупатели считали такой выбор надёжным?",
+     "o": [
+      "Машина была новой",
+      "Дилер был другом",
+      "Была скидка",
+      "Государство тоже стоит за проектом Fiat"
+     ],
+     "a": 3,
+     "e": "В ролике: «smatrali da je to sigurna opcija, jer i država stoji iza Fiatovog projekta»."
+    },
+    {
+     "q": "Что сделал банк в середине июня 2013 года?",
+     "o": [
+      "Вернул деньги покупателю",
+      "Выплатил деньги дилеру",
+      "Отказал в кредите",
+      "Закрыл счёт"
+     ],
+     "a": 1,
+     "e": "В ролике: «Sredinom juna banka je već svoju obavezu ispunila prema dileru»."
+    },
+    {
+     "q": "Что сообщили из FAS в ноябре 2013 года?",
+     "o": [
+      "Что дилер закрыт",
+      "Что не получали платежа от MSD Trade за машину Бранко",
+      "Что завод на каникулах",
+      "Что машина уже отправлена"
+     ],
+     "a": 1,
+     "e": "В ролике: «FAS nije primio nikakvu uplatu od firme MSD Trade u vezi sa kupovinom vozila na ime Branka Simića»."
+    },
+    {
+     "q": "Чем дилер объяснил задержку?",
+     "o": [
+      "Поломкой машины",
+      "Отпуском",
+      "Блокировкой своего счёта",
+      "Забастовкой"
+     ],
+     "a": 2,
+     "e": "В ролике: «razlog za višemesečno odlaganje isporuke to što su ušli u blokadu»."
+    },
+    {
+     "q": "Что показали документы о блокировке?",
+     "o": [
+      "Блокировка началась лишь 31 октября, через два месяца после срока поставки",
+      "Блокировка была в июне",
+      "Блокировка была в 2012 году",
+      "Блокировки не было"
+     ],
+     "a": 0,
+     "e": "В ролике: «MSD Trade je u blokadi tek od 31. oktobra 2013... dva meseca nakon što je istekao rok za isporuku»."
+    },
+    {
+     "q": "Что произошло после эфира первого репортажа?",
+     "o": [
+      "Покупатели отозвали иск",
+      "Покупатели получили машины",
+      "Fiat закрыл завод",
+      "Дилер закрылся"
+     ],
+     "a": 1,
+     "e": "В ролике: «dva dana, bukvalno, posle emitovanja vašeg priloga dobio sam auto»."
+    },
+    {
+     "q": "Какую компенсацию получил один из покупателей?",
+     "o": [
+      "Ничего",
+      "Новую машину",
+      "Продление гарантии с двух до четырёх лет, два ваучера на сервис и 650 евро за кондиционер",
+      "Деньги за бензин"
+     ],
+     "a": 2,
+     "e": "В ролике: «produžetak garancije sa dve na četiri godine... dva vaučera gratis... povraćaj novca za ugradnju klime, 650 evra»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za pojedince koji nekako uspeju da sebi *priušte* to zadovoljstvo.",
+     "o": [
+      "продадут",
+      "позволят себе",
+      "потеряют",
+      "найдут"
+     ],
+     "a": 1,
+     "e": "Priuštiti sebi — позволить себе."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Fiatovog *ovlašćenog* dilera.",
+     "o": [
+      "официального, авторизованного",
+      "бывшего",
+      "местного",
+      "единственного"
+     ],
+     "a": 0,
+     "e": "Ovlašćen — уполномоченный, официальный."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam već četiri *rate* uplatio banci.",
+     "o": [
+      "взноса",
+      "налога",
+      "процента",
+      "штрафа"
+     ],
+     "a": 0,
+     "e": "Rata — взнос, платёж по рассрочке."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Neverovatno *kašnjenje* isporuke.",
+     "o": [
+      "качество",
+      "цена",
+      "скидка",
+      "задержка"
+     ],
+     "a": 3,
+     "e": "Kašnjenje — опоздание, задержка; kasniti — опаздывать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Petoro ljudi koji su *prevareni*.",
+     "o": [
+      "награждены",
+      "уволены",
+      "обмануты",
+      "наказаны"
+     ],
+     "a": 2,
+     "e": "Prevariti — обмануть."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Počeo je da smatra da ga je i Fiat *izneverio*.",
+     "o": [
+      "похвалил",
+      "нанял",
+      "спас",
+      "подвёл"
+     ],
+     "a": 3,
+     "e": "Izneveriti — подвести, предать доверие."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobio sam *povraćaj* novca za ugradnju klime.",
+     "o": [
+      "возврат",
+      "рассрочку",
+      "скидку",
+      "налог"
+     ],
+     "a": 0,
+     "e": "Povraćaj — возврат."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stalno pomerao *rok*.",
+     "o": [
+      "срок",
+      "договор",
+      "дату рождения",
+      "цену"
+     ],
+     "a": 0,
+     "e": "Rok — срок."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupovina novog ___ je teško dostižan san.",
+     "o": [
+      "automobila",
+      "automobilu",
+      "automobilom",
+      "automobil"
+     ],
+     "a": 0,
+     "e": "Kupovina чего? Родительный падеж: novog automobila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hteli su da kupe Fiat preko ovlašćenog Fiatovog ___.",
+     "o": [
+      "diler",
+      "dilerom",
+      "dileru",
+      "dilera"
+     ],
+     "a": 3,
+     "e": "Preko («через») требует родительного падежа: preko dilera."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Odluku o kupovini doneo je još tokom ___ 2013.",
+     "o": [
+      "prolećem",
+      "proleća",
+      "proleće",
+      "prolećima"
+     ],
+     "a": 1,
+     "e": "Tokom («в течение») требует родительного падежа: tokom proleća."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam već četiri ___ uplatio banci.",
+     "o": [
+      "rata",
+      "rati",
+      "rate",
+      "ratom"
+     ],
+     "a": 2,
+     "e": "После четыре ставится форма, совпадающая с родительным падежом единственного числа: četiri rate."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Aleksandar se uplašio da će ostati bez ___ i bez automobila.",
+     "o": [
+      "novac",
+      "novcem",
+      "novcu",
+      "novca"
+     ],
+     "a": 3,
+     "e": "Bez («без») требует родительного падежа: bez novca."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Njegov automobil je više meseci stajao u krugu ___.",
+     "o": [
+      "fabrika",
+      "fabrikom",
+      "fabriku",
+      "fabrike"
+     ],
+     "a": 3,
+     "e": "U krugu («на территории») требует родительного падежа: u krugu fabrike."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dobio sam dva vaučera gratis za prva dva ___.",
+     "o": [
+      "servis",
+      "servisa",
+      "servisu",
+      "servisom"
+     ],
+     "a": 1,
+     "e": "После dva ставится родительный падеж единственного числа: dva servisa."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "MSD Trade je bio u blokadi zbog ___ od preko 24 miliona dinara.",
+     "o": [
+      "dugovanjem",
+      "dugovanje",
+      "dugovanju",
+      "dugovanja"
+     ],
+     "a": 3,
+     "e": "Zbog («из-за») требует родительного падежа: zbog dugovanja."
+    }
+   ]
+  }
+ ]
+}

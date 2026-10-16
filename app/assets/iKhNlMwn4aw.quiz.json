@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Кто выступает с докладом о design thinking?",
+     "o": [
+      "Директор IBM",
+      "Журналист",
+      "Милован Декич, соавтор книги и руководитель группы исследования пользователей в Nordeus",
+      "Основатель Airbnb"
+     ],
+     "a": 2,
+     "e": "В ролике: «Milovan Dekić, koji će nam pričati o design thinkingu. Milovan je inače koautor knjige o ovome i vođa grupe za istraživanja korisnika pri Nordeusu.»."
+    },
+    {
+     "q": "Что пример с IBM показывает о прототипировании?",
+     "o": [
+      "IBM сразу написал программу",
+      "IBM продал патент",
+      "IBM закрыл проект",
+      "Можно сымитировать опыт: пока машинистка печатала в углу, людям казалось, что работает распознавание речи"
+     ],
+     "a": 3,
+     "e": "В ролике: «daktilografkinja sedela sakrivena u ćošku, i ono što ovaj priča, ona je kucala. Dakle, niste razvijali softver, nego ste fejkovali to iskustvo.»."
+    },
+    {
+     "q": "Что такое эмпатия в design thinking?",
+     "o": [
+      "Провести опрос по телефону",
+      "Скопировать конкурента",
+      "Побыть вместе с людьми, для которых создаёшь продукт, и понять их",
+      "Нанять психолога"
+     ],
+     "a": 2,
+     "e": "В ролике: «ti ljudi koji će to da koriste — budite malo zajedno s njima. Vidite šta rade, kako rade... To je ideja empatije»."
+    },
+    {
+     "q": "Что случилось с бизнесом Airbnb после общения с пользователями?",
+     "o": [
+      "Не изменился",
+      "Вырос на 400 процентов",
+      "Уменьшился вдвое",
+      "Закрылся"
+     ],
+     "a": 1,
+     "e": "В ролике: «nakon nekih promena, skočio biznis za 400%»."
+    },
+    {
+     "q": "Какой вывод сделали из примера с милкшейком в Макдоналдсе?",
+     "o": [
+      "Людям нужен был более густой милкшейк, чтобы хватало на долгую дорогу",
+      "Нужно снизить цену",
+      "Нужно убрать вкус клубники",
+      "Нужно добавить больше сахара"
+     ],
+     "a": 0,
+     "e": "В ролике: «Napravili su ga gušćim, da zapravo može duže da traje, ukoliko vam je put do posla duži»."
+    },
+    {
+     "q": "Что такое метод «пять почему»?",
+     "o": [
+      "Пять идей на доске",
+      "Пять тестов продукта",
+      "Пять вопросов в анкете",
+      "Пять раз спросить собеседника «почему это проблема», чтобы понять настоящую проблему"
+     ],
+     "a": 3,
+     "e": "В ролике: «five whys, pet puta ih pitajte: zašto ti je to problem?»"
+    },
+    {
+     "q": "Что показал пример с Product Hunt?",
+     "o": [
+      "Автор создал простой список рассылки в Твиттере и проверил, есть ли спрос — записалось 150 человек вместо 100",
+      "Автор потратил 100 000 евро",
+      "Автор отказался от идеи",
+      "Автор нанял разработчиков"
+     ],
+     "a": 0,
+     "e": "В ролике: «napravio običnu mejling listu i okačio na Tviter... Umesto sto, neka se prijavilo 150 ljudi»."
+    },
+    {
+     "q": "Как в Nordeus тестировали игру на реальных людях?",
+     "o": [
+      "Не тестировали",
+      "Только по интернету",
+      "Предлагали сыграть за кружку пива у фонтана на Обиличевом венце",
+      "Закрытой группой в офисе"
+     ],
+     "a": 2,
+     "e": "В ролике: «Je l' možeš da odvojiš 20 minuta za mene, i ja te častim pivom?... sedeli danima s ljudima na Obilićevom vencu»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Spremni ste za našeg sledećeg *predavača*.",
+     "o": [
+      "гостя",
+      "водителя",
+      "повара",
+      "докладчика, лектора"
+     ],
+     "a": 3,
+     "e": "Predavač — лектор; predavanje — лекция."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zato što je jako obimna i *glomazna* tema.",
+     "o": [
+      "новая",
+      "интересная",
+      "скучная",
+      "громоздкая"
+     ],
+     "a": 3,
+     "e": "Glomazan — громоздкий, объёмный."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Daktilografkinja* je sedela sakrivena u ćošku.",
+     "o": [
+      "секретарь",
+      "актриса",
+      "танцовщица",
+      "машинистка"
+     ],
+     "a": 3,
+     "e": "Daktilografkinja — машинистка."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Niko živ nije *iznajmljivao* stanove.",
+     "o": [
+      "строил",
+      "продавал",
+      "сдавал или снимал",
+      "красил"
+     ],
+     "a": 2,
+     "e": "Iznajmljivati — сдавать или снимать в аренду."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vaš glavni *konkurent* ne mora da bude iz vaše oblasti.",
+     "o": [
+      "конкурент",
+      "партнёр",
+      "клиент",
+      "друг"
+     ],
+     "a": 0,
+     "e": "Konkurent — конкурент."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Postoji *potražnja* na tržištu.",
+     "o": [
+      "реклама",
+      "спрос",
+      "налог",
+      "предложение"
+     ],
+     "a": 1,
+     "e": "Potražnja — спрос; tražiti — искать, требовать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Probajte da napravite nešto *opipljivo*.",
+     "o": [
+      "огромное",
+      "красивое",
+      "дорогое",
+      "осязаемое"
+     ],
+     "a": 3,
+     "e": "Opipljiv — осязаемый; pipati — ощупывать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Krenuli smo u neku *kladionicu* na Novom Beogradu.",
+     "o": [
+      "библиотеку",
+      "букмекерскую контору",
+      "кофейню",
+      "аптеку"
+     ],
+     "a": 1,
+     "e": "Kladionica — пункт приёма ставок."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala ___ na pozivu.",
+     "o": [
+      "organizatorima",
+      "organizatori",
+      "organizatora",
+      "organizatore"
+     ],
+     "a": 0,
+     "e": "Hvala кому — дательный падеж: organizatorima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Milovan je vođa grupe za istraživanja ___.",
+     "o": [
+      "korisnici",
+      "korisnicima",
+      "korisnike",
+      "korisnika"
+     ],
+     "a": 3,
+     "e": "Istraživanja чего? Родительный падеж множественного числа: korisnika."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Napisali smo ___ koja se zove „Design thinking“.",
+     "o": [
+      "knjigom",
+      "knjige",
+      "knjigu",
+      "knjiga"
+     ],
+     "a": 2,
+     "e": "Napisati что — винительный падеж: knjigu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Daktilografkinja je sedela sakrivena u ___.",
+     "o": [
+      "ćoškom",
+      "ćošak",
+      "ćoška",
+      "ćošku"
+     ],
+     "a": 3,
+     "e": "U на вопрос «где?» — местный падеж: u ćošku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kad su se vlasnici stavili u ___ korisnika.",
+     "o": [
+      "kože",
+      "koža",
+      "kožom",
+      "kožu"
+     ],
+     "a": 3,
+     "e": "Staviti se u + винительный падеж: u kožu — «поставить себя на место»."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ko je glavni konkurent ___?",
+     "o": [
+      "Netfliksom",
+      "Netfliks",
+      "Netfliksa",
+      "Netfliksu"
+     ],
+     "a": 3,
+     "e": "Konkurent чему/кому — дательный падеж: konkurent Netfliksu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne morate da ulupate hiljade evra u brži ___.",
+     "o": [
+      "lift",
+      "liftom",
+      "liftu",
+      "lifta"
+     ],
+     "a": 0,
+     "e": "Ulupati u + винительный падеж; у неодушевлённых он совпадает с именительным: lift."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prototip aplikacije možete da napravite za pet do šest ___.",
+     "o": [
+      "minut",
+      "minute",
+      "minuta",
+      "minutama"
+     ],
+     "a": 2,
+     "e": "После чисел от 5 ставится родительный падеж множественного числа: minuta."
+    }
+   ]
+  }
+ ]
+}

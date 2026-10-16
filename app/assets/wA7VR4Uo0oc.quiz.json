@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Что хочет сделать Алекса в этом видео?",
+     "o": [
+      "Открыть магазин",
+      "Купить новый телефон",
+      "Сделать фото на плёночный фотоаппарат для Instagram",
+      "Снять фильм"
+     ],
+     "a": 2,
+     "e": "В ролике: «pokušaću da nađem film, da osmislim i napravim fotografiju, da taj film razvijem i dobijem fotku za Instagram»."
+    },
+    {
+     "q": "Чьи это фотоаппараты?",
+     "o": [
+      "Друга",
+      "Отца",
+      "Музея",
+      "Деда и прадеда автора"
+     ],
+     "a": 3,
+     "e": "В ролике: «Ovo je fotoaparat mog dede. A ovo je fotoaparat mog pradede»."
+    },
+    {
+     "q": "Какую плёнку он выбрал и почему?",
+     "o": [
+      "Самую дешёвую чёрно-белую — для цветной нет химикатов для проявки",
+      "Самую дорогую цветную",
+      "Любую, что есть",
+      "Цветную со скидкой"
+     ],
+     "a": 0,
+     "e": "В ролике: «nigde na internetu nisam našao hemikalije za razvijanje filma u boji. Pa sam išao na sigurno. Poručio sam najjeftiniji film»."
+    },
+    {
+     "q": "Сколько стоила плёнка?",
+     "o": [
+      "Около 1100 динаров, с доставкой — около 1500",
+      "10 динаров",
+      "Бесплатно",
+      "20 000 динаров"
+     ],
+     "a": 0,
+     "e": "В ролике: «On košta 1100 dinara, što je sa poštarinom oko hiljadu i po»."
+    },
+    {
+     "q": "Что нельзя делать с плёнкой до проявки?",
+     "o": [
+      "Покупать",
+      "Подвергать её свету",
+      "Хранить дома",
+      "Заряжать в камеру"
+     ],
+     "a": 1,
+     "e": "В ролике: «sve dok ne razvijete film, on mora biti u potpunom mraku»."
+    },
+    {
+     "q": "Почему автор два дня не решался зарядить плёнку?",
+     "o": [
+      "Не было камеры",
+      "Плёнка была пустой",
+      "Не было времени",
+      "Боялся её испортить"
+     ],
+     "a": 3,
+     "e": "В ролике: «mene je i dalje strah da ubacim ovaj film u kameru... strah me da će ceo film da ode u propast»."
+    },
+    {
+     "q": "Сколько стоит проявка у фирмы и сколько — домашнее оборудование?",
+     "o": [
+      "7500 динаров; 690 динаров",
+      "690 динаров; около 7500 динаров",
+      "Одинаково",
+      "100 динаров; 1000"
+     ],
+     "a": 1,
+     "e": "В ролике: «sve ukupno bi mi izašlo oko sedam i po hiljada dinara... uslugu razvijanja filma. I to košta 690 dinara»."
+    },
+    {
+     "q": "Как он раскрасил чёрно-белые фотографии?",
+     "o": [
+      "В фотоателье",
+      "Не раскрашивал",
+      "Вручную красками",
+      "С помощью ИИ-сайта Palette.fm"
+     ],
+     "a": 3,
+     "e": "В ролике: «Sajt se zove Palette.fm... čekate da AI odradi svoj posao»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dok sam kopao po *starudijama*, naleteo sam na alatku.",
+     "o": [
+      "старье",
+      "книгах",
+      "коробках с едой",
+      "магазинах"
+     ],
+     "a": 0,
+     "e": "Starudija — старая вещь, старьё."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Košta 1100 dinara, što je sa *poštarinom* oko hiljadu i po.",
+     "o": [
+      "почтовыми расходами",
+      "налогом",
+      "скидкой",
+      "гарантией"
+     ],
+     "a": 0,
+     "e": "Poštarina — оплата пересылки; pošta — почта."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada pritisnemo *okidač*, otvara se rupa.",
+     "o": [
+      "рычаг",
+      "спуск затвора",
+      "кнопку питания",
+      "ремень"
+     ],
+     "a": 1,
+     "e": "Okidač — спусковой механизм, кнопка спуска."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Objektiv se sastoji od niza *sočiva*.",
+     "o": [
+      "линз",
+      "кабелей",
+      "зеркал",
+      "ламп"
+     ],
+     "a": 0,
+     "e": "Sočivo — линза."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Film se potapa u *razvijač*.",
+     "o": [
+      "спирт",
+      "проявитель",
+      "воду",
+      "масло"
+     ],
+     "a": 1,
+     "e": "Razvijač — проявитель; razviti — проявить."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li sam ja toliki *baksuz*?",
+     "o": [
+      "перфекционист",
+      "лентяй",
+      "неудачник",
+      "умник"
+     ],
+     "a": 2,
+     "e": "Baksuz — неудачник, невезучий человек."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Samo stisnete i *namotavate* u tom smeru.",
+     "o": [
+      "чистите",
+      "включаете",
+      "наматываете",
+      "ломаете"
+     ],
+     "a": 2,
+     "e": "Namotati — намотать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U Photoshopu, kako bih tu sliku *izoštrio*.",
+     "o": [
+      "раскрасил",
+      "обрезал",
+      "уменьшил",
+      "сделал резкой"
+     ],
+     "a": 3,
+     "e": "Izoštriti — сделать резче; oštar — острый."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je fotoaparat mog ___.",
+     "o": [
+      "dede",
+      "dedom",
+      "dedu",
+      "deda"
+     ],
+     "a": 0,
+     "e": "Fotoaparat чей? Родительный падеж: mog dede."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hteo sam da kupim film u ___.",
+     "o": [
+      "boju",
+      "boji",
+      "boja",
+      "bojom"
+     ],
+     "a": 1,
+     "e": "Film u boji — «цветная плёнка», форма местного падежа."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nigde na ___ nisam našao hemikalije.",
+     "o": [
+      "internetu",
+      "internetom",
+      "interneta",
+      "internet"
+     ],
+     "a": 0,
+     "e": "Na на вопрос «где?» — местный падеж: na internetu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film je zapravo tanka, fleksibilna ___.",
+     "o": [
+      "trake",
+      "traka",
+      "traku",
+      "trakom"
+     ],
+     "a": 1,
+     "e": "Подлежащее — именительный падеж: traka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Strah me da će ceo film da ode u ___.",
+     "o": [
+      "propašću",
+      "propast",
+      "propasti",
+      "propastu"
+     ],
+     "a": 1,
+     "e": "Ići u + винительный падеж; у женского рода на согласный он совпадает с именительным: u propast."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad ću Anđeli da pojasnim kako da koristi ovu ___.",
+     "o": [
+      "kamera",
+      "kameru",
+      "kamere",
+      "kamerom"
+     ],
+     "a": 1,
+     "e": "Koristiti что — винительный падеж: kameru."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ista firma ima i ___ razvijanja filma.",
+     "o": [
+      "usluga",
+      "usluge",
+      "uslugom",
+      "uslugu"
+     ],
+     "a": 3,
+     "e": "Imati что — винительный падеж: uslugu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sećate se kad sam na ___ videa rekao da neću stavljati crno-bele slike?",
+     "o": [
+      "početku",
+      "početkom",
+      "početka",
+      "početak"
+     ],
+     "a": 0,
+     "e": "Na на вопрос «где?» — местный падеж: na početku."
+    }
+   ]
+  }
+ ]
+}

@@ -25,7 +25,7 @@
       "Оно слишком мягкое"
      ],
      "a": 0,
-     "e": "В ролике: «staklo koje sam koristio nije adekvatno, zato što nije čisto, već ima neke primese kako bi bilo jeftinije»."
+     "e": "В ролике: «staklo koje sam koristio da napravim ovu kapljicu nije adekvatno... nije čisto, već ima neke primese kako bi bilo jeftinije»."
     },
     {
      "q": "Что автор заказал для новых попыток?",
@@ -36,7 +36,7 @@
       "Стеклянные шарики"
      ],
      "a": 1,
-     "e": "В ролике: «poručio sam laboratorijsko staklo, to su kao neki štapići koji se koriste za mešanje u hemijskoj laboratoriji»."
+     "e": "В ролике: «poručio laboratorijsko staklo, to su kao neki štapići koji se koriste za mešanje u hemijskoj laboratoriji.»."
     },
     {
      "q": "Сколько удачных капель у автора получилось в итоге?",
@@ -69,7 +69,7 @@
       "Она взорвалась сразу"
      ],
      "a": 1,
-     "e": "В ролике: «iako nije eksplodirala prilikom presecanja repa, izgubila je svojstvo da bude neuništiva»."
+     "e": "В ролике: «iako nije eksplodirala sama od sebe prilikom presecanja repa, izgubila je svojstvo da bude neuništiva.»."
     },
     {
      "q": "Почему капля прочна на одном конце и хрупка на другом?",
@@ -80,7 +80,7 @@
       "Голова нагрета сильнее"
      ],
      "a": 1,
-     "e": "В ролике: «spoljni sloj se naglo hladi i skuplja, dok unutrašnji deo ostaje tečan duže vreme. I zbog toga se stvara napetost»."
+     "e": "В ролике: «spoljni sloj kapljice se naglo hladi i skuplja, dok unutrašnji deo ostaje tečan duže vreme. I zbog toga se u kapljici stvara napetost.»."
     },
     {
      "q": "Что показала сверхзамедленная съёмка попадания пули?",
@@ -91,7 +91,7 @@
       "Капля загорелась"
      ],
      "a": 2,
-     "e": "В ролике: «Kada projektil udari kapljicu, ne dešava se ništa. Međutim, od udarca rep počne da vibrira. I tek tada kapljica puca»."
+     "e": "В ролике: «Kada projektil udari kapljicu, ne dešava se ništa. Međutim, od udarca rep počne da vibrira. I tek tada primećujemo kako kapljica puca.»."
     }
    ]
   },

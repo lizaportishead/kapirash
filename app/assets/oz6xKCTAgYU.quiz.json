@@ -14,7 +14,7 @@
       "Красные, синие и зелёные"
      ],
      "a": 0,
-     "e": "В ролике: «white hat hakeri... black hat hakeri... i grey hat hakeri, koji su zapravo nešto između»."
+     "e": "В ролике: «white hat hakeri... black hat hakeri... i postoje grey hat hakeri, koji su zapravo nešto između»."
     },
     {
      "q": "Что нужно сделать в первую очередь?",
@@ -25,7 +25,7 @@
       "Выучить английский"
      ],
      "a": 0,
-     "e": "В ролике: «Prvo što je potrebno je da smislite cool hacking ime. Zato što onda izgledate opasno»."
+     "e": "В ролике: «Prvo što je potrebno je da smislite cool hacking ime. Zašto? Zato što onda izgledate opasno.»."
     },
     {
      "q": "Что, по словам автора, показывает, что вы умнее и лучше как хакер?",
@@ -47,7 +47,7 @@
       "В ней уже установлены нужные инструменты"
      ],
      "a": 3,
-     "e": "В ролике: «Zato što on ima preinstalirane tulove, kao terminal, koji su potrebni za hakovanje»."
+     "e": "В ролике: «Zato što on ima preinstalirane tulove... poput terminala, koji su potrebni za hakovanje»."
     },
     {
      "q": "Что скрывается за буквами HS в ITHS?",
@@ -91,7 +91,7 @@
       "Мышь шумит"
      ],
      "a": 2,
-     "e": "В ролике: «ukoliko vam treba miš, vi morate prekinuti, preći na miša i onda se vratiti na hakovanje. I tu gubite vreme»."
+     "e": "В ролике: «Ukoliko vam treba miš, vi morate tu prekinuti, preći na miša i onda se vratiti na hakovanje. I tu gubite vreme»."
     }
    ]
   },

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Что такое Mokrin House, которым руководит Тамара?",
+     "o": [
+      "Школа",
+      "Отель на горе",
+      "Фермерский рынок",
+      "Сельское пространство для совместной жизни и работы (co-living и co-working)"
+     ],
+     "a": 3,
+     "e": "В ролике: «izvršna direktorka Mokrin Housea, koji je ruralni co-working i co-living prostor»."
+    },
+    {
+     "q": "Сколько в среднем гости живут в Mokrin House?",
+     "o": [
+      "Один день",
+      "Год",
+      "Чуть меньше трёх недель",
+      "Всегда"
+     ],
+     "a": 2,
+     "e": "В ролике: «borave kod nas tri dana, tri nedelje, tri meseca... u proseku nešto ispod tri nedelje»."
+    },
+    {
+     "q": "Какие профессии были среди гостей?",
+     "o": [
+      "Только студенты",
+      "Только врачи",
+      "Не только программисты, но и поэты, бухгалтеры, психотерапевты",
+      "Только программисты"
+     ],
+     "a": 2,
+     "e": "В ролике: «Imali smo pesnike, imali smo računovođe, psihoterapeute koji rade svoj posao onlajn»."
+    },
+    {
+     "q": "В чём главная трудность жизни на работе?",
+     "o": [
+      "Слишком мало людей",
+      "Нет границы между работой и отдыхом: могут позвонить в любое время",
+      "Нет интернета",
+      "Дорогая аренда"
+     ],
+     "a": 1,
+     "e": "В ролике: «ja tehnički, kao, izađem iz kancelarije, ali zapravo ne izađem... neko će me pozvati u jedanaest, u dva ujutru»."
+    },
+    {
+     "q": "Какие две проблемы хотела решить компания Ctrip?",
+     "o": [
+      "Плохую рекламу и высокие налоги",
+      "Высокую аренду в Шанхае и текучесть кадров",
+      "Нехватку клиентов и устаревшие компьютеры",
+      "Языковой барьер"
+     ],
+     "a": 1,
+     "e": "В ролике: «renta strašno visoka... imaju neverovatnu fluktuaciju zaposlenih»."
+    },
+    {
+     "q": "Как выбирали, кто будет работать из дома?",
+     "o": [
+      "По желанию",
+      "По росту",
+      "По должности",
+      "По дате рождения: чётные — дома, нечётные — в офисе"
+     ],
+     "a": 3,
+     "e": "В ролике: «svi koji su rođeni na parni datum će raditi od kuće, a ovi neparni će ostati u kancelariji»."
+    },
+    {
+     "q": "Насколько выросла производительность у работавших дома?",
+     "o": [
+      "На 13 процентов",
+      "На 1 процент",
+      "На 130 процентов",
+      "Упала на 13 процентов"
+     ],
+     "a": 0,
+     "e": "В ролике: «Njihova produktivnost je skočila za 13%»."
+    },
+    {
+     "q": "Почему половина сотрудников всё же вернулась в офис?",
+     "o": [
+      "Из-за начальника",
+      "Из-за одиночества",
+      "Из-за зарплаты",
+      "Из-за плохого интернета"
+     ],
+     "a": 1,
+     "e": "В ролике: «Glavni njihov razlog za povratak u kancelariju bio je usamljenost»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve smo *omašili*.",
+     "o": [
+      "ошиблись, промахнулись",
+      "купили",
+      "потеряли",
+      "выиграли"
+     ],
+     "a": 0,
+     "e": "Omašiti — промахнуться, ошибиться."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo radni prostor, *teretanu*, bazen i bicikle.",
+     "o": [
+      "парковку",
+      "кухню",
+      "сад",
+      "спортзал"
+     ],
+     "a": 3,
+     "e": "Teretana — тренажёрный зал."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Neophodna je ljudska *prisnost* i fizički kontakt.",
+     "o": [
+      "дистанция",
+      "близость",
+      "цена",
+      "скорость"
+     ],
+     "a": 1,
+     "e": "Prisnost — близость, душевная теснота."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imali su neverovatnu *fluktuaciju* zaposlenih.",
+     "o": [
+      "рекламу",
+      "зарплату",
+      "текучесть",
+      "нагрузку"
+     ],
+     "a": 2,
+     "e": "Fluktuacija — текучесть кадров."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prva ideja je bila: ljudi će da *bleje* od kuće.",
+     "o": [
+      "учатся",
+      "работают",
+      "отдыхают на море",
+      "бездельничают"
+     ],
+     "a": 3,
+     "e": "Blejati — разговорное «бездельничать, торчать»."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imali su manje *ometanja*.",
+     "o": [
+      "задач",
+      "денег",
+      "помех",
+      "встреч"
+     ],
+     "a": 2,
+     "e": "Ometanje — помеха, отвлечение."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za tih devet meseci ljudi su manje išli na *bolovanja*.",
+     "o": [
+      "отпуска",
+      "курсы",
+      "совещания",
+      "больничные"
+     ],
+     "a": 3,
+     "e": "Bolovanje — больничный, нахождение на больничном."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Glavni razlog za povratak bila je *usamljenost*.",
+     "o": [
+      "скука",
+      "одиночество",
+      "усталость",
+      "болезнь"
+     ],
+     "a": 1,
+     "e": "Usamljenost — одиночество; sam — один."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala, Majo, na ovoj ___.",
+     "o": [
+      "najavom",
+      "najavu",
+      "najava",
+      "najavi"
+     ],
+     "a": 3,
+     "e": "Hvala na + местный падеж: na ovoj najavi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Preselila sam se sa Dorćola u ___.",
+     "o": [
+      "Mokrinom",
+      "Mokrina",
+      "Mokrin",
+      "Mokrinu"
+     ],
+     "a": 2,
+     "e": "Preseliti se u + винительный падеж; у неодушевлённых он совпадает с именительным: u Mokrin."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "To je jedno selo pokraj ___.",
+     "o": [
+      "Kikinde",
+      "Kikindu",
+      "Kikinda",
+      "Kikindom"
+     ],
+     "a": 0,
+     "e": "Pokraj («рядом с») требует родительного падежа: pokraj Kikinde."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo smeštajne ___.",
+     "o": [
+      "kapaciteti",
+      "kapaciteta",
+      "kapacitetima",
+      "kapacitete"
+     ],
+     "a": 3,
+     "e": "Imati что — винительный падеж множественного числа: kapacitete."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Spojili smo najbolje stvari ta dva ___.",
+     "o": [
+      "svetu",
+      "svet",
+      "svetova",
+      "sveta"
+     ],
+     "a": 3,
+     "e": "После dva ставится родительный падеж единственного числа: dva sveta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo našu ___ i gajimo koke, patke i guske.",
+     "o": [
+      "baštu",
+      "bašte",
+      "bašta",
+      "baštom"
+     ],
+     "a": 0,
+     "e": "Imati что — винительный падеж: baštu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja živim iza ovih ___.",
+     "o": [
+      "vratom",
+      "vratima",
+      "vrati",
+      "vrata"
+     ],
+     "a": 3,
+     "e": "Iza («за») требует родительного падежа; vrata — родительный падеж множественного числа: iza ovih vrata."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stanfordski profesor je iskoristio jednu kinesku ___.",
+     "o": [
+      "kompanijom",
+      "kompanije",
+      "kompanija",
+      "kompaniju"
+     ],
+     "a": 3,
+     "e": "Iskoristiti что — винительный падеж: kompaniju."
+    }
+   ]
+  }
+ ]
+}
