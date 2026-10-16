@@ -127,17 +127,25 @@ class _HomeShellState extends State<HomeShell> {
 
   @override
   Widget build(BuildContext context) {
+    // Десктоп и широкий планшет: меню слева, контент шире. Телефон: таббар снизу.
+    final wide = MediaQuery.sizeOf(context).width >= 900;
+    final pages = IndexedStack(
+      index: _tab,
+      children: [
+        FeedPage(),
+        if (kAddVideoEnabled) MyVideosPage(),
+        ClipsPage(),
+        StoriesPage(),
+        WordsPage(),
+        ProfilePage(),
+      ],
+    );
+    if (wide) return _wideShell(pages);
     return Scaffold(
       body: SafeArea(
         bottom: false,
         child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 720),
-            child: IndexedStack(
-              index: _tab,
-              children: [FeedPage(), if (kAddVideoEnabled) MyVideosPage(), ClipsPage(), StoriesPage(), WordsPage(), ProfilePage()],
-            ),
-          ),
+          child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 720), child: pages),
         ),
       ),
       bottomNavigationBar: DecoratedBox(
@@ -220,6 +228,98 @@ class _HomeShellState extends State<HomeShell> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _wideShell(Widget pages) {
+    final items = <(int, IconData, IconData, String)>[
+      (0, KIcons.catalog, KIcons.catalogOn, 'Каталог'),
+      if (kAddVideoEnabled) (1, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
+      (kAddVideoEnabled ? 2 : 1, KIcons.clips, KIcons.clipsOn, 'Клипы'),
+      (kAddVideoEnabled ? 3 : 2, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
+      (kAddVideoEnabled ? 4 : 3, KIcons.words, KIcons.wordsOn, 'Мои слова'),
+    ];
+    final profile = (_profile, KIcons.profile, KIcons.profileOn, 'Профиль');
+    Widget item((int, IconData, IconData, String) it) {
+      final (page, icon, on, label) = it;
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        child: Material(
+          color: _tab == page ? cAccent : Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: () => _select(page),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              child: Row(
+                children: [
+                  Icon(_tab == page ? on : icon, size: 26, color: _tab == page ? cInk : cMuted),
+                  SizedBox(width: 16),
+                  Text(
+                    label,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: _tab == page ? FontWeight.w700 : FontWeight.w500,
+                      color: _tab == page ? cText : cMuted,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Scaffold(
+      body: Row(
+        children: [
+          Container(
+            width: 260,
+            decoration: BoxDecoration(
+              border: Border(right: BorderSide(color: cLine)),
+            ),
+            child: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(28, 24, 20, 20),
+                    child: Text(
+                      'Kapiraš',
+                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),
+                    ),
+                  ),
+                  Divider(height: 1, color: cLine),
+                  SizedBox(height: 12),
+                  for (final it in items) item(it),
+                  if (kAddVideoEnabled)
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(12, 16, 12, 0),
+                      child: FilledButton.icon(
+                        onPressed: _addVideo,
+                        style: FilledButton.styleFrom(backgroundColor: cViolet, foregroundColor: cOnViolet),
+                        icon: Icon(KIcons.plus),
+                        label: Text('Добавить ролик'),
+                      ),
+                    ),
+                  Spacer(),
+                  item(profile),
+                  SizedBox(height: 12),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: SafeArea(
+              child: Center(
+                child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: pages),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
