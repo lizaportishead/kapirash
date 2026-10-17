@@ -22,8 +22,12 @@ jobs:
       - name: Есть ли заявки
         id: queue
         run: |
-          n=$(curl -sf "$SUPABASE_URL/rest/v1/video_requests?status=eq.queued&select=id" \
-            -H "apikey: $SUPABASE_SERVICE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_KEY" | jq length)
+          set -eu
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then echo "::error::Секрет SUPABASE_SERVICE_KEY не задан (проверь имя и значение в Settings → Secrets → Actions)"; exit 1; fi
+          code=$(curl -s -o resp.json -w '%{http_code}' "$SUPABASE_URL/rest/v1/video_requests?status=eq.queued&select=id" \
+            -H "apikey: $SUPABASE_SERVICE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_KEY")
+          if [ "$code" != "200" ]; then echo "::error::Supabase ответил $code: $(cat resp.json)"; exit 1; fi
+          n=$(jq length resp.json)
           echo "queued=$n"
           echo "has=$([ "$n" -gt 0 ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
