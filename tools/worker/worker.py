@@ -49,7 +49,7 @@ def upload(name, data, ctype):
 
 
 def download_audio(vid, tmp):
-    cmd = ["yt-dlp", "-f", "140/bestaudio", "--no-playlist", "-o", f"{tmp}/audio.%(ext)s"]
+    cmd = ["yt-dlp", "-f", "140/bestaudio", "--no-playlist", "--js-runtimes", "node", "-o", f"{tmp}/audio.%(ext)s"]
     if os.environ.get("YT_COOKIES_FILE"):
         cmd += ["--cookies", os.environ["YT_COOKIES_FILE"]]
     subprocess.run(cmd + [f"https://www.youtube.com/watch?v={vid}"], check=True)
