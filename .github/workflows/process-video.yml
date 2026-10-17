@@ -1,0 +1,51 @@
+name: Process video requests
+
+# Каждые 5 минут смотрим очередь video_requests; если она пуста, прогон занимает секунды.
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: process-video
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      SUPABASE_URL: https://ynwpzcoayepczgtayimr.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: Есть ли заявки
+        id: queue
+        run: |
+          n=$(curl -sf "$SUPABASE_URL/rest/v1/video_requests?status=eq.queued&select=id" \
+            -H "apikey: $SUPABASE_SERVICE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_KEY" | jq length)
+          echo "queued=$n"
+          echo "has=$([ "$n" -gt 0 ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        if: steps.queue.outputs.has == 'yes'
+      - uses: actions/setup-python@v5
+        if: steps.queue.outputs.has == 'yes'
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/worker/requirements.txt
+      - uses: actions/cache@v4
+        if: steps.queue.outputs.has == 'yes'
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-large-v3-turbo
+      - name: Установка
+        if: steps.queue.outputs.has == 'yes'
+        run: pip install -r tools/worker/requirements.txt
+      - name: Обработка
+        if: steps.queue.outputs.has == 'yes'
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
+        run: |
+          if [ -n "$YT_COOKIES" ]; then printf '%s' "$YT_COOKIES" > "$RUNNER_TEMP/cookies.txt"; export YT_COOKIES_FILE="$RUNNER_TEMP/cookies.txt"; fi
+          python tools/worker/worker.py

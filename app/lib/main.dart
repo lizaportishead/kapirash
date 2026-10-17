@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'add_video.dart';
-import 'clips_page.dart';
 import 'feed_page.dart';
 import 'icons.dart';
+import 'kap_loader.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
@@ -17,6 +17,18 @@ import 'words_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Пока поднимаем облако и читаем сохранённое, показываем лоадер вместо пустого экрана.
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ColoredBox(
+        color: WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark
+            ? Color(0xFF0E0E12)
+            : Color(0xFFFFFFFF),
+        child: KapLoading(size: 96),
+      ),
+    ),
+  );
   if (supabaseKey.isNotEmpty) {
     await Supabase.initialize(url: supabaseUrl, publishableKey: supabaseKey);
     cloud = Supabase.instance.client;
@@ -108,7 +120,7 @@ class _HomeShellState extends State<HomeShell> {
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
   static const _plus = kAddVideoEnabled ? 2 : 99;
 
-  static const _profile = kAddVideoEnabled ? 5 : 4;
+  static const _profile = kAddVideoEnabled ? 4 : 3;
 
   // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
   int _profileTaps = 0;
@@ -126,7 +138,7 @@ class _HomeShellState extends State<HomeShell> {
   }
 
   Future<void> _addVideo() async {
-    if (await showAddVideo(context) && mounted) setState(() => _tab = 1);
+    await showAddVideo(context);
   }
 
   @override
@@ -138,7 +150,6 @@ class _HomeShellState extends State<HomeShell> {
       children: [
         FeedPage(),
         if (kAddVideoEnabled) MyVideosPage(),
-        ClipsPage(),
         StoriesPage(),
         WordsPage(),
         ProfilePage(),
@@ -195,7 +206,6 @@ class _HomeShellState extends State<HomeShell> {
                       child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
                     ),
                   ],
-                  NavigationDestination(icon: Icon(KIcons.clips), selectedIcon: Icon(KIcons.clipsOn), label: 'Клипы'),
                   NavigationDestination(
                     icon: Icon(KIcons.stories),
                     selectedIcon: Icon(KIcons.storiesOn),
@@ -241,9 +251,8 @@ class _HomeShellState extends State<HomeShell> {
     final items = <(int, IconData, IconData, String)>[
       (0, KIcons.catalog, KIcons.catalogOn, 'Каталог'),
       if (kAddVideoEnabled) (1, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
-      (kAddVideoEnabled ? 2 : 1, KIcons.clips, KIcons.clipsOn, 'Клипы'),
-      (kAddVideoEnabled ? 3 : 2, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
-      (kAddVideoEnabled ? 4 : 3, KIcons.words, KIcons.wordsOn, 'Мои слова'),
+      (kAddVideoEnabled ? 2 : 1, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
+      (kAddVideoEnabled ? 3 : 2, KIcons.words, KIcons.wordsOn, 'Мои слова'),
     ];
     final profile = (_profile, KIcons.profile, KIcons.profileOn, 'Профиль');
     Widget item((int, IconData, IconData, String) it) {
@@ -260,12 +269,12 @@ class _HomeShellState extends State<HomeShell> {
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               child: Row(
                 children: [
-                  Icon(_tab == page ? on : icon, size: 26, color: _tab == page ? cInk : cMuted),
+                  Icon(_tab == page ? on : icon, size: 24, color: _tab == page ? cInk : cMuted),
                   SizedBox(width: 16),
                   Text(
                     label,
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 15,
                       fontWeight: _tab == page ? FontWeight.w700 : FontWeight.w500,
                       color: _tab == page ? cText : cMuted,
                     ),
@@ -290,11 +299,18 @@ class _HomeShellState extends State<HomeShell> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(28, 24, 20, 20),
-                    child: Text(
-                      'Kapiraš',
-                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),
+                  // Высота совпадает с PageTitle (14 + 48 кнопка + 12), чтобы лого стояло на одной линии с заголовком.
+                  SizedBox(
+                    height: 74,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 28),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Kapiraš',
+                          style: TextStyle(fontSize: 22.5, fontWeight: FontWeight.w900, letterSpacing: -0.75, color: cViolet),
+                        ),
+                      ),
                     ),
                   ),
                   Divider(height: 1, color: cLine),

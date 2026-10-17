@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'add_video.dart';
+import 'clips_page.dart';
+import 'icons.dart';
 import 'liked_page.dart';
 import 'search_page.dart';
 import 'store.dart';
@@ -24,7 +27,8 @@ class FeedPage extends StatelessWidget {
       for (final v in videos)
         if (v.topic.isNotEmpty) v.topic,
     ].toSet().toList();
-    return Column(
+    final mine = [for (final m in store.myVideos.reversed) m.video];
+    final page = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         PageTitle(
@@ -46,8 +50,10 @@ class FeedPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(bottom: 16),
             children: [
+              _Section(title: 'Мои ролики', list: mine),
               _Section(title: 'Новое', list: newest.take(_perSection).toList()),
               _Section(title: 'Популярное', list: popular),
+              _ClipsSection(),
               for (final t in topics)
                 _Section(
                   title: t,
@@ -55,6 +61,30 @@ class FeedPage extends StatelessWidget {
                   onAll: () => openTopic(context, t),
                 ),
             ],
+          ),
+        ),
+      ],
+    );
+    if (!canAddVideo) return page;
+    return Stack(
+      children: [
+        page,
+        Positioned(
+          right: 16,
+          bottom: 16,
+          child: Semantics(
+            button: true,
+            label: 'Добавить ролик',
+            child: Material(
+              color: cViolet,
+              shape: CircleBorder(),
+              elevation: 3,
+              clipBehavior: Clip.antiAlias,
+              child: InkWell(
+                onTap: () => showAddVideo(context),
+                child: SizedBox(width: 56, height: 56, child: Icon(KIcons.plus, size: 28, color: cOnViolet)),
+              ),
+            ),
           ),
         ),
       ],
@@ -118,6 +148,55 @@ class _Section extends StatelessWidget {
                 ),
               );
             },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Полоса «Короткие ролики»: шесть вертикальных обложек, которые листаются вправо.
+class _ClipsSection extends StatelessWidget {
+  const _ClipsSection();
+
+  @override
+  Widget build(BuildContext context) {
+    if (clips.isEmpty) return SizedBox.shrink();
+    final list = clips.take(6).toList();
+    return Padding(
+      padding: EdgeInsets.only(bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(16, 4, 8, 8),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Короткие ролики',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => openClips(context),
+                  style: TextButton.styleFrom(foregroundColor: cViolet),
+                  child: Text('Смотреть все', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 240,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              itemCount: list.length,
+              separatorBuilder: (_, _) => SizedBox(width: 10),
+              itemBuilder: (_, i) => SizedBox(width: 135, child: ClipTile(list[i], among: list)),
+            ),
           ),
         ],
       ),

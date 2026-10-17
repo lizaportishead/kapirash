@@ -1,0 +1,4 @@
+faster-whisper
+yt-dlp
+requests
+anthropic

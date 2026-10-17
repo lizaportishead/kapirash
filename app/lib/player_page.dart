@@ -2,22 +2,27 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import 'clips_page.dart';
 import 'creator_page.dart';
 import 'icons.dart';
+import 'kap_loader.dart';
 import 'phrase.dart';
 import 'quiz_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'video_card.dart';
+import 'processing_page.dart';
 import 'videos.dart';
 
 /// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
 void openVideo(BuildContext context, Video v, {double? startAt}) {
   if (v.tiktok) return openClip(context, v, startAt: startAt);
+  // Свой ролик, пока субтитры не готовы, смотреть нельзя: показываем, как идёт подготовка.
+  if (v.mine && store.myVideo(v.id)?.status != SubsStatus.ready) return openProcessing(context, v);
   store.markWatched(v.id);
   Navigator.of(context).push(
     MaterialPageRoute<void>(
@@ -39,6 +44,7 @@ class _PlayerPageState extends State<PlayerPage> {
   late final YoutubePlayerController _yt;
   StreamSubscription<YoutubeVideoState>? _sub;
   List<Cue> _sr = [], _ru = [];
+  bool _subsLoading = true;
   Map<String, dynamic> _dict = {};
   List<QuizSection> _quiz = [];
   // Переключатели SR/RU пока убраны с экрана: обе строки показываются всегда.
@@ -51,7 +57,11 @@ class _PlayerPageState extends State<PlayerPage> {
   double _savedPos = -1;
   // Ключ не даёт плееру перезагрузиться, когда поворот экрана переставляет его в другую раскладку.
   final _playerKey = GlobalKey();
+  // Вкладка боковой колонки на десктопе: 0 — текст, 1 — слова, 2 — задания.
+  int _side = 0;
 
+  // Кнопка «Мои слова» — сюда улетает шторка со словом.
+  final _wordsKey = GlobalKey();
   String get videoId => widget.video.id;
   // На странице ролика — только слова, сохранённые из него.
   List<SavedWord> get _words => store.words.where((w) => w.video == videoId).toList();
@@ -96,8 +106,10 @@ class _PlayerPageState extends State<PlayerPage> {
 
   Future<void> _load() async {
     final subs = await store.loadSubs(widget.video);
-    if (!mounted || subs == null) return;
+    if (!mounted) return;
+    if (subs == null) return setState(() => _subsLoading = false);
     setState(() {
+      _subsLoading = false;
       _sr = parseSubs(subs.sr);
       _ru = parseSubs(subs.ru);
       _dict = subs.dict;
@@ -166,7 +178,7 @@ class _PlayerPageState extends State<PlayerPage> {
   void _openWord(String raw, Cue cue) {
     if (cleanWord(raw).isEmpty) return;
     _yt.pauseVideo();
-    showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId);
+    showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId, flyTo: _wordsKey);
   }
 
   @override
@@ -180,6 +192,7 @@ class _PlayerPageState extends State<PlayerPage> {
     );
     // На планшете и в горизонтальном положении хватает высоты для обычной раскладки.
     if (size.width > size.height && size.height < 600) return _landscape(player, cue);
+    if (size.width >= 960) return _desktop(player, cue);
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -191,35 +204,58 @@ class _PlayerPageState extends State<PlayerPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _back(),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 13, bottom: 8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.video.title,
-                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
-                              ),
-                              SizedBox(height: 6),
-                              _channel(),
-                            ],
-                          ),
-                        ),
-                      ),
-                      LikeButton(widget.video.id),
-                    ],
-                  ),
-                  player,
-                  SizedBox(height: 10),
+                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id)]),
                   Expanded(
-                    child: Align(alignment: Alignment.topCenter, child: _current(cue)),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(4, 0, 4, 10),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                _avatar(),
+                                SizedBox(width: 10),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        widget.video.title,
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w700,
+                                          height: 1.3,
+                                          color: cText,
+                                        ),
+                                      ),
+                                      SizedBox(height: 4),
+                                      _channel(avatar: false),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          player,
+                          SizedBox(height: 10),
+                          ConstrainedBox(constraints: BoxConstraints(maxHeight: 210), child: _current(cue)),
+                          if (_quiz.isNotEmpty) ...[
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(4, 28, 4, 8),
+                              child: Text(
+                                'Посмотри ролик и выполни задания',
+                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, height: 1.25, color: cText),
+                              ),
+                            ),
+                            QuizList(videoId: videoId, sections: _quiz, inline: true),
+                          ],
+                        ],
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   _links(),
                   SizedBox(height: 12 + MediaQuery.paddingOf(context).bottom),
                 ],
@@ -227,6 +263,123 @@ class _PlayerPageState extends State<PlayerPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  // Десктоп: слева видео и текущая фраза, справа — текст, слова и задания без переходов на другие экраны.
+  Widget _desktop(Widget player, Cue? cue) {
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 1280),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 20,
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              _back(),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 13, bottom: 8),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        widget.video.title,
+                                        style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w700,
+                                          height: 1.3,
+                                          color: cText,
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      _channel(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              _youtubeButton(),
+                              LikeButton(widget.video.id),
+                            ],
+                          ),
+                          player,
+                          SizedBox(height: 12),
+                          _current(cue),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(padding: EdgeInsets.only(top: 12), child: _sidePanel()),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _sidePanel() {
+    final tabs = <(String, IconData)>[
+      ('Текст', KIcons.text),
+      ('Слова${_words.isEmpty ? '' : ' · ${_words.length}'}', KIcons.wordsOn),
+      if (_quiz.isNotEmpty) ('Задания', KIcons.tasks),
+    ];
+    final tab = _side.clamp(0, tabs.length - 1);
+    final Widget body = switch (tab) {
+      0 when _subsLoading => KapLoading(size: 40),
+      0 => Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek, popOnTap: false),
+      1 => WordList(videoId: videoId, onSeek: _seek, popOnTap: false),
+      _ => QuizList(videoId: videoId, sections: _quiz),
+    };
+    return Container(
+      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(12),
+            child: Row(
+              spacing: 6,
+              children: [
+                for (var i = 0; i < tabs.length; i++)
+                  Expanded(
+                    child: Pill(
+                      tabs[i].$1,
+                      icon: tabs[i].$2,
+                      on: i == tab,
+                      onTap: () {
+                        if (i == 2) _yt.pauseVideo();
+                        setState(() => _side = i);
+                      },
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          // KeyedSubtree сбрасывает прокрутку при смене вкладки.
+          Expanded(
+            child: KeyedSubtree(key: ValueKey(tab), child: body),
+          ),
+        ],
       ),
     );
   }
@@ -322,13 +475,12 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   // Аватарка и имя автора; у чужих роликов ведут на страницу канала.
-  Widget _channel() {
+  Widget _channel({bool avatar = true}) {
     final name = widget.video.channel;
     final row = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        CreatorAvatar(name, size: 22),
-        SizedBox(width: 7),
+        if (avatar) ...[CreatorAvatar(name, size: 22), SizedBox(width: 7)],
         Flexible(
           child: Text(
             name,
@@ -351,6 +503,20 @@ class _PlayerPageState extends State<PlayerPage> {
         },
         child: Padding(padding: EdgeInsets.symmetric(vertical: 3), child: row),
       ),
+    );
+  }
+
+  // Круглая аватарка автора для мобильной шапки; как и имя, ведёт на страницу канала.
+  Widget _avatar() {
+    final name = widget.video.channel;
+    final a = CreatorAvatar(name, size: 40);
+    if (widget.video.mine) return a;
+    return GestureDetector(
+      onTap: () {
+        _yt.pauseVideo();
+        openCreator(context, name);
+      },
+      child: a,
     );
   }
 
@@ -424,6 +590,7 @@ class _PlayerPageState extends State<PlayerPage> {
                             : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
                         style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
                       ),
+                    if (_subsLoading) Center(child: KapLoader(size: 32)),
                     if (cue != null && _showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue)),
                     if (ru.isNotEmpty) ...[
                       SizedBox(height: 6),
@@ -447,14 +614,26 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
-  // Полный текст, слова и задания ролика открываются отдельными экранами.
+  // Кнопка «Открыть в YouTube» в шапке, как у клипов — в TikTok.
+  Widget _youtubeButton() {
+    return IconButton(
+      tooltip: 'Открыть в YouTube',
+      icon: Icon(KIcons.youtube, size: 22, color: cMuted),
+      onPressed: () {
+        _yt.pauseVideo();
+        launchUrl(Uri.parse('https://www.youtube.com/watch?v=$videoId'), mode: LaunchMode.externalApplication);
+      },
+    );
+  }
+
+  // Закреплены внизу: весь текст и сохранённые слова ролика открываются отдельными экранами.
   Widget _links() {
     return Row(
       spacing: 6,
       children: [
         Expanded(
           child: Pill(
-            'Текст',
+            'Весь текст',
             icon: KIcons.text,
             onTap: () => _push(
               SubPage(
@@ -466,7 +645,9 @@ class _PlayerPageState extends State<PlayerPage> {
         ),
         Expanded(
           child: Pill(
-            'Слова${_words.isEmpty ? '' : ' · ${_words.length}'}',
+            key: _wordsKey,
+            'Мои слова',
+            badge: _words.length,
             icon: KIcons.wordsOn,
             onTap: () => _push(
               SubPage(
@@ -476,23 +657,6 @@ class _PlayerPageState extends State<PlayerPage> {
             ),
           ),
         ),
-        // Задания есть не у всех роликов.
-        if (_quiz.isNotEmpty)
-          Expanded(
-            child: Pill(
-              'Задания',
-              icon: KIcons.tasks,
-              onTap: () {
-                _yt.pauseVideo();
-                _push(
-                  SubPage(
-                    title: 'Задания',
-                    child: QuizList(videoId: videoId, sections: _quiz),
-                  ),
-                );
-              },
-            ),
-          ),
       ],
     );
   }
@@ -549,7 +713,16 @@ class SubPage extends StatelessWidget {
 
 /// Весь текст ролика; нажатие на фразу возвращает в плеер и включает её.
 class Transcript extends StatefulWidget {
-  const Transcript({super.key, required this.sr, required this.cur, required this.ruFor, required this.onSeek});
+  const Transcript({
+    super.key,
+    required this.sr,
+    required this.cur,
+    required this.ruFor,
+    required this.onSeek,
+    this.popOnTap = true,
+  });
+  // В боковой колонке на десктопе экран не закрываем.
+  final bool popOnTap;
   final List<Cue> sr;
   final ValueListenable<int> cur;
   final String Function(Cue) ruFor;
@@ -599,7 +772,7 @@ class _TranscriptState extends State<Transcript> {
               key: _rowKeys.putIfAbsent(i, GlobalKey.new),
               borderRadius: BorderRadius.circular(14),
               onTap: () {
-                Navigator.pop(context);
+                if (widget.popOnTap) Navigator.pop(context);
                 widget.onSeek(sr[i].start);
               },
               child: Container(
@@ -648,7 +821,8 @@ class _TranscriptState extends State<Transcript> {
 
 /// Слова, сохранённые из этого ролика; нажатие возвращает в плеер к месту, где слово прозвучало.
 class WordList extends StatelessWidget {
-  const WordList({super.key, required this.videoId, required this.onSeek});
+  const WordList({super.key, required this.videoId, required this.onSeek, this.popOnTap = true});
+  final bool popOnTap;
   final String videoId;
   final void Function(double) onSeek;
 
@@ -675,7 +849,7 @@ class WordList extends StatelessWidget {
                 Expanded(
                   child: InkWell(
                     onTap: () {
-                      Navigator.pop(context);
+                      if (popOnTap) Navigator.pop(context);
                       onSeek(w.t);
                     },
                     child: Padding(

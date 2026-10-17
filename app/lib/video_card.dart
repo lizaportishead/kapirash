@@ -20,7 +20,7 @@ class VideoCard extends StatelessWidget {
       color: cInk,
       child: Center(child: Icon(Icons.play_arrow_rounded, size: 56, color: cOnInk.withValues(alpha: 0.5))),
     );
-    return Material(
+    final card = Material(
       color: cCard,
       borderRadius: BorderRadius.circular(28),
       clipBehavior: Clip.antiAlias,
@@ -33,10 +33,16 @@ class VideoCard extends StatelessWidget {
         ),
       ),
     );
+    // Свой ролик без готовых субтитров — приглушённый: открыть его можно, но смотреть пока нечего.
+    if (!v.mine) return card;
+    return ListenableBuilder(
+      listenable: store,
+      builder: (_, _) => Opacity(opacity: store.myVideo(v.id)?.status == SubsStatus.ready ? 1 : 0.55, child: card),
+    );
   }
 
   Widget _body(BuildContext context, Widget placeholder) {
-    // У своего ролика — состояние субтитров. Уровень (B1, B2) пока не показываем.
+    // У своего ролика — состояние субтитров. Уровень показан в подписи сложности под названием.
     final tag = v.mine ? (store.myVideo(v.id)?.status.label ?? '') : '';
     final progress = store.progressOf(v);
     final words = store.wordCount(v.id);
@@ -98,6 +104,27 @@ class VideoCard extends StatelessWidget {
     );
   }
 
+  /// Сложность по уровню ролика: подпись и цвет кружка.
+  (String, Color)? get _difficulty {
+    final l = v.level.toUpperCase();
+    if (l.startsWith('A')) return ('Простое (A1-A2)', Color(0xFF34A853));
+    if (l == 'B1') return ('Среднее (B1)', Color(0xFFF59E0B));
+    if (l.startsWith('B') || l.startsWith('C')) return ('Сложное (B2+)', Color(0xFFE53935));
+    return null;
+  }
+
+  Widget _difficultyLabel() {
+    final d = _difficulty!;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.circle, size: 10, color: d.$2),
+        SizedBox(width: 5),
+        Text(d.$1, style: TextStyle(fontSize: 13, color: cMuted)),
+      ],
+    );
+  }
+
   Widget _text(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,14 +172,11 @@ class VideoCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(' · ${v.topic}', style: TextStyle(fontSize: 13, color: cMuted)),
+              if (_difficulty != null) ...[Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)), _difficultyLabel()],
             ],
           )
-        else
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 4),
-            child: Text(v.topic, style: TextStyle(fontSize: 13, color: cMuted)),
-          ),
+        else if (_difficulty != null)
+          Padding(padding: EdgeInsets.symmetric(vertical: 4), child: _difficultyLabel()),
       ],
     );
   }

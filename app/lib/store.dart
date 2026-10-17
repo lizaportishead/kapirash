@@ -75,19 +75,24 @@ enum SubsStatus {
 
 /// Ролик, который пользователь добавил сам.
 class MyVideo {
-  MyVideo(this.video, {this.status = SubsStatus.processing});
+  MyVideo(this.video, {this.status = SubsStatus.processing, DateTime? added}) : added = added ?? DateTime.now();
   final Video video;
   SubsStatus status;
+
+  /// Когда ролик добавлен: от этого момента на экране ролика считается оставшееся время.
+  DateTime added;
 
   Map<String, dynamic> toJson() => {
     'id': video.id,
     'title': video.title,
     'channel': video.channel,
     'status': status.name,
+    'added': added.toIso8601String(),
   };
   static MyVideo fromJson(Map<String, dynamic> j) => MyVideo(
     Video(id: j['id'], title: j['title'] ?? '', channel: j['channel'] ?? '', mine: true),
     status: SubsStatus.values.asNameMap()[j['status']] ?? SubsStatus.processing,
+    added: DateTime.tryParse(j['added'] ?? ''),
   );
 }
 
@@ -447,6 +452,8 @@ class AppStore extends ChangeNotifier {
   }
 
   void removeVideo(String id) {
+    // Заявку тоже снимаем, чтобы воркер не готовил то, что уже не нужно.
+    if (cloud != null) unawaited(Future(() => cloud!.from('video_requests').delete().eq('id', id)).catchError((_) {}));
     myVideos.removeWhere((m) => m.video.id == id);
     _prefs?.remove('kap.subs.$id');
     if (history.remove(id)) _prefs?.setString('kap.history', jsonEncode(history));
@@ -458,9 +465,11 @@ class AppStore extends ChangeNotifier {
   }
 
   Future<void> generateSubs(String id) async {
+    final retry = myVideo(id)?.status == SubsStatus.failed;
+    if (retry) myVideo(id)!.added = DateTime.now();
     _setStatus(id, SubsStatus.processing);
     try {
-      final g = await subsGenerator.generate(id);
+      final g = await subsGenerator.generate(myVideo(id)!.video, retry: retry);
       // Пока ждали, ролик могли удалить.
       if (myVideo(id) == null) return;
       await _prefs?.setString('kap.subs.$id', jsonEncode({'sr': g.sr, 'ru': g.ru, 'dict': g.dict}));

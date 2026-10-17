@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
@@ -9,16 +10,20 @@ import 'store.dart';
 import 'theme.dart';
 import 'videos.dart';
 
-/// Шторка «Добавить ролик». Возвращает true, если ролик появился в «Моих роликах».
-Future<bool> showAddVideo(BuildContext context) async {
-  final added = await showModalBottomSheet<bool>(
+/// Кнопка «+» в каталоге видна только владельцу: пока ролики добавляет один человек.
+const kOwnerEmail = 'ilovekurm@gmail.com';
+bool get canAddVideo => kDebugMode || store.user == kOwnerEmail;
+
+/// Шторка «Добавить ролик». После ссылки открывает экран ролика: на нём видно, как идёт подготовка.
+Future<void> showAddVideo(BuildContext context) async {
+  final video = await showModalBottomSheet<Video>(
     context: context,
     backgroundColor: cBg,
     isScrollControlled: true,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
     builder: (_) => _AddVideoSheet(),
   );
-  return added ?? false;
+  if (video != null && context.mounted) openVideo(context, video);
 }
 
 class _NotFound implements Exception {}
@@ -78,8 +83,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
     // Ролик уже есть в каталоге или в своих — просто открываем его.
     final known = videoById(id);
     if (known != null) {
-      Navigator.pop(context, known.mine);
-      openVideo(context, known);
+      Navigator.pop(context, known);
       return;
     }
     setState(() {
@@ -90,7 +94,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
       final v = await _fetchVideo(id);
       if (!mounted) return;
       store.addVideo(v);
-      Navigator.pop(context, true);
+      Navigator.pop(context, v);
     } on _NotFound {
       if (!mounted) return;
       setState(() {
