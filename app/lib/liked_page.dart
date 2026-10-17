@@ -43,14 +43,22 @@ class LikedPage extends StatelessWidget {
                     PageTitle('Любимое${list.isEmpty ? '' : ' · ${list.length}'}'),
                     Expanded(
                       child: list.isEmpty
-                          ? Center(
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
-                                child: Text(
-                                  'Пока пусто. Поставь ролику сердечко — и он появится здесь.',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
-                                ),
+                          ? Padding(
+                              padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
+                                  Flexible(
+                                    child: ExcludeSemantics(child: Image.asset('assets/ill_liked.png', height: 173)),
+                                  ),
+                                  SizedBox(height: 16),
+                                  Text(
+                                    'Ставь сердечко роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                                  ),
+                                ],
                               ),
                             )
                           : ListView.separated(

@@ -36,12 +36,12 @@ class FeedPage extends StatelessWidget {
           actions: [
             IconButton(
               tooltip: 'Любимое',
-              icon: Icon(Icons.favorite_border_rounded, size: 24, color: cText),
+              icon: Icon(KIcons.heart, size: 24, color: cText),
               onPressed: () => openLiked(context),
             ),
             IconButton(
               tooltip: 'Поиск',
-              icon: Icon(Icons.search_rounded, size: 24, color: cText),
+              icon: Icon(KIcons.search, size: 24, color: cText),
               onPressed: () => openSearch(context),
             ),
           ],
@@ -50,12 +50,12 @@ class FeedPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(bottom: 16),
             children: [
-              _Section(title: 'Мои ролики', list: mine),
-              _Section(title: 'Популярное', list: popular),
-              _Section(title: 'Новое', list: newest.take(_perSection).toList()),
-              _ClipsSection(),
+              VideoSection(title: 'Мои ролики', list: mine),
+              VideoSection(title: 'Популярное', list: popular),
+              VideoSection(title: 'Новое', list: newest.take(_perSection).toList()),
+              ClipsStrip(),
               for (final t in topics)
-                _Section(
+                VideoSection(
                   title: t,
                   list: videos.where((v) => v.topic == t).toList().reversed.take(_perSection).toList(),
                   onAll: () => openTopic(context, t),
@@ -93,11 +93,43 @@ class FeedPage extends StatelessWidget {
 }
 
 // Высота карточки: превью 16:9 плюс подпись.
-double _cardHeight(double w) => (w - 16) * 9 / 16 + 108;
+double videoCardHeight(double w) => (w - 16) * 9 / 16 + 108;
+
+/// Заголовок полосы со ссылкой «Смотреть все», если есть куда вести.
+class SectionHeader extends StatelessWidget {
+  const SectionHeader(this.title, {super.key, this.onAll, this.allLabel = 'Смотреть все'});
+  final String title, allLabel;
+  final VoidCallback? onAll;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(16, 4, 8, 8),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
+            ),
+          ),
+          if (onAll != null)
+            TextButton(
+              onPressed: onAll,
+              style: TextButton.styleFrom(foregroundColor: cViolet),
+              child: Text(allLabel, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+            ),
+        ],
+      ),
+    );
+  }
+}
 
 /// Заголовок темы со ссылкой «Смотреть все» и горизонтальная полоса из последних роликов.
-class _Section extends StatelessWidget {
-  const _Section({required this.title, required this.list, this.onAll});
+class VideoSection extends StatelessWidget {
+  const VideoSection({super.key, required this.title, required this.list, this.onAll});
   final String title;
   final List<Video> list;
   final VoidCallback? onAll;
@@ -110,27 +142,7 @@ class _Section extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 4, 8, 8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
-                  ),
-                ),
-                if (onAll != null)
-                  TextButton(
-                    onPressed: onAll,
-                    style: TextButton.styleFrom(foregroundColor: cViolet),
-                    child: Text('Смотреть все', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                  ),
-              ],
-            ),
-          ),
+          SectionHeader(title, onAll: onAll),
           LayoutBuilder(
             builder: (_, box) {
               // Телефон: одна карточка и краешек второй. Широкий экран: четыре в ряд.
@@ -138,7 +150,7 @@ class _Section extends StatelessWidget {
                   ? box.maxWidth * 0.82
                   : ((box.maxWidth - 24 - 12 * (_perSection - 1)) / _perSection).clamp(260.0, 400.0);
               return SizedBox(
-                height: _cardHeight(w),
+                height: videoCardHeight(w),
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.symmetric(horizontal: 12),
@@ -156,38 +168,23 @@ class _Section extends StatelessWidget {
 }
 
 /// Полоса «Короткие ролики»: шесть вертикальных обложек, которые листаются вправо.
-class _ClipsSection extends StatelessWidget {
-  const _ClipsSection();
+class ClipsStrip extends StatelessWidget {
+  const ClipsStrip({super.key, this.title = 'Шортсы', this.list});
+  final String title;
+
+  /// null — первые клипы каталога.
+  final List<Video>? list;
 
   @override
   Widget build(BuildContext context) {
-    if (clips.isEmpty) return SizedBox.shrink();
-    final list = clips.take(6).toList();
+    final list = this.list ?? clips.take(6).toList();
+    if (list.isEmpty) return SizedBox.shrink();
     return Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 4, 8, 8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Шортсы',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => openClips(context),
-                  style: TextButton.styleFrom(foregroundColor: cViolet),
-                  child: Text('Смотреть все', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                ),
-              ],
-            ),
-          ),
+          SectionHeader(title, onAll: () => openClips(context)),
           SizedBox(
             height: 240,
             child: ListView.separated(
@@ -251,7 +248,7 @@ class TopicPage extends StatelessWidget {
                               crossAxisCount: cols,
                               crossAxisSpacing: 12,
                               mainAxisSpacing: 12,
-                              mainAxisExtent: _cardHeight(cardW),
+                              mainAxisExtent: videoCardHeight(cardW),
                             ),
                             itemCount: list.length,
                             itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),

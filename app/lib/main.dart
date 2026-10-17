@@ -4,6 +4,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'add_video.dart';
 import 'feed_page.dart';
+import 'home_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
 import 'my_videos_page.dart';
@@ -11,6 +12,7 @@ import 'onboarding_page.dart';
 import 'profile_page.dart';
 import 'stories_page.dart';
 import 'store.dart';
+import 'survey_page.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
 import 'words_page.dart';
@@ -47,6 +49,7 @@ class KapirasApp extends StatefulWidget {
 class _KapirasAppState extends State<KapirasApp> {
   bool _dark = store.dark;
   bool _onboarded = store.onboarded;
+  bool _surveyDone = store.surveyDone;
 
   @override
   void initState() {
@@ -64,6 +67,7 @@ class _KapirasAppState extends State<KapirasApp> {
   // включая const-виджеты и открытые поверх экраны.
   void _onStore() {
     if (store.onboarded != _onboarded) setState(() => _onboarded = store.onboarded);
+    if (store.surveyDone != _surveyDone) setState(() => _surveyDone = store.surveyDone);
     if (store.dark == _dark) return;
     setState(() => _dark = store.dark);
     void visit(Element e) {
@@ -94,7 +98,12 @@ class _KapirasAppState extends State<KapirasApp> {
       home: AnimatedSwitcher(
         duration: Duration(milliseconds: 250),
         // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
-        child: _onboarded ? HomeShell() : OnboardingPage(),
+        // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
+        child: !_onboarded
+            ? OnboardingPage()
+            : !_surveyDone
+            ? SurveyPage()
+            : HomeShell(),
       ),
     );
   }
@@ -118,9 +127,11 @@ class _HomeShellState extends State<HomeShell> {
 
   // В середине таббара — пустая ячейка под кнопку «плюс», поэтому индексы справа от неё сдвинуты.
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
-  static const _plus = kAddVideoEnabled ? 2 : 99;
-
-  static const _profile = kAddVideoEnabled ? 4 : 3;
+  static const _home = 0, _feed = 1;
+  static const _plus = kAddVideoEnabled ? 3 : 99;
+  static const _stories = kAddVideoEnabled ? 3 : 2;
+  static const _words = _stories + 1;
+  static const _profile = _stories + 2;
 
   // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
   int _profileTaps = 0;
@@ -148,6 +159,7 @@ class _HomeShellState extends State<HomeShell> {
     Widget buildPages() => IndexedStack(
       index: _tab,
       children: [
+        HomePage(onVideos: () => _select(_feed), onStories: () => _select(_stories), onWords: () => _select(_words)),
         FeedPage(),
         if (kAddVideoEnabled) MyVideosPage(),
         StoriesPage(),
@@ -191,6 +203,7 @@ class _HomeShellState extends State<HomeShell> {
                 selectedIndex: _tab < _plus ? _tab : _tab + 1,
                 onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
                 destinations: [
+                  NavigationDestination(icon: Icon(KIcons.home), selectedIcon: Icon(KIcons.homeOn), label: 'Дом'),
                   NavigationDestination(
                     icon: Icon(KIcons.catalog),
                     selectedIcon: Icon(KIcons.catalogOn),
@@ -249,10 +262,11 @@ class _HomeShellState extends State<HomeShell> {
 
   Widget _wideShell(Widget Function() buildPages) {
     final items = <(int, IconData, IconData, String)>[
-      (0, KIcons.catalog, KIcons.catalogOn, 'Видео'),
-      if (kAddVideoEnabled) (1, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
-      (kAddVideoEnabled ? 2 : 1, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
-      (kAddVideoEnabled ? 3 : 2, KIcons.words, KIcons.wordsOn, 'Мои слова'),
+      (_home, KIcons.home, KIcons.homeOn, 'Дом'),
+      (_feed, KIcons.catalog, KIcons.catalogOn, 'Видео'),
+      if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
+      (_stories, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
+      (_words, KIcons.words, KIcons.wordsOn, 'Мои слова'),
     ];
     final profile = (_profile, KIcons.profile, KIcons.profileOn, 'Профиль');
     Widget item((int, IconData, IconData, String) it) {
@@ -308,7 +322,12 @@ class _HomeShellState extends State<HomeShell> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Kapiraš',
-                          style: TextStyle(fontSize: 22.5, fontWeight: FontWeight.w900, letterSpacing: -0.75, color: cViolet),
+                          style: TextStyle(
+                            fontSize: 22.5,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: -0.75,
+                            color: cViolet,
+                          ),
                         ),
                       ),
                     ),
@@ -342,7 +361,8 @@ class _HomeShellState extends State<HomeShell> {
                   child: Navigator(
                     key: _navKey,
                     onGenerateRoute: (_) => MaterialPageRoute<void>(
-                      builder: (_) => ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+                      builder: (_) =>
+                          ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
                     ),
                   ),
                 ),

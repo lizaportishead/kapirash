@@ -93,7 +93,10 @@ class SavedWord {
     final plural = RegExp(r'мн\.\s*ч\.').hasMatch(n);
     final singular = RegExp(r'ед\.\s*ч\.').hasMatch(n);
     if (cm != null) {
-      final names = RegExp(r'[а-я]+', unicode: true).allMatches(cm.group(1)!).map((m) => _cases[m.group(0)]).whereType<String>().toList();
+      final names = RegExp(
+        r'[а-я]+',
+        unicode: true,
+      ).allMatches(cm.group(1)!).map((m) => _cases[m.group(0)]).whereType<String>().toList();
       if (names.isNotEmpty) parts.add('${names.join('/')} падеж');
     }
     if (n.contains('прош. вр')) parts.add('прошедшее время');
@@ -106,7 +109,14 @@ class SavedWord {
       parts.add('сравнительная степень');
     }
     if (person != null) {
-      parts.add('${person.group(1)} лицо ${plural ? 'мн. числа' : singular ? 'ед. числа' : ''}'.trim());
+      parts.add(
+        '${person.group(1)} лицо ${plural
+                ? 'мн. числа'
+                : singular
+                ? 'ед. числа'
+                : ''}'
+            .trim(),
+      );
     } else if (plural) {
       parts.add('мн. число');
     } else if (singular) {
@@ -183,6 +193,13 @@ class AppStore extends ChangeNotifier {
   /// Онбординг пройден; показываем его один раз.
   bool onboarded = false;
 
+  /// Ответы анкеты после онбординга: уровень ('A', 'B1', 'B2') и любимые темы. Пусто — анкету пропустили.
+  String? level;
+  List<String> interests = [];
+
+  /// Анкету прошли или пропустили; показываем её один раз.
+  bool surveyDone = false;
+
   /// Почта вошедшего пользователя; null — не вошёл.
   String? user;
 
@@ -191,6 +208,9 @@ class AppStore extends ChangeNotifier {
     cyr = prefs.getString('kap.script') == 'cyr';
     dark = prefs.getString('kap.theme') == 'dark';
     onboarded = prefs.getBool('kap.onboarded') ?? false;
+    level = prefs.getString('kap.level');
+    interests = prefs.getStringList('kap.interests') ?? [];
+    surveyDone = prefs.getBool('kap.survey') ?? false;
     user = cloud?.auth.currentUser?.email;
     cloud?.auth.onAuthStateChange.listen((s) {
       final email = s.session?.user.email;
@@ -366,10 +386,23 @@ class AppStore extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Пасхалка: показывает онбординг заново, остальное на устройстве не трогает.
+  /// Сохраняет ответы анкеты; без аргументов — анкету пропустили.
+  void finishSurvey({String? level, List<String> interests = const []}) {
+    this.level = level;
+    this.interests = [...interests];
+    surveyDone = true;
+    level == null ? _prefs?.remove('kap.level') : _prefs?.setString('kap.level', level);
+    _prefs?.setStringList('kap.interests', this.interests);
+    _prefs?.setBool('kap.survey', true);
+    notifyListeners();
+  }
+
+  /// Пасхалка: показывает онбординг и анкету заново, остальное на устройстве не трогает.
   void replayOnboarding() {
     onboarded = false;
+    surveyDone = false;
     _prefs?.remove('kap.onboarded');
+    _prefs?.remove('kap.survey');
     notifyListeners();
   }
 
@@ -526,9 +559,10 @@ class AppStore extends ChangeNotifier {
 
   Future<void> generateSubs(String id) async {
     final retry = myVideo(id)?.status == SubsStatus.failed;
-    if (retry) myVideo(id)!
-      ..added = DateTime.now()
-      ..error = null;
+    if (retry)
+      myVideo(id)!
+        ..added = DateTime.now()
+        ..error = null;
     _setStatus(id, SubsStatus.processing);
     try {
       final g = await subsGenerator.generate(myVideo(id)!.video, retry: retry);

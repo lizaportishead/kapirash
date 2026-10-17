@@ -49,35 +49,38 @@ class Pill extends StatelessWidget {
             height: 38,
             constraints: BoxConstraints(minWidth: 42),
             padding: EdgeInsets.symmetric(horizontal: 14),
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Без текста — кнопка-иконка, значок крупнее.
-                if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? cBg : cText),
-                if (icon != null && text.isNotEmpty) SizedBox(width: 6),
-                if (text.isNotEmpty)
-                  Text(
-                    text,
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
-                  ),
-                if (badge > 0) ...[
-                  SizedBox(width: 6),
-                  Container(
-                    width: 20,
-                    height: 20,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(color: cViolet, shape: BoxShape.circle),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        '$badge',
-                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Colors.white, height: 1.1),
+            // Центр по ширине содержимого: Container с alignment растянулся бы на всю строку Wrap.
+            child: Center(
+              widthFactor: 1,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Без текста — кнопка-иконка, значок крупнее.
+                  if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? cBg : cText),
+                  if (icon != null && text.isNotEmpty) SizedBox(width: 6),
+                  if (text.isNotEmpty)
+                    Text(
+                      text,
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
+                    ),
+                  if (badge > 0) ...[
+                    SizedBox(width: 6),
+                    Container(
+                      width: 20,
+                      height: 20,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(color: cViolet, shape: BoxShape.circle),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          '$badge',
+                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Colors.white, height: 1.1),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
         ),
@@ -263,7 +266,10 @@ class DifficultyLabel extends StatelessWidget {
       children: [
         Icon(Icons.circle, size: 10, color: d.$2),
         SizedBox(width: 5),
-        Text(d.$1, style: TextStyle(fontSize: size, color: cMuted)),
+        Text(
+          d.$1,
+          style: TextStyle(fontSize: size, color: cMuted),
+        ),
       ],
     );
   }

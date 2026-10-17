@@ -104,12 +104,12 @@ class _ClipsPageState extends State<ClipsPage> {
           actions: [
             IconButton(
               tooltip: 'Любимое',
-              icon: Icon(Icons.favorite_border_rounded, size: 24, color: cText),
+              icon: Icon(KIcons.heart, size: 24, color: cText),
               onPressed: () => openLiked(context),
             ),
             IconButton(
               tooltip: 'Поиск',
-              icon: Icon(Icons.search_rounded, size: 24, color: cText),
+              icon: Icon(KIcons.search, size: 24, color: cText),
               onPressed: () => openSearch(context, clips: true),
             ),
           ],

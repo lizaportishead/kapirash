@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'clips_page.dart';
+import 'icons.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'video_card.dart';
@@ -71,7 +72,7 @@ class _SearchPageState extends State<SearchPage> {
                           decoration: InputDecoration(
                             hintText: widget.clips ? 'Поиск по клипам' : 'Поиск по роликам',
                             hintStyle: TextStyle(color: cFaint),
-                            prefixIcon: Icon(Icons.search_rounded, color: cFaint),
+                            prefixIcon: Icon(KIcons.search, color: cFaint),
                             suffixIcon: _search.text.isEmpty
                                 ? null
                                 : IconButton(

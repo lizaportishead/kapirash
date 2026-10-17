@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'clips_page.dart';
 import 'creator_page.dart';
+import 'icons.dart';
 import 'player_page.dart';
 import 'store.dart';
 import 'theme.dart';
@@ -196,7 +197,7 @@ class LikeButton extends StatelessWidget {
         return IconButton(
           tooltip: on ? 'Убрать сердечко' : 'Поставить сердечко',
           isSelected: on,
-          icon: Icon(Icons.favorite_border_rounded, size: 22, color: cMuted),
+          icon: Icon(KIcons.heart, size: 22, color: cMuted),
           selectedIcon: Icon(Icons.favorite_rounded, size: 22, color: cViolet),
           onPressed: () => store.toggleLike(videoId),
         );

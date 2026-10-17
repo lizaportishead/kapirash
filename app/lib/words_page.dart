@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'icons.dart';
 import 'learn_page.dart';
 import 'player_page.dart';
-import 'stories_page.dart';
 import 'store.dart';
+import 'stories_page.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'videos.dart';
@@ -56,7 +57,7 @@ class _WordsPageState extends State<WordsPage> {
                 if (all.isNotEmpty)
                   IconButton(
                     tooltip: _searching ? 'Закрыть поиск' : 'Поиск',
-                    icon: Icon(_searching ? Icons.close : Icons.search_rounded, size: 24, color: cText),
+                    icon: Icon(_searching ? Icons.close : KIcons.search, size: 24, color: cText),
                     onPressed: _toggleSearch,
                   ),
               ],
@@ -74,7 +75,7 @@ class _WordsPageState extends State<WordsPage> {
                   decoration: InputDecoration(
                     hintText: 'Поиск по словам',
                     hintStyle: TextStyle(color: cFaint),
-                    prefixIcon: Icon(Icons.search_rounded, color: cFaint),
+                    prefixIcon: Icon(KIcons.search, color: cFaint),
                     filled: true,
                     fillColor: cCard,
                     isDense: true,
