@@ -11,8 +11,8 @@ import 'theme.dart';
 import 'videos.dart';
 
 /// Кнопка «+» в каталоге видна только владельцу: пока ролики добавляет один человек.
-const kOwnerEmail = 'ilovekurm@gmail.com';
-bool get canAddVideo => kDebugMode || store.user == kOwnerEmail;
+const kOwnerEmails = {'ilovekurm@gmail.com', 'iamkurm@gmail.com'};
+bool get canAddVideo => kDebugMode || kOwnerEmails.contains(store.user);
 
 /// Шторка «Добавить ролик». После ссылки открывает экран ролика: на нём видно, как идёт подготовка.
 Future<void> showAddVideo(BuildContext context) async {

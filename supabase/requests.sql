@@ -16,5 +16,5 @@ alter table public.video_requests enable row level security;
 -- Заявки видит и меняет только владелец. Воркер ходит с секретным ключом и RLS обходит.
 create policy "owner" on public.video_requests
   for all to authenticated
-  using ((auth.jwt() ->> 'email') = 'ilovekurm@gmail.com')
-  with check ((auth.jwt() ->> 'email') = 'ilovekurm@gmail.com');
+  using ((auth.jwt() ->> 'email') in ('ilovekurm@gmail.com', 'iamkurm@gmail.com'))
+  with check ((auth.jwt() ->> 'email') in ('ilovekurm@gmail.com', 'iamkurm@gmail.com'));
