@@ -159,7 +159,7 @@ class _ProcessingPageState extends State<ProcessingPage> {
                                 '${m == null ? '' : '${_eta(m)}. '}Распознаём речь, переводим и собираем словарик. '
                                     'Окно можно закрыть: ролик будет в каталоге, в разделе «Мои ролики», и откроется, когда будет готов.',
                               SubsStatus.ready => 'Субтитры, перевод и словарик на месте.',
-                              SubsStatus.failed => 'Попробуй ещё раз. Если опять не выйдет — ролик можно удалить и добавить заново.',
+                              SubsStatus.failed => '${m?.error == null ? '' : '${m!.error}\n\n'}Попробуй ещё раз. Если опять не выйдет — ролик можно удалить и добавить заново.',
                             },
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),

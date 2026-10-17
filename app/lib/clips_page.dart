@@ -59,7 +59,12 @@ const clipGrid = SliverGridDelegateWithMaxCrossAxisExtent(
   childAspectRatio: 9 / 16,
 );
 
-/// Вкладка «Клипы»: короткие вертикальные ролики из TikTok.
+/// Все короткие ролики на отдельном экране.
+void openClips(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage()))))));
+}
+
+/// Экран «Короткие ролики»: вертикальные ролики из TikTok.
 class ClipsPage extends StatefulWidget {
   const ClipsPage({super.key});
 
@@ -83,8 +88,19 @@ class _ClipsPageState extends State<ClipsPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.only(left: 12),
+            child: IconButton(
+              tooltip: 'Назад',
+              icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+        ),
         PageTitle(
-          'Клипы',
+          'Шортсы',
           actions: [
             IconButton(
               tooltip: 'Любимое',

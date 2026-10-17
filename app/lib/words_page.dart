@@ -89,8 +89,10 @@ class _WordsPageState extends State<WordsPage> {
                   all.isEmpty
                       ? Padding(
                           padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
-                          child: Column(
+                          child: SizedBox.expand(
+                            child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
                               Flexible(
@@ -105,6 +107,7 @@ class _WordsPageState extends State<WordsPage> {
                                 style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                               ),
                             ],
+                            ),
                           ),
                         )
                       : list.isEmpty
@@ -190,7 +193,7 @@ class _WordCard extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 2),
                         child: Text(
-                          'нач. форма: ${store.conv(w.lemma!)}${w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'}',
+                          '${w.form == null || w.form!.isEmpty ? 'Форма' : w.form} от ${store.conv(w.lemma!)}${w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'}',
                           style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cViolet),
                         ),
                       ),

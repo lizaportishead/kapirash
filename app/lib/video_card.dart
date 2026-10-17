@@ -104,27 +104,6 @@ class VideoCard extends StatelessWidget {
     );
   }
 
-  /// Сложность по уровню ролика: подпись и цвет кружка.
-  (String, Color)? get _difficulty {
-    final l = v.level.toUpperCase();
-    if (l.startsWith('A')) return ('Простое (A1-A2)', Color(0xFF34A853));
-    if (l == 'B1') return ('Среднее (B1)', Color(0xFFF59E0B));
-    if (l.startsWith('B') || l.startsWith('C')) return ('Сложное (B2+)', Color(0xFFE53935));
-    return null;
-  }
-
-  Widget _difficultyLabel() {
-    final d = _difficulty!;
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(Icons.circle, size: 10, color: d.$2),
-        SizedBox(width: 5),
-        Text(d.$1, style: TextStyle(fontSize: 13, color: cMuted)),
-      ],
-    );
-  }
-
   Widget _text(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,11 +151,11 @@ class VideoCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (_difficulty != null) ...[Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)), _difficultyLabel()],
+              if (difficultyOf(v.level) != null) ...[Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)), DifficultyLabel(v.level)],
             ],
           )
-        else if (_difficulty != null)
-          Padding(padding: EdgeInsets.symmetric(vertical: 4), child: _difficultyLabel()),
+        else if (difficultyOf(v.level) != null)
+          Padding(padding: EdgeInsets.symmetric(vertical: 4), child: DifficultyLabel(v.level)),
       ],
     );
   }

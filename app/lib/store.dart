@@ -22,6 +22,7 @@ class SavedWord {
     required this.video,
     this.lemma,
     this.lemmaTr = '',
+    this.form,
   });
   final String key, tr, ctx, video;
   final double t;
@@ -29,6 +30,9 @@ class SavedWord {
   /// Начальная форма (им. п. ед. ч., инфинитив) и её перевод. null — ещё не определена.
   String? lemma;
   String lemmaTr;
+
+  /// Чем слово является по отношению к начальной форме: «Винительный падеж», «3 лицо мн. числа». '' — ничем / неизвестно.
+  String? form;
 
   Map<String, dynamic> toJson() => {
     'key': key,
@@ -38,6 +42,7 @@ class SavedWord {
     'video': video,
     if (lemma != null) 'lemma': lemma,
     if (lemmaTr.isNotEmpty) 'lemmaTr': lemmaTr,
+    if (form != null) 'form': form,
   };
   static SavedWord fromJson(Map<String, dynamic> j) => SavedWord(
     key: j['key'],
@@ -47,6 +52,7 @@ class SavedWord {
     video: j['video'] ?? '',
     lemma: j['lemma'],
     lemmaTr: j['lemmaTr'] ?? '',
+    form: j['form'],
   );
 
   /// Заполняет [lemma] по записи словарика: заметка вида «pas; вин. падеж» называет начальную форму,
@@ -61,6 +67,56 @@ class SavedWord {
     final own = lemma == key ? tr : '';
     final other = dict[lemma] as List?;
     lemmaTr = other != null ? other[0] as String : own;
+    form = lemma == key ? '' : describeForm(note);
+  }
+
+  static const _cases = {
+    'им': 'именительный',
+    'род': 'родительный',
+    'дат': 'дательный',
+    'вин': 'винительный',
+    'твор': 'творительный',
+    'тв': 'творительный',
+    'предл': 'предложный',
+    'зват': 'звательный',
+  };
+
+  /// Разбирает заметку словарика («pas; вин. падеж», «biti, 3 л. мн. ч.») в короткое описание формы.
+  static String describeForm(String note) {
+    var n = note.toLowerCase();
+    n = n.replaceAll(RegExp(r'\([^)]*\)|[«"][^»"]*[»"]'), ' ');
+    final colon = n.indexOf(':');
+    if (colon > 0) n = n.substring(0, colon);
+    final parts = <String>[];
+    final cm = RegExp(r'((?:(?:им|род|дат|вин|твор|тв|предл|зват)\.?\s*/?\s*)+)\s*падеж', unicode: true).firstMatch(n);
+    final person = RegExp(r'([123])\s*л\.').firstMatch(n);
+    final plural = RegExp(r'мн\.\s*ч\.').hasMatch(n);
+    final singular = RegExp(r'ед\.\s*ч\.').hasMatch(n);
+    if (cm != null) {
+      final names = RegExp(r'[а-я]+', unicode: true).allMatches(cm.group(1)!).map((m) => _cases[m.group(0)]).whereType<String>().toList();
+      if (names.isNotEmpty) parts.add('${names.join('/')} падеж');
+    }
+    if (n.contains('прош. вр')) parts.add('прошедшее время');
+    if (n.contains('буд. вр')) parts.add('будущее время');
+    if (n.contains('повел. накл')) parts.add('повелительное наклонение');
+    if (n.contains('сослагат') || n.contains('условн')) parts.add('сослагательное наклонение');
+    if (n.contains('превосх')) {
+      parts.add('превосходная степень');
+    } else if (n.contains('сравн')) {
+      parts.add('сравнительная степень');
+    }
+    if (person != null) {
+      parts.add('${person.group(1)} лицо ${plural ? 'мн. числа' : singular ? 'ед. числа' : ''}'.trim());
+    } else if (plural) {
+      parts.add('мн. число');
+    } else if (singular) {
+      parts.add('ед. число');
+    }
+    final g = RegExp(r'(?<![а-я])([мжс]|ср)\.\s*р\.', unicode: true).firstMatch(n);
+    if (g != null) parts.add({'м': 'муж. род', 'ж': 'жен. род', 'с': 'ср. род', 'ср': 'ср. род'}[g.group(1)]!);
+    if (parts.isEmpty) return 'Форма';
+    final s = parts.join(', ');
+    return s[0].toUpperCase() + s.substring(1);
   }
 }
 
@@ -78,6 +134,9 @@ class MyVideo {
   MyVideo(this.video, {this.status = SubsStatus.processing, DateTime? added}) : added = added ?? DateTime.now();
   final Video video;
   SubsStatus status;
+
+  /// Почему не вышло: текст ошибки от воркера или приложения, показывается на экране ролика.
+  String? error;
 
   /// Когда ролик добавлен: от этого момента на экране ролика считается оставшееся время.
   DateTime added;
@@ -190,7 +249,7 @@ class AppStore extends ChangeNotifier {
 
   /// Дописывает начальную форму у слов, сохранённых до того, как она появилась.
   Future<void> fillLemmas() async {
-    final todo = words.where((w) => w.lemma == null).toList();
+    final todo = words.where((w) => w.lemma == null || w.form == null).toList();
     if (todo.isEmpty) return;
     final byVideo = <String, List<SavedWord>>{};
     for (final w in todo) {
@@ -211,8 +270,9 @@ class AppStore extends ChangeNotifier {
         if (dict != null) {
           w.setLemmaFrom(dict);
         } else {
-          w.lemma = w.key;
-          w.lemmaTr = w.tr;
+          w.lemma ??= w.key;
+          if (w.lemma == w.key) w.lemmaTr = w.tr;
+          w.form ??= w.lemma == w.key ? '' : 'Форма';
         }
       }
     }
@@ -466,7 +526,9 @@ class AppStore extends ChangeNotifier {
 
   Future<void> generateSubs(String id) async {
     final retry = myVideo(id)?.status == SubsStatus.failed;
-    if (retry) myVideo(id)!.added = DateTime.now();
+    if (retry) myVideo(id)!
+      ..added = DateTime.now()
+      ..error = null;
     _setStatus(id, SubsStatus.processing);
     try {
       final g = await subsGenerator.generate(myVideo(id)!.video, retry: retry);
@@ -474,7 +536,8 @@ class AppStore extends ChangeNotifier {
       if (myVideo(id) == null) return;
       await _prefs?.setString('kap.subs.$id', jsonEncode({'sr': g.sr, 'ru': g.ru, 'dict': g.dict}));
       _setStatus(id, SubsStatus.ready);
-    } catch (_) {
+    } catch (e) {
+      myVideo(id)?.error = e.toString().replaceFirst('Bad state: ', '');
       _setStatus(id, SubsStatus.failed);
     }
   }

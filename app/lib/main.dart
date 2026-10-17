@@ -194,7 +194,7 @@ class _HomeShellState extends State<HomeShell> {
                   NavigationDestination(
                     icon: Icon(KIcons.catalog),
                     selectedIcon: Icon(KIcons.catalogOn),
-                    label: 'Каталог',
+                    label: 'Видео',
                   ),
                   if (kAddVideoEnabled) ...[
                     NavigationDestination(
@@ -249,7 +249,7 @@ class _HomeShellState extends State<HomeShell> {
 
   Widget _wideShell(Widget Function() buildPages) {
     final items = <(int, IconData, IconData, String)>[
-      (0, KIcons.catalog, KIcons.catalogOn, 'Каталог'),
+      (0, KIcons.catalog, KIcons.catalogOn, 'Видео'),
       if (kAddVideoEnabled) (1, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
       (kAddVideoEnabled ? 2 : 1, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
       (kAddVideoEnabled ? 3 : 2, KIcons.words, KIcons.wordsOn, 'Мои слова'),

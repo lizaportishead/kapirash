@@ -11,8 +11,8 @@ import 'theme.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
 class Story {
-  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.asset});
-  final String id, title, author, blurb;
+  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.level = '', this.asset});
+  final String id, title, author, blurb, level;
   final String? asset;
 
   bool get ready => asset != null;
@@ -29,6 +29,7 @@ const stories = [
     blurb:
         'Priča za decu H. K. Andersena o devojčici Karin koja je silno htela crvene cipele, '
         'a kad ih je dobila više nije mogla da ih skine već je morala u njima zauvek da pleše.',
+    level: 'B1',
     asset: 'story_crvene_cipele',
   ),
   Story(
@@ -38,6 +39,7 @@ const stories = [
     blurb:
         'Priča o devojci Ilzi koja je da bi spasla bolesnog oca otišla u staklenu kulu veštice Prelje, '
         'gde se prede ljudske sudbine, i čistom pesmom razbila njenu čaroliju.',
+    level: 'B1',
     asset: 'story_staklena_kula',
   ),
   Story(
@@ -47,6 +49,7 @@ const stories = [
     blurb:
         'Psihološki detektiv: inspektor Marko istražuje nestanak slikarke Sofije iz zaključane vile '
         'i pod ultraljubičastim svetlom otkriva istinu o njenom mužu.',
+    level: 'B2',
     asset: 'story_ogledalo_bez_odsjaja',
   ),
   Story(
@@ -56,6 +59,7 @@ const stories = [
     blurb:
         'Priča o mladiću Radovanu koji je otišao u pećinu tkačice Morane da zaboravi bol za izgubljenim bratom, '
         'ali je shvatio da je bol cena ljubavi.',
+    level: 'B1',
     asset: 'story_tkacica_zaboravljenih_snova',
   ),
   Story(
@@ -65,6 +69,7 @@ const stories = [
     blurb:
         'Naučnofantastična priča o ksenoarheologu Viktoru Lazareviću koji na izumrloj planeti Aeron '
         'pronalazi oca zarobljenog u kristalu sećanja i mora da odluči da li da ga vrati kući.',
+    level: 'B2',
     asset: 'story_poslednje_eho',
   ),
   Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
@@ -154,6 +159,8 @@ class _StoryCard extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(story.author, style: TextStyle(fontSize: 13, color: cMuted)),
+                if (ready && story.level.isNotEmpty)
+                  Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
                 SizedBox(height: 8),
                 if (ready)
                   Text(
@@ -439,6 +446,7 @@ class _StoryReaderState extends State<StoryReader> {
           ),
           SizedBox(height: 4),
           Text(s.author, style: TextStyle(fontSize: 14, color: cMuted)),
+          if (s.level.isNotEmpty) Padding(padding: EdgeInsets.only(top: 6), child: DifficultyLabel(s.level, size: 14)),
           SizedBox(height: 14),
           Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
           SizedBox(height: 14),

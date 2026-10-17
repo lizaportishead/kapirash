@@ -55,7 +55,9 @@ const _cWrong = Color(0xFFFFCFC9);
 
 /// Список заданий к ролику: карточка на раздел, на ней — пройден ли он и с каким результатом.
 class QuizList extends StatelessWidget {
-  const QuizList({super.key, required this.videoId, required this.sections});
+  const QuizList({super.key, required this.videoId, required this.sections, this.inline = false});
+  // Внутри общей прокрутки страницы список сам не прокручивается.
+  final bool inline;
   final String videoId;
   final List<QuizSection> sections;
 
@@ -64,7 +66,11 @@ class QuizList extends StatelessWidget {
     return ListenableBuilder(
       listenable: store,
       builder: (context, _) => ListView.separated(
-        padding: EdgeInsets.fromLTRB(12, 8, 12, 12 + MediaQuery.paddingOf(context).bottom),
+        shrinkWrap: inline,
+        physics: inline ? NeverScrollableScrollPhysics() : null,
+        padding: inline
+            ? EdgeInsets.only(top: 4)
+            : EdgeInsets.fromLTRB(12, 8, 12, 12 + MediaQuery.paddingOf(context).bottom),
         itemCount: sections.length,
         separatorBuilder: (_, _) => SizedBox(height: 8),
         itemBuilder: (context, i) => _card(context, sections[i]),

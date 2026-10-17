@@ -32,7 +32,7 @@ class FeedPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         PageTitle(
-          'Каталог',
+          'Видео',
           actions: [
             IconButton(
               tooltip: 'Любимое',
@@ -51,8 +51,8 @@ class FeedPage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 16),
             children: [
               _Section(title: 'Мои ролики', list: mine),
-              _Section(title: 'Новое', list: newest.take(_perSection).toList()),
               _Section(title: 'Популярное', list: popular),
+              _Section(title: 'Новое', list: newest.take(_perSection).toList()),
               _ClipsSection(),
               for (final t in topics)
                 _Section(
@@ -174,7 +174,7 @@ class _ClipsSection extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    'Короткие ролики',
+                    'Шортсы',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),

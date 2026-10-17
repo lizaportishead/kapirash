@@ -118,7 +118,7 @@ class _SignIn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Войди в аккаунт',
+            'Войди в\u00A0аккаунт',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cInk),
           ),
           SizedBox(height: 6),
