@@ -5,6 +5,7 @@ import 'auth_page.dart';
 import 'store.dart';
 import 'main.dart' show kAddVideoEnabled;
 import 'theme.dart';
+import 'l10n.dart';
 
 class _Slide {
   const _Slide({
@@ -21,14 +22,14 @@ class _Slide {
   final Widget art;
 }
 
-const _slides = [
+List<_Slide> get _slides => [
   _Slide(
     bg: cAccent,
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: 'Учи *сербский* по\u00A0живым роликам',
-    text: 'Блогеры, путешествия, еда — с субтитрами и переводом на русский.',
+    title: ui('Учи *сербский* по\u00A0живым роликам'),
+    text: ui('Блогеры, путешествия, еда — с субтитрами и переводом на русский.'),
     art: _ImageArt('assets/ill_onboarding.png'),
   ),
   _Slide(
@@ -36,8 +37,8 @@ const _slides = [
     fg: cOnViolet,
     mark: cAccent,
     onMark: cInk,
-    title: 'Нажми на\u00A0*слово* — увидишь перевод.',
-    text: 'Каждое слово в субтитрах можно открыть, не уходя из ролика.',
+    title: ui('Нажми на\u00A0*слово* — увидишь перевод.'),
+    text: ui('Каждое слово в субтитрах можно открыть, не уходя из ролика.'),
     art: _WordArt(),
   ),
   _Slide(
@@ -45,10 +46,10 @@ const _slides = [
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: kAddVideoEnabled ? 'Собирай слова. *Добавляй* свои ролики.' : 'Собирай *слова* из\u00A0роликов.',
+    title: kAddVideoEnabled ? ui('Собирай слова. *Добавляй* свои ролики.') : ui('Собирай *слова* из\u00A0роликов.'),
     text: kAddVideoEnabled
-        ? 'Сохранённые слова ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.'
-        : 'Сохранённые слова ждут в словарике — повторяй их, когда удобно.',
+        ? ui('Сохранённые слова ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.')
+        : ui('Сохранённые слова ждут в словарике — повторяй их, когда удобно.'),
     art: _CardsArt(),
   ),
 ];
@@ -118,7 +119,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               foregroundColor: s.fg,
                               textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
                             ),
-                            child: Text('Пропустить'),
+                            child: Text(ui('Пропустить')),
                           ),
                         ),
                       ),
@@ -153,7 +154,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           ),
                           SizedBox(height: 16),
                           BigButton(
-                            last ? 'Начать' : 'Дальше',
+                            last ? ui('Начать') : ui('Дальше'),
                             bg: s.fg,
                             fg: s.fg == cInk ? cOnInk : cInk,
                             onTap: _next,
@@ -265,7 +266,7 @@ class _WordArt extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Я объехал сёла с самыми смешными названиями',
+                      ui('Я объехал сёла с самыми смешными названиями'),
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
@@ -283,11 +284,11 @@ class _WordArt extends StatelessWidget {
             top: 0,
             child: Sticker('B1', color: cInk, fg: cOnInk, angle: 0.2),
           ),
-          Positioned(right: 18, bottom: 6, child: Sticker('sela — сёла', color: cAccent, angle: 0.12)),
+          Positioned(right: 18, bottom: 6, child: Sticker(ui('sela — сёла'), color: cAccent, angle: 0.12)),
           Positioned(
             left: 0,
             bottom: 22,
-            child: Sticker('перевод', color: cInk, fg: cOnInk, angle: -0.22),
+            child: Sticker(ui('перевод'), color: cInk, fg: cOnInk, angle: -0.22),
           ),
         ],
       ),
@@ -334,7 +335,7 @@ class _CardsArt extends StatelessWidget {
                         style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: cInk),
                       ),
                       Text(
-                        tr,
+                        ui(tr),
                         style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Color(0xFF5A3FE0)),
                       ),
                     ],

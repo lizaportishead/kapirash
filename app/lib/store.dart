@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'l10n.dart';
 import 'stories_page.dart';
 import 'subs.dart';
 import 'subs_generator.dart';
@@ -23,8 +24,12 @@ class SavedWord {
     this.lemma,
     this.lemmaTr = '',
     this.form,
+    this.learned = false,
   });
   final String key, tr, ctx, video;
+
+  /// Слово выучено: отмечено «Знаю» в карточках. Такие слова не попадают в колоду.
+  bool learned;
   final double t;
 
   /// Начальная форма (им. п. ед. ч., инфинитив) и её перевод. null — ещё не определена.
@@ -43,6 +48,7 @@ class SavedWord {
     if (lemma != null) 'lemma': lemma,
     if (lemmaTr.isNotEmpty) 'lemmaTr': lemmaTr,
     if (form != null) 'form': form,
+    if (learned) 'learned': true,
   };
   static SavedWord fromJson(Map<String, dynamic> j) => SavedWord(
     key: j['key'],
@@ -53,6 +59,7 @@ class SavedWord {
     lemma: j['lemma'],
     lemmaTr: j['lemmaTr'] ?? '',
     form: j['form'],
+    learned: j['learned'] == true,
   );
 
   /// Заполняет [lemma] по записи словарика: заметка вида «pas; вин. падеж» называет начальную форму,
@@ -62,7 +69,8 @@ class SavedWord {
     final note = entry != null && entry.length > 1 ? entry[1] as String : '';
     final m = RegExp(r"^([\p{L}'-]+)(?:\s*\(se\))?\s*(?:$|[;—–,:(])", unicode: true).firstMatch(note);
     final head = m?.group(1)?.toLowerCase();
-    final isLatin = head != null && RegExp(r'^[a-zčćžšđ]', unicode: true).hasMatch(head);
+    // В английских заметках часть речи тоже латиницей («noun, masc.»), поэтому её отличаем по списку.
+    final isLatin = head != null && RegExp(r'^[a-zčćžšđ]', unicode: true).hasMatch(head) && !_enPos.contains(head);
     lemma = isLatin ? toLat(head) : key;
     final own = lemma == key ? tr : '';
     final other = dict[lemma] as List?;
@@ -81,9 +89,40 @@ class SavedWord {
     'зват': 'звательный',
   };
 
+  static const _enPos = {
+    'noun', 'verb', 'adj', 'adjective', 'adv', 'adverb', 'prep', 'preposition', 'conj', 'conjunction', 'pron',
+    'pronoun', 'num', 'numeral', 'particle', 'interj', 'interjection', 'infinitive', 'participle', 'phrase', 'idiom',
+  };
+
+  /// Английская заметка («pas; acc. case, pl.») приводится к русской, по которой разбирает [describeForm].
+  static String _enNoteToRu(String n) {
+    final i = n.indexOf(RegExp(r'[;—–,:(]'));
+    if (i < 0) return n;
+    var t = n.substring(i);
+    const cases = {'nom': 'им', 'gen': 'род', 'dat': 'дат', 'acc': 'вин', 'instr': 'твор', 'loc': 'предл', 'voc': 'зват'};
+    t = t.replaceAllMapped(RegExp(r'\b(nom|gen|dat|acc|instr|loc|voc)\b\.?(\s*case)?'), (m) {
+      return '${cases[m[1]]}. ${m[2] != null ? 'падеж' : ''}';
+    });
+    t = t
+        .replaceAll(RegExp(r'\b(plural|pl)\b\.?'), 'мн. ч.')
+        .replaceAll(RegExp(r'\b(singular|sg)\b\.?'), 'ед. ч.')
+        .replaceAllMapped(RegExp(r'\b([123])(?:st|nd|rd)\s*pers(?:on)?\b\.?'), (m) => '${m[1]} л.')
+        .replaceAll(RegExp(r'\bpast\b'), 'прош. вр')
+        .replaceAll(RegExp(r'\bfuture\b'), 'буд. вр')
+        .replaceAll(RegExp(r'\bimperative\b'), 'повел. накл')
+        .replaceAll(RegExp(r'\bconditional\b'), 'сослагат')
+        .replaceAll(RegExp(r'\bsuperlative\b'), 'превосх')
+        .replaceAll(RegExp(r'\bcomparative\b'), 'сравн')
+        .replaceAll(RegExp(r'\bmasc(uline)?\b\.?'), 'м. р.')
+        .replaceAll(RegExp(r'\bfem(inine)?\b\.?'), 'ж. р.')
+        .replaceAll(RegExp(r'\bneut(er)?\b\.?'), 'ср. р.');
+    return n.substring(0, i) + t;
+  }
+
   /// Разбирает заметку словарика («pas; вин. падеж», «biti, 3 л. мн. ч.») в короткое описание формы.
+  /// Результат всегда русский: на язык интерфейса его переводит [formUi].
   static String describeForm(String note) {
-    var n = note.toLowerCase();
+    var n = _enNoteToRu(note.toLowerCase());
     n = n.replaceAll(RegExp(r'\([^)]*\)|[«"][^»"]*[»"]'), ' ');
     final colon = n.indexOf(':');
     if (colon > 0) n = n.substring(0, colon);
@@ -135,8 +174,9 @@ enum SubsStatus {
   ready('Субтитры готовы'),
   failed('Субтитры не готовы');
 
-  const SubsStatus(this.label);
-  final String label;
+  const SubsStatus(this._label);
+  final String _label;
+  String get label => ui(_label);
 }
 
 /// Ролик, который пользователь добавил сам.
@@ -190,6 +230,9 @@ class AppStore extends ChangeNotifier {
   Map<String, List<int>> quiz = {};
   bool cyr = false, dark = false;
 
+  /// Язык интерфейса и перевода: 'ru' или 'en'.
+  String lang = defaultLang();
+
   /// Онбординг пройден; показываем его один раз.
   bool onboarded = false;
 
@@ -207,6 +250,8 @@ class AppStore extends ChangeNotifier {
     final prefs = _prefs = await SharedPreferences.getInstance();
     cyr = prefs.getString('kap.script') == 'cyr';
     dark = prefs.getString('kap.theme') == 'dark';
+    lang = prefs.getString('kap.lang') ?? defaultLang();
+    uiLang = lang;
     onboarded = prefs.getBool('kap.onboarded') ?? false;
     level = prefs.getString('kap.level');
     interests = prefs.getStringList('kap.interests') ?? [];
@@ -262,6 +307,13 @@ class AppStore extends ChangeNotifier {
     _saveWords();
   }
 
+  void setLearned(String key, bool v) {
+    for (final w in words) {
+      if (w.key == key) w.learned = v;
+    }
+    _saveWords();
+  }
+
   void remove(String key) {
     words.removeWhere((x) => x.key == key);
     _saveWords();
@@ -281,7 +333,7 @@ class AppStore extends ChangeNotifier {
         final story = storyById(e.key);
         final video = videoById(e.key);
         if (story?.asset != null) {
-          dict = jsonDecode(await rootBundle.loadString('assets/${story!.asset}.dict.json')) as Map<String, dynamic>;
+          dict = jsonDecode(await assetText('${story!.asset}.dict.json', en: '${story.asset}.dict.en.json')) as Map<String, dynamic>;
         } else if (video != null) {
           dict = (await loadSubs(video))?.dict;
         }
@@ -371,6 +423,13 @@ class AppStore extends ChangeNotifier {
   void setCyr(bool v) {
     cyr = v;
     _prefs?.setString('kap.script', v ? 'cyr' : 'lat');
+    notifyListeners();
+  }
+
+  void setLang(String v) {
+    if (v == lang) return;
+    lang = uiLang = v;
+    _prefs?.setString('kap.lang', v);
     notifyListeners();
   }
 
@@ -590,8 +649,8 @@ class AppStore extends ChangeNotifier {
       try {
         return GeneratedSubs(
           sr: await rootBundle.loadString('assets/${v.id}.sr.vtt'),
-          ru: await rootBundle.loadString('assets/${v.id}.ru.vtt'),
-          dict: jsonDecode(await rootBundle.loadString('assets/${v.id}.dict.json')) as Map<String, dynamic>,
+          ru: await assetText('${v.id}.ru.vtt', en: '${v.id}.en.vtt'),
+          dict: jsonDecode(await assetText('${v.id}.dict.json', en: '${v.id}.dict.en.json')) as Map<String, dynamic>,
         );
       } catch (_) {
         if (!(_prefs?.containsKey('kap.catalogSubs.${v.id}') ?? false) && !await _downloadSubs(v.id)) return null;
@@ -601,6 +660,17 @@ class AppStore extends ChangeNotifier {
     if (raw == null) return null;
     final j = jsonDecode(raw) as Map<String, dynamic>;
     return GeneratedSubs(sr: j['sr'], ru: j['ru'], dict: j['dict'] as Map<String, dynamic>);
+  }
+
+  /// Текст из assets. При английском интерфейсе берём английский файл [en], а если перевода на английский ещё нет —
+  /// русский [ru]: так ролики, которые не успели перевести, остаются доступными.
+  Future<String> assetText(String ru, {required String en}) async {
+    if (lang == 'en') {
+      try {
+        return await rootBundle.loadString('assets/$en');
+      } catch (_) {}
+    }
+    return rootBundle.loadString('assets/$ru');
   }
 
   Future<bool> _downloadSubs(String id) async {

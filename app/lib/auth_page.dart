@@ -5,6 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 const _kLastEmail = 'last_email';
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
@@ -64,11 +65,11 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> _sendCode() async {
     final email = _email.text.trim();
     if (!_emailRe.hasMatch(email)) {
-      setState(() => _error = email.isEmpty ? 'Введи почту.' : 'Похоже, в почте опечатка.');
+      setState(() => _error = email.isEmpty ? ui('Введи почту.') : ui('Похоже, в почте опечатка.'));
       return;
     }
     if (!store.canSignIn) {
-      setState(() => _error = 'Вход пока не подключён.');
+      setState(() => _error = ui('Вход пока не подключён.'));
       return;
     }
     if (await _run(() => store.sendCode(email))) {
@@ -82,7 +83,7 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> _verify() async {
     final code = _code.text.trim();
     if (code.isEmpty) {
-      setState(() => _error = 'Введи код из письма.');
+      setState(() => _error = ui('Введи код из письма.'));
       return;
     }
     await _run(() => store.verifyCode(_sentTo!, code));
@@ -99,10 +100,10 @@ class _AuthPageState extends State<AuthPage> {
       await request();
     } on AuthException catch (e) {
       error = e.statusCode == '429'
-          ? 'Слишком часто. Попробуй через минуту.'
-          : (_sentTo == null ? 'Не получилось отправить код.' : 'Код не подошёл или устарел.');
+          ? ui('Слишком часто. Попробуй через минуту.')
+          : (_sentTo == null ? ui('Не получилось отправить код.') : ui('Код не подошёл или устарел.'));
     } catch (_) {
-      error = 'Нет связи. Попробуй ещё раз.';
+      error = ui('Нет связи. Попробуй ещё раз.');
     }
     if (!mounted) return error == null;
     setState(() {
@@ -142,7 +143,7 @@ class _AuthPageState extends State<AuthPage> {
                           child: Transform.translate(
                             offset: Offset(-12, 0),
                             child: IconButton(
-                              tooltip: 'Назад',
+                              tooltip: ui('Назад'),
                               icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                               onPressed: () => Navigator.pop(context),
                             ),
@@ -151,7 +152,7 @@ class _AuthPageState extends State<AuthPage> {
                       ExcludeSemantics(child: Image.asset('assets/ill_my_videos.png', height: 150)),
                       SizedBox(height: 24),
                       Headline(
-                        _sentTo == null ? 'Войди в\u00A0*аккаунт*' : (kEmailCode ? 'Введи *код*' : 'Проверь *почту*'),
+                        _sentTo == null ? ui('Войди в\u00A0*аккаунт*') : (kEmailCode ? ui('Введи *код*') : ui('Проверь *почту*')),
                         color: cText,
                         mark: cAccent,
                       ),
@@ -159,18 +160,20 @@ class _AuthPageState extends State<AuthPage> {
                         SizedBox(height: 14),
                         Text(
                           _sentTo == null
-                              ? 'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон '
-                                    'или переустановишь приложение.'
+                              ? ui(
+                                  'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон '
+                                  'или переустановишь приложение.',
+                                )
                               : (kEmailCode
-                                    ? 'Отправили код на $_sentTo. Письмо может идти пару минут.'
-                                    : 'Отправили ссылку на $_sentTo. Открой её на этом телефоне — и ты войдёшь.'),
+                                    ? ui('Отправили код на {0}. Письмо может идти пару минут.', [_sentTo!])
+                                    : ui('Отправили ссылку на {0}. Открой её на этом телефоне — и ты войдёшь.', [_sentTo!])),
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
                         ),
                       ],
                       SizedBox(height: 28),
                       if (_sentTo == null) ...[
                         TextField(
-                          key: ValueKey('Почта'),
+                          key: ValueKey(ui('Почта')),
                           controller: _email,
                           autocorrect: false,
                           keyboardType: TextInputType.emailAddress,
@@ -181,7 +184,7 @@ class _AuthPageState extends State<AuthPage> {
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
                           cursorColor: cViolet,
                           decoration: InputDecoration(
-                            hintText: 'Почта',
+                            hintText: ui('Почта'),
                             hintStyle: TextStyle(color: cFaint),
                             errorText: _error,
                             filled: true,
@@ -194,11 +197,11 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                         SizedBox(height: 12),
-                        BigButton('Продолжить', onTap: _busy ? null : _sendCode),
+                        BigButton(ui('Продолжить'), onTap: _busy ? null : _sendCode),
                       ] else ...[
                         if (kEmailCode) ...[
                           TextField(
-                            key: ValueKey('Код из письма'),
+                            key: ValueKey(ui('Код из письма')),
                             controller: _code,
                             autocorrect: false,
                             autofocus: true,
@@ -210,7 +213,7 @@ class _AuthPageState extends State<AuthPage> {
                             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
                             cursorColor: cViolet,
                             decoration: InputDecoration(
-                              hintText: 'Код из письма',
+                              hintText: ui('Код из письма'),
                               hintStyle: TextStyle(color: cFaint),
                               errorText: _error,
                               filled: true,
@@ -223,7 +226,7 @@ class _AuthPageState extends State<AuthPage> {
                             ),
                           ),
                           SizedBox(height: 12),
-                          BigButton('Войти', onTap: _busy ? null : _verify),
+                          BigButton(ui('Войти'), onTap: _busy ? null : _verify),
                           SizedBox(height: 4),
                         ],
                         TextButton(
@@ -232,7 +235,7 @@ class _AuthPageState extends State<AuthPage> {
                             foregroundColor: cMuted,
                             textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
                           ),
-                          child: Text('Другая почта'),
+                          child: Text(ui('Другая почта')),
                         ),
                       ],
                     ],
@@ -247,7 +250,7 @@ class _AuthPageState extends State<AuthPage> {
                         foregroundColor: cMuted,
                         textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
                       ),
-                      child: Text('Смотреть без авторизации'),
+                      child: Text(ui('Смотреть без авторизации')),
                     ),
                   ),
               ],

@@ -8,6 +8,7 @@ import 'phrase.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
 class Story {
@@ -101,7 +102,7 @@ class StoriesPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        PageTitle('Рассказы'),
+        PageTitle(ui('Рассказы')),
         Expanded(
           child: ListView.separated(
             padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
@@ -170,7 +171,7 @@ class _StoryCard extends StatelessWidget {
                     style: TextStyle(fontSize: 13, height: 1.4, color: cMuted),
                   )
                 else
-                  Text('Скоро', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint)),
+                  Text(ui('Скоро'), style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint)),
               ],
             ),
           ),
@@ -180,7 +181,7 @@ class _StoryCard extends StatelessWidget {
     if (!ready) {
       // Заглушка: не нажимается и приглушена.
       return Semantics(
-        label: '${story.title}, скоро',
+        label: ui('{0}, скоро', [story.title]),
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
@@ -245,7 +246,7 @@ class _StoryReaderState extends State<StoryReader> {
     try {
       final asset = widget.story.asset!;
       final text = await rootBundle.loadString('assets/$asset.txt');
-      final dict = jsonDecode(await rootBundle.loadString('assets/$asset.dict.json')) as Map<String, dynamic>;
+      final dict = jsonDecode(await store.assetText('$asset.dict.json', en: '$asset.dict.en.json')) as Map<String, dynamic>;
       if (!mounted) return;
       setState(() {
         _pages = _paginate(text);
@@ -303,7 +304,7 @@ class _StoryReaderState extends State<StoryReader> {
                   ? Padding(
                       padding: EdgeInsets.all(24),
                       child: Text(
-                        'Пока нет слов. Нажми на слово в тексте, чтобы добавить его.',
+                        ui('Пока нет слов. Нажми на слово в тексте, чтобы добавить его.'),
                         style: TextStyle(fontSize: 14, color: cMuted),
                       ),
                     )
@@ -318,7 +319,7 @@ class _StoryReaderState extends State<StoryReader> {
                               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: cText),
                             ),
                             subtitle: Text(w.tr, style: TextStyle(fontSize: 14, color: cMuted)),
-                            trailing: Text('стр. ${w.t.toInt()}', style: TextStyle(fontSize: 12, color: cFaint)),
+                            trailing: Text(ui('стр. {0}', [w.t.toInt()]), style: TextStyle(fontSize: 12, color: cFaint)),
                             onTap: () {
                               Navigator.pop(ctx);
                               final to = w.t.toInt().clamp(0, _count - 1);
@@ -343,7 +344,7 @@ class _StoryReaderState extends State<StoryReader> {
       cue: Cue(_i.toDouble(), _i.toDouble(), t.sentence),
       dict: _dict,
       videoId: widget.story.wordKey,
-      place: 'стр. $_i',
+      place: ui('стр. {0}', [_i]),
     );
   }
 
@@ -363,7 +364,7 @@ class _StoryReaderState extends State<StoryReader> {
                   child: Row(
                     children: [
                       IconButton(
-                        tooltip: 'Назад',
+                        tooltip: ui('Назад'),
                         icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -380,7 +381,7 @@ class _StoryReaderState extends State<StoryReader> {
                         builder: (context, _) {
                           final n = store.wordCount(s.wordKey);
                           return IconButton(
-                            tooltip: 'Добавленные слова',
+                            tooltip: ui('Добавленные слова'),
                             icon: Badge(
                               isLabelVisible: n > 0,
                               label: Text('$n'),
@@ -398,7 +399,7 @@ class _StoryReaderState extends State<StoryReader> {
                   child: _failed
                       ? Padding(
                           padding: EdgeInsets.all(24),
-                          child: Text('Не удалось открыть рассказ.', style: TextStyle(fontSize: 14, color: cMuted)),
+                          child: Text(ui('Не удалось открыть рассказ.'), style: TextStyle(fontSize: 14, color: cMuted)),
                         )
                       : _pages.isEmpty
                       ? SizedBox.shrink()
@@ -451,7 +452,7 @@ class _StoryReaderState extends State<StoryReader> {
           Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
           SizedBox(height: 14),
           Text(
-            'Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.',
+            ui('Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.'),
             style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
           ),
         ],
@@ -515,16 +516,16 @@ class _StoryReaderState extends State<StoryReader> {
       padding: EdgeInsets.fromLTRB(16, 8, 16, 12),
       child: Row(
         children: [
-          arrow(-1, KIcons.arrowLeft, 'Предыдущая страница'),
+          arrow(-1, KIcons.arrowLeft, ui('Предыдущая страница')),
           Expanded(
             child: Center(
               child: Text(
-                _i == 0 ? 'Начало' : '$_i из ${_count - 1}',
+                _i == 0 ? ui('Начало') : '$_i из ${_count - 1}',
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
               ),
             ),
           ),
-          arrow(1, KIcons.arrowRight, 'Следующая страница'),
+          arrow(1, KIcons.arrowRight, ui('Следующая страница')),
         ],
       ),
     );

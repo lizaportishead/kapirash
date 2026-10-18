@@ -4,6 +4,7 @@ import 'add_video.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
+import 'l10n.dart';
 
 class MyVideosPage extends StatelessWidget {
   const MyVideosPage({super.key});
@@ -14,22 +15,22 @@ class MyVideosPage extends StatelessWidget {
       builder: (ctx) => AlertDialog(
         backgroundColor: cCard,
         title: Text(
-          'Удалить ролик?',
+          ui('Удалить ролик?'),
           style: TextStyle(fontWeight: FontWeight.w800, color: cText),
         ),
         content: Text(
-          '«${m.video.title}» и его субтитры будут удалены с устройства. Сохранённые слова останутся.',
+          ui('«{0}» и его субтитры будут удалены с устройства. Сохранённые слова останутся.', [m.video.title]),
           style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: Text('Отмена', style: TextStyle(color: cText)),
+            child: Text(ui('Отмена'), style: TextStyle(color: cText)),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
             child: Text(
-              'Удалить',
+              ui('Удалить'),
               style: TextStyle(fontWeight: FontWeight.w800, color: cAccentText),
             ),
           ),
@@ -48,7 +49,7 @@ class MyVideosPage extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            PageTitle('Мои ролики${list.isEmpty ? '' : ' · ${list.length}'}'),
+            PageTitle('${ui('Мои ролики')}${list.isEmpty ? '' : ' · ${list.length}'}'),
             Expanded(
               child: list.isEmpty
                   ? Padding(
@@ -64,13 +65,15 @@ class MyVideosPage extends StatelessWidget {
                           ),
                           SizedBox(height: 16),
                           Text(
-                            'Пока пусто. Добавь свой ролик с YouTube — мы подготовим к нему субтитры, '
-                            'перевод и словарик. Твои ролики видны только тебе.',
+                            ui(
+                              'Пока пусто. Добавь свой ролик с YouTube — мы подготовим к нему субтитры, '
+                              'перевод и словарик. Твои ролики видны только тебе.',
+                            ),
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                           ),
                           SizedBox(height: 14),
-                          Pill('Добавить ролик', on: true, onTap: () => showAddVideo(context)),
+                          Pill(ui('Добавить ролик'), on: true, onTap: () => showAddVideo(context)),
                         ],
                       ),
                     )
@@ -109,7 +112,7 @@ class _MyVideoCard extends StatelessWidget {
                 shape: CircleBorder(),
                 clipBehavior: Clip.antiAlias,
                 child: IconButton(
-                  tooltip: 'Удалить ролик',
+                  tooltip: ui('Удалить ролик'),
                   visualDensity: VisualDensity.compact,
                   icon: Icon(Icons.delete_outline_rounded, size: 20, color: cOnInk),
                   onPressed: onRemove,
@@ -124,10 +127,10 @@ class _MyVideoCard extends StatelessWidget {
             child: Row(
               children: [
                 Flexible(
-                  child: Text('Не удалось создать субтитры.', style: TextStyle(fontSize: 13, color: cMuted)),
+                  child: Text(ui('Не удалось создать субтитры.'), style: TextStyle(fontSize: 13, color: cMuted)),
                 ),
                 SizedBox(width: 10),
-                Pill('Повторить', onTap: () => store.generateSubs(m.video.id)),
+                Pill(ui('Повторить'), onTap: () => store.generateSubs(m.video.id)),
               ],
             ),
           ),

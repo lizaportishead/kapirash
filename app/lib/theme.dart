@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'store.dart';
+import 'l10n.dart';
 
 const kFont = 'Montserrat';
 
@@ -246,9 +247,9 @@ class PageTitle extends StatelessWidget {
 /// Сложность по уровню (A1–C2): подпись и цвет кружка.
 (String, Color)? difficultyOf(String level) {
   final l = level.toUpperCase();
-  if (l.startsWith('A')) return ('Простое (A1-A2)', Color(0xFF34A853));
-  if (l == 'B1') return ('Среднее (B1)', Color(0xFFF59E0B));
-  if (l.startsWith('B') || l.startsWith('C')) return ('Сложное (B2+)', Color(0xFFE53935));
+  if (l.startsWith('A')) return (ui('Простое (A1-A2)'), Color(0xFF34A853));
+  if (l == 'B1') return (ui('Среднее (B1)'), Color(0xFFF59E0B));
+  if (l.startsWith('B') || l.startsWith('C')) return (ui('Сложное (B2+)'), Color(0xFFE53935));
   return null;
 }
 

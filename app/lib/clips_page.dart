@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'creator_page.dart';
 import 'icons.dart';
 import 'liked_page.dart';
 import 'phrase.dart';
@@ -14,6 +13,7 @@ import 'theme.dart';
 import 'tiktok_player.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Открывает клип поверх таббара; свайпом вверх и вниз листаются соседние — из [among], а без него все клипы.
 void openClip(BuildContext context, Video v, {double? startAt, List<Video>? among}) {
@@ -93,22 +93,22 @@ class _ClipsPageState extends State<ClipsPage> {
           child: Padding(
             padding: EdgeInsets.only(left: 12),
             child: IconButton(
-              tooltip: 'Назад',
+              tooltip: ui('Назад'),
               icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
               onPressed: () => Navigator.pop(context),
             ),
           ),
         ),
         PageTitle(
-          'Шортсы',
+          ui('Шортсы'),
           actions: [
             IconButton(
-              tooltip: 'Любимое',
+              tooltip: ui('Любимое'),
               icon: Icon(KIcons.heart, size: 24, color: cText),
               onPressed: () => openLiked(context),
             ),
             IconButton(
-              tooltip: 'Поиск',
+              tooltip: ui('Поиск'),
               icon: Icon(KIcons.search, size: 24, color: cText),
               onPressed: () => openSearch(context, clips: true),
             ),
@@ -120,10 +120,10 @@ class _ClipsPageState extends State<ClipsPage> {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 12),
             children: [
-              Pill('Все', on: !topics.contains(_topic), onTap: () => setState(() => _topic = null)),
+              Pill(ui('Все'), on: !topics.contains(_topic), onTap: () => setState(() => _topic = null)),
               for (final t in topics) ...[
                 SizedBox(width: 6),
-                Pill(t, on: _topic == t, onTap: () => setState(() => _topic = _topic == t ? null : t)),
+                Pill(topicLabel(t), on: _topic == t, onTap: () => setState(() => _topic = _topic == t ? null : t)),
               ],
             ],
           ),
@@ -451,7 +451,7 @@ class _ClipPageState extends State<_ClipPage> {
 
   Widget _back() {
     return IconButton(
-      tooltip: 'Назад',
+      tooltip: ui('Назад'),
       icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
       onPressed: () => Navigator.pop(context),
     );
@@ -473,7 +473,7 @@ class _ClipPageState extends State<_ClipPage> {
           ),
         ),
         IconButton(
-          tooltip: 'Открыть в TikTok',
+          tooltip: ui('Открыть в TikTok'),
           icon: Icon(KIcons.tiktok, size: 22, color: cMuted),
           onPressed: () {
             _tt.pause();
@@ -482,24 +482,24 @@ class _ClipPageState extends State<_ClipPage> {
         ),
         LikeButton(v.id),
         PopupMenuButton<int>(
-          tooltip: 'Ещё',
+          tooltip: ui('Ещё'),
           icon: Icon(Icons.more_vert_rounded, size: 22, color: cMuted),
           color: cCard,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           onSelected: (i) => _push(
             (onSeek) => i == 0
                 ? SubPage(
-                    title: 'Весь текст',
+                    title: ui('Весь текст'),
                     child: Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: onSeek),
                   )
                 : SubPage(
-                    title: 'Мои слова',
+                    title: ui('Мои слова'),
                     child: WordList(videoId: videoId, onSeek: onSeek),
                   ),
           ),
           itemBuilder: (_) => [
-            PopupMenuItem(value: 0, child: Text('Весь текст')),
-            PopupMenuItem(value: 1, child: Text('Мои слова${words == 0 ? '' : ' · $words'}')),
+            PopupMenuItem(value: 0, child: Text(ui('Весь текст'))),
+            PopupMenuItem(value: 1, child: Text('${ui('Мои слова')}${words == 0 ? '' : ' · $words'}')),
           ],
         ),
       ],
@@ -536,7 +536,7 @@ class _ClipPageState extends State<_ClipPage> {
             // Своих кнопок у плеера нет: нажатие по видео ставит его на паузу и снимает с неё.
             Semantics(
               button: true,
-              label: playing ? 'Пауза' : 'Смотреть',
+              label: playing ? ui('Пауза') : ui('Смотреть'),
               child: GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onTap: _tt.toggle,
@@ -564,15 +564,15 @@ class _ClipPageState extends State<_ClipPage> {
     return Row(
       children: [
         Expanded(
-          child: Pill('', icon: KIcons.arrowLeft, label: 'Предыдущая фраза', onTap: () => _step(-1)),
+          child: Pill('', icon: KIcons.arrowLeft, label: ui('Предыдущая фраза'), onTap: () => _step(-1)),
         ),
         SizedBox(width: 6),
         Expanded(
-          child: Pill('Ещё раз', icon: KIcons.refresh, onTap: () => _step(0)),
+          child: Pill(ui('Ещё раз'), icon: KIcons.refresh, onTap: () => _step(0)),
         ),
         SizedBox(width: 6),
         Expanded(
-          child: Pill('', icon: KIcons.arrowRight, label: 'Следующая фраза', onTap: () => _step(1)),
+          child: Pill('', icon: KIcons.arrowRight, label: ui('Следующая фраза'), onTap: () => _step(1)),
         ),
       ],
     );

@@ -16,6 +16,7 @@ import 'survey_page.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
 import 'words_page.dart';
+import 'l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +49,7 @@ class KapirasApp extends StatefulWidget {
 
 class _KapirasAppState extends State<KapirasApp> {
   bool _dark = store.dark;
+  String _lang = store.lang;
   bool _onboarded = store.onboarded;
   bool _surveyDone = store.surveyDone;
 
@@ -63,13 +65,16 @@ class _KapirasAppState extends State<KapirasApp> {
     super.dispose();
   }
 
-  // Цвета в theme.dart — глобальные геттеры, поэтому при смене темы перестраиваем всё дерево,
+  // Цвета в theme.dart и тексты из ui() — глобальные, поэтому при смене темы или языка перестраиваем всё дерево,
   // включая const-виджеты и открытые поверх экраны.
   void _onStore() {
     if (store.onboarded != _onboarded) setState(() => _onboarded = store.onboarded);
     if (store.surveyDone != _surveyDone) setState(() => _surveyDone = store.surveyDone);
-    if (store.dark == _dark) return;
-    setState(() => _dark = store.dark);
+    if (store.dark == _dark && store.lang == _lang) return;
+    setState(() {
+      _dark = store.dark;
+      _lang = store.lang;
+    });
     void visit(Element e) {
       e.markNeedsBuild();
       e.visitChildren(visit);
@@ -203,17 +208,17 @@ class _HomeShellState extends State<HomeShell> {
                 selectedIndex: _tab < _plus ? _tab : _tab + 1,
                 onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
                 destinations: [
-                  NavigationDestination(icon: Icon(KIcons.home), selectedIcon: Icon(KIcons.homeOn), label: 'Дом'),
+                  NavigationDestination(icon: Icon(KIcons.home), selectedIcon: Icon(KIcons.homeOn), label: ui('Дом')),
                   NavigationDestination(
                     icon: Icon(KIcons.catalog),
                     selectedIcon: Icon(KIcons.catalogOn),
-                    label: 'Видео',
+                    label: ui('Видео'),
                   ),
                   if (kAddVideoEnabled) ...[
                     NavigationDestination(
                       icon: Icon(KIcons.videos),
                       selectedIcon: Icon(KIcons.videosOn),
-                      label: 'Мои ролики',
+                      label: ui('Мои ролики'),
                     ),
                     ExcludeSemantics(
                       child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
@@ -222,17 +227,17 @@ class _HomeShellState extends State<HomeShell> {
                   NavigationDestination(
                     icon: Icon(KIcons.stories),
                     selectedIcon: Icon(KIcons.storiesOn),
-                    label: 'Рассказы',
+                    label: ui('Рассказы'),
                   ),
                   NavigationDestination(
                     icon: Icon(KIcons.words),
                     selectedIcon: Icon(KIcons.wordsOn),
-                    label: 'Мои слова',
+                    label: ui('Мои слова'),
                   ),
                   NavigationDestination(
                     icon: Icon(KIcons.profile),
                     selectedIcon: Icon(KIcons.profileOn),
-                    label: 'Профиль',
+                    label: ui('Профиль'),
                   ),
                 ],
               ),
@@ -241,7 +246,7 @@ class _HomeShellState extends State<HomeShell> {
                   top: false,
                   child: Semantics(
                     button: true,
-                    label: 'Добавить ролик',
+                    label: ui('Добавить ролик'),
                     child: Material(
                       color: cViolet,
                       shape: CircleBorder(),
@@ -262,13 +267,13 @@ class _HomeShellState extends State<HomeShell> {
 
   Widget _wideShell(Widget Function() buildPages) {
     final items = <(int, IconData, IconData, String)>[
-      (_home, KIcons.home, KIcons.homeOn, 'Дом'),
-      (_feed, KIcons.catalog, KIcons.catalogOn, 'Видео'),
-      if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
-      (_stories, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
-      (_words, KIcons.words, KIcons.wordsOn, 'Мои слова'),
+      (_home, KIcons.home, KIcons.homeOn, ui('Дом')),
+      (_feed, KIcons.catalog, KIcons.catalogOn, ui('Видео')),
+      if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, ui('Мои ролики')),
+      (_stories, KIcons.stories, KIcons.storiesOn, ui('Рассказы')),
+      (_words, KIcons.words, KIcons.wordsOn, ui('Мои слова')),
     ];
-    final profile = (_profile, KIcons.profile, KIcons.profileOn, 'Профиль');
+    final profile = (_profile, KIcons.profile, KIcons.profileOn, ui('Профиль'));
     Widget item((int, IconData, IconData, String) it) {
       final (page, icon, on, label) = it;
       return Padding(
@@ -342,7 +347,7 @@ class _HomeShellState extends State<HomeShell> {
                         onPressed: _addVideo,
                         style: FilledButton.styleFrom(backgroundColor: cViolet, foregroundColor: cOnViolet),
                         icon: Icon(KIcons.plus),
-                        label: Text('Добавить ролик'),
+                        label: Text(ui('Добавить ролик')),
                       ),
                     ),
                   Spacer(),

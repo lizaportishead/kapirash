@@ -7,6 +7,7 @@ import 'icons.dart';
 import 'player_page.dart' show SubPage;
 import 'store.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 class QuizQuestion {
   QuizQuestion.fromJson(Map<String, dynamic> j)
@@ -42,7 +43,7 @@ class QuizSection {
 /// Задания к ролику лежат в assets рядом с субтитрами; у большинства роликов их нет.
 Future<List<QuizSection>> loadQuiz(String videoId) async {
   try {
-    final j = jsonDecode(await rootBundle.loadString('assets/$videoId.quiz.json')) as Map<String, dynamic>;
+    final j = jsonDecode(await store.assetText('$videoId.quiz.json', en: '$videoId.quiz.en.json')) as Map<String, dynamic>;
     return [for (final s in j['sections'] as List) QuizSection.fromJson(s as Map<String, dynamic>)];
   } catch (_) {
     return [];
@@ -121,7 +122,9 @@ class QuizList extends StatelessWidget {
                       children: [
                         if (r != null) ...[Icon(KIcons.done, size: 16, color: cAccentText), SizedBox(width: 4)],
                         Text(
-                          r == null ? 'Не пройдено · ${s.questions.length} вопросов' : 'Пройдено · ${r[0]} из ${r[1]}',
+                          r == null
+                              ? ui('Не пройдено · {0}', ['${s.questions.length} ${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}'])
+                              : ui('Пройдено · {0} из {1}', [r[0], r[1]]),
                           style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w700,
@@ -237,7 +240,7 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(16, 0, 16, bottom),
-          child: BigButton(_i == _qs.length - 1 ? 'Результат' : 'Дальше', onTap: _picked == null ? null : _next),
+          child: BigButton(_i == _qs.length - 1 ? ui('Результат') : ui('Дальше'), onTap: _picked == null ? null : _next),
         ),
       ],
     );
@@ -266,9 +269,9 @@ class _QuizPageState extends State<QuizPage> {
     return Semantics(
       button: true,
       label: right
-          ? 'Верно'
+          ? ui('Верно')
           : wrong
-          ? 'Неверно'
+          ? ui('Неверно')
           : null,
       child: Material(
         color: right
@@ -321,16 +324,16 @@ class _QuizPageState extends State<QuizPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '$_right из $all',
+                  ui('{0} из {1}', [_right, all]),
                   style: TextStyle(fontSize: 56, fontWeight: FontWeight.w800, letterSpacing: -1.2, color: cText),
                 ),
                 SizedBox(height: 8),
                 Text(
                   _right == all
-                      ? 'Всё верно!'
+                      ? ui('Всё верно!')
                       : _right >= all * 0.7
-                      ? 'Хороший результат'
-                      : 'Пересмотри ролик и попробуй ещё раз',
+                      ? ui('Хороший результат')
+                      : ui('Пересмотри ролик и попробуй ещё раз'),
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, height: 1.4, color: cMuted),
                 ),
@@ -339,11 +342,11 @@ class _QuizPageState extends State<QuizPage> {
           ),
           // Главное действие — разбор, если есть что разбирать.
           if (_wrong.isNotEmpty) ...[
-            BigButton('Разбор ошибок', onTap: () => setState(() => _review = true)),
+            BigButton(ui('Разбор ошибок'), onTap: () => setState(() => _review = true)),
             SizedBox(height: 8),
-            BigButton('Закрыть', onTap: () => Navigator.pop(context), bg: cCard2, fg: cText),
+            BigButton(ui('Закрыть'), onTap: () => Navigator.pop(context), bg: cCard2, fg: cText),
           ] else
-            BigButton('Закрыть', onTap: () => Navigator.pop(context)),
+            BigButton(ui('Закрыть'), onTap: () => Navigator.pop(context)),
         ],
       ),
     );
@@ -368,7 +371,7 @@ class _QuizPageState extends State<QuizPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      'Вопрос ${wrong[n] + 1}',
+                      ui('Вопрос {0}', [wrong[n] + 1]),
                       style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
                     ),
                     SizedBox(height: 4),
@@ -389,7 +392,7 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(16, 0, 16, bottom),
-          child: BigButton('Закрыть', onTap: () => Navigator.pop(context)),
+          child: BigButton(ui('Закрыть'), onTap: () => Navigator.pop(context)),
         ),
       ],
     );
@@ -397,7 +400,7 @@ class _QuizPageState extends State<QuizPage> {
 
   Widget _answerRow(String text, {required bool right}) {
     return Semantics(
-      label: right ? 'Правильный ответ' : 'Твой ответ',
+      label: right ? ui('Правильный ответ') : ui('Твой ответ'),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 9),
         decoration: BoxDecoration(color: right ? cAccent : _cWrong, borderRadius: BorderRadius.circular(12)),

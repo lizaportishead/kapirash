@@ -1,4 +1,4 @@
-import 'dart:ui' as ui;
+import 'dart:ui' as dui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 /// Слова фразы: каждое подчёркнуто и нажимается, сохранённые подчёркнуты фиолетовым.
 class PhraseWords extends StatelessWidget {
@@ -113,7 +114,7 @@ void showWord(
               ),
               SizedBox(height: 14),
               if (entry == null)
-                Text('Этого слова нет в словарике ролика.', style: TextStyle(fontSize: 14, color: cMuted))
+                Text(ui('Этого слова нет в словарике ролика.'), style: TextStyle(fontSize: 14, color: cMuted))
               else ...[
                 Text(
                   tr,
@@ -126,7 +127,7 @@ void showWord(
               ],
               SizedBox(height: 16),
               BigButton(
-                store.isSaved(key) ? 'Убрать слово' : 'Добавить в мои слова',
+                store.isSaved(key) ? ui('Убрать слово') : ui('Добавить в мои слова'),
                 bg: store.isSaved(key) ? cCard : null,
                 fg: store.isSaved(key) ? cText : null,
                 onTap: () async {
@@ -137,7 +138,7 @@ void showWord(
                     return;
                   }
                   // Снимок шторки и её место снимаем до закрытия.
-                  ui.Image? img;
+                  dui.Image? img;
                   Rect? from;
                   final box = sheetKey.currentContext?.findRenderObject();
                   if (!already && flyTo != null && box is RenderRepaintBoundary) {
@@ -168,7 +169,7 @@ void showWord(
 /// Снимок шторки сжимается и летит к кнопке «Мои слова».
 class _Fly extends StatefulWidget {
   const _Fly({required this.image, required this.from, required this.to, required this.onDone});
-  final ui.Image image;
+  final dui.Image image;
   final Rect from, to;
   final VoidCallback onDone;
 
@@ -195,7 +196,7 @@ class _FlyState extends State<_Fly> with SingleTickerProviderStateMixin {
         builder: (context, _) {
           final t = Curves.easeInCubic.transform(_c.value);
           final c = Offset.lerp(from.center, to.center, t)!;
-          final scale = ui.lerpDouble(1, 0.06, t)!;
+          final scale = dui.lerpDouble(1, 0.06, t)!;
           final opacity = 1 - Curves.easeIn.transform((_c.value - 0.6).clamp(0, 0.4) / 0.4);
           return Stack(
             children: [
