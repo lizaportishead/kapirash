@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import 'speak_io.dart' if (dart.library.js_interop) 'speak_web.dart';
 import 'store.dart';
+import 'subs.dart';
 import 'theme.dart';
 import 'l10n.dart';
 
@@ -229,29 +231,44 @@ class _FlipCard extends StatelessWidget {
     return Semantics(
       button: true,
       label: flipped ? null : ui('Показать перевод'),
-      child: GestureDetector(
-        onTap: onTap,
-        child: TweenAnimationBuilder<double>(
-          tween: Tween(end: flipped ? 1 : 0),
-          duration: Duration(milliseconds: 280),
-          curve: Curves.easeInOut,
-          builder: (_, v, _) {
-            final showBack = v > 0.5;
-            return Transform(
-              alignment: Alignment.center,
-              transform: Matrix4.identity()
-                ..setEntry(3, 2, 0.001)
-                ..rotateY(pi * v),
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(24),
-                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(28)),
-                // Оборот рисуем отзеркаленным, иначе текст после поворота читается задом наперёд.
-                child: showBack ? Transform.flip(flipX: true, child: back) : front,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: GestureDetector(
+              onTap: onTap,
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(end: flipped ? 1 : 0),
+                duration: Duration(milliseconds: 280),
+                curve: Curves.easeInOut,
+                builder: (_, v, _) {
+                  final showBack = v > 0.5;
+                  return Transform(
+                    alignment: Alignment.center,
+                    transform: Matrix4.identity()
+                      ..setEntry(3, 2, 0.001)
+                      ..rotateY(pi * v),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(24),
+                      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(28)),
+                      // Оборот рисуем отзеркаленным, иначе текст после поворота читается задом наперёд.
+                      child: showBack ? Transform.flip(flipX: true, child: back) : front,
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
+            ),
+          ),
+          Positioned(
+            top: 6,
+            right: 6,
+            child: IconButton(
+              tooltip: ui('Прослушать {0}', [w.key]),
+              icon: Icon(Icons.volume_up_rounded, size: 24, color: cViolet),
+              onPressed: () => speakWord(toCyr(toLat(w.key))),
+            ),
+          ),
+        ],
       ),
     );
   }

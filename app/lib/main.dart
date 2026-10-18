@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -7,6 +8,7 @@ import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
+import 'landing_page.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
@@ -105,7 +107,7 @@ class _KapirasAppState extends State<KapirasApp> {
         // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
         // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
         child: !_onboarded
-            ? OnboardingPage()
+            ? (kIsWeb ? LandingPage() : OnboardingPage())
             : !_surveyDone
             ? SurveyPage()
             : HomeShell(),
