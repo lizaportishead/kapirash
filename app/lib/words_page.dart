@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 
 import 'icons.dart';
 import 'learn_page.dart';
+import 'speak_io.dart' if (dart.library.js_interop) 'speak_web.dart';
 import 'player_page.dart';
 import 'store.dart';
 import 'stories_page.dart';
@@ -184,21 +184,6 @@ class _WordsPageState extends State<WordsPage> {
   }
 }
 
-final FlutterTts _tts = FlutterTts();
-bool _ttsReady = false;
-
-Future<void> _speak(String word) async {
-  try {
-    if (!_ttsReady) {
-      await _tts.setLanguage('sr-RS');
-      await _tts.setSpeechRate(0.4);
-      _ttsReady = true;
-    }
-    await _tts.stop();
-    await _tts.speak(toCyr(toLat(word)));
-  } catch (_) {}
-}
-
 class _WordCard extends StatelessWidget {
   const _WordCard(this.w);
   final SavedWord w;
@@ -291,7 +276,7 @@ class _WordCard extends StatelessWidget {
             IconButton(
               tooltip: ui('Прослушать {0}', [w.key]),
               icon: Icon(Icons.volume_up_rounded, size: 22, color: cViolet),
-              onPressed: () => _speak(w.key),
+              onPressed: () => speakWord(toCyr(toLat(w.key))),
             ),
             IconButton(
               tooltip: ui('Удалить {0}', [w.key]),
