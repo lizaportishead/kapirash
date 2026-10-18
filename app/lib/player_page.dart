@@ -240,7 +240,7 @@ class _PlayerPageState extends State<PlayerPage> {
                           ),
                           player,
                           SizedBox(height: 10),
-                          ConstrainedBox(constraints: BoxConstraints(maxHeight: 210), child: _current(cue)),
+                          _current(cue),
                           if (_quiz.isNotEmpty) ...[
                             Padding(
                               padding: EdgeInsets.fromLTRB(4, 28, 4, 8),
@@ -575,37 +575,35 @@ class _PlayerPageState extends State<PlayerPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(padding: EdgeInsets.fromLTRB(12, 12, 12, 0), child: _controls()),
-          Flexible(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: 68),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (_sr.isEmpty && widget.video.mine)
-                      Text(
-                        store.myVideo(videoId)?.status == SubsStatus.failed
-                            ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
-                            : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
-                        style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: 68),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (_sr.isEmpty && widget.video.mine)
+                    Text(
+                      store.myVideo(videoId)?.status == SubsStatus.failed
+                          ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
+                          : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
+                      style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
+                    ),
+                  if (_subsLoading) Center(child: KapLoader(size: 32)),
+                  if (cue != null && _showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue)),
+                  if (ru.isNotEmpty) ...[
+                    SizedBox(height: 6),
+                    Text(
+                      ru,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        height: 1.4,
+                        color: cInk.withValues(alpha: 0.72),
                       ),
-                    if (_subsLoading) Center(child: KapLoader(size: 32)),
-                    if (cue != null && _showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue)),
-                    if (ru.isNotEmpty) ...[
-                      SizedBox(height: 6),
-                      Text(
-                        ru,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          height: 1.4,
-                          color: cInk.withValues(alpha: 0.72),
-                        ),
-                      ),
-                    ],
+                    ),
                   ],
-                ),
+                ],
               ),
             ),
           ),

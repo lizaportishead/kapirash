@@ -59,7 +59,12 @@ const clipGrid = SliverGridDelegateWithMaxCrossAxisExtent(
   childAspectRatio: 9 / 16,
 );
 
-/// Вкладка «Клипы»: короткие вертикальные ролики из TikTok.
+/// Все короткие ролики на отдельном экране.
+void openClips(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage()))))));
+}
+
+/// Экран «Короткие ролики»: вертикальные ролики из TikTok.
 class ClipsPage extends StatefulWidget {
   const ClipsPage({super.key});
 
@@ -83,17 +88,28 @@ class _ClipsPageState extends State<ClipsPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.only(left: 12),
+            child: IconButton(
+              tooltip: 'Назад',
+              icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+        ),
         PageTitle(
-          'Клипы',
+          'Шортсы',
           actions: [
             IconButton(
               tooltip: 'Любимое',
-              icon: Icon(Icons.favorite_border_rounded, size: 24, color: cText),
+              icon: Icon(KIcons.heart, size: 24, color: cText),
               onPressed: () => openLiked(context),
             ),
             IconButton(
               tooltip: 'Поиск',
-              icon: Icon(Icons.search_rounded, size: 24, color: cText),
+              icon: Icon(KIcons.search, size: 24, color: cText),
               onPressed: () => openSearch(context, clips: true),
             ),
           ],
@@ -381,7 +397,19 @@ class _ClipPageState extends State<_ClipPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     _header(back: false),
-                    Expanded(child: _phrase()),
+                    // Фраза целиком, без прокрутки: если не помещается, чуть уменьшается.
+                    Expanded(
+                      child: LayoutBuilder(
+                        builder: (_, c) => Align(
+                          alignment: Alignment.topCenter,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.topCenter,
+                            child: SizedBox(width: c.maxWidth, child: _phrase()),
+                          ),
+                        ),
+                      ),
+                    ),
                     SizedBox(height: 10),
                     _controls(),
                   ],
@@ -407,10 +435,11 @@ class _ClipPageState extends State<_ClipPage> {
                 SizedBox(height: 10),
                 Padding(padding: EdgeInsets.symmetric(horizontal: 12), child: _controls()),
                 SizedBox(height: 10),
-                // Высота постоянная, чтобы видео не прыгало от фразы к фразе.
+                // Минимальная высота, чтобы видео не прыгало на коротких фразах; длинная фраза
+                // показывается целиком, без прокрутки, и просто чуть сжимает видео.
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
-                  child: SizedBox(height: 112, child: _phrase()),
+                  child: ConstrainedBox(constraints: BoxConstraints(minHeight: 112), child: _phrase()),
                 ),
               ],
             ),
@@ -556,25 +585,24 @@ class _ClipPageState extends State<_ClipPage> {
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(20)),
       alignment: Alignment.topLeft,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (cue != null) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: 17, pad: 2),
-            if (ru.isNotEmpty) ...[
-              SizedBox(height: 2),
-              Text(
-                ru,
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                  height: 1.4,
-                  color: cInk.withValues(alpha: 0.72),
-                ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (cue != null) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: 17, pad: 2),
+          if (ru.isNotEmpty) ...[
+            SizedBox(height: 2),
+            Text(
+              ru,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                height: 1.4,
+                color: cInk.withValues(alpha: 0.72),
               ),
-            ],
+            ),
           ],
-        ),
+        ],
       ),
     );
   }

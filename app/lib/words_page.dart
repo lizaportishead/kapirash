@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'icons.dart';
 import 'learn_page.dart';
 import 'player_page.dart';
-import 'stories_page.dart';
 import 'store.dart';
+import 'stories_page.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'videos.dart';
@@ -46,7 +47,9 @@ class _WordsPageState extends State<WordsPage> {
       builder: (context, _) {
         final all = store.words.reversed.toList();
         final q = _norm(_search.text.trim());
-        final list = q.isEmpty ? all : all.where((w) => _norm('${w.key} ${w.lemma ?? ''} ${w.tr} ${w.lemmaTr} ${w.ctx}').contains(q)).toList();
+        final list = q.isEmpty
+            ? all
+            : all.where((w) => _norm('${w.key} ${w.lemma ?? ''} ${w.tr} ${w.lemmaTr} ${w.ctx}').contains(q)).toList();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -56,7 +59,7 @@ class _WordsPageState extends State<WordsPage> {
                 if (all.isNotEmpty)
                   IconButton(
                     tooltip: _searching ? 'Закрыть поиск' : 'Поиск',
-                    icon: Icon(_searching ? Icons.close : Icons.search_rounded, size: 24, color: cText),
+                    icon: Icon(_searching ? Icons.close : KIcons.search, size: 24, color: cText),
                     onPressed: _toggleSearch,
                   ),
               ],
@@ -74,7 +77,7 @@ class _WordsPageState extends State<WordsPage> {
                   decoration: InputDecoration(
                     hintText: 'Поиск по словам',
                     hintStyle: TextStyle(color: cFaint),
-                    prefixIcon: Icon(Icons.search_rounded, color: cFaint),
+                    prefixIcon: Icon(KIcons.search, color: cFaint),
                     filled: true,
                     fillColor: cCard,
                     isDense: true,
@@ -89,22 +92,23 @@ class _WordsPageState extends State<WordsPage> {
                   all.isEmpty
                       ? Padding(
                           padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
-                              Flexible(
-                                child: ExcludeSemantics(
-                                  child: Image.asset('assets/ill_words.png', height: 173),
+                          child: SizedBox.expand(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
+                                Flexible(
+                                  child: ExcludeSemantics(child: Image.asset('assets/ill_words.png', height: 173)),
                                 ),
-                              ),
-                              SizedBox(height: 16),
-                              Text(
-                                'Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
-                              ),
-                            ],
+                                SizedBox(height: 16),
+                                Text(
+                                  'Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                                ),
+                              ],
+                            ),
                           ),
                         )
                       : list.isEmpty
@@ -163,72 +167,86 @@ class _WordCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final video = videoById(w.video);
     final story = storyById(w.video);
+    final VoidCallback? onOpen = video != null
+        ? () => openVideo(context, video, startAt: w.t)
+        : story != null
+        ? () => openStory(context, story, page: w.t.toInt())
+        : null;
     return Material(
       color: cCard,
       borderRadius: BorderRadius.circular(24),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(24),
-        onTap: video != null
-            ? () => openVideo(context, video, startAt: w.t)
-            : story != null
-            ? () => openStory(context, story, page: w.t.toInt())
-            : null,
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(18, 14, 6, 14),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      store.conv(w.key),
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
-                    ),
-                    if (w.lemma != null && w.lemma != w.key)
-                      Padding(
-                        padding: EdgeInsets.only(top: 2),
-                        child: Text(
-                          'нач. форма: ${store.conv(w.lemma!)}${w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'}',
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cViolet),
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(18, 14, 6, 14),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    store.conv(w.key),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
+                  ),
+                  if (w.lemma != null && w.lemma != w.key)
+                    Padding(
+                      padding: EdgeInsets.only(top: 2),
+                      child: Text(
+                        '${w.form == null || w.form!.isEmpty ? 'Форма' : w.form} от ${store.conv(w.lemma!)}${w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'}',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FontStyle.italic,
+                          color: cText,
                         ),
                       ),
-                    if (w.tr.isNotEmpty)
-                      Text(
-                        w.tr,
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cAccentText),
+                    ),
+                  if (w.tr.isNotEmpty)
+                    Text(
+                      w.tr,
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cAccentText),
+                    ),
+                  SizedBox(height: 4),
+                  InkWell(
+                    borderRadius: BorderRadius.circular(8),
+                    onTap: onOpen,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 2),
+                      child: Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(text: store.conv(w.ctx)),
+                            if (onOpen != null) ...[
+                              TextSpan(text: ' '),
+                              WidgetSpan(
+                                alignment: PlaceholderAlignment.middle,
+                                child: Icon(Icons.arrow_forward_rounded, size: 16, color: cViolet),
+                              ),
+                            ],
+                          ],
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 13, height: 1.4, color: cMuted),
                       ),
+                    ),
+                  ),
+                  if (story != null) ...[
                     SizedBox(height: 6),
                     Text(
-                      store.conv(w.ctx),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 13, height: 1.4, color: cMuted),
+                      '${story.title} · стр. ${w.t.toInt()}',
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
                     ),
-                    if (video != null) ...[
-                      SizedBox(height: 6),
-                      Text(
-                        '${video.channel} · ${fmtTime(w.t)}',
-                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
-                      ),
-                    ] else if (story != null) ...[
-                      SizedBox(height: 6),
-                      Text(
-                        '${story.title} · стр. ${w.t.toInt()}',
-                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
-                      ),
-                    ],
                   ],
-                ),
+                ],
               ),
-              IconButton(
-                tooltip: 'Удалить ${w.key}',
-                icon: Icon(Icons.close, size: 18, color: cMuted),
-                onPressed: () => store.remove(w.key),
-              ),
-            ],
-          ),
+            ),
+            IconButton(
+              tooltip: 'Удалить ${w.key}',
+              icon: Icon(Icons.close, size: 18, color: cMuted),
+              onPressed: () => store.remove(w.key),
+            ),
+          ],
         ),
       ),
     );

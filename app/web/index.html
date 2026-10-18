@@ -31,8 +31,38 @@
 
   <title>kapiras</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    #kap-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:99;transition:opacity .35s}
+    @media (prefers-color-scheme:dark){#kap-loader{background:#0E0E12}}
+    #kap-loader.done{opacity:0;pointer-events:none}
+    #kap-loader .w{display:flex;align-items:baseline;font:800 120px/1 -apple-system,"Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.02em;color:#7357F6}
+    #kap-loader .l{display:inline-block;animation:kl-wave 1.8s ease-in-out infinite;animation-delay:calc(var(--i)*.07s)}
+    #kap-loader .sh .l{font-weight:800;animation:none;transition:opacity .3s ease,transform .3s ease}
+    #kap-loader .sh.swap .l{opacity:0;transform:translateY(.08em)}
+    #kap-loader .caron{transition:opacity .3s ease}
+    #kap-loader .sh.swap .caron,#kap-loader .caron.off{opacity:0}
+    #kap-loader .sh{position:relative;display:inline-block;transform-origin:50% 100%;animation:kl-squash 2.4s ease-in-out infinite}
+    #kap-loader .caron{position:absolute;left:50%;top:-.02em;width:.5em;height:.3em;margin-left:-.25em;color:#E6EC68;transform-origin:50% 50%;animation:kl-caron 2.4s ease-in-out infinite}
+    @keyframes kl-wave{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-.08em)}}
+    /* диакритика: плавно парит над s и чуть покачивается */
+    @keyframes kl-caron{
+      0%,100%{transform:translateY(0) rotate(-6deg)}
+      50%{transform:translateY(-.14em) rotate(6deg)}}
+    @keyframes kl-squash{0%,100%{transform:scale(1,1)}50%{transform:scale(1,1.02)}}
+  </style>
 </head>
 <body>
+  <div id="kap-loader" aria-label="Loading"><div class="w">
+    <span class="sh"><span class="l" id="kap-ch">s</span><svg class="caron" id="kap-mark" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path id="kap-mark-p" d="M2 2l8 8 8-8"/></svg></span>
+  </div></div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('kap-loader');
+      if (!el) return;
+      el.classList.add('done');
+      setTimeout(function () { el.remove(); }, 400);
+    });
+  </script>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader

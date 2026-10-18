@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'auth_page.dart';
 import 'history_page.dart';
 import 'store.dart';
+import 'survey_page.dart';
 import 'theme.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -58,7 +59,10 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ]),
       SizedBox(height: 12),
-      _Group([_Row(icon: Icons.history_rounded, title: 'История', onTap: () => openHistory(context))]),
+      _Group([
+        _Row(icon: Icons.tune_rounded, title: 'Уровень и темы', onTap: () => openSurvey(context)),
+        _Row(icon: Icons.history_rounded, title: 'История', onTap: () => openHistory(context)),
+      ]),
       if (email != null) ...[
         SizedBox(height: 12),
         _Group([_Row(icon: Icons.logout_rounded, title: 'Выйти', onTap: store.signOut)]),
@@ -118,7 +122,7 @@ class _SignIn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Войди в аккаунт',
+            'Войди в\u00A0аккаунт',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cInk),
           ),
           SizedBox(height: 6),

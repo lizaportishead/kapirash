@@ -26,8 +26,9 @@ const cInk = Color(0xFF111114);
 const cOnInk = Color(0xFFFFFFFF);
 
 class Pill extends StatelessWidget {
-  const Pill(this.text, {super.key, this.on = false, this.label, this.icon, required this.onTap});
+  const Pill(this.text, {super.key, this.on = false, this.label, this.icon, this.badge = 0, required this.onTap});
   final String text;
+  final int badge;
   final IconData? icon;
   final String? label;
   final bool on;
@@ -48,19 +49,38 @@ class Pill extends StatelessWidget {
             height: 38,
             constraints: BoxConstraints(minWidth: 42),
             padding: EdgeInsets.symmetric(horizontal: 14),
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Без текста — кнопка-иконка, значок крупнее.
-                if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? cBg : cText),
-                if (icon != null && text.isNotEmpty) SizedBox(width: 6),
-                if (text.isNotEmpty)
-                  Text(
-                    text,
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
-                  ),
-              ],
+            // Центр по ширине содержимого: Container с alignment растянулся бы на всю строку Wrap.
+            child: Center(
+              widthFactor: 1,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Без текста — кнопка-иконка, значок крупнее.
+                  if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? cBg : cText),
+                  if (icon != null && text.isNotEmpty) SizedBox(width: 6),
+                  if (text.isNotEmpty)
+                    Text(
+                      text,
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
+                    ),
+                  if (badge > 0) ...[
+                    SizedBox(width: 6),
+                    Container(
+                      width: 20,
+                      height: 20,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(color: cViolet, shape: BoxShape.circle),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          '$badge',
+                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Colors.white, height: 1.1),
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
             ),
           ),
         ),
@@ -219,6 +239,38 @@ class PageTitle extends StatelessWidget {
           ...actions,
         ],
       ),
+    );
+  }
+}
+
+/// Сложность по уровню (A1–C2): подпись и цвет кружка.
+(String, Color)? difficultyOf(String level) {
+  final l = level.toUpperCase();
+  if (l.startsWith('A')) return ('Простое (A1-A2)', Color(0xFF34A853));
+  if (l == 'B1') return ('Среднее (B1)', Color(0xFFF59E0B));
+  if (l.startsWith('B') || l.startsWith('C')) return ('Сложное (B2+)', Color(0xFFE53935));
+  return null;
+}
+
+class DifficultyLabel extends StatelessWidget {
+  const DifficultyLabel(this.level, {super.key, this.size = 13});
+  final String level;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    final d = difficultyOf(level);
+    if (d == null) return SizedBox.shrink();
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.circle, size: 10, color: d.$2),
+        SizedBox(width: 5),
+        Text(
+          d.$1,
+          style: TextStyle(fontSize: size, color: cMuted),
+        ),
+      ],
     );
   }
 }
