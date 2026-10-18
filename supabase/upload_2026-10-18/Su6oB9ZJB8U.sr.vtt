@@ -1,0 +1,457 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.880
+Ako pogledaš narednih 20 minuta, znaćeš Claude bolje od 90% populacije.
+
+2
+00:00:05.000 --> 00:00:07.280
+Većina ljudi koristi Claude kao običan Google.
+
+3
+00:00:07.440 --> 00:00:09.840
+Postavljaju pitanja i tu se cela priča završava.
+
+4
+00:00:09.940 --> 00:00:13.780
+To je kao da kupite ultrasportski automobil i vozite ga do prodavnice.
+
+5
+00:00:13.940 --> 00:00:15.140
+Jednostavno, nema smisla.
+
+6
+00:00:15.360 --> 00:00:19.420
+Zato ću vam u ovom brzom mini kursu pokazati kako da izvučete maksimum iz Claude-a
+
+7
+00:00:19.420 --> 00:00:21.620
+i da ga već danas pustite u rad.
+
+8
+00:00:21.820 --> 00:00:23.360
+Zašto biste uopšte koristili Claude?
+
+9
+00:00:23.500 --> 00:00:27.560
+Poenta je da ne postavljate pitanja, već da pustite Claude da radi za vas.
+
+10
+00:00:27.560 --> 00:00:29.520
+A može svašta da radi za vas.
+
+11
+00:00:30.000 --> 00:00:34.320
+Znači, povežete ga sa vašim računarom, date mu pristup i pustite ga da radi.
+
+12
+00:00:34.500 --> 00:00:36.660
+Da ne gubimo vreme, prelazimo odmah na praksu.
+
+13
+00:00:36.800 --> 00:00:38.660
+Ako se plašite da Claude ne zna ništa o vama,
+
+14
+00:00:38.780 --> 00:00:42.660
+a već ste ostavili mnogo informacija ChatGPT-u ili nekom drugom AI modelu,
+
+15
+00:00:43.200 --> 00:00:44.700
+ajmo da to prebacimo u Claude.
+
+16
+00:00:44.840 --> 00:00:48.600
+Otvorimo Claude u pretraživaču i dođemo do opcije za import.
+
+17
+00:00:48.920 --> 00:00:52.160
+Dobijemo pitanje koje ćemo prekopirati u ChatGPT.
+
+18
+00:00:52.620 --> 00:00:56.440
+Odgovore koje smo dobili iz ChatGPT-a vratimo nazad u Claude
+
+19
+00:00:56.440 --> 00:01:00.940
+i Claude sada ima one informacije koje ChatGPT ima o nama.
+
+20
+00:01:01.160 --> 00:01:03.180
+Drugi korak je da biramo najbolji model.
+
+21
+00:01:03.420 --> 00:01:07.220
+Ako koristite besplatnu verziju Claude-a, ograničeni ste na izbor modela.
+
+22
+00:01:07.620 --> 00:01:14.600
+Claude bukvalno na nedeljnom nivou ubacuje novine i trenutno je najjači model koji postoji Fable 5.
+
+23
+00:01:14.780 --> 00:01:16.740
+To znači da troši i najviše kredita.
+
+24
+00:01:17.280 --> 00:01:19.340
+Kad smo kod kredita, šta su krediti?
+
+25
+00:01:19.340 --> 00:01:24.080
+Svaki plan koji imate na Claude-u, bilo da je besplatan, od 20 dolara, 100 ili 200,
+
+26
+00:01:24.080 --> 00:01:26.960
+ima određenu količinu kredita koje možete koristiti.
+
+27
+00:01:27.440 --> 00:01:32.340
+Svaki upit koji date Claude-u ili akciju koju mu zadate, troši određeni broj kredita.
+
+28
+00:01:32.440 --> 00:01:35.640
+A ta potrošnja zavisi od toga koliko je model koji koristite jak
+
+29
+00:01:35.640 --> 00:01:37.880
+i koliko je taj zadatak težak.
+
+30
+00:01:38.040 --> 00:01:40.680
+Znači, ako postavljate obično pitanje, troši manje kredita.
+
+31
+00:01:40.920 --> 00:01:45.300
+Ako uključite Fable 5, najjači model, na maksimalnom kapacitetu
+
+32
+00:01:45.300 --> 00:01:49.020
+i date mu da napravi aplikaciju, on će potrošiti kredite brzo.
+
+33
+00:01:49.180 --> 00:01:52.160
+Osim ako niste na ovom skupljem planu od 100 ili 200 dolara.
+
+34
+00:01:52.160 --> 00:01:55.580
+Moj savet je uvek: krenite od plana od 20 dolara.
+
+35
+00:01:55.820 --> 00:01:58.680
+Besplatan ima najgore moguće modele.
+
+36
+00:01:58.860 --> 00:02:01.980
+Tek kada na planu od 20 dolara krenete da lupate u limite,
+
+37
+00:02:02.480 --> 00:02:05.740
+kaže vam da morate da sačekate 5 sati, da sačekate nekoliko dana,
+
+38
+00:02:05.980 --> 00:02:08.420
+onda je vreme da kupite onaj najskuplji plan.
+
+39
+00:02:08.640 --> 00:02:12.920
+Haiku 4.5 koristite za stvari koje ne zahtevaju neku pamet,
+
+40
+00:02:13.000 --> 00:02:15.560
+rad sa tabelama, sve onako što je basic.
+
+41
+00:02:15.860 --> 00:02:19.600
+Sonnet 5 koristite za svakodnevne aktivnosti.
+
+42
+00:02:19.600 --> 00:02:29.600
+Za kompleksnije stvari tu je Opus 5, koji je skoro izašao, skoro je dobar kao Fable 5 u nekim stvarima, a u nekim i bolji, a troši manje kredita.
+
+43
+00:02:29.940 --> 00:02:34.360
+I Fable 5 koristite kod onih najzahtevnijih zadataka.
+
+44
+00:02:34.480 --> 00:02:43.020
+Kada izaberete model, imate i njegovu jačinu, to je ovaj napor, i u zavisnosti od težine zadatka vi birate koji je to napor.
+
+45
+00:02:43.480 --> 00:02:48.040
+Najniži troši naravno najmanje kredita, a maks troši ultra mnogo kredita.
+
+46
+00:02:48.040 --> 00:02:55.120
+Kada izaberete Fable 5 i stavite napor na maks, to će vam pojesti sve kredite, tako da pažljivo koristite.
+
+47
+00:02:55.480 --> 00:03:02.280
+Veština koja će biti sve izraženija je da znate koji model u kojoj situaciji koristite, zato što krediti nisu beskonačni.
+
+48
+00:03:02.480 --> 00:03:06.300
+Treća stavka su konektori, najbolja stvar koja postoji kod Claude-a.
+
+49
+00:03:06.420 --> 00:03:11.460
+Šta rade konektori? Bukvalno povezujete vaš Claude sa svim mogućim aplikacijama.
+
+50
+00:03:11.460 --> 00:03:19.900
+Kako to izgleda u praksi? Povežete Claude sa Gmailom. Čita sve vaše mailove, radi analizu, odgovara na mailove, stavlja ih u draft.
+
+51
+00:03:20.100 --> 00:03:27.620
+Povežete ga sa Facebook kampanjama. Analizira sve vaše kampanje, može da ih pušta direktno, i iz četa može da pušta kampanje.
+
+52
+00:03:27.780 --> 00:03:31.440
+Sad ću vam pokazati moje konektore. Ovde imam desetak konektora.
+
+53
+00:03:31.440 --> 00:03:42.320
+Od Canve, Circlea, Facebook reklama, Gmaila, Google Drivea, Higgsfielda za kreiranje videa i fotografija, HubSpota, MailerLitea, SEMrusha i još mnogih drugih plaginova.
+
+54
+00:03:42.520 --> 00:03:46.440
+Ne moram uopšte da ulazim u te aplikacije direktno, iz Claude-a mogu da upravljam njima.
+
+55
+00:03:46.680 --> 00:03:54.240
+Evo jednog odličnog primera, HubSpot, CRM u kome leže svi podaci kupaca, treba da se svakom kupcu doda neka nova narudžbina.
+
+56
+00:03:54.400 --> 00:03:58.660
+Znači, hiljadu nekih narudžbina, da idete ručno, to bi trajalo i trajalo.
+
+57
+00:03:59.200 --> 00:04:04.660
+Preko Claude-a povežete HubSpot i bukvalno za pola sata Claude taj posao odradi za vas.
+
+58
+00:04:04.920 --> 00:04:06.820
+Četvrta stavka, Claude artifakti.
+
+59
+00:04:06.960 --> 00:04:09.080
+Mini aplikacije u okviru vašeg Claude-a.
+
+60
+00:04:09.080 --> 00:04:15.080
+Imate razne tabele koje se pune različitim podacima, hoćete da to vizuelno lepo izgleda kao da vam je neko isprogramirao.
+
+61
+00:04:15.580 --> 00:04:18.540
+U Claude artifaktu možete imati takvu aplikaciju.
+
+62
+00:04:18.640 --> 00:04:26.080
+Povežete tabelu u kojoj stižu podaci i bukvalno svakog dana možete da ulazite i gledate interaktivni prikaz tih podataka.
+
+63
+00:04:26.080 --> 00:04:30.340
+Ovo je primer artifakta u kojem je analizirana baza podataka kupaca.
+
+64
+00:04:30.440 --> 00:04:32.480
+Pazite kako to izgleda.
+
+65
+00:04:32.560 --> 00:04:38.580
+Ova baza se puni svakog dana, ovo su demo podaci, i tu možete odraditi sve moguće analize
+
+66
+00:04:38.580 --> 00:04:42.500
+i najbolja stvar od svega je što možete prilagoditi svojim potrebama.
+
+67
+00:04:42.980 --> 00:04:45.880
+Ako su vam neke metrike bitnije, to možete da istaknete.
+
+68
+00:04:46.080 --> 00:04:51.580
+Još bolja stvar je što ovo možete podeliti: kliknete na Publish i podelite sa članovima svog tima.
+
+69
+00:04:51.720 --> 00:04:53.120
+Peta stavka, vizualizacije.
+
+70
+00:04:53.120 --> 00:05:00.260
+Nekada ste vizualizaciju dosadnih podataka morali da radite kroz eksterne alate, danas je to moguće u okviru Claude-a.
+
+71
+00:05:00.640 --> 00:05:02.460
+Ubacite tabelu i kažete:
+
+72
+00:05:03.060 --> 00:05:07.060
+Vizuelno mi prikaži ovu tabelu i najvažnije podatke iz nje.
+
+73
+00:05:07.380 --> 00:05:09.320
+Pazite kakav ćete dashboard dobiti.
+
+74
+00:05:09.560 --> 00:05:11.120
+Šesta stavka, Claude projekti.
+
+75
+00:05:11.320 --> 00:05:15.980
+Zamislite projekat kao fasciklu koju punite sa svim mogućim podacima za taj projekat.
+
+76
+00:05:16.200 --> 00:05:19.300
+Sve vezano za taj projekat radite unutar njega.
+
+77
+00:05:19.300 --> 00:05:25.900
+Claude koristi sve te podatke, na osnovu njih vam daje prave informacije vezane za taj projekat, a ne one generičke odgovore.
+
+78
+00:05:26.140 --> 00:05:28.480
+Ja imam projekte za sve oblasti poslovanja.
+
+79
+00:05:28.640 --> 00:05:34.520
+AI Profit Lab, finansije, neuro lab, Instagram dominacija, copywriting, SaaS alati.
+
+80
+00:05:34.860 --> 00:05:39.700
+Znači, za svaki projekat pravim posebnu fasciklu i u nju ubacujem sve vredne informacije.
+
+81
+00:05:39.920 --> 00:05:42.300
+Sedma stavka je Claude Google Chrome ekstenzija.
+
+82
+00:05:43.220 --> 00:05:52.160
+Povežete Claude i svoj pretraživač i Claude može da radi pretraživanja, otvara sajtove, skrejpuje i sve ono što možete i vi da radite.
+
+83
+00:05:52.400 --> 00:05:54.200
+Znači, to mi štedi mnogo vremena.
+
+84
+00:05:54.200 --> 00:06:00.800
+Tražite jeftine avio karte: kada ukucate direktno u Claude ili u nekom drugom alatu, on će vam dati podatke koji nisu ažurirani.
+
+85
+00:06:01.180 --> 00:06:07.080
+Ovako, date mu pristup i on pretražuje kao što biste vi radili, vidi šta je aktuelno, a ne one bajate cene.
+
+86
+00:06:07.320 --> 00:06:11.680
+Odličan primer je kada sam skoro tražio domen za jedan sajt, bilo je veoma teško naći.
+
+87
+00:06:12.020 --> 00:06:16.900
+Međutim, dobijem 100 predloga i sad ja treba da idem redom da vidim da li je taj domen slobodan ili nije.
+
+88
+00:06:17.460 --> 00:06:25.360
+Pustim Claude, ode u Google Chrome i bukvalno kaže: ovo je zauzeto, ovo je slobodno, da mi analizu, znači ne moram uopšte da gubim vreme.
+
+89
+00:06:25.360 --> 00:06:28.780
+Osma stavka, možda i najveća, je Claude Cowork.
+
+90
+00:06:29.140 --> 00:06:33.480
+Damo Claude-u pristup vašem računaru i on radi ono što biste vi radili.
+
+91
+00:06:33.780 --> 00:06:40.520
+Znači, ima pristup dokumentaciji, folderima, može da radi, da pravi aplikaciju, šta god mu vi kažete, on će raditi.
+
+92
+00:06:40.520 --> 00:06:42.480
+I to možete da radite sa daljine.
+
+93
+00:06:42.860 --> 00:06:46.360
+Ako vam je uključen kompjuter, možete sa telefona izdati komandu:
+
+94
+00:06:46.720 --> 00:06:50.340
+odradi to i to, analiziraj podatke koji se nalaze u toj i toj fascikli
+
+95
+00:06:50.340 --> 00:06:52.540
+i sve to radi za vas.
+
+96
+00:06:52.720 --> 00:06:56.240
+Na Biznis priče YouTube kanalu imam preko hiljadu i po šortsova.
+
+97
+00:06:56.360 --> 00:06:58.200
+Da bi se to skinulo, to je ozbiljan posao.
+
+98
+00:06:58.720 --> 00:07:01.040
+Claude Cowork mi je napravio Python skriptu,
+
+99
+00:07:01.200 --> 00:07:02.680
+pustio sam ga u pozadini da radi,
+
+100
+00:07:02.800 --> 00:07:05.900
+on je skinuo sve te klipove, stavio ih u foldere,
+
+101
+00:07:06.120 --> 00:07:09.900
+razvrstao po temama i sada imam tu bazu na jednom mestu.
+
+102
+00:07:09.900 --> 00:07:17.200
+Deveta stavka, Claude Design. Ne trebaju vam više dizajneri da biste pravili brutalan dizajn sajta, prezentacije, čega god.
+
+103
+00:07:17.420 --> 00:07:21.660
+Claude Design to radi umesto vas. Sve što treba da mu date su instrukcije.
+
+104
+00:07:21.760 --> 00:07:28.780
+Dopada mi se ovaj sajt, dopada mi se ovaj stil, treba da napraviš to, to i to. Pustite ga i dobijete gotov dizajn.
+
+105
+00:07:28.940 --> 00:07:35.360
+Kao što biste komunicirali i sa dizajnerom, dajete mu komentare šta treba da se ispravi i on u pozadini to ispravlja.
+
+106
+00:07:35.360 --> 00:07:40.280
+Na ovaj način možemo svake nedelje da izbacimo po nekoliko gotovih sajtova.
+
+107
+00:07:40.460 --> 00:07:46.000
+Ako želite da iskoristite AI da zaradite i unapredite svoj biznis, uđite u AI Profit Lab.
+
+108
+00:07:46.480 --> 00:07:51.320
+Tu vas čekaju gotove automatizacije, gotovi sistemi, samo ono što je dokazano u praksi.
+
+109
+00:07:51.460 --> 00:07:56.120
+Znači, nećete biti zatrpani informacijama, samo ono što testiramo na realnim biznisima,
+
+110
+00:07:56.260 --> 00:07:58.780
+to objavljujemo, a vi možete gotovo da prekopirate.
+
+111
+00:07:59.040 --> 00:08:04.240
+Uz kupon Vlast Digital imate skoro 40% popusta na prvi mesec. Link se nalazi u opisu.
+
+112
+00:08:04.240 --> 00:08:13.060
+To su bile najvažnije stavke iz Claude-a. Poenta je da primeniš bar jednu danas, nešto što nisi do sada isprobavao, probaj u praksi i vidi kako radi na tvom primeru.
+
+113
+00:08:13.280 --> 00:08:16.200
+Od ovog gledanja nema ništa, mora sve to da se primeni u praksi.
+
+114
+00:08:16.440 --> 00:08:19.500
+Ako ti je bilo korisno, lupi lajk, a vidimo se u narednoj lekciji.
