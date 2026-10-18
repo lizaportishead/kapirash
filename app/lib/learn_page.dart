@@ -120,11 +120,21 @@ class _LearnPageState extends State<LearnPage> {
               ? Row(
                   children: [
                     Expanded(
-                      child: BigButton(ui('Ещё учу'), bg: cCard2, fg: cText, onTap: () => _swipe.currentState?.fling(false)),
+                      child: BigButton(
+                        ui('Ещё учу'),
+                        bg: cCard2,
+                        fg: cText,
+                        onTap: () => _swipe.currentState?.fling(false),
+                      ),
                     ),
                     SizedBox(width: 8),
                     Expanded(
-                      child: BigButton(ui('Знаю'), bg: cAccent, fg: cInk, onTap: () => _swipe.currentState?.fling(true)),
+                      child: BigButton(
+                        ui('Знаю'),
+                        bg: cAccent,
+                        fg: cInk,
+                        onTap: () => _swipe.currentState?.fling(true),
+                      ),
                     ),
                   ],
                 )
@@ -247,7 +257,6 @@ class _FlipCard extends StatelessWidget {
   }
 }
 
-
 const _cKnow = Color(0xFF4CD964);
 const _cAgain = Color(0xFFFF5A4D);
 
@@ -329,14 +338,17 @@ class _SwipeCardState extends State<_SwipeCard> with SingleTickerProviderStateMi
                         opacity: p.abs(),
                         child: DecoratedBox(
                           decoration: BoxDecoration(
-                            color: cCard.withValues(alpha: 0.6),
                             borderRadius: BorderRadius.circular(28),
                             border: Border.all(color: color, width: 2),
                           ),
-                          child: Center(
-                            child: Text(
-                              p >= 0 ? ui('Знаю') : ui('Ещё учу'),
-                              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: color),
+                          child: Align(
+                            alignment: Alignment.topCenter,
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 24),
+                              child: Text(
+                                p >= 0 ? ui('Знаю') : ui('Ещё учу'),
+                                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: color),
+                              ),
                             ),
                           ),
                         ),
