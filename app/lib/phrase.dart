@@ -4,6 +4,7 @@ import 'dart:ui' as dui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 import 'store.dart';
 import 'subs.dart';
@@ -151,32 +152,73 @@ void showWord(
   // Кнопка «Словарь»: при добавлении шторка улетает к ней.
   GlobalKey? flyTo,
 }) {
-  final parts = [
-    for (final p in raw.split(RegExp(r'\s+')))
-      if (cleanWord(p).isNotEmpty) cleanWord(p),
-  ];
-  if (parts.isEmpty) return;
-  final word = parts.join(' ');
-  final lat = toLat(word), cyr = toCyr(lat), key = lat.toLowerCase();
-  final isPhrase = parts.length > 1;
-  // У фразы своей записи в словарике нет: перевод собираем из слов.
-  final entry = isPhrase ? null : dict[key] as List?;
-  final partTr = [
-    for (final p in parts)
-      if (dict[toLat(p).toLowerCase()] case final List e) '${toLat(p).toLowerCase()} — ${e[0]}',
-  ];
-  final wordsTr = partTr.map((l) => l.split(' — ').last).join(' · ');
-  final phraseTr = isPhrase ? _translatePhrase(lat) : null;
-  final tr = isPhrase ? wordsTr : (entry == null ? '' : entry[0] as String);
-  final note = entry == null ? '' : entry[1] as String;
-  final sheetKey = GlobalKey();
-  final overlay = Overlay.of(context, rootOverlay: true);
+  if (cleanWord(raw).isEmpty) return;
   showModalBottomSheet<void>(
     context: context,
     backgroundColor: cBg,
     isScrollControlled: true,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
-    builder: (ctx) => RepaintBoundary(
+    builder: (ctx) => WordCard(
+      raw: raw,
+      cue: cue,
+      dict: dict,
+      videoId: videoId,
+      place: place,
+      flyTo: flyTo,
+      onClose: () => Navigator.pop(ctx),
+    ),
+  );
+}
+
+/// Карточка слова: в шторке на телефоне и в правой колонке на десктопе.
+class WordCard extends StatefulWidget {
+  const WordCard({
+    super.key,
+    required this.raw,
+    required this.cue,
+    required this.dict,
+    required this.videoId,
+    required this.onClose,
+    this.place,
+    this.flyTo,
+  });
+  final String raw, videoId;
+  final Cue cue;
+  final Map<String, dynamic> dict;
+  final String? place;
+  final GlobalKey? flyTo;
+  final VoidCallback onClose;
+
+  @override
+  State<WordCard> createState() => _WordCardState();
+}
+
+class _WordCardState extends State<WordCard> {
+  final sheetKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    final cue = widget.cue, dict = widget.dict, place = widget.place, flyTo = widget.flyTo;
+    final parts = [
+      for (final p in widget.raw.split(RegExp(r'\s+')))
+        if (cleanWord(p).isNotEmpty) cleanWord(p),
+    ];
+    if (parts.isEmpty) return SizedBox.shrink();
+    final word = parts.join(' ');
+    final lat = toLat(word), cyr = toCyr(lat), key = lat.toLowerCase();
+    final isPhrase = parts.length > 1;
+    // У фразы своей записи в словарике нет: перевод собираем из слов.
+    final entry = isPhrase ? null : dict[key] as List?;
+    final partTr = [
+      for (final p in parts)
+        if (dict[toLat(p).toLowerCase()] case final List e) '${toLat(p).toLowerCase()} — ${e[0]}',
+    ];
+    final wordsTr = partTr.map((l) => l.split(' — ').last).join(' · ');
+    final phraseTr = isPhrase ? _translatePhrase(lat) : null;
+    final tr = isPhrase ? wordsTr : (entry == null ? '' : entry[0] as String);
+    final note = entry == null ? '' : entry[1] as String;
+    final overlay = Overlay.of(context, rootOverlay: true);
+    return RepaintBoundary(
       key: sheetKey,
       child: ColoredBox(
         color: cBg,
@@ -239,7 +281,27 @@ void showWord(
                       Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
                     ],
                   ],
-                  SizedBox(height: 16),
+                  if (!isPhrase)
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton.icon(
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                          minimumSize: Size.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        icon: Image.asset('assets/glosbe.png', width: 18, height: 18),
+                        label: Text(
+                          'Glosbe',
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted),
+                        ),
+                        onPressed: () => launchUrl(
+                          Uri.https('glosbe.com', '/sr/${store.lang == 'en' ? 'en' : 'ru'}/$cyr'),
+                          mode: LaunchMode.externalApplication,
+                        ),
+                      ),
+                    ),
+                  SizedBox(height: 12),
                   BigButton(
                     store.isSaved(key)
                         ? ui(isPhrase ? 'Убрать фразу' : 'Убрать слово')
@@ -250,7 +312,7 @@ void showWord(
                       final already = store.isSaved(key);
                       if (already) {
                         store.remove(key);
-                        if (ctx.mounted) Navigator.pop(ctx);
+                        if (mounted) widget.onClose();
                         return;
                       }
                       // Снимок шторки и её место снимаем до закрытия.
@@ -267,10 +329,10 @@ void showWord(
                           tr: (isPhrase ? await phraseTr : null) ?? tr,
                           ctx: cue.text,
                           t: cue.start,
-                          video: videoId,
+                          video: widget.videoId,
                         )..setLemmaFrom(dict),
                       );
-                      if (ctx.mounted) Navigator.pop(ctx);
+                      if (mounted) widget.onClose();
                       final tb = flyTo?.currentContext?.findRenderObject();
                       if (img != null && from != null && tb is RenderBox && tb.attached) {
                         final to = tb.localToGlobal(Offset.zero) & tb.size;
@@ -288,8 +350,8 @@ void showWord(
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 /// Снимок шторки сжимается и летит к кнопке «Словарь».

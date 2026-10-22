@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui' show PointerDeviceKind;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -30,8 +31,8 @@ List<_Slide> get _slides => [
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: ui('Учи *сербский* по\u00A0живым роликам'),
-    text: ui('Блогеры, путешествия, еда — с субтитрами и переводом на русский.'),
+    title: ui('Учи *сербский* на\u00A0живом материале'),
+    text: ui('Ролики, подкасты и книги — с сербскими субтитрами и переводом на русский.'),
     art: _ImageArt('assets/ill_onboarding.png'),
   ),
   _Slide(
@@ -40,7 +41,7 @@ List<_Slide> get _slides => [
     mark: cAccent,
     onMark: cInk,
     title: ui('Нажми на\u00A0*слово* — увидишь перевод.'),
-    text: ui('Каждое слово в субтитрах можно открыть, не уходя из ролика.'),
+    text: ui('Каждое слово в субтитрах и тексте книги можно открыть, не уходя с экрана.'),
     art: _WordArt(),
   ),
   _Slide(
@@ -48,10 +49,10 @@ List<_Slide> get _slides => [
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: kAddVideoEnabled ? ui('Собирай слова. *Добавляй* свои ролики.') : ui('Собирай *слова* из\u00A0роликов.'),
+    title: kAddVideoEnabled ? ui('Собирай *слова* отовсюду. *Добавляй* свои ролики.') : ui('Собирай *слова* из\u00A0роликов, подкастов и\u00A0книг.'),
     text: kAddVideoEnabled
-        ? ui('Сохранённые слова ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.')
-        : ui('Сохранённые слова ждут в словарике — повторяй их, когда удобно.'),
+        ? ui('Слова из роликов, подкастов и книг ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.')
+        : ui('Сохранённые слова ждут в словарике — повторяй их карточками и мини-тестами, когда удобно.'),
     art: _CardsArt(),
   ),
 ];
@@ -421,10 +422,18 @@ class _OnboardingShowcaseState extends State<OnboardingShowcase> {
           child: Column(
             children: [
               Expanded(
-                child: PageView(
-                  controller: _pages,
-                  onPageChanged: (i) => setState(() => _i = i),
-                  children: [for (final s in _slides) _SlideView(s, compact: true)],
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(
+                    dragDevices: {PointerDeviceKind.touch, PointerDeviceKind.mouse, PointerDeviceKind.trackpad},
+                  ),
+                  child: PageView(
+                    controller: _pages,
+                    onPageChanged: (i) {
+                      setState(() => _i = i);
+                      _restart();
+                    },
+                    children: [for (final s in _slides) _SlideView(s, compact: true)],
+                  ),
                 ),
               ),
               SizedBox(height: 8),

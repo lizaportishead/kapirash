@@ -172,7 +172,7 @@ class _HomeShellState extends State<HomeShell> {
     Widget buildPages() => IndexedStack(
       index: _tab,
       children: [
-        HomePage(onVideos: () => _select(_feed), onStories: () => _select(_stories), onWords: () => _select(_words)),
+        HomePage(onVideos: () => _select(_feed), onStories: () => _select(_stories), onPodcasts: () => _select(_podcasts)),
         FeedPage(),
         if (kAddVideoEnabled) MyVideosPage(),
         if (kStoriesTabEnabled) StoriesPage(),

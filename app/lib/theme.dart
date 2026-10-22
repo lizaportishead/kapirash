@@ -27,8 +27,10 @@ const cInk = Color(0xFF111114);
 const cOnInk = Color(0xFFFFFFFF);
 
 class Pill extends StatelessWidget {
-  const Pill(this.text, {super.key, this.on = false, this.label, this.icon, this.badge = 0, required this.onTap});
+  const Pill(this.text, {super.key, this.on = false, this.label, this.icon, this.badge = 0, this.onColor, required this.onTap});
   final String text;
+  /// Фон выбранной пилюли вместо стандартного; текст на нём тёмный.
+  final Color? onColor;
   final int badge;
   final IconData? icon;
   final String? label;
@@ -41,7 +43,7 @@ class Pill extends StatelessWidget {
       button: true,
       label: label,
       child: Material(
-        color: on ? cText : cCard2,
+        color: on ? (onColor ?? cText) : cCard2,
         borderRadius: BorderRadius.circular(999),
         child: InkWell(
           borderRadius: BorderRadius.circular(999),
@@ -57,12 +59,12 @@ class Pill extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Без текста — кнопка-иконка, значок крупнее.
-                  if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? cBg : cText),
+                  if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? (onColor != null ? cInk : cBg) : cText),
                   if (icon != null && text.isNotEmpty) SizedBox(width: 6),
                   if (text.isNotEmpty)
                     Text(
                       text,
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? cBg : cText),
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? (onColor != null ? cInk : cBg) : cText),
                     ),
                   if (badge > 0) ...[
                     SizedBox(width: 6),

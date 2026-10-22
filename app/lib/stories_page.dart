@@ -241,7 +241,7 @@ class StoriesPage extends StatelessWidget {
                   crossAxisCount: cols,
                   mainAxisSpacing: gap,
                   crossAxisSpacing: gap,
-                  mainAxisExtent: (cardW - 24) * 1.5 + 150,
+                  mainAxisExtent: (cardW - 24) + 156,
                 ),
                 itemCount: stories.length,
                 itemBuilder: (_, i) => _StoryCard(stories[i], vertical: true),
@@ -250,6 +250,38 @@ class StoriesPage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+final _pageCounts = <String, Future<int>>{};
+
+/// Число страниц текста рассказа (без обложки); считаем один раз на рассказ.
+Future<int> _storyPages(Story s) => _pageCounts.putIfAbsent(s.id, () async {
+  try {
+    final text = await rootBundle.loadString('assets/${s.asset}.txt');
+    return _StoryReaderState._paginate(text).length;
+  } catch (_) {
+    return 0;
+  }
+});
+
+class _PageCount extends StatelessWidget {
+  const _PageCount(this.story);
+  final Story story;
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<int>(
+      future: _storyPages(story),
+      builder: (_, snap) {
+        final n = snap.data ?? 0;
+        if (n == 0) return SizedBox.shrink();
+        return Padding(
+          padding: EdgeInsets.only(top: 4),
+          child: Text(ui('{0} стр.', [n]), style: TextStyle(fontSize: 13, color: cMuted)),
+        );
+      },
     );
   }
 }
@@ -272,7 +304,7 @@ class _StoryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             child: SizedBox(
               width: 100,
-              height: 150,
+              height: 100,
               child: ready
                   ? ExcludeSemantics(
                       child: Image.asset(
@@ -304,6 +336,7 @@ class _StoryCard extends StatelessWidget {
                 Text(story.author, style: TextStyle(fontSize: 13, color: cMuted)),
                 if (ready && story.level.isNotEmpty)
                   Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
+                if (ready) _PageCount(story),
                 SizedBox(height: 8),
                 if (!ready)
                   Text(
@@ -345,7 +378,7 @@ class _StoryCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: AspectRatio(
-              aspectRatio: 2 / 3,
+              aspectRatio: 1,
               child: ready
                   ? ExcludeSemantics(
                       child: Image.asset(
@@ -379,6 +412,7 @@ class _StoryCard extends StatelessWidget {
           ),
           if (ready && story.level.isNotEmpty)
             Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
+          if (ready) _PageCount(story),
           SizedBox(height: 8),
           Expanded(
             child: ready

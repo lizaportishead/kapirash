@@ -46,7 +46,7 @@ class PodcastsPage extends StatelessWidget {
           Expanded(
             child: ListView(
               padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
-              children: [for (final p in podcasts) _EpisodeTile(p)],
+              children: [for (final p in podcasts) EpisodeTile(p)],
             ),
           ),
         ],
@@ -62,8 +62,8 @@ void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay 
   );
 }
 
-class _EpisodeTile extends StatelessWidget {
-  const _EpisodeTile(this.video);
+class EpisodeTile extends StatelessWidget {
+  const EpisodeTile(this.video, {super.key});
   final Video video;
 
   @override

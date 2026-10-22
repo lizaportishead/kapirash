@@ -1,19 +1,47 @@
 import 'package:flutter/material.dart';
 
-import 'icons.dart';
 import 'recommend.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'l10n.dart';
 
 Map<String, (String, String, String)> get _levelInfo => {
-  'A': (ui('Знаю основы'), 'A2', ui('Знаю базовые слова и простые фразы. Нужны короткие ролики и неспешная речь.')),
+  'A': (ui('Начальный'), 'A2', ui('Знаю базовые слова и простые фразы. Нужны короткие ролики и неспешная речь.')),
   'B1': (
-    ui('Могу объясниться'),
+    ui('Средний'),
     'B1',
     ui('Понимаю суть, когда говорят неспешно и о знакомом. Не хватает слов, чтобы следить за всем.'),
   ),
-  'B2': (ui('Понимаю почти всё'), 'B2+', ui('Смотрю без подготовки. Хочу живую речь, сленг и тонкости.')),
+  'B2': (ui('Высокий'), 'B2+', ui('Смотрю без подготовки. Хочу живую речь, сленг и тонкости.')),
+};
+
+const _topicGroups = <(String, List<String>)>[
+  ('Путешествия и мир', ['Путешествия', 'Город', 'История', 'Политика']),
+  ('Наука и технологии', ['Наука', 'Эксперименты', 'IT', 'Авто']),
+  ('Повседневная жизнь', ['Быт', 'Еда', 'Здоровье', 'Красота', 'Спорт', 'Деньги']),
+  ('Люди и творчество', ['Психология', 'Культура', 'Дизайн', 'Юмор', 'Язык']),
+];
+
+const _topicEmoji = <String, String>{
+  'Путешествия': '🧳',
+  'Город': '🏙️',
+  'История': '🏛️',
+  'Политика': '🗳️',
+  'Наука': '🔬',
+  'Эксперименты': '🧪',
+  'IT': '💻',
+  'Авто': '🚗',
+  'Быт': '🏠',
+  'Еда': '🍳',
+  'Здоровье': '🩺',
+  'Красота': '💄',
+  'Спорт': '⚽',
+  'Деньги': '💰',
+  'Психология': '🧠',
+  'Культура': '🎭',
+  'Дизайн': '🎨',
+  'Юмор': '😄',
+  'Язык': '🗣️',
 };
 
 /// Анкета после онбординга: уровень и темы. Первый раз показывается вместо каталога, из профиля открывается поверх него.
@@ -153,6 +181,21 @@ class _SurveyPageState extends State<SurveyPage> {
     );
   }
 
+  /// Темы каталога по группам; то, чего нет в группах (новые темы), уходит в «Другое».
+  List<(String, List<String>)> _groups() {
+    final left = {..._all};
+    final res = <(String, List<String>)>[];
+    for (final (title, topics) in _topicGroups) {
+      final list = [
+        for (final t in topics)
+          if (left.remove(t)) t,
+      ];
+      if (list.isNotEmpty) res.add((ui(title), list));
+    }
+    if (left.isNotEmpty) res.add((ui('Другое'), left.toList()));
+    return res;
+  }
+
   Widget _topicStep() {
     return ListView(
       padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
@@ -164,19 +207,29 @@ class _SurveyPageState extends State<SurveyPage> {
           style: TextStyle(fontSize: 15, height: 1.4, color: cMuted),
         ),
         SizedBox(height: 20),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final t in _all)
-              Pill(
-                topicLabel(t),
-                on: _topics.contains(t),
-                icon: _topics.contains(t) ? KIcons.done : null,
-                onTap: () => setState(() => _topics.contains(t) ? _topics.remove(t) : _topics.add(t)),
-              ),
-          ],
-        ),
+        for (final (title, list) in _groups()) ...[
+          Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cMuted),
+            ),
+          ),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final t in list)
+                Pill(
+                  '${_topicEmoji[t] ?? '✨'} ${topicLabel(t)}',
+                  on: _topics.contains(t),
+                  onColor: cAccent,
+                  onTap: () => setState(() => _topics.contains(t) ? _topics.remove(t) : _topics.add(t)),
+                ),
+            ],
+          ),
+          SizedBox(height: 22),
+        ],
       ],
     );
   }

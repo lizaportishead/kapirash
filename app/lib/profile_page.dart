@@ -35,6 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return [
       if (email == null) _SignIn() else _account(email),
       SizedBox(height: 18),
+      // Карточки с фактами пока скрыты: _stats().
       _Group([
         _Row(
           icon: Icons.translate_rounded,
@@ -50,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         _Row(
           icon: Icons.language_rounded,
-          title: ui('Язык приложения'),
+          title: ui('Язык'),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -81,6 +82,21 @@ class _ProfilePageState extends State<ProfilePage> {
         _Group([_Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut)]),
       ],
     ];
+  }
+
+  // ignore: unused_element
+  Widget _stats() {
+    const tags = {'A': 'A2', 'B1': 'B1', 'B2': 'B2+'};
+    final tasks = store.quiz.length;
+    return Row(
+      children: [
+        Expanded(child: _Stat(tags[store.level] ?? '—', ui('уровень'))),
+        SizedBox(width: 8),
+        Expanded(child: _Stat('$tasks', ui('заданий выполнено'))),
+        SizedBox(width: 8),
+        Expanded(child: _Stat('${store.words.length}', ui('слов добавлено'))),
+      ],
+    );
   }
 
   Widget _account(String email) {
@@ -205,6 +221,34 @@ class _Row extends StatelessWidget {
               ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _Stat extends StatelessWidget {
+  const _Stat(this.value, this.label);
+  final String value;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.5, color: cText),
+          ),
+          SizedBox(height: 4),
+          Text(
+            label,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12, height: 1.25, color: cMuted),
+          ),
+        ],
       ),
     );
   }

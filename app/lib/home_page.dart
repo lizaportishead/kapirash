@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'feed_page.dart';
 import 'icons.dart';
-import 'learn_page.dart';
 import 'main.dart' show kStoriesTabEnabled;
 import 'liked_page.dart';
+import 'podcasts_page.dart';
 import 'recommend.dart';
 import 'search_page.dart';
 import 'stories_page.dart';
@@ -14,12 +14,12 @@ import 'theme.dart';
 import 'videos.dart';
 import 'l10n.dart';
 
-/// Главная: ролики, шортсы и рассказы под ответы анкеты, плюс короткая тренировка слов.
+/// Главная: ролики, шортсы и рассказы под ответы анкеты, плюс подкасты.
 class HomePage extends StatelessWidget {
-  const HomePage({super.key, required this.onVideos, required this.onStories, required this.onWords});
+  const HomePage({super.key, required this.onVideos, required this.onStories, required this.onPodcasts});
 
   /// Переходы на вкладки таббара.
-  final VoidCallback onVideos, onStories, onWords;
+  final VoidCallback onVideos, onStories, onPodcasts;
 
   @override
   Widget build(BuildContext context) {
@@ -94,10 +94,7 @@ class HomePage extends StatelessWidget {
               ClipsStrip(title: ui('Шортсы для тебя'), list: shorts),
               VideoSection(title: ui('Ролики для тебя'), list: forYou, onAll: onVideos),
               if (kStoriesTabEnabled) _Books(books, onAll: onStories),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                child: _TrainWords(onWords: onWords),
-              ),
+              _Podcasts(onAll: onPodcasts),
             ],
           ),
         ),
@@ -228,146 +225,23 @@ class _BookCard extends StatelessWidget {
   }
 }
 
-/// Компактный блок тренировки: ряд карточек со словами (нажми — увидишь перевод) и переходы к словам.
-class _TrainWords extends StatefulWidget {
-  const _TrainWords({required this.onWords});
-  final VoidCallback onWords;
-
-  @override
-  State<_TrainWords> createState() => _TrainWordsState();
-}
-
-class _TrainWordsState extends State<_TrainWords> {
-  static const _shown = 8;
-  // Переставляем при каждом «Другие слова»; ключи, а не объекты — слова могут удалить, пока экран открыт.
-  late List<String> _order = _shuffled();
-  final _flipped = <String>{};
-
-  List<String> _shuffled() => ([...store.words]..shuffle()).map((w) => w.key).toList();
-
-  void _reshuffle() => setState(() {
-    _order = _shuffled();
-    _flipped.clear();
-  });
+/// Несколько эпизодов подкастов с переходом ко всей вкладке.
+class _Podcasts extends StatelessWidget {
+  const _Podcasts({required this.onAll});
+  final VoidCallback onAll;
 
   @override
   Widget build(BuildContext context) {
-    final words = store.words;
-    // Пока нет ни одного сохранённого слова, тренировать нечего — блок не показываем.
-    if (words.isEmpty) return SizedBox.shrink();
-    final byKey = {for (final w in words) w.key: w};
-    // Новые слова ставим в конец очереди, удалённые пропускаем.
-    final list = [
-      for (final k in _order)
-        if (byKey.containsKey(k)) byKey[k]!,
-      for (final w in words)
-        if (!_order.contains(w.key)) w,
-    ].take(_shown).toList();
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 16),
-      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(28)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 16, right: 8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    ui('Тренируй слова'),
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
-                  ),
-                ),
-                if (words.length > 1)
-                  IconButton(
-                    tooltip: ui('Другие слова'),
-                    visualDensity: VisualDensity.compact,
-                    icon: Icon(KIcons.refresh, size: 20, color: cMuted),
-                    onPressed: _reshuffle,
-                  ),
-              ],
-            ),
-          ),
-          SizedBox(height: 8),
-          SizedBox(
-            height: 104,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              itemCount: list.length,
-              separatorBuilder: (_, _) => SizedBox(width: 10),
-              itemBuilder: (_, i) => _WordCard(
-                list[i],
-                flipped: _flipped.contains(list[i].key),
-                onTap: () => setState(() {
-                  final k = list[i].key;
-                  _flipped.contains(k) ? _flipped.remove(k) : _flipped.add(k);
-                }),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 14, 16, 0),
-            child: BigButton(ui('Тренировать'), onTap: () => openLearn(context)),
-          ),
-          SizedBox(height: 4),
-          TextButton(
-            onPressed: widget.onWords,
-            style: TextButton.styleFrom(foregroundColor: cViolet),
-            child: Text(
-              ui('Словарь · {0}', [words.length]),
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _WordCard extends StatelessWidget {
-  const _WordCard(this.w, {required this.flipped, required this.onTap});
-  final SavedWord w;
-  final bool flipped;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      label: flipped ? ui('Перевод: {0}', [w.tr]) : ui('Слово {0}, нажми, чтобы увидеть перевод', [store.conv(w.key)]),
-      child: Material(
-        color: flipped ? cAccent : cBg,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-          side: BorderSide(color: flipped ? cAccent : cLine, width: 1.5),
+    if (podcasts.isEmpty) return SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SectionHeader(ui('Подкасты для тебя'), onAll: onAll, allLabel: ui('Все')),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: Column(children: [for (final p in podcasts.take(3)) EpisodeTile(p)]),
         ),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(20),
-          onTap: onTap,
-          child: SizedBox(
-            width: 128,
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  flipped ? (w.tr.isEmpty ? '—' : w.tr) : store.conv(w.key),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                    height: 1.15,
-                    color: flipped ? cInk : cText,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
+      ],
     );
   }
 }
