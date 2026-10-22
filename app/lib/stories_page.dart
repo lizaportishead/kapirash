@@ -73,6 +73,46 @@ const stories = [
     level: 'B2',
     asset: 'story_poslednje_eho',
   ),
+  Story(
+    id: 'princeza-na-zrnu-grasku',
+    title: 'Princeza na zrnu graška',
+    author: 'Hans Kristijan Andersen',
+    blurb:
+        'Kratka bajka o princu koji traži pravu princezu: kad jedne olujne noći neko zakuca na vrata, '
+        'kraljica pod dvadeset dušeka stavlja zrno graška da to proveri.',
+    level: 'B1',
+    asset: 'story_princeza_na_zrnu_grasku',
+  ),
+  Story(
+    id: 'u-cara-trojana-kozje-usi',
+    title: 'U cara Trojana kozje uši',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Car Trojan ima kozje uši i seče svakog berberina koji ih vidi, a berberski momak nosi tajnu '
+        'dok je ne poveri zemlji – iz jame ipak izraste zova.',
+    level: 'B1',
+    asset: 'story_u_cara_trojana_kozje_usi',
+  ),
+  Story(
+    id: 'kako-su-radile',
+    title: 'Kako su radile onako su i prošle',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Dobru pastorku maćeha otera od kuće, a ona kod ale pomaže i dobija sanduk dukata; '
+        'maćehina rođena kći se vraća s ništa manje nego što je zaslužila.',
+    level: 'B1',
+    asset: 'story_kako_su_radile_onako_su_i_prosle',
+  ),
+  Story(
+    id: 'prava-se-muka-ne-da-sakriti',
+    title: 'Prava se muka ne da sakriti',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Sluga dobija samo novčić za godinu dana službe i baca ga u vodu da vidi da li ga je zaslužio – '
+        'a novčić, pretvoren u mačka, na kraju mu donosi pravo bogatstvo.',
+    level: 'B2',
+    asset: 'story_prava_se_muka_ne_da_sakriti',
+  ),
   Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
   Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
   Story(
