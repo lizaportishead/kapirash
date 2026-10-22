@@ -55,9 +55,11 @@ class PodcastsPage extends StatelessWidget {
   }
 }
 
-void openPodcast(BuildContext context, Video v, {double? startAt}) {
+void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay = false}) {
   store.markWatched(v.id);
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => PodcastPlayerPage(video: v, startAt: startAt)));
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay)),
+  );
 }
 
 class _EpisodeTile extends StatelessWidget {
@@ -79,7 +81,7 @@ class _EpisodeTile extends StatelessWidget {
             padding: EdgeInsets.all(12),
             child: Row(
               children: [
-                _Cover(size: 64),
+                _Cover(size: 64, channel: video.channel),
                 SizedBox(width: 12),
                 Expanded(
                   child: Column(
@@ -104,7 +106,20 @@ class _EpisodeTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                Icon(KIcons.caretRight, size: 18, color: cFaint),
+                SizedBox(width: 8),
+                Semantics(
+                  button: true,
+                  label: ui('Играть'),
+                  child: Material(
+                    color: cViolet,
+                    shape: CircleBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    child: InkWell(
+                      onTap: () => openPodcast(context, video, autoplay: true),
+                      child: SizedBox(width: 44, height: 44, child: Icon(KIcons.play, size: 22, color: cOnViolet)),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -114,26 +129,47 @@ class _EpisodeTile extends StatelessWidget {
   }
 }
 
-/// Обложка-заглушка: у подкастов своей картинки у нас нет.
+/// Обложки шоу лежат в сборке; у шоу без картинки остаётся фиолетовая плитка с наушниками.
+const _covers = {'Naša posla': 'assets/podcast_nasa_posla.jpg', 'SBS na srpskom': 'assets/podcast_sbs.jpg'};
+
 class _Cover extends StatelessWidget {
-  const _Cover({required this.size});
+  const _Cover({required this.size, required this.channel});
   final double size;
+  final String channel;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final radius = BorderRadius.circular(size * 0.28);
+    final placeholder = Container(
       width: size,
       height: size,
-      decoration: BoxDecoration(color: cViolet, borderRadius: BorderRadius.circular(size * 0.28)),
+      decoration: BoxDecoration(color: cViolet, borderRadius: radius),
       child: Icon(KIcons.headphonesOn, size: size * 0.5, color: cOnViolet),
+    );
+    final asset = _covers[channel];
+    if (asset == null) return placeholder;
+    return ExcludeSemantics(
+      child: ClipRRect(
+        borderRadius: radius,
+        child: Image.asset(
+          asset,
+          width: size,
+          height: size,
+          fit: BoxFit.cover,
+          errorBuilder: (_, _, _) => placeholder,
+        ),
+      ),
     );
   }
 }
 
 class PodcastPlayerPage extends StatefulWidget {
-  const PodcastPlayerPage({super.key, required this.video, this.startAt});
+  const PodcastPlayerPage({super.key, required this.video, this.startAt, this.autoplay = false});
   final Video video;
   final double? startAt;
+
+  /// Открыли по кнопке плей в списке: звук запускается сразу.
+  final bool autoplay;
 
   @override
   State<PodcastPlayerPage> createState() => _PodcastPlayerPageState();
@@ -184,6 +220,10 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
       await _audio.setSourceUrl(widget.video.audio);
       if (from > 0) await _audio.seek(Duration(milliseconds: (from * 1000).round()));
       if (mounted) setState(() => _pos = from);
+      if (widget.autoplay && mounted) {
+        _started = true;
+        await _audio.resume();
+      }
     } catch (_) {}
   }
 
@@ -308,7 +348,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                         children: [
                           Row(
                             children: [
-                              _Cover(size: 72),
+                              _Cover(size: 72, channel: widget.video.channel),
                               SizedBox(width: 12),
                               Expanded(
                                 child: Column(
