@@ -600,6 +600,33 @@ const _builtInPodcasts = <Video>[
     kind: 'podcast',
     audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261022170320_402989-serbian-44b229ef-c243-42ef-ba1c-758d111d4a51.mp3',
   ),
+  Video(
+    id: 'sbs-zakoni',
+    title: 'Kako se zakoni menjaju i zašto je za to potrebno vreme',
+    channel: 'SBS na srpskom',
+    topic: 'Общество',
+    duration: '7:26',
+    kind: 'podcast',
+    audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261020061743_850436-serbian-8d7cb109-2432-44d1-b022-ccea92cadf43.mp3',
+  ),
+  Video(
+    id: 'sbs-mehta',
+    title: 'Zubin Mehta sa Beogradskom filharmonijom na koncertu u čast svog 90. rođendana',
+    channel: 'SBS na srpskom',
+    topic: 'Культура',
+    duration: '4:45',
+    kind: 'podcast',
+    audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261020091610_579143-serbian-8523fdce-b07f-4e44-ae19-5534b888ca91.mp3',
+  ),
+  Video(
+    id: 'sbs-sajam',
+    title: 'Najavljeni program i učesnici 69. Međunarodnog beogradskog sajma knjiga',
+    channel: 'SBS na srpskom',
+    topic: 'Культура',
+    duration: '4:48',
+    kind: 'podcast',
+    audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261021065959_768683-mp-sajam-knjiga.mp3',
+  ),
 ];
 
 const _builtInClips = <Video>[
