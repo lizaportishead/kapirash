@@ -308,6 +308,7 @@ const _en = <String, String>{
   'Предыдущая страница': 'Previous page',
   'Следующая страница': 'Next page',
   'Начало': 'Start',
+  'Источник: {0}': 'Source: {0}',
   'Знаю основы': 'I know the basics',
   'Могу объясниться': 'I can get by',
   'Понимаю почти всё': 'I understand almost everything',

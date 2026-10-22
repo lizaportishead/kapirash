@@ -12,8 +12,8 @@ import 'l10n.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
 class Story {
-  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.level = '', this.asset});
-  final String id, title, author, blurb, level;
+  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.level = '', this.asset, this.source = ''});
+  final String id, title, author, blurb, level, source;
   final String? asset;
 
   bool get ready => asset != null;
@@ -82,6 +82,7 @@ const stories = [
         'kraljica pod dvadeset dušeka stavlja zrno graška da to proveri.',
     level: 'B1',
     asset: 'story_princeza_na_zrnu_grasku',
+    source: 'Hans Kristijan Andersen, Bajke, prevod Đido (1888), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
     id: 'u-cara-trojana-kozje-usi',
@@ -92,6 +93,7 @@ const stories = [
         'dok je ne poveri zemlji – iz jame ipak izraste zova.',
     level: 'B1',
     asset: 'story_u_cara_trojana_kozje_usi',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
     id: 'kako-su-radile',
@@ -102,6 +104,7 @@ const stories = [
         'maćehina rođena kći se vraća s ništa manje nego što je zaslužila.',
     level: 'B1',
     asset: 'story_kako_su_radile_onako_su_i_prosle',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
     id: 'prava-se-muka-ne-da-sakriti',
@@ -112,6 +115,62 @@ const stories = [
         'a novčić, pretvoren u mačka, na kraju mu donosi pravo bogatstvo.',
     level: 'B2',
     asset: 'story_prava_se_muka_ne_da_sakriti',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'medved-svinja-i-lisica',
+    title: 'Međed, svinja i lisica',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Međed, svinja i lisica zajedno siju i žanju pšenicu, ali kad treba da je podele, '
+        'međed prevari lisicu – a ona se sveti na svoj način.',
+    level: 'B1',
+    asset: 'story_medved_svinja_i_lisica',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'dva-novca',
+    title: 'Dva novca',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Dva čoveka zamene vreće – jedan donosi mahovinu umesto vune, drugi šišarice umesto oraha – '
+        'pa se dugo sudare oko dva novca duga, sve dok ne dođe do neobične poente.',
+    level: 'B2',
+    asset: 'story_dva_novca',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'djavo-i-njegov-segrt',
+    title: 'Đavo i njegov šegrt',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Dečak ode u svet da nauči zanat, ali mu se za majstora ponudi đavo u zelenim haljinama '
+        'i odvede ga na dno vode.',
+    level: 'B2',
+    asset: 'story_djavo_i_njegov_segrt',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'opet-maceha-i-pastorka',
+    title: 'Opet maćeha i pastorka',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Maćeha tera muža da odvede decu u planinu; deca beleže put pepelom, ali ih '
+        'sledeća noć dovodi u neobičnu opasnost.',
+    level: 'B2',
+    asset: 'story_opet_maceha_i_pastorka',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'slava',
+    title: 'Slava',
+    author: 'Radoje Domanović',
+    blurb:
+        'Jedne kišne jeseni pripovedač na putu kući sreće malog Mijata, pastira, i otkriva '
+        'kako njegova porodica proslavlja slavu uprkos oskudici.',
+    level: 'C1',
+    asset: 'story_slava',
+    source: 'Radoje Domanović, Slava (1903), preuzeto sa sr.wikisource.org (domanovic.org); tekst prenet u latinicu',
   ),
   Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
   Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
@@ -463,7 +522,7 @@ class _StoryReaderState extends State<StoryReader> {
                               setState(() => _i = i);
                               store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
                             },
-                            itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1]),
+                            itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1], last: i == _count - 1),
                           ),
                         ),
                 ),
@@ -510,7 +569,7 @@ class _StoryReaderState extends State<StoryReader> {
     );
   }
 
-  Widget _text(List<List<_Token>> paragraphs) {
+  Widget _text(List<List<_Token>> paragraphs, {bool last = false}) {
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
       child: Column(
@@ -524,6 +583,13 @@ class _StoryReaderState extends State<StoryReader> {
                 children: [for (final t in para) _word(t)],
               ),
             ),
+          if (last && widget.story.source.isNotEmpty) ...[
+            SizedBox(height: 8),
+            Text(
+              ui('Источник: {0}', [widget.story.source]),
+              style: TextStyle(fontSize: 12, height: 1.45, color: cFaint),
+            ),
+          ],
         ],
       ),
     );
