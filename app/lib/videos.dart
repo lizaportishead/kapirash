@@ -90,6 +90,8 @@ const _ytViews = <String, int>{
   'ta4_7-GrAL0': 23796,
   'Su6oB9ZJB8U': 21562,
   'wZb4X0JnC6w': 122746,
+  'it3nCG6JtYw': 5106,
+  'aMBnmigQgQw': 4774,
 };
 
 /// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
@@ -492,6 +494,22 @@ const _builtInVideos = <Video>[
     topic: 'Наука',
     level: 'B2',
     duration: '10:28',
+  ),
+  Video(
+    id: 'it3nCG6JtYw',
+    title: 'Izveštaj sa terena 27.04. - Radna akcija sa Tamarom',
+    channel: 'Radna akcija sa Tamarom',
+    topic: 'Быт',
+    level: 'B1',
+    duration: '4:02',
+  ),
+  Video(
+    id: 'aMBnmigQgQw',
+    title: 'RADNA AKCIJA SA TAMAROM *Sa terena | Kako brzo i lako zapaliti peć, šporet ili kamin? KORAK PO KORAK',
+    channel: 'Radna akcija sa Tamarom',
+    topic: 'Быт',
+    level: 'B1',
+    duration: '3:48',
   ),
   Video(
     id: 'pZKCi5CwagI',
