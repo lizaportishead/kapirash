@@ -1,0 +1,176 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What opened in Serbia?",
+     "o": [
+      "The first water park",
+      "The first alpaca café",
+      "The first goat farm",
+      "The first zoo"
+     ],
+     "a": 1,
+     "e": "In the video: \"otvoren je prvi alpaka kafe u Srbiji\" — the first alpaca café in Serbia has opened."
+    },
+    {
+     "q": "Where is the café located?",
+     "o": [
+      "Near Novi Sad",
+      "Near Zrenjanin, inside the Trofej restaurant",
+      "In Belgrade, in Vračar",
+      "In Niš"
+     ],
+     "a": 1,
+     "e": "In the video: \"U blizini Zrenjanina, u okviru restorana Trofej\" — near Zrenjanin, inside the Trofej restaurant."
+    },
+    {
+     "q": "How much does entry cost and what does it include?",
+     "o": [
+      "500 dinars, lunch",
+      "Entry is free",
+      "1200 dinars, unlimited drinks",
+      "2000 dinars, photos only"
+     ],
+     "a": 2,
+     "e": "In the video: \"plaćate kartu u iznosu od 1200 dinara, uz koju dobijete neograničeno piće\" — you pay for a ticket of 1200 dinars, with which you get unlimited drinks."
+    },
+    {
+     "q": "From which side should you approach the alpacas?",
+     "o": [
+      "From the side",
+      "From any side",
+      "Only from the front",
+      "Only from behind"
+     ],
+     "a": 2,
+     "e": "In the video: \"Alpakicama se prilazi isključivo sa prednje strane, kako bi vas videle\" — alpacas are approached exclusively from the front so that they can see you."
+    },
+    {
+     "q": "Can you take photos and shoot video?",
+     "o": [
+      "Only for a fee",
+      "No, it's forbidden",
+      "Yes, as much as you like",
+      "Only without flash"
+     ],
+     "a": 2,
+     "e": "In the video: \"slikanje i snimanje dozvoljeno, što se kaže, do mile volje\" — photos and filming are allowed, as they say, to your heart's content."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na ulazu plaćate *kartu*.",
+     "o": [
+      "tax",
+      "fine",
+      "tip",
+      "ticket"
+     ],
+     "a": 3,
+     "e": "Karta — a ticket."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Uz kartu dobijete *neograničeno* piće.",
+     "o": [
+      "cold",
+      "for free",
+      "unlimited",
+      "a little"
+     ],
+     "a": 2,
+     "e": "Neograničeno — unlimited; granica — border."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hranite ih kad u ruci imate *šargarepu*.",
+     "o": [
+      "apple",
+      "hay",
+      "carrot",
+      "cabbage"
+     ],
+     "a": 2,
+     "e": "Šargarepa — carrot."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Veoma su druželjubive i *umiljate*.",
+     "o": [
+      "stubborn",
+      "noisy",
+      "lazy",
+      "affectionate"
+     ],
+     "a": 3,
+     "e": "Umiljat — affectionate, cute."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U blizini ___ nalazi se kafe.",
+     "o": [
+      "Zrenjanina",
+      "Zrenjaninom",
+      "Zrenjaninu",
+      "Zrenjanin"
+     ],
+     "a": 0,
+     "e": "U blizini (\"near\") requires the genitive case: Zrenjanina."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na ulazu plaćate ___.",
+     "o": [
+      "karta",
+      "kartom",
+      "kartu",
+      "karte"
+     ],
+     "a": 2,
+     "e": "Plaćati what — accusative case: kartu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Alpakicama se prilazi isključivo sa prednje ___.",
+     "o": [
+      "strana",
+      "stranu",
+      "strane",
+      "stranom"
+     ],
+     "a": 2,
+     "e": "Sa prednje strane — \"from the front side\"; genitive case."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U okviru ___ Trofej.",
+     "o": [
+      "restoranom",
+      "restoran",
+      "restorana",
+      "restoranu"
+     ],
+     "a": 2,
+     "e": "U okviru (\"within, as part of\") requires the genitive case: restorana."
+    }
+   ]
+  }
+ ]
+}

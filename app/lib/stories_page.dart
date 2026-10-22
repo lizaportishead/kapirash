@@ -75,7 +75,17 @@ const stories = [
   ),
   Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
   Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
-  Story(id: 'snezna-kraljica', title: 'Snežna kraljica', author: 'Hans Kristijan Andersen'),
+  Story(
+    id: 'snezna-kraljica',
+    title: 'Snežna kraljica',
+    author: 'Hans Kristijan Andersen',
+    blurb:
+        'Bajka H. K. Andersena u sedam priča: komadić đavoljeg ogledala zalazi dečaku Kaju u oko i srce, '
+        'Snežna kraljica ga odvodi u svoje ledeno carstvo, a mala Gerda kreće da ga potraži. '
+        'Za sada je dostupan samo početak bajke, ostatak stiže uskoro.',
+    level: 'B2',
+    asset: 'story_snezna_kraljica',
+  ),
   Story(id: 'palcica', title: 'Palčica', author: 'Hans Kristijan Andersen'),
 ];
 

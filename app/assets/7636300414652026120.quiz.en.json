@@ -1,0 +1,176 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Which dessert would the author choose as the most perfect?",
+     "o": [
+      "Cheesecake",
+      "Apple pie",
+      "Tiramisu",
+      "Ice cubes (a cake)"
+     ],
+     "a": 3,
+     "e": "In the video: \"Da biram najsavršeniji kolač, to bi bile ledene kocke\" — if I had to choose the most perfect cake, it would be the ice cubes."
+    },
+    {
+     "q": "What is the topping for the cake base made of?",
+     "o": [
+      "Juice and gelatin",
+      "Water, sugar and vanilla sugar",
+      "Butter and honey",
+      "Milk and flour"
+     ],
+     "a": 1,
+     "e": "In the video: \"pravim preliv od vode, šećera i vanilin šećera\" — I make a topping from water, sugar and vanilla sugar."
+    },
+    {
+     "q": "How is the hot topping applied?",
+     "o": [
+      "Into the pan before the dough",
+      "On a cold cake layer",
+      "On the cream",
+      "On a hot cake layer"
+     ],
+     "a": 3,
+     "e": "In the video: \"Vruć preliv ide preko vruće kore\" — the hot topping goes over the hot cake layer."
+    },
+    {
+     "q": "What is added to the thickened cream while it is hot?",
+     "o": [
+      "Eggs",
+      "Butter",
+      "Chocolate",
+      "Cocoa"
+     ],
+     "a": 1,
+     "e": "In the video: \"dok je još vruće dodajem puter\" — while it's still hot I add butter."
+    },
+    {
+     "q": "What is the chocolate layer made of?",
+     "o": [
+      "Cocoa and milk",
+      "Dark chocolate and sweet cream",
+      "White chocolate",
+      "Nuts and honey"
+     ],
+     "a": 1,
+     "e": "In the video: \"Čokoladni sloj pravim od Dr. Oetker crne čokolade, otopljene u slatkoj pavlaci.\" — I make the chocolate layer from Dr. Oetker dark chocolate melted in sweet cream."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Umutim* jaja sa šećerom.",
+     "o": [
+      "I will boil",
+      "I will break",
+      "I will fry",
+      "I will whisk"
+     ],
+     "a": 3,
+     "e": "Umutiti — to whisk, to mix until smooth."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dodam *brašno*, kakao prah i prašak za pecivo.",
+     "o": [
+      "salt",
+      "milk",
+      "flour",
+      "butter"
+     ],
+     "a": 2,
+     "e": "Brašno — flour."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mešam dok se ne *zgusne*.",
+     "o": [
+      "will come to a boil",
+      "will cool down",
+      "will burn",
+      "will thicken"
+     ],
+     "a": 3,
+     "e": "Zgusnuti se — to thicken, from gust \"thick\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za fil u mleko dodajem šećer, pa kad *provri*.",
+     "o": [
+      "will run over",
+      "will come to a boil",
+      "will cool down",
+      "will curdle"
+     ],
+     "a": 1,
+     "e": "Provreti — to come to a boil, to start boiling."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Vruć preliv ide preko vruće ___.",
+     "o": [
+      "kora",
+      "kore",
+      "koru",
+      "korom"
+     ],
+     "a": 1,
+     "e": "Preko (\"over, on top of\") requires the genitive case: preko kore."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Razmućeno brašno u ostatku ___.",
+     "o": [
+      "mleku",
+      "mlekom",
+      "mleka",
+      "mleko"
+     ],
+     "a": 2,
+     "e": "Ostatak (\"the rest\") requires the genitive case: u ostatku mleka — \"in the rest of the milk\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Čokoladni sloj pravim od crne čokolade, otopljene u slatkoj ___.",
+     "o": [
+      "pavlaku",
+      "pavlakom",
+      "pavlaka",
+      "pavlaci"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" requires the locative case: u pavlaci."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dodam brašno, kakao prah i ___ za pecivo.",
+     "o": [
+      "praška",
+      "praškom",
+      "prašku",
+      "prašak"
+     ],
+     "a": 3,
+     "e": "The object of dodati is in the accusative case; for inanimate nouns it coincides with the nominative: prašak."
+    }
+   ]
+  }
+ ]
+}

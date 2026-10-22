@@ -1,0 +1,176 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the heroine have left in the fridge?",
+     "o": [
+      "A bottle of wine",
+      "Half a jar of sour cream",
+      "Nothing",
+      "Cheese"
+     ],
+     "a": 1,
+     "e": "In the video: \"Imam stres, dugove i pola pavlake u frižideru\" — I have stress, debts and half a jar of sour cream in the fridge."
+    },
+    {
+     "q": "How much cash does the heroine have?",
+     "o": [
+      "A hundred euros",
+      "Nothing",
+      "A thousand dinars",
+      "Two marks"
+     ],
+     "a": 3,
+     "e": "In the video: \"Imam dvije marke\" — I have two marks."
+    },
+    {
+     "q": "What is wrong with the TV?",
+     "o": [
+      "The remote doesn't work",
+      "It's broken",
+      "It's not there",
+      "It's too old"
+     ],
+     "a": 0,
+     "e": "In the video: \"Uzmi ako hoćeš, ali daljinski ne radi\" — take it if you want, but the remote doesn't work."
+    },
+    {
+     "q": "When is the heroine expecting her salary?",
+     "o": [
+      "On Monday",
+      "Tomorrow",
+      "At the end of the year",
+      "On Friday, God willing"
+     ],
+     "a": 3,
+     "e": "In the video: \"Ako Bog da, u petak\" — God willing, on Friday."
+    },
+    {
+     "q": "What does the heroine ask the robber to do at the end?",
+     "o": [
+      "Take out the trash",
+      "Buy food",
+      "Stay for tea",
+      "Fix the remote"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kad već izlaziš, možeš li iznijeti smeće?\" — since you're leaving anyway, can you take out the trash?"
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo je *pljačka*!",
+     "o": [
+      "quarrel",
+      "rehearsal",
+      "robbery",
+      "prank"
+     ],
+     "a": 2,
+     "e": "Pljačka — a robbery; pljačkati — to rob."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Čekaj, ti si stvarno *švorc*?",
+     "o": [
+      "on vacation",
+      "in debt",
+      "penniless",
+      "at work"
+     ],
+     "a": 2,
+     "e": "Švorc — colloquial for \"without money, broke\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Možeš li iznijeti *smeće*?",
+     "o": [
+      "the mail",
+      "the dishes",
+      "the trash",
+      "the bag"
+     ],
+     "a": 2,
+     "e": "Smeće — trash."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gdje ti je *nakit*?",
+     "o": [
+      "money",
+      "documents",
+      "phone",
+      "jewelry"
+     ],
+     "a": 3,
+     "e": "Nakit — jewelry, jewelery items."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imam stres, ___ i pola pavlake.",
+     "o": [
+      "duga",
+      "dugovi",
+      "dugom",
+      "dugove"
+     ],
+     "a": 3,
+     "e": "Imati (\"to have\") requires the accusative case: the plural of dug is dugovi, in the accusative dugove."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imam ___ marke.",
+     "o": [
+      "dvama",
+      "dvije",
+      "dva",
+      "dvoje"
+     ],
+     "a": 1,
+     "e": "Marka is feminine, hence \"two\": dvije (in Ekavian dve)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam došao da ___.",
+     "o": [
+      "krasti",
+      "kradeš",
+      "krade",
+      "kradem"
+     ],
+     "a": 3,
+     "e": "After da a personal form is used: ja → kradem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Brate, već si mi ušao u ___.",
+     "o": [
+      "stanu",
+      "stana",
+      "stan",
+      "stanom"
+     ],
+     "a": 2,
+     "e": "U in answer to \"where to?\" — accusative case. For inanimate masculine nouns it coincides with the nominative: stan."
+    }
+   ]
+  }
+ ]
+}

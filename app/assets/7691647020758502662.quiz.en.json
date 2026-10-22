@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "When did the Zeleni venac market open?",
+     "o": [
+      "In 2000",
+      "In 1950",
+      "On October 1, 1926",
+      "In 1880"
+     ],
+     "a": 2,
+     "e": "In the video: \"1. oktobra 1926. godine, u Beogradu je otvorena pijaca Zeleni venac\" — on October 1, 1926, the Zeleni venac market opened in Belgrade."
+    },
+    {
+     "q": "What does the video mark?",
+     "o": [
+      "The closing of the market",
+      "City Day",
+      "100 years since the market opened",
+      "The opening of a new market"
+     ],
+     "a": 2,
+     "e": "In the video: \"Na današnji dan pre sto godina otvorena je pijaca Zeleni venac\" — on this day a hundred years ago the Zeleni venac market opened."
+    },
+    {
+     "q": "What is Zeleni venac famous for besides trade?",
+     "o": [
+      "The biggest market in Europe",
+      "A museum",
+      "A concert hall",
+      "A symbol of old Belgrade"
+     ],
+     "a": 3,
+     "e": "In the video: \"jedan je od simbola starog Beograda i svedok velikih promena\" — one of the symbols of old Belgrade and a witness to great changes."
+    },
+    {
+     "q": "What is the market today?",
+     "o": [
+      "A restaurant",
+      "A park",
+      "A shopping center",
+      "A transport hub"
+     ],
+     "a": 3,
+     "e": "In the video: \"Danas, Zeleni venac je saobraćajno čvorište\" — today Zeleni venac is a transport hub."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Otvorena je *pijaca* Zeleni venac.",
+     "o": [
+      "square",
+      "church",
+      "station",
+      "market"
+     ],
+     "a": 3,
+     "e": "Pijaca — a market."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mesto gde su se susretali *trgovci*.",
+     "o": [
+      "children",
+      "tourists",
+      "musicians",
+      "traders"
+     ],
+     "a": 3,
+     "e": "Trgovac — a trader; trgovina — trade, a shop."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U samom centru *prestonice*.",
+     "o": [
+      "of the capital",
+      "of the village",
+      "of the city",
+      "of the district"
+     ],
+     "a": 0,
+     "e": "Prestonica — capital."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Jedan je od simbola i *svedok* velikih promena.",
+     "o": [
+      "participant",
+      "witness",
+      "enemy",
+      "hero"
+     ],
+     "a": 1,
+     "e": "Svedok — a witness."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U ___ je otvorena pijaca.",
+     "o": [
+      "Beogradu",
+      "Beograd",
+      "Beograda",
+      "Beogradom"
+     ],
+     "a": 0,
+     "e": "U in answer to \"where?\" — locative case: u Beogradu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prepoznatljiva po svojoj ___.",
+     "o": [
+      "arhitekturu",
+      "arhitekturi",
+      "arhitektura",
+      "arhitekturom"
+     ],
+     "a": 1,
+     "e": "Po + locative case: po arhitekturi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pijaca je u samom ___ prestonice.",
+     "o": [
+      "centar",
+      "centru",
+      "centrom",
+      "centra"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where?\" — locative case: u centru."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kroz pijacu i dalje prolaze ___ Beograđana.",
+     "o": [
+      "hiljadama",
+      "hiljada",
+      "hiljade",
+      "hiljadu"
+     ],
+     "a": 2,
+     "e": "Hiljade (\"thousands\") — the subject; Beograđana — genitive case."
+    }
+   ]
+  }
+ ]
+}

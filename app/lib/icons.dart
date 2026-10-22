@@ -19,6 +19,12 @@ abstract final class KIcons {
   static const storiesOn = IconData(0xe0e6, fontFamily: 'Phosphor');
   static const profile = IconData(0xe4c2, fontFamily: 'PhosphorLight');
   static const profileOn = IconData(0xe4c2, fontFamily: 'Phosphor');
+  static const headphones = IconData(0xe2a6, fontFamily: 'PhosphorLight');
+  static const headphonesOn = IconData(0xe2a6, fontFamily: 'Phosphor');
+  static const play = IconData(0xe3d0, fontFamily: 'Phosphor');
+  static const pause = IconData(0xe39e, fontFamily: 'Phosphor');
+  static const back15 = IconData(0xe1a0, fontFamily: 'Phosphor');
+  static const forward15 = IconData(0xe19e, fontFamily: 'Phosphor');
   static const plus = IconData(0xe3d4, fontFamily: 'Phosphor');
   static const refresh = IconData(0xe036, fontFamily: 'Phosphor');
   static const arrowLeft = IconData(0xe058, fontFamily: 'Phosphor');

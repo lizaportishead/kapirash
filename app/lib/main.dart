@@ -12,6 +12,7 @@ import 'landing_page.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
+import 'podcasts_page.dart';
 import 'stories_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
@@ -119,6 +120,9 @@ class _KapirasAppState extends State<KapirasApp> {
 /// Добавление своих роликов временно скрыто: без него нет ни кнопки «плюс», ни вкладки «Мои ролики».
 const kAddVideoEnabled = false;
 
+/// Вкладка «Рассказы» (книги) в меню; если выключить, рассказы открываются только из «Моих слов».
+const kStoriesTabEnabled = true;
+
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
 
@@ -136,9 +140,11 @@ class _HomeShellState extends State<HomeShell> {
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
   static const _home = 0, _feed = 1;
   static const _plus = kAddVideoEnabled ? 3 : 99;
-  static const _stories = kAddVideoEnabled ? 3 : 2;
-  static const _words = _stories + 1;
-  static const _profile = _stories + 2;
+  static const _first = kAddVideoEnabled ? 3 : 2;
+  static const _stories = kStoriesTabEnabled ? _first : 99;
+  static const _podcasts = _first + (kStoriesTabEnabled ? 1 : 0);
+  static const _words = _podcasts + 1;
+  static const _profile = _podcasts + 2;
 
   // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
   int _profileTaps = 0;
@@ -169,7 +175,8 @@ class _HomeShellState extends State<HomeShell> {
         HomePage(onVideos: () => _select(_feed), onStories: () => _select(_stories), onWords: () => _select(_words)),
         FeedPage(),
         if (kAddVideoEnabled) MyVideosPage(),
-        StoriesPage(),
+        if (kStoriesTabEnabled) StoriesPage(),
+        PodcastsPage(),
         WordsPage(),
         ProfilePage(),
       ],
@@ -210,7 +217,11 @@ class _HomeShellState extends State<HomeShell> {
                 selectedIndex: _tab < _plus ? _tab : _tab + 1,
                 onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
                 destinations: [
-                  NavigationDestination(icon: Icon(KIcons.home), selectedIcon: Icon(KIcons.homeOn), label: ui('Дом')),
+                  NavigationDestination(
+                    icon: Icon(KIcons.home),
+                    selectedIcon: Icon(KIcons.homeOn),
+                    label: ui('Главная'),
+                  ),
                   NavigationDestination(
                     icon: Icon(KIcons.catalog),
                     selectedIcon: Icon(KIcons.catalogOn),
@@ -226,10 +237,16 @@ class _HomeShellState extends State<HomeShell> {
                       child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
                     ),
                   ],
+                  if (kStoriesTabEnabled)
+                    NavigationDestination(
+                      icon: Icon(KIcons.stories),
+                      selectedIcon: Icon(KIcons.storiesOn),
+                      label: ui('Рассказы'),
+                    ),
                   NavigationDestination(
-                    icon: Icon(KIcons.stories),
-                    selectedIcon: Icon(KIcons.storiesOn),
-                    label: ui('Рассказы'),
+                    icon: Icon(KIcons.headphones),
+                    selectedIcon: Icon(KIcons.headphonesOn),
+                    label: ui('Подкасты'),
                   ),
                   NavigationDestination(
                     icon: Icon(KIcons.words),
@@ -269,14 +286,15 @@ class _HomeShellState extends State<HomeShell> {
 
   Widget _wideShell(Widget Function() buildPages) {
     final items = <(int, IconData, IconData, String)>[
-      (_home, KIcons.home, KIcons.homeOn, ui('Дом')),
+      (_home, KIcons.home, KIcons.homeOn, ui('Главная')),
       (_feed, KIcons.catalog, KIcons.catalogOn, ui('Видео')),
       if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, ui('Мои ролики')),
-      (_stories, KIcons.stories, KIcons.storiesOn, ui('Рассказы')),
+      if (kStoriesTabEnabled) (_stories, KIcons.stories, KIcons.storiesOn, ui('Рассказы')),
+      (_podcasts, KIcons.headphones, KIcons.headphonesOn, ui('Подкасты')),
       (_words, KIcons.words, KIcons.wordsOn, ui('Мои слова')),
     ];
     final profile = (_profile, KIcons.profile, KIcons.profileOn, ui('Профиль'));
-    Widget item((int, IconData, IconData, String) it) {
+    Widget item((int, IconData, IconData, String) it, {VoidCallback? onTap}) {
       final (page, icon, on, label) = it;
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
@@ -285,7 +303,7 @@ class _HomeShellState extends State<HomeShell> {
           borderRadius: BorderRadius.circular(16),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
-            onTap: () => _select(page),
+            onTap: onTap ?? () => _select(page),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               child: Row(
@@ -327,8 +345,16 @@ class _HomeShellState extends State<HomeShell> {
                       padding: EdgeInsets.only(left: 28),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Kapiraš',
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'Kapiraš',
+                            children: [
+                              TextSpan(
+                                text: '?',
+                                style: TextStyle(color: cAccent),
+                              ),
+                            ],
+                          ),
                           style: TextStyle(
                             fontSize: 22.5,
                             fontWeight: FontWeight.w900,
@@ -342,6 +368,9 @@ class _HomeShellState extends State<HomeShell> {
                   Divider(height: 1, color: cLine),
                   SizedBox(height: 12),
                   for (final it in items) item(it),
+                  // Ссылка на лендинг для проверки; на сайте её видно только в вебе.
+                  if (kIsWeb)
+                    item((-1, Icons.rocket_launch_outlined, Icons.rocket_launch_outlined, ui('Лендинг')), onTap: store.replayLanding),
                   if (kAddVideoEnabled)
                     Padding(
                       padding: EdgeInsets.fromLTRB(12, 16, 12, 0),
@@ -364,12 +393,15 @@ class _HomeShellState extends State<HomeShell> {
               child: Center(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: 1200),
-                  // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
-                  child: Navigator(
-                    key: _navKey,
-                    onGenerateRoute: (_) => MaterialPageRoute<void>(
-                      builder: (_) =>
-                          ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 28),
+                    // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
+                    child: Navigator(
+                      key: _navKey,
+                      onGenerateRoute: (_) => MaterialPageRoute<void>(
+                        builder: (_) =>
+                            ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+                      ),
                     ),
                   ),
                 ),

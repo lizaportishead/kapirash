@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where does the author film the video?",
+     "o": [
+      "At her parents' home",
+      "In a student dormitory",
+      "At a university lecture",
+      "In a café"
+     ],
+     "a": 1,
+     "e": "In the video: \"iskoristiću još ovo malo što sam u domu pa da snimam videe odavde\" — while she still lives in the dormitory, she films videos from there."
+    },
+    {
+     "q": "What will the new series of videos be about?",
+     "o": [
+      "About sports",
+      "About cooking",
+      "About travel",
+      "About student life"
+     ],
+     "a": 3,
+     "e": "In the video: \"da vidite kako se živi studentski život\" — so that you can see what student life is like."
+    },
+    {
+     "q": "What does the author sincerely recommend to everyone who has the chance?",
+     "o": [
+      "To enroll in distance learning",
+      "To rent an apartment",
+      "To live in a dormitory",
+      "To go abroad"
+     ],
+     "a": 2,
+     "e": "In the video: \"moja iskrena preporuka za svakoga ko ima priliku jeste da ovde živi\" — my sincere recommendation to everyone who has the chance is to live here."
+    },
+    {
+     "q": "What does the author ask for at the end?",
+     "o": [
+      "To subscribe to the channel",
+      "To send a photo",
+      "To write recommendations in the comments",
+      "To leave a like"
+     ],
+     "a": 2,
+     "e": "In the video: \"ako imate neke preporuke, svakako možete da me pitate i da mi pišete u komentaru\" — if you have any suggestions, feel free to write in the comments."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Evo, *iskoristiću* još ovo malo što sam u domu.",
+     "o": [
+      "I will buy",
+      "I will lose",
+      "I will finish",
+      "I will make use of"
+     ],
+     "a": 3,
+     "e": "Iskoristiti — to make use of, to use."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "I moja iskrena *preporuka* za svakoga ko ima priliku.",
+     "o": [
+      "dream",
+      "recommendation",
+      "request",
+      "complaint"
+     ],
+     "a": 1,
+     "e": "Preporuka — recommendation, advice; from the verb preporučiti."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo sam *bez reza* snimila.",
+     "o": [
+      "without sound",
+      "without editing, in one take",
+      "without help",
+      "without sleep"
+     ],
+     "a": 1,
+     "e": "Rez — a cut, a \"splice\" in editing. Bez reza — without editing."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ako iko bude došao do *kraja* videa.",
+     "o": [
+      "of the end",
+      "of the middle",
+      "of the beginning",
+      "of advertising"
+     ],
+     "a": 0,
+     "e": "Kraj — end. Do kraja — to the end."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Gledamo se u ___ videu.",
+     "o": [
+      "sledeći",
+      "sledećeg",
+      "sledeće",
+      "sledećem"
+     ],
+     "a": 3,
+     "e": "The preposition u (\"in\") with a location requires the locative case: u sledećem videu — \"in the next video\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pišite mi u ___.",
+     "o": [
+      "komentar",
+      "komentarom",
+      "komentaru",
+      "komentara"
+     ],
+     "a": 2,
+     "e": "After u in answer to \"where?\" — locative case: u komentaru — \"in the comment\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da vidite kako se živi studentski ___.",
+     "o": [
+      "životu",
+      "života",
+      "život",
+      "životom"
+     ],
+     "a": 2,
+     "e": "The object is inanimate, so the accusative coincides with the nominative: život."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Svakome ko ima priliku preporučujem da ovde ___.",
+     "o": [
+      "živeo",
+      "živim",
+      "živeti",
+      "živi"
+     ],
+     "a": 3,
+     "e": "After da a personal verb form is used: ko → he/she, hence živi."
+    }
+   ]
+  }
+ ]
+}

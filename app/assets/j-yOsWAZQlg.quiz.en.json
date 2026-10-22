@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the guest broker talk about when asked about debt in dinars?",
+     "o": [
+      "That demand in the domestic debt market has dropped",
+      "That the dinar is about to be devalued",
+      "That the banks have closed the market completely",
+      "That bonds no longer exist"
+     ],
+     "a": 0,
+     "e": "In the video: \"smanjena tražnja na domaćem tržištu duga još od kraja marta\" — demand in the domestic debt market has been reduced since the end of March."
+    },
+    {
+     "q": "How does the guest assess the \"huge demand\" for Serbia's eurobonds?",
+     "o": [
+      "As proof of reliability",
+      "As populist advertising for the average citizen",
+      "As the pure truth",
+      "As a statistical error"
+     ],
+     "a": 1,
+     "e": "In the video: \"nekakva populistička reklama za domaćeg prosečnog građanina\" — a kind of populist advertisement for the domestic average citizen."
+    },
+    {
+     "q": "Roughly what is the price of Serbia's debt (ten-year bonds)?",
+     "o": [
+      "About 1%",
+      "About 2%",
+      "About 5%",
+      "About 15%"
+     ],
+     "a": 2,
+     "e": "In the video: \"Cena našeg duga je blizu 5%\" — the price of our debt is close to 5%."
+    },
+    {
+     "q": "Why, according to the guest, is it better for the state to borrow in local currency?",
+     "o": [
+      "Because it's cheaper to print money",
+      "Because the debt can be managed relatively easily",
+      "Because foreigners don't lend money",
+      "Because taxes are lower"
+     ],
+     "a": 1,
+     "e": "In the video: \"mi možemo relativno lako da upravljamo našim dugom\" — we can manage our debt relatively easily."
+    },
+    {
+     "q": "What has the dinar's exchange rate been in recent years, according to the guest?",
+     "o": [
+      "Stable, almost fixed",
+      "Collapsing",
+      "Floating every day",
+      "Pegged to the dollar"
+     ],
+     "a": 0,
+     "e": "In the video: \"imamo stabilan, da ne kažem fiksni, kurs dinara\" — we have a stable, not to say fixed, dinar exchange rate."
+    },
+    {
+     "q": "Why must the state borrow constantly?",
+     "o": [
+      "Because of the budget deficit and interest on old debt",
+      "Because it's the custom",
+      "Because of the land tax",
+      "Because there are surpluses"
+     ],
+     "a": 0,
+     "e": "In the video: \"vi morate da se zadužujete, da refinansirate onaj raniji dug koji dospeva\" — you have to borrow to refinance the earlier debt that is falling due."
+    },
+    {
+     "q": "What does the guest call the main problem?",
+     "o": [
+      "A high GDP",
+      "Irrational use of borrowed money",
+      "Interest rates that are too low",
+      "A lack of banks"
+     ],
+     "a": 1,
+     "e": "In the video: \"ide onako prilično neracionalno\" — it goes rather irrationally."
+    },
+    {
+     "q": "How many euros do citizens keep in banks, according to the guest?",
+     "o": [
+      "About 7 billion",
+      "About 17 billion",
+      "About 70 billion",
+      "About 1 billion"
+     ],
+     "a": 1,
+     "e": "In the video: \"domaći građani samo u bankama drže oko 17 milijardi evra\" — domestic citizens keep about 17 billion euros in banks alone."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Rast *kamata* otežava zaduživanje.",
+     "o": [
+      "of taxes",
+      "of interest",
+      "of salaries",
+      "of housing prices"
+     ],
+     "a": 1,
+     "e": "Kamata — interest (on a loan)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Država mora da *refinansira* stari dug.",
+     "o": [
+      "will repay by write-off",
+      "will refinance",
+      "will give away",
+      "will forget"
+     ],
+     "a": 1,
+     "e": "Refinansirati — to refinance."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dug nije *održiv* na ovaj način.",
+     "o": [
+      "is interesting",
+      "is sustainable",
+      "is visible",
+      "expensive"
+     ],
+     "a": 1,
+     "e": "Održiv — sustainable."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Postoji *budžetski* deficit.",
+     "o": [
+      "personal (adj.)",
+      "budget",
+      "annual",
+      "bank"
+     ],
+     "a": 1,
+     "e": "Budžet — a budget."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kupci *obveznica* su vlasnici starog duga.",
+     "o": [
+      "of shares",
+      "of bonds",
+      "of apartments",
+      "of cars"
+     ],
+     "a": 1,
+     "e": "Obveznica — a bond."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Tražnja* na domaćem tržištu je smanjena.",
+     "o": [
+      "supply",
+      "demand",
+      "tax",
+      "price"
+     ],
+     "a": 1,
+     "e": "Tražnja — demand."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo stabilan *kurs* dinara.",
+     "o": [
+      "course",
+      "tax",
+      "account",
+      "loan"
+     ],
+     "a": 0,
+     "e": "Kurs — an exchange rate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Zvaničnici* kažu da nema studija opravdanosti.",
+     "o": [
+      "officials",
+      "buyers",
+      "students",
+      "tourists"
+     ],
+     "a": 0,
+     "e": "Zvaničnik — an official, a public figure."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Država se zadužuje na ___ tržištu.",
+     "o": [
+      "inostranom",
+      "inostrano",
+      "inostranu",
+      "inostranim"
+     ],
+     "a": 0,
+     "e": "Na + locative case: na inostranom tržištu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Banke su blago pooštrile ___ za kredite.",
+     "o": [
+      "standard",
+      "standarde",
+      "standardom",
+      "standardima"
+     ],
+     "a": 1,
+     "e": "Pooštriti + accusative plural: standarde."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Većina dugova je u ___ stranaca.",
+     "o": [
+      "ruke",
+      "rukama",
+      "rukom",
+      "ruci"
+     ],
+     "a": 1,
+     "e": "U + locative plural: u rukama; \"u rukama stranaca\" — in the hands of foreigners."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Zadužujemo se u ___ valuti.",
+     "o": [
+      "lokalna",
+      "lokalnoj",
+      "lokalnu",
+      "lokalnom"
+     ],
+     "a": 1,
+     "e": "U + locative case, feminine: u lokalnoj valuti."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Domaći građani drže novac u ___.",
+     "o": [
+      "banka",
+      "banke",
+      "bankama",
+      "bankom"
+     ],
+     "a": 2,
+     "e": "U + locative plural: u bankama."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Cena duga je ___ nego pre mesec dana.",
+     "o": [
+      "visoka",
+      "viša",
+      "najviša",
+      "visoko"
+     ],
+     "a": 1,
+     "e": "Comparative: viša cena — \"higher\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Nije isto da uzmete ___ kredit i odete na more.",
+     "o": [
+      "potrošački",
+      "potrošačkog",
+      "potrošačkom",
+      "potrošačka"
+     ],
+     "a": 0,
+     "e": "Accusative case, masc. inanimate: uzeti potrošački kredit."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mi smo mali na međunarodnom ___.",
+     "o": [
+      "tržište",
+      "tržišta",
+      "tržištu",
+      "tržištem"
+     ],
+     "a": 2,
+     "e": "Na + locative case: na tržištu."
+    }
+   ]
+  }
+ ]
+}

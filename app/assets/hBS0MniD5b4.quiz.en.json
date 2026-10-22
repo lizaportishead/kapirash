@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Why couldn't the author get into Lazar's Cave?",
+     "o": [
+      "The cave is flooded",
+      "He didn't check the opening hours in advance: on weekdays organized groups of 20 or more are required",
+      "There were no tickets at the box office",
+      "The cave is closed forever"
+     ],
+     "a": 1,
+     "e": "In the video: \"moraćemo to da ostavimo za neki drugi put, zato što se nismo baš dobro raspitali što se tiče radnog vremena... tokom nedelje morate imati organizovanu turu od 20 ili više ljudi\" — we'll have to leave that for another time, because we didn't inquire properly about the opening hours... during the week you must have an organized tour of 20 or more people."
+    },
+    {
+     "q": "What is Lazar's Canyon famous for?",
+     "o": [
+      "The longest canyon in Serbia",
+      "The deepest in the world",
+      "The narrowest in Europe",
+      "The only one in Serbia"
+     ],
+     "a": 0,
+     "e": "In the video: \"on je najduži kanjon u Srbiji.\" — it is the longest canyon in Serbia."
+    },
+    {
+     "q": "What did the author exchange for Smile card points?",
+     "o": [
+      "Tickets to the cave",
+      "A toy for Nađa — the Lili sheep pillow",
+      "A new frying pan",
+      "Gasoline"
+     ],
+     "a": 1,
+     "e": "In the video: \"skupio tačno bodova za ovu igračku za Nađu... ja sam tvoj novi prijatelj, ovčica Lili\" — I collected exactly enough points for this toy for Nađa... I'm your new friend, Lili the little sheep."
+    },
+    {
+     "q": "Which cave did they go to instead of Lazar's?",
+     "o": [
+      "The Ice Cave",
+      "The Venus Cave",
+      "The Resava Cave — a route of about 800 meters with a concert hall",
+      "The Zemun Cave"
+     ],
+     "a": 2,
+     "e": "In the video: \"Tako da smo odlučili da dođemo u Resavsku pećinu... Put je oko 800 metara kroz pećinu... koncertna dvorana\" — so we decided to come to the Resava Cave... The route is about 800 meters through the cave... a concert hall."
+    },
+    {
+     "q": "Why didn't they have dinner at the \"Lisinski raj\" restaurant?",
+     "o": [
+      "There were no seats",
+      "They don't accept cards",
+      "It's closed",
+      "It's too noisy"
+     ],
+     "a": 1,
+     "e": "In the video: \"Restoran Lisinski raj ostavljamo iza nas, jer ne primaju kartice\" — we leave the Lisinski raj restaurant behind us, because they don't accept cards."
+    },
+    {
+     "q": "Why were there so many people at the Krupaja spring?",
+     "o": [
+      "A film was being shot there",
+      "There was a festival",
+      "Free entry",
+      "It was a Sunday and there is a restaurant nearby with a natural pool"
+     ],
+     "a": 3,
+     "e": "In the video: \"Danas je nedelja... restoran koji ima neki prirodni bazen u koji dotiče voda sa vrela\" — today is Sunday... a restaurant that has a sort of natural pool into which water from the spring flows."
+    },
+    {
+     "q": "What are the rules at Manasija Monastery?",
+     "o": [
+      "Only men may enter",
+      "No speaking",
+      "No photography and no entering in shorts, a tank top or slippers",
+      "An entrance fee must be paid"
+     ],
+     "a": 2,
+     "e": "In the video: \"U manastiru nije dozvoljeno slikanje... nije dozvoljeno ulaziti u kratkim pantalonama, atlet majici, papučama\" — photography is not allowed in the monastery... it's not allowed to enter in short pants, a tank top, slippers."
+    },
+    {
+     "q": "What did the author like about the ethno-village?",
+     "o": [
+      "The noise",
+      "The disco",
+      "The animals, home-cooked food and a spacious apartment far from the city",
+      "The swimming pool"
+     ],
+     "a": 2,
+     "e": "In the video: \"prvo, imate svuda životinje okolo... Hrana ovde je jako dobra... apartman je toliko velik... van grada\" — first, there are animals all around... The food here is very good... the apartment is so big... outside the city."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Radno vreme je ovde, a *ulaznica* je 200 dinara.",
+     "o": [
+      "guide",
+      "parking lot",
+      "admission ticket",
+      "tip"
+     ],
+     "a": 2,
+     "e": "Ulaznica — an admission ticket."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Služi se, naravno, *pastrmka*.",
+     "o": [
+      "pike",
+      "veal",
+      "trout",
+      "chicken"
+     ],
+     "a": 2,
+     "e": "Pastrmka — trout."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Biljne i životinjske vrste koje su *zaštićene*.",
+     "o": [
+      "domestic",
+      "dangerous",
+      "protected",
+      "rare"
+     ],
+     "a": 2,
+     "e": "Zaštititi — to protect; zaštićen — protected."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Obavezne su patike, pošto je jako *blatnjavo*.",
+     "o": [
+      "muddy",
+      "slippery",
+      "dark",
+      "hot"
+     ],
+     "a": 0,
+     "e": "Blato — mud; blatnjavo — muddy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Okolo su *zidine*.",
+     "o": [
+      "walls",
+      "of the lake",
+      "bridges",
+      "flowers"
+     ],
+     "a": 0,
+     "e": "Zid — a wall; zidine — fortress walls."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pokrijete bar *ramena*.",
+     "o": [
+      "head",
+      "hands",
+      "shoulders",
+      "knees"
+     ],
+     "a": 2,
+     "e": "Rame — a shoulder."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Konji, *magarci*, psi.",
+     "o": [
+      "goats",
+      "cows",
+      "donkeys",
+      "hens"
+     ],
+     "a": 2,
+     "e": "Magarac — a donkey."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imali smo mesta da stavimo prenosivi *krevetac*.",
+     "o": [
+      "a children's crib",
+      "suitcase",
+      "refrigerator",
+      "table"
+     ],
+     "a": 0,
+     "e": "Krevetac — a children's crib; krevet — a bed."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Evo nas kod Lazarevog ___.",
+     "o": [
+      "kanjonu",
+      "kanjonom",
+      "kanjona",
+      "kanjon"
+     ],
+     "a": 2,
+     "e": "Kod (\"at, near\") requires the genitive case: kod kanjona."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Došli smo da bismo ušli u ___.",
+     "o": [
+      "pećine",
+      "pećinom",
+      "pećinu",
+      "pećina"
+     ],
+     "a": 2,
+     "e": "Ući u + accusative case: u pećinu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Lazarev kanjon je najduži kanjon u ___.",
+     "o": [
+      "Srbija",
+      "Srbiju",
+      "Srbiji",
+      "Srbijom"
+     ],
+     "a": 2,
+     "e": "U in answer to \"where?\" — locative case: u Srbiji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Skupljate bodove na Smile ___.",
+     "o": [
+      "kartici",
+      "karticu",
+      "karticom",
+      "kartica"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"on what?\" — locative case: na kartici."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Idemo do ___, da se ja malo ugrejem.",
+     "o": [
+      "vodopadu",
+      "vodopad",
+      "vodopadom",
+      "vodopada"
+     ],
+     "a": 3,
+     "e": "Do (\"to\") requires the genitive case: do vodopada."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stigli smo u ___ Manasija.",
+     "o": [
+      "manastir",
+      "manastirom",
+      "manastiru",
+      "manastira"
+     ],
+     "a": 0,
+     "e": "Stići u + accusative case; for inanimate nouns it coincides with the nominative: manastir."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Naše crkve ne ograničavaju ___.",
+     "o": [
+      "žena",
+      "žene",
+      "ženama",
+      "ženi"
+     ],
+     "a": 1,
+     "e": "Ograničavati whom — accusative case: žene."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ako imate sitnu ___, neće vam naplatiti ništa.",
+     "o": [
+      "decu",
+      "decom",
+      "deca",
+      "dece"
+     ],
+     "a": 0,
+     "e": "Imati whom — accusative case: sitnu decu."
+    }
+   ]
+  }
+ ]
+}

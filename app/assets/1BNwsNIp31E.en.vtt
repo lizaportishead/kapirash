@@ -1,0 +1,601 @@
+WEBVTT
+
+1
+00:00:00.080 --> 00:00:04.080
+You're sitting in a café and watching a huge queue form.
+
+2
+00:00:04.080 --> 00:00:09.120
+People come in who are on a work break and want to order themselves a coffee.
+
+3
+00:00:09.120 --> 00:00:11.060
+You think that everyone is probably stressed,
+
+4
+00:00:11.060 --> 00:00:14.300
+because now their whole break will go to standing in line for coffee,
+
+5
+00:00:14.300 --> 00:00:17.040
+and you decide to investigate this problem.
+
+6
+00:00:18.480 --> 00:00:23.340
+Hi, folks, today we're talking about how to learn as much as possible from your interviews
+
+7
+00:00:23.340 --> 00:00:26.240
+and how to structure the data you collect.
+
+8
+00:00:26.240 --> 00:00:27.180
+So, let's get started.
+
+9
+00:00:27.180 --> 00:00:29.300
+Let's go back to the previous example.
+
+10
+00:00:29.300 --> 00:00:32.840
+Now think about which people you could talk to about this problem.
+
+11
+00:00:33.140 --> 00:00:35.480
+Who might have this problem at all?
+
+12
+00:00:35.480 --> 00:00:38.400
+Who gets really annoyed by having to stand in a long line.
+
+13
+00:00:39.200 --> 00:00:42.420
+And so you find 10 people you'll interview.
+
+14
+00:00:42.660 --> 00:00:47.360
+Okay, you conduct the interview, but during the interview you have very little time.
+
+15
+00:00:47.360 --> 00:00:51.260
+The only thing you manage is to quickly jot down some things you hear,
+
+16
+00:00:51.260 --> 00:00:56.460
+and write down as much as possible, but then this format turns out to be hard to read.
+
+17
+00:00:56.460 --> 00:00:59.800
+And to draw some conclusions from these interviews,
+
+18
+00:00:59.800 --> 00:01:03.700
+now you need to somehow structure this data in order to learn something new.
+
+19
+00:01:04.100 --> 00:01:09.700
+One of the techniques UX researchers use to do this is the empathy map.
+
+20
+00:01:09.700 --> 00:01:13.280
+So that you understand as well as possible what an empathy map is,
+
+21
+00:01:13.280 --> 00:01:15.100
+I'll show you with a practical example.
+
+22
+00:01:15.380 --> 00:01:20.400
+For this example I'll use Figma, but it's important to remember that it isn't necessary.
+
+23
+00:01:20.400 --> 00:01:22.660
+You can make an empathy map on paper too.
+
+24
+00:01:22.940 --> 00:01:28.020
+First, in your browser you type "Figma," and if you don't have an account, you first create an account,
+
+25
+00:01:28.020 --> 00:01:32.280
+and once you've created an account, you'll be taken to a start page like this.
+
+26
+00:01:32.280 --> 00:01:38.000
+In the FigJam and Templates section you can choose Empathy Map
+
+27
+00:01:38.000 --> 00:01:40.520
+and click Use Template.
+
+28
+00:01:42.580 --> 00:01:48.860
+Now Figma will open this template for you, and on the left you have basic instructions.
+
+29
+00:01:49.060 --> 00:01:52.380
+Next to them is Persona information,
+
+30
+00:01:52.380 --> 00:01:55.420
+which is information about the person you're interviewing.
+
+31
+00:01:56.030 --> 00:01:58.420
+And next to that is the empathy map.
+
+32
+00:01:58.420 --> 00:02:03.940
+It's important to remember that not every source's empathy map looks the same,
+
+33
+00:02:03.940 --> 00:02:09.220
+that is, some have four sections, some six, depending on what's convenient for them.
+
+34
+00:02:09.720 --> 00:02:12.880
+In Figma you get six sections,
+
+35
+00:02:12.880 --> 00:02:16.680
+but in the example I'll show you, I used four sections.
+
+36
+00:02:16.920 --> 00:02:20.080
+Now I'll move on to the example I worked through.
+
+37
+00:02:21.500 --> 00:02:28.100
+Let's say that for our recent problem we interviewed Sara Sarić.
+
+38
+00:02:29.080 --> 00:02:35.140
+Sara Sarić is 27 years old, she lives in a big city, let's say Belgrade.
+
+39
+00:02:36.240 --> 00:02:40.920
+She has a busy work schedule, always rushing around, working a lot.
+
+40
+00:02:41.620 --> 00:02:44.300
+And Sara cares about health and fitness.
+
+41
+00:02:45.780 --> 00:02:51.520
+So, on the right you can see roughly my notes
+
+42
+00:02:51.520 --> 00:02:54.260
+that I managed to take while I was talking to Sara.
+
+43
+00:02:54.260 --> 00:02:55.840
+And now I'll read them to you.
+
+44
+00:03:25.840 --> 00:03:27.220
+During the interview.
+
+45
+00:03:27.780 --> 00:03:32.820
+So, my empathy map consists of four sections.
+
+46
+00:03:33.180 --> 00:03:37.280
+The first section is "says," the second section is "thinks,"
+
+47
+00:03:37.280 --> 00:03:41.120
+the third section is "does," and the fourth section is "feels."
+
+48
+00:03:41.120 --> 00:03:47.320
+In the middle you can see a small picture of Sara, so that she's kind of in focus.
+
+49
+00:03:48.480 --> 00:03:50.880
+Now we'll go through each section step by step
+
+50
+00:03:50.880 --> 00:03:53.800
+and explain what each section should contain.
+
+51
+00:03:54.960 --> 00:03:59.100
+Empathy maps are usually made using those very sticky notes.
+
+52
+00:03:59.420 --> 00:04:04.060
+That is, here in Figma you drag them in, and if you were using paper,
+
+53
+00:04:04.060 --> 00:04:08.740
+you'd buy a small pack of sticky notes and stick them in each of the fields.
+
+54
+00:04:09.760 --> 00:04:12.500
+So, the first section is "says."
+
+55
+00:04:12.500 --> 00:04:20.260
+In the "says" section you need to write on sticky notes everything that Sara told us
+
+56
+00:04:20.260 --> 00:04:23.760
+and that for some reason seemed significant to us.
+
+57
+00:04:24.380 --> 00:04:27.080
+That is, something that caught our attention more.
+
+58
+00:04:27.480 --> 00:04:31.800
+On my sticky notes in the "says" section I put what
+
+59
+00:04:31.800 --> 00:04:34.640
+Sara said: she uses an app.
+
+60
+00:04:35.720 --> 00:04:40.660
+The second thing Sara said is that she likes simplicity.
+
+61
+00:04:43.090 --> 00:04:47.010
+Then, Sara also said that she likes homemade coffee.
+
+62
+00:04:48.250 --> 00:04:55.310
+And the fourth thing that stuck with me, that seemed significant to me, is
+
+63
+00:04:55.310 --> 00:04:57.870
+that she's careful not to spill the coffee.
+
+64
+00:04:58.110 --> 00:05:01.250
+Your sticky notes may look different,
+
+65
+00:05:01.250 --> 00:05:08.030
+but this is how I understood our conversation and what seemed important to me.
+
+66
+00:05:08.030 --> 00:05:13.290
+The second section is the "thinks" section, and you can notice that compared to the first section
+
+67
+00:05:13.290 --> 00:05:17.270
+I'm using a different color of sticky notes, to somehow separate them.
+
+68
+00:05:18.710 --> 00:05:25.150
+You can choose a different sticky note color in Figma simply with this arrow next to the sticky note.
+
+69
+00:05:26.250 --> 00:05:32.370
+And in the "thinks" section you need to write what Sara's beliefs are,
+
+70
+00:05:32.370 --> 00:05:37.270
+that is, what she said implicitly.
+
+71
+00:05:37.490 --> 00:05:42.790
+That is, she didn't tell you specifically, but you could draw a conclusion based on what she told you.
+
+72
+00:05:43.410 --> 00:05:47.430
+So, to make it easier to explain, I'll go through examples.
+
+73
+00:05:47.970 --> 00:05:52.390
+So, Sara said that it's important for her to have physical activity during the day.
+
+74
+00:05:52.650 --> 00:05:53.970
+How did I draw that conclusion?
+
+75
+00:05:54.330 --> 00:05:59.090
+Well, Sara said she bikes to work because on workdays she doesn't have time to go to the gym.
+
+76
+00:05:59.470 --> 00:06:02.670
+So from that I concluded that physical activity is important to her.
+
+77
+00:06:03.390 --> 00:06:08.070
+The second thing I drew a conclusion about — she believes she needs coffee as soon as she gets up.
+
+78
+00:06:08.630 --> 00:06:12.450
+That is, Sara said that every day before work she first goes to get coffee.
+
+79
+00:06:12.450 --> 00:06:16.910
+And the third thing I drew a conclusion about — she believes she has no time.
+
+80
+00:06:17.210 --> 00:06:23.590
+That is, when Sara was saying why she doesn't go to the nearest café but gets coffee at Starbucks,
+
+81
+00:06:23.590 --> 00:06:27.010
+she said that then she doesn't have to stand in line.
+
+82
+00:06:27.230 --> 00:06:29.670
+Okay, once we've filled in the first two sections,
+
+83
+00:06:29.670 --> 00:06:32.510
+we move on to the third section, the "does" section.
+
+84
+00:06:33.070 --> 00:06:35.610
+That is, what does Sara say she does?
+
+85
+00:06:36.530 --> 00:06:39.350
+Well, in this section I highlighted three things.
+
+86
+00:06:39.350 --> 00:06:43.590
+So, Sara told us that she bikes, that is, she rides her bike when she gets to work.
+
+87
+00:06:44.110 --> 00:06:48.690
+Sara told us that she drinks coffee, buys coffee every day before work.
+
+88
+00:06:49.750 --> 00:06:53.510
+And Sara told us that she uses her phone a lot.
+
+89
+00:06:53.690 --> 00:06:58.110
+Now, she didn't say this directly, but you can somehow conclude it,
+
+90
+00:06:58.110 --> 00:07:03.710
+because she has a separate app that she uses only to order herself coffee before work.
+
+91
+00:07:03.710 --> 00:07:09.170
+Now that we've finished this third section, "does," we move on to the fourth and last section,
+
+92
+00:07:09.310 --> 00:07:11.010
+and that's the "feels" section.
+
+93
+00:07:11.070 --> 00:07:15.350
+These are the feelings Sara experiences when she faces this problem.
+
+94
+00:07:16.350 --> 00:07:21.790
+The feelings I highlighted here: Sara feels rushed,
+
+95
+00:07:21.790 --> 00:07:24.350
+because every day she's hurrying to work.
+
+96
+00:07:25.830 --> 00:07:29.850
+Then, Sara is impatient, because she has no time to stand in line.
+
+97
+00:07:31.430 --> 00:07:36.770
+And Sara is determined, because she still bikes to work,
+
+98
+00:07:36.970 --> 00:07:40.490
+even if she's late, just so she gets some physical activity during the day.
+
+99
+00:07:40.590 --> 00:07:45.830
+Now that we've neatly sorted all this into these four segments, or four sections,
+
+100
+00:07:46.430 --> 00:07:49.710
+we can look for what our new conclusions are,
+
+101
+00:07:49.710 --> 00:07:54.750
+or how Sara copes with the problem we're investigating.
+
+102
+00:07:56.010 --> 00:08:00.670
+Well, we can see that Sara really does have this problem,
+
+103
+00:08:01.070 --> 00:08:04.170
+that is, before she probably stood in line,
+
+104
+00:08:04.610 --> 00:08:06.810
+but found a solution for herself.
+
+105
+00:08:07.050 --> 00:08:10.710
+She found a solution in the form of the Starbucks app,
+
+106
+00:08:11.150 --> 00:08:13.730
+but is still not completely satisfied.
+
+107
+00:08:13.930 --> 00:08:16.870
+Why? Because Sara said that she likes homemade coffee.
+
+108
+00:08:16.930 --> 00:08:19.150
+And probably, if there were some solution
+
+109
+00:08:19.150 --> 00:08:22.170
+that would let her drink homemade coffee,
+
+110
+00:08:22.270 --> 00:08:23.970
+but without standing in line,
+
+111
+00:08:24.610 --> 00:08:26.290
+she would probably use it.
+
+112
+00:08:26.450 --> 00:08:29.970
+In addition, we learned some other new and interesting things.
+
+113
+00:08:30.170 --> 00:08:32.950
+For example, that Sara uses apps.
+
+114
+00:08:33.070 --> 00:08:36.170
+That is, it's no problem for her to download an app to her phone.
+
+115
+00:08:36.390 --> 00:08:39.070
+On top of that we learned that health matters
+
+116
+00:08:39.070 --> 00:08:42.950
+and that physical activity matters, since she bikes to work.
+
+117
+00:08:42.950 --> 00:08:46.070
+And the interesting insights I'd highlight —
+
+118
+00:08:46.170 --> 00:08:47.990
+it's that she said she likes simplicity
+
+119
+00:08:48.590 --> 00:08:50.670
+and that she's careful not to spill the coffee.
+
+120
+00:08:50.950 --> 00:08:53.230
+So it's important that the solution be simple,
+
+121
+00:08:53.870 --> 00:08:56.470
+and when she says she's careful not to spill the coffee,
+
+122
+00:08:56.550 --> 00:08:59.630
+that might suggest to you that maybe at some point she had a problem,
+
+123
+00:08:59.630 --> 00:09:01.510
+that she used to spill coffee like that.
+
+124
+00:09:01.590 --> 00:09:04.450
+And so now she pays a bit more attention to it.
+
+125
+00:09:04.450 --> 00:09:07.130
+This is an example of how you can use an empathy map
+
+126
+00:09:07.130 --> 00:09:09.450
+to learn more from your interviews
+
+127
+00:09:09.450 --> 00:09:13.370
+and to somehow structure the information you've gathered.
+
+128
+00:09:13.510 --> 00:09:17.470
+We need empathy maps to learn more from our interviews.
+
+129
+00:09:17.650 --> 00:09:21.170
+How our respondents actually deal with this problem,
+
+130
+00:09:21.170 --> 00:09:23.650
+or whether they already have some existing solutions
+
+131
+00:09:23.650 --> 00:09:26.710
+and what their impressions of those existing solutions currently are.
+
+132
+00:09:26.950 --> 00:09:30.350
+An empathy map doesn't have to be created separately for each user.
+
+133
+00:09:30.510 --> 00:09:32.650
+You can group similar users
+
+134
+00:09:32.650 --> 00:09:36.110
+and make just one empathy map based on that.
+
+135
+00:09:36.190 --> 00:09:40.070
+Also, empathy maps evolve along with our users.
+
+136
+00:09:40.250 --> 00:09:40.930
+What does that mean?
+
+137
+00:09:41.290 --> 00:09:44.750
+Well, if some new solution for their problem appears on the market,
+
+138
+00:09:44.750 --> 00:09:50.150
+maybe their habits, that is, the way they solve this problem for themselves, will change.
+
+139
+00:09:50.330 --> 00:09:53.610
+And you'll have to change your empathy map too.
+
+140
+00:09:53.690 --> 00:09:57.670
+This is just one way to structure the data
+
+141
+00:09:57.670 --> 00:09:59.010
+you got from the interviews,
+
+142
+00:09:59.010 --> 00:10:02.030
+and it's one of the design thinking techniques.
+
+143
+00:10:02.030 --> 00:10:06.250
+If you have some other way to organize your research
+
+144
+00:10:06.250 --> 00:10:07.910
+and it's maybe better than this one,
+
+145
+00:10:07.910 --> 00:10:09.770
+write to us below in the comments,
+
+146
+00:10:09.770 --> 00:10:11.950
+and also, it would be important to us
+
+147
+00:10:11.950 --> 00:10:15.710
+if you told us whether you're interested in more design thinking topics
+
+148
+00:10:15.710 --> 00:10:18.290
+and whether we should cover more of them soon.
+
+149
+00:10:18.490 --> 00:10:20.470
+And that's all from me for today.
+
+150
+00:10:20.670 --> 00:10:22.250
+See you next time. Bye!

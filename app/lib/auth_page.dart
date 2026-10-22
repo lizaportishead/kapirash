@@ -245,7 +245,11 @@ class _AuthPageState extends State<AuthPage> {
                   Padding(
                     padding: EdgeInsets.only(bottom: 8),
                     child: TextButton(
-                      onPressed: () => Navigator.pop(context),
+                      // С лендинга выйти без входа можно только отсюда, поэтому заодно закрываем онбординг.
+                      onPressed: () {
+                        store.finishOnboarding();
+                        Navigator.pop(context);
+                      },
                       style: TextButton.styleFrom(
                         foregroundColor: cMuted,
                         textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),

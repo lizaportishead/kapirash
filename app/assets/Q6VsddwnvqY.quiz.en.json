@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the video about?",
+     "o": [
+      "About home renovation",
+      "About a new job",
+      "About expenses in the village and in the city",
+      "About travel"
+     ],
+     "a": 2,
+     "e": "In the video: \"Da pričamo o troškovima na selu i u gradu... u stvari, to su finansije\" — let's talk about costs in the village and in the city... actually, it's finances."
+    },
+    {
+     "q": "How much did the groceries for lunch cost in the city?",
+     "o": [
+      "10,000 dinars",
+      "5000 dinars",
+      "1070 dinars",
+      "200 dinars"
+     ],
+     "a": 2,
+     "e": "In the video: \"Uglavnom, ukupno sam sve izračunala: 1070 dinara. Svi sastojci, sve namirnice\" — anyway, I calculated it all: 1070 dinars. All the ingredients, all the groceries."
+    },
+    {
+     "q": "How much did a head of cabbage cost in the store?",
+     "o": [
+      "500 dinars",
+      "50 dinars",
+      "5 dinars",
+      "1000 dinars"
+     ],
+     "a": 0,
+     "e": "In the video: \"A ova jedna glavica je 500 dinara. Opa. I jedna glavica je 500 dinara\" — and this one head is 500 dinars. Wow. And one head is 500 dinars."
+    },
+    {
+     "q": "How much does ten eggs cost in the store?",
+     "o": [
+      "1000 dinars",
+      "220 dinars",
+      "22 dinars",
+      "50 dinars"
+     ],
+     "a": 1,
+     "e": "In the video: \"10 jaja, 220 dinara. Standardno, jaje 22 dinara\" — 10 eggs, 220 dinars. Standard, an egg is 22 dinars."
+    },
+    {
+     "q": "How much does parking cost in grandmother's yard?",
+     "o": [
+      "500 dinars",
+      "1000 dinars",
+      "100 dinars",
+      "Zero dinars"
+     ],
+     "a": 3,
+     "e": "In the video: \"Nula dinara parking. Nula, nula. Lična svojina. Može i kombajn, i avion tu može da se spusti.\" — zero dinars for parking. Zero, zero. Private property. A combine can park there, and a plane can land there."
+    },
+    {
+     "q": "What is done with leftover food in the village?",
+     "o": [
+      "It's given to dogs or pigs",
+      "It's sold",
+      "It's thrown away",
+      "Frozen"
+     ],
+     "a": 0,
+     "e": "In the video: \"Svi ostaci uvek idu ili kod kerova ili kod svinja\" — all leftovers always go either to the dogs or to the pigs."
+    },
+    {
+     "q": "What work in the village did the author dislike?",
+     "o": [
+      "Going to school",
+      "Washing the car",
+      "Throwing in corn and carrying cobs to the cellar",
+      "Milking the cow"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ubacivanje kukuruza... Trpanje čutki u podrum i u džakove. Najgore\" — throwing in the corn... stuffing the cobs into the cellar and into sacks. The worst."
+    },
+    {
+     "q": "What does grandmother compare keeping track of expenses to?",
+     "o": [
+      "To going to the store",
+      "To food",
+      "To brushing teeth — it's done automatically every day",
+      "To cleaning"
+     ],
+     "a": 2,
+     "e": "In the video: \"to ti je k'o ono pranje zuba... vodim računa svaki dan\" — it's like brushing your teeth... I keep track every day."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da pričamo o *troškovima* na selu i u gradu.",
+     "o": [
+      "roads",
+      "friends",
+      "expenses",
+      "holidays"
+     ],
+     "a": 2,
+     "e": "Trošak — an expense; trošiti — to spend."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "64 dinara, još na *popustu*.",
+     "o": [
+      "market",
+      "street",
+      "warehouse",
+      "discount"
+     ],
+     "a": 3,
+     "e": "Popust — a discount."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svi sastojci, sve *namirnice*.",
+     "o": [
+      "recipes",
+      "money",
+      "dishes",
+      "groceries"
+     ],
+     "a": 3,
+     "e": "Namirnice — foodstuffs."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ostao mi je *višak*.",
+     "o": [
+      "the trash",
+      "lunch",
+      "receipt",
+      "surplus"
+     ],
+     "a": 3,
+     "e": "Višak — a surplus, a remainder."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad smo došli kod babe u *dvorište*.",
+     "o": [
+      "garden",
+      "room",
+      "cellar",
+      "yard"
+     ],
+     "a": 3,
+     "e": "Dvorište — a yard."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Tehnički mnogo više *uštediš*.",
+     "o": [
+      "you will buy",
+      "you will lose",
+      "you will save",
+      "you will sell"
+     ],
+     "a": 2,
+     "e": "Uštedeti — to save; ušteda — savings."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi bacamo naše *ostatke*.",
+     "o": [
+      "leftovers",
+      "groceries",
+      "things",
+      "papers"
+     ],
+     "a": 0,
+     "e": "Ostatak — a remainder, a leftover."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bitno je da znaš koliki su ti *rashodi*.",
+     "o": [
+      "income",
+      "debts",
+      "expenses",
+      "taxes"
+     ],
+     "a": 2,
+     "e": "Rashod — an expense, an expenditure."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da pričamo o ___ na selu i u gradu.",
+     "o": [
+      "troškovima",
+      "troškova",
+      "troškovi",
+      "troškove"
+     ],
+     "a": 0,
+     "e": "O in answer to \"about what?\" requires the locative case: o troškovima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad smo došli kod babe u ___.",
+     "o": [
+      "dvorištu",
+      "dvorište",
+      "dvorištem",
+      "dvorišta"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where to?\" requires the accusative case; for neuter nouns it coincides with the nominative: dvorište."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kad smo živeli na ___, ništa se nije bacalo.",
+     "o": [
+      "selo",
+      "sela",
+      "selom",
+      "selu"
+     ],
+     "a": 3,
+     "e": "Na in answer to \"where?\" — locative case: na selu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Svi ostaci idu kod ___ ili kod svinja.",
+     "o": [
+      "kerovi",
+      "kerova",
+      "kerove",
+      "kerovima"
+     ],
+     "a": 1,
+     "e": "Kod (\"to, at\") requires the genitive case: kod kerova."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Krompir oguliš, mi bacimo u ___.",
+     "o": [
+      "smeća",
+      "smeće",
+      "smeću",
+      "smećem"
+     ],
+     "a": 1,
+     "e": "Bacati u + accusative case; for neuter nouns it coincides with the nominative: smeće."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam živeo od plate do ___.",
+     "o": [
+      "plata",
+      "plate",
+      "platom",
+      "platu"
+     ],
+     "a": 1,
+     "e": "Do (\"until\") requires the genitive case: od plate do plate."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne moraš pisati: popila sam danas jednu ___.",
+     "o": [
+      "kafom",
+      "kafe",
+      "kafa",
+      "kafu"
+     ],
+     "a": 3,
+     "e": "Popiti what — accusative case: kafu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moram da živim s ___ posle, a ne s babom.",
+     "o": [
+      "tobom",
+      "tebe",
+      "tebi",
+      "ti"
+     ],
+     "a": 0,
+     "e": "S (\"with\") requires the instrumental case: ti → s tobom."
+    }
+   ]
+  }
+ ]
+}

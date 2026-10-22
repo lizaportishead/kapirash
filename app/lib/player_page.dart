@@ -48,8 +48,9 @@ class _PlayerPageState extends State<PlayerPage> {
   bool _subsLoading = true;
   Map<String, dynamic> _dict = {};
   List<QuizSection> _quiz = [];
-  // Переключатели SR/RU пока убраны с экрана: обе строки показываются всегда.
-  final _showSr = true, _showRu = true;
+  // Какие строки субтитров показывать — настраивается кнопкой в шапке.
+  bool get _showSr => store.showSr;
+  bool get _showRu => store.showRu;
   // Текущая фраза; за ней следит и открытый поверх плеера экран с полным текстом.
   final _curN = ValueNotifier<int>(-1);
   int get _cur => _curN.value;
@@ -205,7 +206,7 @@ class _PlayerPageState extends State<PlayerPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id)]),
+                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id), _settingsButton()]),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
@@ -315,6 +316,7 @@ class _PlayerPageState extends State<PlayerPage> {
                               ),
                               _youtubeButton(),
                               LikeButton(widget.video.id),
+                              _settingsButton(),
                             ],
                           ),
                           player,
@@ -346,7 +348,14 @@ class _PlayerPageState extends State<PlayerPage> {
     final tab = _side.clamp(0, tabs.length - 1);
     final Widget body = switch (tab) {
       0 when _subsLoading => KapLoading(size: 40),
-      0 => Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek, popOnTap: false),
+      0 => Transcript(
+        sr: _sr,
+        cur: _curN,
+        ruFor: _showRu ? _ruFor : (_) => '',
+        onSeek: _seek,
+        popOnTap: false,
+        showSr: _showSr,
+      ),
       1 => WordList(videoId: videoId, onSeek: _seek, popOnTap: false),
       _ => QuizList(videoId: videoId, sections: _quiz),
     };
@@ -625,6 +634,53 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
+  // Шестерёнка в шапке: какие субтитры показывать.
+  Widget _settingsButton() {
+    return IconButton(
+      tooltip: ui('Настройки ролика'),
+      icon: Icon(Icons.settings_outlined, size: 22, color: cMuted),
+      onPressed: () => showModalBottomSheet<void>(
+        context: context,
+        backgroundColor: cBg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
+        builder: (_) => ListenableBuilder(
+          listenable: store,
+          builder: (ctx, _) => SafeArea(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    ui('Настройки ролика'),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
+                  ),
+                  SizedBox(height: 8),
+                  for (final (label, value, set) in [
+                    (ui('Сербские субтитры'), store.showSr, store.setShowSr),
+                    (ui('Русские субтитры'), store.showRu, store.setShowRu),
+                  ])
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(
+                        label,
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
+                      ),
+                      value: value,
+                      activeThumbColor: cOnViolet,
+                      activeTrackColor: cViolet,
+                      onChanged: set,
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   // Закреплены внизу: весь текст и сохранённые слова ролика открываются отдельными экранами.
   Widget _links() {
     return Row(
@@ -637,7 +693,13 @@ class _PlayerPageState extends State<PlayerPage> {
             onTap: () => _push(
               SubPage(
                 title: ui('Весь текст'),
-                child: Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek),
+                child: Transcript(
+                  sr: _sr,
+                  cur: _curN,
+                  ruFor: _showRu ? _ruFor : (_) => '',
+                  onSeek: _seek,
+                  showSr: _showSr,
+                ),
               ),
             ),
           ),
@@ -719,7 +781,9 @@ class Transcript extends StatefulWidget {
     required this.ruFor,
     required this.onSeek,
     this.popOnTap = true,
+    this.showSr = true,
   });
+  final bool showSr;
   // В боковой колонке на десктопе экран не закрываем.
   final bool popOnTap;
   final List<Cue> sr;
@@ -794,15 +858,16 @@ class _TranscriptState extends State<Transcript> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            store.conv(sr[i].text),
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
-                              height: 1.35,
-                              color: i == cur ? cText : cMuted,
+                          if (widget.showSr)
+                            Text(
+                              store.conv(sr[i].text),
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                height: 1.35,
+                                color: i == cur ? cText : cMuted,
+                              ),
                             ),
-                          ),
                           if (widget.ruFor(sr[i]).isNotEmpty)
                             Text(widget.ruFor(sr[i]), style: TextStyle(fontSize: 13, height: 1.35, color: cMuted)),
                         ],

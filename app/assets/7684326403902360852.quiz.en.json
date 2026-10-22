@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What happens in the video?",
+     "o": [
+      "They are choosing clothes",
+      "Friends take turns suggesting absurd \"improvements\" to each other's appearance",
+      "They are discussing new makeup",
+      "They are giving each other care tips"
+     ],
+     "a": 1,
+     "e": "In the video: \"Nikad ti ovo nisam rekla, ali više bi mi se svidela da imaš...\" — they take turns suggesting increasingly strange \"improvements\" to each other."
+    },
+    {
+     "q": "What hairstyle is suggested to the first girl?",
+     "o": [
+      "Bangs",
+      "A braid",
+      "A bob",
+      "A ponytail"
+     ],
+     "a": 0,
+     "e": "In the video: \"bi ti jako stajala lepo jedna šiška\" — bangs would look really nice on you."
+    },
+    {
+     "q": "What is suggested to be done with the teeth?",
+     "o": [
+      "Put on crowns",
+      "Fix the bite",
+      "Whiten them",
+      "Remove a couple of teeth"
+     ],
+     "a": 3,
+     "e": "In the video: \"Za još bolji izgled sklonila sam dva zuba\" — for an even better look I removed two teeth."
+    },
+    {
+     "q": "What is suggested to add at the end?",
+     "o": [
+      "Horns",
+      "A ponytail",
+      "Wings",
+      "A mustache"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mislim da bi bilo mnogo lepše da imaš ovde rep\" — I think it would be much nicer if you had a tail here."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bi ti jako stajala lepo jedna *šiška*.",
+     "o": [
+      "hair clip",
+      "bangs",
+      "little braid",
+      "hat"
+     ],
+     "a": 1,
+     "e": "Šiška — bangs."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da imaš malo začuđene *obrve*.",
+     "o": [
+      "lips",
+      "cheeks",
+      "eyelashes",
+      "eyebrows"
+     ],
+     "a": 3,
+     "e": "Obrva — an eyebrow; obrve — eyebrows."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da imaš ogroman *mladež* na desnom obrazu.",
+     "o": [
+      "scar",
+      "pimple",
+      "mole",
+      "freckle"
+     ],
+     "a": 2,
+     "e": "Mladež — a mole."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imaš *razmak* između zuba.",
+     "o": [
+      "stain",
+      "filling",
+      "scar",
+      "gap"
+     ],
+     "a": 3,
+     "e": "Razmak — distance, gap."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ogroman mladež na ___ obrazu.",
+     "o": [
+      "desna",
+      "desni",
+      "desnom",
+      "desnog"
+     ],
+     "a": 2,
+     "e": "Na in answer to \"where?\" requires the locative case: na desnom obrazu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Bila bi najlepša na ___.",
+     "o": [
+      "svetu",
+      "svetom",
+      "svet",
+      "sveta"
+     ],
+     "a": 0,
+     "e": "Na svetu — \"in the world\": locative case after na."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mislim da bi ti ___ lepša.",
+     "o": [
+      "bili",
+      "bio",
+      "bila",
+      "bilo"
+     ],
+     "a": 2,
+     "e": "Addressing a girl — feminine: bila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Frizura samo sa onako jednom ___.",
+     "o": [
+      "šiškom",
+      "šiške",
+      "šišku",
+      "šiška"
+     ],
+     "a": 0,
+     "e": "Sa (\"with\") requires the instrumental case: sa šiškom."
+    }
+   ]
+  }
+ ]
+}

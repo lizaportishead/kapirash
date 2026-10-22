@@ -1,0 +1,457 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.880
+If you watch the next 20 minutes, you'll know Claude better than 90% of the population.
+
+2
+00:00:05.000 --> 00:00:07.280
+Most people use Claude like regular Google.
+
+3
+00:00:07.440 --> 00:00:09.840
+They ask questions, and that's where the story ends.
+
+4
+00:00:09.940 --> 00:00:13.780
+It's like buying an ultra-sport car and driving it to the store.
+
+5
+00:00:13.940 --> 00:00:15.140
+It just makes no sense.
+
+6
+00:00:15.360 --> 00:00:19.420
+That's why in this quick mini-course I'll show you how to get the most out of Claude
+
+7
+00:00:19.420 --> 00:00:21.620
+and put it to work today.
+
+8
+00:00:21.820 --> 00:00:23.360
+Why use Claude at all?
+
+9
+00:00:23.500 --> 00:00:27.560
+The point is not to ask questions but to let Claude work for you.
+
+10
+00:00:27.560 --> 00:00:29.520
+And it can do all sorts of things for you.
+
+11
+00:00:30.000 --> 00:00:34.320
+That is, you connect it to your computer, give it access and let it work.
+
+12
+00:00:34.500 --> 00:00:36.660
+So we don't waste time, let's go straight to practice.
+
+13
+00:00:36.800 --> 00:00:38.660
+If you're afraid Claude doesn't know anything about you,
+
+14
+00:00:38.780 --> 00:00:42.660
+and you've already left a lot of information in ChatGPT or another AI model,
+
+15
+00:00:43.200 --> 00:00:44.700
+let's transfer that to Claude.
+
+16
+00:00:44.840 --> 00:00:48.600
+We open Claude in the browser and get to the import option.
+
+17
+00:00:48.920 --> 00:00:52.160
+We get a question that we'll copy into ChatGPT.
+
+18
+00:00:52.620 --> 00:00:56.440
+The answers we got from ChatGPT we bring back into Claude
+
+19
+00:00:56.440 --> 00:01:00.940
+and now Claude has the information that ChatGPT has about us.
+
+20
+00:01:01.160 --> 00:01:03.180
+The second step — we choose the best model.
+
+21
+00:01:03.420 --> 00:01:07.220
+If you use the free version of Claude, you're limited in your choice of models.
+
+22
+00:01:07.620 --> 00:01:14.600
+Claude adds new things literally every week, and right now the strongest of the existing models is Fable 5.
+
+23
+00:01:14.780 --> 00:01:16.740
+That means it spends the most credits.
+
+24
+00:01:17.280 --> 00:01:19.340
+Since we've mentioned credits, what are credits?
+
+25
+00:01:19.340 --> 00:01:24.080
+Every Claude plan, whether free, $20, 100 or 200,
+
+26
+00:01:24.080 --> 00:01:26.960
+has a certain number of credits that can be used.
+
+27
+00:01:27.440 --> 00:01:32.340
+Every request you give Claude, or action you assign it, spends a certain number of credits.
+
+28
+00:01:32.440 --> 00:01:35.640
+And this spending depends on how powerful the model you use is
+
+29
+00:01:35.640 --> 00:01:37.880
+and how complex the task is.
+
+30
+00:01:38.040 --> 00:01:40.680
+That is, if you ask an ordinary question, fewer credits are spent.
+
+31
+00:01:40.920 --> 00:01:45.300
+If you turn on Fable 5, the strongest model, at maximum power
+
+32
+00:01:45.300 --> 00:01:49.020
+and tell it to build an app, it will burn through credits quickly.
+
+33
+00:01:49.180 --> 00:01:52.160
+Unless you're on a more expensive plan at $100 or $200.
+
+34
+00:01:52.160 --> 00:01:55.580
+My advice is always this: start with the $20 plan.
+
+35
+00:01:55.820 --> 00:01:58.680
+The free one has the worst possible models.
+
+36
+00:01:58.860 --> 00:02:01.980
+Only when on the $20 plan you start hitting limits,
+
+37
+00:02:02.480 --> 00:02:05.740
+when they tell you to wait 5 hours, wait a few days,
+
+38
+00:02:05.980 --> 00:02:08.420
+then it's time to buy the most expensive plan.
+
+39
+00:02:08.640 --> 00:02:12.920
+Use Haiku 4.5 for tasks that don't require much brains,
+
+40
+00:02:13.000 --> 00:02:15.560
+working with spreadsheets, anything simpler.
+
+41
+00:02:15.860 --> 00:02:19.600
+Use Sonnet 5 for everyday things.
+
+42
+00:02:19.600 --> 00:02:29.600
+For more complex tasks there's Opus 5, which came out recently: in some ways it's almost as good as Fable 5, and in some ways better, and it spends fewer credits.
+
+43
+00:02:29.940 --> 00:02:34.360
+And use Fable 5 for the most complex tasks.
+
+44
+00:02:34.480 --> 00:02:43.020
+When you choose a model, you also have its strength — that's "effort," and depending on the complexity of the task you choose what that effort is.
+
+45
+00:02:43.480 --> 00:02:48.040
+The lowest, of course, spends the fewest credits, and the maximum spends ultra many credits.
+
+46
+00:02:48.040 --> 00:02:55.120
+And when you choose Fable 5 and set the effort to maximum, it will eat all your credits, so use it carefully.
+
+47
+00:02:55.480 --> 00:03:02.280
+A skill that will matter more and more is knowing which model to use in which situation, because credits aren't infinite.
+
+48
+00:03:02.480 --> 00:03:06.300
+The third point — connectors, the best thing in Claude.
+
+49
+00:03:06.420 --> 00:03:11.460
+What do connectors do? You literally link your Claude with all possible apps.
+
+50
+00:03:11.460 --> 00:03:19.900
+What does it look like in practice? You connect Claude to Gmail. It reads all your emails, analyzes them, replies to emails, puts them in drafts.
+
+51
+00:03:20.100 --> 00:03:27.620
+You connect it to Facebook ad campaigns. It analyzes all your campaigns, can launch them directly, and from the chat it can launch campaigns.
+
+52
+00:03:27.780 --> 00:03:31.440
+Now I'll show you my connectors. Here I have around a dozen connectors.
+
+53
+00:03:31.440 --> 00:03:42.320
+Canva, Circle, Facebook ads, Gmail, Google Drive, Higgsfield for creating videos and photos, HubSpot, MailerLite, SEMrush and many other plugins.
+
+54
+00:03:42.520 --> 00:03:46.440
+I don't need to go into these apps directly at all, I can control them from Claude.
+
+55
+00:03:46.680 --> 00:03:54.240
+Here's a great example: HubSpot, a CRM where all customer data lives, and you need to add a new order to every customer.
+
+56
+00:03:54.400 --> 00:03:58.660
+That is, a thousand some orders, if done manually, would take forever.
+
+57
+00:03:59.200 --> 00:04:04.660
+Through Claude you connect HubSpot and in literally half an hour Claude does this work for you.
+
+58
+00:04:04.920 --> 00:04:06.820
+The fourth point — Claude artifacts.
+
+59
+00:04:06.960 --> 00:04:09.080
+Mini-apps inside your Claude.
+
+60
+00:04:09.080 --> 00:04:15.080
+You have various spreadsheets filled with different data, and you want it to look nice visually, as if someone had programmed it for you.
+
+61
+00:04:15.580 --> 00:04:18.540
+In a Claude artifact you can have such an app.
+
+62
+00:04:18.640 --> 00:04:26.080
+You connect a spreadsheet that data flows into, and literally every day you can come in and look at an interactive view of this data.
+
+63
+00:04:26.080 --> 00:04:30.340
+This is an example of an artifact in which a customer database has been analyzed.
+
+64
+00:04:30.440 --> 00:04:32.480
+Notice how it looks.
+
+65
+00:04:32.560 --> 00:04:38.580
+This database is filled every day, this is demo data, and here you can run any analyses
+
+66
+00:04:38.580 --> 00:04:42.500
+and the best part is that you can tailor it to your needs.
+
+67
+00:04:42.980 --> 00:04:45.880
+If some metrics matter more to you, they can be highlighted.
+
+68
+00:04:46.080 --> 00:04:51.580
+Even better, this can be shared: you click Publish and share with your team members.
+
+69
+00:04:51.720 --> 00:04:53.120
+The fifth point — visualizations.
+
+70
+00:04:53.120 --> 00:05:00.260
+Previously, visualizing boring data had to be done through external tools, today this is possible inside Claude.
+
+71
+00:05:00.640 --> 00:05:02.460
+You paste in a table and say:
+
+72
+00:05:03.060 --> 00:05:07.060
+Show me this table visually and the most important data from it.
+
+73
+00:05:07.380 --> 00:05:09.320
+Look at what kind of dashboard you get.
+
+74
+00:05:09.560 --> 00:05:11.120
+The sixth point — Claude projects.
+
+75
+00:05:11.320 --> 00:05:15.980
+Imagine a project as a folder that you fill with all possible data for this project.
+
+76
+00:05:16.200 --> 00:05:19.300
+Everything related to this project you do inside it.
+
+77
+00:05:19.300 --> 00:05:25.900
+Claude uses all this data, and based on it gives you accurate information on this project, not those generic answers.
+
+78
+00:05:26.140 --> 00:05:28.480
+I have projects for all areas of business.
+
+79
+00:05:28.640 --> 00:05:34.520
+AI Profit Lab, finance, neuro lab, Instagram dominance, copywriting, SaaS tools.
+
+80
+00:05:34.860 --> 00:05:39.700
+That is, for each project I make a separate folder and put all the valuable information into it.
+
+81
+00:05:39.920 --> 00:05:42.300
+The seventh point — the Claude extension for Google Chrome.
+
+82
+00:05:43.220 --> 00:05:52.160
+You connect Claude and your browser, and Claude can search, open sites, parse and do everything you can.
+
+83
+00:05:52.400 --> 00:05:54.200
+That is, this saves me a lot of time.
+
+84
+00:05:54.200 --> 00:06:00.800
+You look for cheap plane tickets: when you enter it directly into Claude or another tool, it'll give you data that isn't up to date.
+
+85
+00:06:01.180 --> 00:06:07.080
+But this way you give it access, and it searches the way you would, sees what's current, rather than those outdated prices.
+
+86
+00:06:07.320 --> 00:06:11.680
+A great example — when I was recently looking for a domain for a site, it was very hard to find one.
+
+87
+00:06:12.020 --> 00:06:16.900
+However, I get 100 suggestions, and now I have to check one by one whether this domain is free.
+
+88
+00:06:17.460 --> 00:06:25.360
+I launch Claude, it goes into Google Chrome and literally says: this is taken, this is free, gives an analysis, so I don't need to waste any time at all.
+
+89
+00:06:25.360 --> 00:06:28.780
+The eighth point, perhaps the biggest, is Claude Cowork.
+
+90
+00:06:29.140 --> 00:06:33.480
+We give Claude access to your computer, and it does what you would do.
+
+91
+00:06:33.780 --> 00:06:40.520
+That is, it has access to documentation, folders, it can work, build an app, whatever you tell it, it will do.
+
+92
+00:06:40.520 --> 00:06:42.480
+And this can be done remotely.
+
+93
+00:06:42.860 --> 00:06:46.360
+If your computer is on, you can give a command from your phone:
+
+94
+00:06:46.720 --> 00:06:50.340
+do this and that, analyze the data from such-and-such folder
+
+95
+00:06:50.340 --> 00:06:52.540
+and it does all of it for you.
+
+96
+00:06:52.720 --> 00:06:56.240
+On the YouTube channel "Business Stories" I have more than fifteen hundred shorts.
+
+97
+00:06:56.360 --> 00:06:58.200
+Downloading them is serious work.
+
+98
+00:06:58.720 --> 00:07:01.040
+Claude Cowork wrote me a Python script,
+
+99
+00:07:01.200 --> 00:07:02.680
+I ran it in the background,
+
+100
+00:07:02.800 --> 00:07:05.900
+it downloaded all these clips, put them in folders,
+
+101
+00:07:06.120 --> 00:07:09.900
+sorted them by topic, and now I have the whole database in one place.
+
+102
+00:07:09.900 --> 00:07:17.200
+The ninth point — Claude Design. You no longer need designers to make cool design for a site, presentation, anything.
+
+103
+00:07:17.420 --> 00:07:21.660
+Claude Design does it for you. All you need is to give it instructions.
+
+104
+00:07:21.760 --> 00:07:28.780
+I like this site, I like this style, need to do this, this and this. You run it and get a finished design.
+
+105
+00:07:28.940 --> 00:07:35.360
+The way you'd communicate with a designer, you give it comments on what needs fixing, and it fixes it in the background.
+
+106
+00:07:35.360 --> 00:07:40.280
+That way we can release several finished sites every week.
+
+107
+00:07:40.460 --> 00:07:46.000
+If you want to use AI to earn and grow your business, join AI Profit Lab.
+
+108
+00:07:46.480 --> 00:07:51.320
+There you'll find ready-made automations, ready-made systems, only what's been proven in practice.
+
+109
+00:07:51.460 --> 00:07:56.120
+That is, you won't be buried in information, only what we test on real businesses,
+
+110
+00:07:56.260 --> 00:07:58.780
+we publish, and you can practically just copy.
+
+111
+00:07:59.040 --> 00:08:04.240
+With the coupon Vlast Digital you get almost 40% off the first month. Link in the description.
+
+112
+00:08:04.240 --> 00:08:13.060
+Those were the most important points about Claude. The point is to apply at least one today, something you haven't tried before, try it in practice and see how it works for your case.
+
+113
+00:08:13.280 --> 00:08:16.200
+There's no use from watching once, all this has to be applied in practice.
+
+114
+00:08:16.440 --> 00:08:19.500
+If this was useful to you, give it a like, and see you in the next lesson.

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the author proud of at the start of the video?",
+     "o": [
+      "A diploma",
+      "Winning a tournament",
+      "A channel with 20,000 subscribers, a second gym and a soon-to-open café",
+      "A new car"
+     ],
+     "a": 2,
+     "e": "In the video: \"osim YouTube kanala od 20.000 vas, napravio sam još jedan džim, i evo, samo što nisam napravio još jedan kafić\" — besides a YouTube channel of 20,000 of you, I built another gym, and, look, I've almost built another café."
+    },
+    {
+     "q": "What is the author preparing for the round numbers of subscribers?",
+     "o": [
+      "A move",
+      "A big giveaway with several prizes",
+      "A concert",
+      "A new gym"
+     ],
+     "a": 1,
+     "e": "In the video: \"spremam vam neki veći giveaway. Dakle, hoću da bude nekoliko nagrada\" — I'm preparing a bigger giveaway for you. So I want there to be several prizes."
+    },
+    {
+     "q": "Where is the Grind coffee café being built?",
+     "o": [
+      "In Vračar",
+      "In Niš",
+      "At Zeleni venac",
+      "In New Belgrade"
+     ],
+     "a": 0,
+     "e": "In the video: \"Sad sam se uputio na Vračar... idemo taman da vidimo gradilište... Grind coffee\" — I've now headed to Vračar... let's go see the construction site... Grind coffee."
+    },
+    {
+     "q": "By when do they want to finish renovating the café?",
+     "o": [
+      "By the end of the year",
+      "By January 1",
+      "By tomorrow",
+      "By May 15"
+     ],
+     "a": 3,
+     "e": "In the video: \"Verujemo da ćemo do 15. maja sve završiti\" — we believe we'll finish everything by May 15."
+    },
+    {
+     "q": "What ratings did Tašmajdan Park get for workouts?",
+     "o": [
+      "7 and 8",
+      "9 and 9",
+      "10 and 10",
+      "3 and 4"
+     ],
+     "a": 0,
+     "e": "In the video: \"Dakle, Tašmajdanski park je možda i najbolje mesto za trening. Naše ocene su 7 i 8\" — so, Tašmajdan Park is perhaps the best place for training. Our ratings are 7 and 8."
+    },
+    {
+     "q": "What is missing at Tašmajdan?",
+     "o": [
+      "Pull-up bars",
+      "Equipment for legs",
+      "Running tracks",
+      "Parallel bars"
+     ],
+     "a": 1,
+     "e": "In the video: \"mi fali nešto čime mogu da se rade noge... Ja bih ovom parku dao ocenu 7, zato što radi samo pola tela\" — I'm missing something to work the legs with... I'd give this park a 7, because it works only half the body."
+    },
+    {
+     "q": "What rating did the \"Olimp\" park in Zvezdara get, and why is it better than Tašmajdan?",
+     "o": [
+      "3: empty",
+      "5: old",
+      "10: perfect",
+      "8.5: well maintained, not crowded, with a monkey bar and a Sorensen hold"
+     ],
+     "a": 3,
+     "e": "In the video: \"Rekao bih da je bolji od Taša, zato što nije razređen uopšte. Za ovaj park ide osam i po\" — I'd say it's better than Taš, because it's not thinned out at all. This park gets an eight and a half."
+    },
+    {
+     "q": "Why did the forest park in Zvezdara get 8, not 10?",
+     "o": [
+      "Because of the mud",
+      "Because of the people",
+      "Because of the noise",
+      "Because of the low push-up bars"
+     ],
+     "a": 3,
+     "e": "In the video: \"Bila bi čista desetka, samo da je bolje propadanje\" — the bars are too low."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Idemo da vidimo *gradilište*.",
+     "o": [
+      "market",
+      "construction site",
+      "park",
+      "office"
+     ],
+     "a": 1,
+     "e": "Gradilište — a construction site; graditi — to build."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovde ide *šank*.",
+     "o": [
+      "bar counter",
+      "window",
+      "door",
+      "stage"
+     ],
+     "a": 0,
+     "e": "Šank — a bar counter."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo tri *razboja* za propadanje.",
+     "o": [
+      "of parallel bars",
+      "of rings",
+      "of benches",
+      "of pull-up bars"
+     ],
+     "a": 0,
+     "e": "Razboj — parallel bars (gymnastics apparatus)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sprava za *zgibove*.",
+     "o": [
+      "running",
+      "squats",
+      "pull-ups",
+      "bench press"
+     ],
+     "a": 2,
+     "e": "Zgib — a pull-up on a bar."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovde mogu da se rade *sklekovi*.",
+     "o": [
+      "stretching",
+      "lunges",
+      "jumps",
+      "push-ups from the floor"
+     ],
+     "a": 3,
+     "e": "Sklek — a push-up from the floor."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ima onaj *panj*.",
+     "o": [
+      "table",
+      "stump",
+      "fence",
+      "stone"
+     ],
+     "a": 1,
+     "e": "Panj — a stump."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nalazi se u debeloj *hladovini* Zvezdarske šume.",
+     "o": [
+      "in the heat",
+      "in the mud",
+      "in luxury",
+      "eyeshadows"
+     ],
+     "a": 3,
+     "e": "Hladovina — shade, coolness."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Malo je sve *odrano*, malo je prslo.",
+     "o": [
+      "scraped off",
+      "new",
+      "broken to splinters",
+      "painted"
+     ],
+     "a": 0,
+     "e": "Odrati — to scrape off, to peel off; odrano — scraped off, worn away."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad sam se uputio na ___.",
+     "o": [
+      "Vračarom",
+      "Vračar",
+      "Vračara",
+      "Vračaru"
+     ],
+     "a": 1,
+     "e": "Uputiti se na + accusative case; for inanimate nouns it coincides with the nominative: na Vračar."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Treba podeliti ___.",
+     "o": [
+      "plati",
+      "plate",
+      "platama",
+      "plata"
+     ],
+     "a": 1,
+     "e": "Podeliti what — accusative plural: plate."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moj brat Dare vodi o tome ___.",
+     "o": [
+      "računu",
+      "račun",
+      "računom",
+      "računa"
+     ],
+     "a": 3,
+     "e": "Voditi računa o what — genitive case: voditi računa."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Verujemo da ćemo do 15. ___ sve završiti.",
+     "o": [
+      "majem",
+      "maju",
+      "maja",
+      "maj"
+     ],
+     "a": 2,
+     "e": "The date 15. maja — genitive case of the month name: do 15. maja."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dok izlazimo iz Tašmajdanskog ___, da sumiramo.",
+     "o": [
+      "parka",
+      "park",
+      "parku",
+      "parkom"
+     ],
+     "a": 0,
+     "e": "Iz (\"from\") requires the genitive case: iz parka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ocena 7, zato što radi samo pola ___.",
+     "o": [
+      "tela",
+      "telu",
+      "telom",
+      "telo"
+     ],
+     "a": 0,
+     "e": "After pola the genitive case is used: pola tela."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sviđa mi se jer se nalazi u debeloj ___.",
+     "o": [
+      "hladovinom",
+      "hladovini",
+      "hladovina",
+      "hladovinu"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where?\" — locative case: u hladovini."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ima ovih zemljanih ___ koliko hoćeš.",
+     "o": [
+      "staze",
+      "stazama",
+      "stazu",
+      "staza"
+     ],
+     "a": 3,
+     "e": "After koliko (\"how many\") the genitive plural is used: staza."
+    }
+   ]
+  }
+ ]
+}

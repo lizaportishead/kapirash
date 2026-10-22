@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the essence of the \"Get home without help\" experiment?",
+     "o": [
+      "They go to the seaside",
+      "His wife takes the author to an unfamiliar place, and he has to get home without a map or the internet",
+      "The author hides his wife",
+      "The author looks for a treasure"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ona će mene da odvede gde god hoće, a ja treba da se vratim kući bez mape, interneta i bez ičije pomoći\" — she will take me wherever she wants, and I have to get back home without a map, internet or anyone's help."
+    },
+    {
+     "q": "How does the author get home?",
+     "o": [
+      "By car",
+      "On a rented bicycle",
+      "On foot",
+      "On a scooter"
+     ],
+     "a": 1,
+     "e": "In the video: \"Bajs... Koji sam\"; he pedals all the way (\"vergla\" — pedaling hard)."
+    },
+    {
+     "q": "How does his wife keep track of him?",
+     "o": [
+      "Through friends",
+      "By phone calls",
+      "Through a drone",
+      "By a tracker in his bag"
+     ],
+     "a": 3,
+     "e": "In the video: \"U mojoj torbi se nalazio traker i Goca je mogla da pogleda u svakom trenutku gde se ja nalazim\" — there was a tracker in my bag, and Goca could see at any moment where I was."
+    },
+    {
+     "q": "What does the author look for in order to get his bearings?",
+     "o": [
+      "The sea",
+      "A bus stop",
+      "A mountain",
+      "The Sava river"
+     ],
+     "a": 3,
+     "e": "In the video: \"planirao sam da dođem do reke i onda skontam da je to Sava ili Dunav i automatski znam gde je Beograd\" — I planned to get to the river and then figure out whether it's the Sava or the Danube, and automatically know where Belgrade is."
+    },
+    {
+     "q": "What did he find instead of a river?",
+     "o": [
+      "A city",
+      "A bridge",
+      "A lake",
+      "A forest"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ja sam našao jezero. Odakle ovde jezero?\" — I found a lake. Where did a lake come from here?"
+    },
+    {
+     "q": "What bothered him the most on the Sava bank?",
+     "o": [
+      "Dogs",
+      "The lack of a map",
+      "Mosquitoes and the bumpy road",
+      "Rain"
+     ],
+     "a": 2,
+     "e": "In the video: \"Imam problem zato što me komarci grizu čim stanem na 5 sekundi\" and \"Truckavi putevi su me ubijali\" — I have a problem because mosquitoes bite me as soon as I stop for 5 seconds, and the bumpy roads were killing me."
+    },
+    {
+     "q": "Who found him in the evening?",
+     "o": [
+      "A taxi driver",
+      "A friend",
+      "His wife Goca, who came by car to the café",
+      "The police"
+     ],
+     "a": 2,
+     "e": "In the video: \"Goca je videla na mapi da sam prestao da se pomeram... došla je autom da vidi šta se dešava sa mnom\" — Goca saw on the map that I had stopped moving... she came by car to see what was happening with me."
+    },
+    {
+     "q": "How close was he to New Belgrade when he gave up?",
+     "o": [
+      "5 hours away",
+      "2 hours away",
+      "100 km away",
+      "At most 20 minutes away"
+     ],
+     "a": 3,
+     "e": "In the video: \"Evo ga Novi Beograd. Znači, maksimalno 20 minuta sam imao\" — there's New Belgrade. So I had 20 minutes at most."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Zavezan* sam za drvo, ne znam gde se nalazim.",
+     "o": [
+      "dressed",
+      "hidden",
+      "forgotten",
+      "tied"
+     ],
+     "a": 3,
+     "e": "Zavezan — tied, bound."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nisam osetio *uzbrdo*.",
+     "o": [
+      "uphill, going up",
+      "downhill",
+      "turn",
+      "bridge"
+     ],
+     "a": 0,
+     "e": "Uzbrdo — up a slope."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na drugoj *raskrsnici* mene ljudi pitaju gde je neko mesto.",
+     "o": [
+      "of the square",
+      "of the stop",
+      "of the gas station",
+      "of the intersection"
+     ],
+     "a": 3,
+     "e": "Raskrsnica — an intersection."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo je *nasip*, da se ovo ne potopi od reke.",
+     "o": [
+      "highway",
+      "dam",
+      "canal",
+      "bridge"
+     ],
+     "a": 1,
+     "e": "Nasip — an embankment, a dam."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pored Save sam došao do *ćorsokaka*.",
+     "o": [
+      "of the bridge",
+      "of the forest",
+      "of the dead end",
+      "of the lake"
+     ],
+     "a": 2,
+     "e": "Ćorsokak — a dead end."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Popio bih sad vodu iz *lokve*.",
+     "o": [
+      "of the river",
+      "of the bottle",
+      "of the puddle",
+      "of the well"
+     ],
+     "a": 2,
+     "e": "Lokva — a puddle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vode mi je ostalo dva *gutljaja*.",
+     "o": [
+      "of a glass",
+      "of a liter",
+      "of a sip",
+      "of a bucket"
+     ],
+     "a": 2,
+     "e": "Gutljaj — a sip."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sava *krivuda*.",
+     "o": [
+      "freezes",
+      "dries up",
+      "flows straight",
+      "meanders"
+     ],
+     "a": 3,
+     "e": "Krivudati — to meander; kriv — crooked."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja se uvek fleksujem svojoj ___.",
+     "o": [
+      "ženom",
+      "ženi",
+      "ženu",
+      "žena"
+     ],
+     "a": 1,
+     "e": "Fleksovati se to someone — dative case: svojoj ženi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Treba da se vratim ___ bez mape i interneta.",
+     "o": [
+      "kući",
+      "kuća",
+      "kuću",
+      "kućom"
+     ],
+     "a": 0,
+     "e": "Vratiti se kući — \"to return home\", the form kući."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Bez ___, interneta i bez ičije pomoći.",
+     "o": [
+      "mapu",
+      "mapa",
+      "mapom",
+      "mape"
+     ],
+     "a": 3,
+     "e": "Bez (\"without\") requires the genitive case: bez mape."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sedim u ___ i nisam osetio da auto ide gore-dole.",
+     "o": [
+      "kolima",
+      "kola",
+      "kolom",
+      "kolu"
+     ],
+     "a": 0,
+     "e": "U in answer to \"where?\" — locative case; kola is always plural: u kolima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Izvinite, u kom ___ je Beograd?",
+     "o": [
+      "pravcu",
+      "pravca",
+      "pravcem",
+      "pravac"
+     ],
+     "a": 0,
+     "e": "U in answer to \"where?\" — locative case: u kom pravcu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moja intuicija do sada nije bila u ___.",
+     "o": [
+      "pravo",
+      "pravu",
+      "pravom",
+      "prava"
+     ],
+     "a": 1,
+     "e": "To be right — the expression biti u pravu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Došao sam do nekog ___.",
+     "o": [
+      "jezeru",
+      "jezerom",
+      "jezera",
+      "jezero"
+     ],
+     "a": 2,
+     "e": "Do (\"up to\") requires the genitive case: do jezera."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pored ___ sam došao do ćorsokaka.",
+     "o": [
+      "Savom",
+      "Sava",
+      "Save",
+      "Savu"
+     ],
+     "a": 2,
+     "e": "Pored (\"next to\") requires the genitive case: pored Save."
+    }
+   ]
+  }
+ ]
+}

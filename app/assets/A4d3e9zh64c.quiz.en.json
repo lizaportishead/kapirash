@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where does the family go on the trip?",
+     "o": [
+      "To Zlatibor",
+      "To the Deliblato Sands — a sandy area — for 4 days",
+      "To Belgrade",
+      "To the seaside"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mi naše putovanje započinjemo kod Ramske tvrđave... hoćete preći, recimo, u Deliblatsku peščaru.\" — we start our journey at the Ram Fortress... you'll cross, say, into the Deliblato Sands."
+    },
+    {
+     "q": "How do they cross the Danube?",
+     "o": [
+      "By bridge",
+      "By swimming",
+      "By boat",
+      "By ferry from the Ram Fortress"
+     ],
+     "a": 3,
+     "e": "In the video: \"Od Ramske tvrđave ćemo preći skelom preko\" — from the Ram Fortress we'll cross by ferry."
+    },
+    {
+     "q": "Who is Keni?",
+     "o": [
+      "The family's dog",
+      "A guide",
+      "The author's son",
+      "A neighbor"
+     ],
+     "a": 0,
+     "e": "In the video: \"Tu je i pas, ovo kuče koje laje, to je Keni\" — there's also a dog, this barking pup is Keni."
+    },
+    {
+     "q": "What did Slavica give them before the walk?",
+     "o": [
+      "A hat each",
+      "A map each",
+      "A walking stick each",
+      "A bottle of water each"
+     ],
+     "a": 2,
+     "e": "In the video: \"Dala nam je po štap, odnosno po motku\" — she gave each of us a stick, or rather a pole."
+    },
+    {
+     "q": "What especially struck the author about the cottage?",
+     "o": [
+      "The noise of the highway",
+      "The swimming pool",
+      "The silence, no TV and no internet",
+      "The Wi-Fi"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ovde nema televizije, ovde nema interneta, ovde su ljudi prinuđeni jedni na druge\" — there's no television here, no internet here, people here are forced to rely on each other."
+    },
+    {
+     "q": "What is klekovača made from?",
+     "o": [
+      "Plums",
+      "Grapes",
+      "Juniper berries",
+      "Apples"
+     ],
+     "a": 2,
+     "e": "In the video: \"Kleka. I od bobica tog drveta se pravi nadaleko poznata klekovača\" — juniper. And from that tree's berries the widely known klekovača is made."
+    },
+    {
+     "q": "What does the author advise about the last three kilometers to the highest point?",
+     "o": [
+      "Take a taxi",
+      "Go at night",
+      "Walk rather than drive",
+      "Go fast"
+     ],
+     "a": 2,
+     "e": "In the video: \"Put je katastrofa. Preporučujem da poslednja tri kilometra prepešačite. Nikako autom\" — the road is a disaster. I recommend walking the last three kilometers. By no means by car."
+    },
+    {
+     "q": "How much does the ferry cost?",
+     "o": [
+      "5000 dinars",
+      "1200 dinars for the car and all passengers",
+      "100 dinars per person",
+      "Free"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ova skela koja ide od Rama košta 1200 dinara za jedan auto i za sve putnike u tom autu\" — this ferry from Ram costs 1200 dinars for one car and all passengers in that car."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Preći ćemo reku *skelom*.",
+     "o": [
+      "by ferry",
+      "by bus",
+      "by boat",
+      "bridge"
+     ],
+     "a": 0,
+     "e": "Skela — a ferry, a crossing."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja ne mogu da opišem koliko smo *napakovani*.",
+     "o": [
+      "hungry",
+      "frightened",
+      "loaded with things",
+      "glad"
+     ],
+     "a": 2,
+     "e": "Napakovati — to pack, to load up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovu vikendicu okružuje šuma *četinara*.",
+     "o": [
+      "of fruit trees",
+      "of conifers",
+      "of flowers",
+      "of bushes"
+     ],
+     "a": 1,
+     "e": "Četinar — a conifer."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo iza mene je staro *korito* Karaša.",
+     "o": [
+      "bridge",
+      "lake",
+      "riverbed",
+      "bank"
+     ],
+     "a": 2,
+     "e": "Korito — a riverbed, a tub."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bila je jedna *čaplja* u kadru.",
+     "o": [
+      "fox",
+      "seagull",
+      "heron",
+      "roe deer"
+     ],
+     "a": 2,
+     "e": "Čaplja — a heron."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Kleka*. I od bobica tog drveta se pravi klekovača.",
+     "o": [
+      "willow",
+      "oak",
+      "birch",
+      "juniper"
+     ],
+     "a": 3,
+     "e": "Kleka — juniper."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To je zemljani put i prilično duboki *kolotrazi*.",
+     "o": [
+      "streams",
+      "potholes",
+      "stones",
+      "ruts"
+     ],
+     "a": 3,
+     "e": "Kolotrag (pl. kolotrazi) — a rut."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Preporučujem da poslednja tri kilometra *prepešačite*.",
+     "o": [
+      "you will fly through",
+      "you will drive",
+      "you will walk",
+      "you will run quickly"
+     ],
+     "a": 2,
+     "e": "Prepešačiti — to cover on foot; peške — on foot."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mi naše putovanje započinjemo kod ___ tvrđave.",
+     "o": [
+      "Ramsku",
+      "Ramskom",
+      "Ramske",
+      "Ramska"
+     ],
+     "a": 2,
+     "e": "Kod (\"at, near\") requires the genitive case: kod Ramske tvrđave."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hoćete preći u Deliblatsku ___.",
+     "o": [
+      "peščare",
+      "peščarom",
+      "peščara",
+      "peščaru"
+     ],
+     "a": 3,
+     "e": "Preći u + accusative case: u peščaru."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "I dalje šetamo ___ peščarom.",
+     "o": [
+      "Deliblatsku",
+      "Deliblatske",
+      "Deliblatska",
+      "Deliblatskom"
+     ],
+     "a": 3,
+     "e": "Šetati with what (along what) — instrumental case: Deliblatskom peščarom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Jednoga dana krenula je kod svoje ___.",
+     "o": [
+      "baka",
+      "bakom",
+      "bake",
+      "baku"
+     ],
+     "a": 2,
+     "e": "Kod (\"at someone's place\") requires the genitive case: kod svoje bake."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Slavica nam je dala po ___.",
+     "o": [
+      "štapom",
+      "štapu",
+      "štapa",
+      "štap"
+     ],
+     "a": 3,
+     "e": "Po (\"one each\") + accusative case: po štap."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Idemo u jednu pešačku ___.",
+     "o": [
+      "turom",
+      "turu",
+      "tura",
+      "ture"
+     ],
+     "a": 1,
+     "e": "Ići u + accusative case: u turu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovde nema ___ i nema interneta.",
+     "o": [
+      "televiziju",
+      "televizija",
+      "televizijom",
+      "televizije"
+     ],
+     "a": 3,
+     "e": "Nema (\"there is no\") requires the genitive case: nema televizije."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prašinu imamo u ___.",
+     "o": [
+      "ustom",
+      "usta",
+      "ustu",
+      "ustima"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative plural: u ustima."
+    }
+   ]
+  }
+ ]
+}

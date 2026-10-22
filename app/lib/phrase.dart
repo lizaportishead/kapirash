@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'dart:ui' as dui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:http/http.dart' as http;
 
 import 'store.dart';
 import 'subs.dart';
@@ -9,7 +11,8 @@ import 'theme.dart';
 import 'l10n.dart';
 
 /// Слова фразы: каждое подчёркнуто и нажимается, сохранённые подчёркнуты фиолетовым.
-class PhraseWords extends StatelessWidget {
+/// Долгое нажатие на слово и движение пальца выделяют фразу; когда палец отпущен, открывается шторка.
+class PhraseWords extends StatefulWidget {
   const PhraseWords(
     this.cue, {
     super.key,
@@ -25,34 +28,114 @@ class PhraseWords extends StatelessWidget {
   final bool center;
 
   @override
+  State<PhraseWords> createState() => _PhraseWordsState();
+}
+
+class _PhraseWordsState extends State<PhraseWords> {
+  int? _from, _to;
+  List<GlobalKey> _keys = [];
+
+  @override
+  void didUpdateWidget(PhraseWords old) {
+    super.didUpdateWidget(old);
+    if (old.cue.text != widget.cue.text) _from = _to = null;
+  }
+
+  /// Слово под пальцем; если палец между словами или вне фразы, берём ближайшее по строке.
+  int? _wordAt(Offset global) {
+    int? best;
+    var bestD = double.infinity;
+    for (var i = 0; i < _keys.length; i++) {
+      final box = _keys[i].currentContext?.findRenderObject();
+      if (box is! RenderBox || !box.attached) continue;
+      final r = box.localToGlobal(Offset.zero) & box.size;
+      final d = (r.inflate(widget.spacing).contains(global)) ? 0.0 : (r.center - global).distance;
+      if (d < bestD) {
+        bestD = d;
+        best = i;
+      }
+    }
+    return best;
+  }
+
+  void _finish(List<String> words) {
+    final a = _from, b = _to;
+    setState(() => _from = _to = null);
+    if (a == null || b == null) return;
+    final lo = a < b ? a : b, hi = a < b ? b : a;
+    widget.onWord(words.sublist(lo, hi + 1).join(' '));
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final words = widget.cue.text.split(' ');
+    if (_keys.length != words.length) _keys = List.generate(words.length, (_) => GlobalKey());
+    final a = _from, b = _to;
+    final lo = a == null || b == null ? -1 : (a < b ? a : b);
+    final hi = a == null || b == null ? -1 : (a < b ? b : a);
     return Wrap(
-      alignment: center ? WrapAlignment.center : WrapAlignment.start,
-      spacing: spacing,
+      alignment: widget.center ? WrapAlignment.center : WrapAlignment.start,
       children: [
-        for (final w in cue.text.split(' '))
+        for (var i = 0; i < words.length; i++)
           GestureDetector(
-            onTap: () => onWord(w),
+            key: _keys[i],
+            onTap: () => widget.onWord(words[i]),
+            onLongPressStart: (d) => setState(() => _from = _to = i),
+            onLongPressMoveUpdate: (d) {
+              final j = _wordAt(d.globalPosition);
+              if (j != null && j != _to) setState(() => _to = j);
+            },
+            onLongPressEnd: (_) => _finish(words),
+            onLongPressCancel: () => setState(() => _from = _to = null),
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: pad),
-              child: Text(
-                store.conv(w),
-                style: TextStyle(
-                  fontSize: size,
-                  fontWeight: FontWeight.w700,
-                  height: 1.3,
-                  color: cInk,
-                  decoration: TextDecoration.underline,
-                  decorationThickness: 2,
-                  decorationColor: store.isSaved(toLat(cleanWord(w)).toLowerCase())
-                      ? cViolet
-                      : cInk.withValues(alpha: 0.25),
+              padding: EdgeInsets.only(right: i >= lo && i < hi ? 0 : widget.spacing),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: i >= lo && i <= hi ? cViolet.withValues(alpha: 0.3) : null,
+                  borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(i == lo ? 6 : 0),
+                    right: Radius.circular(i == hi ? 6 : 0),
+                  ),
+                ),
+                // Отступ справа внутри слова, чтобы пробел между выделенными словами тоже закрашивался.
+                padding: EdgeInsets.only(
+                  top: widget.pad,
+                  bottom: widget.pad,
+                  right: i >= lo && i < hi ? widget.spacing : 0,
+                ),
+                child: Text(
+                  store.conv(words[i]),
+                  style: TextStyle(
+                    fontSize: widget.size,
+                    fontWeight: FontWeight.w700,
+                    height: 1.3,
+                    color: cInk,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 2,
+                    decorationColor: store.isSaved(toLat(cleanWord(words[i])).toLowerCase())
+                        ? cViolet
+                        : cInk.withValues(alpha: 0.25),
+                  ),
                 ),
               ),
             ),
           ),
       ],
     );
+  }
+}
+
+/// Перевод всей фразы целиком; null, если сервис недоступен.
+Future<String?> _translatePhrase(String lat) async {
+  try {
+    final to = store.lang == 'en' ? 'en' : 'ru';
+    final r = await http
+        .get(Uri.https('api.mymemory.translated.net', '/get', {'q': toCyr(lat), 'langpair': 'sr|$to'}))
+        .timeout(Duration(seconds: 8));
+    final t = (jsonDecode(utf8.decode(r.bodyBytes))['responseData']?['translatedText'] as String?)?.trim();
+    return t == null || t.isEmpty ? null : t;
+  } catch (_) {
+    return null;
   }
 }
 
@@ -68,11 +151,23 @@ void showWord(
   // Кнопка «Мои слова»: при добавлении шторка улетает к ней.
   GlobalKey? flyTo,
 }) {
-  final word = cleanWord(raw);
-  if (word.isEmpty) return;
+  final parts = [
+    for (final p in raw.split(RegExp(r'\s+')))
+      if (cleanWord(p).isNotEmpty) cleanWord(p),
+  ];
+  if (parts.isEmpty) return;
+  final word = parts.join(' ');
   final lat = toLat(word), cyr = toCyr(lat), key = lat.toLowerCase();
-  final entry = dict[key] as List?;
-  final tr = entry == null ? '' : entry[0] as String;
+  final isPhrase = parts.length > 1;
+  // У фразы своей записи в словарике нет: перевод собираем из слов.
+  final entry = isPhrase ? null : dict[key] as List?;
+  final partTr = [
+    for (final p in parts)
+      if (dict[toLat(p).toLowerCase()] case final List e) '${toLat(p).toLowerCase()} — ${e[0]}',
+  ];
+  final wordsTr = partTr.map((l) => l.split(' — ').last).join(' · ');
+  final phraseTr = isPhrase ? _translatePhrase(lat) : null;
+  final tr = isPhrase ? wordsTr : (entry == null ? '' : entry[0] as String);
   final note = entry == null ? '' : entry[1] as String;
   final sheetKey = GlobalKey();
   final overlay = Overlay.of(context, rootOverlay: true);
@@ -86,81 +181,112 @@ void showWord(
       child: ColoredBox(
         color: cBg,
         child: SafeArea(
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
-        // В горизонтальном режиме карточка может не поместиться по высоте.
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                store.cyr ? cyr : lat,
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w800,
-                  height: 1.1,
-                  letterSpacing: -0.6,
-                  color: cText,
-                ),
-              ),
-              SizedBox(height: 6),
-              Text('${store.cyr ? lat : cyr} · ${place ?? fmtTime(cue.start)}', style: TextStyle(fontSize: 15, color: cMuted)),
-              SizedBox(height: 14),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
-                child: Text(store.conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
-              ),
-              SizedBox(height: 14),
-              if (entry == null)
-                Text(ui('Этого слова нет в словарике ролика.'), style: TextStyle(fontSize: 14, color: cMuted))
-              else ...[
-                Text(
-                  tr,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
-                ),
-                if (note.isNotEmpty) ...[
-                  SizedBox(height: 4),
-                  Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
+            // В горизонтальном режиме карточка может не поместиться по высоте.
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    store.cyr ? cyr : lat,
+                    style: TextStyle(
+                      fontSize: isPhrase ? 26 : 32,
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                      letterSpacing: -0.6,
+                      color: cText,
+                    ),
+                  ),
+                  SizedBox(height: 6),
+                  Text(
+                    '${store.cyr ? lat : cyr} · ${place ?? fmtTime(cue.start)}',
+                    style: TextStyle(fontSize: 15, color: cMuted),
+                  ),
+                  SizedBox(height: 14),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
+                    child: Text(store.conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
+                  ),
+                  SizedBox(height: 14),
+                  if (isPhrase)
+                    FutureBuilder<String?>(
+                      future: phraseTr,
+                      builder: (_, snap) {
+                        if (snap.connectionState != ConnectionState.done) {
+                          return Text(
+                            '…',
+                            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: cMuted),
+                          );
+                        }
+                        return Text(
+                          snap.data ?? wordsTr,
+                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
+                        );
+                      },
+                    )
+                  else if (entry == null)
+                    Text(ui('Этого слова нет в словарике ролика.'), style: TextStyle(fontSize: 14, color: cMuted))
+                  else ...[
+                    Text(
+                      tr,
+                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
+                    ),
+                    if (note.isNotEmpty) ...[
+                      SizedBox(height: 4),
+                      Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
+                    ],
+                  ],
+                  SizedBox(height: 16),
+                  BigButton(
+                    store.isSaved(key)
+                        ? ui(isPhrase ? 'Убрать фразу' : 'Убрать слово')
+                        : ui(isPhrase ? 'Добавить фразу в мои слова' : 'Добавить в мои слова'),
+                    bg: store.isSaved(key) ? cCard : null,
+                    fg: store.isSaved(key) ? cText : null,
+                    onTap: () async {
+                      final already = store.isSaved(key);
+                      if (already) {
+                        store.remove(key);
+                        if (ctx.mounted) Navigator.pop(ctx);
+                        return;
+                      }
+                      // Снимок шторки и её место снимаем до закрытия.
+                      dui.Image? img;
+                      Rect? from;
+                      final box = sheetKey.currentContext?.findRenderObject();
+                      if (!already && flyTo != null && box is RenderRepaintBoundary) {
+                        from = box.localToGlobal(Offset.zero) & box.size;
+                        img = await box.toImage(pixelRatio: 1);
+                      }
+                      store.add(
+                        SavedWord(
+                          key: key,
+                          tr: (isPhrase ? await phraseTr : null) ?? tr,
+                          ctx: cue.text,
+                          t: cue.start,
+                          video: videoId,
+                        )..setLemmaFrom(dict),
+                      );
+                      if (ctx.mounted) Navigator.pop(ctx);
+                      final tb = flyTo?.currentContext?.findRenderObject();
+                      if (img != null && from != null && tb is RenderBox && tb.attached) {
+                        final to = tb.localToGlobal(Offset.zero) & tb.size;
+                        late OverlayEntry entry;
+                        entry = OverlayEntry(
+                          builder: (_) => _Fly(image: img!, from: from!, to: to, onDone: entry.remove),
+                        );
+                        overlay.insert(entry);
+                      }
+                    },
+                  ),
                 ],
-              ],
-              SizedBox(height: 16),
-              BigButton(
-                store.isSaved(key) ? ui('Убрать слово') : ui('Добавить в мои слова'),
-                bg: store.isSaved(key) ? cCard : null,
-                fg: store.isSaved(key) ? cText : null,
-                onTap: () async {
-                  final already = store.isSaved(key);
-                  if (already) {
-                    store.remove(key);
-                    if (ctx.mounted) Navigator.pop(ctx);
-                    return;
-                  }
-                  // Снимок шторки и её место снимаем до закрытия.
-                  dui.Image? img;
-                  Rect? from;
-                  final box = sheetKey.currentContext?.findRenderObject();
-                  if (!already && flyTo != null && box is RenderRepaintBoundary) {
-                    from = box.localToGlobal(Offset.zero) & box.size;
-                    img = await box.toImage(pixelRatio: 1);
-                  }
-                  store.add(SavedWord(key: key, tr: tr, ctx: cue.text, t: cue.start, video: videoId)..setLemmaFrom(dict));
-                  if (ctx.mounted) Navigator.pop(ctx);
-                  final tb = flyTo?.currentContext?.findRenderObject();
-                  if (img != null && from != null && tb is RenderBox && tb.attached) {
-                    final to = tb.localToGlobal(Offset.zero) & tb.size;
-                    late OverlayEntry entry;
-                    entry = OverlayEntry(builder: (_) => _Fly(image: img!, from: from!, to: to, onDone: entry.remove));
-                    overlay.insert(entry);
-                  }
-                },
               ),
-            ],
+            ),
           ),
         ),
-      ),
-    ),
       ),
     ),
   );

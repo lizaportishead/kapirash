@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'feed_page.dart';
 import 'icons.dart';
 import 'learn_page.dart';
+import 'main.dart' show kStoriesTabEnabled;
 import 'liked_page.dart';
 import 'recommend.dart';
 import 'search_page.dart';
@@ -42,18 +43,33 @@ class HomePage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Semantics(
                     header: true,
-                    child: Text.rich(
-                      TextSpan(
-                        text: 'Kapiraš',
-                        children: [
-                          TextSpan(
-                            text: '?',
-                            style: TextStyle(color: cAccent),
+                    child: MediaQuery.sizeOf(context).width >= 900
+                        ? Text(
+                            ui('Главная'),
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: -0.6,
+                              color: cText,
+                            ),
+                          )
+                        : Text.rich(
+                            TextSpan(
+                              text: 'Kapiraš',
+                              children: [
+                                TextSpan(
+                                  text: '?',
+                                  style: TextStyle(color: cAccent),
+                                ),
+                              ],
+                            ),
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -0.9,
+                              color: cViolet,
+                            ),
                           ),
-                        ],
-                      ),
-                      style: TextStyle(fontSize: 26, fontWeight: FontWeight.w900, letterSpacing: -0.9, color: cViolet),
-                    ),
                   ),
                 ),
               ),
@@ -77,7 +93,7 @@ class HomePage extends StatelessWidget {
               _Profile(level: level, interests: interests),
               ClipsStrip(title: ui('Шортсы для тебя'), list: shorts),
               VideoSection(title: ui('Ролики для тебя'), list: forYou, onAll: onVideos),
-              _Books(books, onAll: onStories),
+              if (kStoriesTabEnabled) _Books(books, onAll: onStories),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
                 child: _TrainWords(onWords: onWords),
@@ -299,7 +315,10 @@ class _TrainWordsState extends State<_TrainWords> {
           TextButton(
             onPressed: widget.onWords,
             style: TextButton.styleFrom(foregroundColor: cViolet),
-            child: Text(ui('Мои слова · {0}', [words.length]), style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+            child: Text(
+              ui('Мои слова · {0}', [words.length]),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),

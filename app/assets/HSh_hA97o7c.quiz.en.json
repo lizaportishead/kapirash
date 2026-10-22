@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the author test in this video?",
+     "o": [
+      "Spy gadgets",
+      "Kitchen appliances",
+      "Toys",
+      "New phones"
+     ],
+     "a": 0,
+     "e": "In the video: \"U današnjem videu testiram špijunske alate koji će mi pomoći da čujem sve, vidim sve, da uđem bilo gde i na kraju da postanem bilo ko.\" — in today's video I test spy tools that will help me hear everything, see everything, get in anywhere and finally become anyone."
+    },
+    {
+     "q": "What does the eavesdropping device look like?",
+     "o": [
+      "Like an ordinary flash drive with a microphone",
+      "Like glasses",
+      "Like a pen",
+      "Like a clock"
+     ],
+     "a": 0,
+     "e": "In the video: \"Spolja izgleda kao najobičnija fleška, ali unutra imate mikrofon i ulaz za SD karticu\" — outside it looks like the most ordinary flash drive, but inside you have a microphone and an SD card slot."
+    },
+    {
+     "q": "Why did the flash drive get 9 out of 10, not 10?",
+     "o": [
+      "It doesn't work at night",
+      "It's small",
+      "It says \"voice recorder\" on it",
+      "The sound is bad"
+     ],
+     "a": 2,
+     "e": "In the video: \"Jedino zašto je 9 od 10... jer piše ovde „voice recorder“\" — the only reason it's 9 out of 10 is that it says \"voice recorder\" here."
+    },
+    {
+     "q": "How do you find the location of a car with a GPS tracker?",
+     "o": [
+      "Call the police",
+      "Turn on Bluetooth",
+      "Open a website",
+      "Send an SMS to the number 999 and receive a link to maps"
+     ],
+     "a": 3,
+     "e": "In the video: \"Pošaljete poruku 999 i odmah nakon toga vam stigne link ka Google mapama\" — you send a message to 999 and right after that a link to Google Maps arrives."
+    },
+    {
+     "q": "What did the carVertical app reveal about David's car?",
+     "o": [
+      "The car was never in an accident",
+      "The car is new",
+      "The mileage was rolled back and the car was damaged at the rear",
+      "The car is stolen"
+     ],
+     "a": 2,
+     "e": "In the video: \"Davide, ovde piše da je tvoj auto prešao 426.000 km. Meni na satu piše 250... vraćana ti je kilometraža\" — David, it says here your car has gone 426,000 km. My dashboard says 250... your mileage was rolled back."
+    },
+    {
+     "q": "How does the hidden camera detector work?",
+     "o": [
+      "It listens for sounds",
+      "It measures temperature",
+      "It reflects infrared light, and glints reveal the camera",
+      "It looks for Wi-Fi"
+     ],
+     "a": 2,
+     "e": "In the video: \"reflektuje infracrvenu svetlost i vi kroz ovo sočivo možete naći gde je kamera sakrivena\" — it reflects infrared light and through this lens you can find where the camera is hidden."
+    },
+    {
+     "q": "How many ducklings did he manage to find with the night-vision glasses?",
+     "o": [
+      "Two out of three",
+      "None",
+      "All three",
+      "One"
+     ],
+     "a": 0,
+     "e": "In the video: \"Uspeo sam da nađem samo dve patkice\" — I managed to find only two ducklings."
+    },
+    {
+     "q": "What happened with the hidden-camera glasses?",
+     "o": [
+      "They recorded sound",
+      "They recorded perfectly",
+      "They recorded video in night mode",
+      "They recorded nothing — a score of zero"
+     ],
+     "a": 3,
+     "e": "In the video: \"ocena za ove naočare je jedna velika, apsolutna nula, zato što naočare ništa nisu snimile\" — the rating for these glasses is one big, absolute zero, because the glasses recorded nothing."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Moram naučiti da neprimetno *prisluškujem* razgovore.",
+     "o": [
+      "I translate",
+      "I eavesdrop",
+      "I lead",
+      "I record"
+     ],
+     "a": 1,
+     "e": "Prisluškivati — to eavesdrop."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Krišom* sam na njegov auto stavio ovaj lokator.",
+     "o": [
+      "quickly",
+      "openly",
+      "loudly",
+      "secretly"
+     ],
+     "a": 3,
+     "e": "Krišom — secretly, covertly."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li je vraćana *kilometraža*?",
+     "o": [
+      "coloring",
+      "price",
+      "power",
+      "mileage"
+     ],
+     "a": 3,
+     "e": "Kilometraža — a car's mileage."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogu da *uhodim* nekoga, a da on to ne zna.",
+     "o": [
+      "to look for",
+      "to call",
+      "to track",
+      "to teach"
+     ],
+     "a": 2,
+     "e": "Uhoditi — to track, to shadow."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bukvalno otvorite *katanac* bez ključa.",
+     "o": [
+      "window",
+      "safe",
+      "door",
+      "padlock"
+     ],
+     "a": 3,
+     "e": "Katanac — a padlock."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Brave koje čuvaju vaš stan od *provalnika*.",
+     "o": [
+      "of the neighbor",
+      "of the burglar",
+      "of the courier",
+      "of the guest"
+     ],
+     "a": 1,
+     "e": "Provalnik — a burglar, a thief."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogu li da se *prerušim* u dedu?",
+     "o": [
+      "I will disguise myself",
+      "I will take offense",
+      "I will hide",
+      "I will turn into"
+     ],
+     "a": 0,
+     "e": "Prerušiti se — to disguise oneself, to put on a disguise."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li je dovoljno da *zavara* Davida?",
+     "o": [
+      "will save",
+      "will wake",
+      "will ask",
+      "will deceive"
+     ],
+     "a": 3,
+     "e": "Zavarati — to mislead, to deceive."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imaju deset ___, deset pasoša i deset ličnosti.",
+     "o": [
+      "imena",
+      "ime",
+      "imenima",
+      "imenom"
+     ],
+     "a": 0,
+     "e": "After the number 10 the genitive plural is used: imena."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Krišom sam na njegov ___ stavio lokator.",
+     "o": [
+      "auto",
+      "autu",
+      "autom",
+      "auta"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"where to?\" — accusative case; for inanimate nouns it coincides with the nominative: auto."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pozvao sam Davida da nas vozi u ___.",
+     "o": [
+      "prodavnicu",
+      "prodavnice",
+      "prodavnici",
+      "prodavnica"
+     ],
+     "a": 0,
+     "e": "U in answer to \"where to?\" — accusative case: u prodavnicu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "David se nalazi gde je zadnji ulaz ___ u kom radi.",
+     "o": [
+      "kafićem",
+      "kafiću",
+      "kafića",
+      "kafić"
+     ],
+     "a": 2,
+     "e": "Ulaz of what? Genitive case: ulaz kafića."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ukucaš broj tvoje ___.",
+     "o": [
+      "šasije",
+      "šasija",
+      "šasiju",
+      "šasijom"
+     ],
+     "a": 0,
+     "e": "Broj of what? Genitive case: broj šasije."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Šteta u vrednosti od 60.000 do 180.000 ___.",
+     "o": [
+      "dinari",
+      "dinare",
+      "dinara",
+      "dinar"
+     ],
+     "a": 2,
+     "e": "After numerals from 5 the genitive plural is used: dinara."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupio sam Anđelin omiljeni ___.",
+     "o": [
+      "čipsa",
+      "čips",
+      "čipsu",
+      "čipsom"
+     ],
+     "a": 1,
+     "e": "Kupiti what — accusative case; for inanimate nouns it coincides with the nominative: čips."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kada ključ uđe u ___, pomera pinove.",
+     "o": [
+      "ključaonici",
+      "ključaonice",
+      "ključaonica",
+      "ključaonicu"
+     ],
+     "a": 3,
+     "e": "Ući u + accusative case: u ključaonicu."
+    }
+   ]
+  }
+ ]
+}

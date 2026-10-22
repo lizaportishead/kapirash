@@ -90,8 +90,27 @@ class SavedWord {
   };
 
   static const _enPos = {
-    'noun', 'verb', 'adj', 'adjective', 'adv', 'adverb', 'prep', 'preposition', 'conj', 'conjunction', 'pron',
-    'pronoun', 'num', 'numeral', 'particle', 'interj', 'interjection', 'infinitive', 'participle', 'phrase', 'idiom',
+    'noun',
+    'verb',
+    'adj',
+    'adjective',
+    'adv',
+    'adverb',
+    'prep',
+    'preposition',
+    'conj',
+    'conjunction',
+    'pron',
+    'pronoun',
+    'num',
+    'numeral',
+    'particle',
+    'interj',
+    'interjection',
+    'infinitive',
+    'participle',
+    'phrase',
+    'idiom',
   };
 
   /// Английская заметка («pas; acc. case, pl.») приводится к русской, по которой разбирает [describeForm].
@@ -99,7 +118,15 @@ class SavedWord {
     final i = n.indexOf(RegExp(r'[;—–,:(]'));
     if (i < 0) return n;
     var t = n.substring(i);
-    const cases = {'nom': 'им', 'gen': 'род', 'dat': 'дат', 'acc': 'вин', 'instr': 'твор', 'loc': 'предл', 'voc': 'зват'};
+    const cases = {
+      'nom': 'им',
+      'gen': 'род',
+      'dat': 'дат',
+      'acc': 'вин',
+      'instr': 'твор',
+      'loc': 'предл',
+      'voc': 'зват',
+    };
     t = t.replaceAllMapped(RegExp(r'\b(nom|gen|dat|acc|instr|loc|voc)\b\.?(\s*case)?'), (m) {
       return '${cases[m[1]]}. ${m[2] != null ? 'падеж' : ''}';
     });
@@ -230,6 +257,9 @@ class AppStore extends ChangeNotifier {
   Map<String, List<int>> quiz = {};
   bool cyr = false, dark = false;
 
+  /// Какие строки субтитров показывать в плеере: сербские и русские.
+  bool showSr = true, showRu = true;
+
   /// Язык интерфейса и перевода: 'ru' или 'en'.
   String lang = defaultLang();
 
@@ -250,6 +280,8 @@ class AppStore extends ChangeNotifier {
     final prefs = _prefs = await SharedPreferences.getInstance();
     cyr = prefs.getString('kap.script') == 'cyr';
     dark = prefs.getString('kap.theme') == 'dark';
+    showSr = prefs.getBool('kap.showSr') ?? true;
+    showRu = prefs.getBool('kap.showRu') ?? true;
     lang = prefs.getString('kap.lang') ?? defaultLang();
     uiLang = lang;
     onboarded = prefs.getBool('kap.onboarded') ?? false;
@@ -333,7 +365,9 @@ class AppStore extends ChangeNotifier {
         final story = storyById(e.key);
         final video = videoById(e.key);
         if (story?.asset != null) {
-          dict = jsonDecode(await assetText('${story!.asset}.dict.json', en: '${story.asset}.dict.en.json')) as Map<String, dynamic>;
+          dict = jsonDecode(
+            await assetText('${story!.asset}.dict.json', en: '${story.asset}.dict.en.json'),
+          ) as Map<String, dynamic>;
         } else if (video != null) {
           dict = (await loadSubs(video))?.dict;
         }
@@ -426,6 +460,18 @@ class AppStore extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setShowSr(bool v) {
+    showSr = v;
+    _prefs?.setBool('kap.showSr', v);
+    notifyListeners();
+  }
+
+  void setShowRu(bool v) {
+    showRu = v;
+    _prefs?.setBool('kap.showRu', v);
+    notifyListeners();
+  }
+
   void setLang(String v) {
     if (v == lang) return;
     lang = uiLang = v;
@@ -453,6 +499,13 @@ class AppStore extends ChangeNotifier {
     level == null ? _prefs?.remove('kap.level') : _prefs?.setString('kap.level', level);
     _prefs?.setStringList('kap.interests', this.interests);
     _prefs?.setBool('kap.survey', true);
+    notifyListeners();
+  }
+
+  /// Для проверки: снова показывает лендинг (только веб), не трогая анкету.
+  void replayLanding() {
+    onboarded = false;
+    _prefs?.remove('kap.onboarded');
     notifyListeners();
   }
 

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How is a startup defined in the video?",
+     "o": [
+      "A new store in town",
+      "A company that sells only online",
+      "A team that creates an innovative product as a solution to a validated problem with potential for rapid growth",
+      "Any small company"
+     ],
+     "a": 2,
+     "e": "In the video: \"Startap predstavlja tim koji razvija inovativan proizvod ili uslugu kao rešenje za potvrđen problem sa potencijalom za brz rast\"."
+    },
+    {
+     "q": "How many people are usually on a startup team?",
+     "o": [
+      "Ten to twenty",
+      "More than a hundred",
+      "Two to five",
+      "One"
+     ],
+     "a": 2,
+     "e": "In the video: \"u startapu najčešće dvoje do petoro ljudi\" — most often two to five people."
+    },
+    {
+     "q": "What do investors look at first in a pitch?",
+     "o": [
+      "Whether they like the team",
+      "How many followers you have",
+      "What the office address is",
+      "What your profit is"
+     ],
+     "a": 0,
+     "e": "In the video: \"jedna od glavnih stvari koju će gledati jeste koliko im se sviđa tim\"."
+    },
+    {
+     "q": "What is B2C?",
+     "o": [
+      "A bank for companies",
+      "Business for other companies",
+      "Brand for customers",
+      "Business for end consumers"
+     ],
+     "a": 3,
+     "e": "In the video: \"krajnjim korisnicima, odnosno kastomerima, i tada se to naziva B2C, odnosno business to consumer.\"."
+    },
+    {
+     "q": "What should come first — the problem or the solution?",
+     "o": [
+      "The solution first",
+      "The investor first",
+      "The product first",
+      "A validated problem first"
+     ],
+     "a": 3,
+     "e": "In the video: \"prvo morate da imate potvrđen problem za koji kreirate vaše rešenje\"."
+    },
+    {
+     "q": "How can you check that people really have a problem?",
+     "o": [
+      "Look it up on the internet",
+      "Talk to users: interviews, a survey",
+      "Buy advertising",
+      "Ask friends"
+     ],
+     "a": 1,
+     "e": "In the video: \"Da li ste pričali sa vašim korisnicima, da li ste odradili intervjue, da li ste odradili neku anketu\"."
+    },
+    {
+     "q": "What example of a problem is given in the video?",
+     "o": [
+      "City dwellers are busy and have no time to cook, but want quality food at home",
+      "There are few parks in cities",
+      "People can't swim",
+      "There is no internet in villages"
+     ],
+     "a": 0,
+     "e": "In the video: \"ljudi u urbanim sredinama veoma zauzeti, da nemaju vremena sami da kuvaju svoju hranu\"."
+    },
+    {
+     "q": "What time frame should you think about for entering the global market?",
+     "o": [
+      "A month",
+      "1 year",
+      "20 years",
+      "5–7 years"
+     ],
+     "a": 3,
+     "e": "In the video: \"u nekih narednih 5 do 7 godina razmišljate o izlasku na nova tržišta, na globalno tržište\"."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Tim treba da bude *raznolik*.",
+     "o": [
+      "large",
+      "diverse",
+      "cheap",
+      "young"
+     ],
+     "a": 1,
+     "e": "Raznolik — diverse, varied."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvo morate da imate *potvrđen* problem.",
+     "o": [
+      "complex",
+      "new",
+      "validated",
+      "personal (adj.)"
+     ],
+     "a": 2,
+     "e": "Potvrditi — to confirm; potvrđen — confirmed."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pičovali ste ideju pred *investitorima*.",
+     "o": [
+      "by journalists",
+      "by friends",
+      "by investors",
+      "by clients"
+     ],
+     "a": 2,
+     "e": "Investitor — investor; pred investitorima — in front of investors."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li ste istražili *tržište*?",
+     "o": [
+      "market",
+      "law",
+      "city",
+      "product"
+     ],
+     "a": 0,
+     "e": "Tržište — market; istražiti — to research."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ljudi u urbanim sredinama su veoma *zauzeti*.",
+     "o": [
+      "busy",
+      "poor",
+      "young",
+      "dissatisfied"
+     ],
+     "a": 0,
+     "e": "Zauzet — busy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li ste odradili neku *anketu*?",
+     "o": [
+      "meeting",
+      "check",
+      "presentation",
+      "survey"
+     ],
+     "a": 3,
+     "e": "Anketa — a survey, questionnaire."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ne možete prvo da smislite *rešenje*.",
+     "o": [
+      "solution",
+      "name",
+      "budget",
+      "product"
+     ],
+     "a": 0,
+     "e": "Rešenje — solution; rešiti — to solve."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li možete da je *proširite* i ponudite velikom broju korisnika?",
+     "o": [
+      "you will sell",
+      "you will close",
+      "you will simplify",
+      "you will expand"
+     ],
+     "a": 3,
+     "e": "Proširiti — to expand; širok — wide."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U ovom ___ pričamo o tome šta je startap.",
+     "o": [
+      "videom",
+      "videu",
+      "video",
+      "videa"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where?\" requires the locative case: u ovom videu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pičovali ste ideju pred ___.",
+     "o": [
+      "investitore",
+      "investitorima",
+      "investitori",
+      "investitora"
+     ],
+     "a": 1,
+     "e": "Pred (\"in front of\") in answer to \"where?\" requires the instrumental case: pred investitorima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Najčešće dvoje do petoro ___.",
+     "o": [
+      "ljudi",
+      "ljude",
+      "čovek",
+      "ljudima"
+     ],
+     "a": 0,
+     "e": "After dvoje/petoro the genitive plural is used: ljudi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da li ste pričali sa vašim ___?",
+     "o": [
+      "korisnici",
+      "korisnicima",
+      "korisnike",
+      "korisnika"
+     ],
+     "a": 1,
+     "e": "Sa (\"with\") requires the instrumental case: sa korisnicima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da li ste istražili ___?",
+     "o": [
+      "tržištu",
+      "tržišta",
+      "tržištem",
+      "tržište"
+     ],
+     "a": 3,
+     "e": "Istražiti + object — accusative case; for neuter nouns it coincides with the nominative: tržište."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U narednih 5 do 7 ___.",
+     "o": [
+      "godina",
+      "godine",
+      "godinu",
+      "godinama"
+     ],
+     "a": 0,
+     "e": "After numbers from 5 the genitive plural is used: godina."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Razmišljate o izlasku na nova ___.",
+     "o": [
+      "tržištima",
+      "tržišta",
+      "tržište",
+      "tržištu"
+     ],
+     "a": 1,
+     "e": "Na in answer to \"where to?\" requires the accusative plural: nova tržišta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Voleli bi u svom ___ da jedu kvalitetnu hranu.",
+     "o": [
+      "domu",
+      "dom",
+      "domom",
+      "doma"
+     ],
+     "a": 0,
+     "e": "U in answer to \"where?\" — locative case: u svom domu."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the director reflect on at the beginning of the video?",
+     "o": [
+      "New technologies",
+      "Politics",
+      "About travel",
+      "People's need to leave traces and record life"
+     ],
+     "a": 3,
+     "e": "In the video: \"Odakle dolazi ta naša potreba da nešto zabeležimo, dokumentujemo, da se sećamo?\" — where does that need of ours come from, to record something, to document, to remember?"
+    },
+    {
+     "q": "What was the cinema of his childhood called?",
+     "o": [
+      "Park",
+      "Buvara",
+      "Sloga",
+      "Colosseum"
+     ],
+     "a": 1,
+     "e": "In the video: \"bioskop... zvao se Lekino brdo, a mi smo ga zvali Buvara\" — the cinema... was called Lekino brdo, and we called it Buvara."
+    },
+    {
+     "q": "What did the projectionist do with the cut-off pieces of film?",
+     "o": [
+      "Sent them to storage",
+      "Threw them away",
+      "Gave them out to children",
+      "Sold them"
+     ],
+     "a": 2,
+     "e": "In the video: \"kad je on sekao tu traku i lepio je... skupljao i delio je to deci\" — when he cut that tape and glued it... he collected it and handed it out to the children."
+    },
+    {
+     "q": "What camera did he want at 16–17?",
+     "o": [
+      "An American Bell",
+      "A Japanese Nikon",
+      "A German Leica",
+      "A Russian amateur 8 mm Kvarc"
+     ],
+     "a": 3,
+     "e": "In the video: \"ruska amaterska filmska kamera, 8 mm, marke Kvarc\" — a Russian amateur film camera, 8 mm, of the Kvarc brand."
+    },
+    {
+     "q": "How did he get this camera?",
+     "o": [
+      "His mother bought it as a keepsake of the demolished house",
+      "A friend gave it",
+      "He bought it with his own money",
+      "He won it"
+     ],
+     "a": 0,
+     "e": "In the video: \"rušili kuću... majka je pitala... šta želimo da nam kupi kao uspomenu na tu kuću... ja sam kao iz puške rekao: rusku filmsku kameru\" — they were demolishing the house... my mother asked... what we wanted her to buy us as a keepsake of that house... I said instantly: a Russian film camera."
+    },
+    {
+     "q": "Where did he shoot his first footage?",
+     "o": [
+      "In Topčider Park",
+      "At a school",
+      "At the zoo",
+      "At Kalemegdan"
+     ],
+     "a": 0,
+     "e": "In the video: \"prve svoje snimke napravio baš u ovom parku, Topčiderskom parku\" — I made my first recordings in this very park, Topčider Park."
+    },
+    {
+     "q": "What attracts the director to documentary film?",
+     "o": [
+      "The simplicity of shooting",
+      "There is always an element of uncertainty and the unforeseen",
+      "Short deadlines",
+      "High fees"
+     ],
+     "a": 1,
+     "e": "In the video: \"koliko god da se vi pripremite za to snimanje, postoji neka doza neizvesnosti... uvek se desi nešto nepredviđeno\" — however much you prepare for the shoot, there is some dose of uncertainty... something unforeseen always happens."
+    },
+    {
+     "q": "With which of his films is he completely satisfied?",
+     "o": [
+      "\"The Circle\"",
+      "\"Keepers of Silence\"",
+      "With none",
+      "\"The Ghetto\""
+     ],
+     "a": 1,
+     "e": "In the video: \"„Čuvari tišine“, na primer, film o kojem mogu da kažem da je jedini film sa kojim sam potpuno zadovoljan\" — \"Keepers of Silence\", for example, a film about which I can say it's the only film I'm completely satisfied with."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ljudi su za sobom ostavljali *tragove* svog postojanja.",
+     "o": [
+      "things",
+      "traces",
+      "money",
+      "books"
+     ],
+     "a": 1,
+     "e": "Trag — a trace, a footprint."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kinooperater je sekao *traku* i lepio je.",
+     "o": [
+      "film strip",
+      "fabric",
+      "rope",
+      "paper"
+     ],
+     "a": 0,
+     "e": "Traka — a tape, a film strip."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Našao sam neki *objektiv*, verovatno od projektora.",
+     "o": [
+      "lens",
+      "screen",
+      "light bulb",
+      "cable"
+     ],
+     "a": 0,
+     "e": "Objektiv — a lens."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam tu u *izlogu* primetio jedan aparat.",
+     "o": [
+      "in a shop window",
+      "in a bus window",
+      "in a mirror",
+      "in a magazine"
+     ],
+     "a": 0,
+     "e": "Izlog — a shop window."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Veliku dozu *uverljivosti*.",
+     "o": [
+      "of persuasiveness",
+      "of beauty",
+      "of danger",
+      "of speed"
+     ],
+     "a": 0,
+     "e": "Uverljiv — convincing, plausible."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Uvek se desi nešto *nepredviđeno*.",
+     "o": [
+      "unforeseen",
+      "funny",
+      "expensive",
+      "beautiful"
+     ],
+     "a": 0,
+     "e": "Predvideti — to foresee; nepredviđen — unforeseen."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Život *osuđenika* u nekoliko zatvora u Srbiji.",
+     "o": [
+      "of students",
+      "of doctors",
+      "of guards",
+      "of convicts"
+     ],
+     "a": 3,
+     "e": "Osuđenik — a convict."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad mi se čini da je to sterilno, zato što je sve *ispeglano*.",
+     "o": [
+      "drawn",
+      "spoiled",
+      "broken",
+      "polished, calculated"
+     ],
+     "a": 3,
+     "e": "Ispeglati — to iron out; here \"too smooth, calculated\"."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Odmalena sam otkrio ___.",
+     "o": [
+      "filma",
+      "film",
+      "filmu",
+      "filmom"
+     ],
+     "a": 1,
+     "e": "Otkriti what — accusative case; for inanimate nouns it coincides with the nominative: film."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stanovao sam na Lekinom ___.",
+     "o": [
+      "brdom",
+      "brda",
+      "brdo",
+      "brdu"
+     ],
+     "a": 3,
+     "e": "Na in answer to \"where?\" — locative case: na Lekinom brdu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pokušavao sam da napravim nešto što će biti neki ___.",
+     "o": [
+      "projektoru",
+      "projektora",
+      "projektorom",
+      "projektor"
+     ],
+     "a": 3,
+     "e": "Biti + nominative case: neki projektor."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Otac mi je kupovao svakog petka ___.",
+     "o": [
+      "Zabavnika",
+      "Zabavniku",
+      "Zabavnik",
+      "Zabavnikom"
+     ],
+     "a": 2,
+     "e": "Kupovati what — accusative case; for inanimate nouns it coincides with the nominative: Zabavnik."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Majka je pitala sestru i ___ šta želimo.",
+     "o": [
+      "ja",
+      "meni",
+      "mnom",
+      "mene"
+     ],
+     "a": 3,
+     "e": "Pitati whom — accusative case: sestru i mene."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film je prikazan na brojnim ___.",
+     "o": [
+      "festivalima",
+      "festivale",
+      "festivala",
+      "festivali"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"where?\" — locative plural: na festivalima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film je dobio desetak ___.",
+     "o": [
+      "nagrada",
+      "nagradom",
+      "nagradu",
+      "nagrade"
+     ],
+     "a": 0,
+     "e": "After desetak the genitive plural is used: nagrada."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Snimali smo tri dana u nekoj ___.",
+     "o": [
+      "kolibu",
+      "kolibi",
+      "koliba",
+      "kolibom"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where?\" — locative case: u kolibi."
+    }
+   ]
+  }
+ ]
+}
