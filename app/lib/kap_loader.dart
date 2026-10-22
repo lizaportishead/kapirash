@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
+import 'l10n.dart';
 
 /// Лоадер: жирная фиолетовая š, у которой жёлтая диакритика живёт отдельно — плавно парит и покачивается.
 class KapLoader extends StatefulWidget {
@@ -27,7 +28,7 @@ class _KapLoaderState extends State<KapLoader> with SingleTickerProviderStateMix
   Widget build(BuildContext context) {
     final s = widget.size;
     return Semantics(
-      label: 'Загрузка',
+      label: ui('Загрузка'),
       child: SizedBox(
         width: s,
         height: s * 1.25,

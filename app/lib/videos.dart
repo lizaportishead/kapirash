@@ -9,15 +9,20 @@ class Video {
     this.level = '',
     this.duration = '',
     this.kind = '',
+    this.audio = '',
     this.mine = false,
   });
   final String id, title, channel, topic, level, duration;
 
-  /// Откуда ролик: пусто — YouTube, 'tiktok' — вертикальный клип из TikTok.
+  /// Откуда ролик: пусто — YouTube, 'tiktok' — вертикальный клип из TikTok, 'podcast' — эпизод подкаста.
   final String kind;
+
+  /// Прямая ссылка на mp3 эпизода подкаста; у остальных пусто.
+  final String audio;
 
   int get views => _ytViews[id] ?? 0;
   bool get tiktok => kind == 'tiktok';
+  bool get podcast => kind == 'podcast';
 
   /// Заглушка для примерки ленты клипов, см. [kClipMocks]: обложка есть, самого ролика нет.
   bool get mock => id.startsWith('mock-');
@@ -36,6 +41,7 @@ class Video {
     level: j['level'] ?? '',
     duration: j['duration'] ?? '',
     kind: j['kind'] ?? '',
+    audio: j['audio'] ?? '',
   );
 }
 
@@ -84,6 +90,8 @@ const _ytViews = <String, int>{
   'ta4_7-GrAL0': 23796,
   'Su6oB9ZJB8U': 21562,
   'wZb4X0JnC6w': 122746,
+  'it3nCG6JtYw': 5106,
+  'aMBnmigQgQw': 4774,
 };
 
 /// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
@@ -106,10 +114,13 @@ const kClipMocks = true;
 /// Клипы из TikTok: у них своя вкладка и вертикальный плеер, в каталоге их нет.
 List<Video> clips = [..._builtInClips, if (kClipMocks) ..._mockClips];
 
+/// Эпизоды подкастов: у них своя вкладка и аудиоплеер, в каталоге видео их нет.
+List<Video> podcasts = _builtInPodcasts;
+
 /// Подменяет каталог строками из Supabase или их копией с устройства.
 void setCatalog(Map<String, dynamic> j) {
   final all = [for (final v in j['videos'] as List) Video.fromJson(v as Map<String, dynamic>)];
-  videos = all.where((v) => !v.tiktok).toList();
+  videos = all.where((v) => !v.tiktok && !v.podcast).toList();
   // Клипы из сборки остаются, даже если в облаке их ещё нет.
   clips = [
     ...all.where((v) => v.tiktok),
@@ -484,6 +495,111 @@ const _builtInVideos = <Video>[
     level: 'B2',
     duration: '10:28',
   ),
+  Video(
+    id: 'it3nCG6JtYw',
+    title: 'Izveštaj sa terena 27.04. - Radna akcija sa Tamarom',
+    channel: 'Radna akcija sa Tamarom',
+    topic: 'Быт',
+    level: 'B1',
+    duration: '4:02',
+  ),
+  Video(
+    id: 'aMBnmigQgQw',
+    title: 'RADNA AKCIJA SA TAMAROM *Sa terena | Kako brzo i lako zapaliti peć, šporet ili kamin? KORAK PO KORAK',
+    channel: 'Radna akcija sa Tamarom',
+    topic: 'Быт',
+    level: 'B1',
+    duration: '3:48',
+  ),
+  Video(
+    id: 'pZKCi5CwagI',
+    title: 'Vredno priče 19 - Na Drini ćuprija / Ivo Andrić (gost: Tihomir Brajović)',
+    channel: 'Vredno priče',
+    topic: 'Культура',
+    level: 'C1',
+    duration: '6:33',
+  ),
+  Video(
+    id: 'xTPZzVR5Z78',
+    title: 'Šta su ekstremofili i gde ih sve nalazimo?',
+    channel: 'Agelast',
+    topic: 'Наука',
+    level: 'C1',
+    duration: '13:42',
+  ),
+  Video(
+    id: 'mLF8k4uKI7Y',
+    title: 'Šta možemo da očekujemo od izbora?',
+    channel: 'Agelast',
+    topic: 'Политика',
+    level: 'C1',
+    duration: '15:30',
+  ),
+  Video(
+    id: 'tf2sQBH0FG0',
+    title: 'Da li postoji život na Veneri?',
+    channel: 'Agelast',
+    topic: 'Наука',
+    level: 'C1',
+    duration: '13:29',
+  ),
+  Video(
+    id: 'Qmkg5WLYESQ',
+    title: 'Tajne službe, prisluškivanja i ubistva — Vuk Cvijić, novinar i urednik',
+    channel: 'Agelast',
+    topic: 'Политика',
+    level: 'C1',
+    duration: '9:56',
+  ),
+  Video(
+    id: 'ZK1Bqyu_zu0',
+    title: 'Kako drveće i gljive komuniciraju?',
+    channel: 'Agelast',
+    topic: 'Наука',
+    level: 'C1',
+    duration: '7:21',
+  ),
+];
+
+const _naPosla = 'https://d3ctxlq1ktw2nl.cloudfront.net/staging';
+
+const _builtInPodcasts = <Video>[
+  Video(
+    id: 'nasa-posla-sanja',
+    title: 'Sanja Đorđević – Zajedno drugačije',
+    channel: 'Naša posla',
+    topic: 'Общество',
+    duration: '19:33',
+    kind: 'podcast',
+    audio: '$_naPosla/2026-5-2/2e3dbc9f-7fb7-f614-d176-7fba0f7f1f4a.mp3',
+  ),
+  Video(
+    id: 'nasa-posla-milica',
+    title: 'Milica Mihajlović – Edo, Prijepoljac iz španskog sela',
+    channel: 'Naša posla',
+    topic: 'Общество',
+    duration: '22:30',
+    kind: 'podcast',
+    audio: '$_naPosla/2025-10-27/d765e604-de40-3f53-4de5-a476f60cb02a.mp3',
+  ),
+  Video(
+    id: 'nasa-posla-nemanja',
+    title: 'Nemanja Stevanović – Solidarnost ispod roze zastava sa dugom',
+    channel: 'Naša posla',
+    topic: 'Общество',
+    duration: '21:49',
+    kind: 'podcast',
+    audio: '$_naPosla/2026-5-2/a9507e00-b861-1015-2c6e-5e8f10340c47.mp3',
+  ),
+  Video(
+    id: 'sbs-svemir',
+    title: 'Može li svemir da ponudi rešenje za prehranu čovečanstva?',
+    channel: 'SBS na srpskom',
+    topic: 'Наука',
+    duration: '7:47',
+    kind: 'podcast',
+    audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261022170320_402989-serbian-44b229ef-c243-42ef-ba1c-758d111d4a51.mp3',
+  ),
 ];
 
 const _builtInClips = <Video>[
@@ -667,7 +783,7 @@ const _mockClips = <Video>[
 ];
 
 Video? videoById(String id) {
-  for (final v in videos.followedBy(clips)) {
+  for (final v in videos.followedBy(clips).followedBy(podcasts)) {
     if (v.id == id) return v;
   }
   return store.myVideo(id)?.video;

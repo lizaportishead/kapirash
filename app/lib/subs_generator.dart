@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'store.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Результат генерации: субтитры в VTT и словарик ролика `{ "слово": ["перевод", "пометка"] }` —
 /// в том же виде, что и у готовых роликов в assets.
@@ -22,7 +23,7 @@ class _QueueSubsGenerator implements SubsGenerator {
   @override
   Future<GeneratedSubs> generate(Video video, {bool retry = false}) async {
     final db = cloud;
-    if (db == null) throw StateError('Нет связи с облаком');
+    if (db == null) throw StateError(ui('Нет связи с облаком'));
     final table = db.from('video_requests');
     final row = await table.select('status').eq('id', video.id).maybeSingle();
     if (row == null) {
@@ -32,10 +33,10 @@ class _QueueSubsGenerator implements SubsGenerator {
     }
     while (true) {
       // Ролик удалили, пока ждали.
-      if (store.myVideo(video.id) == null) throw StateError('Ролик удалён');
+      if (store.myVideo(video.id) == null) throw StateError(ui('Ролик удалён'));
       final r = await table.select('status, error').eq('id', video.id).maybeSingle();
-      if (r == null) throw StateError('Заявка пропала');
-      if (r['status'] == 'failed') throw StateError(r['error'] ?? 'Не получилось');
+      if (r == null) throw StateError(ui('Заявка пропала'));
+      if (r['status'] == 'failed') throw StateError(r['error'] ?? ui('Не получилось'));
       if (r['status'] == 'ready') break;
       await Future<void>.delayed(Duration(seconds: 15));
     }

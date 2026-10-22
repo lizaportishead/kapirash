@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -7,15 +8,18 @@ import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
+import 'auth_page.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
+import 'podcasts_page.dart';
 import 'stories_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
 import 'words_page.dart';
+import 'l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +52,7 @@ class KapirasApp extends StatefulWidget {
 
 class _KapirasAppState extends State<KapirasApp> {
   bool _dark = store.dark;
+  String _lang = store.lang;
   bool _onboarded = store.onboarded;
   bool _surveyDone = store.surveyDone;
 
@@ -63,13 +68,16 @@ class _KapirasAppState extends State<KapirasApp> {
     super.dispose();
   }
 
-  // Цвета в theme.dart — глобальные геттеры, поэтому при смене темы перестраиваем всё дерево,
+  // Цвета в theme.dart и тексты из ui() — глобальные, поэтому при смене темы или языка перестраиваем всё дерево,
   // включая const-виджеты и открытые поверх экраны.
   void _onStore() {
     if (store.onboarded != _onboarded) setState(() => _onboarded = store.onboarded);
     if (store.surveyDone != _surveyDone) setState(() => _surveyDone = store.surveyDone);
-    if (store.dark == _dark) return;
-    setState(() => _dark = store.dark);
+    if (store.dark == _dark && store.lang == _lang) return;
+    setState(() {
+      _dark = store.dark;
+      _lang = store.lang;
+    });
     void visit(Element e) {
       e.markNeedsBuild();
       e.visitChildren(visit);
@@ -100,7 +108,7 @@ class _KapirasAppState extends State<KapirasApp> {
         // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
         // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
         child: !_onboarded
-            ? OnboardingPage()
+            ? (kIsWeb ? AuthPage(intro: true, start: true) : OnboardingPage())
             : !_surveyDone
             ? SurveyPage()
             : HomeShell(),
@@ -111,6 +119,9 @@ class _KapirasAppState extends State<KapirasApp> {
 
 /// Добавление своих роликов временно скрыто: без него нет ни кнопки «плюс», ни вкладки «Мои ролики».
 const kAddVideoEnabled = false;
+
+/// Вкладка «Рассказы» (книги) в меню; если выключить, рассказы открываются только из «Моих слов».
+const kStoriesTabEnabled = true;
 
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
@@ -129,9 +140,11 @@ class _HomeShellState extends State<HomeShell> {
   // Пока добавление скрыто, ячейки нет и сдвигать нечего.
   static const _home = 0, _feed = 1;
   static const _plus = kAddVideoEnabled ? 3 : 99;
-  static const _stories = kAddVideoEnabled ? 3 : 2;
-  static const _words = _stories + 1;
-  static const _profile = _stories + 2;
+  static const _first = kAddVideoEnabled ? 3 : 2;
+  static const _stories = kStoriesTabEnabled ? _first : 99;
+  static const _podcasts = _first + (kStoriesTabEnabled ? 1 : 0);
+  static const _words = _podcasts + 1;
+  static const _profile = _podcasts + 2;
 
   // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
   int _profileTaps = 0;
@@ -162,7 +175,8 @@ class _HomeShellState extends State<HomeShell> {
         HomePage(onVideos: () => _select(_feed), onStories: () => _select(_stories), onWords: () => _select(_words)),
         FeedPage(),
         if (kAddVideoEnabled) MyVideosPage(),
-        StoriesPage(),
+        if (kStoriesTabEnabled) StoriesPage(),
+        PodcastsPage(),
         WordsPage(),
         ProfilePage(),
       ],
@@ -203,36 +217,46 @@ class _HomeShellState extends State<HomeShell> {
                 selectedIndex: _tab < _plus ? _tab : _tab + 1,
                 onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
                 destinations: [
-                  NavigationDestination(icon: Icon(KIcons.home), selectedIcon: Icon(KIcons.homeOn), label: 'Дом'),
+                  NavigationDestination(
+                    icon: Icon(KIcons.home),
+                    selectedIcon: Icon(KIcons.homeOn),
+                    label: ui('Главная'),
+                  ),
                   NavigationDestination(
                     icon: Icon(KIcons.catalog),
                     selectedIcon: Icon(KIcons.catalogOn),
-                    label: 'Видео',
+                    label: ui('Видео'),
                   ),
                   if (kAddVideoEnabled) ...[
                     NavigationDestination(
                       icon: Icon(KIcons.videos),
                       selectedIcon: Icon(KIcons.videosOn),
-                      label: 'Мои ролики',
+                      label: ui('Мои ролики'),
                     ),
                     ExcludeSemantics(
                       child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
                     ),
                   ],
+                  if (kStoriesTabEnabled)
+                    NavigationDestination(
+                      icon: Icon(KIcons.stories),
+                      selectedIcon: Icon(KIcons.storiesOn),
+                      label: ui('Рассказы'),
+                    ),
                   NavigationDestination(
-                    icon: Icon(KIcons.stories),
-                    selectedIcon: Icon(KIcons.storiesOn),
-                    label: 'Рассказы',
+                    icon: Icon(KIcons.headphones),
+                    selectedIcon: Icon(KIcons.headphonesOn),
+                    label: ui('Подкасты'),
                   ),
                   NavigationDestination(
                     icon: Icon(KIcons.words),
                     selectedIcon: Icon(KIcons.wordsOn),
-                    label: 'Мои слова',
+                    label: ui('Словарь'),
                   ),
                   NavigationDestination(
                     icon: Icon(KIcons.profile),
                     selectedIcon: Icon(KIcons.profileOn),
-                    label: 'Профиль',
+                    label: ui('Профиль'),
                   ),
                 ],
               ),
@@ -241,7 +265,7 @@ class _HomeShellState extends State<HomeShell> {
                   top: false,
                   child: Semantics(
                     button: true,
-                    label: 'Добавить ролик',
+                    label: ui('Добавить ролик'),
                     child: Material(
                       color: cViolet,
                       shape: CircleBorder(),
@@ -262,14 +286,15 @@ class _HomeShellState extends State<HomeShell> {
 
   Widget _wideShell(Widget Function() buildPages) {
     final items = <(int, IconData, IconData, String)>[
-      (_home, KIcons.home, KIcons.homeOn, 'Дом'),
-      (_feed, KIcons.catalog, KIcons.catalogOn, 'Видео'),
-      if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, 'Мои ролики'),
-      (_stories, KIcons.stories, KIcons.storiesOn, 'Рассказы'),
-      (_words, KIcons.words, KIcons.wordsOn, 'Мои слова'),
+      (_home, KIcons.home, KIcons.homeOn, ui('Главная')),
+      (_feed, KIcons.catalog, KIcons.catalogOn, ui('Видео')),
+      if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, ui('Мои ролики')),
+      if (kStoriesTabEnabled) (_stories, KIcons.stories, KIcons.storiesOn, ui('Рассказы')),
+      (_podcasts, KIcons.headphones, KIcons.headphonesOn, ui('Подкасты')),
+      (_words, KIcons.words, KIcons.wordsOn, ui('Словарь')),
     ];
-    final profile = (_profile, KIcons.profile, KIcons.profileOn, 'Профиль');
-    Widget item((int, IconData, IconData, String) it) {
+    final profile = (_profile, KIcons.profile, KIcons.profileOn, ui('Профиль'));
+    Widget item((int, IconData, IconData, String) it, {VoidCallback? onTap}) {
       final (page, icon, on, label) = it;
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
@@ -278,7 +303,7 @@ class _HomeShellState extends State<HomeShell> {
           borderRadius: BorderRadius.circular(16),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
-            onTap: () => _select(page),
+            onTap: onTap ?? () => _select(page),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               child: Row(
@@ -320,8 +345,16 @@ class _HomeShellState extends State<HomeShell> {
                       padding: EdgeInsets.only(left: 28),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Kapiraš',
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'Kapiraš',
+                            children: [
+                              TextSpan(
+                                text: '?',
+                                style: TextStyle(color: cAccent),
+                              ),
+                            ],
+                          ),
                           style: TextStyle(
                             fontSize: 22.5,
                             fontWeight: FontWeight.w900,
@@ -342,7 +375,7 @@ class _HomeShellState extends State<HomeShell> {
                         onPressed: _addVideo,
                         style: FilledButton.styleFrom(backgroundColor: cViolet, foregroundColor: cOnViolet),
                         icon: Icon(KIcons.plus),
-                        label: Text('Добавить ролик'),
+                        label: Text(ui('Добавить ролик')),
                       ),
                     ),
                   Spacer(),
@@ -357,12 +390,15 @@ class _HomeShellState extends State<HomeShell> {
               child: Center(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: 1200),
-                  // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
-                  child: Navigator(
-                    key: _navKey,
-                    onGenerateRoute: (_) => MaterialPageRoute<void>(
-                      builder: (_) =>
-                          ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 28),
+                    // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
+                    child: Navigator(
+                      key: _navKey,
+                      onGenerateRoute: (_) => MaterialPageRoute<void>(
+                        builder: (_) =>
+                            ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+                      ),
                     ),
                   ),
                 ),

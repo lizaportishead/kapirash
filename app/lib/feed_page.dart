@@ -9,6 +9,7 @@ import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 const _perSection = 4;
 
@@ -32,15 +33,15 @@ class FeedPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         PageTitle(
-          'Видео',
+          ui('Видео'),
           actions: [
             IconButton(
-              tooltip: 'Любимое',
+              tooltip: ui('Любимое'),
               icon: Icon(KIcons.heart, size: 24, color: cText),
               onPressed: () => openLiked(context),
             ),
             IconButton(
-              tooltip: 'Поиск',
+              tooltip: ui('Поиск'),
               icon: Icon(KIcons.search, size: 24, color: cText),
               onPressed: () => openSearch(context),
             ),
@@ -50,13 +51,13 @@ class FeedPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(bottom: 16),
             children: [
-              VideoSection(title: 'Мои ролики', list: mine),
-              VideoSection(title: 'Популярное', list: popular),
-              VideoSection(title: 'Новое', list: newest.take(_perSection).toList()),
+              VideoSection(title: ui('Мои ролики'), list: mine),
+              VideoSection(title: ui('Популярное'), list: popular),
+              VideoSection(title: ui('Новое'), list: newest.take(_perSection).toList()),
               ClipsStrip(),
               for (final t in topics)
                 VideoSection(
-                  title: t,
+                  title: topicLabel(t),
                   list: videos.where((v) => v.topic == t).toList().reversed.take(_perSection).toList(),
                   onAll: () => openTopic(context, t),
                 ),
@@ -74,7 +75,7 @@ class FeedPage extends StatelessWidget {
           bottom: 16,
           child: Semantics(
             button: true,
-            label: 'Добавить ролик',
+            label: ui('Добавить ролик'),
             child: Material(
               color: cViolet,
               shape: CircleBorder(),
@@ -97,8 +98,9 @@ double videoCardHeight(double w) => (w - 16) * 9 / 16 + 108;
 
 /// Заголовок полосы со ссылкой «Смотреть все», если есть куда вести.
 class SectionHeader extends StatelessWidget {
-  const SectionHeader(this.title, {super.key, this.onAll, this.allLabel = 'Смотреть все'});
-  final String title, allLabel;
+  const SectionHeader(this.title, {super.key, this.onAll, this.allLabel});
+  final String title;
+  final String? allLabel;
   final VoidCallback? onAll;
 
   @override
@@ -119,7 +121,7 @@ class SectionHeader extends StatelessWidget {
             TextButton(
               onPressed: onAll,
               style: TextButton.styleFrom(foregroundColor: cViolet),
-              child: Text(allLabel, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+              child: Text(allLabel ?? ui('Смотреть все'), style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
             ),
         ],
       ),
@@ -169,8 +171,8 @@ class VideoSection extends StatelessWidget {
 
 /// Полоса «Короткие ролики»: шесть вертикальных обложек, которые листаются вправо.
 class ClipsStrip extends StatelessWidget {
-  const ClipsStrip({super.key, this.title = 'Шортсы', this.list});
-  final String title;
+  const ClipsStrip({super.key, this.title, this.list});
+  final String? title;
 
   /// null — первые клипы каталога.
   final List<Video>? list;
@@ -184,7 +186,7 @@ class ClipsStrip extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SectionHeader(title, onAll: () => openClips(context)),
+          SectionHeader(title ?? ui('Шортсы'), onAll: () => openClips(context)),
           SizedBox(
             height: 240,
             child: ListView.separated(
@@ -230,13 +232,13 @@ class TopicPage extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.only(left: 12),
                         child: IconButton(
-                          tooltip: 'Назад',
+                          tooltip: ui('Назад'),
                           icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),
                     ),
-                    PageTitle(topic),
+                    PageTitle(topicLabel(topic)),
                     Expanded(
                       child: LayoutBuilder(
                         builder: (_, box) {

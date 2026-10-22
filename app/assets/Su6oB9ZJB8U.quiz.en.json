@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How do most people use Claude, according to the author?",
+     "o": [
+      "Like plain Google",
+      "Like a calculator",
+      "Like a mailbox",
+      "Like a game"
+     ],
+     "a": 0,
+     "e": "In the video: \"Većina ljudi koristi Claude kao običan Google\" — most people use Claude as plain Google."
+    },
+    {
+     "q": "Which plan does the author advise starting with?",
+     "o": [
+      "The free one",
+      "The $20 one",
+      "The $100 one",
+      "The $200 one"
+     ],
+     "a": 1,
+     "e": "In the video: \"krenite od plana od 20 dolara\" — start with the $20 plan."
+    },
+    {
+     "q": "What are \"credits\" in Claude?",
+     "o": [
+      "Bank loans",
+      "A limit on requests and actions",
+      "Bonuses for likes",
+      "User ratings"
+     ],
+     "a": 1,
+     "e": "In the video: \"Svaki upit koji date Claude-u ili akciju koju mu zadate, troši određeni broj kredita\" — every query you give Claude or action you assign it spends a certain number of credits."
+    },
+    {
+     "q": "For what tasks does the author recommend the Haiku 4.5 model?",
+     "o": [
+      "For the most complex ones",
+      "For simple things, such as tables",
+      "For video",
+      "For translations"
+     ],
+     "a": 1,
+     "e": "In the video: \"Haiku 4.5 koristite za stvari koje ne zahtevaju neku pamet\" — use Haiku 4.5 for things that don't require much smarts."
+    },
+    {
+     "q": "What do connectors do?",
+     "o": [
+      "Link Claude to other apps",
+      "Connect a printer",
+      "Speed up the internet",
+      "Turn off ads"
+     ],
+     "a": 0,
+     "e": "In the video: \"Bukvalno povezujete vaš Claude sa svim mogućim aplikacijama\" — you literally connect your Claude to all possible apps."
+    },
+    {
+     "q": "What are Claude artifacts?",
+     "o": [
+      "Old files",
+      "Mini-apps inside Claude",
+      "Passwords",
+      "Backups"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mini aplikacije u okviru vašeg Claude-a\" — mini-apps inside your Claude."
+    },
+    {
+     "q": "What does the author do with Claude Cowork?",
+     "o": [
+      "Downloaded hundreds of clips and sorted them by topic",
+      "Bought tickets",
+      "Wrote a book",
+      "Changed phones"
+     ],
+     "a": 0,
+     "e": "In the video: \"on je skinuo sve te klipove, stavio ih u foldere\" — it downloaded all those clips and put them into folders."
+    },
+    {
+     "q": "What does the author advise at the end?",
+     "o": [
+      "To apply at least one point in practice",
+      "To just watch videos",
+      "To buy a second computer",
+      "To delete Claude"
+     ],
+     "a": 0,
+     "e": "In the video: \"Poenta je da primeniš bar jednu danas\" — the point is to apply at least one today."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaki *plan* ima određenu količinu kredita.",
+     "o": [
+      "plan, tariff",
+      "website",
+      "app",
+      "course"
+     ],
+     "a": 0,
+     "e": "Plan — a subscription plan."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Claude *troši* kredite.",
+     "o": [
+      "spends",
+      "loses",
+      "finds",
+      "sells"
+     ],
+     "a": 0,
+     "e": "Trošiti — to spend."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Najjači model *zahteva* više kredita.",
+     "o": [
+      "forgets",
+      "requires",
+      "forgives",
+      "counts"
+     ],
+     "a": 1,
+     "e": "Zahtevati — to require, to demand."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Povežite Claude sa *Gmailom*.",
+     "o": [
+      "by Gmail mail",
+      "by a website",
+      "by a video",
+      "by a phone"
+     ],
+     "a": 0,
+     "e": "Gmail — an email service."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U *fascikli* su svi podaci.",
+     "o": [
+      "in the folder",
+      "in the box",
+      "in the bag",
+      "in the book"
+     ],
+     "a": 0,
+     "e": "Fascikla — a folder."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Claude *pretražuje* sajtove.",
+     "o": [
+      "forgets",
+      "searches",
+      "buys",
+      "deletes"
+     ],
+     "a": 1,
+     "e": "Pretraživati — to search."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Ažurirani* podaci su važni.",
+     "o": [
+      "old",
+      "updated",
+      "secret",
+      "paid"
+     ],
+     "a": 1,
+     "e": "Ažuriran — updated."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Možete da *prilagodite* aplikaciju svojim potrebama.",
+     "o": [
+      "you will adjust",
+      "you will break",
+      "you will forget",
+      "you will buy"
+     ],
+     "a": 0,
+     "e": "Prilagoditi — to adjust, to adapt."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Povežite Claude sa ___.",
+     "o": [
+      "Gmail",
+      "Gmailom",
+      "Gmaila",
+      "Gmailu"
+     ],
+     "a": 1,
+     "e": "Sa + instrumental case: sa Gmailom."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Claude radi ___ vas.",
+     "o": [
+      "za",
+      "od",
+      "bez",
+      "pre"
+     ],
+     "a": 0,
+     "e": "Raditi za + accusative case: za vas."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Zamislite projekat kao ___.",
+     "o": [
+      "fascikla",
+      "fasciklu",
+      "fasciklom",
+      "fascikli"
+     ],
+     "a": 1,
+     "e": "Kao + accusative/nominative — here: kao fasciklu (\"as a folder\")."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Svakog dana ___ interaktivni prikaz podataka.",
+     "o": [
+      "gledate",
+      "gleda",
+      "gledamo",
+      "gledaju"
+     ],
+     "a": 0,
+     "e": "2nd pers. pl.: gledate."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ako koristite besplatnu ___ Claude-a, ograničeni ste.",
+     "o": [
+      "verziju",
+      "verzija",
+      "verziji",
+      "verzije"
+     ],
+     "a": 0,
+     "e": "Koristiti + accusative case: besplatnu verziju."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Claude upravlja ___ iz jednog mesta.",
+     "o": [
+      "aplikacijama",
+      "aplikacije",
+      "aplikacija",
+      "aplikaciji"
+     ],
+     "a": 0,
+     "e": "Upravljati + instrumental case: aplikacijama."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Dobijete ___ dizajn.",
+     "o": [
+      "gotov",
+      "gotovog",
+      "gotovu",
+      "gotovim"
+     ],
+     "a": 0,
+     "e": "Accusative case, masc. inanimate: gotov dizajn."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Moj savet je da ___ od plana od 20 dolara.",
+     "o": [
+      "krenete",
+      "krenuli",
+      "krenut",
+      "kreni"
+     ],
+     "a": 0,
+     "e": "Da + present tense: da krenete."
+    }
+   ]
+  }
+ ]
+}

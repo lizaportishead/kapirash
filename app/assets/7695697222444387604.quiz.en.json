@@ -1,0 +1,176 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the building in the video look like?",
+     "o": [
+      "A book",
+      "A ship",
+      "A pyramid",
+      "A huge Toblerone chocolate"
+     ],
+     "a": 3,
+     "e": "In the video: \"Beograd ima zgradu koja izgleda kao ogromna Toblerone čokolada\" — Belgrade has a building that looks like a huge Toblerone chocolate bar."
+    },
+    {
+     "q": "In which district does it stand?",
+     "o": [
+      "In Zemun",
+      "In Karaburma",
+      "In New Belgrade",
+      "In Vračar"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ova neobična zgrada nalazi se na Karaburmi\" — this unusual building is located in Karaburma."
+    },
+    {
+     "q": "When was it built?",
+     "o": [
+      "In the 1920s",
+      "In the 2000s",
+      "In the 1990s",
+      "In the early sixties"
+     ],
+     "a": 3,
+     "e": "In the video: \"Izgrađena je početkom šezdesetih godina\" — it was built in the early sixties."
+    },
+    {
+     "q": "Why was the building nicknamed Toblerone?",
+     "o": [
+      "Because of its stepped shape with balconies and terraces",
+      "Because of the confectionery inside",
+      "Because of its color",
+      "Because of the owner"
+     ],
+     "a": 0,
+     "e": "In the video: \"Zbog tog karakterističnog oblika Beograđani su je vremenom prozvali Toblerone\" — because of that characteristic shape, Belgraders eventually nicknamed it Toblerone."
+    },
+    {
+     "q": "Is that the official name of the building?",
+     "o": [
+      "Only on the map",
+      "No, it's a popular nickname",
+      "Yes",
+      "Only in documents"
+     ],
+     "a": 1,
+     "e": "In the video: \"taj nadimak nije njen zvanični naziv\" — that nickname is not its official name."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zgrada je *stepenasto* oblikovana.",
+     "o": [
+      "high",
+      "stepped",
+      "slanted",
+      "round"
+     ],
+     "a": 1,
+     "e": "Stepenasto — in a stepped way; stepenik — a step."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Taj *nadimak* nije njen zvanični naziv.",
+     "o": [
+      "address",
+      "nickname",
+      "number",
+      "project"
+     ],
+     "a": 1,
+     "e": "Nadimak — a nickname."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Beograđani su je *prozvali* Toblerone.",
+     "o": [
+      "sold",
+      "destroyed",
+      "named",
+      "forgot"
+     ],
+     "a": 2,
+     "e": "Prozvati — to name, to give a nickname."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Izgrađena* je početkom šezdesetih.",
+     "o": [
+      "drawn",
+      "closed",
+      "bought",
+      "built"
+     ],
+     "a": 3,
+     "e": "Izgraditi — to build; izgrađena — built."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zgrada se nalazi na ___.",
+     "o": [
+      "Karaburmom",
+      "Karaburma",
+      "Karaburmi",
+      "Karaburmu"
+     ],
+     "a": 2,
+     "e": "Na in answer to \"where?\" — locative case: na Karaburmi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Izgrađena je početkom ___ godina.",
+     "o": [
+      "šezdesetu",
+      "šezdesetim",
+      "šezdeset",
+      "šezdesetih"
+     ],
+     "a": 3,
+     "e": "Genitive plural: šezdesetih godina — \"of the sixties\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sa balkonima i ___.",
+     "o": [
+      "terase",
+      "terasa",
+      "terasama",
+      "terasi"
+     ],
+     "a": 2,
+     "e": "Sa requires the instrumental case: sa balkonima i terasama."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Beograđani su je vremenom ___ Toblerone.",
+     "o": [
+      "prozvali",
+      "prozvalo",
+      "prozvala",
+      "prozvao"
+     ],
+     "a": 0,
+     "e": "The subject is Beograđani, plural: prozvali."
+    }
+   ]
+  }
+ ]
+}

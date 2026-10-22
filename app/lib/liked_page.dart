@@ -4,6 +4,7 @@ import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Открывает ролики с сердечком поверх таббара.
 void openLiked(BuildContext context) {
@@ -34,13 +35,13 @@ class LikedPage extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.only(left: 12),
                         child: IconButton(
-                          tooltip: 'Назад',
+                          tooltip: ui('Назад'),
                           icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),
                     ),
-                    PageTitle('Любимое${list.isEmpty ? '' : ' · ${list.length}'}'),
+                    PageTitle('${ui('Любимое')}${list.isEmpty ? '' : ' · ${list.length}'}'),
                     Expanded(
                       child: list.isEmpty
                           ? Padding(
@@ -54,7 +55,7 @@ class LikedPage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 16),
                                   Text(
-                                    'Ставь сердечко роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
+                                    ui('Ставь сердечко роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.'),
                                     textAlign: TextAlign.center,
                                     style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                                   ),

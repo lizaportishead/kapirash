@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How many years does quantum mechanics turn this year, according to the author?",
+     "o": [
+      "Ten",
+      "Fifty",
+      "One hundred",
+      "One thousand"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ove godine kvantna mehanika slavi sto godina postojanja\" — this year quantum mechanics marks one hundred years of existence."
+    },
+    {
+     "q": "What does the word \"quantum\" mean in the video?",
+     "o": [
+      "Very large",
+      "Discrete, portioned units of energy",
+      "Very fast",
+      "Invisible"
+     ],
+     "a": 1,
+     "e": "In the video: \"kvantno označava diskretne, porcionisane jedinice energije\" — \"quantum\" means discrete, portioned units of energy."
+    },
+    {
+     "q": "What does the author compare quantum tunneling to?",
+     "o": [
+      "Jumping across a river",
+      "An electron passing through a wall",
+      "A rocket flight",
+      "Opening a door"
+     ],
+     "a": 1,
+     "e": "In the video: \"u kvantnom svetu elektron može nekako proći kroz zid kao da nije ni tu\" — in the quantum world an electron can somehow pass through a wall as if it weren't there."
+    },
+    {
+     "q": "What does Heisenberg's uncertainty principle say?",
+     "o": [
+      "You can't simultaneously know a particle's exact position and speed",
+      "Electrons have no charge",
+      "Light has no speed",
+      "Atoms can't be seen"
+     ],
+     "a": 0,
+     "e": "In the video: \"ne možemo istovremeno znati tačno mesto i brzinu čestice\" — we can't simultaneously know the exact position and speed of a particle."
+    },
+    {
+     "q": "What happens to a system during measurement, according to the video?",
+     "o": [
+      "It disappears",
+      "It collapses into one of the possible states",
+      "It slows down",
+      "It grows"
+     ],
+     "a": 1,
+     "e": "In the video: \"sistem se kolapsira u jednu od mogućih stanja\" — the system collapses into one of the possible states."
+    },
+    {
+     "q": "How does the author explain the role of the observer?",
+     "o": [
+      "Like the pause button in a movie",
+      "Like an open window",
+      "Like a mirror",
+      "Like a clock"
+     ],
+     "a": 0,
+     "e": "In the video: \"posmatranje deluje poput tog dugmeta za pauzu\" — observation acts like this pause button."
+    },
+    {
+     "q": "Who developed the Copenhagen interpretation, according to the author?",
+     "o": [
+      "Niels Bohr and Werner Heisenberg",
+      "Einstein and Newton",
+      "Hugh Everett",
+      "Louis de Broglie"
+     ],
+     "a": 0,
+     "e": "In the video: \"koju su razvili Niels Bohr i Werner Heisenberg\" — developed by Niels Bohr and Werner Heisenberg."
+    },
+    {
+     "q": "How do quantum computers differ from ordinary ones?",
+     "o": [
+      "They use qubits instead of bits",
+      "They don't use electricity",
+      "They work only during the day",
+      "They have no memory"
+     ],
+     "a": 0,
+     "e": "In the video: \"kvantni računari koriste kvantne bitove ili kubite\" — quantum computers use quantum bits, or qubits."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kvantna mehanika je najuspešnija *teorija*.",
+     "o": [
+      "theory",
+      "game",
+      "function",
+      "profession"
+     ],
+     "a": 0,
+     "e": "Teorija — theory."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Elektroni se ponašaju kao *talasi*.",
+     "o": [
+      "waves",
+      "stones",
+      "lights",
+      "balls"
+     ],
+     "a": 0,
+     "e": "Talas — wave."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaka *kaplja* predstavlja jedinicu energije.",
+     "o": [
+      "drop",
+      "spark",
+      "line",
+      "mountain"
+     ],
+     "a": 0,
+     "e": "Kaplja — drop."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Postoji *verovatnoća* da će se dogoditi.",
+     "o": [
+      "probability",
+      "guarantee",
+      "mistake",
+      "reason"
+     ],
+     "a": 0,
+     "e": "Verovatnoća — probability."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Čestica može biti u više stanja *istovremeno*.",
+     "o": [
+      "gradually",
+      "simultaneously",
+      "rarely",
+      "by chance"
+     ],
+     "a": 1,
+     "e": "Istovremeno — simultaneously."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo je *tajna* nit koja ih veže.",
+     "o": [
+      "secret (fem.)",
+      "thin (fem.)",
+      "red (fem.)",
+      "new (fem.)"
+     ],
+     "a": 0,
+     "e": "Tajna — a secret; tajni — secret (adj.)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Merni *aparat* utiče na sistem.",
+     "o": [
+      "device",
+      "scientist",
+      "computer",
+      "table"
+     ],
+     "a": 0,
+     "e": "Aparat — device, apparatus."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zapletenost je *fascinantan* fenomen.",
+     "o": [
+      "boring",
+      "fascinating",
+      "old",
+      "simple"
+     ],
+     "a": 1,
+     "e": "Fascinantan — fascinating."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Kvantna mehanika se bavi predikcijom ___ čestica.",
+     "o": [
+      "ponašanje",
+      "ponašanja",
+      "ponašanju",
+      "ponašanjem"
+     ],
+     "a": 1,
+     "e": "Predikcija + genitive case: predikcijom ponašanja čestica — \"predicting the behavior of particles\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Elektron se kreće oko ___.",
+     "o": [
+      "atom",
+      "atoma",
+      "atomu",
+      "atomom"
+     ],
+     "a": 1,
+     "e": "Oko + genitive case: oko atoma."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Zamislite česticu koja se nalazi u ___ stanju.",
+     "o": [
+      "jedno",
+      "jednom",
+      "jedna",
+      "jedan"
+     ],
+     "a": 1,
+     "e": "U + locative case, neuter: u jednom stanju."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Pritisnuli ste ___ za pauzu.",
+     "o": [
+      "dugme",
+      "dugmeta",
+      "dugmetu",
+      "dugmetom"
+     ],
+     "a": 0,
+     "e": "Pritisnuti + accusative case, neuter: dugme."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ovo dovodi u pitanje našu percepciju ___.",
+     "o": [
+      "stvarnost",
+      "stvarnosti",
+      "stvarnošću",
+      "stvarnostima"
+     ],
+     "a": 1,
+     "e": "Percepcija + genitive case: percepciju stvarnosti — \"perception of reality\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Eksperiment je pokazao ___ zapletenosti.",
+     "o": [
+      "postojanje",
+      "postojanja",
+      "postojanju",
+      "postojanjem"
+     ],
+     "a": 0,
+     "e": "Pokazati + accusative case: postojanje."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Čestica nije samo talas, već i ___.",
+     "o": [
+      "čestica",
+      "česticu",
+      "čestice",
+      "česticom"
+     ],
+     "a": 0,
+     "e": "Nominative after \"već i\": čestica."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Razmišljamo o ___ univerzumima.",
+     "o": [
+      "paralelni",
+      "paralelnim",
+      "paralelnih",
+      "paralelno"
+     ],
+     "a": 1,
+     "e": "O + locative plural: o paralelnim univerzumima."
+    }
+   ]
+  }
+ ]
+}

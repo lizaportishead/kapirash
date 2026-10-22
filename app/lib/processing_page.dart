@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'creator_page.dart' show plural;
 import 'kap_loader.dart';
 import 'player_page.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Сколько обычно готовится ролик, минут: очередь проверяется раз в 5 минут, распознавание идёт примерно в реальном времени.
 /// Точнее сказать нельзя: длина ролика заранее неизвестна.
@@ -45,8 +45,8 @@ class _ProcessingPageState extends State<ProcessingPage> {
 
   String _eta(MyVideo m) {
     final left = kSubsEtaMinutes - DateTime.now().difference(m.added).inMinutes;
-    if (left <= 0) return 'Занимает чуть дольше обычного — ещё немного';
-    return 'Осталось примерно $left ${plural(left, 'минута', 'минуты', 'минут')}';
+    if (left <= 0) return ui('Занимает чуть дольше обычного — ещё немного');
+    return ui('Осталось примерно {0}', ['$left ${plural(left, 'минута', 'минуты', 'минут')}']);
   }
 
   Future<void> _cancel() async {
@@ -54,19 +54,19 @@ class _ProcessingPageState extends State<ProcessingPage> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: cCard,
-        title: Text('Отменить?', style: TextStyle(fontWeight: FontWeight.w800, color: cText)),
+        title: Text(ui('Отменить?'), style: TextStyle(fontWeight: FontWeight.w800, color: cText)),
         content: Text(
-          'Ролик пропадёт из «Моих роликов». Добавить его можно будет заново.',
+          ui('Ролик пропадёт из «Моих роликов». Добавить его можно будет заново.'),
           style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: Text('Нет', style: TextStyle(color: cText)),
+            child: Text(ui('Нет'), style: TextStyle(color: cText)),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: Text('Отменить', style: TextStyle(fontWeight: FontWeight.w800, color: cAccentText)),
+            child: Text(ui('Отменить'), style: TextStyle(fontWeight: FontWeight.w800, color: cAccentText)),
           ),
         ],
       ),
@@ -97,7 +97,7 @@ class _ProcessingPageState extends State<ProcessingPage> {
                       child: Padding(
                         padding: EdgeInsets.only(left: 8, top: 4),
                         child: IconButton(
-                          tooltip: 'Закрыть',
+                          tooltip: ui('Закрыть'),
                           icon: Icon(Icons.close_rounded, size: 26, color: cText),
                           onPressed: () => Navigator.pop(context),
                         ),
@@ -145,9 +145,9 @@ class _ProcessingPageState extends State<ProcessingPage> {
                           SizedBox(height: 20),
                           Text(
                             switch (status) {
-                              SubsStatus.processing => 'Готовим субтитры',
-                              SubsStatus.ready => 'Ролик готов',
-                              SubsStatus.failed => 'Не получилось подготовить',
+                              SubsStatus.processing => ui('Готовим субтитры'),
+                              SubsStatus.ready => ui('Ролик готов'),
+                              SubsStatus.failed => ui('Не получилось подготовить'),
                             },
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
@@ -156,10 +156,9 @@ class _ProcessingPageState extends State<ProcessingPage> {
                           Text(
                             switch (status) {
                               SubsStatus.processing =>
-                                '${m == null ? '' : '${_eta(m)}. '}Распознаём речь, переводим и собираем словарик. '
-                                    'Окно можно закрыть: ролик будет в каталоге, в разделе «Мои ролики», и откроется, когда будет готов.',
-                              SubsStatus.ready => 'Субтитры, перевод и словарик на месте.',
-                              SubsStatus.failed => '${m?.error == null ? '' : '${m!.error}\n\n'}Попробуй ещё раз. Если опять не выйдет — ролик можно удалить и добавить заново.',
+                                '${m == null ? '' : '${_eta(m)}. '}${ui('Распознаём речь, переводим и собираем словарик. Окно можно закрыть: ролик будет в каталоге, в разделе «Мои ролики», и откроется, когда будет готов.')}',
+                              SubsStatus.ready => ui('Субтитры, перевод и словарик на месте.'),
+                              SubsStatus.failed => '${m?.error == null ? '' : '${m!.error}\n\n'}${ui('Попробуй ещё раз. Если опять не выйдет — ролик можно удалить и добавить заново.')}',
                             },
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
@@ -167,20 +166,20 @@ class _ProcessingPageState extends State<ProcessingPage> {
                           SizedBox(height: 24),
                           if (status == SubsStatus.ready)
                             BigButton(
-                              'Смотреть',
+                              ui('Смотреть'),
                               onTap: () {
                                 Navigator.pop(context);
                                 openVideo(context, v);
                               },
                             )
                           else if (status == SubsStatus.failed)
-                            BigButton('Повторить', onTap: () => store.generateSubs(v.id))
+                            BigButton(ui('Повторить'), onTap: () => store.generateSubs(v.id))
                           else
-                            BigButton('Закрыть', onTap: () => Navigator.pop(context)),
+                            BigButton(ui('Закрыть'), onTap: () => Navigator.pop(context)),
                           if (status != SubsStatus.ready)
                             TextButton(
                               onPressed: _cancel,
-                              child: Text('Отменить и удалить', style: TextStyle(color: cMuted)),
+                              child: Text(ui('Отменить и удалить'), style: TextStyle(color: cMuted)),
                             ),
                         ],
                       ),

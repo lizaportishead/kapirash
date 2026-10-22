@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 
+import 'onboarding_page.dart' show OnboardingShowcase;
 import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 const _kLastEmail = 'last_email';
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
@@ -16,7 +18,10 @@ void openAuth(BuildContext context, {bool intro = false}) {
 
 // Вход в два шага: почта, затем ссылка или код из письма.
 class AuthPage extends StatefulWidget {
-  const AuthPage({super.key, this.intro = false});
+  const AuthPage({super.key, this.intro = false, this.start = false});
+
+  /// Стартовый экран веб-версии: не закрывается назад, а завершает онбординг.
+  final bool start;
 
   /// После онбординга: объясняем, зачем входить, и даём уйти без входа.
   final bool intro;
@@ -38,6 +43,9 @@ class _AuthPageState extends State<AuthPage> {
     super.initState();
     store.addListener(_onStore);
     _loadEmail();
+    if (widget.start && store.user != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => store.finishOnboarding());
+    }
   }
 
   // Подставляем почту, которую вводили в прошлый раз.
@@ -50,7 +58,8 @@ class _AuthPageState extends State<AuthPage> {
 
   // Вошли — по коду или по ссылке из письма, пока экран был открыт.
   void _onStore() {
-    if (store.user != null && mounted) Navigator.pop(context);
+    if (store.user == null || !mounted) return;
+    widget.start ? store.finishOnboarding() : Navigator.pop(context);
   }
 
   @override
@@ -64,11 +73,11 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> _sendCode() async {
     final email = _email.text.trim();
     if (!_emailRe.hasMatch(email)) {
-      setState(() => _error = email.isEmpty ? 'Введи почту.' : 'Похоже, в почте опечатка.');
+      setState(() => _error = email.isEmpty ? ui('Введи почту.') : ui('Похоже, в почте опечатка.'));
       return;
     }
     if (!store.canSignIn) {
-      setState(() => _error = 'Вход пока не подключён.');
+      setState(() => _error = ui('Вход пока не подключён.'));
       return;
     }
     if (await _run(() => store.sendCode(email))) {
@@ -82,7 +91,7 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> _verify() async {
     final code = _code.text.trim();
     if (code.isEmpty) {
-      setState(() => _error = 'Введи код из письма.');
+      setState(() => _error = ui('Введи код из письма.'));
       return;
     }
     await _run(() => store.verifyCode(_sentTo!, code));
@@ -99,10 +108,10 @@ class _AuthPageState extends State<AuthPage> {
       await request();
     } on AuthException catch (e) {
       error = e.statusCode == '429'
-          ? 'Слишком часто. Попробуй через минуту.'
-          : (_sentTo == null ? 'Не получилось отправить код.' : 'Код не подошёл или устарел.');
+          ? ui('Слишком часто. Попробуй через минуту.')
+          : (_sentTo == null ? ui('Не получилось отправить код.') : ui('Код не подошёл или устарел.'));
     } catch (_) {
-      error = 'Нет связи. Попробуй ещё раз.';
+      error = ui('Нет связи. Попробуй ещё раз.');
     }
     if (!mounted) return error == null;
     setState(() {
@@ -122,66 +131,137 @@ class _AuthPageState extends State<AuthPage> {
 
   @override
   Widget build(BuildContext context) {
+    final wide = MediaQuery.sizeOf(context).width >= 1100;
+    final form = _form(wide);
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 480),
-            child: Column(
-              children: [
-                Expanded(
-                  child: ListView(
-                    keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-                    padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
-                    children: [
-                      if (widget.intro)
-                        SizedBox(height: 48)
-                      else
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Transform.translate(
-                            offset: Offset(-12, 0),
-                            child: IconButton(
-                              tooltip: 'Назад',
-                              icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                              onPressed: () => Navigator.pop(context),
-                            ),
+        child: wide
+            ? Row(
+                children: [
+                  Expanded(flex: 2, child: form),
+                  Expanded(child: OnboardingShowcase()),
+                ],
+              )
+            : form,
+      ),
+    );
+  }
+
+  Widget _form(bool wide) {
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 480),
+        child: Column(
+          children: [
+            Expanded(
+              child: Align(
+                alignment: wide ? Alignment.center : Alignment.topCenter,
+                child: ListView(
+                  shrinkWrap: true,
+                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                  padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                  children: [
+                    if (widget.intro)
+                      SizedBox(height: wide ? 0 : 48)
+                    else
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Transform.translate(
+                          offset: Offset(-12, 0),
+                          child: IconButton(
+                            tooltip: ui('Назад'),
+                            icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                            onPressed: () => Navigator.pop(context),
                           ),
                         ),
+                      ),
+                    if (!wide) ...[
                       ExcludeSemantics(child: Image.asset('assets/ill_my_videos.png', height: 150)),
                       SizedBox(height: 24),
-                      Headline(
-                        _sentTo == null ? 'Войди в\u00A0*аккаунт*' : (kEmailCode ? 'Введи *код*' : 'Проверь *почту*'),
-                        color: cText,
-                        mark: cAccent,
+                    ],
+                    Headline(
+                      _sentTo == null
+                          ? ui('Войди в\u00A0*аккаунт*')
+                          : (kEmailCode ? ui('Введи *код*') : ui('Проверь *почту*')),
+                      color: cText,
+                      mark: cAccent,
+                    ),
+                    if (_sentTo != null || widget.intro) ...[
+                      SizedBox(height: 14),
+                      Text(
+                        _sentTo == null
+                            ? ui(
+                                'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон '
+                                'или переустановишь приложение.',
+                              )
+                            : (kEmailCode
+                                  ? ui('Отправили код на {0}. Письмо может идти пару минут.', [_sentTo!])
+                                  : ui('Отправили ссылку на {0}. Открой её на этом телефоне — и ты войдёшь.', [
+                                      _sentTo!,
+                                    ])),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
                       ),
-                      if (_sentTo != null || widget.intro) ...[
-                        SizedBox(height: 14),
-                        Text(
-                          _sentTo == null
-                              ? 'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон '
-                                    'или переустановишь приложение.'
-                              : (kEmailCode
-                                    ? 'Отправили код на $_sentTo. Письмо может идти пару минут.'
-                                    : 'Отправили ссылку на $_sentTo. Открой её на этом телефоне — и ты войдёшь.'),
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
+                    ],
+                    SizedBox(height: 28),
+                    if (_sentTo == null) ...[
+                      TextField(
+                        key: ValueKey(ui('Почта')),
+                        controller: _email,
+                        autocorrect: false,
+                        keyboardType: TextInputType.emailAddress,
+                        autofillHints: [AutofillHints.email],
+                        textInputAction: TextInputAction.done,
+                        onChanged: (_) => setState(() => _error = null),
+                        onSubmitted: (_) => _sendCode(),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
+                        cursorColor: cViolet,
+                        decoration: InputDecoration(
+                          hintText: ui('Почта'),
+                          hintStyle: TextStyle(color: cFaint),
+                          errorText: _error,
+                          filled: true,
+                          fillColor: cCard,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide.none,
+                          ),
                         ),
-                      ],
-                      SizedBox(height: 28),
-                      if (_sentTo == null) ...[
+                      ),
+                      SizedBox(height: 12),
+                      BigButton(ui('Продолжить'), onTap: _busy ? null : _sendCode),
+                      SizedBox(height: 12),
+                      // Заглушка: вход через Google пока не подключён.
+                      SizedBox(
+                        height: 56,
+                        child: OutlinedButton.icon(
+                          onPressed: null,
+                          icon: Icon(Icons.mail_outline, size: 20),
+                          label: Text(ui('Войти через Gmail')),
+                          style: OutlinedButton.styleFrom(
+                            disabledForegroundColor: cFaint,
+                            side: BorderSide(color: cLine),
+                            shape: StadiumBorder(),
+                            textStyle: TextStyle(fontFamily: kFont, fontSize: 16, fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                      ),
+                    ] else ...[
+                      if (kEmailCode) ...[
                         TextField(
-                          key: ValueKey('Почта'),
-                          controller: _email,
+                          key: ValueKey(ui('Код из письма')),
+                          controller: _code,
                           autocorrect: false,
-                          keyboardType: TextInputType.emailAddress,
-                          autofillHints: [AutofillHints.email],
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          autofillHints: [AutofillHints.oneTimeCode],
                           textInputAction: TextInputAction.done,
                           onChanged: (_) => setState(() => _error = null),
-                          onSubmitted: (_) => _sendCode(),
+                          onSubmitted: (_) => _verify(),
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
                           cursorColor: cViolet,
                           decoration: InputDecoration(
-                            hintText: 'Почта',
+                            hintText: ui('Код из письма'),
                             hintStyle: TextStyle(color: cFaint),
                             errorText: _error,
                             filled: true,
@@ -194,65 +274,39 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                         SizedBox(height: 12),
-                        BigButton('Продолжить', onTap: _busy ? null : _sendCode),
-                      ] else ...[
-                        if (kEmailCode) ...[
-                          TextField(
-                            key: ValueKey('Код из письма'),
-                            controller: _code,
-                            autocorrect: false,
-                            autofocus: true,
-                            keyboardType: TextInputType.number,
-                            autofillHints: [AutofillHints.oneTimeCode],
-                            textInputAction: TextInputAction.done,
-                            onChanged: (_) => setState(() => _error = null),
-                            onSubmitted: (_) => _verify(),
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: cText),
-                            cursorColor: cViolet,
-                            decoration: InputDecoration(
-                              hintText: 'Код из письма',
-                              hintStyle: TextStyle(color: cFaint),
-                              errorText: _error,
-                              filled: true,
-                              fillColor: cCard,
-                              contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          BigButton('Войти', onTap: _busy ? null : _verify),
-                          SizedBox(height: 4),
-                        ],
-                        TextButton(
-                          onPressed: _busy ? null : _changeEmail,
-                          style: TextButton.styleFrom(
-                            foregroundColor: cMuted,
-                            textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
-                          ),
-                          child: Text('Другая почта'),
-                        ),
+                        BigButton(ui('Войти'), onTap: _busy ? null : _verify),
+                        SizedBox(height: 4),
                       ],
-                    ],
-                  ),
-                ),
-                if (widget.intro)
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 8),
-                    child: TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      style: TextButton.styleFrom(
-                        foregroundColor: cMuted,
-                        textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
+                      TextButton(
+                        onPressed: _busy ? null : _changeEmail,
+                        style: TextButton.styleFrom(
+                          foregroundColor: cMuted,
+                          textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
+                        ),
+                        child: Text(ui('Другая почта')),
                       ),
-                      child: Text('Смотреть без авторизации'),
-                    ),
-                  ),
-              ],
+                    ],
+                  ],
+                ),
+              ),
             ),
-          ),
+            if (widget.intro)
+              Padding(
+                padding: EdgeInsets.only(bottom: 8),
+                child: TextButton(
+                  // С лендинга выйти без входа можно только отсюда, поэтому заодно закрываем онбординг.
+                  onPressed: () {
+                    store.finishOnboarding();
+                    if (!widget.start) Navigator.pop(context);
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor: cMuted,
+                    textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
+                  child: Text(ui('Смотреть без авторизации')),
+                ),
+              ),
+          ],
         ),
       ),
     );

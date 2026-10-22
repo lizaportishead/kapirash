@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'icons.dart';
 import 'learn_page.dart';
+import 'speak_io.dart' if (dart.library.js_interop) 'speak_web.dart';
 import 'player_page.dart';
 import 'store.dart';
 import 'stories_page.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 class WordsPage extends StatefulWidget {
   const WordsPage({super.key});
@@ -19,6 +21,7 @@ class WordsPage extends StatefulWidget {
 class _WordsPageState extends State<WordsPage> {
   final _search = TextEditingController();
   bool _searching = false;
+  bool _learnedTab = false;
 
   @override
   void initState() {
@@ -45,7 +48,8 @@ class _WordsPageState extends State<WordsPage> {
     return ListenableBuilder(
       listenable: store,
       builder: (context, _) {
-        final all = store.words.reversed.toList();
+        final every = store.words.reversed.toList();
+        final all = every.where((w) => w.learned == _learnedTab).toList();
         final q = _norm(_search.text.trim());
         final list = q.isEmpty
             ? all
@@ -54,17 +58,36 @@ class _WordsPageState extends State<WordsPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             PageTitle(
-              'Мои слова${all.isEmpty ? '' : ' · ${all.length}'}',
+              '${ui('Словарь')}${every.isEmpty ? '' : ' · ${every.length}'}',
               actions: [
-                if (all.isNotEmpty)
+                if (every.isNotEmpty)
                   IconButton(
-                    tooltip: _searching ? 'Закрыть поиск' : 'Поиск',
+                    tooltip: _searching ? ui('Закрыть поиск') : ui('Поиск'),
                     icon: Icon(_searching ? Icons.close : KIcons.search, size: 24, color: cText),
                     onPressed: _toggleSearch,
                   ),
               ],
             ),
-            if (_searching && all.isNotEmpty)
+            if (every.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
+                child: Row(
+                  children: [
+                    Pill(
+                      '${ui('В процессе')} · ${every.where((w) => !w.learned).length}',
+                      on: !_learnedTab,
+                      onTap: () => setState(() => _learnedTab = false),
+                    ),
+                    SizedBox(width: 8),
+                    Pill(
+                      '${ui('Выучено')} · ${every.where((w) => w.learned).length}',
+                      on: _learnedTab,
+                      onTap: () => setState(() => _learnedTab = true),
+                    ),
+                  ],
+                ),
+              ),
+            if (_searching && every.isNotEmpty)
               Padding(
                 padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
                 child: TextField(
@@ -75,7 +98,7 @@ class _WordsPageState extends State<WordsPage> {
                   style: TextStyle(fontSize: 15, color: cText),
                   cursorColor: cViolet,
                   decoration: InputDecoration(
-                    hintText: 'Поиск по словам',
+                    hintText: ui('Поиск по словам'),
                     hintStyle: TextStyle(color: cFaint),
                     prefixIcon: Icon(KIcons.search, color: cFaint),
                     filled: true,
@@ -89,7 +112,7 @@ class _WordsPageState extends State<WordsPage> {
             Expanded(
               child: Stack(
                 children: [
-                  all.isEmpty
+                  every.isEmpty
                       ? Padding(
                           padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                           child: SizedBox.expand(
@@ -103,7 +126,7 @@ class _WordsPageState extends State<WordsPage> {
                                 ),
                                 SizedBox(height: 16),
                                 Text(
-                                  'Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.',
+                                  ui('Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.'),
                                   textAlign: TextAlign.center,
                                   style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                                 ),
@@ -115,7 +138,9 @@ class _WordsPageState extends State<WordsPage> {
                       ? Padding(
                           padding: EdgeInsets.all(24),
                           child: Text(
-                            'Ничего не нашлось. Попробуй другой запрос.',
+                            all.isEmpty
+                                ? ui(_learnedTab ? 'Выученных слов пока нет.' : 'Все слова выучены.')
+                                : ui('Ничего не нашлось. Попробуй другой запрос.'),
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, color: cMuted),
                           ),
@@ -128,7 +153,7 @@ class _WordsPageState extends State<WordsPage> {
                           separatorBuilder: (_, _) => SizedBox(height: 8),
                           itemBuilder: (_, i) => _WordCard(list[i]),
                         ),
-                  if (all.isNotEmpty && !_searching)
+                  if (all.isNotEmpty && !_learnedTab && !_searching)
                     Positioned(
                       left: 0,
                       right: 0,
@@ -145,7 +170,7 @@ class _WordsPageState extends State<WordsPage> {
                             textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w700),
                           ),
                           onPressed: () => openLearn(context),
-                          child: Text('Учить слова'),
+                          child: Text(ui('Учить слова')),
                         ),
                       ),
                     ),
@@ -192,7 +217,8 @@ class _WordCard extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 2),
                       child: Text(
-                        '${w.form == null || w.form!.isEmpty ? 'Форма' : w.form} от ${store.conv(w.lemma!)}${w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'}',
+                        ui('{0} от {1}', [formUi(w.form == null || w.form!.isEmpty ? 'Форма' : w.form!), store.conv(w.lemma!)]) +
+                            (w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'),
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
@@ -234,15 +260,26 @@ class _WordCard extends StatelessWidget {
                   if (story != null) ...[
                     SizedBox(height: 6),
                     Text(
-                      '${story.title} · стр. ${w.t.toInt()}',
+                      ui('{0} · стр. {1}', [story.title, w.t.toInt()]),
                       style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
                     ),
                   ],
                 ],
               ),
             ),
+            if (w.learned)
+              IconButton(
+                tooltip: ui('Вернуть в изучение'),
+                icon: Icon(Icons.undo_rounded, size: 20, color: cMuted),
+                onPressed: () => store.setLearned(w.key, false),
+              ),
             IconButton(
-              tooltip: 'Удалить ${w.key}',
+              tooltip: ui('Прослушать {0}', [w.key]),
+              icon: Icon(Icons.volume_up_rounded, size: 22, color: cViolet),
+              onPressed: () => speakWord(toCyr(toLat(w.key))),
+            ),
+            IconButton(
+              tooltip: ui('Удалить {0}', [w.key]),
               icon: Icon(Icons.close, size: 18, color: cMuted),
               onPressed: () => store.remove(w.key),
             ),

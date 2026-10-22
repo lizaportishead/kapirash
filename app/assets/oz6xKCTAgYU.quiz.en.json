@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What three types of hackers does the author name?",
+     "o": [
+      "White hat, black hat and grey hat",
+      "Schoolchildren, students and professionals",
+      "Honest, poor and rich",
+      "Red, blue and green"
+     ],
+     "a": 0,
+     "e": "In the video: \"white hat hakeri... black hat hakeri... i postoje grey hat hakeri, koji su zapravo nešto između\" — white hat hackers... black hat hackers... and there are grey hat hackers, who are actually something in between."
+    },
+    {
+     "q": "What needs to be done first?",
+     "o": [
+      "Come up with a cool hacker name",
+      "Buy a computer",
+      "Find a job",
+      "Learn English"
+     ],
+     "a": 0,
+     "e": "In the video: \"Prvo što je potrebno je da smislite cool hacking ime. Zašto? Zato što onda izgledate opasno.\" — the first thing needed is to come up with a cool hacking name. Why? Because then you look dangerous."
+    },
+    {
+     "q": "What, according to the author, shows that you are smarter and a better hacker?",
+     "o": [
+      "A long name",
+      "More letters replaced with numbers",
+      "A single capital letter",
+      "A name in Serbian"
+     ],
+     "a": 1,
+     "e": "In the video: \"što više slova zamenite brojevima, to znači da ste inteligentniji i da ste bolji haker\" — the more letters you replace with numbers, the more intelligent and the better hacker you are."
+    },
+    {
+     "q": "Why is \"Lumix\" (Linux) needed?",
+     "o": [
+      "It's faster than Windows",
+      "It's free",
+      "It's beautiful",
+      "The necessary tools are already installed in it"
+     ],
+     "a": 3,
+     "e": "In the video: \"Zato što on ima preinstalirane tulove... poput terminala, koji su potrebni za hakovanje\" — because it has preinstalled tools... like a terminal, which are needed for hacking."
+    },
+    {
+     "q": "What is hidden behind the letters HS in ITHS?",
+     "o": [
+      "High score",
+      "Hacking school, not high school",
+      "Home security",
+      "Hot spot"
+     ],
+     "a": 1,
+     "e": "In the video: \"a iza tog HS se zapravo krije high school... zapravo to HS nije za high school, već hacking school\" — and behind that HS actually hides \"high school\"... actually that HS isn't for high school, but hacking school."
+    },
+    {
+     "q": "What do you need to wear to become a professional hacker?",
+     "o": [
+      "A white coat",
+      "A hoodie and gloves",
+      "Glasses and a scarf",
+      "A suit"
+     ],
+     "a": 1,
+     "e": "In the video: \"da biste postali profesionalni haker, morate imati hudi i one hakerske rukavice\" — to become a professional hacker, you must have a hoodie and those hacker gloves."
+    },
+    {
+     "q": "How many monitors does the \"best hacker in the world\" Cold Frozen have?",
+     "o": [
+      "20",
+      "5",
+      "100",
+      "2"
+     ],
+     "a": 0,
+     "e": "In the video: \"najbolji haker na svetu, Cold Frozen, ima čak 20 monitora\" — the best hacker in the world, Cold Frozen, has as many as 20 monitors."
+    },
+    {
+     "q": "Why don't hackers use a mouse?",
+     "o": [
+      "Mice are expensive",
+      "A mouse can be hacked",
+      "To avoid losing time switching to a mouse",
+      "A mouse is noisy"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ukoliko vam treba miš, vi morate tu prekinuti, preći na miša i onda se vratiti na hakovanje. I tu gubite vreme\" — if you need a mouse, you have to interrupt there, switch to the mouse and then go back to hacking. And that's where you lose time."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaki *klinac* sanja da postane haker.",
+     "o": [
+      "director",
+      "teacher",
+      "kid, teenager",
+      "player"
+     ],
+     "a": 2,
+     "e": "Klinac — colloquial for \"kid, teenager\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Potreban vam je veliki *trud* i veliko ulaganje vremena.",
+     "o": [
+      "effort, labor",
+      "talent",
+      "diploma",
+      "computer"
+     ],
+     "a": 0,
+     "e": "Trud — effort, diligence."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo jedan *oprez* što se tiče ovog sistema.",
+     "o": [
+      "prize",
+      "advice",
+      "caution",
+      "chance"
+     ],
+     "a": 2,
+     "e": "Oprez — caution."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li ste videli hakera koji ne nosi *kapuljaču*?",
+     "o": [
+      "glasses",
+      "hood",
+      "mask",
+      "hat"
+     ],
+     "a": 1,
+     "e": "Kapuljača — a hood."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Postoje neke *glasine* da najbolji haker ima 20 monitora.",
+     "o": [
+      "films",
+      "laws",
+      "news",
+      "rumors"
+     ],
+     "a": 3,
+     "e": "Glasina — a rumor."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Morate ići u *zatvor* ili biti bar na FBI poternici.",
+     "o": [
+      "vacation",
+      "army",
+      "prison",
+      "school"
+     ],
+     "a": 2,
+     "e": "Zatvor — a prison; zatvoriti — to close."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Biti na FBI *poternici*.",
+     "o": [
+      "wanted",
+      "in the frame",
+      "in the ranking",
+      "on assignment"
+     ],
+     "a": 0,
+     "e": "Poternica — an arrest warrant, a wanted notice."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kakav biste haker bili da vam desktop izgleda *uredno*?",
+     "o": [
+      "quickly",
+      "neatly",
+      "strangely",
+      "expensively"
+     ],
+     "a": 1,
+     "e": "Uredan — neat, tidy; red — order."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Što više slova zamenite ___, to ste bolji haker.",
+     "o": [
+      "brojevima",
+      "brojeve",
+      "brojevi",
+      "brojeva"
+     ],
+     "a": 0,
+     "e": "Zameniti with what — instrumental case: slova zamenite brojevima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvo što je potrebno je da ___ cool hacking ime.",
+     "o": [
+      "smisli",
+      "smislim",
+      "smisle",
+      "smislite"
+     ],
+     "a": 3,
+     "e": "Addressing \"you\", plural: da smislite."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Uz pomoć tih ___ možete hakovati bilo koju vladu.",
+     "o": [
+      "tulova",
+      "tulovi",
+      "tulove",
+      "tulovima"
+     ],
+     "a": 0,
+     "e": "Uz pomoć (\"with the help of\") requires the genitive case: tih tulova."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Najbolje je da upišete neku hacking ___.",
+     "o": [
+      "školom",
+      "škola",
+      "škole",
+      "školu"
+     ],
+     "a": 3,
+     "e": "Upisati what — accusative case: školu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Verovatno i ta škola mora biti ___.",
+     "o": [
+      "nelegalno",
+      "nelegalni",
+      "nelegalnu",
+      "nelegalna"
+     ],
+     "a": 3,
+     "e": "The adjective agrees with školom — feminine, nominative case: nelegalna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Naučite da ne koristite ___.",
+     "o": [
+      "mišem",
+      "mišu",
+      "miša",
+      "miš"
+     ],
+     "a": 2,
+     "e": "Koristiti what — accusative case. For animate masculine nouns it coincides with the genitive: miša."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hakujte u što manje ___.",
+     "o": [
+      "svetla",
+      "svetlom",
+      "svetlo",
+      "svetlu"
+     ],
+     "a": 0,
+     "e": "After što manje the genitive case is used: što manje svetla."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Treba da slušate hakersku ___.",
+     "o": [
+      "muzikom",
+      "muzike",
+      "muziku",
+      "muzika"
+     ],
+     "a": 2,
+     "e": "Slušati what — accusative case: hakersku muziku."
+    }
+   ]
+  }
+ ]
+}

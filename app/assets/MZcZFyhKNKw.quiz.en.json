@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What myth does the author want to debunk in the video?",
+     "o": [
+      "That you need to eat 6 times a day",
+      "That meat is harmful",
+      "That vegetables are tasteless",
+      "That preparing food for the week takes a lot of time, is inconvenient and expensive"
+     ],
+     "a": 3,
+     "e": "In the video: \"razbijemo mit da priprema obroka za celu nedelju oduzima mnogo vremena, da nije zgodno, da je skupo\" — let's break the myth that preparing meals for the whole week takes a lot of time, that it's inconvenient, that it's expensive."
+    },
+    {
+     "q": "Where do they buy meat and vegetables?",
+     "o": [
+      "At the Maxi supermarket",
+      "At the market",
+      "Online",
+      "On a farm"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ići ćemo sad na pijacu da pokupimo meso i povrće\" — we'll now go to the market to pick up meat and vegetables."
+    },
+    {
+     "q": "What meat is the focus of the video?",
+     "o": [
+      "Pork",
+      "Rump steak (beef) and turkey fillet",
+      "Fish",
+      "Grilled chicken"
+     ],
+     "a": 1,
+     "e": "In the video: \"kilo ćuretine i kilo ramsteka, to je u fokusu\" — a kilo of turkey and a kilo of rump steak, that's the focus."
+    },
+    {
+     "q": "How much does a kilogram of sweet potato cost at the market?",
+     "o": [
+      "100 dinars",
+      "44 dinars",
+      "440 dinars",
+      "1000 dinars"
+     ],
+     "a": 2,
+     "e": "In the video: \"ovaj slatki krompir od 440 dinara... 440 dinara kilo\" — this sweet potato for 440 dinars... 440 dinars a kilo."
+    },
+    {
+     "q": "Why does the author make a frittata rather than scrambled eggs?",
+     "o": [
+      "It's quicker",
+      "It's cheaper",
+      "It's spicier",
+      "A frittata keeps in the fridge and can be eaten cold or warm"
+     ],
+     "a": 3,
+     "e": "In the video: \"Ako napraviš kajganu da te čeka za sutra... Ali ako napraviš fritatu... može da stoji u frižideru, može da se jede hladna, može da se jede topla\" — if you make scrambled eggs to wait for you until tomorrow... But if you make a frittata... it can sit in the fridge, it can be eaten cold, it can be eaten warm."
+    },
+    {
+     "q": "How long does the sweet potato take to cook?",
+     "o": [
+      "A day",
+      "Five minutes",
+      "Half an hour",
+      "An hour"
+     ],
+     "a": 1,
+     "e": "In the video: \"batat je gotov, njemu treba pet minuta da se skuva\" — the sweet potato is done, it takes five minutes to cook."
+    },
+    {
+     "q": "How do you check that the frittata is done?",
+     "o": [
+      "Look at the color",
+      "By the smell",
+      "Pierce it: if no raw egg runs out, it's done",
+      "By the time"
+     ],
+     "a": 2,
+     "e": "In the video: \"Bukvalno samo ubodeš i ako vidiš da ne izađe da vise jaja sa nje, to znači da je gotovo\" — you literally just poke it, and if you see that no more egg comes out of it, it means it's done."
+    },
+    {
+     "q": "How long does it take in the morning to prepare food for the day?",
+     "o": [
+      "Five minutes",
+      "Two hours",
+      "The whole morning",
+      "About 10–15 minutes"
+     ],
+     "a": 3,
+     "e": "In the video: \"tu celu pripremu za ceo dan na recimo 10-15 minuta.\" — the whole preparation for the whole day in, say, 10–15 minutes."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pirinač se kuva *odokativnom* metodom.",
+     "o": [
+      "by timer",
+      "by eye",
+      "by recipe",
+      "by scale"
+     ],
+     "a": 1,
+     "e": "Odokativno — by eye, without measuring."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kad je pirinač lepo kuvan, ti onda *procediš* to.",
+     "o": [
+      "you will drain in a colander",
+      "you will eat",
+      "you will freeze",
+      "you will salt"
+     ],
+     "a": 0,
+     "e": "Procediti — to strain, to drain."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stalno savetujem da se *narenda* šargarepa i kupus.",
+     "o": [
+      "will boil",
+      "will dice",
+      "will freeze",
+      "will grate"
+     ],
+     "a": 3,
+     "e": "Narendati — to grate; renda — a grater."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Jaja su žuća ako im se stavi *kurkuma*.",
+     "o": [
+      "cinnamon",
+      "turmeric",
+      "sugar",
+      "nutmeg"
+     ],
+     "a": 1,
+     "e": "Kurkuma — turmeric."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Meso se *zapeklo* sa svih strana.",
+     "o": [
+      "got a crust",
+      "thawed",
+      "froze",
+      "spoiled"
+     ],
+     "a": 0,
+     "e": "Zapeći — to bake, to brown to a crust."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovu ćuretinu sam *marinirao*.",
+     "o": [
+      "froze",
+      "boiled",
+      "marinated",
+      "threw away"
+     ],
+     "a": 2,
+     "e": "Marinirati — to marinate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovom *pretpripremom* možeš da uštediš mnogo vremena.",
+     "o": [
+      "a trip",
+      "a purchase",
+      "cleaning",
+      "advance preparation"
+     ],
+     "a": 3,
+     "e": "Pretpriprema — advance preparation."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ako *sređuješ* sam, najbolje je da odmah prioneš poslu.",
+     "o": [
+      "you tidy up",
+      "you count",
+      "you rest",
+      "you chat"
+     ],
+     "a": 0,
+     "e": "Srediti — to put in order."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ići ćemo na ___ da pokupimo meso i povrće.",
+     "o": [
+      "pijaca",
+      "pijace",
+      "pijacu",
+      "pijaci"
+     ],
+     "a": 2,
+     "e": "Ići na + accusative case: na pijacu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupili smo kilo ćuretine i kilo ___.",
+     "o": [
+      "ramsteku",
+      "ramstekom",
+      "ramstek",
+      "ramsteka"
+     ],
+     "a": 3,
+     "e": "After a measure (kilo) the genitive case is used: kilo ramsteka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo kilo slatkog ___.",
+     "o": [
+      "krompir",
+      "krompirom",
+      "krompiru",
+      "krompira"
+     ],
+     "a": 3,
+     "e": "After kilo — genitive case: kilo krompira."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovaj slatki krompir od 440 ___ mi deluje solidno.",
+     "o": [
+      "dinare",
+      "dinari",
+      "dinar",
+      "dinara"
+     ],
+     "a": 3,
+     "e": "After numerals from 5 the genitive plural is used: dinara."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Meso treba ostaviti malo na sobnoj ___.",
+     "o": [
+      "temperaturom",
+      "temperaturi",
+      "temperaturu",
+      "temperatura"
+     ],
+     "a": 1,
+     "e": "Na in answer to \"at what?\" — locative case: na sobnoj temperaturi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Fritata se peče u ___.",
+     "o": [
+      "rerni",
+      "rernom",
+      "rerna",
+      "rernu"
+     ],
+     "a": 0,
+     "e": "U in answer to \"where?\" — locative case: u rerni."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja ću da premažem meso ___.",
+     "o": [
+      "senfu",
+      "senfom",
+      "senfa",
+      "senf"
+     ],
+     "a": 1,
+     "e": "Premazati with what — instrumental case: senfom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stavim na njega maslinovo ___.",
+     "o": [
+      "uljem",
+      "ulju",
+      "ulje",
+      "ulja"
+     ],
+     "a": 2,
+     "e": "Staviti what — accusative case; for neuter nouns it coincides with the nominative: ulje."
+    }
+   ]
+  }
+ ]
+}

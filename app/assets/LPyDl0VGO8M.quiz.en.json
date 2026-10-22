@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is being discussed in parliament in this video?",
+     "o": [
+      "That the Kaluđerski couple have lived on a farmstead without electricity for 20 years",
+      "The price of bread",
+      "The construction of a new bridge",
+      "The law on schools"
+     ],
+     "a": 0,
+     "e": "In the video: \"bračni par Dragica i Danilo Kaluđerski u 21. veku žive bez struje... 20 godina vode uzaludnu borbu\" — the married couple Dragica and Danilo Kaluđerski live without electricity in the 21st century... for 20 years they have been waging a futile struggle."
+    },
+    {
+     "q": "Where is their salaš (farmstead) located?",
+     "o": [
+      "Near Belgrade",
+      "Between Crvenka and Sivac, next to the Novi Sad – Sombor road",
+      "On an island",
+      "On Mount Zlatibor"
+     ],
+     "a": 1,
+     "e": "In the video: \"Na salašu između Crvenke i Sivca... odmah do regionalnog puta Novi Sad – Sombor\" — on a salaš between Crvenka and Sivac... right next to the regional road Novi Sad – Sombor."
+    },
+    {
+     "q": "How many people would get electricity if a line of about 4 km were built?",
+     "o": [
+      "About a hundred farmsteads and weekend houses",
+      "Ten houses",
+      "Only the Kaluđerski family",
+      "All of Vojvodina"
+     ],
+     "a": 0,
+     "e": "In the video: \"priključilo oko stotinu salaša i vikendica\" — about a hundred farmsteads and weekend houses would be connected."
+    },
+    {
+     "q": "What did the minister promise?",
+     "o": [
+      "To allocate money tomorrow",
+      "To come, gather the people and discuss it with the head of the Kula municipality",
+      "To bring the power in right away",
+      "Nothing"
+     ],
+     "a": 1,
+     "e": "In the video: \"otići ću ja do njih, da oni skupe sve te ljude... sednu sa predsednikom opštine iz Kule\" — I'll go to them, so that they gather all those people... sit down with the president of the municipality from Kula."
+    },
+    {
+     "q": "What did the head of Elektrodistribucija say about the connection?",
+     "o": [
+      "That the power will soon be there",
+      "That farmers and weekend-house owners are unprofitable for them",
+      "That there is no cable",
+      "That a court is needed"
+     ],
+     "a": 1,
+     "e": "In the video: \"On je izjavio da smo mi... za njih neisplativi\" — he stated that we are... unprofitable for them."
+    },
+    {
+     "q": "How does the heroine charge her phone?",
+     "o": [
+      "At a neighbor's",
+      "She has no phone",
+      "From a solar panel",
+      "She takes a battery to be charged in the village and charges the phone from a car charger"
+     ],
+     "a": 3,
+     "e": "In the video: \"imamo akumulator, koji odnesemo da se napuni u selo... na autopunjač napunim telefon\" — we have a battery that we take to the village to be charged... I charge my phone from the car charger."
+    },
+    {
+     "q": "Where does the heroine keep food?",
+     "o": [
+      "In two freezers at friends' in Sivac, five kilometers away",
+      "In the fridge at the farmstead",
+      "In the river",
+      "In the cellar"
+     ],
+     "a": 0,
+     "e": "In the video: \"imam u Sivcu dva zamrzivača, pet kilometara od kuće\" — I have two freezers in Sivac, five kilometers from the house."
+    },
+    {
+     "q": "How is the salaš registered?",
+     "o": [
+      "As a factory",
+      "As an ethno-salaš and tourist spot, for 12 years",
+      "As a shop",
+      "As a school"
+     ],
+     "a": 1,
+     "e": "In the video: \"registrovan kao etno-salaš, registrovan je kao turistička destinacija... 12 godina već\" — registered as an ethno-salaš, registered as a tourist destination... for 12 years already."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Već 20 godina vode *uzaludnu* borbu.",
+     "o": [
+      "futile (acc.)",
+      "long (acc.)",
+      "cruel (acc.)",
+      "quiet (acc.)"
+     ],
+     "a": 0,
+     "e": "Uzaludan — futile, in vain."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Salaš nije *zabačen*.",
+     "o": [
+      "expensive",
+      "beautiful",
+      "old",
+      "remote, secluded"
+     ],
+     "a": 3,
+     "e": "Zabačen — secluded, far from roads."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da se *priključe* na taj električni vod.",
+     "o": [
+      "will sit down",
+      "will leave",
+      "will connect",
+      "will disconnect"
+     ],
+     "a": 2,
+     "e": "Priključiti se — to connect, to hook up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali ta *obećanja* su sva padala u vodu.",
+     "o": [
+      "promises",
+      "elections",
+      "money",
+      "letters"
+     ],
+     "a": 0,
+     "e": "Obećanje — a promise."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi smo *neisplativi*.",
+     "o": [
+      "dangerous",
+      "unprofitable",
+      "cunning",
+      "poor"
+     ],
+     "a": 1,
+     "e": "Isplativ — profitable, paying off; neisplativ — unprofitable."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ti *punjači* dobijaju neodređenu struju i tu pregorevaju.",
+     "o": [
+      "lamps",
+      "lanterns",
+      "chargers",
+      "sockets"
+     ],
+     "a": 2,
+     "e": "Punjač — a charger; puniti — to charge, to fill."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To su sve *izdaci* i veoma veliki troškovi.",
+     "o": [
+      "expenses",
+      "income",
+      "taxes",
+      "debts"
+     ],
+     "a": 0,
+     "e": "Izdatak — an expense."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa zar to nije *bruka*?",
+     "o": [
+      "luck",
+      "disgrace",
+      "news",
+      "joke"
+     ],
+     "a": 1,
+     "e": "Bruka — a disgrace, a shame."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Salaš se nalazi odmah do regionalnog ___.",
+     "o": [
+      "put",
+      "putem",
+      "putu",
+      "puta"
+     ],
+     "a": 3,
+     "e": "Do (\"next to\") requires the genitive case: do puta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dragica i Danilo žive bez ___.",
+     "o": [
+      "strujom",
+      "struju",
+      "struja",
+      "struje"
+     ],
+     "a": 3,
+     "e": "Bez (\"without\") requires the genitive case: bez struje."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da li je Srbija zaboravila na te male ___?",
+     "o": [
+      "ljudi",
+      "ljudima",
+      "ljude",
+      "ljudske"
+     ],
+     "a": 2,
+     "e": "Zaboraviti na + accusative case: na te male ljude."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kontaktiraju sa lokalnom ___ u Kuli.",
+     "o": [
+      "samoupravom",
+      "samouprava",
+      "samoupravu",
+      "samouprave"
+     ],
+     "a": 0,
+     "e": "Sa (\"with\") requires the instrumental case: sa samoupravom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Salaš pripada ___.",
+     "o": [
+      "Sivac",
+      "Sivcem",
+      "Sivca",
+      "Sivcu"
+     ],
+     "a": 3,
+     "e": "Pripadati to someone/something — dative case: Sivcu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Selo je udaljeno 2 ___ od salaša.",
+     "o": [
+      "kilometra",
+      "kilometara",
+      "kilometre",
+      "kilometar"
+     ],
+     "a": 0,
+     "e": "After the numbers 2–4 the genitive singular is used: 2 kilometra."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam sama išla prvo, zbog ___.",
+     "o": [
+      "sebi",
+      "sobom",
+      "sebe",
+      "se"
+     ],
+     "a": 2,
+     "e": "Zbog (\"because of, for the sake of\") requires the genitive case: zbog sebe."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imam zamrzivač u selu, pet ___ od kuće.",
+     "o": [
+      "kilometara",
+      "kilometra",
+      "kilometri",
+      "kilometar"
+     ],
+     "a": 0,
+     "e": "After the number 5 the genitive plural is used: pet kilometara."
+    }
+   ]
+  }
+ ]
+}

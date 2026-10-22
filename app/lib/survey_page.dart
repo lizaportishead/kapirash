@@ -4,15 +4,16 @@ import 'icons.dart';
 import 'recommend.dart';
 import 'store.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
-const _levelInfo = {
-  'A': ('Знаю основы', 'A2', 'Знаю базовые слова и простые фразы. Нужны короткие ролики и неспешная речь.'),
+Map<String, (String, String, String)> get _levelInfo => {
+  'A': (ui('Знаю основы'), 'A2', ui('Знаю базовые слова и простые фразы. Нужны короткие ролики и неспешная речь.')),
   'B1': (
-    'Могу объясниться',
+    ui('Могу объясниться'),
     'B1',
-    'Понимаю суть, когда говорят неспешно и о знакомом. Не хватает слов, чтобы следить за всем.',
+    ui('Понимаю суть, когда говорят неспешно и о знакомом. Не хватает слов, чтобы следить за всем.'),
   ),
-  'B2': ('Понимаю почти всё', 'B2+', 'Смотрю без подготовки. Хочу живую речь, сленг и тонкости.'),
+  'B2': (ui('Понимаю почти всё'), 'B2+', ui('Смотрю без подготовки. Хочу живую речь, сленг и тонкости.')),
 };
 
 /// Анкета после онбординга: уровень и темы. Первый раз показывается вместо каталога, из профиля открывается поверх него.
@@ -69,7 +70,7 @@ class _SurveyPageState extends State<SurveyPage> {
                       children: [
                         if (_step == 1)
                           IconButton(
-                            tooltip: 'Назад',
+                            tooltip: ui('Назад'),
                             icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                             onPressed: () => setState(() => _step = 0),
                           ),
@@ -80,7 +81,7 @@ class _SurveyPageState extends State<SurveyPage> {
                             foregroundColor: cText,
                             textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
                           ),
-                          child: Text(widget.edit ? 'Закрыть' : 'Пропустить'),
+                          child: Text(widget.edit ? ui('Закрыть') : ui('Пропустить')),
                         ),
                       ],
                     ),
@@ -112,7 +113,7 @@ class _SurveyPageState extends State<SurveyPage> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(24, 8, 24, 16),
                     child: BigButton(
-                      _step == 0 ? 'Дальше' : 'Готово',
+                      _step == 0 ? ui('Дальше') : ui('Готово'),
                       onTap: _step == 0 && _level == null ? null : _next,
                     ),
                   ),
@@ -137,10 +138,10 @@ class _SurveyPageState extends State<SurveyPage> {
     return ListView(
       padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
       children: [
-        _title('Какой у тебя уровень?'),
+        _title(ui('Какой у тебя уровень?')),
         SizedBox(height: 10),
         Text(
-          'Подберём ролики, которые можно понять. Поменять ответ можно в любой момент.',
+          ui('Подберём ролики, которые можно понять. Поменять ответ можно в любой момент.'),
           style: TextStyle(fontSize: 15, height: 1.4, color: cMuted),
         ),
         SizedBox(height: 20),
@@ -156,10 +157,10 @@ class _SurveyPageState extends State<SurveyPage> {
     return ListView(
       padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
       children: [
-        _title('Что тебе интересно?'),
+        _title(ui('Что тебе интересно?')),
         SizedBox(height: 10),
         Text(
-          'Выбери любые темы — их ролики окажутся наверху. Можно не выбирать ничего.',
+          ui('Выбери любые темы — их ролики окажутся наверху. Можно не выбирать ничего.'),
           style: TextStyle(fontSize: 15, height: 1.4, color: cMuted),
         ),
         SizedBox(height: 20),
@@ -169,7 +170,7 @@ class _SurveyPageState extends State<SurveyPage> {
           children: [
             for (final t in _all)
               Pill(
-                t,
+                topicLabel(t),
                 on: _topics.contains(t),
                 icon: _topics.contains(t) ? KIcons.done : null,
                 onTap: () => setState(() => _topics.contains(t) ? _topics.remove(t) : _topics.add(t)),

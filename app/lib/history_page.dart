@@ -4,6 +4,7 @@ import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Открывает историю просмотров поверх таббара.
 void openHistory(BuildContext context) {
@@ -34,20 +35,20 @@ class HistoryPage extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.only(left: 12),
                         child: IconButton(
-                          tooltip: 'Назад',
+                          tooltip: ui('Назад'),
                           icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),
                     ),
-                    PageTitle('История${list.isEmpty ? '' : ' · ${list.length}'}'),
+                    PageTitle('${ui('История')}${list.isEmpty ? '' : ' · ${list.length}'}'),
                     Expanded(
                       child: list.isEmpty
                           ? Center(
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                                 child: Text(
-                                  'Пока пусто. Здесь появятся ролики, которые ты открывала.',
+                                  ui('Пока пусто. Здесь появятся ролики, которые ты открывала.'),
                                   textAlign: TextAlign.center,
                                   style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                                 ),

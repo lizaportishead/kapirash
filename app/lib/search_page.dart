@@ -6,6 +6,7 @@ import 'subs.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Открывает экран поиска поверх таббара: по каталогу, а с [clips] — по клипам.
 void openSearch(BuildContext context, {bool clips = false}) {
@@ -36,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
     final q = _norm(_search.text.trim());
     final all = widget.clips ? clips : videos;
     if (q.isEmpty) return all;
-    return all.where((v) => _norm('${v.title} ${v.channel} ${v.topic}').contains(q)).toList();
+    return all.where((v) => _norm('${v.title} ${v.channel} ${v.topic} ${topicLabel(v.topic)}').contains(q)).toList();
   }
 
   @override
@@ -56,7 +57,7 @@ class _SearchPageState extends State<SearchPage> {
                   child: Row(
                     children: [
                       IconButton(
-                        tooltip: 'Назад',
+                        tooltip: ui('Назад'),
                         icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -70,13 +71,13 @@ class _SearchPageState extends State<SearchPage> {
                           style: TextStyle(fontSize: 15, color: cText),
                           cursorColor: cViolet,
                           decoration: InputDecoration(
-                            hintText: widget.clips ? 'Поиск по клипам' : 'Поиск по роликам',
+                            hintText: widget.clips ? ui('Поиск по клипам') : ui('Поиск по роликам'),
                             hintStyle: TextStyle(color: cFaint),
                             prefixIcon: Icon(KIcons.search, color: cFaint),
                             suffixIcon: _search.text.isEmpty
                                 ? null
                                 : IconButton(
-                                    tooltip: 'Очистить',
+                                    tooltip: ui('Очистить'),
                                     icon: Icon(Icons.close, size: 18, color: cMuted),
                                     onPressed: () => setState(_search.clear),
                                   ),
@@ -99,7 +100,7 @@ class _SearchPageState extends State<SearchPage> {
                       ? Padding(
                           padding: EdgeInsets.all(24),
                           child: Text(
-                            'Ничего не нашлось. Попробуй другой запрос.',
+                            ui('Ничего не нашлось. Попробуй другой запрос.'),
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 14, color: cMuted),
                           ),

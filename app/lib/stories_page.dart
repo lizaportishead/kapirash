@@ -8,11 +8,20 @@ import 'phrase.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
 class Story {
-  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.level = '', this.asset});
-  final String id, title, author, blurb, level;
+  const Story({
+    required this.id,
+    required this.title,
+    required this.author,
+    this.blurb = '',
+    this.level = '',
+    this.asset,
+    this.source = '',
+  });
+  final String id, title, author, blurb, level, source;
   final String? asset;
 
   bool get ready => asset != null;
@@ -72,10 +81,117 @@ const stories = [
     level: 'B2',
     asset: 'story_poslednje_eho',
   ),
-  Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
-  Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
-  Story(id: 'snezna-kraljica', title: 'Snežna kraljica', author: 'Hans Kristijan Andersen'),
-  Story(id: 'palcica', title: 'Palčica', author: 'Hans Kristijan Andersen'),
+  Story(
+    id: 'princeza-na-zrnu-grasku',
+    title: 'Princeza na zrnu graška',
+    author: 'Hans Kristijan Andersen',
+    blurb:
+        'Kratka bajka o princu koji traži pravu princezu: kad jedne olujne noći neko zakuca na vrata, '
+        'kraljica pod dvadeset dušeka stavlja zrno graška da to proveri.',
+    level: 'B1',
+    asset: 'story_princeza_na_zrnu_grasku',
+    source:
+        'Hans Kristijan Andersen, Bajke, prevod Đido (1888), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'u-cara-trojana-kozje-usi',
+    title: 'U cara Trojana kozje uši',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Car Trojan ima kozje uši i seče svakog berberina koji ih vidi, a berberski momak nosi tajnu '
+        'dok je ne poveri zemlji – iz jame ipak izraste zova.',
+    level: 'B1',
+    asset: 'story_u_cara_trojana_kozje_usi',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'kako-su-radile',
+    title: 'Kako su radile onako su i prošle',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Dobru pastorku maćeha otera od kuće, a ona kod ale pomaže i dobija sanduk dukata; '
+        'maćehina rođena kći se vraća s ništa manje nego što je zaslužila.',
+    level: 'B1',
+    asset: 'story_kako_su_radile_onako_su_i_prosle',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'prava-se-muka-ne-da-sakriti',
+    title: 'Prava se muka ne da sakriti',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Sluga dobija samo novčić za godinu dana službe i baca ga u vodu da vidi da li ga je zaslužio – '
+        'a novčić, pretvoren u mačka, na kraju mu donosi pravo bogatstvo.',
+    level: 'B2',
+    asset: 'story_prava_se_muka_ne_da_sakriti',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'medved-svinja-i-lisica',
+    title: 'Međed, svinja i lisica',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Međed, svinja i lisica zajedno siju i žanju pšenicu, ali kad treba da je podele, '
+        'međed prevari lisicu – a ona se sveti na svoj način.',
+    level: 'B1',
+    asset: 'story_medved_svinja_i_lisica',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'dva-novca',
+    title: 'Dva novca',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Dva čoveka zamene vreće – jedan donosi mahovinu umesto vune, drugi šišarice umesto oraha – '
+        'pa se dugo sudare oko dva novca duga, sve dok ne dođe do neobične poente.',
+    level: 'B2',
+    asset: 'story_dva_novca',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'djavo-i-njegov-segrt',
+    title: 'Đavo i njegov šegrt',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Dečak ode u svet da nauči zanat, ali mu se za majstora ponudi đavo u zelenim haljinama '
+        'i odvede ga na dno vode.',
+    level: 'B2',
+    asset: 'story_djavo_i_njegov_segrt',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'opet-maceha-i-pastorka',
+    title: 'Opet maćeha i pastorka',
+    author: 'Narodna priča (Vuk Karadžić)',
+    blurb:
+        'Maćeha tera muža da odvede decu u planinu; deca beleže put pepelom, ali ih '
+        'sledeća noć dovodi u neobičnu opasnost.',
+    level: 'B2',
+    asset: 'story_opet_maceha_i_pastorka',
+    source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'slava',
+    title: 'Slava',
+    author: 'Radoje Domanović',
+    blurb:
+        'Jedne kišne jeseni pripovedač na putu kući sreće malog Mijata, pastira, i otkriva '
+        'kako njegova porodica proslavlja slavu uprkos oskudici.',
+    level: 'C1',
+    asset: 'story_slava',
+    source: 'Radoje Domanović, Slava (1903), preuzeto sa sr.wikisource.org (domanovic.org); tekst prenet u latinicu',
+  ),
+  Story(
+    id: 'snezna-kraljica',
+    title: 'Snežna kraljica',
+    author: 'Hans Kristijan Andersen',
+    blurb:
+        'Bajka H. K. Andersena u sedam priča: komadić đavoljeg ogledala zalazi dečaku Kaju u oko i srce, '
+        'Snežna kraljica ga odvodi u svoje ledeno carstvo, a mala Gerda kreće da ga potraži. '
+        'Za sada je dostupan samo početak bajke, ostatak stiže uskoro.',
+    level: 'B2',
+    asset: 'story_snezna_kraljica',
+  ),
 ];
 
 Story? storyById(String wordKey) {
@@ -89,7 +205,9 @@ Story? storyById(String wordKey) {
 void openStory(BuildContext context, Story s, {int? page}) {
   if (!s.ready) return;
   Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => StoryReader(story: s, page: page)),
+    MaterialPageRoute<void>(
+      builder: (_) => StoryReader(story: s, page: page),
+    ),
   );
 }
 
@@ -101,13 +219,34 @@ class StoriesPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        PageTitle('Рассказы'),
+        PageTitle(ui('Рассказы')),
         Expanded(
-          child: ListView.separated(
-            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-            itemCount: stories.length,
-            separatorBuilder: (_, _) => SizedBox(height: 12),
-            itemBuilder: (_, i) => _StoryCard(stories[i]),
+          child: LayoutBuilder(
+            builder: (_, box) {
+              const pad = 12.0, gap = 16.0;
+              // На широком экране — сетка вертикальных карточек, на телефоне — список.
+              if (box.maxWidth < 640) {
+                return ListView.separated(
+                  padding: EdgeInsets.fromLTRB(pad, 0, pad, 16),
+                  itemCount: stories.length,
+                  separatorBuilder: (_, _) => SizedBox(height: 12),
+                  itemBuilder: (_, i) => _StoryCard(stories[i]),
+                );
+              }
+              final cols = ((box.maxWidth - 2 * pad + gap) / (260 + gap)).floor().clamp(2, 5);
+              final cardW = (box.maxWidth - 2 * pad - gap * (cols - 1)) / cols;
+              return GridView.builder(
+                padding: EdgeInsets.fromLTRB(pad, 0, pad, 24),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: cols,
+                  mainAxisSpacing: gap,
+                  crossAxisSpacing: gap,
+                  mainAxisExtent: (cardW - 24) * 1.5 + 150,
+                ),
+                itemCount: stories.length,
+                itemBuilder: (_, i) => _StoryCard(stories[i], vertical: true),
+              );
+            },
           ),
         ),
       ],
@@ -116,12 +255,14 @@ class StoriesPage extends StatelessWidget {
 }
 
 class _StoryCard extends StatelessWidget {
-  const _StoryCard(this.story);
+  const _StoryCard(this.story, {this.vertical = false});
   final Story story;
+  final bool vertical;
 
   @override
   Widget build(BuildContext context) {
     final ready = story.ready;
+    if (vertical) return _vertical(context, ready);
     final body = Padding(
       padding: EdgeInsets.all(12),
       child: Row(
@@ -130,15 +271,17 @@ class _StoryCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: SizedBox(
-              width: 112,
-              height: 112,
+              width: 100,
+              height: 150,
               child: ready
                   ? ExcludeSemantics(
                       child: Image.asset(
                         'assets/${story.asset}.png',
                         fit: BoxFit.cover,
-                        errorBuilder: (_, _, _) =>
-                            ColoredBox(color: cCard2, child: Icon(KIcons.stories, size: 36, color: cFaint)),
+                        errorBuilder: (_, _, _) => ColoredBox(
+                          color: cCard2,
+                          child: Icon(KIcons.stories, size: 36, color: cFaint),
+                        ),
                       ),
                     )
                   : ColoredBox(
@@ -162,15 +305,11 @@ class _StoryCard extends StatelessWidget {
                 if (ready && story.level.isNotEmpty)
                   Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
                 SizedBox(height: 8),
-                if (ready)
+                if (!ready)
                   Text(
-                    store.conv(story.blurb),
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 13, height: 1.4, color: cMuted),
-                  )
-                else
-                  Text('Скоро', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint)),
+                    ui('Скоро'),
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                  ),
               ],
             ),
           ),
@@ -180,7 +319,7 @@ class _StoryCard extends StatelessWidget {
     if (!ready) {
       // Заглушка: не нажимается и приглушена.
       return Semantics(
-        label: '${story.title}, скоро',
+        label: ui('{0}, скоро', [story.title]),
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
@@ -192,11 +331,81 @@ class _StoryCard extends StatelessWidget {
     return Material(
       color: cCard,
       borderRadius: BorderRadius.circular(24),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(24),
-        onTap: () => openStory(context, story),
-        child: body,
+      child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+    );
+  }
+
+  /// Карточка для сетки: вертикальная обложка сверху, под ней название, автор и уровень.
+  Widget _vertical(BuildContext context, bool ready) {
+    final body = Padding(
+      padding: EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: AspectRatio(
+              aspectRatio: 2 / 3,
+              child: ready
+                  ? ExcludeSemantics(
+                      child: Image.asset(
+                        'assets/${story.asset}.png',
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, _, _) => ColoredBox(
+                          color: cCard2,
+                          child: Icon(KIcons.stories, size: 36, color: cFaint),
+                        ),
+                      ),
+                    )
+                  : ColoredBox(
+                      color: cCard2,
+                      child: Icon(KIcons.stories, size: 36, color: cFaint),
+                    ),
+            ),
+          ),
+          SizedBox(height: 12),
+          Text(
+            store.conv(story.title),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+          ),
+          SizedBox(height: 4),
+          Text(
+            story.author,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 13, color: cMuted),
+          ),
+          if (ready && story.level.isNotEmpty)
+            Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
+          SizedBox(height: 8),
+          Expanded(
+            child: ready
+                ? SizedBox.shrink()
+                : Text(
+                    ui('Скоро'),
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                  ),
+          ),
+        ],
       ),
+    );
+    if (!ready) {
+      return Semantics(
+        label: ui('{0}, скоро', [story.title]),
+        child: ExcludeSemantics(
+          child: Opacity(
+            opacity: 0.55,
+            child: Material(color: cCard, borderRadius: BorderRadius.circular(24), child: body),
+          ),
+        ),
+      );
+    }
+    return Material(
+      color: cCard,
+      borderRadius: BorderRadius.circular(24),
+      child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
     );
   }
 }
@@ -245,7 +454,8 @@ class _StoryReaderState extends State<StoryReader> {
     try {
       final asset = widget.story.asset!;
       final text = await rootBundle.loadString('assets/$asset.txt');
-      final dict = jsonDecode(await rootBundle.loadString('assets/$asset.dict.json')) as Map<String, dynamic>;
+      final dict =
+          jsonDecode(await store.assetText('$asset.dict.json', en: '$asset.dict.en.json')) as Map<String, dynamic>;
       if (!mounted) return;
       setState(() {
         _pages = _paginate(text);
@@ -303,7 +513,7 @@ class _StoryReaderState extends State<StoryReader> {
                   ? Padding(
                       padding: EdgeInsets.all(24),
                       child: Text(
-                        'Пока нет слов. Нажми на слово в тексте, чтобы добавить его.',
+                        ui('Пока нет слов. Нажми на слово в тексте, чтобы добавить его.'),
                         style: TextStyle(fontSize: 14, color: cMuted),
                       ),
                     )
@@ -318,7 +528,10 @@ class _StoryReaderState extends State<StoryReader> {
                               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: cText),
                             ),
                             subtitle: Text(w.tr, style: TextStyle(fontSize: 14, color: cMuted)),
-                            trailing: Text('стр. ${w.t.toInt()}', style: TextStyle(fontSize: 12, color: cFaint)),
+                            trailing: Text(
+                              ui('стр. {0}', [w.t.toInt()]),
+                              style: TextStyle(fontSize: 12, color: cFaint),
+                            ),
                             onTap: () {
                               Navigator.pop(ctx);
                               final to = w.t.toInt().clamp(0, _count - 1);
@@ -343,7 +556,7 @@ class _StoryReaderState extends State<StoryReader> {
       cue: Cue(_i.toDouble(), _i.toDouble(), t.sentence),
       dict: _dict,
       videoId: widget.story.wordKey,
-      place: 'стр. $_i',
+      place: ui('стр. {0}', [_i]),
     );
   }
 
@@ -363,7 +576,7 @@ class _StoryReaderState extends State<StoryReader> {
                   child: Row(
                     children: [
                       IconButton(
-                        tooltip: 'Назад',
+                        tooltip: ui('Назад'),
                         icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -380,7 +593,7 @@ class _StoryReaderState extends State<StoryReader> {
                         builder: (context, _) {
                           final n = store.wordCount(s.wordKey);
                           return IconButton(
-                            tooltip: 'Добавленные слова',
+                            tooltip: ui('Добавленные слова'),
                             icon: Badge(
                               isLabelVisible: n > 0,
                               label: Text('$n'),
@@ -398,7 +611,7 @@ class _StoryReaderState extends State<StoryReader> {
                   child: _failed
                       ? Padding(
                           padding: EdgeInsets.all(24),
-                          child: Text('Не удалось открыть рассказ.', style: TextStyle(fontSize: 14, color: cMuted)),
+                          child: Text(ui('Не удалось открыть рассказ.'), style: TextStyle(fontSize: 14, color: cMuted)),
                         )
                       : _pages.isEmpty
                       ? SizedBox.shrink()
@@ -412,7 +625,7 @@ class _StoryReaderState extends State<StoryReader> {
                               setState(() => _i = i);
                               store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
                             },
-                            itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1]),
+                            itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1], last: i == _count - 1),
                           ),
                         ),
                 ),
@@ -451,7 +664,7 @@ class _StoryReaderState extends State<StoryReader> {
           Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
           SizedBox(height: 14),
           Text(
-            'Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.',
+            ui('Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.'),
             style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
           ),
         ],
@@ -459,7 +672,7 @@ class _StoryReaderState extends State<StoryReader> {
     );
   }
 
-  Widget _text(List<List<_Token>> paragraphs) {
+  Widget _text(List<List<_Token>> paragraphs, {bool last = false}) {
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
       child: Column(
@@ -468,11 +681,15 @@ class _StoryReaderState extends State<StoryReader> {
           for (final para in paragraphs)
             Padding(
               padding: EdgeInsets.only(bottom: 16),
-              child: Wrap(
-                spacing: 6,
-                children: [for (final t in para) _word(t)],
-              ),
+              child: Wrap(spacing: 6, children: [for (final t in para) _word(t)]),
             ),
+          if (last && widget.story.source.isNotEmpty) ...[
+            SizedBox(height: 8),
+            Text(
+              ui('Источник: {0}', [widget.story.source]),
+              style: TextStyle(fontSize: 12, height: 1.45, color: cFaint),
+            ),
+          ],
         ],
       ),
     );
@@ -515,16 +732,16 @@ class _StoryReaderState extends State<StoryReader> {
       padding: EdgeInsets.fromLTRB(16, 8, 16, 12),
       child: Row(
         children: [
-          arrow(-1, KIcons.arrowLeft, 'Предыдущая страница'),
+          arrow(-1, KIcons.arrowLeft, ui('Предыдущая страница')),
           Expanded(
             child: Center(
               child: Text(
-                _i == 0 ? 'Начало' : '$_i из ${_count - 1}',
+                _i == 0 ? ui('Начало') : '$_i из ${_count - 1}',
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
               ),
             ),
           ),
-          arrow(1, KIcons.arrowRight, 'Следующая страница'),
+          arrow(1, KIcons.arrowRight, ui('Следующая страница')),
         ],
       ),
     );

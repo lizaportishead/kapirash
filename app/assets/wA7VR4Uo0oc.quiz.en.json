@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Aleksa want to do in this video?",
+     "o": [
+      "Open a shop",
+      "Buy a new phone",
+      "Take a photo on a film camera for Instagram",
+      "Make a movie"
+     ],
+     "a": 2,
+     "e": "In the video: \"pokušaću da nađem film, da osmislim i napravim fotografiju, da taj film razvijem i dobijem fotku za Instagram\" — I'll try to find film, come up with and take a photograph, develop that film and get a photo for Instagram."
+    },
+    {
+     "q": "Whose cameras are these?",
+     "o": [
+      "A friend's",
+      "His father's",
+      "A museum's",
+      "The author's grandfather's and great-grandfather's"
+     ],
+     "a": 3,
+     "e": "In the video: \"Ovo je fotoaparat mog dede. A ovo je fotoaparat mog pradede\" — this is my grandfather's camera. And this is my great-grandfather's camera."
+    },
+    {
+     "q": "What film did he choose, and why?",
+     "o": [
+      "The cheapest black-and-white — there are no chemicals for developing color",
+      "The most expensive color",
+      "Whatever was available",
+      "Color at a discount"
+     ],
+     "a": 0,
+     "e": "In the video: \"nigde na internetu nisam našao hemikalije za razvijanje filma u boji. Pa sam išao na sigurno. Poručio sam najjeftiniji film\" — nowhere on the internet did I find chemicals for developing color film. So I played it safe. I ordered the cheapest film."
+    },
+    {
+     "q": "How much did the film cost?",
+     "o": [
+      "About 1100 dinars, with delivery about 1500",
+      "10 dinars",
+      "Free",
+      "20,000 dinars"
+     ],
+     "a": 0,
+     "e": "In the video: \"On košta 1100 dinara, što je sa poštarinom oko hiljadu i po\" — it costs 1100 dinars, which with postage is about fifteen hundred."
+    },
+    {
+     "q": "What must not be done with film before developing?",
+     "o": [
+      "Buy it",
+      "Expose it to light",
+      "Keep it at home",
+      "Load it into a camera"
+     ],
+     "a": 1,
+     "e": "In the video: \"sve dok ne razvijete film, on mora biti u potpunom mraku\" — until you develop the film, it must be in complete darkness."
+    },
+    {
+     "q": "Why did the author not dare to load the film for two days?",
+     "o": [
+      "He didn't have a camera",
+      "The film was empty",
+      "He had no time",
+      "He was afraid of ruining it"
+     ],
+     "a": 3,
+     "e": "In the video: \"mene je i dalje strah da ubacim ovaj film u kameru... strah me da će ceo film da ode u propast\" — I'm still scared to put this film in the camera... I'm afraid the whole film will go to waste."
+    },
+    {
+     "q": "How much does developing at a firm cost, and how much does home equipment cost?",
+     "o": [
+      "7500 dinars; 690 dinars",
+      "690 dinars; about 7500 dinars",
+      "The same",
+      "100 dinars; 1000"
+     ],
+     "a": 1,
+     "e": "In the video: \"sve ukupno bi mi izašlo oko sedam i po hiljada dinara... uslugu razvijanja filma. I to košta 690 dinara\" — all together it would come to about seven and a half thousand dinars... a film developing service. And it costs 690 dinars."
+    },
+    {
+     "q": "How did he colorize the black-and-white photographs?",
+     "o": [
+      "At a photo studio",
+      "He didn't colorize them",
+      "By hand with paints",
+      "With the AI site Palette.fm"
+     ],
+     "a": 3,
+     "e": "In the video: \"Sajt se zove Palette.fm... čekate da AI odradi svoj posao\" — the site is called Palette.fm... you wait for the AI to do its job."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dok sam kopao po *starudijama*, naleteo sam na alatku.",
+     "o": [
+      "junk",
+      "in books",
+      "in food boxes",
+      "in shops"
+     ],
+     "a": 0,
+     "e": "Starudija — an old thing, junk."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Košta 1100 dinara, što je sa *poštarinom* oko hiljadu i po.",
+     "o": [
+      "postage costs",
+      "tax",
+      "discount",
+      "warranty"
+     ],
+     "a": 0,
+     "e": "Poštarina — the cost of shipping; pošta — mail."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada pritisnemo *okidač*, otvara se rupa.",
+     "o": [
+      "lever",
+      "shutter release",
+      "power button",
+      "strap"
+     ],
+     "a": 1,
+     "e": "Okidač — a trigger, a shutter button."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Objektiv se sastoji od niza *sočiva*.",
+     "o": [
+      "of lenses",
+      "of cables",
+      "of mirrors",
+      "of lamps"
+     ],
+     "a": 0,
+     "e": "Sočivo — a lens."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Film se potapa u *razvijač*.",
+     "o": [
+      "alcohol",
+      "developer",
+      "water",
+      "butter"
+     ],
+     "a": 1,
+     "e": "Razvijač — a developer; razviti — to develop."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li sam ja toliki *baksuz*?",
+     "o": [
+      "perfectionist",
+      "lazybones",
+      "loser",
+      "smart aleck"
+     ],
+     "a": 2,
+     "e": "Baksuz — a loser, an unlucky person."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Samo stisnete i *namotavate* u tom smeru.",
+     "o": [
+      "you clean",
+      "you turn on",
+      "you wind",
+      "you break"
+     ],
+     "a": 2,
+     "e": "Namotati — to wind."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U Photoshopu, kako bih tu sliku *izoštrio*.",
+     "o": [
+      "colorized",
+      "cropped",
+      "shrank",
+      "made sharp"
+     ],
+     "a": 3,
+     "e": "Izoštriti — to sharpen; oštar — sharp."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je fotoaparat mog ___.",
+     "o": [
+      "dede",
+      "dedom",
+      "dedu",
+      "deda"
+     ],
+     "a": 0,
+     "e": "Fotoaparat of whom? Genitive case: mog dede."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hteo sam da kupim film u ___.",
+     "o": [
+      "boju",
+      "boji",
+      "boja",
+      "bojom"
+     ],
+     "a": 1,
+     "e": "Film u boji — \"color film\", the locative case form."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nigde na ___ nisam našao hemikalije.",
+     "o": [
+      "internetu",
+      "internetom",
+      "interneta",
+      "internet"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"where?\" — locative case: na internetu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film je zapravo tanka, fleksibilna ___.",
+     "o": [
+      "trake",
+      "traka",
+      "traku",
+      "trakom"
+     ],
+     "a": 1,
+     "e": "The subject is in the nominative case: traka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Strah me da će ceo film da ode u ___.",
+     "o": [
+      "propašću",
+      "propast",
+      "propasti",
+      "propastu"
+     ],
+     "a": 1,
+     "e": "Ići u + accusative case; for feminine nouns ending in a consonant it coincides with the nominative: u propast."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad ću Anđeli da pojasnim kako da koristi ovu ___.",
+     "o": [
+      "kamera",
+      "kameru",
+      "kamere",
+      "kamerom"
+     ],
+     "a": 1,
+     "e": "Koristiti what — accusative case: kameru."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ista firma ima i ___ razvijanja filma.",
+     "o": [
+      "usluga",
+      "usluge",
+      "uslugom",
+      "uslugu"
+     ],
+     "a": 3,
+     "e": "Imati what — accusative case: uslugu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sećate se kad sam na ___ videa rekao da neću stavljati crno-bele slike?",
+     "o": [
+      "početku",
+      "početkom",
+      "početka",
+      "početak"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"where?\" — locative case: na početku."
+    }
+   ]
+  }
+ ]
+}

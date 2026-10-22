@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "In what year did the crown from Rome reach Duklja?",
+     "o": [
+      "1017",
+      "1077",
+      "1177",
+      "1277"
+     ],
+     "a": 1,
+     "e": "In the video: \"Godine 1077. iz Rima je u Duklju stigla zlatna kruna\" — in 1077 a golden crown arrived in Duklja from Rome."
+    },
+    {
+     "q": "Who became the first Serbian king, according to the video?",
+     "o": [
+      "Stefan Vojislav",
+      "Mihailo Vojislavljević",
+      "Stefan Nemanja",
+      "Konstantin Bodin"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mihajlo Vojislavljević postao je prvi srpski kralj\" — Mihailo Vojislavljević became the first Serbian king."
+    },
+    {
+     "q": "How many years, according to the video, did Byzantine rule over the Serbian coastland last?",
+     "o": [
+      "About ten",
+      "Almost half a century",
+      "Two centuries",
+      "A thousand years"
+     ],
+     "a": 1,
+     "e": "In the video: \"Skoro pola veka\" — almost half a century."
+    },
+    {
+     "q": "How did Stefan Vojislav defeat the huge Byzantine army?",
+     "o": [
+      "He bribed the commanders",
+      "He attacked at night in the mountains, knowing the terrain well",
+      "He made peace",
+      "He went by sea"
+     ],
+     "a": 1,
+     "e": "In the video: \"A Stefan Vojislav je poznavao svaki kamen, svaki potok, svaku stazu\" — and Stefan Vojislav knew every stone, every stream, every path."
+    },
+    {
+     "q": "How did Mihailo differ from his father?",
+     "o": [
+      "He was a warrior",
+      "He was a diplomat",
+      "He was a monk",
+      "He was a merchant"
+     ],
+     "a": 1,
+     "e": "In the video: \"Otac je bio ratnik, Mihajlo je bio diplomata\" — the father was a warrior, Mihailo was a diplomat."
+    },
+    {
+     "q": "What split Christianity in two in 1054?",
+     "o": [
+      "The Great Schism",
+      "A crusade",
+      "An epidemic",
+      "The fall of Rome"
+     ],
+     "a": 0,
+     "e": "In the video: \"Veliki crkveni raskol iz 1054. godine podelio je hrišćanstvo\" — the Great Schism of 1054 divided Christianity."
+    },
+    {
+     "q": "Who is Konstantin Bodin?",
+     "o": [
+      "Mihailo's son",
+      "Stefan Nemanja's brother",
+      "A Byzantine emperor",
+      "The Pope"
+     ],
+     "a": 0,
+     "e": "In the video: \"Mihajlov sin Konstantin Bodin nastavio je očevu liniju\" — Mihailo's son Konstantin Bodin continued his father's line."
+    },
+    {
+     "q": "What dynasty will the next episode be about?",
+     "o": [
+      "The Nemanjićs",
+      "The Vukanovićs",
+      "The Romanovs",
+      "The Byzantines"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pred Nemanjićko doba\" — before the Nemanjić era."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stefan Vojislav je bio dukljanski *plemić*.",
+     "o": [
+      "nobleman",
+      "peasant",
+      "monk",
+      "merchant"
+     ],
+     "a": 0,
+     "e": "Plemić — a nobleman, a person of high birth."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vizantijski car je poslao ogromnu *vojsku*.",
+     "o": [
+      "fleet",
+      "army",
+      "gift",
+      "letter"
+     ],
+     "a": 1,
+     "e": "Vojska — an army."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mihajlo je dobio zlatnu *krunu*.",
+     "o": [
+      "crown",
+      "coin",
+      "book",
+      "map"
+     ],
+     "a": 0,
+     "e": "Kruna — a crown."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Duklja je postala *nezavisna* država.",
+     "o": [
+      "dependent",
+      "independent",
+      "small",
+      "old"
+     ],
+     "a": 1,
+     "e": "Nezavisan — independent."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bitka se odigrala u *dolini* iznad reke.",
+     "o": [
+      "valley",
+      "mountains",
+      "city",
+      "lake"
+     ],
+     "a": 0,
+     "e": "Dolina — a valley."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vojnici su pokušavali da *pobegnu*.",
+     "o": [
+      "to run away",
+      "to fight",
+      "to pray",
+      "to sleep"
+     ],
+     "a": 0,
+     "e": "Pobeći — to run away."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Njegova *braća* su podelila vlast.",
+     "o": [
+      "sisters",
+      "brothers",
+      "children",
+      "friends"
+     ],
+     "a": 1,
+     "e": "Brat — a brother; braća — brothers."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bio je to *zenit* njihove moći.",
+     "o": [
+      "beginning",
+      "zenith",
+      "end",
+      "loss"
+     ],
+     "a": 1,
+     "e": "Zenit — the peak, the zenith."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Vizantija nikada nije pokušala da je ponovo ___.",
+     "o": [
+      "osvoji",
+      "osvojila",
+      "osvojio",
+      "osvajanje"
+     ],
+     "a": 0,
+     "e": "Da + present tense: da je osvoji."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Vojska je prošla preko ___ kod Bara.",
+     "o": [
+      "brda",
+      "brdo",
+      "brdom",
+      "brdu"
+     ],
+     "a": 0,
+     "e": "Preko + accusative case: preko brda — \"across the hills\" (brda — plural of brdo)."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Stefan Vojislav je proglasio Duklju za ___ državu.",
+     "o": [
+      "nezavisna",
+      "nezavisnu",
+      "nezavisne",
+      "nezavisnoj"
+     ],
+     "a": 1,
+     "e": "Proglasiti za + accusative case: za nezavisnu državu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mihajlo je oženio vizantijsku ___.",
+     "o": [
+      "princeza",
+      "princezu",
+      "princeze",
+      "princezom"
+     ],
+     "a": 1,
+     "e": "Oženiti + accusative case: princezu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Papa je poslao krunu u ___.",
+     "o": [
+      "Duklja",
+      "Duklju",
+      "Dukljom",
+      "Dukli"
+     ],
+     "a": 1,
+     "e": "U + accusative case (where to): u Duklju."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Otac je gradio državu ___.",
+     "o": [
+      "mač",
+      "mača",
+      "mačem",
+      "maču"
+     ],
+     "a": 2,
+     "e": "Instrumental case: mačem — \"with a sword\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Pretplatite se na ___.",
+     "o": [
+      "kanal",
+      "kanala",
+      "kanalu",
+      "kanalom"
+     ],
+     "a": 0,
+     "e": "Na + accusative case: na kanal."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mihajlov sin je nastavio ___ liniju.",
+     "o": [
+      "očeva",
+      "očevu",
+      "očeve",
+      "očevoj"
+     ],
+     "a": 1,
+     "e": "Accusative case, feminine: očevu liniju."
+    }
+   ]
+  }
+ ]
+}

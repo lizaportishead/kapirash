@@ -9,6 +9,7 @@ import 'player_page.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Кнопка «+» в каталоге видна только владельцу: пока ролики добавляет один человек.
 const kOwnerEmails = {'ilovekurm@gmail.com', 'iamkurm@gmail.com'};
@@ -30,7 +31,7 @@ class _NotFound implements Exception {}
 
 /// Название и канал ролика с YouTube. Если YouTube не ответил, ролик всё равно добавляем — без названия.
 Future<Video> _fetchVideo(String id) async {
-  var title = 'Ролик с YouTube', channel = 'YouTube';
+  var title = ui('Ролик с YouTube'), channel = 'YouTube';
   try {
     final r = await http
         .get(Uri.https('www.youtube.com', '/oembed', {'url': 'https://www.youtube.com/watch?v=$id', 'format': 'json'}))
@@ -77,7 +78,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
   Future<void> _add() async {
     final id = parseVideoId(_link.text);
     if (id == null) {
-      setState(() => _error = 'Не похоже на ссылку YouTube. Вставь ссылку на ролик целиком.');
+      setState(() => _error = ui('Не похоже на ссылку YouTube. Вставь ссылку на ролик целиком.'));
       return;
     }
     // Ролик уже есть в каталоге или в своих — просто открываем его.
@@ -99,7 +100,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
       if (!mounted) return;
       setState(() {
         _busy = false;
-        _error = 'Не нашли такой ролик на YouTube. Проверь ссылку.';
+        _error = ui('Не нашли такой ролик на YouTube. Проверь ссылку.');
       });
     }
   }
@@ -114,13 +115,15 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Добавить ролик',
+              ui('Добавить ролик'),
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800, letterSpacing: -0.4, color: cText),
             ),
             SizedBox(height: 6),
             Text(
-              'Вставь ссылку на ролик YouTube на сербском — мы подготовим к нему субтитры, перевод и словарик. '
-              'Ролик и его текст будут видны только тебе и хранятся на этом устройстве.',
+              ui(
+                'Вставь ссылку на ролик YouTube на сербском — мы подготовим к нему субтитры, перевод и словарик. '
+                'Ролик и его текст будут видны только тебе и хранятся на этом устройстве.',
+              ),
               style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
             ),
             SizedBox(height: 14),
@@ -141,7 +144,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
                 errorText: _error,
                 errorMaxLines: 2,
                 suffixIcon: IconButton(
-                  tooltip: 'Вставить из буфера',
+                  tooltip: ui('Вставить из буфера'),
                   icon: Icon(Icons.content_paste_rounded, size: 20, color: cMuted),
                   onPressed: _busy ? null : _paste,
                 ),
@@ -152,7 +155,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
               ),
             ),
             SizedBox(height: 16),
-            BigButton(_busy ? 'Добавляем…' : 'Добавить', onTap: _busy ? null : _add),
+            BigButton(_busy ? ui('Добавляем…') : ui('Добавить'), onTap: _busy ? null : _add),
           ],
         ),
       ),

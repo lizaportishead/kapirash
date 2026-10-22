@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where is Sibač located?",
+     "o": [
+      "On the border with Hungary",
+      "In the south of Serbia",
+      "In the Zlatibor mountains",
+      "In the municipality of Pećinci, near Šabac, Novi Sad and Belgrade"
+     ],
+     "a": 3,
+     "e": "In the video: \"Sibač, seoce u opštini Pećinci, koje se nalazi u blizini tri velika grada\" — Sibač, a small village in the municipality of Pećinci, located near three big cities."
+    },
+    {
+     "q": "What advantage over Belgrade does Sibač have, according to the interviewees?",
+     "o": [
+      "Cheaper housing",
+      "No constant noise and bustle",
+      "More shops",
+      "Better roads"
+     ],
+     "a": 1,
+     "e": "In the video: \"imaju i jednu prednost koju Beograđani nemaju: nemaju konstantnu buku, vrevu i brojne stresove.\" — they also have one advantage that Belgraders don't: no constant noise, bustle and numerous stresses."
+    },
+    {
+     "q": "Where did Branko work all his life?",
+     "o": [
+      "At a factory",
+      "In a shop",
+      "At a school",
+      "At Naftagas"
+     ],
+     "a": 3,
+     "e": "In the video: \"Branko je radio ceo svoj radni vek u Naftagasu\" — Branko worked his entire working life at Naftagas."
+    },
+    {
+     "q": "Who was his wife?",
+     "o": [
+      "A teacher",
+      "A housewife and farmer",
+      "A saleswoman",
+      "A doctor"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ja sam bila domaćica i poljoprivrednica\" — I was a housewife and a farmer."
+    },
+    {
+     "q": "What does she call \"the bank in the house\"?",
+     "o": [
+      "Gold",
+      "The harvest and the pigs they raised",
+      "A savings book",
+      "The house"
+     ],
+     "a": 1,
+     "e": "In the video: \"To nam je bila banka u kući. Svinje, da ne pričam\" — that was our bank in the house. The pigs, not to mention. (The harvest and the pigs.)"
+    },
+    {
+     "q": "How many years have the spouses been together?",
+     "o": [
+      "25",
+      "10",
+      "54",
+      "70"
+     ],
+     "a": 2,
+     "e": "In the video: \"54 godine ste zajedno\" — you've been together 54 years."
+    },
+    {
+     "q": "How do the spouses divide the work on the farm?",
+     "o": [
+      "Only she works",
+      "They hire workers",
+      "Only he works",
+      "He mows, she takes care of the flowers"
+     ],
+     "a": 3,
+     "e": "In the video: \"ja pokosim, a ona je oko cveća\" — I mow, and she looks after the flowers."
+    },
+    {
+     "q": "What is done with the meat after slaughter?",
+     "o": [
+      "Canned in jars",
+      "Frozen",
+      "Salted, kept in a barrel of brine for 3–4 weeks and hung in the smokehouse",
+      "Sold immediately"
+     ],
+     "a": 2,
+     "e": "In the video: \"usolimo meso, stavimo u bure, u salamuru, da odstoji jedno tri, četiri nedelje, i onda vešamo gore u pušnicu.\" — we salt the meat, put it in a barrel, in brine, to stand for about three, four weeks, and then hang it up in the smokehouse."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Strateška pozicija je donosila prednosti njegovim *žiteljima*.",
+     "o": [
+      "to guests",
+      "to farmers",
+      "to residents",
+      "to tourists"
+     ],
+     "a": 2,
+     "e": "Žitelj — a resident."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nije bilo *asfaltirano*, ni trotoara nije bilo.",
+     "o": [
+      "paved",
+      "lit",
+      "built up",
+      "fenced"
+     ],
+     "a": 0,
+     "e": "Asfaltirati — to pave with asphalt."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prodavnice za sve *potrepštine*.",
+     "o": [
+      "building materials",
+      "necessities",
+      "drinks",
+      "vegetables"
+     ],
+     "a": 1,
+     "e": "Potrepštine — necessities, supplies."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nemaju konstantnu buku, *vrevu* i stresove.",
+     "o": [
+      "bustle",
+      "dust",
+      "silence",
+      "heat"
+     ],
+     "a": 0,
+     "e": "Vreva — noise, bustle, jostling."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam bila domaćica i *poljoprivrednica*.",
+     "o": [
+      "teacher",
+      "saleswoman",
+      "agricultural worker",
+      "cook"
+     ],
+     "a": 2,
+     "e": "Poljoprivreda — agriculture; poljoprivrednica — a woman farmer."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To je moj *obor*, tamo i tu.",
+     "o": [
+      "garden",
+      "vegetable garden",
+      "pen for livestock",
+      "storehouse"
+     ],
+     "a": 2,
+     "e": "Obor — a pen, a sty."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vešamo meso gore u *pušnicu*.",
+     "o": [
+      "shed",
+      "cellar",
+      "smokehouse",
+      "oven"
+     ],
+     "a": 2,
+     "e": "Pušnica — a smokehouse; puša — to smoke."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja *pokosim*, a ona je oko cveća.",
+     "o": [
+      "I will plant",
+      "I will mow",
+      "I will cut",
+      "I will water"
+     ],
+     "a": 1,
+     "e": "Pokositi — to mow grass."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sibač, seoce u ___ Pećinci.",
+     "o": [
+      "opštinu",
+      "opština",
+      "opštinom",
+      "opštini"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative case: u opštini."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imali su najbolje od oba ___.",
+     "o": [
+      "sveta",
+      "svetu",
+      "svet",
+      "svetom"
+     ],
+     "a": 0,
+     "e": "Od (\"from\") requires the genitive case: od oba sveta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mirni život ruralnog ___.",
+     "o": [
+      "mesta",
+      "mestom",
+      "mesto",
+      "mestu"
+     ],
+     "a": 0,
+     "e": "Život of what? Genitive case: ruralnog mesta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Branko je radio ceo radni vek u ___.",
+     "o": [
+      "Naftagas",
+      "Naftagasu",
+      "Naftagasa",
+      "Naftagasom"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where?\" — locative case: u Naftagasu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dolazili su iz ___.",
+     "o": [
+      "Dobanovcima",
+      "Dobanovaca",
+      "Dobanovce",
+      "Dobanovci"
+     ],
+     "a": 1,
+     "e": "Iz (\"from\") requires the genitive case: iz Dobanovaca."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ona je bila iz druge ___.",
+     "o": [
+      "ulice",
+      "ulica",
+      "ulicu",
+      "ulicom"
+     ],
+     "a": 0,
+     "e": "Iz requires the genitive case: iz druge ulice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Vi ste zajedno 54 ___.",
+     "o": [
+      "godine",
+      "godina",
+      "godinama",
+      "godinu"
+     ],
+     "a": 0,
+     "e": "After a number ending in 4 the genitive singular is used: godine."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nebrigići su zašli u ___ vode.",
+     "o": [
+      "penzionerska",
+      "penzionerskim",
+      "penzionerskih",
+      "penzionerske"
+     ],
+     "a": 3,
+     "e": "Zaći u + accusative case: u penzionerske vode — \"into pensioner waters\", i.e. they retired."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What did Jung call coincidences that have an inner meaning?",
+     "o": [
+      "Synchronicity",
+      "Chaos",
+      "Chance",
+      "The subconscious"
+     ],
+     "a": 0,
+     "e": "In the video: \"Jung je ovu pojavu nazvao sinhronicitet\" — Jung called this phenomenon synchronicity."
+    },
+    {
+     "q": "What, according to Jung, should you ask yourself in a difficult situation?",
+     "o": [
+      "Who is to blame",
+      "What is this teaching me",
+      "How long will this last",
+      "How to avoid this"
+     ],
+     "a": 1,
+     "e": "In the video: \"šta me ovo uči\" — what is this teaching me."
+    },
+    {
+     "q": "How does the author describe the link between the inner and outer worlds?",
+     "o": [
+      "They are not connected at all",
+      "They are in constant dialogue",
+      "They are at war",
+      "They are identical"
+     ],
+     "a": 1,
+     "e": "In the video: \"naš unutrašnji svet neprekidno u dijalogu sa spoljnim\" — our inner world is in constant dialogue with the outer one."
+    },
+    {
+     "q": "What does the author say about pain?",
+     "o": [
+      "It is never useful",
+      "Pain is not in vain",
+      "It must be hidden",
+      "It always lasts forever"
+     ],
+     "a": 1,
+     "e": "In the video: \"taj bol nije uzaludan\" — that pain is not in vain."
+    },
+    {
+     "q": "What does the author call what we consider a failure?",
+     "o": [
+      "A punishment",
+      "A signpost",
+      "A dead end",
+      "A joke"
+     ],
+     "a": 1,
+     "e": "In the video: \"bio je putokaz\" — it was a signpost."
+    },
+    {
+     "q": "What does loss teach us, according to the video?",
+     "o": [
+      "To forget",
+      "To value presence",
+      "To be afraid",
+      "To argue"
+     ],
+     "a": 1,
+     "e": "In the video: \"Gubitak nas je naučio da cenimo prisutnost\" — loss taught us to value presence."
+    },
+    {
+     "q": "What way of life does the author contrast with a linear trajectory?",
+     "o": [
+      "A straight road",
+      "Circles and spirals",
+      "A staircase",
+      "A bridge"
+     ],
+     "a": 1,
+     "e": "In the video: \"život nije linearna putanja, već krugovi, spirale\" — life is not a linear trajectory, but circles, spirals."
+    },
+    {
+     "q": "What does the author ask the viewers at the end?",
+     "o": [
+      "Whether they love cinema",
+      "Whether they have experienced a coincidence that changed their life",
+      "How old they are",
+      "Where they live"
+     ],
+     "a": 1,
+     "e": "In the video: \"da li ste ikada doživeli slučajnost koja vam je promenila život\" — have you ever experienced a coincidence that changed your life."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ništa nije *slučajno*.",
+     "o": [
+      "by chance",
+      "quickly",
+      "quietly",
+      "long ago"
+     ],
+     "a": 0,
+     "e": "Slučajno — by chance."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pojedinac je deo *kolektivnog* iskustva.",
+     "o": [
+      "personal",
+      "collective",
+      "old",
+      "new"
+     ],
+     "a": 1,
+     "e": "Kolektivno — collective."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve ima svoj *smisao*.",
+     "o": [
+      "meaning",
+      "color",
+      "smell",
+      "weight"
+     ],
+     "a": 0,
+     "e": "Smisao — meaning."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bol nas je naučio *saosećanju*.",
+     "o": [
+      "anger",
+      "compassion",
+      "fear",
+      "laughter"
+     ],
+     "a": 1,
+     "e": "Saosećanje — compassion."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gubitak nas uči *ceniti* ono što imamo.",
+     "o": [
+      "to value",
+      "to lose",
+      "to hide",
+      "to change"
+     ],
+     "a": 0,
+     "e": "Ceniti — to value."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Treba da *oslušneš* svoju intuiciju.",
+     "o": [
+      "you will forget",
+      "you will listen to",
+      "you will break",
+      "you will buy"
+     ],
+     "a": 1,
+     "e": "Oslušnuti — to listen closely."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Život je *putovanje* ka sebi.",
+     "o": [
+      "a journey",
+      "mistake",
+      "a purchase",
+      "a job"
+     ],
+     "a": 0,
+     "e": "Putovanje — a journey."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ne *požuruj* stvari.",
+     "o": [
+      "rush (imperative)",
+      "you love",
+      "give up (imperative)",
+      "hold (imperative)"
+     ],
+     "a": 0,
+     "e": "Požurivati — to rush, to hurry someone."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Jung nije verovao u ___ preživljavanje.",
+     "o": [
+      "puko",
+      "puka",
+      "puku",
+      "puke"
+     ],
+     "a": 0,
+     "e": "Accusative case, neuter: puko preživljavanje."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Razmišljate o starom ___.",
+     "o": [
+      "prijatelj",
+      "prijatelja",
+      "prijatelju",
+      "prijateljem"
+     ],
+     "a": 2,
+     "e": "O + locative case: o starom prijatelju."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Sve što nam se događa, događa se ___ razlogom.",
+     "o": [
+      "sa",
+      "za",
+      "bez",
+      "od"
+     ],
+     "a": 0,
+     "e": "S razlogom — \"not without a reason\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ne krivimo ___ za svoje patnje.",
+     "o": [
+      "druge",
+      "drugi",
+      "drugim",
+      "drugog"
+     ],
+     "a": 0,
+     "e": "Kriviti + accusative plural: druge."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Život nas uvek ___ nečemu.",
+     "o": [
+      "uči",
+      "učim",
+      "učimo",
+      "učiš"
+     ],
+     "a": 0,
+     "e": "3rd pers. sg.: život nas uči."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "U ___ trenucima osećamo da smo vođeni.",
+     "o": [
+      "najtišim",
+      "najtiši",
+      "najtišem",
+      "najtiša"
+     ],
+     "a": 0,
+     "e": "Locative plural: u najtišim trenucima."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ti si deo ___ celine.",
+     "o": [
+      "veća",
+      "veće",
+      "većem",
+      "veću"
+     ],
+     "a": 1,
+     "e": "Deo + genitive case, feminine: deo veće celine."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Sve što si ___ kao slučajnost bilo je odgovor.",
+     "o": [
+      "video",
+      "vidim",
+      "vidi",
+      "videćeš"
+     ],
+     "a": 0,
+     "e": "Past tense, masc.: video."
+    }
+   ]
+  }
+ ]
+}

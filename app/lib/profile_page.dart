@@ -5,6 +5,7 @@ import 'history_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
 import 'theme.dart';
+import 'l10n.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -21,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
       builder: (context, _) => ListView(
         padding: EdgeInsets.only(bottom: 24),
         children: [
-          PageTitle('Профиль'),
+          PageTitle(ui('Профиль')),
           SizedBox(height: 8),
           ..._body().map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 12), child: w)),
         ],
@@ -37,7 +38,7 @@ class _ProfilePageState extends State<ProfilePage> {
       _Group([
         _Row(
           icon: Icons.translate_rounded,
-          title: 'Письмо',
+          title: ui('Письмо'),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -48,8 +49,20 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         _Row(
+          icon: Icons.language_rounded,
+          title: ui('Язык приложения'),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Pill('Русский', on: store.lang == 'ru', onTap: () => store.setLang('ru')),
+              SizedBox(width: 6),
+              Pill('English', on: store.lang == 'en', onTap: () => store.setLang('en')),
+            ],
+          ),
+        ),
+        _Row(
           icon: Icons.dark_mode_outlined,
-          title: 'Тёмная тема',
+          title: ui('Тёмная тема'),
           trailing: Switch(
             value: store.dark,
             activeThumbColor: cOnViolet,
@@ -60,12 +73,12 @@ class _ProfilePageState extends State<ProfilePage> {
       ]),
       SizedBox(height: 12),
       _Group([
-        _Row(icon: Icons.tune_rounded, title: 'Уровень и темы', onTap: () => openSurvey(context)),
-        _Row(icon: Icons.history_rounded, title: 'История', onTap: () => openHistory(context)),
+        _Row(icon: Icons.tune_rounded, title: ui('Уровень и темы'), onTap: () => openSurvey(context)),
+        _Row(icon: Icons.history_rounded, title: ui('История'), onTap: () => openHistory(context)),
       ]),
       if (email != null) ...[
         SizedBox(height: 12),
-        _Group([_Row(icon: Icons.logout_rounded, title: 'Выйти', onTap: store.signOut)]),
+        _Group([_Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut)]),
       ],
     ];
   }
@@ -122,17 +135,19 @@ class _SignIn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Войди в\u00A0аккаунт',
+            ui('Войди в\u00A0аккаунт'),
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cInk),
           ),
           SizedBox(height: 6),
           Text(
-            'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон или '
-            'переустановишь приложение.',
+            ui(
+              'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон или '
+              'переустановишь приложение.',
+            ),
             style: TextStyle(fontSize: 14, height: 1.4, color: cInk),
           ),
           SizedBox(height: 16),
-          BigButton('Войти', onTap: () => openAuth(context)),
+          BigButton(ui('Войти'), onTap: () => openAuth(context)),
         ],
       ),
     );

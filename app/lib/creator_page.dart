@@ -5,17 +5,11 @@ import 'icons.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Открывает страницу креатора поверх таббара.
 void openCreator(BuildContext context, String channel) {
   Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => CreatorPage(channel: channel)));
-}
-
-String plural(int n, String one, String few, String many) {
-  final d = n % 10, h = n % 100;
-  if (d == 1 && h != 11) return one;
-  if (d >= 2 && d <= 4 && (h < 12 || h > 14)) return few;
-  return many;
 }
 
 class CreatorPage extends StatelessWidget {
@@ -25,7 +19,7 @@ class CreatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = videos.where((v) => v.channel == channel).toList();
-    final topics = {for (final v in list) v.topic}.join(', ');
+    final topics = {for (final v in list) topicLabel(v.topic)}.join(', ');
     final url = creators[channel]?.url;
     return Scaffold(
       body: SafeArea(
@@ -41,7 +35,7 @@ class CreatorPage extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(left: 12),
                     child: IconButton(
-                      tooltip: 'Назад',
+                      tooltip: ui('Назад'),
                       icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                       onPressed: () => Navigator.pop(context),
                     ),
@@ -93,7 +87,7 @@ class CreatorPage extends StatelessWidget {
                             ),
                             if (url != null)
                               IconButton(
-                                tooltip: 'Канал на YouTube',
+                                tooltip: ui('Канал на YouTube'),
                                 icon: Icon(KIcons.youtube, size: 26, color: cText),
                                 onPressed: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
                               ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'feed_page.dart';
 import 'icons.dart';
 import 'learn_page.dart';
+import 'main.dart' show kStoriesTabEnabled;
 import 'liked_page.dart';
 import 'recommend.dart';
 import 'search_page.dart';
@@ -11,6 +12,7 @@ import 'store.dart';
 import 'survey_page.dart';
 import 'theme.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Главная: ролики, шортсы и рассказы под ответы анкеты, плюс короткая тренировка слов.
 class HomePage extends StatelessWidget {
@@ -41,28 +43,43 @@ class HomePage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Semantics(
                     header: true,
-                    child: Text.rich(
-                      TextSpan(
-                        text: 'Kapiraš',
-                        children: [
-                          TextSpan(
-                            text: '?',
-                            style: TextStyle(color: cAccent),
+                    child: MediaQuery.sizeOf(context).width >= 900
+                        ? Text(
+                            ui('Главная'),
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: -0.6,
+                              color: cText,
+                            ),
+                          )
+                        : Text.rich(
+                            TextSpan(
+                              text: 'Kapiraš',
+                              children: [
+                                TextSpan(
+                                  text: '?',
+                                  style: TextStyle(color: cAccent),
+                                ),
+                              ],
+                            ),
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -0.9,
+                              color: cViolet,
+                            ),
                           ),
-                        ],
-                      ),
-                      style: TextStyle(fontSize: 26, fontWeight: FontWeight.w900, letterSpacing: -0.9, color: cViolet),
-                    ),
                   ),
                 ),
               ),
               IconButton(
-                tooltip: 'Любимое',
+                tooltip: ui('Любимое'),
                 icon: Icon(KIcons.heart, size: 24, color: cText),
                 onPressed: () => openLiked(context),
               ),
               IconButton(
-                tooltip: 'Поиск',
+                tooltip: ui('Поиск'),
                 icon: Icon(KIcons.search, size: 24, color: cText),
                 onPressed: () => openSearch(context),
               ),
@@ -74,9 +91,9 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 16),
             children: [
               _Profile(level: level, interests: interests),
-              ClipsStrip(title: 'Шортсы для тебя', list: shorts),
-              VideoSection(title: 'Ролики для тебя', list: forYou, onAll: onVideos),
-              _Books(books, onAll: onStories),
+              ClipsStrip(title: ui('Шортсы для тебя'), list: shorts),
+              VideoSection(title: ui('Ролики для тебя'), list: forYou, onAll: onVideos),
+              if (kStoriesTabEnabled) _Books(books, onAll: onStories),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
                 child: _TrainWords(onWords: onWords),
@@ -98,8 +115,11 @@ class _Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = level == null
-        ? 'Ответь на два вопроса — подберём ролики под твой уровень и темы.'
-        : 'Подобрано для уровня ${levelLabel(level!)}${interests.isEmpty ? '' : ' · ${interests.take(3).join(', ')}${interests.length > 3 ? ' и ещё ${interests.length - 3}' : ''}'}';
+        ? ui('Ответь на два вопроса — подберём ролики под твой уровень и темы.')
+        : ui('Подобрано для уровня {0}', [levelLabel(level!)]) +
+              (interests.isEmpty
+                  ? ''
+                  : ' · ${interests.take(3).map(topicLabel).join(', ')}${interests.length > 3 ? ui(' и ещё {0}', [interests.length - 3]) : ''}');
     return Padding(
       padding: EdgeInsets.fromLTRB(12, 0, 12, 20),
       child: Material(
@@ -117,7 +137,7 @@ class _Profile extends StatelessWidget {
                 ),
                 SizedBox(width: 4),
                 Text(
-                  level == null ? 'Пройти' : 'Изменить',
+                  level == null ? ui('Пройти') : ui('Изменить'),
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cViolet),
                 ),
                 SizedBox(width: 8),
@@ -144,7 +164,7 @@ class _Books extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SectionHeader('Книги для тебя', onAll: onAll, allLabel: 'Все'),
+          SectionHeader(ui('Книги для тебя'), onAll: onAll, allLabel: ui('Все')),
           SizedBox(
             height: 212,
             child: ListView.separated(
@@ -255,13 +275,13 @@ class _TrainWordsState extends State<_TrainWords> {
               children: [
                 Expanded(
                   child: Text(
-                    'Тренируй слова',
+                    ui('Тренируй слова'),
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
                   ),
                 ),
                 if (words.length > 1)
                   IconButton(
-                    tooltip: 'Другие слова',
+                    tooltip: ui('Другие слова'),
                     visualDensity: VisualDensity.compact,
                     icon: Icon(KIcons.refresh, size: 20, color: cMuted),
                     onPressed: _reshuffle,
@@ -289,13 +309,16 @@ class _TrainWordsState extends State<_TrainWords> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(16, 14, 16, 0),
-            child: BigButton('Тренировать', onTap: () => openLearn(context)),
+            child: BigButton(ui('Тренировать'), onTap: () => openLearn(context)),
           ),
           SizedBox(height: 4),
           TextButton(
             onPressed: widget.onWords,
             style: TextButton.styleFrom(foregroundColor: cViolet),
-            child: Text('Мои слова · ${words.length}', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+            child: Text(
+              ui('Словарь · {0}', [words.length]),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),
@@ -313,7 +336,7 @@ class _WordCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: flipped ? 'Перевод: ${w.tr}' : 'Слово ${store.conv(w.key)}, нажми, чтобы увидеть перевод',
+      label: flipped ? ui('Перевод: {0}', [w.tr]) : ui('Слово {0}, нажми, чтобы увидеть перевод', [store.conv(w.key)]),
       child: Material(
         color: flipped ? cAccent : cBg,
         shape: RoundedRectangleBorder(

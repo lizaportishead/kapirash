@@ -17,6 +17,7 @@ import 'theme.dart';
 import 'video_card.dart';
 import 'processing_page.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
 void openVideo(BuildContext context, Video v, {double? startAt}) {
@@ -47,8 +48,9 @@ class _PlayerPageState extends State<PlayerPage> {
   bool _subsLoading = true;
   Map<String, dynamic> _dict = {};
   List<QuizSection> _quiz = [];
-  // Переключатели SR/RU пока убраны с экрана: обе строки показываются всегда.
-  final _showSr = true, _showRu = true;
+  // Какие строки субтитров показывать — настраивается кнопкой в шапке.
+  bool get _showSr => store.showSr;
+  bool get _showRu => store.showRu;
   // Текущая фраза; за ней следит и открытый поверх плеера экран с полным текстом.
   final _curN = ValueNotifier<int>(-1);
   int get _cur => _curN.value;
@@ -60,7 +62,7 @@ class _PlayerPageState extends State<PlayerPage> {
   // Вкладка боковой колонки на десктопе: 0 — текст, 1 — слова, 2 — задания.
   int _side = 0;
 
-  // Кнопка «Мои слова» — сюда улетает шторка со словом.
+  // Кнопка «Словарь» — сюда улетает шторка со словом.
   final _wordsKey = GlobalKey();
   String get videoId => widget.video.id;
   // На странице ролика — только слова, сохранённые из него.
@@ -204,7 +206,7 @@ class _PlayerPageState extends State<PlayerPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id)]),
+                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id), _settingsButton()]),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
@@ -245,7 +247,7 @@ class _PlayerPageState extends State<PlayerPage> {
                             Padding(
                               padding: EdgeInsets.fromLTRB(4, 28, 4, 8),
                               child: Text(
-                                'Посмотри ролик и выполни задания',
+                                ui('Посмотри ролик и выполни задания'),
                                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, height: 1.25, color: cText),
                               ),
                             ),
@@ -314,6 +316,7 @@ class _PlayerPageState extends State<PlayerPage> {
                               ),
                               _youtubeButton(),
                               LikeButton(widget.video.id),
+                              _settingsButton(),
                             ],
                           ),
                           player,
@@ -338,14 +341,21 @@ class _PlayerPageState extends State<PlayerPage> {
 
   Widget _sidePanel() {
     final tabs = <(String, IconData)>[
-      ('Текст', KIcons.text),
-      ('Слова${_words.isEmpty ? '' : ' · ${_words.length}'}', KIcons.wordsOn),
-      if (_quiz.isNotEmpty) ('Задания', KIcons.tasks),
+      (ui('Текст'), KIcons.text),
+      ('${ui('Слова')}${_words.isEmpty ? '' : ' · ${_words.length}'}', KIcons.wordsOn),
+      if (_quiz.isNotEmpty) (ui('Задания'), KIcons.tasks),
     ];
     final tab = _side.clamp(0, tabs.length - 1);
     final Widget body = switch (tab) {
       0 when _subsLoading => KapLoading(size: 40),
-      0 => Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek, popOnTap: false),
+      0 => Transcript(
+        sr: _sr,
+        cur: _curN,
+        ruFor: _showRu ? _ruFor : (_) => '',
+        onSeek: _seek,
+        popOnTap: false,
+        showSr: _showSr,
+      ),
       1 => WordList(videoId: videoId, onSeek: _seek, popOnTap: false),
       _ => QuizList(videoId: videoId, sections: _quiz),
     };
@@ -433,7 +443,7 @@ class _PlayerPageState extends State<PlayerPage> {
 
   Widget _stepArrow(int d) {
     return IconButton(
-      tooltip: d < 0 ? 'Предыдущая фраза' : 'Следующая фраза',
+      tooltip: d < 0 ? ui('Предыдущая фраза') : ui('Следующая фраза'),
       icon: Icon(d < 0 ? KIcons.arrowLeft : KIcons.arrowRight, size: 24, color: cInk),
       onPressed: () => _step(d),
     );
@@ -468,7 +478,7 @@ class _PlayerPageState extends State<PlayerPage> {
 
   Widget _back({Color? color}) {
     return IconButton(
-      tooltip: 'Назад',
+      tooltip: ui('Назад'),
       icon: Icon(Icons.arrow_back_ios_new, size: 18, color: color ?? cText),
       onPressed: () => Navigator.pop(context),
     );
@@ -494,7 +504,7 @@ class _PlayerPageState extends State<PlayerPage> {
     if (widget.video.mine) return row;
     return Semantics(
       button: true,
-      label: 'Канал $name',
+      label: ui('Канал {0}', [name]),
       child: InkWell(
         borderRadius: BorderRadius.circular(999),
         onTap: () {
@@ -557,9 +567,9 @@ class _PlayerPageState extends State<PlayerPage> {
     return Row(
       spacing: 6,
       children: [
-        button(-1, KIcons.arrowLeft, 'Предыдущая фраза'),
-        button(0, KIcons.refresh, 'Ещё раз', text: 'Ещё раз'),
-        button(1, KIcons.arrowRight, 'Следующая фраза'),
+        button(-1, KIcons.arrowLeft, ui('Предыдущая фраза')),
+        button(0, KIcons.refresh, ui('Ещё раз'), text: ui('Ещё раз')),
+        button(1, KIcons.arrowRight, ui('Следующая фраза')),
       ],
     );
   }
@@ -585,8 +595,8 @@ class _PlayerPageState extends State<PlayerPage> {
                   if (_sr.isEmpty && widget.video.mine)
                     Text(
                       store.myVideo(videoId)?.status == SubsStatus.failed
-                          ? 'Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».'
-                          : 'Готовим субтитры — они появятся здесь, как только будут готовы.',
+                          ? ui('Не удалось создать субтитры. Попробуй ещё раз в «Моих роликах».')
+                          : ui('Готовим субтитры — они появятся здесь, как только будут готовы.'),
                       style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
                     ),
                   if (_subsLoading) Center(child: KapLoader(size: 32)),
@@ -615,12 +625,59 @@ class _PlayerPageState extends State<PlayerPage> {
   // Кнопка «Открыть в YouTube» в шапке, как у клипов — в TikTok.
   Widget _youtubeButton() {
     return IconButton(
-      tooltip: 'Открыть в YouTube',
+      tooltip: ui('Открыть в YouTube'),
       icon: Icon(KIcons.youtube, size: 22, color: cMuted),
       onPressed: () {
         _yt.pauseVideo();
         launchUrl(Uri.parse('https://www.youtube.com/watch?v=$videoId'), mode: LaunchMode.externalApplication);
       },
+    );
+  }
+
+  // Шестерёнка в шапке: какие субтитры показывать.
+  Widget _settingsButton() {
+    return IconButton(
+      tooltip: ui('Настройки ролика'),
+      icon: Icon(Icons.settings_outlined, size: 22, color: cMuted),
+      onPressed: () => showModalBottomSheet<void>(
+        context: context,
+        backgroundColor: cBg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
+        builder: (_) => ListenableBuilder(
+          listenable: store,
+          builder: (ctx, _) => SafeArea(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    ui('Настройки ролика'),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
+                  ),
+                  SizedBox(height: 8),
+                  for (final (label, value, set) in [
+                    (ui('Сербские субтитры'), store.showSr, store.setShowSr),
+                    (ui('Русские субтитры'), store.showRu, store.setShowRu),
+                  ])
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(
+                        label,
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
+                      ),
+                      value: value,
+                      activeThumbColor: cOnViolet,
+                      activeTrackColor: cViolet,
+                      onChanged: set,
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -631,12 +688,18 @@ class _PlayerPageState extends State<PlayerPage> {
       children: [
         Expanded(
           child: Pill(
-            'Весь текст',
+            ui('Весь текст'),
             icon: KIcons.text,
             onTap: () => _push(
               SubPage(
-                title: 'Весь текст',
-                child: Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek),
+                title: ui('Весь текст'),
+                child: Transcript(
+                  sr: _sr,
+                  cur: _curN,
+                  ruFor: _showRu ? _ruFor : (_) => '',
+                  onSeek: _seek,
+                  showSr: _showSr,
+                ),
               ),
             ),
           ),
@@ -644,12 +707,12 @@ class _PlayerPageState extends State<PlayerPage> {
         Expanded(
           child: Pill(
             key: _wordsKey,
-            'Мои слова',
+            ui('Словарь'),
             badge: _words.length,
             icon: KIcons.wordsOn,
             onTap: () => _push(
               SubPage(
-                title: 'Мои слова',
+                title: ui('Словарь'),
                 child: WordList(videoId: videoId, onSeek: _seek),
               ),
             ),
@@ -686,7 +749,7 @@ class SubPage extends StatelessWidget {
                   child: Row(
                     children: [
                       IconButton(
-                        tooltip: 'Назад',
+                        tooltip: ui('Назад'),
                         icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -718,7 +781,9 @@ class Transcript extends StatefulWidget {
     required this.ruFor,
     required this.onSeek,
     this.popOnTap = true,
+    this.showSr = true,
   });
+  final bool showSr;
   // В боковой колонке на десктопе экран не закрываем.
   final bool popOnTap;
   final List<Cue> sr;
@@ -793,15 +858,16 @@ class _TranscriptState extends State<Transcript> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            store.conv(sr[i].text),
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
-                              height: 1.35,
-                              color: i == cur ? cText : cMuted,
+                          if (widget.showSr)
+                            Text(
+                              store.conv(sr[i].text),
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                height: 1.35,
+                                color: i == cur ? cText : cMuted,
+                              ),
                             ),
-                          ),
                           if (widget.ruFor(sr[i]).isNotEmpty)
                             Text(widget.ruFor(sr[i]), style: TextStyle(fontSize: 13, height: 1.35, color: cMuted)),
                         ],
@@ -833,7 +899,7 @@ class WordList extends StatelessWidget {
         if (list.isEmpty) {
           return Padding(
             padding: EdgeInsets.all(24),
-            child: Text('Нажми на слово в субтитрах и сохрани его.', style: TextStyle(fontSize: 14, color: cMuted)),
+            child: Text(ui('Нажми на слово в субтитрах и сохрани его.'), style: TextStyle(fontSize: 14, color: cMuted)),
           );
         }
         return ListView.separated(
@@ -876,7 +942,7 @@ class WordList extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  tooltip: 'Удалить ${w.key}',
+                  tooltip: ui('Удалить {0}', [w.key]),
                   icon: Icon(Icons.close, size: 18, color: cMuted),
                   onPressed: () => store.remove(w.key),
                 ),

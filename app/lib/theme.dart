@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'store.dart';
+import 'l10n.dart';
 
 const kFont = 'Montserrat';
 
@@ -120,9 +121,17 @@ class BigButton extends StatelessWidget {
 
 /// Крупный заголовок; слова между звёздочками подсвечены плашкой.
 class Headline extends StatelessWidget {
-  const Headline(this.text, {super.key, required this.color, required this.mark, this.onMark = cInk});
+  const Headline(
+    this.text, {
+    super.key,
+    required this.color,
+    required this.mark,
+    this.onMark = cInk,
+    this.maxSize = 60,
+  });
   final String text;
   final Color color, mark, onMark;
+  final double maxSize;
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +141,7 @@ class Headline extends StatelessWidget {
       child: ExcludeSemantics(
         child: LayoutBuilder(
           builder: (_, box) {
-            final size = (box.maxWidth / 7.4).clamp(28.0, 60.0);
+            final size = (box.maxWidth / 7.4).clamp(28.0, maxSize);
             final style = TextStyle(
               fontSize: size,
               fontWeight: FontWeight.w800,
@@ -246,9 +255,9 @@ class PageTitle extends StatelessWidget {
 /// Сложность по уровню (A1–C2): подпись и цвет кружка.
 (String, Color)? difficultyOf(String level) {
   final l = level.toUpperCase();
-  if (l.startsWith('A')) return ('Простое (A1-A2)', Color(0xFF34A853));
-  if (l == 'B1') return ('Среднее (B1)', Color(0xFFF59E0B));
-  if (l.startsWith('B') || l.startsWith('C')) return ('Сложное (B2+)', Color(0xFFE53935));
+  if (l.startsWith('A')) return (ui('Простое (A1-A2)'), Color(0xFF34A853));
+  if (l == 'B1') return (ui('Среднее (B1)'), Color(0xFFF59E0B));
+  if (l.startsWith('B') || l.startsWith('C')) return (ui('Сложное (B2+)'), Color(0xFFE53935));
   return null;
 }
 

@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Who has the oven-baked tortilla pita become a new favorite for?",
+     "o": [
+      "Grandmother",
+      "Her girlfriends",
+      "The neighbors",
+      "Her husband and children"
+     ],
+     "a": 3,
+     "e": "In the video: \"je mom mužu i deci bukvalno postala novi favorit\" — it literally became the new favorite of my husband and children."
+    },
+    {
+     "q": "What, according to the author, is the main secret of the recipe?",
+     "o": [
+      "The dough",
+      "The spices",
+      "The cheeses",
+      "The temperature"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ali prava tajna je u sirevima\" — but the real secret is in the cheeses."
+    },
+    {
+     "q": "Which cheese does the author call next level?",
+     "o": [
+      "Smoked",
+      "Feta",
+      "Brynza",
+      "Mozzarella"
+     ],
+     "a": 0,
+     "e": "In the video: \"onaj dimljeni sir, ljudi, to je next level\" — that smoked cheese, folks, is next level."
+    },
+    {
+     "q": "How long and at what temperature is the pita baked?",
+     "o": [
+      "40 minutes at 150",
+      "10 minutes at 220",
+      "20 minutes at 180 degrees",
+      "1 hour at 200"
+     ],
+     "a": 2,
+     "e": "In the video: \"U rernu na 180 stepeni 20 minuta\" — in the oven at 180 degrees for 20 minutes."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U *rernu* na 180 stepeni 20 minuta.",
+     "o": [
+      "refrigerator",
+      "saucepan",
+      "oven",
+      "microwave"
+     ],
+     "a": 2,
+     "e": "Rerna — an oven."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Onaj *dimljeni* sir, ljudi, to je next level.",
+     "o": [
+      "smoked",
+      "spicy",
+      "salty",
+      "soft"
+     ],
+     "a": 0,
+     "e": "Dimljen — smoked; dim — smoke."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kora je *hrskava*, a unutrašnjost previše kremasta.",
+     "o": [
+      "bitter",
+      "soft",
+      "raw",
+      "crispy"
+     ],
+     "a": 3,
+     "e": "Hrskav — crispy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kačkavalj se *topi*, kora je hrskava.",
+     "o": [
+      "goes bad",
+      "hardens",
+      "melts",
+      "gets cut"
+     ],
+     "a": 2,
+     "e": "Topiti se — to melt."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Slažete tortilju, fil, pa narendate sir i tako u ___.",
+     "o": [
+      "kruga",
+      "krugom",
+      "krugu",
+      "krug"
+     ],
+     "a": 3,
+     "e": "U + accusative case in answer to \"where to?\": u krug — \"in a circle\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sve što vam treba je malo parizera ili ___.",
+     "o": [
+      "šunke",
+      "šunkom",
+      "šunka",
+      "šunku"
+     ],
+     "a": 0,
+     "e": "After malo (\"a little\") the genitive case is used: malo šunke."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koristim Podgorac ___ jer daju neverovatan šmek.",
+     "o": [
+      "sira",
+      "sirevima",
+      "sirevi",
+      "sireve"
+     ],
+     "a": 3,
+     "e": "Koristiti (\"to use\") requires the accusative case; the plural of sir is sirevi, in the accusative sireve."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moj muž i dečaci ovo ___.",
+     "o": [
+      "obožavamo",
+      "obožavaju",
+      "obožavao",
+      "obožava"
+     ],
+     "a": 1,
+     "e": "The subject is plural (husband and boys), so the verb is in the 3rd person plural: obožavaju."
+    }
+   ]
+  }
+ ]
+}

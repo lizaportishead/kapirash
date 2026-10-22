@@ -7,6 +7,7 @@ import 'player_page.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'videos.dart';
+import 'l10n.dart';
 
 /// Карточка ролика в списке. Имя канала ведёт на страницу креатора, если [showChannel] включён.
 /// Внизу превью — шкала просмотра, как на YouTube.
@@ -195,7 +196,7 @@ class LikeButton extends StatelessWidget {
       builder: (context, _) {
         final on = store.isLiked(videoId);
         return IconButton(
-          tooltip: on ? 'Убрать сердечко' : 'Поставить сердечко',
+          tooltip: on ? ui('Убрать сердечко') : ui('Поставить сердечко'),
           isSelected: on,
           icon: Icon(KIcons.heart, size: 22, color: cMuted),
           selectedIcon: Icon(Icons.favorite_rounded, size: 22, color: cViolet),

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Why does David put a blindfold on the author?",
+     "o": [
+      "To protect him from the sun",
+      "To take a photo",
+      "To arrange a birthday surprise",
+      "To take him to a random place and have him guess where he is"
+     ],
+     "a": 3,
+     "e": "In the video: \"David stavlja povez preko očiju, to je zato što će me kidnapovati, odvesti u neki random grad u Srbiji\"."
+    },
+    {
+     "q": "What is Geoguessr?",
+     "o": [
+      "A taxi-ordering app",
+      "A game where you have five rounds to guess places on a Google map",
+      "A chess game",
+      "A history quiz"
+     ],
+     "a": 1,
+     "e": "In the video: \"Geoguessr je igra u kojoj imate pet rundi da pogodite pet lokacija\"."
+    },
+    {
+     "q": "In which city does the author live?",
+     "o": [
+      "In Niš",
+      "In Vlasotince",
+      "In Pirot",
+      "In Belgrade"
+     ],
+     "a": 1,
+     "e": "In the video: \"pet lokacija u Vlasotincu, to je grad u kome živim\"."
+    },
+    {
+     "q": "What will happen if the author guesses all five places in Vlasotince?",
+     "o": [
+      "David will give him a car",
+      "David will take him to a random city in Serbia, and he will have to guess where he is",
+      "He will become a host",
+      "He will get a prize"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ako pogodim svih pet lokacija u Vlasotincu... David će me odvesti negde usred Srbije i baciti u neki nepoznati grad\"."
+    },
+    {
+     "q": "What was the result of the first part of the challenge?",
+     "o": [
+      "25,000 out of 25,000",
+      "0 points",
+      "10,000 out of 25,000",
+      "22,500 points out of 25,000"
+     ],
+     "a": 3,
+     "e": "In the video: \"Na kraju imamo 22500 od ukupno 25000 poena\"."
+    },
+    {
+     "q": "What was written on the water pump in the abandoned village?",
+     "o": [
+      "\"Welcome to Pirot\"",
+      "\"Spring water from the Komarica source, number seven\"",
+      "\"Do not drink\"",
+      "\"Drinking water\""
+     ],
+     "a": 1,
+     "e": "In the video: \"na ovoj česmici nešto piše. Izvorska voda sa Komaričkog vrela, broj sedam\"."
+    },
+    {
+     "q": "Where did the author end up?",
+     "o": [
+      "In Ljuberađa, between Pirot and Babušnica",
+      "In Leskovac",
+      "In Gnjilan",
+      "In Komarica"
+     ],
+     "a": 0,
+     "e": "In the video: \"Znači, nisu Gorčinci, ipak je Ljuberađa\" — \"negde smo između Pirota i Babušnice\"."
+    },
+    {
+     "q": "By how much did the author miss in Ljuberađa?",
+     "o": [
+      "By 5 kilometers",
+      "By 1 meter",
+      "By 160 meters — that's 4800 points",
+      "Didn't miss at all"
+     ],
+     "a": 2,
+     "e": "In the video: \"Promašio sam za 160 metra... Za Ljuberađu, 4800. Ljudi, dobio sam 4800\"."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "David mi stavlja *povez* preko očiju.",
+     "o": [
+      "scarf",
+      "hat",
+      "glasses",
+      "blindfold"
+     ],
+     "a": 3,
+     "e": "Povez — blindfold, bandage."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "On će me *kidnapovati*.",
+     "o": [
+      "to kidnap",
+      "to wake up",
+      "to train",
+      "to give a ride"
+     ],
+     "a": 0,
+     "e": "Kidnapovati — to kidnap, to abduct a person."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A ja moram da se *snađem* bez ičije pomoći.",
+     "o": [
+      "I will forget",
+      "I will rest",
+      "I will find my bearings, I will manage",
+      "I will hide"
+     ],
+     "a": 2,
+     "e": "Snaći se — to find one's bearings, to find a way out."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za prvu lokaciju nam je dalo neku *njivu*.",
+     "o": [
+      "lake",
+      "yard",
+      "field",
+      "road"
+     ],
+     "a": 2,
+     "e": "Njiva — field, cultivated field."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ono gore je onaj *vidikovac*.",
+     "o": [
+      "bridge",
+      "store",
+      "viewing platform",
+      "monastery"
+     ],
+     "a": 2,
+     "e": "Vidikovac — a place with a good view; vid — view, sight."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na ovoj *česmici* nešto piše.",
+     "o": [
+      "water pump, drinking fountain",
+      "tree",
+      "car",
+      "door"
+     ],
+     "a": 0,
+     "e": "Česma — a water pump, a street water source."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bukvalno su sve kuće *srušene*.",
+     "o": [
+      "destroyed",
+      "painted",
+      "built",
+      "sold"
+     ],
+     "a": 0,
+     "e": "Srušiti — to destroy; srušen — destroyed."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pazite koliki sam *slepac*.",
+     "o": [
+      "lazybones",
+      "blind, scatterbrain",
+      "strongman",
+      "smart aleck"
+     ],
+     "a": 1,
+     "e": "Slepac — a blind person; in conversation, a \"klutz\"."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zašto mi David stavlja povez preko ___?",
+     "o": [
+      "očiju",
+      "oči",
+      "očima",
+      "oka"
+     ],
+     "a": 0,
+     "e": "Preko (\"across, over\") requires the genitive case: preko očiju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Odvesti me u neki random ___ u Srbiji.",
+     "o": [
+      "gradu",
+      "gradom",
+      "grad",
+      "grada"
+     ],
+     "a": 2,
+     "e": "Odvesti u + accusative case; for inanimate masculine nouns it coincides with the nominative: grad."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ako pogodim svih pet ___ u Vlasotincu.",
+     "o": [
+      "lokacije",
+      "lokacijama",
+      "lokacija",
+      "lokaciju"
+     ],
+     "a": 2,
+     "e": "After the number 5 the genitive plural is used: lokacija."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Geoguessr je igra u kojoj imate pet ___.",
+     "o": [
+      "runde",
+      "rundi",
+      "rundu",
+      "rundama"
+     ],
+     "a": 1,
+     "e": "After the number 5 — the genitive plural: rundi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Umesto da sedimo za ___, igramo Geoguessr u pravom životu.",
+     "o": [
+      "kompjuter",
+      "kompjuteru",
+      "kompjutera",
+      "kompjuterom"
+     ],
+     "a": 3,
+     "e": "Za in answer to \"where?\" requires the instrumental case: za kompjuterom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Bukvalno ispred ___, u centru.",
+     "o": [
+      "opštinu",
+      "opštinom",
+      "opština",
+      "opštine"
+     ],
+     "a": 3,
+     "e": "Ispred (\"in front of\") requires the genitive case: ispred opštine."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pogodio sam tačnu ___.",
+     "o": [
+      "lokaciju",
+      "lokacije",
+      "lokacijom",
+      "lokacija"
+     ],
+     "a": 0,
+     "e": "Pogoditi + object — accusative case: lokaciju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Poslednja lokacija je bukvalno kod ___.",
+     "o": [
+      "stadion",
+      "stadiona",
+      "stadionu",
+      "stadionom"
+     ],
+     "a": 1,
+     "e": "Kod (\"at, near\") requires the genitive case: kod stadiona."
+    }
+   ]
+  }
+ ]
+}

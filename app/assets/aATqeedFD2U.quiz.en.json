@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the author say about the design of the A56 compared with other Samsung models?",
+     "o": [
+      "It looks nothing like the others",
+      "It is almost identical to the other models",
+      "It is half as thin",
+      "It is plastic only"
+     ],
+     "a": 1,
+     "e": "In the video: \"Dizajn modela A56 je skoro pa identičan kao i kod ostalih modela Samsunga\" — the design of the A56 is almost identical to the other Samsung models."
+    },
+    {
+     "q": "What are the back panel and frame made of?",
+     "o": [
+      "The back panel is glass, the frame is metal",
+      "Everything is plastic",
+      "Everything is glass",
+      "The back panel is leather"
+     ],
+     "a": 0,
+     "e": "In the video: \"Leđa su staklena, a ivica metalna\" — the back is glass, and the edge is metal."
+    },
+    {
+     "q": "What does the author criticize about the screen?",
+     "o": [
+      "Low brightness",
+      "A too-thick bezel around the screen",
+      "The lack of a 120 Hz rate",
+      "A small diagonal"
+     ],
+     "a": 1,
+     "e": "In the video: \"okvir oko ekrana koji je mogao da bude i manji\" — a bezel around the screen that could have been smaller."
+    },
+    {
+     "q": "What water and dust protection standard does the phone have?",
+     "o": [
+      "IP67",
+      "IP20",
+      "IP90",
+      "IP12"
+     ],
+     "a": 0,
+     "e": "In the video: \"Otpornost na vodu i prašinu je u okviru standarda IP67\" — water and dust resistance is within the IP67 standard."
+    },
+    {
+     "q": "What does the author call the main complaint about the camera?",
+     "o": [
+      "No main camera",
+      "No telephoto lens",
+      "No flash",
+      "No macro mode"
+     ],
+     "a": 1,
+     "e": "In the video: \"nema telefoto objektiv, što je i najveća zamerka\" — there is no telephoto lens, which is the biggest complaint."
+    },
+    {
+     "q": "What did the author dislike when first turning it on?",
+     "o": [
+      "The phone took long to activate and downloaded many updates",
+      "It wouldn't turn on at all",
+      "The screen cracked",
+      "The battery died immediately"
+     ],
+     "a": 0,
+     "e": "In the video: \"automatski je počeo da preuzima 130 GB ažuriranja za razne aplikacije\" — it automatically started downloading 130 GB of updates for various apps."
+    },
+    {
+     "q": "What comes in the box with the phone?",
+     "o": [
+      "A charger and a case",
+      "Only the phone, with no charger, case or screen film",
+      "Headphones",
+      "A stand"
+     ],
+     "a": 1,
+     "e": "In the video: \"uz telefon ne dobijate punjač, maskicu, pa čak ni zaštitnu foliju na staklu\" — with the phone you don't get a charger, a case, or even a screen protector film on the glass."
+    },
+    {
+     "q": "How much does the 256 GB version cost?",
+     "o": [
+      "29,999 dinars",
+      "54,999 dinars",
+      "59,999 dinars",
+      "99,999 dinars"
+     ],
+     "a": 2,
+     "e": "In the video: \"59.999 dinara za verziju sa 256 GB memorije\" — 59,999 dinars for the version with 256 GB of memory."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kamera nudi *oštre* fotografije u zatvorenom prostoru.",
+     "o": [
+      "blurry",
+      "sharp",
+      "dark",
+      "old"
+     ],
+     "a": 1,
+     "e": "Oštar — sharp, crisp."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Telefon ima ravan *ekran*.",
+     "o": [
+      "body",
+      "screen",
+      "port",
+      "speaker"
+     ],
+     "a": 1,
+     "e": "Ekran — a screen."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Podržano je brzo *punjenje* od 45 W.",
+     "o": [
+      "storage",
+      "charging",
+      "call",
+      "guarantee"
+     ],
+     "a": 1,
+     "e": "Punjenje — charging (a battery)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Samsung ima dobar *operativni* sistem.",
+     "o": [
+      "working (adj.)",
+      "operating",
+      "personal (adj.)",
+      "home"
+     ],
+     "a": 1,
+     "e": "Operativni sistem — an operating system."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobijate lepe *kadrove* u 99% slučajeva.",
+     "o": [
+      "shots",
+      "sounds",
+      "themes",
+      "accounts"
+     ],
+     "a": 0,
+     "e": "Kadar — a frame, a shot."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Čipset ima 8 *jezgara*.",
+     "o": [
+      "of cameras",
+      "of cores",
+      "of ports",
+      "of buttons"
+     ],
+     "a": 1,
+     "e": "Jezgro — a core."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Telefon je zaštićen *staklom* Gorilla Glass Victus.",
+     "o": [
+      "metal",
+      "glass",
+      "plastic",
+      "film"
+     ],
+     "a": 1,
+     "e": "Staklo — glass."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ekran ima 120 Hz *osvežavanja*.",
+     "o": [
+      "updates",
+      "volume",
+      "brightness",
+      "price"
+     ],
+     "a": 0,
+     "e": "Osvežavanje — refreshing (of a screen)."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Telefon ima ekran od 6,7 ___.",
+     "o": [
+      "inča",
+      "inč",
+      "inči",
+      "inčem"
+     ],
+     "a": 0,
+     "e": "After a number of 5+, the genitive plural: 6,7 inča (inches)."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Leđa su staklena, a ivica ___.",
+     "o": [
+      "metalan",
+      "metalna",
+      "metalno",
+      "metalni"
+     ],
+     "a": 1,
+     "e": "Ivica — feminine: metalna ivica."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "U ___ klasi Samsung je mogao da napravi manji okvir.",
+     "o": [
+      "ova",
+      "ovoj",
+      "ovu",
+      "ovom"
+     ],
+     "a": 1,
+     "e": "U + locative case, feminine: u ovoj klasi."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Samsung je unapredio ekran u odnosu na ___ godinu.",
+     "o": [
+      "prošlu",
+      "prošla",
+      "prošle",
+      "prošloj"
+     ],
+     "a": 0,
+     "e": "U odnosu na + accusative case: na prošlu godinu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Kamera nije na nivou S ___.",
+     "o": [
+      "serije",
+      "seriju",
+      "serija",
+      "serijom"
+     ],
+     "a": 0,
+     "e": "Na nivou + genitive case: na nivou S serije."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Telefon radi brzo i ___.",
+     "o": [
+      "stabilan",
+      "stabilno",
+      "stabilna",
+      "stabilni"
+     ],
+     "a": 1,
+     "e": "Adverb: radi stabilno — \"works stably\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Za većinu ___ ovo je odlična kupovina.",
+     "o": [
+      "korisnika",
+      "korisniku",
+      "korisnici",
+      "korisnikom"
+     ],
+     "a": 0,
+     "e": "Za većinu + genitive plural: korisnika."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Možete ceo dan da ga koristite i nećete ga ___.",
+     "o": [
+      "isprazniti",
+      "ispraznio",
+      "ispražnjen",
+      "ispraznim"
+     ],
+     "a": 0,
+     "e": "Ne... + da/future: nećete ga isprazniti — \"you won't drain it\"."
+    }
+   ]
+  }
+ ]
+}
