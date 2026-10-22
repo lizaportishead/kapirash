@@ -172,8 +172,6 @@ const stories = [
     asset: 'story_slava',
     source: 'Radoje Domanović, Slava (1903), preuzeto sa sr.wikisource.org (domanovic.org); tekst prenet u latinicu',
   ),
-  Story(id: 'mala-sirena', title: 'Mala sirena', author: 'Hans Kristijan Andersen'),
-  Story(id: 'ruzno-pace', title: 'Ružno pače', author: 'Hans Kristijan Andersen'),
   Story(
     id: 'snezna-kraljica',
     title: 'Snežna kraljica',
@@ -185,7 +183,6 @@ const stories = [
     level: 'B2',
     asset: 'story_snezna_kraljica',
   ),
-  Story(id: 'palcica', title: 'Palčica', author: 'Hans Kristijan Andersen'),
 ];
 
 Story? storyById(String wordKey) {
