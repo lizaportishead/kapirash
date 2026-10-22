@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -174,8 +176,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
 }
 
 class _SlideView extends StatelessWidget {
-  const _SlideView(this.s);
+  const _SlideView(this.s, {this.compact = false});
   final _Slide s;
+
+  /// Для боковой панели на десктопе: заголовок мельче.
+  final bool compact;
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +192,7 @@ class _SlideView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Headline(s.title, color: s.fg, mark: s.mark, onMark: s.onMark),
+              Headline(s.title, color: s.fg, mark: s.mark, onMark: s.onMark, maxSize: compact ? 38 : 60),
               SizedBox(height: 14),
               Text(
                 s.text,
@@ -359,6 +364,98 @@ class _CardsArt extends StatelessWidget {
             child: Sticker('youtu.be/…', color: cInk, fg: cOnInk, angle: -0.14),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Те же три слайда в рамке для широкого экрана: листаются сами, можно кликнуть по точкам.
+class OnboardingShowcase extends StatefulWidget {
+  const OnboardingShowcase({super.key});
+
+  @override
+  State<OnboardingShowcase> createState() => _OnboardingShowcaseState();
+}
+
+class _OnboardingShowcaseState extends State<OnboardingShowcase> {
+  final _pages = PageController();
+  Timer? _timer;
+  int _i = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _restart();
+  }
+
+  void _restart() {
+    _timer?.cancel();
+    _timer = Timer.periodic(Duration(seconds: 6), (_) => _go((_i + 1) % _slides.length));
+  }
+
+  void _go(int i) {
+    if (_pages.hasClients) _pages.animateToPage(i, duration: Duration(milliseconds: 350), curve: Curves.easeOut);
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _pages.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = _slides[_i];
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 300),
+      decoration: BoxDecoration(
+        color: s.bg,
+        borderRadius: BorderRadius.horizontal(left: Radius.circular(36)),
+      ),
+      clipBehavior: Clip.antiAlias,
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 480, maxHeight: 640),
+          child: Column(
+            children: [
+              Expanded(
+                child: PageView(
+                  controller: _pages,
+                  onPageChanged: (i) => setState(() => _i = i),
+                  children: [for (final s in _slides) _SlideView(s, compact: true)],
+                ),
+              ),
+              SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  for (var i = 0; i < _slides.length; i++)
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        _go(i);
+                        _restart();
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 3, vertical: 8),
+                        child: AnimatedContainer(
+                          duration: Duration(milliseconds: 200),
+                          width: i == _i ? 24 : 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: s.fg.withValues(alpha: i == _i ? 1 : 0.3),
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

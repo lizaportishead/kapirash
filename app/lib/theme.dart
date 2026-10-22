@@ -121,9 +121,17 @@ class BigButton extends StatelessWidget {
 
 /// Крупный заголовок; слова между звёздочками подсвечены плашкой.
 class Headline extends StatelessWidget {
-  const Headline(this.text, {super.key, required this.color, required this.mark, this.onMark = cInk});
+  const Headline(
+    this.text, {
+    super.key,
+    required this.color,
+    required this.mark,
+    this.onMark = cInk,
+    this.maxSize = 60,
+  });
   final String text;
   final Color color, mark, onMark;
+  final double maxSize;
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +141,7 @@ class Headline extends StatelessWidget {
       child: ExcludeSemantics(
         child: LayoutBuilder(
           builder: (_, box) {
-            final size = (box.maxWidth / 7.4).clamp(28.0, 60.0);
+            final size = (box.maxWidth / 7.4).clamp(28.0, maxSize);
             final style = TextStyle(
               fontSize: size,
               fontWeight: FontWeight.w800,
