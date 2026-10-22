@@ -12,7 +12,15 @@ import 'l10n.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
 class Story {
-  const Story({required this.id, required this.title, required this.author, this.blurb = '', this.level = '', this.asset, this.source = ''});
+  const Story({
+    required this.id,
+    required this.title,
+    required this.author,
+    this.blurb = '',
+    this.level = '',
+    this.asset,
+    this.source = '',
+  });
   final String id, title, author, blurb, level, source;
   final String? asset;
 
@@ -82,7 +90,8 @@ const stories = [
         'kraljica pod dvadeset dušeka stavlja zrno graška da to proveri.',
     level: 'B1',
     asset: 'story_princeza_na_zrnu_grasku',
-    source: 'Hans Kristijan Andersen, Bajke, prevod Đido (1888), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
+    source:
+        'Hans Kristijan Andersen, Bajke, prevod Đido (1888), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
     id: 'u-cara-trojana-kozje-usi',
@@ -196,7 +205,9 @@ Story? storyById(String wordKey) {
 void openStory(BuildContext context, Story s, {int? page}) {
   if (!s.ready) return;
   Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => StoryReader(story: s, page: page)),
+    MaterialPageRoute<void>(
+      builder: (_) => StoryReader(story: s, page: page),
+    ),
   );
 }
 
@@ -210,11 +221,32 @@ class StoriesPage extends StatelessWidget {
       children: [
         PageTitle(ui('Рассказы')),
         Expanded(
-          child: ListView.separated(
-            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-            itemCount: stories.length,
-            separatorBuilder: (_, _) => SizedBox(height: 12),
-            itemBuilder: (_, i) => _StoryCard(stories[i]),
+          child: LayoutBuilder(
+            builder: (_, box) {
+              const pad = 12.0, gap = 16.0;
+              // На широком экране — сетка вертикальных карточек, на телефоне — список.
+              if (box.maxWidth < 640) {
+                return ListView.separated(
+                  padding: EdgeInsets.fromLTRB(pad, 0, pad, 16),
+                  itemCount: stories.length,
+                  separatorBuilder: (_, _) => SizedBox(height: 12),
+                  itemBuilder: (_, i) => _StoryCard(stories[i]),
+                );
+              }
+              final cols = ((box.maxWidth - 2 * pad + gap) / (260 + gap)).floor().clamp(2, 5);
+              final cardW = (box.maxWidth - 2 * pad - gap * (cols - 1)) / cols;
+              return GridView.builder(
+                padding: EdgeInsets.fromLTRB(pad, 0, pad, 24),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: cols,
+                  mainAxisSpacing: gap,
+                  crossAxisSpacing: gap,
+                  mainAxisExtent: (cardW - 24) * 1.5 + 150,
+                ),
+                itemCount: stories.length,
+                itemBuilder: (_, i) => _StoryCard(stories[i], vertical: true),
+              );
+            },
           ),
         ),
       ],
@@ -223,12 +255,14 @@ class StoriesPage extends StatelessWidget {
 }
 
 class _StoryCard extends StatelessWidget {
-  const _StoryCard(this.story);
+  const _StoryCard(this.story, {this.vertical = false});
   final Story story;
+  final bool vertical;
 
   @override
   Widget build(BuildContext context) {
     final ready = story.ready;
+    if (vertical) return _vertical(context, ready);
     final body = Padding(
       padding: EdgeInsets.all(12),
       child: Row(
@@ -237,15 +271,17 @@ class _StoryCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: SizedBox(
-              width: 112,
-              height: 112,
+              width: 100,
+              height: 150,
               child: ready
                   ? ExcludeSemantics(
                       child: Image.asset(
                         'assets/${story.asset}.png',
                         fit: BoxFit.cover,
-                        errorBuilder: (_, _, _) =>
-                            ColoredBox(color: cCard2, child: Icon(KIcons.stories, size: 36, color: cFaint)),
+                        errorBuilder: (_, _, _) => ColoredBox(
+                          color: cCard2,
+                          child: Icon(KIcons.stories, size: 36, color: cFaint),
+                        ),
                       ),
                     )
                   : ColoredBox(
@@ -269,15 +305,11 @@ class _StoryCard extends StatelessWidget {
                 if (ready && story.level.isNotEmpty)
                   Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
                 SizedBox(height: 8),
-                if (ready)
+                if (!ready)
                   Text(
-                    store.conv(story.blurb),
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 13, height: 1.4, color: cMuted),
-                  )
-                else
-                  Text(ui('Скоро'), style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint)),
+                    ui('Скоро'),
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                  ),
               ],
             ),
           ),
@@ -299,11 +331,81 @@ class _StoryCard extends StatelessWidget {
     return Material(
       color: cCard,
       borderRadius: BorderRadius.circular(24),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(24),
-        onTap: () => openStory(context, story),
-        child: body,
+      child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+    );
+  }
+
+  /// Карточка для сетки: вертикальная обложка сверху, под ней название, автор и уровень.
+  Widget _vertical(BuildContext context, bool ready) {
+    final body = Padding(
+      padding: EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: AspectRatio(
+              aspectRatio: 2 / 3,
+              child: ready
+                  ? ExcludeSemantics(
+                      child: Image.asset(
+                        'assets/${story.asset}.png',
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, _, _) => ColoredBox(
+                          color: cCard2,
+                          child: Icon(KIcons.stories, size: 36, color: cFaint),
+                        ),
+                      ),
+                    )
+                  : ColoredBox(
+                      color: cCard2,
+                      child: Icon(KIcons.stories, size: 36, color: cFaint),
+                    ),
+            ),
+          ),
+          SizedBox(height: 12),
+          Text(
+            store.conv(story.title),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+          ),
+          SizedBox(height: 4),
+          Text(
+            story.author,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 13, color: cMuted),
+          ),
+          if (ready && story.level.isNotEmpty)
+            Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
+          SizedBox(height: 8),
+          Expanded(
+            child: ready
+                ? SizedBox.shrink()
+                : Text(
+                    ui('Скоро'),
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                  ),
+          ),
+        ],
       ),
+    );
+    if (!ready) {
+      return Semantics(
+        label: ui('{0}, скоро', [story.title]),
+        child: ExcludeSemantics(
+          child: Opacity(
+            opacity: 0.55,
+            child: Material(color: cCard, borderRadius: BorderRadius.circular(24), child: body),
+          ),
+        ),
+      );
+    }
+    return Material(
+      color: cCard,
+      borderRadius: BorderRadius.circular(24),
+      child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
     );
   }
 }
@@ -352,7 +454,8 @@ class _StoryReaderState extends State<StoryReader> {
     try {
       final asset = widget.story.asset!;
       final text = await rootBundle.loadString('assets/$asset.txt');
-      final dict = jsonDecode(await store.assetText('$asset.dict.json', en: '$asset.dict.en.json')) as Map<String, dynamic>;
+      final dict =
+          jsonDecode(await store.assetText('$asset.dict.json', en: '$asset.dict.en.json')) as Map<String, dynamic>;
       if (!mounted) return;
       setState(() {
         _pages = _paginate(text);
@@ -425,7 +528,10 @@ class _StoryReaderState extends State<StoryReader> {
                               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: cText),
                             ),
                             subtitle: Text(w.tr, style: TextStyle(fontSize: 14, color: cMuted)),
-                            trailing: Text(ui('стр. {0}', [w.t.toInt()]), style: TextStyle(fontSize: 12, color: cFaint)),
+                            trailing: Text(
+                              ui('стр. {0}', [w.t.toInt()]),
+                              style: TextStyle(fontSize: 12, color: cFaint),
+                            ),
                             onTap: () {
                               Navigator.pop(ctx);
                               final to = w.t.toInt().clamp(0, _count - 1);
@@ -575,10 +681,7 @@ class _StoryReaderState extends State<StoryReader> {
           for (final para in paragraphs)
             Padding(
               padding: EdgeInsets.only(bottom: 16),
-              child: Wrap(
-                spacing: 6,
-                children: [for (final t in para) _word(t)],
-              ),
+              child: Wrap(spacing: 6, children: [for (final t in para) _word(t)]),
             ),
           if (last && widget.story.source.isNotEmpty) ...[
             SizedBox(height: 8),

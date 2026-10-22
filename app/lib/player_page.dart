@@ -62,7 +62,7 @@ class _PlayerPageState extends State<PlayerPage> {
   // Вкладка боковой колонки на десктопе: 0 — текст, 1 — слова, 2 — задания.
   int _side = 0;
 
-  // Кнопка «Мои слова» — сюда улетает шторка со словом.
+  // Кнопка «Словарь» — сюда улетает шторка со словом.
   final _wordsKey = GlobalKey();
   String get videoId => widget.video.id;
   // На странице ролика — только слова, сохранённые из него.
@@ -707,12 +707,12 @@ class _PlayerPageState extends State<PlayerPage> {
         Expanded(
           child: Pill(
             key: _wordsKey,
-            ui('Мои слова'),
+            ui('Словарь'),
             badge: _words.length,
             icon: KIcons.wordsOn,
             onTap: () => _push(
               SubPage(
-                title: ui('Мои слова'),
+                title: ui('Словарь'),
                 child: WordList(videoId: videoId, onSeek: _seek),
               ),
             ),

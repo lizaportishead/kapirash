@@ -316,7 +316,7 @@ class _TrainWordsState extends State<_TrainWords> {
             onPressed: widget.onWords,
             style: TextButton.styleFrom(foregroundColor: cViolet),
             child: Text(
-              ui('Мои слова · {0}', [words.length]),
+              ui('Словарь · {0}', [words.length]),
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
           ),

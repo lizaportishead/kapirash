@@ -522,10 +522,10 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
         Expanded(
           child: Pill(
             key: _wordsKey,
-            ui('Мои слова'),
+            ui('Словарь'),
             badge: words,
             icon: KIcons.wordsOn,
-            onTap: () => _push(SubPage(title: ui('Мои слова'), child: WordList(videoId: id, onSeek: _seek))),
+            onTap: () => _push(SubPage(title: ui('Словарь'), child: WordList(videoId: id, onSeek: _seek))),
           ),
         ),
       ],

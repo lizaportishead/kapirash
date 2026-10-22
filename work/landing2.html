@@ -1,0 +1,204 @@
+<title>Kapiraš Landing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap">
+<style>
+/* Layout: плакатный хиро на лайме, белая карточка «Как это работает», лаймовый финал с деревьями. */
+:root {
+  --lime: #E6EC68;
+  --violet: #7357F6;
+  --ink: #111114;
+  --white: #FFFFFF;
+  --soft: rgba(17, 17, 20, .75);
+  --font: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--lime); color: var(--ink); font-family: var(--font); margin: 0; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 56px; padding: 0 36px; border-radius: 16px; background: var(--violet); color: var(--white); font: 700 16px var(--font); }
+.btn.sm { height: 44px; padding: 0 22px; border-radius: 12px; font-size: 14px; }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* HERO */
+.hero { position: relative; overflow: hidden; min-height: 760px; }
+.nav { position: relative; z-index: 3; max-width: 1280px; margin: 0 auto; height: 72px; display: flex; align-items: center; gap: 12px; }
+.logo { font-weight: 900; font-size: 24px; letter-spacing: -.8px; }
+.logo b { color: var(--violet); }
+.nav .sp { flex: 1; }
+.nav .link { font-weight: 700; font-size: 14px; padding: 10px 12px; }
+h1 { position: relative; z-index: 2; margin: 56px 0 0; text-align: center; font-weight: 900; line-height: .95; letter-spacing: -.04em; font-size: clamp(54px, 13vw, 190px); }
+h1 span { display: block; }
+h1 .l2 { color: var(--violet); margin-top: -.06em; }
+.under { position: relative; z-index: 2; max-width: 560px; margin: 64px auto 0; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.under p { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; color: var(--soft); }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 99px; background: var(--white); border: 2px solid var(--ink); font-size: 13px; font-weight: 800; }
+.chip i { width: 10px; height: 10px; border-radius: 3px; background: var(--ink); display: block; }
+
+/* flat shapes */
+.sun { position: absolute; left: 50%; top: 60px; width: min(300px, 45vw); aspect-ratio: 1; margin-left: calc(min(300px, 45vw) / -2); border-radius: 50%; background: var(--white); }
+.cloud { position: absolute; width: var(--w); height: calc(var(--w) * .42); }
+.cloud::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: var(--white); border-radius: 99px; }
+.cloud i { position: absolute; bottom: 20%; border-radius: 50%; background: var(--white); aspect-ratio: 1; }
+.cloud i:nth-child(1) { left: 14%; width: 30%; }
+.cloud i:nth-child(2) { left: 38%; width: 42%; }
+.cloud i:nth-child(3) { left: 64%; width: 26%; }
+.flower { position: absolute; width: var(--s); height: var(--s); }
+.flower i { position: absolute; width: 42%; height: 42%; background: var(--violet); border-radius: 50%; left: 29%; top: 29%; transform: rotate(var(--r)) translate(0, -36%); }
+.flower::after { content: ""; position: absolute; inset: 25%; background: var(--violet); border-radius: 50%; }
+.face { position: absolute; z-index: 1; left: 50%; top: 52%; transform: translateX(-50%); width: 30%; }
+.face::before { content: ""; display: block; height: 6px; width: 100%; background: radial-gradient(circle, var(--white) 3px, transparent 3.5px) 0 0 / 50% 100%; }
+.face::after { content: ""; display: block; margin: 5px auto 0; width: 40%; height: 7px; border-bottom: 2px solid var(--white); border-radius: 0 0 99px 99px; }
+.spark { position: absolute; width: var(--s); aspect-ratio: 1; background: var(--c); clip-path: polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%); }
+
+/* HOW */
+.how-wrap { max-width: 1200px; margin: 0 auto; padding-block: 0 0; }
+.how { background: var(--white); border-radius: 48px; padding: 96px 56px; }
+.how h2 { margin: 0 0 72px; text-align: center; font-size: clamp(34px, 5vw, 56px); font-weight: 900; letter-spacing: -.03em; line-height: 1.05; text-wrap: balance; }
+.step { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; max-width: 1100px; margin: 0 auto 80px; }
+.step:last-child { margin-bottom: 0; }
+.step.flip .art { order: 2; }
+.step .copy { padding: 0 24px; min-width: 0; }
+.step h3 { margin: 0 0 16px; font-size: clamp(30px, 3.6vw, 44px); font-weight: 900; letter-spacing: -.025em; line-height: 1.05; }
+.step p { margin: 0; font-size: 18px; font-weight: 500; line-height: 1.5; color: var(--soft); }
+.art { position: relative; aspect-ratio: 1.35; border-radius: 40px; overflow: hidden; min-width: 0; }
+.art.v { background: var(--violet); }
+.art.k { background: var(--ink); }
+.art.l { background: var(--lime); }
+.ring { position: absolute; width: var(--s); aspect-ratio: 1; border-radius: 50%; border: calc(var(--s) * .22) solid var(--c); }
+.screen { position: absolute; left: 10%; top: 14%; right: 22%; bottom: 20%; background: var(--ink); border-radius: 24px; display: grid; place-items: center; }
+.play { width: 64px; height: 64px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; }
+.play::before { content: ""; border-left: 20px solid var(--ink); border-block: 12px solid transparent; margin-left: 5px; }
+.sub { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 10px 12px; background: var(--white); border-radius: 14px; font-weight: 800; font-size: 14px; }
+.phones { position: absolute; right: 8%; top: 12%; width: 76px; height: 76px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; }
+.phones::before { content: ""; width: 34px; height: 30px; border: 5px solid var(--ink); border-bottom: 0; border-radius: 20px 20px 0 0; }
+.pill { display: inline-block; padding: 6px 12px; border-radius: 10px; background: var(--white); color: var(--ink); font-weight: 800; font-size: 18px; }
+.pill.on { background: var(--violet); color: var(--white); }
+.words { position: absolute; left: 10%; top: 16%; display: flex; gap: 8px; }
+.card { position: absolute; background: var(--lime); border-radius: 24px; padding: 16px; width: 190px; color: var(--ink); }
+.card b { display: block; font-size: 26px; font-weight: 900; }
+.card span { font-size: 15px; font-weight: 700; }
+.card .save { margin-top: 12px; height: 36px; border-radius: 99px; background: var(--violet); color: var(--white); display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.card.dark { background: var(--ink); color: var(--white); transform: rotate(-4deg); }
+.card.dark span { color: rgba(255,255,255,.7); font-weight: 600; font-size: 14px; }
+.opts { position: absolute; right: 10%; bottom: 14%; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.check { position: absolute; left: 12%; bottom: 12%; width: 64px; height: 64px; border-radius: 50%; background: var(--violet); }
+.check::before { content: ""; position: absolute; left: 22px; top: 14px; width: 14px; height: 28px; border: solid var(--white); border-width: 0 6px 6px 0; transform: rotate(45deg); }
+
+/* FINALE */
+.finale { position: relative; overflow: hidden; min-height: 560px; display: grid; place-items: center; text-align: center; }
+.finale .in { position: relative; z-index: 2; max-width: 760px; padding-block: 120px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.finale h2 { margin: 0; font-size: clamp(34px, 5vw, 56px); font-weight: 900; letter-spacing: -.03em; line-height: 1.05; text-wrap: balance; }
+.finale p { margin: 0 0 12px; font-size: 18px; font-weight: 500; color: var(--soft); }
+.tree { position: absolute; bottom: -20px; width: var(--d); }
+.tree::before { content: ""; display: block; width: 100%; aspect-ratio: 1; border-radius: 50%; background: var(--c); }
+.tree::after { content: ""; display: block; width: 22%; height: calc(var(--d) * .45); margin: 0 auto; background: var(--ink); }
+.bfly { position: absolute; width: var(--s); height: calc(var(--s) * .7); transform: rotate(var(--r)); display: flex; }
+.bfly i { width: 50%; height: 100%; background: var(--violet); }
+.bfly i:first-child { border-radius: 100% 10% 30% 30%; }
+.bfly i:last-child { border-radius: 10% 100% 30% 30%; }
+
+@media (max-width: 860px) {
+  .hero { min-height: 700px; }
+  .sun { top: 90px; }
+  .how { padding: 56px 20px; border-radius: 32px; }
+  .how h2 { margin-bottom: 40px; }
+  .step, .step.flip { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  .step.flip .art { order: 0; }
+  .step .copy { padding: 0; }
+  .finale { min-height: 520px; }
+  .hide-s { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<section class="hero">
+  <div class="sun"></div>
+  <div class="cloud" style="--w:200px; left:70px; top:110px"><i></i><i></i><i></i></div>
+  <div class="cloud" style="--w:280px; right:-30px; top:150px"><i></i><i></i><i></i></div>
+  <div class="flower" style="--s:130px; right:230px; top:70px">
+    <i style="--r:0deg"></i><i style="--r:45deg"></i><i style="--r:90deg"></i><i style="--r:135deg"></i><i style="--r:180deg"></i><i style="--r:225deg"></i><i style="--r:270deg"></i><i style="--r:315deg"></i>
+    <span class="face"></span>
+  </div>
+  <div class="spark" style="--s:34px; --c:var(--violet); left:14%; top:420px"></div>
+  <div class="spark" style="--s:44px; --c:var(--ink); right:16%; top:560px"></div>
+  <div class="spark" style="--s:26px; --c:var(--violet); left:8%; top:640px"></div>
+
+  <nav class="nav gutter" style="padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px))">
+    <a class="logo" href="#">Kapiraš<b>?</b></a>
+    <span class="sp"></span>
+    <a class="link" href="https://lizaportishead.github.io/kapirash/">Войти</a>
+    <a class="btn sm" href="https://lizaportishead.github.io/kapirash/">Начать</a>
+  </nav>
+
+  <h1 class="gutter"><span>Ленивый способ</span><span class="l2">учить сербский</span></h1>
+
+  <div class="under gutter">
+    <p>Учи новые слова с помощью интересных роликов и подкастов</p>
+    <div class="chips">
+      <span class="chip"><i></i>Видео</span><span class="chip"><i></i>Шортсы</span><span class="chip"><i></i>Книги</span><span class="chip"><i></i>Подкасты</span>
+    </div>
+    <a class="btn" href="https://lizaportishead.github.io/kapirash/">Начать</a>
+  </div>
+</section>
+
+<div class="how-wrap gutter">
+  <section class="how">
+    <h2>Как это работает</h2>
+
+    <div class="step">
+      <div class="art v">
+        <div class="ring" style="--s:200px; --c:var(--lime); right:-40px; bottom:-50px"></div>
+        <div class="screen"><div class="play"></div><div class="sub">Ovo je najlepše selo</div></div>
+        <div class="phones"></div>
+        <div class="spark" style="--s:30px; --c:var(--lime); left:24px; top:22px"></div>
+      </div>
+      <div class="copy">
+        <h3>Смотри и слушай</h3>
+        <p>Ролики, шортсы, подкасты и книги с субтитрами на сербском и переводом. Фразы подсвечиваются в такт речи.</p>
+      </div>
+    </div>
+
+    <div class="step flip">
+      <div class="art k">
+        <div class="ring" style="--s:200px; --c:var(--violet); left:-50px; bottom:-60px"></div>
+        <div class="words"><span class="pill">Ovo</span><span class="pill">je</span><span class="pill on">selo</span></div>
+        <div class="card" style="right:10%; bottom:14%"><b>selo</b><span>село, деревня</span><div class="save">Сохранить</div></div>
+        <div class="spark" style="--s:34px; --c:var(--lime); right:28px; top:24px"></div>
+      </div>
+      <div class="copy">
+        <h3>Нажимай на слова</h3>
+        <p>Любое слово в субтитрах можно открыть, не уходя из ролика: перевод и пример появятся сразу.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="art l">
+        <div class="ring" style="--s:200px; --c:var(--white); right:-50px; top:-60px"></div>
+        <div class="card dark" style="left:10%; top:14%"><b>selo</b><span>Перевод?</span></div>
+        <div class="opts"><span class="pill">река</span><span class="pill on">село</span><span class="pill">гора</span></div>
+        <div class="check"></div>
+      </div>
+      <div class="copy">
+        <h3>Тренируй</h3>
+        <p>Сохранённые слова ждут в словарике. Повторяй их карточками и мини-тестами, когда удобно.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="finale">
+  <div class="tree hide-s" style="--d:200px; --c:var(--ink); left:-40px"></div>
+  <div class="tree" style="--d:170px; --c:var(--violet); left:90px; bottom:-60px"></div>
+  <div class="tree hide-s" style="--d:200px; --c:var(--ink); right:-40px"></div>
+  <div class="tree" style="--d:170px; --c:var(--violet); right:90px; bottom:-60px"></div>
+  <div class="bfly" style="--s:54px; --r:-20deg; left:22%; top:90px"><i></i><i></i></div>
+  <div class="bfly" style="--s:48px; --r:20deg; right:20%; top:190px"><i></i><i></i></div>
+  <div class="in gutter">
+    <h2>Начни учить сербский сегодня</h2>
+    <p>Слова, лайки и прогресс сохранятся в облаке.</p>
+    <a class="btn" href="https://lizaportishead.github.io/kapirash/">Начать</a>
+  </div>
+</section>

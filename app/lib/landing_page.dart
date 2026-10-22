@@ -74,12 +74,12 @@ class _LandingPageState extends State<LandingPage> with SingleTickerProviderStat
                     Expanded(child: _text(wide)),
                     SizedBox(width: 24),
                     // Сдвинут вправо, за поля контейнера: тексту слева остаётся больше воздуха.
-                    Transform.translate(offset: Offset(56, 0), child: _Phone(wide: wide)),
+                    Transform.translate(offset: Offset(56, 0), child: LandingPhone(wide: wide)),
                   ],
                 )
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [_text(wide), SizedBox(height: 40), Center(child: _Phone(wide: wide))],
+                  children: [_text(wide), SizedBox(height: 40), Center(child: LandingPhone(wide: wide))],
                 ),
           SizedBox(height: 48),
         ],
@@ -219,12 +219,12 @@ class _LandingPageState extends State<LandingPage> with SingleTickerProviderStat
 }
 
 /// Телефон с кадром ролика и плавающими плашками вокруг.
-class _Phone extends StatefulWidget {
-  const _Phone({required this.wide});
+class LandingPhone extends StatefulWidget {
+  const LandingPhone({required this.wide});
   final bool wide;
 
   @override
-  State<_Phone> createState() => _PhoneState();
+  State<LandingPhone> createState() => _PhoneState();
 }
 
 const _heroId = '7684326403902360852';
@@ -235,7 +235,7 @@ class _Line {
   final String sr, tr, word, wordTr, note;
 }
 
-class _PhoneState extends State<_Phone> {
+class _PhoneState extends State<LandingPhone> {
   // Реальные субтитры ролика с блогером: сербский, перевод и словарь грузим из ассетов, время берём у видео.
   List<Cue> _sr = [], _tr = [];
   Map<String, dynamic> _dict = {};

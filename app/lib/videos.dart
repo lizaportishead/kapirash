@@ -591,6 +591,15 @@ const _builtInPodcasts = <Video>[
     kind: 'podcast',
     audio: '$_naPosla/2026-5-2/a9507e00-b861-1015-2c6e-5e8f10340c47.mp3',
   ),
+  Video(
+    id: 'sbs-svemir',
+    title: 'Može li svemir da ponudi rešenje za prehranu čovečanstva?',
+    channel: 'SBS na srpskom',
+    topic: 'Наука',
+    duration: '7:47',
+    kind: 'podcast',
+    audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261022170320_402989-serbian-44b229ef-c243-42ef-ba1c-758d111d4a51.mp3',
+  ),
 ];
 
 const _builtInClips = <Video>[

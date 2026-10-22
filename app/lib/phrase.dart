@@ -139,7 +139,7 @@ Future<String?> _translatePhrase(String lat) async {
   }
 }
 
-/// Шторка со словом: перевод из словарика ролика и кнопка «Добавить в мои слова».
+/// Шторка со словом: перевод из словарика ролика и кнопка «Добавить в словарь».
 void showWord(
   BuildContext context, {
   required String raw,
@@ -148,7 +148,7 @@ void showWord(
   required String videoId,
   // Вместо времени в ролике: у рассказов здесь страница.
   String? place,
-  // Кнопка «Мои слова»: при добавлении шторка улетает к ней.
+  // Кнопка «Словарь»: при добавлении шторка улетает к ней.
   GlobalKey? flyTo,
 }) {
   final parts = [
@@ -243,7 +243,7 @@ void showWord(
                   BigButton(
                     store.isSaved(key)
                         ? ui(isPhrase ? 'Убрать фразу' : 'Убрать слово')
-                        : ui(isPhrase ? 'Добавить фразу в мои слова' : 'Добавить в мои слова'),
+                        : ui(isPhrase ? 'Добавить фразу в словарь' : 'Добавить в словарь'),
                     bg: store.isSaved(key) ? cCard : null,
                     fg: store.isSaved(key) ? cText : null,
                     onTap: () async {
@@ -292,7 +292,7 @@ void showWord(
   );
 }
 
-/// Снимок шторки сжимается и летит к кнопке «Мои слова».
+/// Снимок шторки сжимается и летит к кнопке «Словарь».
 class _Fly extends StatefulWidget {
   const _Fly({required this.image, required this.from, required this.to, required this.onDone});
   final dui.Image image;

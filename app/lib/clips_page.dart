@@ -493,13 +493,13 @@ class _ClipPageState extends State<_ClipPage> {
                     child: Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: onSeek),
                   )
                 : SubPage(
-                    title: ui('Мои слова'),
+                    title: ui('Словарь'),
                     child: WordList(videoId: videoId, onSeek: onSeek),
                   ),
           ),
           itemBuilder: (_) => [
             PopupMenuItem(value: 0, child: Text(ui('Весь текст'))),
-            PopupMenuItem(value: 1, child: Text('${ui('Мои слова')}${words == 0 ? '' : ' · $words'}')),
+            PopupMenuItem(value: 1, child: Text('${ui('Словарь')}${words == 0 ? '' : ' · $words'}')),
           ],
         ),
       ],

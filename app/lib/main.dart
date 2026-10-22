@@ -8,7 +8,7 @@ import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
-import 'landing_page.dart';
+import 'auth_page.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'profile_page.dart';
@@ -108,7 +108,7 @@ class _KapirasAppState extends State<KapirasApp> {
         // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
         // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
         child: !_onboarded
-            ? (kIsWeb ? LandingPage() : OnboardingPage())
+            ? (kIsWeb ? AuthPage(intro: true, start: true) : OnboardingPage())
             : !_surveyDone
             ? SurveyPage()
             : HomeShell(),
@@ -251,7 +251,7 @@ class _HomeShellState extends State<HomeShell> {
                   NavigationDestination(
                     icon: Icon(KIcons.words),
                     selectedIcon: Icon(KIcons.wordsOn),
-                    label: ui('Мои слова'),
+                    label: ui('Словарь'),
                   ),
                   NavigationDestination(
                     icon: Icon(KIcons.profile),
@@ -291,7 +291,7 @@ class _HomeShellState extends State<HomeShell> {
       if (kAddVideoEnabled) (2, KIcons.videos, KIcons.videosOn, ui('Мои ролики')),
       if (kStoriesTabEnabled) (_stories, KIcons.stories, KIcons.storiesOn, ui('Рассказы')),
       (_podcasts, KIcons.headphones, KIcons.headphonesOn, ui('Подкасты')),
-      (_words, KIcons.words, KIcons.wordsOn, ui('Мои слова')),
+      (_words, KIcons.words, KIcons.wordsOn, ui('Словарь')),
     ];
     final profile = (_profile, KIcons.profile, KIcons.profileOn, ui('Профиль'));
     Widget item((int, IconData, IconData, String) it, {VoidCallback? onTap}) {
@@ -368,9 +368,6 @@ class _HomeShellState extends State<HomeShell> {
                   Divider(height: 1, color: cLine),
                   SizedBox(height: 12),
                   for (final it in items) item(it),
-                  // Ссылка на лендинг для проверки; на сайте её видно только в вебе.
-                  if (kIsWeb)
-                    item((-1, Icons.rocket_launch_outlined, Icons.rocket_launch_outlined, ui('Лендинг')), onTap: store.replayLanding),
                   if (kAddVideoEnabled)
                     Padding(
                       padding: EdgeInsets.fromLTRB(12, 16, 12, 0),

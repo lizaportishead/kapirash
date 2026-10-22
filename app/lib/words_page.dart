@@ -58,7 +58,7 @@ class _WordsPageState extends State<WordsPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             PageTitle(
-              '${ui('Мои слова')}${every.isEmpty ? '' : ' · ${every.length}'}',
+              '${ui('Словарь')}${every.isEmpty ? '' : ' · ${every.length}'}',
               actions: [
                 if (every.isNotEmpty)
                   IconButton(
