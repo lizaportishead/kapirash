@@ -187,8 +187,11 @@ class _FlipCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final head = w.lemma ?? w.key;
+    final isForm = head != w.key;
+    final tr = isForm && w.lemmaTr.isNotEmpty ? w.lemmaTr : w.tr;
     final word = Text(
-      store.conv(w.key),
+      store.conv(head),
       textAlign: TextAlign.center,
       style: TextStyle(fontSize: 34, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
     );
@@ -208,10 +211,18 @@ class _FlipCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         word,
-        if (w.tr.isNotEmpty) ...[
+        if (isForm) ...[
+          SizedBox(height: 4),
+          Text(
+            store.conv(w.key),
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: cMuted),
+          ),
+        ],
+        if (tr.isNotEmpty) ...[
           SizedBox(height: 8),
           Text(
-            w.tr,
+            tr,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: cAccentText),
           ),
@@ -263,9 +274,9 @@ class _FlipCard extends StatelessWidget {
             top: 6,
             right: 6,
             child: IconButton(
-              tooltip: ui('Прослушать {0}', [w.key]),
+              tooltip: ui('Прослушать {0}', [head]),
               icon: Icon(Icons.volume_up_rounded, size: 24, color: cViolet),
-              onPressed: () => speakWord(toCyr(toLat(w.key))),
+              onPressed: () => speakWord(toCyr(toLat(head))),
             ),
           ),
         ],
