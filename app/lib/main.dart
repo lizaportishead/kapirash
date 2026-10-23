@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
@@ -38,7 +40,15 @@ Future<void> main() async {
     ),
   );
   if (supabaseKey.isNotEmpty) {
-    await Supabase.initialize(url: supabaseUrl, publishableKey: supabaseKey);
+    // После входа через Google initialize ждёт обмена кода из ссылки на сессию; если запрос завис или упал,
+    // не держим заставку вечно: клиент уже создан, а сессия подхватится позже через onAuthStateChange.
+    final init = Supabase.initialize(url: supabaseUrl, publishableKey: supabaseKey);
+    try {
+      await init.timeout(Duration(seconds: 8));
+    } catch (e) {
+      debugPrint('Supabase init: $e');
+      unawaited(init.then<void>((_) {}, onError: (_) {}));
+    }
     cloud = Supabase.instance.client;
   }
   await store.load();
