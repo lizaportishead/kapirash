@@ -140,10 +140,11 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     final wide = MediaQuery.sizeOf(context).width >= 1100;
+    final showcase = wide && (widget.start || widget.intro);
     final form = _form(wide);
     return Scaffold(
       body: SafeArea(
-        child: wide
+        child: showcase
             ? Row(
                 children: [
                   Expanded(flex: 2, child: form),

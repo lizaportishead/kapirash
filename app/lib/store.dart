@@ -548,7 +548,7 @@ class AppStore extends ChangeNotifier {
       cloud!.auth.signInWithOtp(email: email, emailRedirectTo: _redirect);
 
   // В вебе возвращаемся на ту же страницу, иначе Supabase отправит на Site URL.
-  String get _redirect => kIsWeb ? Uri.base.replace(query: '', fragment: '').toString() : authRedirect;
+  String get _redirect => kIsWeb ? Uri(scheme: Uri.base.scheme, host: Uri.base.host, port: Uri.base.hasPort ? Uri.base.port : null, path: Uri.base.path).toString() : authRedirect;
 
   // Откроется браузер, сессия придёт обратно по ссылке и поймается в onAuthStateChange.
   Future<void> signInWithGoogle() =>

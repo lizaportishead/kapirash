@@ -144,45 +144,48 @@ class _SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final wide = MediaQuery.sizeOf(context).width >= 900;
+    final title = Text(
+      ui('Войди в\u00A0аккаунт'),
+      style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cInk),
+    );
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              Container(
-                width: 44,
-                height: 44,
-                decoration: BoxDecoration(color: cInk.withValues(alpha: 0.1), shape: BoxShape.circle),
-                child: Icon(Icons.person_rounded, size: 26, color: cInk),
-              ),
-              SizedBox(width: 12),
-              Expanded(
-                child: Text(
-                  ui('Войди в\u00A0аккаунт'),
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cInk),
+          if (wide)
+            Row(
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(color: cInk.withValues(alpha: 0.1), shape: BoxShape.circle),
+                  child: Icon(Icons.person_rounded, size: 26, color: cInk),
                 ),
-              ),
-              SizedBox(width: 12),
-              SizedBox(
-                height: 44,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: cViolet,
-                    foregroundColor: cOnViolet,
-                    padding: EdgeInsets.symmetric(horizontal: 24),
-                    shape: StadiumBorder(),
-                    textStyle: TextStyle(fontFamily: kFont, fontSize: 16, fontWeight: FontWeight.w700),
+                SizedBox(width: 12),
+                Expanded(child: title),
+                SizedBox(width: 12),
+                SizedBox(
+                  height: 44,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: cViolet,
+                      foregroundColor: cOnViolet,
+                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      shape: StadiumBorder(),
+                      textStyle: TextStyle(fontFamily: kFont, fontSize: 16, fontWeight: FontWeight.w700),
+                    ),
+                    onPressed: () => openAuth(context),
+                    child: Text(ui('Войти')),
                   ),
-                  onPressed: () => openAuth(context),
-                  child: Text(ui('Войти')),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12),
+              ],
+            )
+          else
+            title,
+          SizedBox(height: wide ? 12 : 6),
           Text(
             ui(
               'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон или '
@@ -190,6 +193,10 @@ class _SignIn extends StatelessWidget {
             ),
             style: TextStyle(fontSize: 14, height: 1.4, color: cInk),
           ),
+          if (!wide) ...[
+            SizedBox(height: 16),
+            BigButton(ui('Войти'), onTap: () => openAuth(context)),
+          ],
         ],
       ),
     );
