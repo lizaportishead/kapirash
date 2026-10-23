@@ -133,6 +133,7 @@ const _en = <String, String>{
   'Другая почта': 'Use another email',
   'Смотреть без авторизации': 'Browse without signing in',
   'Войти через Gmail': 'Continue with Gmail',
+  'Войти по почте': 'Continue with email',
   'Канал на YouTube': 'YouTube channel',
   'Шортсы': 'Shorts',
   'Любимое': 'Favorites',
