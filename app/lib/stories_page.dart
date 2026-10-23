@@ -669,7 +669,52 @@ class _StoryReaderState extends State<StoryReader> {
 
   @override
   Widget build(BuildContext context) {
-    final s = widget.story;
+    // Широкий экран: шапка на всю ширину, а книга лежит на белой плашке с тенью на сером фоне.
+    final wide = MediaQuery.sizeOf(context).width >= 960;
+    if (wide) {
+      return Scaffold(
+        backgroundColor: cCard,
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ColoredBox(
+                color: cBg,
+                child: Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: _header()),
+              ),
+              Divider(height: 1, color: cLine),
+              Expanded(
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 840),
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(24, 24, 24, 24),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: cBg,
+                          borderRadius: BorderRadius.circular(28),
+                          boxShadow: [
+                            BoxShadow(color: Colors.black.withValues(alpha: 0.10), blurRadius: 32, offset: Offset(0, 8)),
+                          ],
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(child: _body()),
+                            if (_pages.isNotEmpty) _footer(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -678,68 +723,8 @@ class _StoryReaderState extends State<StoryReader> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 12, right: 12),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        tooltip: ui('Назад'),
-                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                        onPressed: () => Navigator.pop(context),
-                      ),
-                      Expanded(
-                        child: Text(
-                          store.conv(s.title),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
-                        ),
-                      ),
-                      ListenableBuilder(
-                        listenable: store,
-                        builder: (context, _) {
-                          final n = store.wordCount(s.wordKey);
-                          return IconButton(
-                            tooltip: ui('Добавленные слова'),
-                            icon: Badge(
-                              isLabelVisible: n > 0,
-                              label: Text('$n'),
-                              backgroundColor: cViolet,
-                              child: Icon(Icons.bookmark_border_rounded, size: 24, color: cText),
-                            ),
-                            onPressed: _showWords,
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: _failed
-                      ? Padding(
-                          padding: EdgeInsets.all(24),
-                          child: Text(ui('Не удалось открыть рассказ.'), style: TextStyle(fontSize: 14, color: cMuted)),
-                        )
-                      : _pages.isEmpty
-                      ? SizedBox.shrink()
-                      : ListenableBuilder(
-                          // Слова, сохранённые прямо сейчас, подчёркиваются сразу.
-                          listenable: store,
-                          builder: (context, _) => PageView.builder(
-                            controller: _ctl,
-                            itemCount: _count,
-                            onPageChanged: (i) {
-                              setState(() => _i = i);
-                              store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
-                            },
-                            itemBuilder: (_, i) => i == 0
-                                ? _cover()
-                                : i == _count - 1
-                                ? _finish()
-                                : _text(_pages[i - 1], last: i == _count - 2),
-                          ),
-                        ),
-                ),
+                Padding(padding: EdgeInsets.only(left: 12, right: 12), child: _header()),
+                Expanded(child: _body()),
                 if (_pages.isNotEmpty) _footer(),
               ],
             ),
@@ -747,6 +732,70 @@ class _StoryReaderState extends State<StoryReader> {
         ),
       ),
     );
+  }
+
+  Widget _header() {
+    final s = widget.story;
+    return Row(
+      children: [
+        IconButton(
+          tooltip: ui('Назад'),
+          icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+          onPressed: () => Navigator.pop(context),
+        ),
+        Expanded(
+          child: Text(
+            store.conv(s.title),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+          ),
+        ),
+        ListenableBuilder(
+          listenable: store,
+          builder: (context, _) {
+            final n = store.wordCount(s.wordKey);
+            return IconButton(
+              tooltip: ui('Добавленные слова'),
+              icon: Badge(
+                isLabelVisible: n > 0,
+                label: Text('$n'),
+                backgroundColor: cViolet,
+                child: Icon(Icons.bookmark_border_rounded, size: 24, color: cText),
+              ),
+              onPressed: _showWords,
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _body() {
+    return _failed
+        ? Padding(
+            padding: EdgeInsets.all(24),
+            child: Text(ui('Не удалось открыть рассказ.'), style: TextStyle(fontSize: 14, color: cMuted)),
+          )
+        : _pages.isEmpty
+        ? SizedBox.shrink()
+        : ListenableBuilder(
+            // Слова, сохранённые прямо сейчас, подчёркиваются сразу.
+            listenable: store,
+            builder: (context, _) => PageView.builder(
+              controller: _ctl,
+              itemCount: _count,
+              onPageChanged: (i) {
+                setState(() => _i = i);
+                store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
+              },
+              itemBuilder: (_, i) => i == 0
+                  ? _cover()
+                  : i == _count - 1
+                  ? _finish()
+                  : _text(_pages[i - 1], last: i == _count - 2),
+            ),
+          );
   }
 
   Widget _cover() {

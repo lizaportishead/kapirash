@@ -63,10 +63,8 @@ class _PlayerPageState extends State<PlayerPage> {
   double _savedPos = -1;
   // Ключ не даёт плееру перезагрузиться, когда поворот экрана переставляет его в другую раскладку.
   final _playerKey = GlobalKey();
-  // Вкладка боковой колонки на десктопе: 0 — текст, 1 — слова, 2 — задания.
-  int _side = 0;
   // Слово, открытое карточкой в правой колонке на десктопе.
-  (String, Cue)? _word;
+  final _word = ValueNotifier<(String, Cue)?>(null);
 
   // Кнопка «Словарь» — сюда улетает шторка со словом.
   final _wordsKey = GlobalKey();
@@ -132,6 +130,7 @@ class _PlayerPageState extends State<PlayerPage> {
     _sub?.cancel();
     _yt.close();
     _curN.dispose();
+    _word.dispose();
     super.dispose();
   }
 
@@ -191,7 +190,7 @@ class _PlayerPageState extends State<PlayerPage> {
     if (cleanWord(raw).isEmpty) return;
     _yt.pauseVideo();
     if (MediaQuery.sizeOf(context).width >= 960) {
-      setState(() => _word = (raw, cue));
+      _word.value = (raw, cue);
       return;
     }
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId, flyTo: _wordsKey);
@@ -363,101 +362,19 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   Widget _sidePanel() {
-    // Задания идут первой вкладкой.
-    final tabs = <(int, String, IconData)>[
-      if (_quiz.isNotEmpty) (2, ui('Задания'), KIcons.tasks),
-      (0, ui('Текст'), KIcons.text),
-      (1, '${ui('Слова')}${_words.isEmpty ? '' : ' · ${_words.length}'}', KIcons.wordsOn),
-    ];
-    final tab = _side.clamp(0, tabs.length - 1);
-    final Widget body = switch (tabs[tab].$1) {
-      0 when _subsLoading => KapLoading(size: 40),
-      0 => Transcript(
-        sr: _sr,
-        cur: _curN,
-        ruFor: _showRu ? _ruFor : (_) => '',
-        onSeek: _seek,
-        popOnTap: false,
-        showSr: _showSr,
-      ),
-      1 => WordList(videoId: videoId, onSeek: _seek, popOnTap: false),
-      _ => QuizList(videoId: videoId, sections: _quiz, flat: true),
-    };
-    final word = _word;
-    return Container(
-      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(12),
-            child: Row(
-              spacing: 6,
-              children: [
-                for (var i = 0; i < tabs.length; i++)
-                  Expanded(
-                    child: Pill(
-                      tabs[i].$2,
-                      icon: tabs[i].$3,
-                      on: i == tab,
-                      onTap: () {
-                        if (tabs[i].$1 == 2) _yt.pauseVideo();
-                        setState(() => _side = i);
-                      },
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          // KeyedSubtree сбрасывает прокрутку при смене вкладки.
-          Expanded(
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: KeyedSubtree(key: ValueKey(tab), child: body),
-                ),
-                if (word != null)
-                  Positioned(
-                    left: 12,
-                    right: 12,
-                    top: 0,
-                    child: Material(
-                      color: cBg,
-                      elevation: 6,
-                      borderRadius: BorderRadius.circular(24),
-                      clipBehavior: Clip.antiAlias,
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxHeight: 520),
-                        child: Stack(
-                          children: [
-                            WordCard(
-                              key: ValueKey('${word.$1}@${word.$2.start}'),
-                              raw: word.$1,
-                              cue: word.$2,
-                              dict: _dict,
-                              videoId: videoId,
-                              flyTo: _wordsKey,
-                              onClose: () => setState(() => _word = null),
-                            ),
-                            Positioned(
-                              top: 8,
-                              right: 8,
-                              child: IconButton(
-                                icon: Icon(Icons.close, size: 20, color: cMuted),
-                                onPressed: () => setState(() => _word = null),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ],
-      ),
+    return VideoSidePanel(
+      videoId: videoId,
+      sr: _sr,
+      cur: _curN,
+      ruFor: _showRu ? _ruFor : (_) => '',
+      showSr: _showSr,
+      onSeek: _seek,
+      dict: _dict,
+      subsLoading: _subsLoading,
+      quiz: _quiz,
+      word: _word,
+      flyTo: _wordsKey,
+      onPause: _yt.pauseVideo,
     );
   }
 
@@ -1027,6 +944,163 @@ class WordList extends StatelessWidget {
           },
         );
       },
+    );
+  }
+}
+
+/// Правая колонка на широком экране: задания, весь текст и слова ролика, а поверх них — карточка слова.
+class VideoSidePanel extends StatefulWidget {
+  const VideoSidePanel({
+    super.key,
+    required this.videoId,
+    required this.sr,
+    required this.cur,
+    required this.ruFor,
+    required this.onSeek,
+    required this.dict,
+    required this.word,
+    required this.onPause,
+    this.showSr = true,
+    this.subsLoading = false,
+    this.quiz = const [],
+    this.flyTo,
+  });
+  final String videoId;
+  final List<Cue> sr;
+  final ValueListenable<int> cur;
+  final String Function(Cue) ruFor;
+  final void Function(double) onSeek;
+  final Map<String, dynamic> dict;
+  // Слово, открытое карточкой поверх колонки; null — карточки нет.
+  final ValueNotifier<(String, Cue)?> word;
+  // Вкладка с заданиями ставит видео на паузу.
+  final VoidCallback onPause;
+  final bool showSr;
+  final bool subsLoading;
+  final List<QuizSection> quiz;
+  final GlobalKey? flyTo;
+
+  @override
+  State<VideoSidePanel> createState() => _VideoSidePanelState();
+}
+
+class _VideoSidePanelState extends State<VideoSidePanel> {
+  // Вкладка: 0 — текст, 1 — слова, 2 — задания.
+  int _side = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.word.addListener(_onWord);
+  }
+
+  @override
+  void dispose() {
+    widget.word.removeListener(_onWord);
+    super.dispose();
+  }
+
+  void _onWord() => setState(() {});
+
+  @override
+  Widget build(BuildContext context) {
+    final videoId = widget.videoId;
+    final words = store.words.where((w) => w.video == videoId).length;
+    // Задания идут первой вкладкой.
+    final tabs = <(int, String, IconData)>[
+      if (widget.quiz.isNotEmpty) (2, ui('Задания'), KIcons.tasks),
+      (0, ui('Текст'), KIcons.text),
+      (1, '${ui('Слова')}${words == 0 ? '' : ' · $words'}', KIcons.wordsOn),
+    ];
+    final tab = _side.clamp(0, tabs.length - 1);
+    final Widget body = switch (tabs[tab].$1) {
+      0 when widget.subsLoading => KapLoading(size: 40),
+      0 => Transcript(
+        sr: widget.sr,
+        cur: widget.cur,
+        ruFor: widget.ruFor,
+        onSeek: widget.onSeek,
+        popOnTap: false,
+        showSr: widget.showSr,
+      ),
+      1 => WordList(videoId: videoId, onSeek: widget.onSeek, popOnTap: false),
+      _ => QuizList(videoId: videoId, sections: widget.quiz, flat: true),
+    };
+    final word = widget.word.value;
+    return Container(
+      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(12),
+            child: Row(
+              spacing: 6,
+              children: [
+                for (var i = 0; i < tabs.length; i++)
+                  Expanded(
+                    child: Pill(
+                      tabs[i].$2,
+                      icon: tabs[i].$3,
+                      on: i == tab,
+                      onTap: () {
+                        if (tabs[i].$1 == 2) widget.onPause();
+                        setState(() => _side = i);
+                      },
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          // KeyedSubtree сбрасывает прокрутку при смене вкладки.
+          Expanded(
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: KeyedSubtree(key: ValueKey(tab), child: body),
+                ),
+                if (word != null)
+                  Positioned(
+                    left: 12,
+                    right: 12,
+                    top: 0,
+                    child: Material(
+                      color: cBg,
+                      elevation: 6,
+                      borderRadius: BorderRadius.circular(24),
+                      clipBehavior: Clip.antiAlias,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight: 520),
+                        child: Stack(
+                          children: [
+                            WordCard(
+                              key: ValueKey('${word.$1}@${word.$2.start}'),
+                              raw: word.$1,
+                              cue: word.$2,
+                              dict: widget.dict,
+                              videoId: videoId,
+                              flyTo: widget.flyTo,
+                              onClose: () => widget.word.value = null,
+                            ),
+                            Positioned(
+                              top: 8,
+                              right: 8,
+                              child: IconButton(
+                                icon: Icon(Icons.close, size: 20, color: cMuted),
+                                onPressed: () => widget.word.value = null,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

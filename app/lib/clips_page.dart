@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'creator_page.dart';
 import 'icons.dart';
 import 'liked_page.dart';
 import 'phrase.dart';
 import 'player_page.dart';
+import 'quiz_page.dart';
 import 'search_page.dart';
 import 'store.dart';
 import 'subs.dart';
@@ -285,6 +287,11 @@ class _ClipPageState extends State<_ClipPage> {
   var _tt = TikTokController();
   List<Cue> _sr = [], _ru = [];
   Map<String, dynamic> _dict = {};
+  List<QuizSection> _quiz = [];
+  bool _subsLoading = true;
+  // Слово, открытое карточкой в правой колонке на широком экране.
+  final _word = ValueNotifier<(String, Cue)?>(null);
+  final _wordsKey = GlobalKey();
   final _curN = ValueNotifier<int>(-1);
   int get _cur => _curN.value;
   // Место, с которого просили открыть клип; перематываем туда один раз, когда плеер заиграет.
@@ -300,6 +307,9 @@ class _ClipPageState extends State<_ClipPage> {
     store.addListener(_onStore);
     _listen();
     _load();
+    loadQuiz(videoId).then((q) {
+      if (mounted && q.isNotEmpty) setState(() => _quiz = q);
+    });
   }
 
   void _listen() {
@@ -328,6 +338,7 @@ class _ClipPageState extends State<_ClipPage> {
     store.removeListener(_onStore);
     _tt.dispose();
     _curN.dispose();
+    _word.dispose();
     super.dispose();
   }
 
@@ -335,8 +346,10 @@ class _ClipPageState extends State<_ClipPage> {
 
   Future<void> _load() async {
     final subs = await store.loadSubs(widget.video);
-    if (!mounted || subs == null) return;
+    if (!mounted) return;
+    if (subs == null) return setState(() => _subsLoading = false);
     setState(() {
+      _subsLoading = false;
       _sr = parseSubs(subs.sr);
       _ru = parseSubs(subs.ru);
       _dict = subs.dict;
@@ -374,6 +387,10 @@ class _ClipPageState extends State<_ClipPage> {
   void _openWord(String raw, Cue cue) {
     if (cleanWord(raw).isEmpty) return;
     _tt.pause();
+    if (MediaQuery.sizeOf(context).width >= 960) {
+      _word.value = (raw, cue);
+      return;
+    }
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId);
   }
 
@@ -381,6 +398,7 @@ class _ClipPageState extends State<_ClipPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final bottom = 12 + MediaQuery.paddingOf(context).bottom;
+    if (size.width >= 960) return _desktop();
     // Горизонтальный телефон: видео слева во всю высоту, фраза и кнопки — справа от него.
     if (size.width > size.height) {
       return SafeArea(
@@ -450,6 +468,132 @@ class _ClipPageState extends State<_ClipPage> {
     );
   }
 
+  // Широкий экран, как у длинных видео: шапка на всю ширину; слева видео, под ним фраза, справа — текст, слова и задания.
+  Widget _desktop() {
+    final v = widget.video;
+    return SafeArea(
+      bottom: false,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(16, 4, 16, 8),
+            child: Row(
+              spacing: 4,
+              children: [
+                _back(),
+                GestureDetector(
+                  onTap: () {
+                    _tt.pause();
+                    openCreator(context, v.channel);
+                  },
+                  child: CreatorAvatar(v.channel, size: 40),
+                ),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        v.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                      ),
+                      SizedBox(height: 2),
+                      Text(
+                        v.channel,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 13, color: cMuted),
+                      ),
+                    ],
+                  ),
+                ),
+                _tiktokButton(),
+                LikeButton(v.id),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(24, 4, 24, 24),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 24,
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: 720),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(child: Center(child: _video())),
+                            SizedBox(height: 16),
+                            _current(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: VideoSidePanel(
+                      videoId: videoId,
+                      sr: _sr,
+                      cur: _curN,
+                      ruFor: _ruFor,
+                      onSeek: _seek,
+                      dict: _dict,
+                      subsLoading: _subsLoading,
+                      quiz: _quiz,
+                      word: _word,
+                      flyTo: _wordsKey,
+                      onPause: _tt.pause,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Карточка фразы: кнопки листания сверху, под ними сама фраза.
+  Widget _current() {
+    return Material(
+      color: cAccent,
+      borderRadius: BorderRadius.circular(24),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(padding: EdgeInsets.fromLTRB(12, 12, 12, 0), child: _controls()),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+            child: ConstrainedBox(constraints: BoxConstraints(minHeight: 68), child: _phraseBody()),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _tiktokButton() {
+    return IconButton(
+      tooltip: ui('Открыть в TikTok'),
+      icon: Icon(KIcons.tiktok, size: 22, color: cMuted),
+      onPressed: () {
+        _tt.pause();
+        launchUrl(Uri.parse(widget.video.tiktokUrl), mode: LaunchMode.externalApplication);
+      },
+    );
+  }
+
   Widget _back() {
     return IconButton(
       tooltip: ui('Назад'),
@@ -473,14 +617,7 @@ class _ClipPageState extends State<_ClipPage> {
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
           ),
         ),
-        IconButton(
-          tooltip: ui('Открыть в TikTok'),
-          icon: Icon(KIcons.tiktok, size: 22, color: cMuted),
-          onPressed: () {
-            _tt.pause();
-            launchUrl(Uri.parse(v.tiktokUrl), mode: LaunchMode.externalApplication);
-          },
-        ),
+        _tiktokButton(),
         LikeButton(v.id),
         PopupMenuButton<int>(
           tooltip: ui('Ещё'),
@@ -580,31 +717,35 @@ class _ClipPageState extends State<_ClipPage> {
   }
 
   Widget _phrase() {
-    final cue = _cur >= 0 && _cur < _sr.length ? _sr[_cur] : null;
-    final ru = cue == null ? '' : _ruFor(cue);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(20)),
       alignment: Alignment.topLeft,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (cue != null) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: 17, pad: 2),
-          if (ru.isNotEmpty) ...[
-            SizedBox(height: 2),
-            Text(
-              ru,
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                height: 1.4,
-                color: cInk.withValues(alpha: 0.72),
-              ),
+      child: _phraseBody(size: 17, ruSize: 13),
+    );
+  }
+
+  Widget _phraseBody({double size = 20, double ruSize = 16}) {
+    final cue = _cur >= 0 && _cur < _sr.length ? _sr[_cur] : null;
+    final ru = cue == null ? '' : _ruFor(cue);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (cue != null) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: size, pad: 2),
+        if (ru.isNotEmpty) ...[
+          SizedBox(height: 2),
+          Text(
+            ru,
+            style: TextStyle(
+              fontSize: ruSize,
+              fontWeight: FontWeight.w600,
+              height: 1.4,
+              color: cInk.withValues(alpha: 0.72),
             ),
-          ],
+          ),
         ],
-      ),
+      ],
     );
   }
 }
