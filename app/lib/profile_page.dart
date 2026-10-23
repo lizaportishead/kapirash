@@ -100,18 +100,11 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Widget _account(String email) {
-    // Имени в аккаунте нет — берём его из почты.
-    final name = email.split('@').first;
+    // Без имени в аккаунте берём его из почты.
+    final name = store.fullName ?? email.split('@').first;
     return Row(
       children: [
-        CircleAvatar(
-          radius: 32,
-          backgroundColor: cAccent,
-          child: Text(
-            name.characters.first.toUpperCase(),
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: cInk),
-          ),
-        ),
+        ProfileAvatar(radius: 32),
         SizedBox(width: 14),
         Expanded(
           child: Column(
@@ -282,6 +275,29 @@ class _Stat extends StatelessWidget {
             style: TextStyle(fontSize: 12, height: 1.25, color: cMuted),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Фото из аккаунта Google, а без него инициал; пустой, пока не вошли.
+class ProfileAvatar extends StatelessWidget {
+  const ProfileAvatar({super.key, required this.radius});
+  final double radius;
+
+  @override
+  Widget build(BuildContext context) {
+    final photo = store.avatarUrl;
+    final name = store.fullName ?? store.user?.split('@').first ?? '';
+    return CircleAvatar(
+      radius: radius,
+      backgroundColor: cAccent,
+      // Буква остаётся под фото: видна, пока оно грузится или если не загрузилось.
+      foregroundImage: photo == null ? null : NetworkImage(photo),
+      onForegroundImageError: photo == null ? null : (_, _) {},
+      child: Text(
+        name.isEmpty ? '' : name.characters.first.toUpperCase(),
+        style: TextStyle(fontSize: radius * 0.875, fontWeight: FontWeight.w800, color: cInk),
       ),
     );
   }

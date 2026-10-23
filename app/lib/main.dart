@@ -254,8 +254,8 @@ class _HomeShellState extends State<HomeShell> {
                     label: ui('Словарь'),
                   ),
                   NavigationDestination(
-                    icon: Icon(KIcons.profile),
-                    selectedIcon: Icon(KIcons.profileOn),
+                    icon: store.user == null ? Icon(KIcons.profile) : ProfileAvatar(radius: 13),
+                    selectedIcon: store.user == null ? Icon(KIcons.profileOn) : ProfileAvatar(radius: 13),
                     label: ui('Профиль'),
                   ),
                 ],
@@ -294,7 +294,7 @@ class _HomeShellState extends State<HomeShell> {
       (_words, KIcons.words, KIcons.wordsOn, ui('Словарь')),
     ];
     final profile = (_profile, KIcons.profile, KIcons.profileOn, ui('Профиль'));
-    Widget item((int, IconData, IconData, String) it, {VoidCallback? onTap}) {
+    Widget item((int, IconData, IconData, String) it, {VoidCallback? onTap, Widget? avatar}) {
       final (page, icon, on, label) = it;
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
@@ -308,7 +308,9 @@ class _HomeShellState extends State<HomeShell> {
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               child: Row(
                 children: [
-                  Icon(_tab == page ? on : icon, size: 24, color: _tab == page ? cInk : cMuted),
+                  avatar != null
+                      ? SizedBox(width: 24, height: 24, child: avatar)
+                      : Icon(_tab == page ? on : icon, size: 24, color: _tab == page ? cInk : cMuted),
                   SizedBox(width: 16),
                   Text(
                     label,
@@ -379,7 +381,7 @@ class _HomeShellState extends State<HomeShell> {
                       ),
                     ),
                   Spacer(),
-                  item(profile),
+                  item(profile, avatar: store.user == null ? null : ProfileAvatar(radius: 12)),
                   SizedBox(height: 12),
                 ],
               ),

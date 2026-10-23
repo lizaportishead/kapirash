@@ -276,6 +276,14 @@ class AppStore extends ChangeNotifier {
   /// Почта вошедшего пользователя; null — не вошёл.
   String? user;
 
+  /// Фото и имя из аккаунта Google; при входе по коду из письма их нет.
+  String? get avatarUrl {
+    final m = cloud?.auth.currentUser?.userMetadata;
+    return (m?['avatar_url'] ?? m?['picture']) as String?;
+  }
+
+  String? get fullName => cloud?.auth.currentUser?.userMetadata?['full_name'] as String?;
+
   Future<void> load() async {
     final prefs = _prefs = await SharedPreferences.getInstance();
     cyr = prefs.getString('kap.script') == 'cyr';

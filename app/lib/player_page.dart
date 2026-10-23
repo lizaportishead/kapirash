@@ -281,71 +281,82 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
-  // Десктоп: слева видео и текущая фраза, справа — текст, слова и задания без переходов на другие экраны.
+  // Десктоп: шапка на всю ширину; под ней слева видео на тёмной «сцене» вместе с текущей фразой, справа — текст, слова и задания.
   Widget _desktop(Widget player, Cue? cue) {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 1280),
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(16, 4, 16, 8),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                spacing: 20,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                spacing: 4,
                 children: [
+                  _back(),
+                  _avatar(),
+                  SizedBox(width: 8),
                   Expanded(
-                    flex: 3,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              _back(),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 13, bottom: 8),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        widget.video.title,
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.3,
-                                          color: cText,
-                                        ),
-                                      ),
-                                      SizedBox(height: 6),
-                                      _channel(),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              _youtubeButton(),
-                              LikeButton(widget.video.id),
-                              _settingsButton(),
-                            ],
-                          ),
-                          player,
-                          SizedBox(height: 12),
-                          _current(cue),
-                        ],
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.video.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                        ),
+                        SizedBox(height: 2),
+                        _channel(avatar: false),
+                      ],
                     ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Padding(padding: EdgeInsets.only(top: 12), child: _sidePanel()),
-                  ),
+                  _youtubeButton(),
+                  LikeButton(widget.video.id),
+                  _settingsButton(),
                 ],
               ),
             ),
-          ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(24, 4, 24, 24),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  spacing: 24,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        decoration: BoxDecoration(color: Color(0xFF17151F), borderRadius: BorderRadius.circular(32)),
+                        clipBehavior: Clip.antiAlias,
+                        child: LayoutBuilder(
+                          builder: (context, c) => SingleChildScrollView(
+                            padding: EdgeInsets.all(28),
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(minHeight: c.maxHeight - 56),
+                              child: Center(
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(maxWidth: 960),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [player, SizedBox(height: 16), _current(cue)],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(flex: 2, child: _sidePanel()),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

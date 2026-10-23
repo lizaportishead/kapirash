@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui' show ImageFilter;
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -27,20 +28,13 @@ class PodcastsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(16, 14, 16, 4),
+            padding: EdgeInsets.fromLTRB(16, 14, 16, 10),
             child: Semantics(
               header: true,
               child: Text(
                 ui('Подкасты'),
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
               ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 10),
-            child: Text(
-              ui('Слушай и читай: фразы подсвечиваются в такт речи, любое слово можно нажать.'),
-              style: TextStyle(fontSize: 14, height: 1.4, color: cMuted),
             ),
           ),
           Expanded(
@@ -53,11 +47,12 @@ class PodcastsPage extends StatelessWidget {
                 );
               }
               return ListView(
-                padding: EdgeInsets.fromLTRB(32, 8, 32, 32),
+                padding: EdgeInsets.fromLTRB(16, 8, 16, 32),
                 children: [
                   for (var i = 0; i < podcasts.length; i += 2)
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    IntrinsicHeight(
+                      child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Expanded(child: EpisodeTile(podcasts[i], roomy: true)),
                         SizedBox(width: 20),
@@ -65,6 +60,7 @@ class PodcastsPage extends StatelessWidget {
                           child: i + 1 < podcasts.length ? EpisodeTile(podcasts[i + 1], roomy: true) : SizedBox(),
                         ),
                       ],
+                    ),
                     ),
                 ],
               );
@@ -208,6 +204,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   int get _cur => _curN.value;
   final _wordsKey = GlobalKey();
 
+  int _side = 0;
   double _pos = 0, _total = 0;
   double? _drag;
   double _savedPos = -1;
@@ -341,6 +338,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   @override
   Widget build(BuildContext context) {
     final cue = _cur >= 0 && _cur < _sr.length ? _sr[_cur] : null;
+    if (MediaQuery.sizeOf(context).width >= 960) return _desktop(cue);
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -417,6 +415,161 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  // Десктоп: шапка на всю ширину; слева обложка на размытом фоне с плеером и фразой, справа — текст, слова и задания.
+  Widget _desktop(Cue? cue) {
+    final asset = _covers[widget.video.channel];
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(16, 4, 16, 8),
+              child: Row(
+                spacing: 4,
+                children: [
+                  IconButton(
+                    tooltip: ui('Назад'),
+                    icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.video.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                        ),
+                        SizedBox(height: 2),
+                        Text(
+                          widget.video.channel,
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cViolet),
+                        ),
+                      ],
+                    ),
+                  ),
+                  LikeButton(id),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(24, 4, 24, 24),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  spacing: 24,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        decoration: BoxDecoration(color: Color(0xFF17151F), borderRadius: BorderRadius.circular(32)),
+                        clipBehavior: Clip.antiAlias,
+                        child: Stack(
+                          children: [
+                            if (asset != null)
+                              Positioned.fill(
+                                child: ExcludeSemantics(
+                                  child: Opacity(
+                                    opacity: 0.55,
+                                    child: ImageFiltered(
+                                      imageFilter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                                      child: Image.asset(asset, fit: BoxFit.cover, errorBuilder: (_, _, _) => SizedBox.shrink()),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            LayoutBuilder(
+                              builder: (context, c) => SingleChildScrollView(
+                                padding: EdgeInsets.all(28),
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(minHeight: c.maxHeight - 56),
+                                  child: Center(
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(maxWidth: 560),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        spacing: 16,
+                                        children: [
+                                          Center(child: _Cover(size: 200, channel: widget.video.channel)),
+                                          Container(
+                                            padding: EdgeInsets.fromLTRB(8, 8, 8, 14),
+                                            decoration: BoxDecoration(color: cBg, borderRadius: BorderRadius.circular(24)),
+                                            child: _transport(),
+                                          ),
+                                          _current(cue),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(flex: 2, child: _sidePanel()),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _sidePanel() {
+    final tabs = <(int, String, IconData)>[
+      if (_quiz.isNotEmpty) (2, ui('Задания'), KIcons.tasks),
+      (0, ui('Текст'), KIcons.text),
+      (1, '${ui('Слова')}${store.words.where((w) => w.video == id).isEmpty ? '' : ' · ${store.words.where((w) => w.video == id).length}'}', KIcons.wordsOn),
+    ];
+    final tab = _side.clamp(0, tabs.length - 1);
+    final Widget body = switch (tabs[tab].$1) {
+      0 when _subsLoading => KapLoading(size: 40),
+      0 => Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: _seek, popOnTap: false),
+      1 => WordList(videoId: id, onSeek: _seek, popOnTap: false),
+      _ => QuizList(videoId: id, sections: _quiz),
+    };
+    return Container(
+      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(12),
+            child: Row(
+              spacing: 6,
+              children: [
+                for (var i = 0; i < tabs.length; i++)
+                  Expanded(
+                    child: Pill(
+                      tabs[i].$2,
+                      icon: tabs[i].$3,
+                      on: i == tab,
+                      onTap: () {
+                        if (tabs[i].$1 == 2) _audio.pause();
+                        setState(() => _side = i);
+                      },
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          Expanded(child: KeyedSubtree(key: ValueKey(tab), child: body)),
+        ],
       ),
     );
   }
