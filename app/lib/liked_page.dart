@@ -9,7 +9,12 @@ import 'l10n.dart';
 
 /// Открывает ролики с сердечком поверх таббара.
 void openLiked(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'LikedPage'),builder: (_) => LikedPage()));
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'LikedPage'),
+      builder: (_) => LikedPage(),
+    ),
+  );
 }
 
 class LikedPage extends StatelessWidget {
@@ -20,61 +25,62 @@ class LikedPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 720),
-            child: ListenableBuilder(
-              listenable: store,
-              builder: (context, _) {
-                // Сверху — отмеченные последними.
-                final list = store.liked.reversed.map(videoById).nonNulls.toList();
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 12),
-                        child: IconButton(
-                          tooltip: ui('Назад'),
-                          icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ),
-                    ),
-                    PageTitle('${ui('Любимое')}${list.isEmpty ? '' : ' · ${list.length}'}', icon: KIcons.videos),
-                    Expanded(
-                      child: list.isEmpty
-                          ? Padding(
-                              padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
-                                  Flexible(
-                                    child: ExcludeSemantics(child: Image.asset('assets/ill_liked.png', height: 173)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            BackBar(),
+            Expanded(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 720),
+                  child: ListenableBuilder(
+                    listenable: store,
+                    builder: (context, _) {
+                      // Сверху — отмеченные последними.
+                      final list = store.liked.reversed.map(videoById).nonNulls.toList();
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          PageTitle('${ui('Любимое')}${list.isEmpty ? '' : ' · ${list.length}'}', icon: KIcons.videos),
+                          Expanded(
+                            child: list.isEmpty
+                                ? Padding(
+                                    padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
+                                        Flexible(
+                                          child: ExcludeSemantics(
+                                            child: Image.asset('assets/ill_liked.png', height: 173),
+                                          ),
+                                        ),
+                                        SizedBox(height: 16),
+                                        Text(
+                                          ui(
+                                            'Ставь сердечко роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                : ListView.separated(
+                                    padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                    itemCount: list.length,
+                                    separatorBuilder: (_, _) => SizedBox(height: 12),
+                                    itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
                                   ),
-                                  SizedBox(height: 16),
-                                  Text(
-                                    ui('Ставь сердечко роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.'),
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
-                                  ),
-                                ],
-                              ),
-                            )
-                          : ListView.separated(
-                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-                              itemCount: list.length,
-                              separatorBuilder: (_, _) => SizedBox(height: 12),
-                              itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
-                            ),
-                    ),
-                  ],
-                );
-              },
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

@@ -690,34 +690,33 @@ class SubPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 720),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 12, right: 12),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        tooltip: ui('Назад'),
-                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                        onPressed: () => Navigator.pop(context),
-                      ),
-                      Expanded(
-                        child: Text(
-                          title,
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
-                        ),
-                      ),
-                    ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 12, right: 12),
+              child: Row(
+                children: [
+                  IconButton(
+                    tooltip: ui('Назад'),
+                    icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                    onPressed: () => Navigator.pop(context),
                   ),
-                ),
-                Expanded(child: child),
-              ],
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
+            Expanded(
+              child: Center(
+                child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 720), child: child),
+              ),
+            ),
+          ],
         ),
       ),
     );

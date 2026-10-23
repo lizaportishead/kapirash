@@ -686,7 +686,7 @@ class _StoryReaderState extends State<StoryReader> {
               Expanded(
                 child: Center(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 840),
+                    constraints: BoxConstraints(maxWidth: 720),
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(24, 24, 24, 24),
                       child: Container(

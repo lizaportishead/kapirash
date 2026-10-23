@@ -64,7 +64,7 @@ const clipGrid = SliverGridDelegateWithMaxCrossAxisExtent(
 
 /// Все короткие ролики на отдельном экране.
 void openClips(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'Scaffold'),builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage()))))));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'Scaffold'),builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [BackBar(), Expanded(child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage())))])))));
 }
 
 /// Экран «Короткие ролики»: вертикальные ролики из TikTok.
@@ -91,17 +91,6 @@ class _ClipsPageState extends State<ClipsPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: EdgeInsets.only(left: 12),
-            child: IconButton(
-              tooltip: ui('Назад'),
-              icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-              onPressed: () => Navigator.pop(context),
-            ),
-          ),
-        ),
         PageTitle(
           ui('Шортсы'),
           actions: [

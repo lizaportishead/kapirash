@@ -9,7 +9,12 @@ import 'l10n.dart';
 
 /// Открывает страницу креатора поверх таббара.
 void openCreator(BuildContext context, String channel) {
-  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'CreatorPage'),builder: (_) => CreatorPage(channel: channel)));
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'CreatorPage'),
+      builder: (_) => CreatorPage(channel: channel),
+    ),
+  );
 }
 
 class CreatorPage extends StatelessWidget {
@@ -24,82 +29,79 @@ class CreatorPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 720),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 12),
-                    child: IconButton(
-                      tooltip: ui('Назад'),
-                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: ListView.separated(
-                    padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
-                    itemCount: list.length + 1,
-                    separatorBuilder: (_, _) => SizedBox(height: 12),
-                    itemBuilder: (_, i) {
-                      if (i > 0) {
-                        return VideoCard(list[i - 1], showChannel: false);
-                      }
-                      return Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4),
-                        child: Row(
-                          children: [
-                            CreatorAvatar(channel, size: 64),
-                            SizedBox(width: 14),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            BackBar(),
+            Expanded(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 720),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: ListView.separated(
+                          padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
+                          itemCount: list.length + 1,
+                          separatorBuilder: (_, _) => SizedBox(height: 12),
+                          itemBuilder: (_, i) {
+                            if (i > 0) {
+                              return VideoCard(list[i - 1], showChannel: false);
+                            }
+                            return Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4),
+                              child: Row(
                                 children: [
-                                  Text(
-                                    channel,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.w800,
-                                      letterSpacing: -0.4,
-                                      color: cText,
+                                  CreatorAvatar(channel, size: 64),
+                                  SizedBox(width: 14),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          channel,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            fontSize: 26,
+                                            fontWeight: FontWeight.w800,
+                                            letterSpacing: -0.4,
+                                            color: cText,
+                                          ),
+                                        ),
+                                        SizedBox(height: 2),
+                                        Text(
+                                          '${list.length} ${plural(list.length, 'ролик', 'ролика', 'роликов')}',
+                                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cMuted),
+                                        ),
+                                        Text(
+                                          topics,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(fontSize: 13, color: cFaint),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  SizedBox(height: 2),
-                                  Text(
-                                    '${list.length} ${plural(list.length, 'ролик', 'ролика', 'роликов')}',
-                                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cMuted),
-                                  ),
-                                  Text(
-                                    topics,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(fontSize: 13, color: cFaint),
-                                  ),
+                                  if (url != null)
+                                    IconButton(
+                                      tooltip: ui('Канал на YouTube'),
+                                      icon: Icon(KIcons.youtube, size: 26, color: cText),
+                                      onPressed: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
+                                    ),
                                 ],
                               ),
-                            ),
-                            if (url != null)
-                              IconButton(
-                                tooltip: ui('Канал на YouTube'),
-                                icon: Icon(KIcons.youtube, size: 26, color: cText),
-                                onPressed: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
-                              ),
-                          ],
+                            );
+                          },
                         ),
-                      );
-                    },
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

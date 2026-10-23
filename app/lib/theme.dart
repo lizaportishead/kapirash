@@ -287,3 +287,23 @@ class DifficultyLabel extends StatelessWidget {
     );
   }
 }
+
+/// Шапка страницы второго уровня: кнопка «Назад» у левого края на всю ширину экрана.
+class BackBar extends StatelessWidget {
+  const BackBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Padding(
+        padding: EdgeInsets.only(left: 12),
+        child: IconButton(
+          tooltip: ui('Назад'),
+          icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+    );
+  }
+}

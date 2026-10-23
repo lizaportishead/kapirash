@@ -418,18 +418,18 @@ class _HomeShellState extends State<HomeShell> {
           ),
           Expanded(
             child: SafeArea(
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 1200),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28),
-                    // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
-                    child: Navigator(
-                      key: _navKey,
-                      observers: analyticsObservers(),
-                      onGenerateRoute: (_) => MaterialPageRoute<void>(
-                        builder: (_) =>
-                            ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
+              // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
+              // Поля и ширину держат только вкладки; открытые поверх страницы занимают всю область, и их шапка идёт на всю ширину.
+              child: Navigator(
+                key: _navKey,
+                observers: analyticsObservers(),
+                onGenerateRoute: (_) => MaterialPageRoute<void>(
+                  builder: (_) => Center(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: 1200),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 28),
+                        child: ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),
                       ),
                     ),
                   ),
