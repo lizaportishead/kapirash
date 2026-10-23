@@ -90,6 +90,7 @@ class QuizList extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute<void>(
+            settings: RouteSettings(name: 'SubPage'),
             builder: (_) => SubPage(
               title: s.title,
               child: QuizPage(s, videoId: videoId),

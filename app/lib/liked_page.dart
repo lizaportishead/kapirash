@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'icons.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
@@ -8,7 +9,7 @@ import 'l10n.dart';
 
 /// Открывает ролики с сердечком поверх таббара.
 void openLiked(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => LikedPage()));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'LikedPage'),builder: (_) => LikedPage()));
 }
 
 class LikedPage extends StatelessWidget {
@@ -41,7 +42,7 @@ class LikedPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    PageTitle('${ui('Любимое')}${list.isEmpty ? '' : ' · ${list.length}'}'),
+                    PageTitle('${ui('Любимое')}${list.isEmpty ? '' : ' · ${list.length}'}', icon: KIcons.videos),
                     Expanded(
                       child: list.isEmpty
                           ? Padding(

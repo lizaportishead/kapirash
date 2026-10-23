@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'analytics.dart';
 import 'l10n.dart';
 import 'stories_page.dart';
 import 'subs.dart';
@@ -299,6 +300,8 @@ class AppStore extends ChangeNotifier {
     user = cloud?.auth.currentUser?.email;
     cloud?.auth.onAuthStateChange.listen((s) {
       final email = s.session?.user.email;
+      if (s.event == AuthChangeEvent.signedIn) identifyUser(s.session?.user.id);
+      if (s.event == AuthChangeEvent.signedOut) identifyUser(null);
       if (s.event == AuthChangeEvent.signedIn && user == null && email != null) {
         // Ввели код или открыли ссылку из письма.
         user = email;

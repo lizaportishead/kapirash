@@ -16,7 +16,7 @@ const kSubsEtaMinutes = 30;
 /// Экран своего ролика, пока он не готов: статус, лоадер и примерное время. Его можно закрыть —
 /// подготовка идёт дальше, а ролик лежит в каталоге в «Моих роликах» и откроется, когда будет готов.
 void openProcessing(BuildContext context, Video v) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => ProcessingPage(v)));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'ProcessingPage'),builder: (_) => ProcessingPage(v)));
 }
 
 class ProcessingPage extends StatefulWidget {

@@ -205,7 +205,7 @@ class ClipsStrip extends StatelessWidget {
 
 /// Все ролики одной темы поверх таббара.
 void openTopic(BuildContext context, String topic) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => TopicPage(topic)));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'TopicPage'),builder: (_) => TopicPage(topic)));
 }
 
 class TopicPage extends StatelessWidget {

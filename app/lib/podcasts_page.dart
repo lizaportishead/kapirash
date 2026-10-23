@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'collection_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
+import 'analytics.dart';
 import 'l10n.dart';
 import 'phrase.dart';
 import 'player_page.dart';
@@ -80,6 +81,7 @@ class PodcastsPage extends StatelessWidget {
 void _open(BuildContext context, {required String? searchHint}) {
   Navigator.of(context).push(
     MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'CollectionPage'),
       builder: (_) => CollectionPage<Video>(
         title: ui('Любимое'),
         icon: KIcons.headphones,
@@ -96,8 +98,9 @@ void _open(BuildContext context, {required String? searchHint}) {
 
 void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay = false}) {
   store.markWatched(v.id);
+  trackEvent('podcast_opened', {'video_id': v.id});
   Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay)),
+    MaterialPageRoute<void>(settings: RouteSettings(name: 'PodcastPlayerPage'), builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay)),
   );
 }
 
@@ -355,7 +358,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: id, flyTo: _wordsKey);
   }
 
-  void _push(Widget page) => Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
+  void _push(Widget page) => Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'SubPage'), builder: (_) => page));
 
   @override
   Widget build(BuildContext context) {
@@ -475,7 +478,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                       flex: 3,
                       child: LayoutBuilder(
                         builder: (context, c) => SingleChildScrollView(
-                          padding: EdgeInsets.only(top: 4, bottom: 16),
+                          padding: EdgeInsets.fromLTRB(16, 4, 16, 16),
                           child: ConstrainedBox(
                             constraints: BoxConstraints(minHeight: c.maxHeight),
                             child: Align(

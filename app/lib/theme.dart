@@ -229,8 +229,9 @@ class Sticker extends StatelessWidget {
 
 /// Заголовок экрана в табе; справа можно положить кнопки.
 class PageTitle extends StatelessWidget {
-  const PageTitle(this.text, {super.key, this.actions = const []});
+  const PageTitle(this.text, {super.key, this.actions = const [], this.icon});
   final String text;
+  final IconData? icon;
   final List<Widget> actions;
 
   @override
@@ -239,6 +240,7 @@ class PageTitle extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(16, 14, 12, 12),
       child: Row(
         children: [
+          if (icon != null) ...[Icon(icon, size: 28, color: cViolet), SizedBox(width: 10)],
           Expanded(
             child: Text(
               text,

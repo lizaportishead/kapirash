@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'collection_page.dart';
 import 'icons.dart';
 import 'phrase.dart';
 import 'player_page.dart' show SubPage;
@@ -10,6 +11,7 @@ import 'quiz_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
+import 'video_card.dart' show LikeButton;
 import 'l10n.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
@@ -208,6 +210,7 @@ void openStory(BuildContext context, Story s, {int? page}) {
   if (!s.ready) return;
   Navigator.of(context).push(
     MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'StoryReader'),
       builder: (_) => StoryReader(story: s, page: page),
     ),
   );
@@ -221,7 +224,21 @@ class StoriesPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        PageTitle(ui('Рассказы')),
+        PageTitle(
+          ui('Рассказы'),
+          actions: [
+            IconButton(
+              tooltip: ui('Любимое'),
+              icon: Icon(KIcons.heart, size: 24, color: cText),
+              onPressed: () => _openCollection(context, searchHint: null),
+            ),
+            IconButton(
+              tooltip: ui('Поиск'),
+              icon: Icon(KIcons.search, size: 24, color: cText),
+              onPressed: () => _openCollection(context, searchHint: ui('Поиск по рассказам')),
+            ),
+          ],
+        ),
         Expanded(
           child: LayoutBuilder(
             builder: (_, box) {
@@ -266,6 +283,24 @@ class StoriesPage extends StatelessWidget {
       ],
     );
   }
+}
+
+void _openCollection(BuildContext context, {required String? searchHint}) {
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'CollectionPage'),
+      builder: (_) => CollectionPage<Story>(
+        title: ui('Любимое'),
+        icon: KIcons.stories,
+        items: [for (final s in stories) if (s.ready) s],
+        likeId: (s) => s.wordKey,
+        text: (s) => '${s.title} ${s.author}',
+        tile: (s) => _StoryCard(s),
+        searchHint: searchHint,
+        emptyLiked: ui('Ставь сердечко рассказам, которые хочешь прочитать позже. Они появятся тут.'),
+      ),
+    ),
+  );
 }
 
 final _pageCounts = <String, Future<int>>{};
@@ -374,10 +409,15 @@ class _StoryCard extends StatelessWidget {
         ),
       );
     }
-    return Material(
-      color: Colors.transparent,
-      borderRadius: BorderRadius.circular(24),
-      child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+    return Stack(
+      children: [
+        Material(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(24),
+          child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+        ),
+        Positioned(top: 0, right: 0, child: _StoryHeart(story, onCover: false)),
+      ],
     );
   }
 
@@ -460,10 +500,15 @@ class _StoryCard extends StatelessWidget {
         ),
       );
     }
-    return Material(
-      color: Colors.transparent,
-      borderRadius: BorderRadius.circular(24),
-      child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+    return Stack(
+      children: [
+        Material(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(24),
+          child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+        ),
+        Positioned(top: 0, right: 0, child: _StoryHeart(story, onCover: true)),
+      ],
     );
   }
 }
@@ -809,6 +854,7 @@ class _StoryReaderState extends State<StoryReader> {
                     ),
                     onPressed: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
+                        settings: RouteSettings(name: 'SubPage'),
                         builder: (_) => SubPage(
                           title: ui('Задания'),
                           child: QuizList(videoId: s.asset!, sections: _quiz),
@@ -881,6 +927,26 @@ class _StoryReaderState extends State<StoryReader> {
           ),
           arrow(1, KIcons.arrowRight, ui('Следующая страница')),
         ],
+      ),
+    );
+  }
+}
+
+/// Сердечко рассказа; на вертикальной карточке лежит поверх обложки.
+class _StoryHeart extends StatelessWidget {
+  const _StoryHeart(this.story, {required this.onCover});
+  final Story story;
+  final bool onCover;
+
+  @override
+  Widget build(BuildContext context) {
+    final heart = LikeButton(story.wordKey);
+    if (!onCover) return heart;
+    return Padding(
+      padding: EdgeInsets.all(4),
+      child: DecoratedBox(
+        decoration: BoxDecoration(color: cBg.withValues(alpha: 0.85), shape: BoxShape.circle),
+        child: heart,
       ),
     );
   }

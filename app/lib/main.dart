@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'add_video.dart';
+import 'analytics.dart';
 import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
@@ -41,6 +42,8 @@ Future<void> main() async {
     cloud = Supabase.instance.client;
   }
   await store.load();
+  await initAnalytics();
+  identifyUser(cloud?.auth.currentUser?.id);
   runApp(KapirasApp());
 }
 
@@ -92,6 +95,7 @@ class _KapirasAppState extends State<KapirasApp> {
     return MaterialApp(
       title: 'Kapiraš',
       debugShowCheckedModeBanner: false,
+      navigatorObservers: analyticsObservers(),
       theme: ThemeData(
         brightness: _dark ? Brightness.dark : Brightness.light,
         fontFamily: kFont,
@@ -160,6 +164,27 @@ class _HomeShellState extends State<HomeShell> {
     if (_profileTaps == 3) return store.replayOnboarding();
     _navKey.currentState?.popUntil((r) => r.isFirst);
     setState(() => _tab = tab);
+    trackScreen(_tabName(tab));
+  }
+
+  String _tabName(int t) => t == _home
+      ? 'Home'
+      : t == _feed
+      ? 'Feed'
+      : t == _stories
+      ? 'Stories'
+      : t == _podcasts
+      ? 'Podcasts'
+      : t == _words
+      ? 'Words'
+      : t == _profile
+      ? 'Profile'
+      : 'Tab$t';
+
+  @override
+  void initState() {
+    super.initState();
+    trackScreen(_tabName(_tab));
   }
 
   Future<void> _addVideo() async {
@@ -401,6 +426,7 @@ class _HomeShellState extends State<HomeShell> {
                     // Свой навигатор: страницы второго уровня открываются здесь, а сайдбар остаётся на месте.
                     child: Navigator(
                       key: _navKey,
+                      observers: analyticsObservers(),
                       onGenerateRoute: (_) => MaterialPageRoute<void>(
                         builder: (_) =>
                             ValueListenableBuilder<int>(valueListenable: _tabN, builder: (_, _, _) => buildPages()),

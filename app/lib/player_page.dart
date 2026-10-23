@@ -17,6 +17,7 @@ import 'theme.dart';
 import 'video_card.dart';
 import 'processing_page.dart';
 import 'videos.dart';
+import 'analytics.dart';
 import 'l10n.dart';
 
 /// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
@@ -25,8 +26,10 @@ void openVideo(BuildContext context, Video v, {double? startAt}) {
   // Свой ролик, пока субтитры не готовы, смотреть нельзя: показываем, как идёт подготовка.
   if (v.mine && store.myVideo(v.id)?.status != SubsStatus.ready) return openProcessing(context, v);
   store.markWatched(v.id);
+  trackEvent('video_opened', {'video_id': v.id});
   Navigator.of(context).push(
     MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'PlayerPage'),
       builder: (_) => PlayerPage(video: v, startAt: startAt),
     ),
   );
@@ -281,7 +284,7 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
-  // Десктоп: шапка на всю ширину; под ней слева видео на тёмной «сцене» вместе с текущей фразой, справа — текст, слова и задания.
+  // Десктоп: шапка на всю ширину; под ней слева видео вместе с текущей фразой, справа — текст, слова и задания.
   Widget _desktop(Widget player, Cue? cue) {
     return Scaffold(
       body: SafeArea(
@@ -329,13 +332,10 @@ class _PlayerPageState extends State<PlayerPage> {
                     Expanded(
                       flex: 3,
                       child: Container(
-                        decoration: BoxDecoration(color: Color(0xFF17151F), borderRadius: BorderRadius.circular(32)),
-                        clipBehavior: Clip.antiAlias,
                         child: LayoutBuilder(
                           builder: (context, c) => SingleChildScrollView(
-                            padding: EdgeInsets.all(28),
                             child: ConstrainedBox(
-                              constraints: BoxConstraints(minHeight: c.maxHeight - 56),
+                              constraints: BoxConstraints(minHeight: c.maxHeight),
                               child: Center(
                                 child: ConstrainedBox(
                                   constraints: BoxConstraints(maxWidth: 960),
@@ -799,7 +799,7 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   void _push(Widget page) {
-    Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
+    Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'SubPage'), builder: (_) => page));
   }
 }
 

@@ -57,7 +57,7 @@ class SurveyPage extends StatefulWidget {
 
 /// Открывает анкету из профиля или с главной, чтобы поменять ответы.
 void openSurvey(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => SurveyPage(edit: true)));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'SurveyPage'),builder: (_) => SurveyPage(edit: true)));
 }
 
 class _SurveyPageState extends State<SurveyPage> {

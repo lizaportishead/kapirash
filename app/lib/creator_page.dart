@@ -9,7 +9,7 @@ import 'l10n.dart';
 
 /// Открывает страницу креатора поверх таббара.
 void openCreator(BuildContext context, String channel) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => CreatorPage(channel: channel)));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'CreatorPage'),builder: (_) => CreatorPage(channel: channel)));
 }
 
 class CreatorPage extends StatelessWidget {

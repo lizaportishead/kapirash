@@ -10,7 +10,7 @@ import 'l10n.dart';
 
 /// Открывает экран поиска поверх таббара: по каталогу, а с [clips] — по клипам.
 void openSearch(BuildContext context, {bool clips = false}) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => SearchPage(clips: clips)));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'SearchPage'),builder: (_) => SearchPage(clips: clips)));
 }
 
 class SearchPage extends StatefulWidget {

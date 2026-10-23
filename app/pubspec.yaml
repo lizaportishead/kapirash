@@ -44,6 +44,7 @@ dependencies:
   webview_flutter_wkwebview: ^3.27.0
   web: ^1.1.1
   audioplayers: ^6.8.1
+  posthog_flutter: ^5.56.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

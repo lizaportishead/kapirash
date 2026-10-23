@@ -19,6 +19,7 @@ import 'l10n.dart';
 void openClip(BuildContext context, Video v, {double? startAt, List<Video>? among}) {
   Navigator.of(context).push(
     MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'ClipViewer'),
       builder: (_) => ClipViewer(video: v, startAt: startAt, among: among),
     ),
   );
@@ -61,7 +62,7 @@ const clipGrid = SliverGridDelegateWithMaxCrossAxisExtent(
 
 /// Все короткие ролики на отдельном экране.
 void openClips(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage()))))));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'Scaffold'),builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage()))))));
 }
 
 /// Экран «Короткие ролики»: вертикальные ролики из TikTok.
@@ -513,7 +514,7 @@ class _ClipPageState extends State<_ClipPage> {
     _resetPlayer();
     setState(() => _covered = true);
     await Navigator.of(context)
-        .push(MaterialPageRoute<void>(builder: (_) => page((t) => at = t < 0.15 ? 0 : t - 0.15)));
+        .push(MaterialPageRoute<void>(settings: RouteSettings(name: 'ClipsPlayer'), builder: (_) => page((t) => at = t < 0.15 ? 0 : t - 0.15)));
     if (!mounted) return;
     setState(() {
       _covered = false;
