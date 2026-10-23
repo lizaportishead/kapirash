@@ -515,48 +515,7 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   // Кнопки листают фразы, поэтому живут на карточке фразы — сверху, чтобы не прыгать вместе с её высотой.
-  Widget _controls() {
-    Widget button(int d, IconData icon, String label, {String text = ''}) {
-      return Expanded(
-        child: Semantics(
-          button: true,
-          label: label,
-          child: InkWell(
-            customBorder: StadiumBorder(),
-            onTap: () => _step(d),
-            child: Ink(
-              height: 38,
-              decoration: ShapeDecoration(
-                shape: StadiumBorder(side: BorderSide(color: cInk.withValues(alpha: 0.16), width: 1.5)),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(icon, size: text.isEmpty ? 24 : 16, color: cInk),
-                  if (text.isNotEmpty) ...[
-                    SizedBox(width: 6),
-                    Text(
-                      text,
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cInk),
-                    ),
-                  ],
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-
-    return Row(
-      spacing: 6,
-      children: [
-        button(-1, KIcons.arrowLeft, ui('Предыдущая фраза')),
-        button(0, KIcons.refresh, ui('Ещё раз'), text: ui('Ещё раз')),
-        button(1, KIcons.arrowRight, ui('Следующая фраза')),
-      ],
-    );
-  }
+  Widget _controls() => StepButtons(onStep: _step);
 
   Widget _current(Cue? cue) {
     final ru = cue != null && _showRu ? _ruFor(cue) : '';
@@ -1101,6 +1060,56 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Кнопки на жёлтой карточке фразы: назад, ещё раз, вперёд; [onStep] получает -1, 0 или 1.
+class StepButtons extends StatelessWidget {
+  const StepButtons({super.key, required this.onStep});
+  final void Function(int) onStep;
+
+  @override
+  Widget build(BuildContext context) {
+    Widget button(int d, IconData icon, String label, {String text = ''}) {
+      return Expanded(
+        child: Semantics(
+          button: true,
+          label: label,
+          child: InkWell(
+            customBorder: StadiumBorder(),
+            onTap: () => onStep(d),
+            child: Ink(
+              height: 38,
+              decoration: ShapeDecoration(
+                shape: StadiumBorder(side: BorderSide(color: cInk.withValues(alpha: 0.16), width: 1.5)),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, size: text.isEmpty ? 24 : 16, color: cInk),
+                  if (text.isNotEmpty) ...[
+                    SizedBox(width: 6),
+                    Text(
+                      text,
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cInk),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Row(
+      spacing: 6,
+      children: [
+        button(-1, KIcons.arrowLeft, ui('Предыдущая фраза')),
+        button(0, KIcons.refresh, ui('Ещё раз'), text: ui('Ещё раз')),
+        button(1, KIcons.arrowRight, ui('Следующая фраза')),
+      ],
     );
   }
 }

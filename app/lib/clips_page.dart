@@ -573,7 +573,7 @@ class _ClipPageState extends State<_ClipPage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(padding: EdgeInsets.fromLTRB(12, 12, 12, 0), child: _controls()),
+          Padding(padding: EdgeInsets.fromLTRB(12, 12, 12, 0), child: StepButtons(onStep: _step)),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
             child: ConstrainedBox(constraints: BoxConstraints(minHeight: 68), child: _phraseBody()),
