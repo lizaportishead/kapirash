@@ -169,6 +169,8 @@ const _en = <String, String>{
   'Главная': 'Home',
   'Рассказы': 'Stories',
   'Профиль': 'Profile',
+  'Добавь Kapiraš на экран «Домой»: нажми «Поделиться» и «На экран Домой»': 'Add Kapiraš to your Home Screen: tap Share, then Add to Home Screen',
+  'Добавь Kapiraš на главный экран: меню браузера → «Установить приложение»': 'Add Kapiraš to your home screen: browser menu → Install app',
   'Играть': 'Play',
   'Назад на 15 секунд': 'Back 15 seconds',
   'Вперёд на 15 секунд': 'Forward 15 seconds',

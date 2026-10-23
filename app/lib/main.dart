@@ -7,6 +7,7 @@ import 'add_video.dart';
 import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
+import 'install_banner.dart';
 import 'kap_loader.dart';
 import 'auth_page.dart';
 import 'my_videos_page.dart';
@@ -187,7 +188,10 @@ class _HomeShellState extends State<HomeShell> {
       body: SafeArea(
         bottom: false,
         child: Center(
-          child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 720), child: pages),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 720),
+            child: Column(children: [Expanded(child: pages), InstallBanner()]),
+          ),
         ),
       ),
       bottomNavigationBar: DecoratedBox(
