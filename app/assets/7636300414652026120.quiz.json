@@ -135,16 +135,16 @@
      "e": "Preko («поверх») требует родительного падежа: preko kore."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Razmućeno brašno u ostatku ___.",
+     "t": "Выбери предлог",
+     "q": "pravim preliv ___ vode, šećera i vanilin šećera.",
      "o": [
-      "mleku",
-      "mlekom",
-      "mleka",
-      "mleko"
+      "za",
+      "u",
+      "od",
+      "na"
      ],
      "a": 2,
-     "e": "Ostatak («остаток») требует родительного падежа: u ostatku mleka — «в остатке молока»."
+     "e": "Praviti od + родительный падеж — «делать из»: od vode, šećera."
     },
     {
      "t": "Выбери правильную форму слова",

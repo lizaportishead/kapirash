@@ -228,16 +228,16 @@
      "e": "Od (\"from\") requires the genitive case: od oba sveta."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Mirni život ruralnog ___.",
+     "t": "Choose the preposition",
+     "q": "Već im sreću predstavlja život ___ stresa i sa mnogo druženja.",
      "o": [
-      "mesta",
-      "mestom",
-      "mesto",
-      "mestu"
+      "do",
+      "bez",
+      "od",
+      "uz"
      ],
-     "a": 0,
-     "e": "Život of what? Genitive case: ruralnog mesta."
+     "a": 1,
+     "e": "Bez (\"without\") + genitive: život bez stresa — life without stress."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,40 +252,40 @@
      "e": "U in answer to \"where?\" — locative case: u Naftagasu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Dolazili su iz ___.",
+     "t": "Choose the verb aspect",
+     "q": "Dobila je 11 miliona tad, otišla u Dobanovce i ___ traktor.",
      "o": [
-      "Dobanovcima",
-      "Dobanovaca",
-      "Dobanovce",
-      "Dobanovci"
+      "dovozila",
+      "doterao",
+      "dovozio",
+      "doterala"
+     ],
+     "a": 3,
+     "e": "A single completed action calls for the perfective doterala (drove over). The subject is feminine (dobila, otišla), so not doterao."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Ona je bila ___ druge ulice.",
+     "o": [
+      "u",
+      "iz",
+      "kod",
+      "na"
      ],
      "a": 1,
-     "e": "Iz (\"from\") requires the genitive case: iz Dobanovaca."
+     "e": "Iz (\"from\") + genitive: iz druge ulice — from another street."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ona je bila iz druge ___.",
+     "t": "Choose the correct form",
+     "q": "Vidim je dole i samo ___ mahnem rukom.",
      "o": [
-      "ulice",
-      "ulica",
-      "ulicu",
-      "ulicom"
+      "njom",
+      "nju",
+      "ona",
+      "joj"
      ],
-     "a": 0,
-     "e": "Iz requires the genitive case: iz druge ulice."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Vi ste zajedno 54 ___.",
-     "o": [
-      "godine",
-      "godina",
-      "godinama",
-      "godinu"
-     ],
-     "a": 0,
-     "e": "After a number ending in 4 the genitive singular is used: godine."
+     "a": 3,
+     "e": "Mahnuti kome? Dative: ona → joj (\"to her\"). Rukom is the instrumental (\"with a hand\")."
     },
     {
      "t": "Выбери правильную форму слова",

@@ -216,88 +216,88 @@
      "e": "Kupovina чего? Родительный падеж: novog automobila."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Hteli su da kupe Fiat preko ovlašćenog Fiatovog ___.",
+     "t": "Выбери предлог",
+     "q": "Takvo loše iskustvo ima nekoliko kupaca ___ Lazarevca i okoline,",
      "o": [
-      "diler",
-      "dilerom",
-      "dileru",
-      "dilera"
-     ],
-     "a": 3,
-     "e": "Preko («через») требует родительного падежа: preko dilera."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Odluku o kupovini doneo je još tokom ___ 2013.",
-     "o": [
-      "prolećem",
-      "proleća",
-      "proleće",
-      "prolećima"
+      "u",
+      "iz",
+      "sa",
+      "kod"
      ],
      "a": 1,
-     "e": "Tokom («в течение») требует родительного падежа: tokom proleća."
+     "e": "Iz («из») + родительный падеж: kupci iz Lazarevca — покупатели из Лазаревца. U и kod здесь не подходят по смыслу."
+    },
+    {
+     "t": "Выбери вид глагола",
+     "q": "Branko je odluku o kupovini ___ još tokom proleća 2013. godine,",
+     "o": [
+      "doneo",
+      "donosila",
+      "donosio",
+      "donela"
+     ],
+     "a": 0,
+     "e": "Решение принимают один раз, действие завершено — совершенный вид: doneo (donositi — несовершенный, о повторении). Branko — мужской род, поэтому не donela."
+    },
+    {
+     "t": "Выбери форму глагола",
+     "q": "Kupci su nam ___ da oni nikako ne mogu da shvate",
+     "o": [
+      "rekao",
+      "rekla",
+      "rekle",
+      "rekli"
+     ],
+     "a": 3,
+     "e": "Прошедшее время согласуется с подлежащим: kupci — мужской род, множественное число, значит rekli. Rekao — ед. ч., rekle — жен. р. мн. ч., rekla — жен. р. ед. ч."
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Ja sam već četiri ___ uplatio banci.",
+     "q": "FAS nije primio nikakvu uplatu od firme MSD Trade u vezi sa ___ vozila na ime Branka Simića.",
      "o": [
-      "rata",
-      "rati",
-      "rate",
-      "ratom"
+      "kupovinu",
+      "kupovinom",
+      "kupovini",
+      "kupovina"
+     ],
+     "a": 1,
+     "e": "Sa («с») + творительный падеж: u vezi sa kupovinom — в связи с покупкой."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Teško je poverovati u objašnjenje da ___ vozilo nije isporučeno zbog ulaska MSD Trade-a u blokadu,",
+     "o": [
+      "Branka",
+      "Brankom",
+      "Branku",
+      "Branko"
      ],
      "a": 2,
-     "e": "После четыре ставится форма, совпадающая с родительным падежом единственного числа: četiri rate."
+     "e": "Isporučiti kome? Дательный падеж: Branku — кому вручили (не вручили) машину."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Aleksandar se uplašio da će ostati bez ___ i bez automobila.",
+     "t": "Выбери вид глагола",
+     "q": "___ smo svoje automobile 16. decembra.",
      "o": [
-      "novac",
-      "novcem",
-      "novcu",
-      "novca"
+      "Preuzimali",
+      "Preuzimao",
+      "Preuzeo",
+      "Preuzeli"
      ],
      "a": 3,
-     "e": "Bez («без») требует родительного падежа: bez novca."
+     "e": "Один раз, в конкретную дату — совершенный вид: preuzeli. Preuzimali — несовершенный (процесс, повторение). Smo — мн. ч., поэтому не preuzeo."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Njegov automobil je više meseci stajao u krugu ___.",
+     "t": "Выбери предлог",
+     "q": "MSD Trade je bio u blokadi ___ dugovanja od preko 24 miliona dinara.",
      "o": [
-      "fabrika",
-      "fabrikom",
-      "fabriku",
-      "fabrike"
+      "zbog",
+      "prema",
+      "bez",
+      "pored"
      ],
-     "a": 3,
-     "e": "U krugu («на территории») требует родительного падежа: u krugu fabrike."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Dobio sam dva vaučera gratis za prva dva ___.",
-     "o": [
-      "servis",
-      "servisa",
-      "servisu",
-      "servisom"
-     ],
-     "a": 1,
-     "e": "После dva ставится родительный падеж единственного числа: dva servisa."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "MSD Trade je bio u blokadi zbog ___ od preko 24 miliona dinara.",
-     "o": [
-      "dugovanjem",
-      "dugovanje",
-      "dugovanju",
-      "dugovanja"
-     ],
-     "a": 3,
-     "e": "Zbog («из-за») требует родительного падежа: zbog dugovanja."
+     "a": 0,
+     "e": "Zbog («из-за») + родительный падеж: zbog dugovanja — из-за долгов."
     }
    ]
   }

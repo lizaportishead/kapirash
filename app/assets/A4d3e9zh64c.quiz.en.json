@@ -240,40 +240,40 @@
      "e": "Šetati with what (along what) — instrumental case: Deliblatskom peščarom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Jednoga dana krenula je kod svoje ___.",
+     "t": "Choose the verb aspect",
+     "q": "Mi smo svi ___ u devet.",
      "o": [
-      "baka",
-      "bakom",
-      "bake",
-      "baku"
-     ],
-     "a": 2,
-     "e": "Kod (\"at someone's place\") requires the genitive case: kod svoje bake."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Slavica nam je dala po ___.",
-     "o": [
-      "štapom",
-      "štapu",
-      "štapa",
-      "štap"
-     ],
-     "a": 3,
-     "e": "Po (\"one each\") + accusative case: po štap."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Idemo u jednu pešačku ___.",
-     "o": [
-      "turom",
-      "turu",
-      "tura",
-      "ture"
+      "ustao",
+      "ustali",
+      "ustajao",
+      "ustajali"
      ],
      "a": 1,
-     "e": "Ići u + accusative case: u turu."
+     "e": "A specific time means a one-off action, perfective: ustali. Ustajali is imperfective (habit). Smo svi is plural."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Kleka je super za ljude koji imaju nekih problema sa ___ organima.",
+     "o": [
+      "respiratorne",
+      "respiratornim",
+      "respiratorni",
+      "respiratornih"
+     ],
+     "a": 1,
+     "e": "Sa + instrumental plural: sa respiratornim organima — with respiratory organs."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Ideš sa ___ ipak, a?",
+     "o": [
+      "mi",
+      "naš",
+      "nama",
+      "nas"
+     ],
+     "a": 2,
+     "e": "Sa (\"with\") + instrumental: mi → nama. Sa nama — \"with us\"."
     },
     {
      "t": "Выбери правильную форму слова",

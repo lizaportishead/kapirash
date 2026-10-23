@@ -216,16 +216,16 @@
      "e": "Po + accusative case: \"to fetch something\" — po brašno."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Stavit ću malo više od pola ___ za pecivo.",
+     "t": "Choose the verb form",
+     "q": "Lepinje sam ___.",
      "o": [
-      "prašak",
-      "praška",
-      "prašku",
-      "praškom"
+      "napravili",
+      "napravio",
+      "napravila",
+      "napravilo"
      ],
-     "a": 1,
-     "e": "Pola + genitive case: pola praška."
+     "a": 2,
+     "e": "A woman is speaking (sam + feminine participle): napravila. Napravio is masculine, napravili is plural."
     },
     {
      "t": "Выбери правильную форму",
@@ -276,16 +276,16 @@
      "e": "Na + accusative case (where to?): na površinu."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Ne stavljam puno ___.",
+     "t": "Choose the verb aspect",
+     "q": "Uzmete i ___ u tortilju domaću koju ste napravili.",
      "o": [
-      "ulje",
-      "uljem",
-      "ulja",
-      "ulju"
+      "ubaciti",
+      "ubacite",
+      "ubacujem",
+      "ubacujete"
      ],
-     "a": 2,
-     "e": "Puno + genitive case: puno ulja."
+     "a": 1,
+     "e": "Consecutive one-off actions: uzmete i ubacite — perfective. Ubacujete is imperfective (ongoing)."
     },
     {
      "t": "Выбери правильную форму",

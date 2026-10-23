@@ -254,16 +254,17 @@ class _PlayerPageState extends State<PlayerPage> {
                           player,
                           SizedBox(height: 10),
                           _current(cue),
-                          if (_quiz.isNotEmpty) ...[
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(4, 28, 4, 8),
-                              child: Text(
-                                ui('Посмотри ролик и выполни задания'),
-                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, height: 1.25, color: cText),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              onPressed: _openText,
+                              icon: Icon(KIcons.text, size: 18, color: cMuted),
+                              label: Text(
+                                ui('Весь текст'),
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: cMuted),
                               ),
                             ),
-                            QuizList(videoId: videoId, sections: _quiz, inline: true),
-                          ],
+                          ),
                         ],
                       ),
                     ),
@@ -737,32 +738,41 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   // Закреплены внизу: весь текст и сохранённые слова ролика открываются отдельными экранами.
+  void _openText() {
+    _push(
+      SubPage(
+        title: ui('Весь текст'),
+        child: Transcript(
+          sr: _sr,
+          cur: _curN,
+          ruFor: _showRu ? _ruFor : (_) => '',
+          onSeek: _seek,
+          showSr: _showSr,
+        ),
+      ),
+    );
+  }
+
   Widget _links() {
     return Row(
       spacing: 6,
       children: [
-        Expanded(
-          child: Pill(
-            ui('Весь текст'),
-            icon: KIcons.text,
-            onTap: () => _push(
-              SubPage(
-                title: ui('Весь текст'),
-                child: Transcript(
-                  sr: _sr,
-                  cur: _curN,
-                  ruFor: _showRu ? _ruFor : (_) => '',
-                  onSeek: _seek,
-                  showSr: _showSr,
-                ),
+        if (_quiz.isNotEmpty)
+          Expanded(
+            child: ListenableBuilder(
+              listenable: store,
+              builder: (context, _) => Pill(
+                ui('Задания'),
+                badge: _quiz.where((s) => store.quizResult(videoId, s.title) == null).length,
+                icon: KIcons.tasks,
+                onTap: () => _push(SubPage(title: ui('Задания'), child: QuizList(videoId: videoId, sections: _quiz))),
               ),
             ),
           ),
-        ),
         Expanded(
           child: Pill(
             key: _wordsKey,
-            ui('Словарь'),
+            ui('Слова'),
             badge: _words.length,
             icon: KIcons.wordsOn,
             onTap: () => _push(

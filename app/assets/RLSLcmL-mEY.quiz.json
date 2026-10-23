@@ -228,16 +228,16 @@
      "e": "После чисел от 5 ставится родительный падеж множественного числа: zajednica."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ministar je saopštio plan pre 3 ___.",
+     "t": "Выбери вид глагола",
+     "q": "ministar je ___ pre 3 meseca na Saboru zadrugara u Nišu.",
      "o": [
-      "mesecima",
-      "mesec",
-      "meseci",
-      "meseca"
+      "saopštavala",
+      "saopštavao",
+      "saopštila",
+      "saopštio"
      ],
      "a": 3,
-     "e": "После числа 3 ставится родительный падеж единственного числа: pre 3 meseca."
+     "e": "Сообщил один раз — совершенный вид: saopštio. Saopštavao — несовершенный (процесс, повторение). Ministar — мужской род."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,28 +264,28 @@
      "e": "Boriti se sa («бороться с») требует творительного падежа: sa statistikama."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U Pirotu imamo svega oko 10 ___ ovaca.",
+     "t": "Выбери предлог",
+     "q": "Veliku šansu ___ oporavak ruralnih sredina ovde vide u razvoju seoskog turizma.",
      "o": [
-      "hiljade",
-      "hiljadama",
-      "hiljada",
-      "hiljadu"
+      "od",
+      "za",
+      "kod",
+      "o"
      ],
-     "a": 2,
-     "e": "После числа 10 ставится родительный падеж множественного числа: hiljada."
+     "a": 1,
+     "e": "Šansa za + винительный падеж — «шанс на что-то»: šansa za oporavak."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ovce su se spustile u sela pored ___.",
+     "t": "Выбери форму глагола",
+     "q": "a one su se ___ u sela koja se nalaze pored grada,",
      "o": [
-      "grad",
-      "gradu",
-      "grada",
-      "gradom"
+      "spustio",
+      "spustile",
+      "spustilo",
+      "spustili"
      ],
-     "a": 2,
-     "e": "Pored («рядом с») требует родительного падежа: pored grada."
+     "a": 1,
+     "e": "Причастие согласуется с подлежащим: one (ovce) — женский род, мн. ч., значит spustile."
     },
     {
      "t": "Выбери правильную форму слова",

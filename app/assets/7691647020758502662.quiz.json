@@ -148,16 +148,16 @@
      "e": "U на вопрос «где?» — местный падеж: u centru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kroz pijacu i dalje prolaze ___ Beograđana.",
+     "t": "Выбери предлог",
+     "q": "svedok velikih promena ___ koje je grad prolazio.",
      "o": [
-      "hiljadama",
-      "hiljada",
-      "hiljade",
-      "hiljadu"
+      "bez",
+      "do",
+      "kroz",
+      "od"
      ],
      "a": 2,
-     "e": "Hiljade («тысячи») — подлежащее; Beograđana — родительный падеж."
+     "e": "Prolaziti kroz + винительный падеж — «проходить через»: kroz koje."
     }
    ]
   }

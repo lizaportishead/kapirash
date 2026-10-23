@@ -204,28 +204,28 @@
    "about": "Падежи и предлоги",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Evo nas kod Lazarevog ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Evo nas kod Lazarevog kanjona i kod ___ pećine.",
      "o": [
-      "kanjonu",
-      "kanjonom",
-      "kanjona",
-      "kanjon"
+      "Lazarevu",
+      "Lazarev",
+      "Lazareve",
+      "Lazareva"
      ],
      "a": 2,
-     "e": "Kod («у, возле») требует родительного падежа: kod kanjona."
+     "e": "Kod («у») требует родительного падежа. Pećina — женский род, значит Lazareve pećine."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Došli smo da bismo ušli u ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "sreda, četvrtak, petak — samo za ___ grupe.",
      "o": [
-      "pećine",
-      "pećinom",
-      "pećinu",
-      "pećina"
+      "najavljeni",
+      "najavljene",
+      "najavljenu",
+      "najavljena"
      ],
-     "a": 2,
-     "e": "Ući u + винительный падеж: u pećinu."
+     "a": 1,
+     "e": "Za + винительный падеж, мн. ч. ж. р.: za najavljene grupe — для заранее заявленных групп."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,28 +252,28 @@
      "e": "Na на вопрос «на чём?» — местный падеж: na kartici."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Idemo do ___, da se ja malo ugrejem.",
+     "t": "Выбери предлог",
+     "q": "Ima da se ide od mesta gde ostavite auto ___ vodopada.",
      "o": [
-      "vodopadu",
-      "vodopad",
-      "vodopadom",
-      "vodopada"
+      "na",
+      "do",
+      "u",
+      "za"
      ],
-     "a": 3,
-     "e": "Do («до») требует родительного падежа: do vodopada."
+     "a": 1,
+     "e": "Od … do + родительный падеж: «от места … до водопада»: do vodopada."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Stigli smo u ___ Manasija.",
+     "t": "Выбери вид глагола",
+     "q": "Generalno, ovo je prvo etno-selo koje smo ___.",
      "o": [
-      "manastir",
-      "manastirom",
-      "manastiru",
-      "manastira"
+      "posećivao",
+      "posetio",
+      "posećivali",
+      "posetili"
      ],
-     "a": 0,
-     "e": "Stići u + винительный падеж; у неодушевлённых он совпадает с именительным: manastir."
+     "a": 3,
+     "e": "Единичное завершённое посещение — совершенный вид: posetili. Posećivali — несовершенный (регулярно). Smo — мн. ч."
     },
     {
      "t": "Выбери правильную форму слова",

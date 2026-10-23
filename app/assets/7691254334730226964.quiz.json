@@ -147,28 +147,28 @@
      "e": "Pod на вопрос «где?» требует творительного падежа: pod krovom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Živeli su sa svojim ___ Majom i Janjom.",
+     "t": "Выбери форму прилагательного",
+     "q": "Ova lokacija ostala je najpre ___ po čuvenom hitu iz serije",
      "o": [
-      "ćerkom",
-      "ćerkoj",
-      "ćerke",
-      "ćerkama"
+      "upamćene",
+      "upamćeno",
+      "upamćen",
+      "upamćena"
      ],
      "a": 3,
-     "e": "Sa («с») требует творительного падежа. Множественное число: ćerkama."
+     "e": "Причастие согласуется с подлежащим: lokacija — женский род, ед. ч., значит upamćena."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Maja je stalno bila u potrazi za novim ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "koja u ___ kulturi nosi poseban status.",
      "o": [
-      "momaka",
-      "momke",
-      "momcima",
-      "momci"
+      "domaću",
+      "domaća",
+      "domaće",
+      "domaćoj"
      ],
-     "a": 2,
-     "e": "Potraga za + творительный падеж: za novim momcima."
+     "a": 3,
+     "e": "U + местный падеж. Kultura — женский род: u domaćoj kulturi."
     }
    ]
   }

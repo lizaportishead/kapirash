@@ -136,28 +136,28 @@
      "e": "u + вин. падеж (куда?): u Beč — в Вену."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Studirao je dirigovanje kod uglednog ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Zubin Mehta je ___ 1936. godine u Bombaju,",
      "o": [
-      "pedagog",
-      "pedagoga",
-      "pedagogu",
-      "pedagogom"
+      "rođena",
+      "rođeni",
+      "rođeno",
+      "rođen"
      ],
-     "a": 1,
-     "e": "kod + род. падеж: kod pedagoga — у педагога."
+     "a": 3,
+     "e": "Причастие согласуется с подлежащим: Mehta — мужской род, ед. ч., значит rođen."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Koncert je bio pred 25.000 ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "U ___ operi Mehta je prvi put dirigovao 1984.",
      "o": [
-      "ljudskim",
-      "ljudima",
-      "ljudi",
-      "ljude"
+      "Sidnejske",
+      "Sidnejsku",
+      "Sidnejska",
+      "Sidnejskoj"
      ],
-     "a": 2,
-     "e": "после числа — род. падеж мн. ч.: pred 25.000 ljudi — перед 25 000 человек."
+     "a": 3,
+     "e": "U + местный падеж. Opera — женский род, значит u Sidnejskoj operi."
     }
    ]
   }

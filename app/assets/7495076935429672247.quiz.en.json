@@ -147,16 +147,16 @@
      "e": "Pod in answer to \"where to?\" requires the accusative case: pod zemlju — \"underground\"."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Obišli smo četiri potpuno različita ___.",
+     "t": "Choose the verb aspect",
+     "q": "___ smo pauzu za ručak",
      "o": [
-      "mesta",
-      "mestu",
-      "mestima",
-      "mesto"
+      "Napravio",
+      "Napravili",
+      "Pravili",
+      "Pravio"
      ],
-     "a": 0,
-     "e": "After četiri the form that coincides with the genitive singular is used: četiri mesta."
+     "a": 1,
+     "e": "One break, a completed action — perfective napraviti. Pravili is imperfective (process). Smo is plural."
     },
     {
      "t": "Выбери правильную форму слова",

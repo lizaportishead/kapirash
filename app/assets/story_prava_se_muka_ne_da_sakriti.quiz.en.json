@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "How much did the poor man get for a year of service?",
+     "o": [
+      "Nothing",
+      "A sack of gold",
+      "A cow",
+      "One small coin"
+     ],
+     "a": 3,
+     "e": "The master took out one coin: “Here, that is your wage.”"
+    },
+    {
+     "q": "How did the servant test whether he had earned the coin?",
+     "o": [
+      "He asked the neighbours",
+      "He threw it in a fast stream: if it floated, he had earned it",
+      "He swapped it for bread",
+      "He buried it in the ground"
+     ],
+     "a": 1,
+     "e": "He threw it in the water: if it didn't sink, he had earned it."
+    },
+    {
+     "q": "In which year did the coin finally float?",
+     "o": [
+      "The second",
+      "The tenth",
+      "The third",
+      "The first"
+     ],
+     "a": 2,
+     "e": "After the third year the coin floated on the water."
+    },
+    {
+     "q": "What did the servant ask his master to do before the sea voyage?",
+     "o": [
+      "Take him along",
+      "Buy something with his coin in the foreign land",
+      "Lend him money",
+      "Give him leave"
+     ],
+     "a": 1,
+     "e": "He asked the master to buy something with his coin in the other kingdom."
+    },
+    {
+     "q": "What did the master buy with the coin by the sea?",
+     "o": [
+      "A sack of grain",
+      "A cow",
+      "A chest",
+      "A cat that children were about to drown"
+     ],
+     "a": 3,
+     "e": "He gave the children the coin and got the cat."
+    },
+    {
+     "q": "How did the cat help in the foreign city?",
+     "o": [
+      "It taught the townspeople to fish",
+      "It found a lost treasure",
+      "It caught the mice and rats, and the ship was filled with silver and gold in return",
+      "It saved a rich man from a fire"
+     ],
+     "a": 2,
+     "e": "The cat caught the mice and rats, and the host filled the ship with silver and gold."
+    },
+    {
+     "q": "What did the servant finally get?",
+     "o": [
+      "A house by the sea",
+      "All the riches from the ship and his master's daughter as a wife",
+      "Nothing",
+      "Only a marble stone"
+     ],
+     "a": 1,
+     "e": "The master gave him everything he brought on the ship and his daughter too."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Gospodar izvadi jedan *novčić* i da mu ga.",
+     "o": [
+      "handkerchief",
+      "key",
+      "knife",
+      "coin"
+     ],
+     "a": 3,
+     "e": "Novčić — coin."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Otide na potok gde je voda bila vrlo *brza*.",
+     "o": [
+      "deep",
+      "cold",
+      "fast",
+      "muddy"
+     ],
+     "a": 2,
+     "e": "Brz — fast."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Novčić odmah *potone* na dno.",
+     "o": [
+      "shines",
+      "sinks",
+      "rolls",
+      "melts"
+     ],
+     "a": 1,
+     "e": "Potonuti — to sink."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Pa se onda *prekrsti*.",
+     "o": [
+      "sat down",
+      "bowed",
+      "sighed",
+      "crossed himself"
+     ],
+     "a": 3,
+     "e": "Prekrstiti se — to cross oneself."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Čuje da se njegov gospodar sprema na *galiji* preko mora.",
+     "o": [
+      "cart",
+      "horse",
+      "galley, ship",
+      "a boat without oars"
+     ],
+     "a": 2,
+     "e": "Galija — galley, ship."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Baci novčić u ___.",
+     "o": [
+      "vodu",
+      "vodi",
+      "vodom",
+      "voda"
+     ],
+     "a": 0,
+     "e": "U + accusative (where to?): u vodu."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Služio je godinu ___.",
+     "o": [
+      "danom",
+      "danu",
+      "dan",
+      "dana"
+     ],
+     "a": 3,
+     "e": "Godinu dana — a fixed phrase with the genitive: dana."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Sluga uzme ___ novčić i zahvali gospodaru.",
+     "o": [
+      "onim",
+      "onog",
+      "onome",
+      "onaj"
+     ],
+     "a": 3,
+     "e": "An inanimate masculine noun in the accusative equals the nominative: onaj novčić."
+    }
+   ]
+  }
+ ]
+}

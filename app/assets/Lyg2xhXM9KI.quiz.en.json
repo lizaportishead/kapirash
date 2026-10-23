@@ -216,16 +216,16 @@
      "e": "Od (\"from\") requires the genitive case: od Podgorice."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Uputili smo se do ___.",
+     "t": "Choose the verb aspect",
+     "q": "Tako da smo ___ jedan težak period stvaranja etno-sela.",
      "o": [
-      "etno-selom",
-      "etno-selu",
-      "etno-selo",
-      "etno-sela"
+      "prelazili",
+      "prešao",
+      "prešli",
+      "prelazio"
      ],
-     "a": 3,
-     "e": "Do (\"to, up to\") requires the genitive case: do etno-sela."
+     "a": 2,
+     "e": "The period is over and completed, so perfective: prešli. Prelazili is imperfective (ongoing). Smo is plural, so not prešao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -240,28 +240,28 @@
      "e": "Pogled na + accusative case; for neuter nouns it coincides with the nominative: jezero."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Došli smo na ___ da pravimo etno-selo.",
+     "t": "Choose the adjective form",
+     "q": "Vidjeli ste vi da su naši objekti spolja ___ od kamena, od drveta,",
      "o": [
-      "ideje",
-      "ideja",
-      "ideju",
-      "idejom"
-     ],
-     "a": 2,
-     "e": "Doći na ideju — accusative case: na ideju."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Mi imamo 11 smještajnih ___.",
-     "o": [
-      "objekata",
-      "objekti",
-      "objektima",
-      "objekte"
+      "urađeni",
+      "urađene",
+      "urađena",
+      "urađen"
      ],
      "a": 0,
-     "e": "After the number 11 the genitive plural is used: objekata."
+     "e": "The participle agrees with the subject: objekti is masculine plural, so urađeni."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Radimo ___ proširenju, malo nas je poremetila korona, kriza,",
+     "o": [
+      "za",
+      "na",
+      "o",
+      "u"
+     ],
+     "a": 1,
+     "e": "Raditi na + locative means \"to work on something\": radimo na proširenju — we are working on the expansion."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Na in answer to \"where?\" — locative case: na Tari."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U porodičnom biznisu rade supruga, dva ___, snaha i unučad.",
+     "t": "Choose the verb aspect",
+     "q": "U kvalitet gastronomske ponude smo se i sami ___.",
      "o": [
-      "sina",
-      "sinova",
-      "sine",
-      "sinovi"
+      "uveravali",
+      "uverili",
+      "uverio",
+      "uveravao"
      ],
-     "a": 0,
-     "e": "After dva the genitive singular is used: dva sina."
+     "a": 1,
+     "e": "They convinced themselves on the spot, with a result: perfective uveriti se. Uveravati se is imperfective. Smo is plural, so not uverio."
     }
    ]
   }

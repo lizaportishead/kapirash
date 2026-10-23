@@ -240,28 +240,28 @@
      "e": "Pokraj («рядом с») требует родительного падежа: pokraj Kikinde."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Imamo smeštajne ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "i videli su da su ljudi ___",
      "o": [
-      "kapaciteti",
-      "kapaciteta",
-      "kapacitetima",
-      "kapacitete"
+      "zadovoljne",
+      "zadovoljni",
+      "zadovoljna",
+      "zadovoljan"
      ],
-     "a": 3,
-     "e": "Imati что — винительный падеж множественного числа: kapacitete."
+     "a": 1,
+     "e": "Прилагательное согласуется с существительным: ljudi — мужской род, мн. ч., значит zadovoljni."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Spojili smo najbolje stvari ta dva ___.",
+     "t": "Выбери вид глагола",
+     "q": "Ja sam ___ svoj mejl, i ovo su prve stvari",
      "o": [
-      "svetu",
-      "svet",
-      "svetova",
-      "sveta"
+      "pogledala",
+      "gledala",
+      "pogledao",
+      "gledao"
      ],
-     "a": 3,
-     "e": "После dva ставится родительный падеж единственного числа: dva sveta."
+     "a": 0,
+     "e": "Один раз посмотрела — совершенный вид: pogledala. Говорит женщина (sam + -la), поэтому не pogledao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -289,15 +289,15 @@
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Stanfordski profesor je iskoristio jednu kinesku ___.",
+     "q": "sa ___ koji su radili u kancelariji.",
      "o": [
-      "kompanijom",
-      "kompanije",
-      "kompanija",
-      "kompaniju"
+      "ovi",
+      "ove",
+      "ovih",
+      "ovima"
      ],
      "a": 3,
-     "e": "Iskoristiti что — винительный падеж: kompaniju."
+     "e": "Sa («с») + творительный падеж, мн. ч.: sa ovima — с теми, кто..."
     }
    ]
   }

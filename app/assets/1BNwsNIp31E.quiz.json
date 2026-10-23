@@ -228,16 +228,16 @@
      "e": "Imati что — винительный падеж; у неодушевлённого мужского рода он совпадает с именительным: problem."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pronađete 10 ___ sa kojima ćete da obavite intervju.",
+     "t": "Выбери форму прилагательного",
+     "q": "Onda, Sara je ___, zato što nema vremena da čeka u redu.",
      "o": [
-      "osobe",
-      "osobama",
-      "osoba",
-      "osobu"
+      "nestrpljivi",
+      "nestrpljivo",
+      "nestrpljiva",
+      "nestrpljiv"
      ],
      "a": 2,
-     "e": "После числа 10 ставится родительный падеж множественного числа: osoba."
+     "e": "Прилагательное согласуется с подлежащим: Sara — женский род, ед. ч., значит nestrpljiva."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,28 +252,28 @@
      "e": "Na на вопрос «на чём?» — местный падеж: na papiru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sa leve strane imate neka bazična ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "pokazaću vam na jednom ___ primeru.",
      "o": [
-      "uputstva",
-      "uputstvo",
-      "uputstvu",
-      "uputstvima"
+      "praktičan",
+      "praktičnom",
+      "praktično",
+      "praktični"
      ],
-     "a": 0,
-     "e": "Среднего рода множественное число: neka bazična uputstva."
+     "a": 1,
+     "e": "Na + местный падеж. Primer — мужской род, значит окончание -om: na jednom praktičnom primeru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sara ima 27 ___.",
+     "t": "Выбери вид глагола",
+     "q": "Pored toga, ___ smo još neke nove zanimljive stvari.",
      "o": [
-      "godine",
-      "godinom",
-      "godinu",
-      "godina"
+      "saznavali",
+      "saznali",
+      "saznao",
+      "saznavao"
      ],
-     "a": 3,
-     "e": "После чисел от 5 ставится родительный падеж множественного числа: godina."
+     "a": 1,
+     "e": "Результат — выяснили новое: совершенный вид saznali. Saznavali — несовершенный. Smo — мн. ч."
     },
     {
      "t": "Выбери правильную форму слова",

@@ -216,40 +216,40 @@
      "e": "Ići na + accusative case: na pijacu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupili smo kilo ćuretine i kilo ___.",
+     "t": "Choose the verb aspect",
+     "q": "___ sam 8 jaja, to može da bude za danas i sutra.",
      "o": [
-      "ramsteku",
-      "ramstekom",
-      "ramstek",
-      "ramsteka"
+      "Slomio",
+      "Lomila",
+      "Slomila",
+      "Lomio"
      ],
-     "a": 3,
-     "e": "After a measure (kilo) the genitive case is used: kilo ramsteka."
+     "a": 0,
+     "e": "The result is eggs broken: perfective slomiti. Lomio is imperfective. A man is speaking."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Imamo kilo slatkog ___.",
+     "t": "Choose the preposition",
+     "q": "Kupio sam i angus burgere, tako da ono, to je ___ vama u suštini.",
      "o": [
-      "krompir",
-      "krompirom",
-      "krompiru",
-      "krompira"
+      "za",
+      "kod",
+      "u",
+      "na"
      ],
      "a": 3,
-     "e": "After kilo — genitive case: kilo krompira."
+     "e": "Na vama je means \"it's up to you\" (set phrase): na + locative."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ovaj slatki krompir od 440 ___ mi deluje solidno.",
+     "t": "Choose the verb aspect",
+     "q": "nemojte da se plašite da ga ___ i 5 sati na sobnoj temperaturi.",
      "o": [
-      "dinare",
-      "dinari",
-      "dinar",
-      "dinara"
+      "ostavljao",
+      "ostavite",
+      "ostavio",
+      "ostavljate"
      ],
-     "a": 3,
-     "e": "After numerals from 5 the genitive plural is used: dinara."
+     "a": 1,
+     "e": "After da a single action takes the perfective: ostavite. Ostavljate is imperfective (habit)."
     },
     {
      "t": "Выбери правильную форму слова",

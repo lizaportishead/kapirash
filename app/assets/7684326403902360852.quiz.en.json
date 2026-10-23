@@ -124,16 +124,16 @@
      "e": "Na in answer to \"where?\" requires the locative case: na desnom obrazu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Bila bi najlepša na ___.",
+     "t": "Choose the verb aspect",
+     "q": "Za još bolji izgled ___ sam dva zuba.",
      "o": [
-      "svetu",
-      "svetom",
-      "svet",
-      "sveta"
+      "sklanjala",
+      "sklonio",
+      "sklanjao",
+      "sklonila"
      ],
-     "a": 0,
-     "e": "Na svetu — \"in the world\": locative case after na."
+     "a": 3,
+     "e": "The action is complete — perfective sklonila. A woman is speaking (sam + -la), so not sklonio."
     },
     {
      "t": "Выбери правильную форму слова",

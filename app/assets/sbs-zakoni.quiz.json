@@ -170,16 +170,16 @@
      "e": "na + мест. падеж (где?): na Tasmaniji — на Тасмании."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Policija je uhapsila čak 130 ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Rodney objašnjava da je to bila ___ kazna u celom zapadnom svetu.",
      "o": [
-      "ljudski",
-      "ljudima",
-      "ljudi",
-      "ljude"
+      "najstroži",
+      "najstrožu",
+      "najstrožem",
+      "najstroža"
      ],
-     "a": 2,
-     "e": "после числа 130 — род. падеж мн. ч.: 130 ljudi — 130 человек."
+     "a": 3,
+     "e": "Прилагательное согласуется с существительным: kazna — женский род, ед. ч., именительный падеж, значит najstroža."
     },
     {
      "t": "Выбери правильную форму",
@@ -218,16 +218,16 @@
      "e": "putem + род. падеж: putem pošte — по почте."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Savezni parlament ima moć da donosi ___ o braku.",
+     "t": "Выбери форму глагола",
+     "q": "Zvanična promena ___ je na snagu 9. decembra 2017. godine.",
      "o": [
-      "zakone",
-      "zakoni",
-      "zakonu",
-      "zakona"
+      "stupili",
+      "stupilo",
+      "stupio",
+      "stupila"
      ],
-     "a": 0,
-     "e": "вин. падеж мн. ч.: donosi zakone — принимает законы."
+     "a": 3,
+     "e": "Причастие согласуется с подлежащим: promena — женский род, ед. ч., значит stupila."
     }
    ]
   }

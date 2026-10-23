@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What was unusual about Emperor Trojan?",
+     "o": [
+      "He had three eyes",
+      "He had a beard down to the ground",
+      "He had goat's ears",
+      "He was very tall"
+     ],
+     "a": 2,
+     "e": "“U toga cara bile su uši kozje.”"
+    },
+    {
+     "q": "What did the emperor do to barbers who saw his ears?",
+     "o": [
+      "Rewarded them generously",
+      "Had them executed",
+      "Sent them into exile",
+      "Made them courtiers"
+     ],
+     "a": 1,
+     "e": "A barber who said he saw goat's ears was beheaded at once."
+    },
+    {
+     "q": "What did the apprentice answer when the emperor asked what he had seen?",
+     "o": [
+      "That the emperor needed a haircut",
+      "That he was afraid to answer",
+      "That he had seen nothing",
+      "That he had seen goat's ears"
+     ],
+     "a": 2,
+     "e": "The apprentice said he had seen nothing."
+    },
+    {
+     "q": "Why did the apprentice begin to waste away?",
+     "o": [
+      "He quarrelled with his master",
+      "He was tormented that he could not tell anyone the secret",
+      "He fell ill",
+      "He was short of money"
+     ],
+     "a": 1,
+     "e": "The secret tormented him because he could not tell anyone, so he wasted away."
+    },
+    {
+     "q": "What did the apprentice do to feel better?",
+     "o": [
+      "Wrote a letter to the emperor",
+      "Told a priest",
+      "Dug a hole in a field and told the secret to the earth",
+      "Told his master"
+     ],
+     "a": 2,
+     "e": "He dug a hole, put his head in and told the earth three times."
+    },
+    {
+     "q": "What grew in that place, and what happened to the pipes?",
+     "o": [
+      "Nothing grew",
+      "An elder tree grew, and every pipe sang “The emperor Trojan has goat's ears!”",
+      "A birch grew and was made into a staff",
+      "An apple tree with golden apples grew"
+     ],
+     "a": 1,
+     "e": "An elder tree grew from the hole, and every pipe made from it sang the secret."
+    },
+    {
+     "q": "How did the story end?",
+     "o": [
+      "The emperor left the city",
+      "The emperor executed the apprentice",
+      "The apprentice became emperor",
+      "The emperor realised nothing can be hidden and spared the apprentice"
+     ],
+     "a": 3,
+     "e": "The emperor saw that nothing on earth can be hidden and spared the barber's life."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Car je redom zvao *berbere* da ga briju.",
+     "o": [
+      "soldiers",
+      "merchants",
+      "doctors",
+      "barbers"
+     ],
+     "a": 3,
+     "e": "Berberin — barber."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Car Trojan bi ga odmah *posekao*.",
+     "o": [
+      "would reward",
+      "would hire",
+      "would cut down",
+      "would forgive"
+     ],
+     "a": 2,
+     "e": "Poseći — to cut down, to behead."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Majstor to *opazi* i stane ga pitati šta mu je.",
+     "o": [
+      "forbade",
+      "noticed",
+      "heard",
+      "forgot"
+     ],
+     "a": 1,
+     "e": "Opaziti — to notice."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Počne se gubiti i *venuti*.",
+     "o": [
+      "to wither",
+      "to laugh",
+      "to grow",
+      "to get fat"
+     ],
+     "a": 0,
+     "e": "Venuti — to wither, to waste away."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Iz one jame nikla *zova*.",
+     "o": [
+      "birch",
+      "elder tree",
+      "oak",
+      "fir"
+     ],
+     "a": 1,
+     "e": "Zova — elder tree."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Momak zavuče ___ u jamu.",
+     "o": [
+      "glavi",
+      "glavom",
+      "glavu",
+      "glava"
+     ],
+     "a": 2,
+     "e": "Zavući what? — accusative: glavu."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Car istrgne ___ da ga poseče.",
+     "o": [
+      "sablja",
+      "sablji",
+      "sabljom",
+      "sablju"
+     ],
+     "a": 3,
+     "e": "Istrgnuti what? — accusative: sablju."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Šta si ti ___ narodu za mene?",
+     "o": [
+      "oglasim",
+      "oglašavam",
+      "oglašavao",
+      "oglasio"
+     ],
+     "a": 3,
+     "e": "A single completed past action takes the perfective: oglasio."
+    }
+   ]
+  }
+ ]
+}

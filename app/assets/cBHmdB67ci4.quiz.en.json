@@ -216,88 +216,88 @@
      "e": "Kupovina of what? Genitive case: novog automobila."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Hteli su da kupe Fiat preko ovlašćenog Fiatovog ___.",
+     "t": "Choose the preposition",
+     "q": "Takvo loše iskustvo ima nekoliko kupaca ___ Lazarevca i okoline,",
      "o": [
-      "diler",
-      "dilerom",
-      "dileru",
-      "dilera"
-     ],
-     "a": 3,
-     "e": "Preko (\"through\") requires the genitive case: preko dilera."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Odluku o kupovini doneo je još tokom ___ 2013.",
-     "o": [
-      "prolećem",
-      "proleća",
-      "proleće",
-      "prolećima"
+      "u",
+      "iz",
+      "sa",
+      "kod"
      ],
      "a": 1,
-     "e": "Tokom (\"during\") requires the genitive case: tokom proleća."
+     "e": "Iz (\"from\") + genitive: kupci iz Lazarevca — buyers from Lazarevac. U and kod don't fit the meaning."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ja sam već četiri ___ uplatio banci.",
+     "t": "Choose the verb aspect",
+     "q": "Branko je odluku o kupovini ___ još tokom proleća 2013. godine,",
      "o": [
-      "rata",
-      "rati",
-      "rate",
-      "ratom"
+      "doneo",
+      "donosila",
+      "donosio",
+      "donela"
+     ],
+     "a": 0,
+     "e": "A decision is made once and the action is complete, so the perfective doneo (donositi is imperfective, for repeated action). Branko is masculine, so not donela."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "Kupci su nam ___ da oni nikako ne mogu da shvate",
+     "o": [
+      "rekao",
+      "rekla",
+      "rekle",
+      "rekli"
+     ],
+     "a": 3,
+     "e": "The past participle agrees with the subject: kupci is masculine plural, so rekli. Rekao is singular, rekle is feminine plural, rekla is feminine singular."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "FAS nije primio nikakvu uplatu od firme MSD Trade u vezi sa ___ vozila na ime Branka Simića.",
+     "o": [
+      "kupovinu",
+      "kupovinom",
+      "kupovini",
+      "kupovina"
+     ],
+     "a": 1,
+     "e": "Sa (\"with\") + instrumental: u vezi sa kupovinom — in connection with the purchase."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Teško je poverovati u objašnjenje da ___ vozilo nije isporučeno zbog ulaska MSD Trade-a u blokadu,",
+     "o": [
+      "Branka",
+      "Brankom",
+      "Branku",
+      "Branko"
      ],
      "a": 2,
-     "e": "After četiri the form that coincides with the genitive singular is used: četiri rate."
+     "e": "Deliver to whom? Dative: Branku — the person the car was (not) delivered to."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Aleksandar se uplašio da će ostati bez ___ i bez automobila.",
+     "t": "Choose the verb aspect",
+     "q": "___ smo svoje automobile 16. decembra.",
      "o": [
-      "novac",
-      "novcem",
-      "novcu",
-      "novca"
+      "Preuzimali",
+      "Preuzimao",
+      "Preuzeo",
+      "Preuzeli"
      ],
      "a": 3,
-     "e": "Bez (\"without\") requires the genitive case: bez novca."
+     "e": "A single event on a specific date calls for the perfective preuzeli. Preuzimali is imperfective (process, repetition). Smo is plural, so not preuzeo."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Njegov automobil je više meseci stajao u krugu ___.",
+     "t": "Choose the preposition",
+     "q": "MSD Trade je bio u blokadi ___ dugovanja od preko 24 miliona dinara.",
      "o": [
-      "fabrika",
-      "fabrikom",
-      "fabriku",
-      "fabrike"
+      "zbog",
+      "prema",
+      "bez",
+      "pored"
      ],
-     "a": 3,
-     "e": "U krugu (\"on the premises of\") requires the genitive case: u krugu fabrike."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Dobio sam dva vaučera gratis za prva dva ___.",
-     "o": [
-      "servis",
-      "servisa",
-      "servisu",
-      "servisom"
-     ],
-     "a": 1,
-     "e": "After dva the genitive singular is used: dva servisa."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "MSD Trade je bio u blokadi zbog ___ od preko 24 miliona dinara.",
-     "o": [
-      "dugovanjem",
-      "dugovanje",
-      "dugovanju",
-      "dugovanja"
-     ],
-     "a": 3,
-     "e": "Zbog (\"because of\") requires the genitive case: zbog dugovanja."
+     "a": 0,
+     "e": "Zbog (\"because of\") + genitive: zbog dugovanja — because of debts."
     }
    ]
   }

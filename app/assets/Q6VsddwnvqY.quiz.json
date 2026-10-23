@@ -252,40 +252,40 @@
      "e": "Kod («к, у») требует родительного падежа: kod kerova."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Krompir oguliš, mi bacimo u ___.",
+     "t": "Выбери форму глагола",
+     "q": "Brašno 85, to sam koristila u toku ovog jela, ali sam ___ malo.",
      "o": [
-      "smeća",
-      "smeće",
-      "smeću",
-      "smećem"
+      "koristili",
+      "koristila",
+      "koristilo",
+      "koristio"
      ],
      "a": 1,
-     "e": "Bacati u + винительный падеж; у среднего рода он совпадает с именительным: smeće."
+     "e": "Говорит женщина (sam koristila), поэтому причастие женского рода: koristila."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ja sam živeo od plate do ___.",
+     "t": "Выбери вид глагола",
+     "q": "Pa i računaš na neplanirano, pa malo sa strane ___.",
      "o": [
-      "plata",
-      "plate",
-      "platom",
-      "platu"
+      "ostavljaš",
+      "ostavljao",
+      "ostaviš",
+      "ostavio"
      ],
-     "a": 1,
-     "e": "Do («до») требует родительного падежа: od plate do plate."
+     "a": 2,
+     "e": "Отложить «про запас» — разовое действие с результатом: совершенный вид ostaviš. Ostavljaš — несовершенный."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ne moraš pisati: popila sam danas jednu ___.",
+     "t": "Выбери предлог",
+     "q": "Ovo uopšte nije scenirano, neću se vratiti ___ kameru.",
      "o": [
-      "kafom",
-      "kafe",
-      "kafa",
-      "kafu"
+      "po",
+      "za",
+      "od",
+      "na"
      ],
-     "a": 3,
-     "e": "Popiti что — винительный падеж: kafu."
+     "a": 0,
+     "e": "Vratiti se po + винительный падеж — «вернуться за чем-то»: po kameru."
     },
     {
      "t": "Выбери правильную форму слова",

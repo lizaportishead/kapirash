@@ -240,52 +240,52 @@
      "e": "U in answer to \"where to?\" — accusative case: u prodavnicu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "David se nalazi gde je zadnji ulaz ___ u kom radi.",
+     "t": "Choose the verb aspect",
+     "q": "Sedi časkom tu, ja idem da ___ nešto tamo u kuhinji.",
      "o": [
-      "kafićem",
-      "kafiću",
-      "kafića",
-      "kafić"
-     ],
-     "a": 2,
-     "e": "Ulaz of what? Genitive case: ulaz kafića."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Ukucaš broj tvoje ___.",
-     "o": [
-      "šasije",
-      "šasija",
-      "šasiju",
-      "šasijom"
+      "snimim",
+      "snimam",
+      "snimio",
+      "snimao"
      ],
      "a": 0,
-     "e": "Broj of what? Genitive case: broj šasije."
+     "e": "After \"idem da\" a single purpose takes the perfective: snimim. Snimam is imperfective (ongoing)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Šteta u vrednosti od 60.000 do 180.000 ___.",
+     "t": "Choose the adjective form",
+     "q": "da pronađe ___ kameru u mrklom mraku.",
      "o": [
-      "dinari",
-      "dinare",
-      "dinara",
-      "dinar"
+      "skrivene",
+      "skriveno",
+      "skrivena",
+      "skrivenu"
      ],
-     "a": 2,
-     "e": "After numerals from 5 the genitive plural is used: dinara."
+     "a": 3,
+     "e": "Kamera is feminine and the direct object takes the accusative, hence the ending -u: skrivenu kameru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupio sam Anđelin omiljeni ___.",
+     "t": "Choose the preposition",
+     "q": "a i još malo nam fali ___ 50.000.",
      "o": [
-      "čipsa",
-      "čips",
-      "čipsu",
-      "čipsom"
+      "za",
+      "do",
+      "na",
+      "od"
      ],
      "a": 1,
-     "e": "Kupiti what — accusative case; for inanimate nouns it coincides with the nominative: čips."
+     "e": "Faliti do + genitive means \"to be short of\": fali do 50.000."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Šta je sa pravim ___?",
+     "o": [
+      "bravom",
+      "bravama",
+      "brave",
+      "bravi"
+     ],
+     "a": 1,
+     "e": "Sa + instrumental plural: sa pravim bravama — with real locks."
     },
     {
      "t": "Выбери правильную форму слова",

@@ -1,0 +1,187 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Who was the prince looking for?",
+     "o": [
+      "The most beautiful girl in the kingdom",
+      "A rich widow",
+      "A girl who could sing",
+      "A real princess"
+     ],
+     "a": 3,
+     "e": "The prince wanted to marry, but the princess had to be a real one."
+    },
+    {
+     "q": "What was the weather like the evening the princess appeared at the gate?",
+     "o": [
+      "A thunderstorm and heavy rain",
+      "Fog",
+      "A snowfall",
+      "A heatwave"
+     ],
+     "a": 0,
+     "e": "“Grmelo je i sevalo, i kiša je strašno pljuštala” — it thundered, lightning flashed, and the rain poured."
+    },
+    {
+     "q": "What did the queen put at the bottom of the bed?",
+     "o": [
+      "A gold ring",
+      "A pea",
+      "A pebble",
+      "A coin"
+     ],
+     "a": 1,
+     "e": "“Stavila je zrno graška na dno” — she put a pea at the bottom."
+    },
+    {
+     "q": "How many mattresses did the queen pile on top of the pea?",
+     "o": [
+      "Seven",
+      "A hundred",
+      "Twenty",
+      "Three"
+     ],
+     "a": 2,
+     "e": "“Zatim je prekrila zrno sa dvadeset dušeka” — then she covered the pea with twenty mattresses."
+    },
+    {
+     "q": "What did the princess say in the morning when asked how she slept?",
+     "o": [
+      "That the thunder woke her",
+      "That she was too hot",
+      "That she slept wonderfully",
+      "That she slept badly: she lay on something hard and was black and blue"
+     ],
+     "a": 3,
+     "e": "“Ležala sam na nečemu tvrdom, sva sam modra” — I lay on something hard, I'm black and blue."
+    },
+    {
+     "q": "Why did everyone decide she was a real princess?",
+     "o": [
+      "She named her father the king",
+      "She felt the pea through twenty mattresses",
+      "She arrived wearing a royal crown",
+      "She was very beautiful"
+     ],
+     "a": 1,
+     "e": "“Mogla je da oseti zrno graška kroz dvadeset dušeka” — she could feel the pea through twenty mattresses."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Zatim je prekrila zrno sa dvadeset *dušeka*.",
+     "o": [
+      "carpets",
+      "mattresses",
+      "pillows",
+      "blankets"
+     ],
+     "a": 1,
+     "e": "Dušek — mattress."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Voda se *slivala* niz njenu kosu i odeću.",
+     "o": [
+      "rose up",
+      "ran down",
+      "froze",
+      "boiled"
+     ],
+     "a": 1,
+     "e": "Slivati se — to run down."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Nisam ni oka *sklopila* celu noć.",
+     "o": [
+      "rubbed",
+      "wiped",
+      "raised",
+      "closed"
+     ],
+     "a": 3,
+     "e": "Sklopiti oči — to close one's eyes, to sleep."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Niko osim prave princeze ne može biti tako *osetljiv*.",
+     "o": [
+      "rich",
+      "tall",
+      "strong",
+      "sensitive"
+     ],
+     "a": 3,
+     "e": "Osetljiv — sensitive."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Bilo je dosta princeza, ali je bilo teško *saznati* da li su prave.",
+     "o": [
+      "to hide",
+      "to explain",
+      "to find out",
+      "to forget"
+     ],
+     "a": 2,
+     "e": "Saznati — to find out."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Voda se slivala niz njenu ___.",
+     "o": [
+      "kosa",
+      "kosi",
+      "kosu",
+      "kosom"
+     ],
+     "a": 2,
+     "e": "Niz takes the accusative: niz kosu."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Prekrila je zrno sa dvadeset ___.",
+     "o": [
+      "dušeka",
+      "dušeci",
+      "dušeku",
+      "dušecima"
+     ],
+     "a": 0,
+     "e": "After numerals from 5 the noun takes the genitive plural: dvadeset dušeka."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Ležala sam na nečemu ___.",
+     "o": [
+      "tvrdog",
+      "tvrdim",
+      "tvrdom",
+      "tvrdo"
+     ],
+     "a": 2,
+     "e": "Na + locative (where?): na nečemu tvrdom."
+    }
+   ]
+  }
+ ]
+}

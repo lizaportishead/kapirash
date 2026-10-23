@@ -204,16 +204,16 @@
    "about": "Cases and prepositions",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Odmalena sam otkrio ___.",
+     "t": "Choose the verb aspect",
+     "q": "Još od nastanka civilizacije ljudi su za sobom ___ tragove svog postojanja.",
      "o": [
-      "filma",
-      "film",
-      "filmu",
-      "filmom"
+      "ostavljali",
+      "ostavio",
+      "ostavljao",
+      "ostavili"
      ],
-     "a": 1,
-     "e": "Otkriti what — accusative case; for inanimate nouns it coincides with the nominative: film."
+     "a": 0,
+     "e": "The action was repeated through the ages — imperfective ostavljali. Ostavili is perfective (once)."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -240,16 +240,16 @@
      "e": "Biti + nominative case: neki projektor."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Otac mi je kupovao svakog petka ___.",
+     "t": "Choose the verb form",
+     "q": "gde je danas knjižara, nekad je ___ prodavnica Cinefoto,",
      "o": [
-      "Zabavnika",
-      "Zabavniku",
-      "Zabavnik",
-      "Zabavnikom"
+      "bila",
+      "bilo",
+      "bio",
+      "bili"
      ],
-     "a": 2,
-     "e": "Kupovati what — accusative case; for inanimate nouns it coincides with the nominative: Zabavnik."
+     "a": 0,
+     "e": "The participle agrees with the subject: prodavnica is feminine singular, so bila."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -276,16 +276,16 @@
      "e": "Na in answer to \"where?\" — locative plural: na festivalima."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Film je dobio desetak ___.",
+     "t": "Choose the verb form",
+     "q": "i naravno, s tim je ___ da ide i projektor i tako dalje.",
      "o": [
-      "nagrada",
-      "nagradom",
-      "nagradu",
-      "nagrade"
+      "morali",
+      "morao",
+      "morala",
+      "moralo"
      ],
-     "a": 0,
-     "e": "After desetak the genitive plural is used: nagrada."
+     "a": 1,
+     "e": "The participle agrees with the subject: projektor is masculine singular, so morao."
     },
     {
      "t": "Выбери правильную форму слова",

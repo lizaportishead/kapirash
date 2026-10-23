@@ -216,16 +216,16 @@
      "e": "Baviti se + instrumental case: bavim se crtanjem."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Ovaj dnevnik počela sam da vodim ___ godine.",
+     "t": "Choose the verb aspect",
+     "q": "koji smo ___ sad za vikend, pa ću sad da pregledam",
      "o": [
-      "prošle",
-      "prošla",
-      "prošlu",
-      "prošlom"
+      "posećivali",
+      "posećivao",
+      "posetio",
+      "posetili"
      ],
-     "a": 0,
-     "e": "Prošle godine — \"last year\": genitive case for time."
+     "a": 3,
+     "e": "A single completed visit — perfective posetili. Posećivali is imperfective (regular visits). Smo is plural."
     },
     {
      "t": "Выбери правильную форму",
@@ -240,16 +240,16 @@
      "e": "Na + locative case (where?): na vašaru."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Vuk je dobio majicu od svoje ___.",
+     "t": "Choose the verb aspect",
+     "q": "Dugo sam tražila varjaču koja nije ovakva, ova velika, tako da sam konačno ___",
      "o": [
-      "mama",
-      "mamu",
-      "mame",
-      "mami"
+      "našla",
+      "nalazio",
+      "našao",
+      "nalazila"
      ],
-     "a": 2,
-     "e": "Od + genitive case: od svoje mame."
+     "a": 0,
+     "e": "\"Finally\" signals a result, so perfective: našla. A woman is speaking (tražila sam), so not našao."
     },
     {
      "t": "Выбери правильную форму",

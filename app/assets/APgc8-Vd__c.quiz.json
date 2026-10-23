@@ -228,16 +228,16 @@
      "e": "Od («из») требует родительного падежа: od oba sveta."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Mirni život ruralnog ___.",
+     "t": "Выбери предлог",
+     "q": "Već im sreću predstavlja život ___ stresa i sa mnogo druženja.",
      "o": [
-      "mesta",
-      "mestom",
-      "mesto",
-      "mestu"
+      "do",
+      "bez",
+      "od",
+      "uz"
      ],
-     "a": 0,
-     "e": "Život чего? Родительный падеж: ruralnog mesta."
+     "a": 1,
+     "e": "Bez («без») + родительный падеж: život bez stresa — жизнь без стресса."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,40 +252,40 @@
      "e": "U на вопрос «где?» — местный падеж: u Naftagasu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Dolazili su iz ___.",
+     "t": "Выбери вид глагола",
+     "q": "Dobila je 11 miliona tad, otišla u Dobanovce i ___ traktor.",
      "o": [
-      "Dobanovcima",
-      "Dobanovaca",
-      "Dobanovce",
-      "Dobanovci"
+      "dovozila",
+      "doterao",
+      "dovozio",
+      "doterala"
+     ],
+     "a": 3,
+     "e": "Одноразовое завершённое действие — совершенный вид: doterala (пригнала). Подлежащее женское (dobila, otišla), поэтому не doterao."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "Ona je bila ___ druge ulice.",
+     "o": [
+      "u",
+      "iz",
+      "kod",
+      "na"
      ],
      "a": 1,
-     "e": "Iz («из») требует родительного падежа: iz Dobanovaca."
+     "e": "Iz («из») + родительный падеж: iz druge ulice — из другой улицы."
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Ona je bila iz druge ___.",
+     "q": "Vidim je dole i samo ___ mahnem rukom.",
      "o": [
-      "ulice",
-      "ulica",
-      "ulicu",
-      "ulicom"
+      "njom",
+      "nju",
+      "ona",
+      "joj"
      ],
-     "a": 0,
-     "e": "Iz требует родительного падежа: iz druge ulice."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Vi ste zajedno 54 ___.",
-     "o": [
-      "godine",
-      "godina",
-      "godinama",
-      "godinu"
-     ],
-     "a": 0,
-     "e": "После числа, оканчивающегося на 4, ставится родительный падеж единственного числа: godine."
+     "a": 3,
+     "e": "Mahnuti kome? Дательный падеж: ona → joj («ей»). Rukom — творительный падеж («рукой»)."
     },
     {
      "t": "Выбери правильную форму слова",

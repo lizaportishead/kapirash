@@ -228,16 +228,16 @@
      "e": "Na на вопрос «при чём?» — местный падеж: na temperaturi."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupio sam providnu ___ za vodu.",
+     "t": "Выбери вид глагола",
+     "q": "___ smo jednu kapljicu, da vidimo da li je uspelo.",
      "o": [
-      "posudom",
-      "posudu",
-      "posuda",
-      "posude"
+      "Topili",
+      "Istopio",
+      "Topio",
+      "Istopili"
      ],
-     "a": 1,
-     "e": "Kupiti что — винительный падеж: posudu."
+     "a": 3,
+     "e": "Одна капля, результат получен — совершенный вид: istopiti. Topili — несовершенный (процесс). Smo — мн. ч."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,28 +264,28 @@
      "e": "Izdržati что — винительный падеж; у klešta (мн. ч. среднего рода) он совпадает с именительным."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Nemam hidrauličnu ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Staklo je i ___ nego što sam mislio.",
      "o": [
-      "presa",
-      "prese",
-      "presu",
-      "presom"
+      "čvrsta",
+      "čvršće",
+      "čvrst",
+      "čvrsto"
      ],
-     "a": 2,
-     "e": "Nemam + прямое дополнение: винительный падеж, presu."
+     "a": 1,
+     "e": "Сравнительная степень: čvrst → čvršće («твёрже»). Staklo — средний род, поэтому окончание -e."
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Dok nisam imao šest uspešnih celih ___.",
+     "q": "kada sam uzeo onu kapljicu ___ sam malopre presekao rep,",
      "o": [
-      "kapljicu",
-      "kapljice",
-      "kapljicama",
-      "kapljica"
+      "kojoj",
+      "koju",
+      "koje",
+      "koja"
      ],
-     "a": 3,
-     "e": "После чисел от 5 ставится родительный падеж множественного числа: kapljica."
+     "a": 0,
+     "e": "Presekao rep — кому/чему? Дательный падеж: kapljici → kojoj («которой»)."
     },
     {
      "t": "Выбери правильную форму слова",

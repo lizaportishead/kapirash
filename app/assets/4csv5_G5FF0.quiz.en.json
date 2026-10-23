@@ -240,28 +240,28 @@
      "e": "Pokraj (\"next to\") requires the genitive case: pokraj Kikinde."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Imamo smeštajne ___.",
+     "t": "Choose the adjective form",
+     "q": "i videli su da su ljudi ___",
      "o": [
-      "kapaciteti",
-      "kapaciteta",
-      "kapacitetima",
-      "kapacitete"
+      "zadovoljne",
+      "zadovoljni",
+      "zadovoljna",
+      "zadovoljan"
      ],
-     "a": 3,
-     "e": "Imati + object — accusative plural: kapacitete."
+     "a": 1,
+     "e": "The adjective agrees with the noun: ljudi is masculine plural, so zadovoljni."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Spojili smo najbolje stvari ta dva ___.",
+     "t": "Choose the verb aspect",
+     "q": "Ja sam ___ svoj mejl, i ovo su prve stvari",
      "o": [
-      "svetu",
-      "svet",
-      "svetova",
-      "sveta"
+      "pogledala",
+      "gledala",
+      "pogledao",
+      "gledao"
      ],
-     "a": 3,
-     "e": "After dva the genitive singular is used: dva sveta."
+     "a": 0,
+     "e": "Looked once — perfective pogledala. A woman is speaking (sam + -la), so not pogledao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Iza (\"behind\") requires the genitive case; vrata — genitive plural: iza ovih vrata."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Stanfordski profesor je iskoristio jednu kinesku ___.",
+     "t": "Choose the correct form",
+     "q": "sa ___ koji su radili u kancelariji.",
      "o": [
-      "kompanijom",
-      "kompanije",
-      "kompanija",
-      "kompaniju"
+      "ovi",
+      "ove",
+      "ovih",
+      "ovima"
      ],
      "a": 3,
-     "e": "Iskoristiti + object — accusative case: kompaniju."
+     "e": "Sa (\"with\") + instrumental plural: sa ovima — with those who..."
     }
    ]
   }

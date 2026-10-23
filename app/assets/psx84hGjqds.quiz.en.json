@@ -216,40 +216,40 @@
      "e": "Uputiti se na + accusative case; for inanimate nouns it coincides with the nominative: na Vračar."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Treba podeliti ___.",
+     "t": "Choose the preposition",
+     "q": "Verujemo da ćemo ___ 15. maja sve završiti.",
      "o": [
-      "plati",
-      "plate",
-      "platama",
-      "plata"
+      "do",
+      "od",
+      "za",
+      "iz"
      ],
-     "a": 1,
-     "e": "Podeliti what — accusative plural: plate."
+     "a": 0,
+     "e": "Do (\"until, by\") + genitive: do 15. maja — by 15 May."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Moj brat Dare vodi o tome ___.",
+     "t": "Choose the verb aspect",
+     "q": "Svratili smo malo nešto da ___,",
      "o": [
-      "računu",
-      "račun",
-      "računom",
-      "računa"
-     ],
-     "a": 3,
-     "e": "Voditi računa o what — genitive case: voditi računa."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Verujemo da ćemo do 15. ___ sve završiti.",
-     "o": [
-      "majem",
-      "maju",
-      "maja",
-      "maj"
+      "jedemo",
+      "pojeli",
+      "pojedemo",
+      "jeli"
      ],
      "a": 2,
-     "e": "The date 15. maja — genitive case of the month name: do 15. maja."
+     "e": "After da the purpose is a single act, \"have a bite\": perfective pojedemo. Jedemo is imperfective (process or habit)."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Razboj je ___, a?",
+     "o": [
+      "dobar",
+      "dobri",
+      "dobro",
+      "dobra"
+     ],
+     "a": 0,
+     "e": "The adjective agrees with the noun: razboj is masculine singular, so dobar."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Iz (\"from\") requires the genitive case: iz parka."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ocena 7, zato što radi samo pola ___.",
+     "t": "Choose the correct form",
+     "q": "Pa ovo što je Vuk rekao, znači sa ___ stvari se slažem.",
      "o": [
-      "tela",
-      "telu",
-      "telom",
-      "telo"
+      "većinu",
+      "većine",
+      "većina",
+      "većinom"
      ],
-     "a": 0,
-     "e": "After pola the genitive case is used: pola tela."
+     "a": 3,
+     "e": "Slagati se sa (\"to agree with\") + instrumental: sa većinom stvari — with most things."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "U in answer to \"where?\" — locative case: u hladovini."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ima ovih zemljanih ___ koliko hoćeš.",
+     "t": "Choose the preposition",
+     "q": "Evo nas ___ Olimpu, dakle, zvezdarski hram sporta.",
      "o": [
-      "staze",
-      "stazama",
-      "stazu",
-      "staza"
+      "na",
+      "iz",
+      "u",
+      "kod"
      ],
-     "a": 3,
-     "e": "After koliko (\"how many\") the genitive plural is used: staza."
+     "a": 0,
+     "e": "For a venue like Olimp, \"where?\" takes na + locative: na Olimpu."
     }
    ]
   }

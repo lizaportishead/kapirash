@@ -124,16 +124,16 @@
      "e": "Na на вопрос «где?» требует местного падежа: na desnom obrazu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Bila bi najlepša na ___.",
+     "t": "Выбери вид глагола",
+     "q": "Za još bolji izgled ___ sam dva zuba.",
      "o": [
-      "svetu",
-      "svetom",
-      "svet",
-      "sveta"
+      "sklanjala",
+      "sklonio",
+      "sklanjao",
+      "sklonila"
      ],
-     "a": 0,
-     "e": "Na svetu — «в мире»: местный падеж после na."
+     "a": 3,
+     "e": "Действие завершено — совершенный вид: sklonila. Говорит женщина (sam + -la), поэтому не sklonio."
     },
     {
      "t": "Выбери правильную форму слова",

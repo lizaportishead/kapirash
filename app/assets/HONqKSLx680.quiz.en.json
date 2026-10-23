@@ -276,28 +276,28 @@
      "e": "To be right — the expression biti u pravu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Došao sam do nekog ___.",
+     "t": "Choose the verb aspect",
+     "q": "Nadao sam se da ću ___ neku zgradu,",
      "o": [
-      "jezeru",
-      "jezerom",
-      "jezera",
-      "jezero"
+      "video",
+      "gledao",
+      "gledati",
+      "videti"
      ],
-     "a": 2,
-     "e": "Do (\"up to\") requires the genitive case: do jezera."
+     "a": 3,
+     "e": "Hoping for a result — \"to catch sight of\": perfective videti. Gledati is imperfective (process)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pored ___ sam došao do ćorsokaka.",
+     "t": "Choose the adjective form",
+     "q": "Znači, ipak idu u ovom ___ smeru.",
      "o": [
-      "Savom",
-      "Sava",
-      "Save",
-      "Savu"
+      "drugom",
+      "drugi",
+      "drugog",
+      "drugo"
      ],
-     "a": 2,
-     "e": "Pored (\"next to\") requires the genitive case: pored Save."
+     "a": 0,
+     "e": "U + locative. Smer is masculine, so drugom smeru."
     }
    ]
   }

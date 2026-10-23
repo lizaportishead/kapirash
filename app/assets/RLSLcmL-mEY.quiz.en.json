@@ -228,16 +228,16 @@
      "e": "After numbers from 5 the genitive plural is used: zajednica."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ministar je saopštio plan pre 3 ___.",
+     "t": "Choose the verb aspect",
+     "q": "ministar je ___ pre 3 meseca na Saboru zadrugara u Nišu.",
      "o": [
-      "mesecima",
-      "mesec",
-      "meseci",
-      "meseca"
+      "saopštavala",
+      "saopštavao",
+      "saopštila",
+      "saopštio"
      ],
      "a": 3,
-     "e": "After the number 3 the genitive singular is used: pre 3 meseca."
+     "e": "Announced once — perfective saopštio. Saopštavao is imperfective (process, repetition). Ministar is masculine."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,28 +264,28 @@
      "e": "Boriti se sa (\"to fight with\") requires the instrumental case: sa statistikama."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U Pirotu imamo svega oko 10 ___ ovaca.",
+     "t": "Choose the preposition",
+     "q": "Veliku šansu ___ oporavak ruralnih sredina ovde vide u razvoju seoskog turizma.",
      "o": [
-      "hiljade",
-      "hiljadama",
-      "hiljada",
-      "hiljadu"
+      "od",
+      "za",
+      "kod",
+      "o"
      ],
-     "a": 2,
-     "e": "After the number 10 the genitive plural is used: hiljada."
+     "a": 1,
+     "e": "Šansa za + accusative means \"a chance for something\": šansa za oporavak."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ovce su se spustile u sela pored ___.",
+     "t": "Choose the verb form",
+     "q": "a one su se ___ u sela koja se nalaze pored grada,",
      "o": [
-      "grad",
-      "gradu",
-      "grada",
-      "gradom"
+      "spustio",
+      "spustile",
+      "spustilo",
+      "spustili"
      ],
-     "a": 2,
-     "e": "Pored (\"next to\") requires the genitive case: pored grada."
+     "a": 1,
+     "e": "The participle agrees with the subject: one (ovce) is feminine plural, so spustile."
     },
     {
      "t": "Выбери правильную форму слова",

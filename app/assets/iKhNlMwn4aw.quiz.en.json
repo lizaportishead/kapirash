@@ -228,16 +228,16 @@
      "e": "Research of what? Genitive plural: korisnika."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Napisali smo ___ koja se zove „Design thinking“.",
+     "t": "Choose the correct form",
+     "q": "idite da pričate sa svojim ___.",
      "o": [
-      "knjigom",
-      "knjige",
-      "knjigu",
-      "knjiga"
+      "korisnika",
+      "korisniku",
+      "korisnici",
+      "korisnicima"
      ],
-     "a": 2,
-     "e": "Napisati what — accusative case: knjigu."
+     "a": 3,
+     "e": "Sa (\"with\") + instrumental plural: sa korisnicima — with users."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,16 +252,16 @@
      "e": "U in answer to \"where?\" — locative case: u ćošku."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kad su se vlasnici stavili u ___ korisnika.",
+     "t": "Choose the verb aspect",
+     "q": "Tako što ___ i razvijate softver za voice recognition.",
      "o": [
-      "kože",
-      "koža",
-      "kožom",
-      "kožu"
+      "sednete",
+      "sedali",
+      "seli",
+      "sedate"
      ],
-     "a": 3,
-     "e": "Staviti se u + accusative case: u kožu — \"to put oneself in someone's shoes\"."
+     "a": 0,
+     "e": "A one-off action before an ongoing process is perfective: sednete (\"sit down\"). Sedate is imperfective."
     },
     {
      "t": "Выбери правильную форму слова",

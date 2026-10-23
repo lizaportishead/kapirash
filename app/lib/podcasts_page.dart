@@ -44,10 +44,31 @@ class PodcastsPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
-              children: [for (final p in podcasts) EpisodeTile(p)],
-            ),
+            child: LayoutBuilder(builder: (context, c) {
+              final wide = c.maxWidth >= 720;
+              if (!wide) {
+                return ListView(
+                  padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
+                  children: [for (final p in podcasts) EpisodeTile(p)],
+                );
+              }
+              return ListView(
+                padding: EdgeInsets.fromLTRB(32, 8, 32, 32),
+                children: [
+                  for (var i = 0; i < podcasts.length; i += 2)
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(child: EpisodeTile(podcasts[i], roomy: true)),
+                        SizedBox(width: 20),
+                        Expanded(
+                          child: i + 1 < podcasts.length ? EpisodeTile(podcasts[i + 1], roomy: true) : SizedBox(),
+                        ),
+                      ],
+                    ),
+                ],
+              );
+            }),
           ),
         ],
       ),
@@ -63,14 +84,15 @@ void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay 
 }
 
 class EpisodeTile extends StatelessWidget {
-  const EpisodeTile(this.video, {super.key});
+  const EpisodeTile(this.video, {super.key, this.roomy = false});
   final Video video;
+  final bool roomy;
 
   @override
   Widget build(BuildContext context) {
     final done = store.isWatched(video.id);
     return Padding(
-      padding: EdgeInsets.only(bottom: 8),
+      padding: EdgeInsets.only(bottom: roomy ? 20 : 8),
       child: Material(
         color: cCard,
         borderRadius: BorderRadius.circular(20),
@@ -78,7 +100,7 @@ class EpisodeTile extends StatelessWidget {
         child: InkWell(
           onTap: () => openPodcast(context, video),
           child: Padding(
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.all(roomy ? 18 : 12),
             child: Row(
               children: [
                 _Cover(size: 64, channel: video.channel),
@@ -372,16 +394,17 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                           _transport(),
                           SizedBox(height: 10),
                           _current(cue),
-                          if (_quiz.isNotEmpty) ...[
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(4, 28, 4, 8),
-                              child: Text(
-                                ui('Послушай подкаст и выполни задания'),
-                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, height: 1.25, color: cText),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              onPressed: _openText,
+                              icon: Icon(KIcons.text, size: 18, color: cMuted),
+                              label: Text(
+                                ui('Весь текст'),
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: cMuted),
                               ),
                             ),
-                            QuizList(videoId: id, sections: _quiz, inline: true),
-                          ],
+                          ),
                         ],
                       ),
                     ),
@@ -542,27 +565,36 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     );
   }
 
+  void _openText() {
+    _push(
+      SubPage(
+        title: ui('Весь текст'),
+        child: Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: _seek),
+      ),
+    );
+  }
+
   Widget _links() {
     final words = store.words.where((w) => w.video == id).length;
     return Row(
       spacing: 6,
       children: [
-        Expanded(
-          child: Pill(
-            ui('Весь текст'),
-            icon: KIcons.text,
-            onTap: () => _push(
-              SubPage(
-                title: ui('Весь текст'),
-                child: Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: _seek),
+        if (_quiz.isNotEmpty)
+          Expanded(
+            child: ListenableBuilder(
+              listenable: store,
+              builder: (context, _) => Pill(
+                ui('Задания'),
+                badge: _quiz.where((s) => store.quizResult(id, s.title) == null).length,
+                icon: KIcons.tasks,
+                onTap: () => _push(SubPage(title: ui('Задания'), child: QuizList(videoId: id, sections: _quiz))),
               ),
             ),
           ),
-        ),
         Expanded(
           child: Pill(
             key: _wordsKey,
-            ui('Словарь'),
+            ui('Слова'),
             badge: words,
             icon: KIcons.wordsOn,
             onTap: () => _push(SubPage(title: ui('Словарь'), child: WordList(videoId: id, onSeek: _seek))),

@@ -216,40 +216,40 @@
      "e": "Uputiti se na + винительный падеж; у неодушевлённых он совпадает с именительным: na Vračar."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Treba podeliti ___.",
+     "t": "Выбери предлог",
+     "q": "Verujemo da ćemo ___ 15. maja sve završiti.",
      "o": [
-      "plati",
-      "plate",
-      "platama",
-      "plata"
+      "do",
+      "od",
+      "za",
+      "iz"
      ],
-     "a": 1,
-     "e": "Podeliti что — винительный падеж множественного числа: plate."
+     "a": 0,
+     "e": "Do («до») + родительный падеж: do 15. maja — до 15 мая."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Moj brat Dare vodi o tome ___.",
+     "t": "Выбери вид глагола",
+     "q": "Svratili smo malo nešto da ___,",
      "o": [
-      "računu",
-      "račun",
-      "računom",
-      "računa"
-     ],
-     "a": 3,
-     "e": "Voditi računa o чём — родительный падеж: voditi računa."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Verujemo da ćemo do 15. ___ sve završiti.",
-     "o": [
-      "majem",
-      "maju",
-      "maja",
-      "maj"
+      "jedemo",
+      "pojeli",
+      "pojedemo",
+      "jeli"
      ],
      "a": 2,
-     "e": "Дата 15. maja — родительный падеж названия месяца: do 15. maja."
+     "e": "После da — конкретная цель, один раз «перекусить»: совершенный вид pojedemo. Jedemo — несовершенный (процесс или привычка)."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "Razboj je ___, a?",
+     "o": [
+      "dobar",
+      "dobri",
+      "dobro",
+      "dobra"
+     ],
+     "a": 0,
+     "e": "Прилагательное согласуется с существительным: razboj — мужской род, ед. ч., значит dobar."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -265,15 +265,15 @@
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Ocena 7, zato što radi samo pola ___.",
+     "q": "Pa ovo što je Vuk rekao, znači sa ___ stvari se slažem.",
      "o": [
-      "tela",
-      "telu",
-      "telom",
-      "telo"
+      "većinu",
+      "većine",
+      "većina",
+      "većinom"
      ],
-     "a": 0,
-     "e": "После pola ставится родительный падеж: pola tela."
+     "a": 3,
+     "e": "Slagati se sa + творительный падеж: sa većinom stvari — с большинством вещей."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "U на вопрос «где?» — местный падеж: u hladovini."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ima ovih zemljanih ___ koliko hoćeš.",
+     "t": "Выбери предлог",
+     "q": "Evo nas ___ Olimpu, dakle, zvezdarski hram sporta.",
      "o": [
-      "staze",
-      "stazama",
-      "stazu",
-      "staza"
+      "na",
+      "iz",
+      "u",
+      "kod"
      ],
-     "a": 3,
-     "e": "После koliko («сколько») ставится родительный падеж множественного числа: staza."
+     "a": 0,
+     "e": "С названием места-площадки Olimp на вопрос «где?» говорят na + местный падеж: na Olimpu."
     }
    ]
   }

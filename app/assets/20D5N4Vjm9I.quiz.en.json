@@ -228,28 +228,28 @@
      "e": "Ispod (\"under\") requires the genitive case: ispod očiju."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Na neka mesta gde imam ___.",
+     "t": "Choose the verb aspect",
+     "q": "A zatim ___ i ovaj Make Me Brow koji je od Essence.",
      "o": [
-      "pegice",
-      "pegicama",
-      "pegica",
-      "pegici"
-     ],
-     "a": 0,
-     "e": "Imati + object — accusative plural: pegice."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Malo ga stavim na ___, na čelo.",
-     "o": [
-      "nosa",
-      "nosom",
-      "nosu",
-      "nos"
+      "stavljam",
+      "stavljao",
+      "stavio",
+      "stavim"
      ],
      "a": 3,
-     "e": "Na in answer to \"where to?\" — accusative case: na nos."
+     "e": "\"Then\" introduces the next step, so the perfective: stavim. Stavljam is imperfective (process or habit)."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "za njega inače koristim ovu veliku četkicu jer mi je s ___ najlakše.",
+     "o": [
+      "nju",
+      "njom",
+      "nje",
+      "ona"
+     ],
+     "a": 1,
+     "e": "S(a) + instrumental: ona → njom. Četkica is feminine: s njom — \"with it\"."
     },
     {
      "t": "Выбери правильную форму слова",

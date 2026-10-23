@@ -216,16 +216,16 @@
      "e": "Od («от») требует родительного падежа: od Podgorice."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Uputili smo se do ___.",
+     "t": "Выбери вид глагола",
+     "q": "Tako da smo ___ jedan težak period stvaranja etno-sela.",
      "o": [
-      "etno-selom",
-      "etno-selu",
-      "etno-selo",
-      "etno-sela"
+      "prelazili",
+      "prešao",
+      "prešli",
+      "prelazio"
      ],
-     "a": 3,
-     "e": "Do («до, к») требует родительного падежа: do etno-sela."
+     "a": 2,
+     "e": "Период пройден и закончен — совершенный вид: prešli. Prelazili — несовершенный (процесс). Smo — мн. ч., поэтому не prešao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -240,28 +240,28 @@
      "e": "Pogled na + винительный падеж; у среднего рода он совпадает с именительным: jezero."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Došli smo na ___ da pravimo etno-selo.",
+     "t": "Выбери форму прилагательного",
+     "q": "Vidjeli ste vi da su naši objekti spolja ___ od kamena, od drveta,",
      "o": [
-      "ideje",
-      "ideja",
-      "ideju",
-      "idejom"
-     ],
-     "a": 2,
-     "e": "Doći na ideju — винительный падеж: na ideju."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Mi imamo 11 smještajnih ___.",
-     "o": [
-      "objekata",
-      "objekti",
-      "objektima",
-      "objekte"
+      "urađeni",
+      "urađene",
+      "urađena",
+      "urađen"
      ],
      "a": 0,
-     "e": "После числа 11 ставится родительный падеж множественного числа: objekata."
+     "e": "Причастие согласуется с подлежащим: objekti — мужской род, мн. ч., значит urađeni."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "Radimo ___ proširenju, malo nas je poremetila korona, kriza,",
+     "o": [
+      "za",
+      "na",
+      "o",
+      "u"
+     ],
+     "a": 1,
+     "e": "Raditi na + местный падеж — «работать над чем-то»: radimo na proširenju — работаем над расширением."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Na на вопрос «где?» — местный падеж: na Tari."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U porodičnom biznisu rade supruga, dva ___, snaha i unučad.",
+     "t": "Выбери вид глагола",
+     "q": "U kvalitet gastronomske ponude smo se i sami ___.",
      "o": [
-      "sina",
-      "sinova",
-      "sine",
-      "sinovi"
+      "uveravali",
+      "uverili",
+      "uverio",
+      "uveravao"
      ],
-     "a": 0,
-     "e": "После dva ставится родительный падеж единственного числа: dva sina."
+     "a": 1,
+     "e": "Убедились на месте, результат достигнут — совершенный вид: uveriti se. Uveravati se — несовершенный. Smo — мн. ч., поэтому не uverio."
     }
    ]
   }

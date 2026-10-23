@@ -123,16 +123,16 @@
    "about": "Cases and prepositions",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sedi u nekom ___.",
+     "t": "Choose the verb aspect",
+     "q": "Nemojmo misliti da smo već sve ___ od života,",
      "o": [
-      "kafića",
-      "kafiću",
-      "kafić",
-      "kafićem"
+      "video",
+      "gledao",
+      "videli",
+      "gledali"
      ],
-     "a": 1,
-     "e": "U in answer to \"where?\" — locative case: u kafiću."
+     "a": 2,
+     "e": "The result \"already seen everything\" is perfective: videli. Gledali is imperfective (process). Smo is plural."
     },
     {
      "t": "Выбери правильную форму слова",

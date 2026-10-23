@@ -252,40 +252,40 @@
      "e": "The subject is in the nominative case: traka."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Strah me da će ceo film da ode u ___.",
+     "t": "Choose the preposition",
+     "q": "Ovo mi je prvi put da slikam ___ filmom.",
      "o": [
-      "propašću",
-      "propast",
-      "propasti",
-      "propastu"
+      "na",
+      "sa",
+      "u",
+      "za"
      ],
      "a": 1,
-     "e": "Ići u + accusative case; for feminine nouns ending in a consonant it coincides with the nominative: u propast."
+     "e": "Sa (\"with\") + instrumental: sa filmom — on film (literally \"with film\")."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sad ću Anđeli da pojasnim kako da koristi ovu ___.",
+     "t": "Choose the adjective form",
+     "q": "Ovo je zapravo ___ slika koju sam napravio fotoaparatom.",
      "o": [
-      "kamera",
-      "kameru",
-      "kamere",
-      "kamerom"
+      "najbolji",
+      "najbolja",
+      "najbolje",
+      "najbolju"
      ],
      "a": 1,
-     "e": "Koristiti what — accusative case: kameru."
+     "e": "The adjective agrees with the noun: slika is feminine singular, so najbolja."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ista firma ima i ___ razvijanja filma.",
+     "t": "Choose the verb aspect",
+     "q": "I onda posle moram da ___ to ovako",
      "o": [
-      "usluga",
-      "usluge",
-      "uslugom",
-      "uslugu"
+      "namotao",
+      "motam",
+      "motao",
+      "namotam"
      ],
      "a": 3,
-     "e": "Imati what — accusative case: uslugu."
+     "e": "The action must reach a result — perfective: namotam. Motam is imperfective (ongoing)."
     },
     {
      "t": "Выбери правильную форму слова",

@@ -228,16 +228,16 @@
      "e": "Imati + object — accusative case; for inanimate masculine nouns it coincides with the nominative: problem."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pronađete 10 ___ sa kojima ćete da obavite intervju.",
+     "t": "Choose the adjective form",
+     "q": "Onda, Sara je ___, zato što nema vremena da čeka u redu.",
      "o": [
-      "osobe",
-      "osobama",
-      "osoba",
-      "osobu"
+      "nestrpljivi",
+      "nestrpljivo",
+      "nestrpljiva",
+      "nestrpljiv"
      ],
      "a": 2,
-     "e": "After the number 10 the genitive plural is used: osoba."
+     "e": "The adjective agrees with the subject: Sara is feminine singular, so nestrpljiva."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,28 +252,28 @@
      "e": "Na in answer to \"on what?\" — locative case: na papiru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sa leve strane imate neka bazična ___.",
+     "t": "Choose the adjective form",
+     "q": "pokazaću vam na jednom ___ primeru.",
      "o": [
-      "uputstva",
-      "uputstvo",
-      "uputstvu",
-      "uputstvima"
+      "praktičan",
+      "praktičnom",
+      "praktično",
+      "praktični"
      ],
-     "a": 0,
-     "e": "Neuter plural: neka bazična uputstva."
+     "a": 1,
+     "e": "Na + locative. Primer is masculine, so the ending is -om: na jednom praktičnom primeru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sara ima 27 ___.",
+     "t": "Choose the verb aspect",
+     "q": "Pored toga, ___ smo još neke nove zanimljive stvari.",
      "o": [
-      "godine",
-      "godinom",
-      "godinu",
-      "godina"
+      "saznavali",
+      "saznali",
+      "saznao",
+      "saznavao"
      ],
-     "a": 3,
-     "e": "After numbers from 5 the genitive plural is used: godina."
+     "a": 1,
+     "e": "The result is that they found out something new: perfective saznali. Saznavali is imperfective. Smo is plural."
     },
     {
      "t": "Выбери правильную форму слова",

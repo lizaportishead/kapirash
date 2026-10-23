@@ -159,16 +159,16 @@
      "e": "Sa prednje strane — \"from the front side\"; genitive case."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U okviru ___ Trofej.",
+     "t": "Choose the adjective form",
+     "q": "otvoren je ___ alpaka kafe u Srbiji.",
      "o": [
-      "restoranom",
-      "restoran",
-      "restorana",
-      "restoranu"
+      "prvi",
+      "prvo",
+      "prva",
+      "prve"
      ],
-     "a": 2,
-     "e": "U okviru (\"within, as part of\") requires the genitive case: restorana."
+     "a": 0,
+     "e": "The adjective agrees with the noun: kafe is masculine, so prvi."
     }
    ]
   }

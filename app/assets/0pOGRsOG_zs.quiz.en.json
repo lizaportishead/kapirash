@@ -216,16 +216,16 @@
      "e": "Predikcija + genitive case: predikcijom ponašanja čestica — \"predicting the behavior of particles\"."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Elektron se kreće oko ___.",
+     "t": "Choose the preposition",
+     "q": "Ovo je trenutak kada se granice ___ realnosti i iluzije počinju da brišu.",
      "o": [
-      "atom",
-      "atoma",
-      "atomu",
-      "atomom"
+      "oko",
+      "pored",
+      "između",
+      "ispod"
      ],
-     "a": 1,
-     "e": "Oko + genitive case: oko atoma."
+     "a": 2,
+     "e": "Između (\"between\") + genitive: između realnosti i iluzije."
     },
     {
      "t": "Выбери правильную форму",
@@ -252,16 +252,16 @@
      "e": "Pritisnuti + accusative case, neuter: dugme."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Ovo dovodi u pitanje našu percepciju ___.",
+     "t": "Choose the adjective form",
+     "q": "a da pritom ostaju ___ kvantnim zakonima.",
      "o": [
-      "stvarnost",
-      "stvarnosti",
-      "stvarnošću",
-      "stvarnostima"
+      "verni",
+      "vernih",
+      "verne",
+      "verna"
      ],
-     "a": 1,
-     "e": "Percepcija + genitive case: percepciju stvarnosti — \"perception of reality\"."
+     "a": 2,
+     "e": "The adjective agrees with the subject (mere is feminine plural): verne. Faithful to what? Dative: verne kvantnim zakonima."
     },
     {
      "t": "Выбери правильную форму",
@@ -276,16 +276,16 @@
      "e": "Pokazati + accusative case: postojanje."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Čestica nije samo talas, već i ___.",
+     "t": "Choose the verb aspect",
+     "q": "Pre nego što ___, ako vam se dopada ovo putovanje kroz svet kvantne mehanike,",
      "o": [
-      "čestica",
-      "česticu",
-      "čestice",
-      "česticom"
+      "nastavimo",
+      "nastavili",
+      "nastavljali",
+      "nastavljamo"
      ],
      "a": 0,
-     "e": "Nominative after \"već i\": čestica."
+     "e": "After \"pre nego što\" use the perfective: nastavimo. Nastavljamo is imperfective (ongoing)."
     },
     {
      "t": "Выбери правильную форму",

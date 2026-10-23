@@ -44,7 +44,7 @@ const _topicEmoji = <String, String>{
   'Язык': '🗣️',
 };
 
-/// Анкета после онбординга: уровень и темы. Первый раз показывается вместо каталога, из профиля открывается поверх него.
+/// Анкета после онбординга: родной язык, уровень и темы. Первый раз показывается вместо каталога, из профиля открывается поверх него.
 class SurveyPage extends StatefulWidget {
   const SurveyPage({super.key, this.edit = false});
 
@@ -61,7 +61,10 @@ void openSurvey(BuildContext context) {
 }
 
 class _SurveyPageState extends State<SurveyPage> {
-  int _step = 0;
+  /// Шаги: 0 — родной язык (только в первый раз), 1 — уровень, 2 — темы.
+  late int _step = _first;
+  int get _first => widget.edit ? 1 : 0;
+  int get _count => 3 - _first;
   late String? _level = store.level;
   late final Set<String> _topics = {...store.interests};
   final _all = catalogTopics();
@@ -72,7 +75,7 @@ class _SurveyPageState extends State<SurveyPage> {
   }
 
   void _next() {
-    if (_step == 0) return setState(() => _step = 1);
+    if (_step < 2) return setState(() => _step++);
     store.finishSurvey(level: _level, interests: _topics.toList());
     if (widget.edit) Navigator.pop(context);
   }
@@ -80,9 +83,9 @@ class _SurveyPageState extends State<SurveyPage> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: widget.edit || _step == 0,
+      canPop: widget.edit ? _step == 1 : _step == 0,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop) setState(() => _step = 0);
+        if (!didPop) setState(() => _step--);
       },
       child: Scaffold(
         body: SafeArea(
@@ -96,11 +99,11 @@ class _SurveyPageState extends State<SurveyPage> {
                     padding: EdgeInsets.fromLTRB(12, 4, 12, 0),
                     child: Row(
                       children: [
-                        if (_step == 1)
+                        if (_step > _first)
                           IconButton(
                             tooltip: ui('Назад'),
                             icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                            onPressed: () => setState(() => _step = 0),
+                            onPressed: () => setState(() => _step--),
                           ),
                         Spacer(),
                         TextButton(
@@ -118,13 +121,13 @@ class _SurveyPageState extends State<SurveyPage> {
                     padding: EdgeInsets.fromLTRB(24, 4, 24, 0),
                     child: Row(
                       children: [
-                        for (var i = 0; i < 2; i++)
+                        for (var i = 0; i < _count; i++)
                           Expanded(
                             child: Container(
                               height: 4,
-                              margin: EdgeInsets.only(right: i == 0 ? 6 : 0),
+                              margin: EdgeInsets.only(right: i < _count - 1 ? 6 : 0),
                               decoration: BoxDecoration(
-                                color: i <= _step ? cViolet : cLine,
+                                color: i <= _step - _first ? cViolet : cLine,
                                 borderRadius: BorderRadius.circular(999),
                               ),
                             ),
@@ -135,14 +138,17 @@ class _SurveyPageState extends State<SurveyPage> {
                   Expanded(
                     child: AnimatedSwitcher(
                       duration: Duration(milliseconds: 200),
-                      child: KeyedSubtree(key: ValueKey(_step), child: _step == 0 ? _levelStep() : _topicStep()),
+                      child: KeyedSubtree(
+                        key: ValueKey(_step),
+                        child: _step == 0 ? _langStep() : (_step == 1 ? _levelStep() : _topicStep()),
+                      ),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(24, 8, 24, 16),
                     child: BigButton(
-                      _step == 0 ? ui('Дальше') : ui('Готово'),
-                      onTap: _step == 0 && _level == null ? null : _next,
+                      _step < 2 ? ui('Дальше') : ui('Готово'),
+                      onTap: _step == 1 && _level == null ? null : _next,
                     ),
                   ),
                 ],
@@ -161,6 +167,26 @@ class _SurveyPageState extends State<SurveyPage> {
       style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, height: 1.15, letterSpacing: -0.5, color: cText),
     ),
   );
+
+  /// Первый вопрос: язык применяется сразу, так что остальные шаги уже на нём.
+  Widget _langStep() {
+    return ListView(
+      padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
+      children: [
+        _title(ui('Ваш родной язык')),
+        SizedBox(height: 10),
+        Text(
+          ui('На этом языке будут интерфейс и перевод субтитров, слов и книг. Поменять можно в профиле.'),
+          style: TextStyle(fontSize: 15, height: 1.4, color: cMuted),
+        ),
+        SizedBox(height: 20),
+        for (final (code, flag, name) in [('ru', '🇷🇺', 'Русский'), ('en', '🇬🇧', 'English')]) ...[
+          _LangCard(flag, name, selected: store.lang == code, onTap: () => setState(() => store.setLang(code))),
+          SizedBox(height: 10),
+        ],
+      ],
+    );
+  }
 
   Widget _levelStep() {
     return ListView(
@@ -231,6 +257,45 @@ class _SurveyPageState extends State<SurveyPage> {
           SizedBox(height: 22),
         ],
       ],
+    );
+  }
+}
+
+class _LangCard extends StatelessWidget {
+  const _LangCard(this.flag, this.name, {required this.selected, required this.onTap});
+  final String flag, name;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      selected: selected,
+      child: Material(
+        color: selected ? cViolet.withValues(alpha: 0.1) : cCard,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(color: selected ? cViolet : Colors.transparent, width: 2),
+        ),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(24),
+          onTap: onTap,
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Text(flag, style: TextStyle(fontSize: 28)),
+                SizedBox(width: 14),
+                Text(
+                  name,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: cText),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -147,28 +147,28 @@
      "e": "Pod in answer to \"where?\" requires the instrumental case: pod krovom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Živeli su sa svojim ___ Majom i Janjom.",
+     "t": "Choose the adjective form",
+     "q": "Ova lokacija ostala je najpre ___ po čuvenom hitu iz serije",
      "o": [
-      "ćerkom",
-      "ćerkoj",
-      "ćerke",
-      "ćerkama"
+      "upamćene",
+      "upamćeno",
+      "upamćen",
+      "upamćena"
      ],
      "a": 3,
-     "e": "Sa (\"with\") requires the instrumental case. Plural: ćerkama."
+     "e": "The participle agrees with the subject: lokacija is feminine singular, so upamćena."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Maja je stalno bila u potrazi za novim ___.",
+     "t": "Choose the adjective form",
+     "q": "koja u ___ kulturi nosi poseban status.",
      "o": [
-      "momaka",
-      "momke",
-      "momcima",
-      "momci"
+      "domaću",
+      "domaća",
+      "domaće",
+      "domaćoj"
      ],
-     "a": 2,
-     "e": "Potraga za + instrumental case: za novim momcima."
+     "a": 3,
+     "e": "U + locative. Kultura is feminine: u domaćoj kulturi."
     }
    ]
   }

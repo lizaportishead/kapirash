@@ -216,40 +216,40 @@
      "e": "После чисел от 5 ставится родительный падеж множественного числа: godina."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pobedio sam na otvorenom takmičenju za ___.",
+     "t": "Выбери вид глагола",
+     "q": "kako da ___ u Srbiji?",
      "o": [
-      "plakata",
-      "plakat",
-      "plakatu",
-      "plakatom"
-     ],
-     "a": 1,
-     "e": "Za «для» + винительный падеж; у неодушевлённых он совпадает с именительным: plakat."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Za te pare sam kupio ___.",
-     "o": [
-      "starke",
-      "starkama",
-      "starki",
-      "starka"
+      "zarade",
+      "zarađuje",
+      "zarađuju",
+      "zaradi"
      ],
      "a": 0,
-     "e": "Kupiti что — винительный падеж множественного числа: starke."
+     "e": "После «kako da» о возможном результате — совершенный вид: zarade («заработать»). Zarađuju — несовершенный (процесс)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Išao sam u srednju dizajnersku ___.",
+     "t": "Выбери вид глагола",
+     "q": "Da, bilo je važno, i onda sam ___ da tu može neki nivo komunikacije,",
      "o": [
-      "škola",
-      "školom",
-      "školu",
-      "škole"
+      "shvatila",
+      "shvatio",
+      "shvatala",
+      "shvatao"
      ],
-     "a": 2,
-     "e": "Ići u + винительный падеж: u školu."
+     "a": 1,
+     "e": "Момент осознания — совершенный вид: shvatio. Shvatao — несовершенный (процесс). Говорит мужчина."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "koji su ___ baš zbog toga što nisu krenuli pravim putem,",
+     "o": [
+      "nezadovoljna",
+      "nezadovoljne",
+      "nezadovoljan",
+      "nezadovoljni"
+     ],
+     "a": 3,
+     "e": "Прилагательное согласуется с подлежащим: koji (ljudi) — мужской род, мн. ч., значит nezadovoljni."
     },
     {
      "t": "Выбери правильную форму слова",

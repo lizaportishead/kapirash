@@ -216,40 +216,40 @@
      "e": "After numbers from 5 the genitive plural is used: godina."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pobedio sam na otvorenom takmičenju za ___.",
+     "t": "Choose the verb aspect",
+     "q": "kako da ___ u Srbiji?",
      "o": [
-      "plakata",
-      "plakat",
-      "plakatu",
-      "plakatom"
-     ],
-     "a": 1,
-     "e": "Za (\"for\") + accusative case; for inanimate nouns it coincides with the nominative: plakat."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Za te pare sam kupio ___.",
-     "o": [
-      "starke",
-      "starkama",
-      "starki",
-      "starka"
+      "zarade",
+      "zarađuje",
+      "zarađuju",
+      "zaradi"
      ],
      "a": 0,
-     "e": "Kupiti what — accusative plural: starke."
+     "e": "After \"kako da\" a possible outcome takes the perfective: zarade (\"to earn\"). Zarađuju is imperfective (ongoing)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Išao sam u srednju dizajnersku ___.",
+     "t": "Choose the verb aspect",
+     "q": "Da, bilo je važno, i onda sam ___ da tu može neki nivo komunikacije,",
      "o": [
-      "škola",
-      "školom",
-      "školu",
-      "škole"
+      "shvatila",
+      "shvatio",
+      "shvatala",
+      "shvatao"
      ],
-     "a": 2,
-     "e": "Ići u + accusative case: u školu."
+     "a": 1,
+     "e": "A moment of realisation is perfective: shvatio. Shvatao is imperfective (ongoing). A man is speaking."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "koji su ___ baš zbog toga što nisu krenuli pravim putem,",
+     "o": [
+      "nezadovoljna",
+      "nezadovoljne",
+      "nezadovoljan",
+      "nezadovoljni"
+     ],
+     "a": 3,
+     "e": "The adjective agrees with the subject: koji (ljudi) is masculine plural, so nezadovoljni."
     },
     {
      "t": "Выбери правильную форму слова",

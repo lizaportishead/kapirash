@@ -204,16 +204,16 @@
    "about": "Cases and prepositions",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Salaš se nalazi odmah do regionalnog ___.",
+     "t": "Choose the verb aspect",
+     "q": "Napokon smo ___ u Sivac.",
      "o": [
-      "put",
-      "putem",
-      "putu",
-      "puta"
+      "stizao",
+      "stigli",
+      "stigao",
+      "stizali"
      ],
-     "a": 3,
-     "e": "Do (\"next to\") requires the genitive case: do puta."
+     "a": 1,
+     "e": "\"Finally arrived\" — the action is completed, so perfective: stigli. Stizali is imperfective. Smo is plural, so not stigao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,40 +264,40 @@
      "e": "Pripadati to someone/something — dative case: Sivcu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Selo je udaljeno 2 ___ od salaša.",
+     "t": "Choose the preposition",
+     "q": "Selo je udaljeno 2 kilometra ___ salaša.",
      "o": [
-      "kilometra",
-      "kilometara",
-      "kilometre",
-      "kilometar"
+      "kod",
+      "u",
+      "na",
+      "od"
      ],
-     "a": 0,
-     "e": "After the numbers 2–4 the genitive singular is used: 2 kilometra."
+     "a": 3,
+     "e": "Udaljen od (\"far from\") + genitive: od salaša."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ja sam sama išla prvo, zbog ___.",
+     "t": "Choose the verb form",
+     "q": "Išla sam na razne manifestacije dok sam ___.",
      "o": [
-      "sebi",
-      "sobom",
-      "sebe",
-      "se"
+      "mogao",
+      "moglo",
+      "mogla",
+      "mogli"
      ],
      "a": 2,
-     "e": "Zbog (\"because of, for the sake of\") requires the genitive case: zbog sebe."
+     "e": "A woman is speaking (išla sam), so the participle is feminine: mogla."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Imam zamrzivač u selu, pet ___ od kuće.",
+     "t": "Choose the verb form",
+     "q": "Nećeš doći do palačinki dok se ne ___ pasulja.",
      "o": [
-      "kilometara",
-      "kilometra",
-      "kilometri",
-      "kilometar"
+      "jedeš",
+      "najedem",
+      "najedeš",
+      "jedem"
      ],
-     "a": 0,
-     "e": "After the number 5 the genitive plural is used: pet kilometara."
+     "a": 2,
+     "e": "After \"dok ne\" use the perfective: najesti se (\"to eat one's fill\"). Nećeš is 2nd person, so najedeš, not najedem."
     }
    ]
   }

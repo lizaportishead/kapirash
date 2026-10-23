@@ -135,16 +135,16 @@
      "e": "Preko (\"over, on top of\") requires the genitive case: preko kore."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Razmućeno brašno u ostatku ___.",
+     "t": "Choose the preposition",
+     "q": "pravim preliv ___ vode, šećera i vanilin šećera.",
      "o": [
-      "mleku",
-      "mlekom",
-      "mleka",
-      "mleko"
+      "za",
+      "u",
+      "od",
+      "na"
      ],
      "a": 2,
-     "e": "Ostatak (\"the rest\") requires the genitive case: u ostatku mleka — \"in the rest of the milk\"."
+     "e": "Praviti od + genitive means \"to make from\": od vode, šećera."
     },
     {
      "t": "Выбери правильную форму слова",

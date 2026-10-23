@@ -204,16 +204,16 @@
    "about": "Падежи и предлоги",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Odmalena sam otkrio ___.",
+     "t": "Выбери вид глагола",
+     "q": "Još od nastanka civilizacije ljudi su za sobom ___ tragove svog postojanja.",
      "o": [
-      "filma",
-      "film",
-      "filmu",
-      "filmom"
+      "ostavljali",
+      "ostavio",
+      "ostavljao",
+      "ostavili"
      ],
-     "a": 1,
-     "e": "Otkriti что — винительный падеж; у неодушевлённых он совпадает с именительным: film."
+     "a": 0,
+     "e": "Действие повторялось веками — несовершенный вид: ostavljali. Ostavili — совершенный (один раз)."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -240,16 +240,16 @@
      "e": "Biti + именительный падеж: neki projektor."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Otac mi je kupovao svakog petka ___.",
+     "t": "Выбери форму глагола",
+     "q": "gde je danas knjižara, nekad je ___ prodavnica Cinefoto,",
      "o": [
-      "Zabavnika",
-      "Zabavniku",
-      "Zabavnik",
-      "Zabavnikom"
+      "bila",
+      "bilo",
+      "bio",
+      "bili"
      ],
-     "a": 2,
-     "e": "Kupovati что — винительный падеж; у неодушевлённых он совпадает с именительным: Zabavnik."
+     "a": 0,
+     "e": "Причастие согласуется с подлежащим: prodavnica — женский род, ед. ч., значит bila."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -276,16 +276,16 @@
      "e": "Na на вопрос «где?» — местный падеж множественного числа: na festivalima."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Film je dobio desetak ___.",
+     "t": "Выбери форму глагола",
+     "q": "i naravno, s tim je ___ da ide i projektor i tako dalje.",
      "o": [
-      "nagrada",
-      "nagradom",
-      "nagradu",
-      "nagrade"
+      "morali",
+      "morao",
+      "morala",
+      "moralo"
      ],
-     "a": 0,
-     "e": "После desetak ставится родительный падеж множественного числа: nagrada."
+     "a": 1,
+     "e": "Причастие согласуется с подлежащим: projektor — мужской род, ед. ч., значит morao."
     },
     {
      "t": "Выбери правильную форму слова",

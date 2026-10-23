@@ -204,16 +204,16 @@
    "about": "Cases and prepositions",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Mačke imaju manji CFF čak i od ___.",
+     "t": "Choose the adjective form",
+     "q": "Iako odlično vide u mraku, vid im nije ___ strana,",
      "o": [
-      "mi",
-      "nama",
-      "nam",
-      "nas"
+      "najjači",
+      "najjača",
+      "najjače",
+      "najjaču"
      ],
-     "a": 3,
-     "e": "Od (\"than\") requires the genitive case: od nas."
+     "a": 1,
+     "e": "The adjective agrees with the noun: strana is feminine singular, so najjača."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -228,16 +228,16 @@
      "e": "Vrste of what? Genitive plural: fotoreceptora."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Psi mogu videti manji ___ boja.",
+     "t": "Choose the adjective form",
+     "q": "Fokus im je mnogo ___ od ljudskog",
      "o": [
-      "spektrom",
-      "spektra",
-      "spektar",
-      "spektru"
+      "bolja",
+      "bolje",
+      "bolji",
+      "bolju"
      ],
      "a": 2,
-     "e": "Direct object, inanimate: the accusative coincides with the nominative — spektar."
+     "e": "The adjective agrees with the subject: fokus is masculine, so bolji."
     },
     {
      "t": "Выбери правильную форму слова",

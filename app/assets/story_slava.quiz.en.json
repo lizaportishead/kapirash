@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Where was the narrator coming back from, and in what weather?",
+     "o": [
+      "From Kragujevac, in late autumn, in cold rain",
+      "From Belgrade, in summer",
+      "From a neighbouring village, in the heat",
+      "From Niš, in frost"
+     ],
+     "a": 0,
+     "e": "“Vraćao sam se na konju iz Kragujevca” on a gloomy late-autumn day."
+    },
+    {
+     "q": "Whom did the narrator meet by the road?",
+     "o": [
+      "A boy named Mijat tending three sheep",
+      "A beggar",
+      "An old shepherd",
+      "A merchant"
+     ],
+     "a": 0,
+     "e": "Little Mijat is herding three sheep."
+    },
+    {
+     "q": "Why did the family have only three sheep left?",
+     "o": [
+      "Wolves ate two",
+      "Two were sold to pay the tax",
+      "Two were given to a neighbour",
+      "Two ran away"
+     ],
+     "a": 1,
+     "e": "Their mother sold two to pay the tax."
+    },
+    {
+     "q": "What was the family preparing for?",
+     "o": [
+      "Their family slava (St George's Day)",
+      "Christmas",
+      "A fair",
+      "A wedding"
+     ],
+     "a": 0,
+     "e": "“Sutra mi slavimo… Đurđic.”"
+    },
+    {
+     "q": "Why did Milena say she hardly had any guests?",
+     "o": [
+      "Everyone has moved away",
+      "No one visits the poor — everyone goes to the rich",
+      "She has no friends",
+      "She can't cook"
+     ],
+     "a": 1,
+     "e": "“All the better-off go to Miloje's; the poor don't visit the poor.”"
+    },
+    {
+     "q": "What did the narrator promise Milena?",
+     "o": [
+      "To come to her for lunch",
+      "To send a gift",
+      "To give her money",
+      "To help with her work"
+     ],
+     "a": 0,
+     "e": "“I'll come to you for lunch tomorrow.”"
+    },
+    {
+     "q": "What happened when the narrator entered the house the next day?",
+     "o": [
+      "Milena sent the guests away",
+      "Everyone began singing",
+      "The boys ran out of the house",
+      "Milena hugged her son in tears and said: “Guests, my son, the mother's master of the house”"
+     ],
+     "a": 3,
+     "e": "“Gosti, sine moj, domaćine majčin…” — her voice broke."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "*Sumoran* dan duboke jeseni.",
+     "o": [
+      "festive",
+      "warm",
+      "short",
+      "gloomy"
+     ],
+     "a": 3,
+     "e": "Sumoran — gloomy."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Konj *okisao*, niz njega curi voda.",
+     "o": [
+      "got soaked by rain",
+      "ran away",
+      "got tired",
+      "neighed"
+     ],
+     "a": 0,
+     "e": "Okisnuti — to get soaked by rain."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Šta radiš tu? — *Čuvam* ovce.",
+     "o": [
+      "I tend, I guard",
+      "I shear",
+      "I sell",
+      "I count"
+     ],
+     "a": 0,
+     "e": "Čuvati — to guard, to tend."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Dve nana letos prodala da platimo *porez*.",
+     "o": [
+      "holiday",
+      "gift",
+      "tax",
+      "dowry"
+     ],
+     "a": 2,
+     "e": "Porez — tax."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Milena je pre sedam godina ostala *udovica*.",
+     "o": [
+      "a widow",
+      "a maid",
+      "an orphan",
+      "poor"
+     ],
+     "a": 0,
+     "e": "Udovica — widow."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Čuvam ___.",
+     "o": [
+      "ovaca",
+      "ovca",
+      "ovce",
+      "ovcama"
+     ],
+     "a": 2,
+     "e": "Čuvati whom? — accusative plural: ovce."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Vraćao sam se na konju iz ___.",
+     "o": [
+      "Kragujevca",
+      "Kragujevcem",
+      "Kragujevcu",
+      "Kragujevac"
+     ],
+     "a": 0,
+     "e": "Iz + genitive: iz Kragujevca."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Milena je ostala udovica s dvoje ___.",
+     "o": [
+      "dece",
+      "deci",
+      "decom",
+      "deca"
+     ],
+     "a": 0,
+     "e": "After dvoje comes the genitive: dvoje dece."
+    }
+   ]
+  }
+ ]
+}

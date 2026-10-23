@@ -228,28 +228,28 @@
      "e": "Ispod («под») требует родительного падежа: ispod očiju."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Na neka mesta gde imam ___.",
+     "t": "Выбери вид глагола",
+     "q": "A zatim ___ i ovaj Make Me Brow koji je od Essence.",
      "o": [
-      "pegice",
-      "pegicama",
-      "pegica",
-      "pegici"
+      "stavljam",
+      "stavljao",
+      "stavio",
+      "stavim"
      ],
-     "a": 0,
-     "e": "Imati что — винительный падеж множественного числа: pegice."
+     "a": 3,
+     "e": "«Затем» — следующее по порядку действие, совершенный вид: stavim. Stavljam — несовершенный (процесс или привычка)."
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Malo ga stavim na ___, na čelo.",
+     "q": "za njega inače koristim ovu veliku četkicu jer mi je s ___ najlakše.",
      "o": [
-      "nosa",
-      "nosom",
-      "nosu",
-      "nos"
+      "nju",
+      "njom",
+      "nje",
+      "ona"
      ],
-     "a": 3,
-     "e": "Na на вопрос «куда?» — винительный падеж: na nos."
+     "a": 1,
+     "e": "S(a) + творительный падеж: ona → njom. Četkica — женский род: s njom — «с ней»."
     },
     {
      "t": "Выбери правильную форму слова",

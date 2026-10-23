@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Whom did Radovan lose?",
+     "o": [
+      "His father",
+      "His wife",
+      "His younger brother Miloš, in a violent storm",
+      "A friend"
+     ],
+     "a": 2,
+     "e": "In a storm he lost his younger brother Miloš."
+    },
+    {
+     "q": "Why did Radovan set off into the mountains?",
+     "o": [
+      "To ask Morana to take away a painful memory",
+      "To sell his land",
+      "To find treasure",
+      "To look for his missing brother"
+     ],
+     "a": 0,
+     "e": "“I'll find Morana to take this memory from me.”"
+    },
+    {
+     "q": "What did his neighbour Uncle Milutin warn him?",
+     "o": [
+      "That it would cost a lot",
+      "That Morana was an evil witch",
+      "That forgetting is a sharp sword: cutting a painful branch may cut the root too",
+      "That the road was dangerous"
+     ],
+     "a": 2,
+     "e": "“Zaborav je oštar mač.”"
+    },
+    {
+     "q": "What did Morana weave on her loom?",
+     "o": [
+      "Clothes for a king",
+      "Woollen rugs",
+      "Cobwebs",
+      "Human dreams and forgotten memories"
+     ],
+     "a": 3,
+     "e": "She wove human dreams and forgotten memories."
+    },
+    {
+     "q": "What did Morana explain about pain and love?",
+     "o": [
+      "That love was gone",
+      "That the pain would pass on its own",
+      "They are woven into one thread: forgetting the pain means forgetting his brother",
+      "That the pain can be forgotten and love kept"
+     ],
+     "a": 2,
+     "e": "“My loom cannot separate pain from love.”"
+    },
+    {
+     "q": "What did Radovan decide?",
+     "o": [
+      "To live in the cave",
+      "To forget everything",
+      "To keep the memory: pain is the price of love",
+      "To leave the village"
+     ],
+     "a": 2,
+     "e": "“I'll carry my pain, because it is the price of the love I had.”"
+    },
+    {
+     "q": "What changed in Radovan's life after he came back?",
+     "o": [
+      "He withdrew into himself",
+      "He opened the windows, replanted his fields and told neighbours stories about Miloš",
+      "He entered a monastery",
+      "He sold his house"
+     ],
+     "a": 1,
+     "e": "Fields replanted, neighbours listening to stories about Miloš."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Visoko u planinama nalazila se *pećina*.",
+     "o": [
+      "mill",
+      "cave",
+      "hut",
+      "tower"
+     ],
+     "a": 1,
+     "e": "Pećina — cave."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Pred njom je stajao ogroman drveni *razboj*.",
+     "o": [
+      "plough",
+      "stove",
+      "well",
+      "loom"
+     ],
+     "a": 3,
+     "e": "Razboj — loom."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ovo je tvoja *nit*, Radovane.",
+     "o": [
+      "fabric",
+      "needle",
+      "knot",
+      "thread"
+     ],
+     "a": 3,
+     "e": "Nit — thread."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Morana je podigla svoje koštane *makaze*.",
+     "o": [
+      "scissors",
+      "combs",
+      "needles",
+      "keys"
+     ],
+     "a": 0,
+     "e": "Makaze — scissors."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Njegove *njive* zarasle su u korov i trnje.",
+     "o": [
+      "houses",
+      "roads",
+      "fields",
+      "rivers"
+     ],
+     "a": 2,
+     "e": "Njiva — field."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Radovan je izgubio svog ___ brata Miloša.",
+     "o": [
+      "mlađi",
+      "mlađim",
+      "mlađeg",
+      "mlađem"
+     ],
+     "a": 2,
+     "e": "An animate masculine noun: accusative equals genitive: mlađeg brata."
+    },
+    {
+     "t": "Choose the correct verb form",
+     "q": "Zaboravićeš svu radost koju ste ___.",
+     "o": [
+      "podelili",
+      "podeliti",
+      "podelimo",
+      "podelio"
+     ],
+     "a": 0,
+     "e": "Past tense in the plural: ste podelili."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Sutradan je Radovan krenuo na ___.",
+     "o": [
+      "puta",
+      "putem",
+      "put",
+      "putu"
+     ],
+     "a": 2,
+     "e": "Na + accusative (where to?): na put."
+    }
+   ]
+  }
+ ]
+}

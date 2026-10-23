@@ -240,16 +240,16 @@
      "e": "Dopasti u ruke — \"to fall into one's hands\"; accusative plural: ruke."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Prve su mi bile „Priče iz ___“.",
+     "t": "Choose the preposition",
+     "q": "mi smo ___ njih jako direktni, jako smo grublji,",
      "o": [
-      "Lisabonu",
-      "Lisabonom",
-      "Lisabona",
-      "Lisabon"
+      "o",
+      "kod",
+      "za",
+      "od"
      ],
      "a": 2,
-     "e": "Iz (\"from\") requires the genitive case: iz Lisabona."
+     "e": "Za njih — \"for them, compared to them\": za + accusative."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Ići za + a city in the accusative case; for inanimate nouns it coincides with the nominative: za London."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pročitao sam sedamnaest telefonskih ___ materijala.",
+     "t": "Choose the verb aspect",
+     "q": "Zato ja sve što pišem ___ na jednom jeziku, pa ga prevodim na drugi,",
      "o": [
-      "imenike",
-      "imenika",
-      "imenicima",
-      "imenici"
+      "pisao",
+      "napisao",
+      "pišem",
+      "napišem"
      ],
-     "a": 1,
-     "e": "After the number 17 the genitive plural is used: imenika."
+     "a": 3,
+     "e": "The result is a finished text: perfective napišem. Pišem is imperfective (ongoing)."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Sa (\"with\") requires the instrumental case: sa Saramagom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Moja publika je najviše 25 ___.",
+     "t": "Choose the adjective form",
+     "q": "Ja prvo, kad uđem u ___ grad, imam potpunu metodologiju.",
      "o": [
-      "milione",
-      "milioni",
-      "milionima",
-      "miliona"
+      "strana",
+      "strani",
+      "stranom",
+      "stranog"
      ],
-     "a": 3,
-     "e": "After the number 25 the genitive plural is used: miliona."
+     "a": 1,
+     "e": "U + accusative (where to?). For inanimate masculine nouns it equals the nominative: u strani grad."
     }
    ]
   }

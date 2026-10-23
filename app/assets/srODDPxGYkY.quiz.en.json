@@ -228,16 +228,16 @@
      "e": "Na in answer to \"at what?\" — locative case: na temperaturi."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupio sam providnu ___ za vodu.",
+     "t": "Choose the verb aspect",
+     "q": "___ smo jednu kapljicu, da vidimo da li je uspelo.",
      "o": [
-      "posudom",
-      "posudu",
-      "posuda",
-      "posude"
+      "Topili",
+      "Istopio",
+      "Topio",
+      "Istopili"
      ],
-     "a": 1,
-     "e": "Kupiti what — accusative case: posudu."
+     "a": 3,
+     "e": "One drop, a result obtained — perfective istopiti. Topili is imperfective (process). Smo is plural."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,28 +264,28 @@
      "e": "Izdržati what — accusative case; for klešta (neuter plural) it coincides with the nominative."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Nemam hidrauličnu ___.",
+     "t": "Choose the adjective form",
+     "q": "Staklo je i ___ nego što sam mislio.",
      "o": [
-      "presa",
-      "prese",
-      "presu",
-      "presom"
+      "čvrsta",
+      "čvršće",
+      "čvrst",
+      "čvrsto"
      ],
-     "a": 2,
-     "e": "Nemam + direct object: accusative case, presu."
+     "a": 1,
+     "e": "Comparative degree: čvrst → čvršće (\"harder\"). Staklo is neuter, hence the ending -e."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Dok nisam imao šest uspešnih celih ___.",
+     "t": "Choose the correct form",
+     "q": "kada sam uzeo onu kapljicu ___ sam malopre presekao rep,",
      "o": [
-      "kapljicu",
-      "kapljice",
-      "kapljicama",
-      "kapljica"
+      "kojoj",
+      "koju",
+      "koje",
+      "koja"
      ],
-     "a": 3,
-     "e": "After numbers from 5 the genitive plural is used: kapljica."
+     "a": 0,
+     "e": "Cut the tail of whom/what? Dative: kapljici → kojoj (\"to which\")."
     },
     {
      "t": "Выбери правильную форму слова",

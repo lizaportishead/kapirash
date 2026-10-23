@@ -252,40 +252,40 @@
      "e": "Odvesti u + винительный падеж: u Norvešku."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Đorđe Bojanić je istoričar iz ___.",
+     "t": "Выбери предлог",
+     "q": "i režiser filma ___ Norveške, Šetil Palmkvist,",
      "o": [
-      "Nišu",
-      "Niš",
-      "Niša",
-      "Nišem"
+      "na",
+      "u",
+      "iz",
+      "kod"
      ],
      "a": 2,
-     "e": "Iz («из») требует родительного падежа: iz Niša."
+     "e": "Iz («из») + родительный падеж: iz Norveške — из Норвегии."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Temperatura od minus 50 ___.",
+     "t": "Выбери вид глагола",
+     "q": "Pre 14-15 godina ___ sam gospodina Šetila Palmkvista,",
      "o": [
-      "stepena",
-      "stepen",
-      "stepeni",
-      "stepenom"
-     ],
-     "a": 2,
-     "e": "После числа 50 ставится родительный падеж множественного числа: stepeni."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Ljudi sa vrlo malo ___ na sebi.",
-     "o": [
-      "odeće",
-      "odećom",
-      "odeća",
-      "odeću"
+      "upoznao",
+      "upoznavao",
+      "upoznala",
+      "upoznavala"
      ],
      "a": 0,
-     "e": "После malo («мало») ставится родительный падеж: malo odeće."
+     "e": "Знакомство произошло один раз в определённый момент — совершенный вид: upoznao. Говорит мужчина, поэтому не upoznala."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "jer je naboj emocija bio toliko ___ da smo i mi plakali zajedno sa svedocima.",
+     "o": [
+      "velike",
+      "velika",
+      "veliki",
+      "veliko"
+     ],
+     "a": 2,
+     "e": "Прилагательное согласуется с подлежащим: naboj — мужской род, ед. ч., значит veliki."
     },
     {
      "t": "Выбери правильную форму слова",

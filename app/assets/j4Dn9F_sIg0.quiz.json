@@ -228,28 +228,28 @@
      "e": "Po требует дательного/местного падежа: po tradiciji."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ostajemo svoji kroz svoju kulturu, svoju pesmu i svoju ___.",
+     "t": "Выбери вид глагола",
+     "q": "ja onda ___ to što njih na neki način pogađa,",
      "o": [
-      "igre",
-      "igrom",
-      "igra",
-      "igru"
+      "osetio",
+      "osetim",
+      "osećao",
+      "osećam"
      ],
-     "a": 3,
-     "e": "Kroz («через») требует винительного падежа: kroz svoju igru."
+     "a": 1,
+     "e": "«Тогда» — следующий момент, совершенный вид: osetim. Osećam — несовершенный (постоянное состояние)."
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Svako veče on dođe u ___ i sedi sa nama.",
+     "q": "i grad Pariz ___ je omogućio",
      "o": [
-      "kafanom",
-      "kafanu",
-      "kafane",
-      "kafana"
+      "njega",
+      "ga",
+      "on",
+      "mu"
      ],
-     "a": 1,
-     "e": "U на вопрос «куда?» — винительный падеж: u kafanu."
+     "a": 3,
+     "e": "Omogućiti kome? Дательный падеж: on → mu («ему»)."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Sa («с») требует творительного падежа: sa ocem."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Dao mu je jednu ___ sa muzikom.",
+     "t": "Выбери форму прилагательного",
+     "q": "U tim, kobajagi ___, pesmama",
      "o": [
-      "kasetu",
-      "kasete",
-      "kaseta",
-      "kasetom"
+      "dečjim",
+      "dečje",
+      "dečji",
+      "dečjih"
      ],
      "a": 0,
-     "e": "Dati что — винительный падеж: kasetu."
+     "e": "Прилагательное согласуется с существительным: u tim pesmama — местный падеж, мн. ч., значит dečjim."
     },
     {
      "t": "Выбери правильную форму слова",

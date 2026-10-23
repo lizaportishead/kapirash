@@ -159,16 +159,16 @@
      "e": "Sa prednje strane — «с передней стороны»; родительный падеж."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U okviru ___ Trofej.",
+     "t": "Выбери форму прилагательного",
+     "q": "otvoren je ___ alpaka kafe u Srbiji.",
      "o": [
-      "restoranom",
-      "restoran",
-      "restorana",
-      "restoranu"
+      "prvi",
+      "prvo",
+      "prva",
+      "prve"
      ],
-     "a": 2,
-     "e": "U okviru («в рамках, при») требует родительного падежа: restorana."
+     "a": 0,
+     "e": "Прилагательное согласуется с существительным: kafe — мужской род, значит prvi."
     }
    ]
   }

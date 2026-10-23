@@ -252,40 +252,40 @@
      "e": "Kod (\"to, at\") requires the genitive case: kod kerova."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Krompir oguliš, mi bacimo u ___.",
+     "t": "Choose the verb form",
+     "q": "Brašno 85, to sam koristila u toku ovog jela, ali sam ___ malo.",
      "o": [
-      "smeća",
-      "smeće",
-      "smeću",
-      "smećem"
+      "koristili",
+      "koristila",
+      "koristilo",
+      "koristio"
      ],
      "a": 1,
-     "e": "Bacati u + accusative case; for neuter nouns it coincides with the nominative: smeće."
+     "e": "A woman is speaking (sam koristila), so the participle is feminine: koristila."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ja sam živeo od plate do ___.",
+     "t": "Choose the verb aspect",
+     "q": "Pa i računaš na neplanirano, pa malo sa strane ___.",
      "o": [
-      "plata",
-      "plate",
-      "platom",
-      "platu"
+      "ostavljaš",
+      "ostavljao",
+      "ostaviš",
+      "ostavio"
      ],
-     "a": 1,
-     "e": "Do (\"until\") requires the genitive case: od plate do plate."
+     "a": 2,
+     "e": "Setting something aside \"for a rainy day\" is a one-off with a result: perfective ostaviš. Ostavljaš is imperfective."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ne moraš pisati: popila sam danas jednu ___.",
+     "t": "Choose the preposition",
+     "q": "Ovo uopšte nije scenirano, neću se vratiti ___ kameru.",
      "o": [
-      "kafom",
-      "kafe",
-      "kafa",
-      "kafu"
+      "po",
+      "za",
+      "od",
+      "na"
      ],
-     "a": 3,
-     "e": "Popiti what — accusative case: kafu."
+     "a": 0,
+     "e": "Vratiti se po + accusative means \"to go back for something\": po kameru."
     },
     {
      "t": "Выбери правильную форму слова",

@@ -276,28 +276,28 @@
      "e": "Za + accusative case: za pejzaže — \"for landscapes\"."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Nisam bila zadovoljna tokom ___ na njoj.",
+     "t": "Choose the adjective form",
+     "q": "bila sam nekako ___ kad sam je uradila.",
      "o": [
-      "rad",
-      "rada",
-      "radu",
-      "radom"
-     ],
-     "a": 1,
-     "e": "Tokom + genitive case: tokom rada."
-    },
-    {
-     "t": "Выбери правильную форму",
-     "q": "Ilustracija je gotova, hvala ___.",
-     "o": [
-      "Bogu",
-      "Bog",
-      "Boga",
-      "Bogom"
+      "zadovoljna",
+      "zadovoljno",
+      "zadovoljan",
+      "zadovoljni"
      ],
      "a": 0,
-     "e": "Hvala to whom? — dative case: hvala Bogu."
+     "e": "A woman is speaking (bila sam, uradila), so zadovoljna."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ sam mu, oduševljen je, i meni je zbog toga jako drago.",
+     "o": [
+      "Pokazivala",
+      "Pokazao",
+      "Pokazivao",
+      "Pokazala"
+     ],
+     "a": 3,
+     "e": "Showed once — perfective pokazati. Pokazivala is imperfective. A woman is speaking."
     }
    ]
   }

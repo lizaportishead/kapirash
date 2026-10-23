@@ -240,16 +240,16 @@
      "e": "Dopasti u ruke — «попасть в руки»; винительный падеж множественного числа: ruke."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Prve su mi bile „Priče iz ___“.",
+     "t": "Выбери предлог",
+     "q": "mi smo ___ njih jako direktni, jako smo grublji,",
      "o": [
-      "Lisabonu",
-      "Lisabonom",
-      "Lisabona",
-      "Lisabon"
+      "o",
+      "kod",
+      "za",
+      "od"
      ],
      "a": 2,
-     "e": "Iz («из») требует родительного падежа: iz Lisabona."
+     "e": "Za njih — «для них, по сравнению с ними»: za + винительный падеж."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Ići za + город в винительном падеже; у неодушевлённых он совпадает с именительным: za London."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pročitao sam sedamnaest telefonskih ___ materijala.",
+     "t": "Выбери вид глагола",
+     "q": "Zato ja sve što pišem ___ na jednom jeziku, pa ga prevodim na drugi,",
      "o": [
-      "imenike",
-      "imenika",
-      "imenicima",
-      "imenici"
+      "pisao",
+      "napisao",
+      "pišem",
+      "napišem"
      ],
-     "a": 1,
-     "e": "После числа 17 ставится родительный падеж множественного числа: imenika."
+     "a": 3,
+     "e": "Результат — готовый текст: совершенный вид napišem («напишу»). Pišem — несовершенный (процесс)."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Sa («с») требует творительного падежа: sa Saramagom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Moja publika je najviše 25 ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Ja prvo, kad uđem u ___ grad, imam potpunu metodologiju.",
      "o": [
-      "milione",
-      "milioni",
-      "milionima",
-      "miliona"
+      "strana",
+      "strani",
+      "stranom",
+      "stranog"
      ],
-     "a": 3,
-     "e": "После числа 25 ставится родительный падеж множественного числа: miliona."
+     "a": 1,
+     "e": "U + винительный падеж (куда?). У неодушевлённых мужского рода он совпадает с именительным: u strani grad."
     }
    ]
   }

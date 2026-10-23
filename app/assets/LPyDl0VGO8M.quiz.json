@@ -204,16 +204,16 @@
    "about": "Падежи и предлоги",
    "questions": [
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Salaš se nalazi odmah do regionalnog ___.",
+     "t": "Выбери вид глагола",
+     "q": "Napokon smo ___ u Sivac.",
      "o": [
-      "put",
-      "putem",
-      "putu",
-      "puta"
+      "stizao",
+      "stigli",
+      "stigao",
+      "stizali"
      ],
-     "a": 3,
-     "e": "Do («возле») требует родительного падежа: do puta."
+     "a": 1,
+     "e": "«Наконец добрались» — действие завершилось, совершенный вид: stigli. Stizali — несовершенный. Smo — мн. ч., поэтому не stigao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,40 +264,40 @@
      "e": "Pripadati кому/чему — дательный падеж: Sivcu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Selo je udaljeno 2 ___ od salaša.",
+     "t": "Выбери предлог",
+     "q": "Selo je udaljeno 2 kilometra ___ salaša.",
      "o": [
-      "kilometra",
-      "kilometara",
-      "kilometre",
-      "kilometar"
+      "kod",
+      "u",
+      "na",
+      "od"
      ],
-     "a": 0,
-     "e": "После чисел 2–4 ставится родительный падеж единственного числа: 2 kilometra."
+     "a": 3,
+     "e": "Udaljen od — «удалён от» + родительный падеж: od salaša."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ja sam sama išla prvo, zbog ___.",
+     "t": "Выбери форму глагола",
+     "q": "Išla sam na razne manifestacije dok sam ___.",
      "o": [
-      "sebi",
-      "sobom",
-      "sebe",
-      "se"
+      "mogao",
+      "moglo",
+      "mogla",
+      "mogli"
      ],
      "a": 2,
-     "e": "Zbog («из-за, ради») требует родительного падежа: zbog sebe."
+     "e": "Говорит женщина (išla sam), поэтому причастие в женском роде: mogla."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Imam zamrzivač u selu, pet ___ od kuće.",
+     "t": "Выбери форму глагола",
+     "q": "Nećeš doći do palačinki dok se ne ___ pasulja.",
      "o": [
-      "kilometara",
-      "kilometra",
-      "kilometri",
-      "kilometar"
+      "jedeš",
+      "najedem",
+      "najedeš",
+      "jedem"
      ],
-     "a": 0,
-     "e": "После числа 5 ставится родительный падеж множественного числа: pet kilometara."
+     "a": 2,
+     "e": "После «dok ne» — совершенный вид: najesti se («наесться»). Nećeš — 2-е лицо, значит najedeš, а не najedem."
     }
    ]
   }

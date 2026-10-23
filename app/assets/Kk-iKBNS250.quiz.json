@@ -204,16 +204,16 @@
    "about": "Падежи и предлоги",
    "questions": [
     {
-     "t": "Выбери правильную форму",
-     "q": "Zemlja se nalazi odmah iza ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Od centra ___ galaksije udaljeni smo nekih 30.000 svetlosnih godina.",
      "o": [
-      "Venera",
-      "Venere",
-      "Veneru",
-      "Venerom"
+      "naše",
+      "našu",
+      "našoj",
+      "naša"
      ],
-     "a": 1,
-     "e": "Iza + родительный падеж: iza Venere."
+     "a": 0,
+     "e": "Od + родительный падеж. Galaksija — женский род, значит naše galaksije."
     },
     {
      "t": "Выбери правильную форму",
@@ -240,16 +240,16 @@
      "e": "Ka + дательный падеж: ka prostranstvima."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Svaka galaksija sadrži milijarde ___.",
+     "t": "Выбери вид глагола",
+     "q": "Ako ___ dalje, nakon Saturna naići ćemo na Uran i Neptun,",
      "o": [
-      "zvezda",
-      "zvezde",
-      "zvezdama",
-      "zvezdi"
+      "nastavljao",
+      "nastavio",
+      "nastavljamo",
+      "nastavimo"
      ],
-     "a": 0,
-     "e": "Milijarde + род. падеж мн. ч.: milijarde zvezda."
+     "a": 3,
+     "e": "После ako о гипотетическом шаге — совершенный вид: nastavimo. Nastavljamo — несовершенный (процесс)."
     },
     {
      "t": "Выбери правильную форму",

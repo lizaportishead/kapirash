@@ -240,28 +240,28 @@
      "e": "Za + вин. падеж: za vrstu."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Svi ljudi imaju 46 ___.",
+     "t": "Выбери предлог",
+     "q": "Iz svakog para jedan dolazi ___ oca, a drugi od majke.",
      "o": [
-      "hromozoma",
-      "hromozomi",
-      "hromozome",
-      "hromozomima"
+      "od",
+      "na",
+      "u",
+      "za"
      ],
      "a": 0,
-     "e": "После числа 5+ — род. падеж мн. ч.: 46 hromozoma."
+     "e": "Dolaziti od + родительный падеж — «происходить от»: od oca, od majke."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "DNK se spakuje i formira ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "i tek tada je spremna za ___ deobu, odnosno za svoju smrt,",
      "o": [
-      "hromozom",
-      "hromozoma",
-      "hromozomu",
-      "hromozomom"
+      "nove",
+      "novoj",
+      "nova",
+      "novu"
      ],
-     "a": 0,
-     "e": "Formirati + вин. падеж: formira hromozom."
+     "a": 3,
+     "e": "Za + винительный падеж. Deoba — женский род, значит za novu deobu."
     },
     {
      "t": "Выбери правильную форму",

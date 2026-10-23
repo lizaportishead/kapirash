@@ -240,16 +240,16 @@
      "e": "Preko + number: genitive plural — kompanija."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Većina nas radi neki drugi ___ tokom dana.",
+     "t": "Choose the preposition",
+     "q": "da li želi prihod ___ dividende.",
      "o": [
-      "posla",
-      "posao",
-      "poslu",
-      "poslom"
+      "iz",
+      "od",
+      "sa",
+      "kod"
      ],
      "a": 1,
-     "e": "Raditi + accusative case: neki drugi posao."
+     "e": "Prihod od + genitive: prihod od dividende — income from dividends."
     },
     {
      "t": "Выбери правильную форму",
@@ -264,16 +264,16 @@
      "e": "U + accusative case (where to): u jezgro."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Moramo obratiti pažnju na ___ između elemenata.",
+     "t": "Choose the correct form",
+     "q": "Svojim ___ sam došao do jedne strategije koja se ukratko može opisati kao jezgro i sateliti.",
      "o": [
-      "korelacija",
-      "korelaciju",
-      "korelaciji",
-      "korelacijom"
+      "istraživanjem",
+      "istraživanje",
+      "istraživanju",
+      "istraživanja"
      ],
-     "a": 1,
-     "e": "Na + accusative case: obratiti pažnju na korelaciju."
+     "a": 0,
+     "e": "Means or method takes the instrumental: svojim istraživanjem — through my own research."
     },
     {
      "t": "Выбери правильную форму",

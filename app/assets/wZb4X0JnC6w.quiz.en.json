@@ -240,28 +240,28 @@
      "e": "Za + accusative case: za vrstu."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Svi ljudi imaju 46 ___.",
+     "t": "Choose the preposition",
+     "q": "Iz svakog para jedan dolazi ___ oca, a drugi od majke.",
      "o": [
-      "hromozoma",
-      "hromozomi",
-      "hromozome",
-      "hromozomima"
+      "od",
+      "na",
+      "u",
+      "za"
      ],
      "a": 0,
-     "e": "After numbers of 5+ — genitive plural: 46 hromozoma."
+     "e": "Dolaziti od + genitive means \"to come from\": od oca, od majke."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "DNK se spakuje i formira ___.",
+     "t": "Choose the adjective form",
+     "q": "i tek tada je spremna za ___ deobu, odnosno za svoju smrt,",
      "o": [
-      "hromozom",
-      "hromozoma",
-      "hromozomu",
-      "hromozomom"
+      "nove",
+      "novoj",
+      "nova",
+      "novu"
      ],
-     "a": 0,
-     "e": "Formirati + accusative case: formira hromozom."
+     "a": 3,
+     "e": "Za + accusative. Deoba is feminine, so za novu deobu."
     },
     {
      "t": "Выбери правильную форму",

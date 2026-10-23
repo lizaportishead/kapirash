@@ -228,28 +228,28 @@
      "e": "Po requires the dative/locative case: po tradiciji."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ostajemo svoji kroz svoju kulturu, svoju pesmu i svoju ___.",
+     "t": "Choose the verb aspect",
+     "q": "ja onda ___ to što njih na neki način pogađa,",
      "o": [
-      "igre",
-      "igrom",
-      "igra",
-      "igru"
-     ],
-     "a": 3,
-     "e": "Kroz (\"through\") requires the accusative case: kroz svoju igru."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Svako veče on dođe u ___ i sedi sa nama.",
-     "o": [
-      "kafanom",
-      "kafanu",
-      "kafane",
-      "kafana"
+      "osetio",
+      "osetim",
+      "osećao",
+      "osećam"
      ],
      "a": 1,
-     "e": "U in answer to \"where to?\" — accusative case: u kafanu."
+     "e": "\"Then\" marks a next moment, so perfective: osetim. Osećam is imperfective (a continuing state)."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "i grad Pariz ___ je omogućio",
+     "o": [
+      "njega",
+      "ga",
+      "on",
+      "mu"
+     ],
+     "a": 3,
+     "e": "Omogućiti kome? Dative: on → mu (\"to him\")."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Sa (\"with\") requires the instrumental case: sa ocem."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Dao mu je jednu ___ sa muzikom.",
+     "t": "Choose the adjective form",
+     "q": "U tim, kobajagi ___, pesmama",
      "o": [
-      "kasetu",
-      "kasete",
-      "kaseta",
-      "kasetom"
+      "dečjim",
+      "dečje",
+      "dečji",
+      "dečjih"
      ],
      "a": 0,
-     "e": "Dati what — accusative case: kasetu."
+     "e": "The adjective agrees with the noun: u tim pesmama is locative plural, so dečjim."
     },
     {
      "t": "Выбери правильную форму слова",

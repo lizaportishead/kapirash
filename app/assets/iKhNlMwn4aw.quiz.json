@@ -229,15 +229,15 @@
     },
     {
      "t": "Выбери правильную форму слова",
-     "q": "Napisali smo ___ koja se zove „Design thinking“.",
+     "q": "idite da pričate sa svojim ___.",
      "o": [
-      "knjigom",
-      "knjige",
-      "knjigu",
-      "knjiga"
+      "korisnika",
+      "korisniku",
+      "korisnici",
+      "korisnicima"
      ],
-     "a": 2,
-     "e": "Napisati что — винительный падеж: knjigu."
+     "a": 3,
+     "e": "Sa («с») + творительный падеж, мн. ч.: sa korisnicima — с пользователями."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -252,16 +252,16 @@
      "e": "U на вопрос «где?» — местный падеж: u ćošku."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kad su se vlasnici stavili u ___ korisnika.",
+     "t": "Выбери вид глагола",
+     "q": "Tako što ___ i razvijate softver za voice recognition.",
      "o": [
-      "kože",
-      "koža",
-      "kožom",
-      "kožu"
+      "sednete",
+      "sedali",
+      "seli",
+      "sedate"
      ],
-     "a": 3,
-     "e": "Staviti se u + винительный падеж: u kožu — «поставить себя на место»."
+     "a": 0,
+     "e": "Разовое действие перед процессом — совершенный вид: sednete («сядете»). Sedate — несовершенный."
     },
     {
      "t": "Выбери правильную форму слова",

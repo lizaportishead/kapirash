@@ -240,28 +240,28 @@
      "e": "вин. падеж: upoznati koga? — Mariju."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Sve te ljubavi neguje u jednom malom ___.",
+     "t": "Выбери правильную форму слова",
+     "q": "ali razgovor sa ___ me je okrepio.",
      "o": [
-      "selu",
-      "selo",
-      "sela",
-      "selom"
+      "njim",
+      "njemu",
+      "on",
+      "njega"
      ],
      "a": 0,
-     "e": "u + мест. падеж: u selu — в селе."
+     "e": "Sa («с») + творительный падеж: on → njim. Razgovor sa njim — «разговор с ним»."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Zbog ___ se sele na drugi kontinent.",
+     "t": "Выбери форму глагола",
+     "q": "koja voli rutinu, plaši se nepoznatih lica, ne voli ono na šta nije ___.",
      "o": [
-      "partnera",
-      "partner",
-      "partneru",
-      "partnerom"
+      "naviklo",
+      "navikli",
+      "navikla",
+      "naviknut"
      ],
-     "a": 0,
-     "e": "zbog + род. падеж: zbog partnera — из-за партнёра."
+     "a": 2,
+     "e": "Причастие согласуется с подлежащим: koja (женщина/группа в ед. ч., ж. р.) — navikla."
     },
     {
      "t": "Выбери правильную форму",

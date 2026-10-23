@@ -240,52 +240,52 @@
      "e": "U на вопрос «куда?» — винительный падеж: u prodavnicu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "David se nalazi gde je zadnji ulaz ___ u kom radi.",
+     "t": "Выбери вид глагола",
+     "q": "Sedi časkom tu, ja idem da ___ nešto tamo u kuhinji.",
      "o": [
-      "kafićem",
-      "kafiću",
-      "kafića",
-      "kafić"
-     ],
-     "a": 2,
-     "e": "Ulaz чего? Родительный падеж: ulaz kafića."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Ukucaš broj tvoje ___.",
-     "o": [
-      "šasije",
-      "šasija",
-      "šasiju",
-      "šasijom"
+      "snimim",
+      "snimam",
+      "snimio",
+      "snimao"
      ],
      "a": 0,
-     "e": "Broj чего? Родительный падеж: broj šasije."
+     "e": "После «idem da» — единичная цель, совершенный вид: snimim. Snimam — несовершенный (процесс)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Šteta u vrednosti od 60.000 do 180.000 ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "da pronađe ___ kameru u mrklom mraku.",
      "o": [
-      "dinari",
-      "dinare",
-      "dinara",
-      "dinar"
+      "skrivene",
+      "skriveno",
+      "skrivena",
+      "skrivenu"
      ],
-     "a": 2,
-     "e": "После числительных от 5 ставится родительный падеж множественного числа: dinara."
+     "a": 3,
+     "e": "Kamera — женский род; прямое дополнение стоит в винительном падеже, поэтому окончание -u: skrivenu kameru."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupio sam Anđelin omiljeni ___.",
+     "t": "Выбери предлог",
+     "q": "a i još malo nam fali ___ 50.000.",
      "o": [
-      "čipsa",
-      "čips",
-      "čipsu",
-      "čipsom"
+      "za",
+      "do",
+      "na",
+      "od"
      ],
      "a": 1,
-     "e": "Kupiti что — винительный падеж; у неодушевлённых он совпадает с именительным: čips."
+     "e": "Faliti do + родительный падеж — «не хватает до»: fali do 50.000."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Šta je sa pravim ___?",
+     "o": [
+      "bravom",
+      "bravama",
+      "brave",
+      "bravi"
+     ],
+     "a": 1,
+     "e": "Sa + творительный падеж, мн. ч.: sa pravim bravama — с настоящими замками."
     },
     {
      "t": "Выбери правильную форму слова",

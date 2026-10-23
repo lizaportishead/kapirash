@@ -545,11 +545,14 @@ class AppStore extends ChangeNotifier {
 
   // В вебе ссылка ведёт на Site URL проекта.
   Future<void> sendCode(String email) =>
-      cloud!.auth.signInWithOtp(email: email, emailRedirectTo: kIsWeb ? null : authRedirect);
+      cloud!.auth.signInWithOtp(email: email, emailRedirectTo: _redirect);
+
+  // В вебе возвращаемся на ту же страницу, иначе Supabase отправит на Site URL.
+  String get _redirect => kIsWeb ? Uri.base.replace(query: '', fragment: '').toString() : authRedirect;
 
   // Откроется браузер, сессия придёт обратно по ссылке и поймается в onAuthStateChange.
   Future<void> signInWithGoogle() =>
-      cloud!.auth.signInWithOAuth(OAuthProvider.google, redirectTo: kIsWeb ? null : authRedirect);
+      cloud!.auth.signInWithOAuth(OAuthProvider.google, redirectTo: _redirect);
 
   Future<void> verifyCode(String email, String code) =>
       cloud!.auth.verifyOTP(email: email, token: code, type: OtpType.email);

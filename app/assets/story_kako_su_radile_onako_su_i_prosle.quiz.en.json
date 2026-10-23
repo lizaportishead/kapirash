@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "How did the stepmother treat the stepdaughter?",
+     "o": [
+      "She beat and scolded her and starved her",
+      "She ignored her",
+      "She spoiled her",
+      "She taught her to sew"
+     ],
+     "a": 0,
+     "e": "She beat and scolded her and made her suffer hunger and cold."
+    },
+    {
+     "q": "Where did the girl go after the stepmother drove her out?",
+     "o": [
+      "To a neighbouring village",
+      "Into the forest, where she saw a distant fire",
+      "To her father",
+      "To a monastery"
+     ],
+     "a": 1,
+     "e": "She wandered into the forest and spotted a fire far away."
+    },
+    {
+     "q": "What did the girl do in the hut?",
+     "o": [
+      "Went straight to sleep",
+      "Swept it, tidied the fire and added wood",
+      "Left without touching anything",
+      "Broke the bench"
+     ],
+     "a": 1,
+     "e": "She swept the hut and built up the fire."
+    },
+    {
+     "q": "What did the ala ask about her head, and what did the girl answer?",
+     "o": [
+      "Is it pretty? — “No”",
+      "Does it hurt? — “Yes”",
+      "Is it clean? — “It's dirty”",
+      "Does it smell? — “No, mother, it smells like immortelle flowers”"
+     ],
+     "a": 3,
+     "e": "“Smrdi li moja glava?” — “Ne smrdi, majko! već miriše kao smilj.”"
+    },
+    {
+     "q": "Which chest did the kind girl choose, and why?",
+     "o": [
+      "The heaviest, to take more",
+      "The prettiest",
+      "The lightest one, because she thought she hadn't earned more",
+      "Any of them, without thinking"
+     ],
+     "a": 2,
+     "e": "She took the lightest chest: for those few days she hadn't earned more."
+    },
+    {
+     "q": "What was inside the kind girl's chest?",
+     "o": [
+      "Nothing",
+      "Snakes",
+      "Gold ducats",
+      "Stones"
+     ],
+     "a": 2,
+     "e": "“U njemu sve sami dukati!”"
+    },
+    {
+     "q": "How did the story end for the stepmother and her daughter?",
+     "o": [
+      "Snakes leapt from the heavy chest and drank out their eyes",
+      "They made peace with the stepdaughter",
+      "They became rich",
+      "They left the village"
+     ],
+     "a": 0,
+     "e": "Two snakes leapt out of the chest and drank their eyes out."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Maćija je mrzela svoju *pastorku*.",
+     "o": [
+      "maid",
+      "stepdaughter",
+      "sister",
+      "neighbour"
+     ],
+     "a": 1,
+     "e": "Pastorka — stepdaughter."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Patila je *glađu* i golotinjom.",
+     "o": [
+      "work",
+      "illness",
+      "thirst",
+      "hunger"
+     ],
+     "a": 3,
+     "e": "Glad — hunger."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ona uzme *metlu* pa počisti kolebu.",
+     "o": [
+      "axe",
+      "bucket",
+      "basket",
+      "broom"
+     ],
+     "a": 3,
+     "e": "Metla — broom."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Kad tamo a to mala *koleba*, nepočišćena.",
+     "o": [
+      "hut",
+      "mill",
+      "bridge",
+      "well"
+     ],
+     "a": 0,
+     "e": "Koleba — hut."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Otvori sanduk, a u njemu sve sami *dukati*!",
+     "o": [
+      "grains",
+      "stones",
+      "ducats, gold coins",
+      "coals"
+     ],
+     "a": 2,
+     "e": "Dukat — ducat, gold coin."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Devojka uzme ___ sanduk.",
+     "o": [
+      "najlakši",
+      "najlakšu",
+      "najlakšem",
+      "najlakšeg"
+     ],
+     "a": 0,
+     "e": "An inanimate masculine noun in the accusative equals the nominative: najlakši sanduk."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Ala joj metne glavu na ___.",
+     "o": [
+      "krilu",
+      "krilom",
+      "krilo",
+      "krila"
+     ],
+     "a": 2,
+     "e": "Na + accusative (where to?): na krilo."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Devojka lepo nahrani njenu ___.",
+     "o": [
+      "živina",
+      "živinom",
+      "živini",
+      "živinu"
+     ],
+     "a": 3,
+     "e": "Nahraniti whom? — accusative: živinu."
+    }
+   ]
+  }
+ ]
+}

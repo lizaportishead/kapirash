@@ -240,16 +240,16 @@
      "e": "Preko + число: род. падеж мн. ч. — kompanija."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Većina nas radi neki drugi ___ tokom dana.",
+     "t": "Выбери предлог",
+     "q": "da li želi prihod ___ dividende.",
      "o": [
-      "posla",
-      "posao",
-      "poslu",
-      "poslom"
+      "iz",
+      "od",
+      "sa",
+      "kod"
      ],
      "a": 1,
-     "e": "Raditi + винительный падеж: neki drugi posao."
+     "e": "Prihod od + родительный падеж: prihod od dividende — доход от дивидендов."
     },
     {
      "t": "Выбери правильную форму",
@@ -264,16 +264,16 @@
      "e": "U + винительный падеж (куда): u jezgro."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Moramo obratiti pažnju na ___ između elemenata.",
+     "t": "Выбери правильную форму слова",
+     "q": "Svojim ___ sam došao do jedne strategije koja se ukratko može opisati kao jezgro i sateliti.",
      "o": [
-      "korelacija",
-      "korelaciju",
-      "korelaciji",
-      "korelacijom"
+      "istraživanjem",
+      "istraživanje",
+      "istraživanju",
+      "istraživanja"
      ],
-     "a": 1,
-     "e": "Na + винительный падеж: obratiti pažnju na korelaciju."
+     "a": 0,
+     "e": "Средство или способ — творительный падеж: svojim istraživanjem — своим исследованием."
     },
     {
      "t": "Выбери правильную форму",

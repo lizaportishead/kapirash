@@ -228,16 +228,16 @@
      "e": "u + мест. падеж: u gradu — в городе."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Jovana je napravila Discord ___.",
+     "t": "Выбери форму глагола",
+     "q": "Ubrzo nakon osnivanja grupe, zajednica je ___ da se seli u nevirtuelni prostor.",
      "o": [
-      "grupa",
-      "grupe",
-      "grupu",
-      "grupi"
+      "počela",
+      "počeli",
+      "počeo",
+      "počelo"
      ],
-     "a": 2,
-     "e": "вин. падеж ж. р.: grupu — группу."
+     "a": 0,
+     "e": "Причастие согласуется с подлежащим: zajednica — женский род, ед. ч., значит počela."
     },
     {
      "t": "Выбери правильную форму",
@@ -264,16 +264,16 @@
      "e": "na + вин. падеж: na kumu — на куму (горжусь)."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Ona je nesvesno okupila ___.",
+     "t": "Выбери форму глагола",
+     "q": "a pre par godina smo i ___ kume.",
      "o": [
-      "zajednica",
-      "zajednicu",
-      "zajednice",
-      "zajednici"
+      "postale",
+      "postali",
+      "postalo",
+      "postala"
      ],
-     "a": 1,
-     "e": "вин. падеж: okupiti koga/šta? — zajednicu."
+     "a": 0,
+     "e": "Говорят две женщины (smo + причастие ж. р. мн. ч.): postale — «стали кумами»."
     },
     {
      "t": "Выбери правильную форму",
@@ -288,16 +288,16 @@
      "e": "sa + твор. падеж: sa muškarcem — с мужчиной."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Bilo je dosta ___.",
+     "t": "Выбери предлог",
+     "q": "Da li uopšte imaš ljude ___ koje možeš da se osloniš kada si u problemu?",
      "o": [
-      "solidarnosti",
-      "solidarnost",
-      "solidarnošću",
-      "solidarnostima"
+      "o",
+      "za",
+      "na",
+      "od"
      ],
-     "a": 0,
-     "e": "dosta + род. падеж: dosta solidarnosti — много солидарности."
+     "a": 2,
+     "e": "Osloniti se na + винительный падеж — «положиться на кого-то»: na koje."
     }
    ]
   }

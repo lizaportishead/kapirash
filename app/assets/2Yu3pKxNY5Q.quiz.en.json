@@ -228,16 +228,16 @@
      "e": "Pred (\"in front of\") in answer to \"where?\" requires the instrumental case: pred investitorima."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Najčešće dvoje do petoro ___.",
+     "t": "Choose the verb aspect",
+     "q": "da li ste ___ neku anketu.",
      "o": [
-      "ljudi",
-      "ljude",
-      "čovek",
-      "ljudima"
+      "radili",
+      "odradili",
+      "radio",
+      "odradio"
      ],
-     "a": 0,
-     "e": "After dvoje/petoro the genitive plural is used: ljudi."
+     "a": 1,
+     "e": "The question is about a completed task: perfective odradili. Radili is imperfective (process). Ste is plural."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,28 +264,28 @@
      "e": "Istražiti + object — accusative case; for neuter nouns it coincides with the nominative: tržište."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "U narednih 5 do 7 ___.",
+     "t": "Choose the preposition",
+     "q": "koji su spremni da plate ___ vaše rešenje.",
      "o": [
-      "godina",
-      "godine",
-      "godinu",
-      "godinama"
+      "od",
+      "o",
+      "za",
+      "na"
      ],
-     "a": 0,
-     "e": "After numbers from 5 the genitive plural is used: godina."
+     "a": 2,
+     "e": "Platiti za + accusative means \"to pay for something\": za rešenje."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Razmišljate o izlasku na nova ___.",
+     "t": "Choose the preposition",
+     "q": "ili potpuno menjate njihov proces rada ___ bolje,",
      "o": [
-      "tržištima",
-      "tržišta",
-      "tržište",
-      "tržištu"
+      "za",
+      "u",
+      "od",
+      "na"
      ],
-     "a": 1,
-     "e": "Na in answer to \"where to?\" requires the accusative plural: nova tržišta."
+     "a": 3,
+     "e": "Na bolje is a set phrase meaning \"for the better\": na + accusative."
     },
     {
      "t": "Выбери правильную форму слова",

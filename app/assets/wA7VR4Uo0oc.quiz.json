@@ -252,40 +252,40 @@
      "e": "Подлежащее — именительный падеж: traka."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Strah me da će ceo film da ode u ___.",
+     "t": "Выбери предлог",
+     "q": "Ovo mi je prvi put da slikam ___ filmom.",
      "o": [
-      "propašću",
-      "propast",
-      "propasti",
-      "propastu"
+      "na",
+      "sa",
+      "u",
+      "za"
      ],
      "a": 1,
-     "e": "Ići u + винительный падеж; у женского рода на согласный он совпадает с именительным: u propast."
+     "e": "Sa («с») + творительный падеж: sa filmom — на плёнку (буквально «с плёнкой»)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Sad ću Anđeli da pojasnim kako da koristi ovu ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Ovo je zapravo ___ slika koju sam napravio fotoaparatom.",
      "o": [
-      "kamera",
-      "kameru",
-      "kamere",
-      "kamerom"
+      "najbolji",
+      "najbolja",
+      "najbolje",
+      "najbolju"
      ],
      "a": 1,
-     "e": "Koristiti что — винительный падеж: kameru."
+     "e": "Прилагательное согласуется с существительным: slika — женский род, ед. ч., значит najbolja."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ista firma ima i ___ razvijanja filma.",
+     "t": "Выбери вид глагола",
+     "q": "I onda posle moram da ___ to ovako",
      "o": [
-      "usluga",
-      "usluge",
-      "uslugom",
-      "uslugu"
+      "namotao",
+      "motam",
+      "motao",
+      "namotam"
      ],
      "a": 3,
-     "e": "Imati что — винительный падеж: uslugu."
+     "e": "Нужно довести действие до результата — совершенный вид: namotam. Motam — несовершенный (процесс)."
     },
     {
      "t": "Выбери правильную форму слова",

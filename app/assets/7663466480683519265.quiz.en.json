@@ -159,16 +159,16 @@
      "e": "After da a personal form is used: ja → kradem."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Brate, već si mi ušao u ___.",
+     "t": "Choose the verb aspect",
+     "q": "Brate, ja sam jutros ___ stanje na računu",
      "o": [
-      "stanu",
-      "stana",
-      "stan",
-      "stanom"
+      "pogledala",
+      "pogledao",
+      "gledao",
+      "gledala"
      ],
-     "a": 2,
-     "e": "U in answer to \"where to?\" — accusative case. For inanimate masculine nouns it coincides with the nominative: stan."
+     "a": 0,
+     "e": "Looked once — perfective pogledala. A woman is speaking (sam + -la)."
     }
    ]
   }

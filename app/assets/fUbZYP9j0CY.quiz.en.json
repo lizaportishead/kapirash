@@ -252,40 +252,40 @@
      "e": "Odvesti u + accusative case: u Norvešku."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Đorđe Bojanić je istoričar iz ___.",
+     "t": "Choose the preposition",
+     "q": "i režiser filma ___ Norveške, Šetil Palmkvist,",
      "o": [
-      "Nišu",
-      "Niš",
-      "Niša",
-      "Nišem"
+      "na",
+      "u",
+      "iz",
+      "kod"
      ],
      "a": 2,
-     "e": "Iz (\"from\") requires the genitive case: iz Niša."
+     "e": "Iz (\"from\") + genitive: iz Norveške — from Norway."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Temperatura od minus 50 ___.",
+     "t": "Choose the verb aspect",
+     "q": "Pre 14-15 godina ___ sam gospodina Šetila Palmkvista,",
      "o": [
-      "stepena",
-      "stepen",
-      "stepeni",
-      "stepenom"
-     ],
-     "a": 2,
-     "e": "After the number 50 the genitive plural is used: stepeni."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Ljudi sa vrlo malo ___ na sebi.",
-     "o": [
-      "odeće",
-      "odećom",
-      "odeća",
-      "odeću"
+      "upoznao",
+      "upoznavao",
+      "upoznala",
+      "upoznavala"
      ],
      "a": 0,
-     "e": "After malo (\"little\") the genitive case is used: malo odeće."
+     "e": "The meeting happened once at a definite moment — perfective upoznao. A man is speaking, so not upoznala."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "jer je naboj emocija bio toliko ___ da smo i mi plakali zajedno sa svedocima.",
+     "o": [
+      "velike",
+      "velika",
+      "veliki",
+      "veliko"
+     ],
+     "a": 2,
+     "e": "The adjective agrees with the subject: naboj is masculine singular, so veliki."
     },
     {
      "t": "Выбери правильную форму слова",

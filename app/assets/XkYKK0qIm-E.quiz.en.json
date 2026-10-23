@@ -216,16 +216,16 @@
      "e": "U in answer to \"where?\" — locative case: u Vlasotincu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kampujemo u Vlasotincu pored ___.",
+     "t": "Choose the preposition",
+     "q": "Idemo ___ kablove i Davidove stvari.",
      "o": [
-      "reku",
-      "reka",
-      "reke",
-      "rekom"
+      "od",
+      "po",
+      "za",
+      "bez"
      ],
-     "a": 2,
-     "e": "Pored (\"next to\") requires the genitive case: pored reke."
+     "a": 1,
+     "e": "Ići po + accusative means \"go to fetch something\": idemo po kablove."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -240,28 +240,28 @@
      "e": "Propustiti what — accusative case: godinu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupili smo šest ___.",
+     "t": "Choose the verb aspect",
+     "q": "___ smo šest komada, biće to dovoljno.",
      "o": [
-      "komade",
-      "komadi",
-      "komad",
-      "komada"
-     ],
-     "a": 3,
-     "e": "After numbers from 5 the genitive plural is used: komada."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Sada idemo kod ___.",
-     "o": [
-      "Stefana",
-      "Stefanu",
-      "Stefan",
-      "Stefanom"
+      "Kupili",
+      "Kupovao",
+      "Kupio",
+      "Kupovali"
      ],
      "a": 0,
-     "e": "Kod (\"at, to\") requires the genitive case: kod Stefana."
+     "e": "A specific quantity bought in one go is perfective: kupili. Kupovali is imperfective (process, regular action). Smo is plural, so not kupio."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "Sinoć je ___ kiša, sad je već suvo.",
+     "o": [
+      "palo",
+      "pali",
+      "pala",
+      "pao"
+     ],
+     "a": 2,
+     "e": "The participle agrees with the subject: kiša is feminine singular, so pala."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -276,28 +276,28 @@
      "e": "Kod requires the genitive case: kod čoveka."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Moram u mraku da idem kroz ovu ___.",
+     "t": "Choose the preposition",
+     "q": "Moram u mrklom mraku da idem sad ___ ovu šumu",
      "o": [
-      "šume",
-      "šumom",
-      "šuma",
-      "šumu"
-     ],
-     "a": 3,
-     "e": "Kroz (\"through\") requires the accusative case: kroz šumu."
-    },
-    {
-     "t": "Выбери правильную форму слова",
-     "q": "Kabl mora proći ispod zemljanog ___.",
-     "o": [
-      "puta",
-      "putu",
-      "put",
-      "putem"
+      "kroz",
+      "od",
+      "bez",
+      "do"
      ],
      "a": 0,
-     "e": "Ispod (\"under\") takes the genitive case in this phrase: ispod puta."
+     "e": "Kroz (\"through\") + accusative: kroz ovu šumu. Bez, od and do take the genitive."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Šta si radio s ___, Davide?",
+     "o": [
+      "njim",
+      "on",
+      "njega",
+      "njemu"
+     ],
+     "a": 0,
+     "e": "S(a) (\"with\") + instrumental: on → njim. S njim — \"with him\"."
     }
    ]
   }

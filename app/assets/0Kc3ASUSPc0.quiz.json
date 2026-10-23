@@ -228,28 +228,28 @@
      "e": "Odvesti u + винительный падеж; у неодушевлённых мужского рода он совпадает с именительным: grad."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ako pogodim svih pet ___ u Vlasotincu.",
+     "t": "Выбери вид глагола",
+     "q": "Ako ___ svih pet lokacija u Vlasotincu, to je grad u kome živim,",
      "o": [
-      "lokacije",
-      "lokacijama",
-      "lokacija",
-      "lokaciju"
+      "pogodim",
+      "pogađao",
+      "pogodio",
+      "pogađam"
      ],
-     "a": 2,
-     "e": "После числа 5 ставится родительный падеж множественного числа: lokacija."
+     "a": 0,
+     "e": "После ako о единичном будущем результате — совершенный вид: pogodim. Pogađam — несовершенный (процесс)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Geoguessr je igra u kojoj imate pet ___.",
+     "t": "Выбери предлог",
+     "q": "U svakoj rundi ostave vas negde ___ Google mapi,",
      "o": [
-      "runde",
-      "rundi",
-      "rundu",
-      "rundama"
+      "za",
+      "na",
+      "kod",
+      "u"
      ],
      "a": 1,
-     "e": "После числа 5 — родительный падеж множественного числа: rundi."
+     "e": "Na мапе — «на карте»: предлог na + местный падеж."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Za на вопрос «где?» требует творительного падежа: za kompjuterom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Bukvalno ispred ___, u centru.",
+     "t": "Выбери вид глагола",
+     "q": "Ljudi, ___ smo znak za Linovo.",
      "o": [
-      "opštinu",
-      "opštinom",
-      "opština",
-      "opštine"
+      "nalazio",
+      "našli",
+      "nalazili",
+      "našao"
      ],
-     "a": 3,
-     "e": "Ispred («перед») требует родительного падежа: ispred opštine."
+     "a": 1,
+     "e": "Нашли, результат достигнут — совершенный вид: našli. Nalazili — несовершенный (процесс). Smo — мн. ч., поэтому не našao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Pogoditi что — винительный падеж: lokaciju."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Poslednja lokacija je bukvalno kod ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "___ lokacija, pod znacima navoda najteža: pogodak, 5000 poena, nula metra promašaja.",
      "o": [
-      "stadion",
-      "stadiona",
-      "stadionu",
-      "stadionom"
+      "Poslednje",
+      "Poslednja",
+      "Poslednju",
+      "Poslednji"
      ],
      "a": 1,
-     "e": "Kod («у, возле») требует родительного падежа: kod stadiona."
+     "e": "Прилагательное согласуется с существительным: lokacija — женский род, ед. ч., именительный падеж, значит poslednja."
     }
    ]
   }

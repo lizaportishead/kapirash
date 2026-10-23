@@ -276,28 +276,28 @@
      "e": "Быть правым — выражение biti u pravu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Došao sam do nekog ___.",
+     "t": "Выбери вид глагола",
+     "q": "Nadao sam se da ću ___ neku zgradu,",
      "o": [
-      "jezeru",
-      "jezerom",
-      "jezera",
-      "jezero"
+      "video",
+      "gledao",
+      "gledati",
+      "videti"
      ],
-     "a": 2,
-     "e": "Do («до») требует родительного падежа: do jezera."
+     "a": 3,
+     "e": "Надеялся на результат — «увидеть»: совершенный вид videti. Gledati — несовершенный (процесс)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Pored ___ sam došao do ćorsokaka.",
+     "t": "Выбери форму прилагательного",
+     "q": "Znači, ipak idu u ovom ___ smeru.",
      "o": [
-      "Savom",
-      "Sava",
-      "Save",
-      "Savu"
+      "drugom",
+      "drugi",
+      "drugog",
+      "drugo"
      ],
-     "a": 2,
-     "e": "Pored («рядом с») требует родительного падежа: pored Save."
+     "a": 0,
+     "e": "U + местный падеж. Smer — мужской род, значит drugom smeru."
     }
    ]
   }

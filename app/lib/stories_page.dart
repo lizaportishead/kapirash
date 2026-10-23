@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 
 import 'icons.dart';
 import 'phrase.dart';
+import 'player_page.dart' show SubPage;
+import 'quiz_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
@@ -40,46 +42,6 @@ const stories = [
         'a kad ih je dobila više nije mogla da ih skine već je morala u njima zauvek da pleše.',
     level: 'B1',
     asset: 'story_crvene_cipele',
-  ),
-  Story(
-    id: 'staklena-kula',
-    title: 'Staklena kula',
-    author: 'Autor nepoznat',
-    blurb:
-        'Priča o devojci Ilzi koja je da bi spasla bolesnog oca otišla u staklenu kulu veštice Prelje, '
-        'gde se prede ljudske sudbine, i čistom pesmom razbila njenu čaroliju.',
-    level: 'B1',
-    asset: 'story_staklena_kula',
-  ),
-  Story(
-    id: 'ogledalo-bez-odsjaja',
-    title: 'Ogledalo bez odsjaja',
-    author: 'Autor nepoznat',
-    blurb:
-        'Psihološki detektiv: inspektor Marko istražuje nestanak slikarke Sofije iz zaključane vile '
-        'i pod ultraljubičastim svetlom otkriva istinu o njenom mužu.',
-    level: 'B2',
-    asset: 'story_ogledalo_bez_odsjaja',
-  ),
-  Story(
-    id: 'tkacica-zaboravljenih-snova',
-    title: 'Tkačica zaboravljenih snova',
-    author: 'Autor nepoznat',
-    blurb:
-        'Priča o mladiću Radovanu koji je otišao u pećinu tkačice Morane da zaboravi bol za izgubljenim bratom, '
-        'ali je shvatio da je bol cena ljubavi.',
-    level: 'B1',
-    asset: 'story_tkacica_zaboravljenih_snova',
-  ),
-  Story(
-    id: 'poslednje-eho',
-    title: 'Poslednje eho sa planete Aeron',
-    author: 'Autor nepoznat',
-    blurb:
-        'Naučnofantastična priča o ksenoarheologu Viktoru Lazareviću koji na izumrloj planeti Aeron '
-        'pronalazi oca zarobljenog u kristalu sećanja i mora da odluči da li da ga vrati kući.',
-    level: 'B2',
-    asset: 'story_poslednje_eho',
   ),
   Story(
     id: 'princeza-na-zrnu-grasku',
@@ -192,6 +154,46 @@ const stories = [
     level: 'B2',
     asset: 'story_snezna_kraljica',
   ),
+  Story(
+    id: 'staklena-kula',
+    title: 'Staklena kula',
+    author: 'Klod Ironić',
+    blurb:
+        'Priča o devojci Ilzi koja je da bi spasla bolesnog oca otišla u staklenu kulu veštice Prelje, '
+        'gde se prede ljudske sudbine, i čistom pesmom razbila njenu čaroliju.',
+    level: 'B1',
+    asset: 'story_staklena_kula',
+  ),
+  Story(
+    id: 'ogledalo-bez-odsjaja',
+    title: 'Ogledalo bez odsjaja',
+    author: 'Klod Ironić',
+    blurb:
+        'Psihološki detektiv: inspektor Marko istražuje nestanak slikarke Sofije iz zaključane vile '
+        'i pod ultraljubičastim svetlom otkriva istinu o njenom mužu.',
+    level: 'B2',
+    asset: 'story_ogledalo_bez_odsjaja',
+  ),
+  Story(
+    id: 'tkacica-zaboravljenih-snova',
+    title: 'Tkačica zaboravljenih snova',
+    author: 'Klod Ironić',
+    blurb:
+        'Priča o mladiću Radovanu koji je otišao u pećinu tkačice Morane da zaboravi bol za izgubljenim bratom, '
+        'ali je shvatio da je bol cena ljubavi.',
+    level: 'B1',
+    asset: 'story_tkacica_zaboravljenih_snova',
+  ),
+  Story(
+    id: 'poslednje-eho',
+    title: 'Poslednje eho sa planete Aeron',
+    author: 'Klod Ironić',
+    blurb:
+        'Naučnofantastična priča o ksenoarheologu Viktoru Lazareviću koji na izumrloj planeti Aeron '
+        'pronalazi oca zarobljenog u kristalu sećanja i mora da odluči da li da ga vrati kući.',
+    level: 'B2',
+    asset: 'story_poslednje_eho',
+  ),
 ];
 
 Story? storyById(String wordKey) {
@@ -235,16 +237,28 @@ class StoriesPage extends StatelessWidget {
               }
               final cols = ((box.maxWidth - 2 * pad + gap) / (260 + gap)).floor().clamp(2, 5);
               final cardW = (box.maxWidth - 2 * pad - gap * (cols - 1)) / cols;
-              return GridView.builder(
+              // Высота карточки — по содержимому (квадратная обложка + текст), без пустоты снизу.
+              final rows = (stories.length / cols).ceil();
+              return ListView.separated(
                 padding: EdgeInsets.fromLTRB(pad, 0, pad, 24),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: cols,
-                  mainAxisSpacing: gap,
-                  crossAxisSpacing: gap,
-                  mainAxisExtent: (cardW - 24) + 156,
+                itemCount: rows,
+                separatorBuilder: (_, _) => SizedBox(height: gap),
+                itemBuilder: (_, r) => IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      for (var c = 0; c < cols; c++) ...[
+                        if (c > 0) SizedBox(width: gap),
+                        SizedBox(
+                          width: cardW,
+                          child: r * cols + c < stories.length
+                              ? _StoryCard(stories[r * cols + c], vertical: true)
+                              : null,
+                        ),
+                      ],
+                    ],
+                  ),
                 ),
-                itemCount: stories.length,
-                itemBuilder: (_, i) => _StoryCard(stories[i], vertical: true),
               );
             },
           ),
@@ -267,8 +281,9 @@ Future<int> _storyPages(Story s) => _pageCounts.putIfAbsent(s.id, () async {
 });
 
 class _PageCount extends StatelessWidget {
-  const _PageCount(this.story);
+  const _PageCount(this.story, {this.inline = false});
   final Story story;
+  final bool inline;
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +293,7 @@ class _PageCount extends StatelessWidget {
         final n = snap.data ?? 0;
         if (n == 0) return SizedBox.shrink();
         return Padding(
-          padding: EdgeInsets.only(top: 4),
+          padding: EdgeInsets.only(top: inline ? 0 : 4),
           child: Text(ui('{0} стр.', [n]), style: TextStyle(fontSize: 13, color: cMuted)),
         );
       },
@@ -296,7 +311,7 @@ class _StoryCard extends StatelessWidget {
     final ready = story.ready;
     if (vertical) return _vertical(context, ready);
     final body = Padding(
-      padding: EdgeInsets.all(12),
+      padding: EdgeInsets.zero,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -333,10 +348,8 @@ class _StoryCard extends StatelessWidget {
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
                 ),
                 SizedBox(height: 4),
-                Text(story.author, style: TextStyle(fontSize: 13, color: cMuted)),
-                if (ready && story.level.isNotEmpty)
-                  Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
-                if (ready) _PageCount(story),
+                Text(story.author, style: TextStyle(fontSize: 13, color: cText)),
+                if (ready) _meta(),
                 SizedBox(height: 8),
                 if (!ready)
                   Text(
@@ -356,23 +369,37 @@ class _StoryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
-            child: Material(color: cCard, borderRadius: BorderRadius.circular(24), child: body),
+            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(24), child: body),
           ),
         ),
       );
     }
     return Material(
-      color: cCard,
+      color: Colors.transparent,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
     );
   }
 
+  /// Сложность и число страниц в одну строку.
+  Widget _meta() => Padding(
+    padding: EdgeInsets.only(top: 4),
+    child: Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 12,
+      children: [
+        if (story.level.isNotEmpty) DifficultyLabel(story.level),
+        _PageCount(story, inline: true),
+      ],
+    ),
+  );
+
   /// Карточка для сетки: вертикальная обложка сверху, под ней название, автор и уровень.
   Widget _vertical(BuildContext context, bool ready) {
     final body = Padding(
-      padding: EdgeInsets.all(12),
+      padding: EdgeInsets.zero,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
@@ -408,20 +435,17 @@ class _StoryCard extends StatelessWidget {
             story.author,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 13, color: cMuted),
+            style: TextStyle(fontSize: 13, color: cText),
           ),
-          if (ready && story.level.isNotEmpty)
-            Padding(padding: EdgeInsets.only(top: 4), child: DifficultyLabel(story.level)),
-          if (ready) _PageCount(story),
-          SizedBox(height: 8),
-          Expanded(
-            child: ready
-                ? SizedBox.shrink()
-                : Text(
-                    ui('Скоро'),
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
-                  ),
-          ),
+          if (ready) _meta(),
+          if (!ready)
+            Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: Text(
+                ui('Скоро'),
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+              ),
+            ),
         ],
       ),
     );
@@ -431,13 +455,13 @@ class _StoryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
-            child: Material(color: cCard, borderRadius: BorderRadius.circular(24), child: body),
+            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(24), child: body),
           ),
         ),
       );
     }
     return Material(
-      color: cCard,
+      color: Colors.transparent,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
     );
@@ -467,15 +491,19 @@ class _StoryReaderState extends State<StoryReader> {
   late final PageController _ctl;
   late int _i = widget.page ?? store.positionOf(widget.story.wordKey)?.toInt() ?? 0;
   bool _failed = false;
+  List<QuizSection> _quiz = [];
 
-  // Страница 0 — обложка, дальше текст.
-  int get _count => _pages.length + 1;
+  // Страница 0 — обложка, дальше текст, в конце — финальный экран.
+  int get _count => _pages.length + 2;
 
   @override
   void initState() {
     super.initState();
     _ctl = PageController(initialPage: _i);
     _load();
+    loadQuiz(widget.story.asset!).then((q) {
+      if (mounted && q.isNotEmpty) setState(() => _quiz = q);
+    });
   }
 
   @override
@@ -494,7 +522,7 @@ class _StoryReaderState extends State<StoryReader> {
       setState(() {
         _pages = _paginate(text);
         _dict = dict;
-        _i = _i.clamp(0, _pages.length);
+        _i = _i.clamp(0, _count - 1);
       });
     } catch (_) {
       if (mounted) setState(() => _failed = true);
@@ -659,7 +687,11 @@ class _StoryReaderState extends State<StoryReader> {
                               setState(() => _i = i);
                               store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
                             },
-                            itemBuilder: (_, i) => i == 0 ? _cover() : _text(_pages[i - 1], last: i == _count - 1),
+                            itemBuilder: (_, i) => i == 0
+                                ? _cover()
+                                : i == _count - 1
+                                ? _finish()
+                                : _text(_pages[i - 1], last: i == _count - 2),
                           ),
                         ),
                 ),
@@ -729,6 +761,74 @@ class _StoryReaderState extends State<StoryReader> {
     );
   }
 
+  // Последняя страница: рассказ прочитан, отсюда можно перейти к заданиям.
+  Widget _finish() {
+    final s = widget.story;
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(24, 48, 24, 24),
+      child: Column(
+        children: [
+          Container(
+            width: 84,
+            height: 84,
+            decoration: BoxDecoration(color: cAccent, shape: BoxShape.circle),
+            child: Icon(KIcons.done, size: 44, color: cInk),
+          ),
+          SizedBox(height: 24),
+          Text(
+            ui('Рассказ прочитан'),
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.5, color: cText),
+          ),
+          SizedBox(height: 10),
+          Text(
+            _quiz.isEmpty
+                ? ui('Вот и конец рассказа «{0}». Возвращайся к нему, чтобы повторить слова.', [store.conv(s.title)])
+                : ui('Вот и конец рассказа «{0}». Проверь, как ты его понял: ответь на вопросы по смыслу и словам.', [store.conv(s.title)]),
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16, height: 1.5, color: cMuted),
+          ),
+          SizedBox(height: 28),
+          if (_quiz.isNotEmpty)
+            ListenableBuilder(
+              listenable: store,
+              builder: (context, _) {
+                final left = _quiz.where((q) => store.quizResult(s.asset!, q.title) == null).length;
+                return SizedBox(
+                  width: double.infinity,
+                  child: FilledButton.icon(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: cViolet,
+                      foregroundColor: cOnViolet,
+                      minimumSize: Size.fromHeight(52),
+                    ),
+                    icon: Icon(KIcons.tasks, size: 20),
+                    label: Text(
+                      left > 0 ? ui('Задания · {0}', [left]) : ui('Задания'),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                    ),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => SubPage(
+                          title: ui('Задания'),
+                          child: QuizList(videoId: s.asset!, sections: _quiz),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          SizedBox(height: 8),
+          TextButton(
+            onPressed: () => _ctl.animateToPage(0, duration: Duration(milliseconds: 350), curve: Curves.easeOut),
+            child: Text(ui('Читать сначала'), style: TextStyle(fontWeight: FontWeight.w700, color: cMuted)),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _word(_Token t) {
     final key = toLat(cleanWord(t.word)).toLowerCase();
     final saved = key.isNotEmpty && store.isSaved(key);
@@ -770,7 +870,11 @@ class _StoryReaderState extends State<StoryReader> {
           Expanded(
             child: Center(
               child: Text(
-                _i == 0 ? ui('Начало') : '$_i из ${_count - 1}',
+                _i == 0
+                    ? ui('Начало')
+                    : _i == _count - 1
+                    ? ui('Конец')
+                    : '$_i из ${_count - 2}',
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
               ),
             ),

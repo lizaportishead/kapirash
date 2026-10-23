@@ -204,16 +204,16 @@
    "about": "Cases and prepositions",
    "questions": [
     {
-     "t": "Выбери правильную форму",
-     "q": "Danas radimo vežbe za ___ ruku.",
+     "t": "Choose the adjective form",
+     "q": "Verovatno već osećate toplinu u rukama, nastavite da dišete, uskoro smo ___.",
      "o": [
-      "jačanje",
-      "jačanja",
-      "jačanjem",
-      "jačanju"
+      "gotovi",
+      "gotova",
+      "gotove",
+      "gotovo"
      ],
      "a": 0,
-     "e": "Za + accusative case: za jačanje — \"for strengthening\"."
+     "e": "The adjective agrees with the subject: smo (we) is plural, so gotovi."
     },
     {
      "t": "Выбери правильную форму",
@@ -228,16 +228,16 @@
      "e": "Iz + genitive case: iz sedećeg položaja."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Pošaljite ruke u ___.",
+     "t": "Choose the correct form",
+     "q": "Zadržite laktove pod ___ od devedeset stepeni.",
      "o": [
-      "strana",
-      "strane",
-      "stranu",
-      "stranom"
+      "uglu",
+      "ugao",
+      "ugla",
+      "uglom"
      ],
-     "a": 2,
-     "e": "U + accusative case (where to?): u stranu."
+     "a": 3,
+     "e": "Pod + instrumental (at what angle?): pod uglom."
     },
     {
      "t": "Выбери правильную форму",

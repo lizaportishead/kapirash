@@ -216,40 +216,40 @@
      "e": "Ići na + винительный падеж: na pijacu."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Kupili smo kilo ćuretine i kilo ___.",
+     "t": "Выбери вид глагола",
+     "q": "___ sam 8 jaja, to može da bude za danas i sutra.",
      "o": [
-      "ramsteku",
-      "ramstekom",
-      "ramstek",
-      "ramsteka"
+      "Slomio",
+      "Lomila",
+      "Slomila",
+      "Lomio"
      ],
-     "a": 3,
-     "e": "После меры (kilo) ставится родительный падеж: kilo ramsteka."
+     "a": 0,
+     "e": "Результат — яйца разбиты: совершенный вид slomiti. Lomio — несовершенный. Говорит мужчина."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Imamo kilo slatkog ___.",
+     "t": "Выбери предлог",
+     "q": "Kupio sam i angus burgere, tako da ono, to je ___ vama u suštini.",
      "o": [
-      "krompir",
-      "krompirom",
-      "krompiru",
-      "krompira"
+      "za",
+      "kod",
+      "u",
+      "na"
      ],
      "a": 3,
-     "e": "После kilo — родительный падеж: kilo krompira."
+     "e": "Na vama je — «зависит от вас» (устойчивое выражение): na + местный падеж."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ovaj slatki krompir od 440 ___ mi deluje solidno.",
+     "t": "Выбери вид глагола",
+     "q": "nemojte da se plašite da ga ___ i 5 sati na sobnoj temperaturi.",
      "o": [
-      "dinare",
-      "dinari",
-      "dinar",
-      "dinara"
+      "ostavljao",
+      "ostavite",
+      "ostavio",
+      "ostavljate"
      ],
-     "a": 3,
-     "e": "После числительных от 5 ставится родительный падеж множественного числа: dinara."
+     "a": 1,
+     "e": "После «da» — разовое действие, совершенный вид: ostavite. Ostavljate — несовершенный (привычка)."
     },
     {
      "t": "Выбери правильную форму слова",

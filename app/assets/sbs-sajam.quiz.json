@@ -124,28 +124,28 @@
      "e": "даты: od 23. do 31. oktobra — с 23 по 31 октября (род. падеж)."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Ja ću krenuti od ___ 2.",
+     "t": "Выбери форму прилагательного",
+     "q": "U hali 1 su domaći izdavači isključivo sa ___ izdanjima.",
      "o": [
-      "hale",
-      "halu",
-      "hali",
-      "hala"
+      "sopstvenim",
+      "sopstvena",
+      "sopstvenih",
+      "sopstveni"
      ],
      "a": 0,
-     "e": "od + род. падеж: od hale 2 — от зала 2."
+     "e": "Sa + творительный падеж, мн. ч.: sa sopstvenim izdanjima — только со своими изданиями."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Neke kuće neće izlagati knjige pod poznatim ___.",
+     "t": "Выбери предлог",
+     "q": "Važno je napomenuti da u hali 2 ___ 27. oktobra počinje i sajam obrazovanja.",
      "o": [
-      "kupola",
-      "kupolu",
-      "kupolama",
-      "kupole"
+      "iz",
+      "od",
+      "do",
+      "sa"
      ],
-     "a": 2,
-     "e": "pod + твор. падеж (где?): pod kupolama — под куполами."
+     "a": 1,
+     "e": "Od + родительный падеж: od 27. oktobra — с 27 октября."
     },
     {
      "t": "Выбери правильную форму",

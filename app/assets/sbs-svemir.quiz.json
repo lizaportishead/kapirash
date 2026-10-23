@@ -170,16 +170,16 @@
      "e": "uzgoj + род. падеж: uzgoj ljudskih tkiva — выращивание тканей человека."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Rezultati su prerasli u novi ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "Glavni zadatak misije Crew 13 biće pomeranje granica u ___ istraživanjima.",
      "o": [
-      "projekta",
-      "projektom",
-      "projektu",
-      "projekat"
+      "naučne",
+      "naučna",
+      "naučnim",
+      "naučni"
      ],
-     "a": 3,
-     "e": "u + вин. падеж (во что?): u novi projekat — в новый проект."
+     "a": 2,
+     "e": "U + местный падеж, мн. ч.: u naučnim istraživanjima."
     },
     {
      "t": "Выбери правильную форму",
@@ -194,16 +194,16 @@
      "e": "na + мест. падеж (где?): na stanici — на станции."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Seme je klijalo brže od ___ uzoraka.",
+     "t": "Выбери форму прилагательного",
+     "q": "Američka agencija i njeni ___ partneri, međutim, nisu jedini u ovoj trci.",
      "o": [
-      "kontrolnim",
-      "kontrolnih",
-      "kontrolne",
-      "kontrolni"
+      "australijski",
+      "australijsko",
+      "australijska",
+      "australijske"
      ],
-     "a": 1,
-     "e": "od + род. падеж: od kontrolnih uzoraka — чем контрольные образцы."
+     "a": 0,
+     "e": "Прилагательное согласуется с существительным: partneri — мужской род, мн. ч., значит australijski."
     },
     {
      "t": "Выбери правильную форму",

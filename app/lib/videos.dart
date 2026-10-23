@@ -96,11 +96,14 @@ const _ytViews = <String, int>{
 
 /// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
 class Creator {
-  const Creator(this.handle, this.avatarId);
-  final String handle, avatarId;
+  const Creator(this.handle, [this.avatarId]);
+  final String handle;
+
+  /// У части каналов аватарки нет — тогда в кружке первая буква.
+  final String? avatarId;
 
   String get url => 'https://www.youtube.com/@$handle';
-  String get avatar => 'https://yt3.googleusercontent.com/$avatarId=s176-c-k-c0x00ffffff-no-rj';
+  String? get avatar => avatarId == null ? null : 'https://yt3.googleusercontent.com/$avatarId=s176-c-k-c0x00ffffff-no-rj';
 }
 
 // Каталог живёт в Supabase (таблицы videos и creators). Списки ниже — то, с чем приложение собрано:
@@ -129,7 +132,7 @@ void setCatalog(Map<String, dynamic> j) {
   ];
   creators = {
     for (final c in (j['creators'] as List).cast<Map<String, dynamic>>())
-      if (c['handle'] != null && c['avatar_id'] != null) c['name']: Creator(c['handle'], c['avatar_id']),
+      if (c['handle'] != null) c['name']: Creator(c['handle'], c['avatar_id']),
   };
 }
 

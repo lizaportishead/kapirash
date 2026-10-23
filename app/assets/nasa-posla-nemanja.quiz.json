@@ -276,28 +276,28 @@
      "e": "zastave — ж. р. мн. ч.: vijorile — развевались."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Osećam se nebezbedno zbog ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "U Novom Sadu se nešto pre 12 sati urušio deo ___ železničke stanice.",
      "o": [
-      "policiji",
-      "policije",
-      "policija",
-      "policiju"
+      "glavnu",
+      "glavne",
+      "glavna",
+      "glavnoj"
      ],
      "a": 1,
-     "e": "zbog + род. падеж: zbog policije — из-за полиции."
+     "e": "Deo + родительный падеж. Stanica — женский род, значит glavne železničke stanice."
     },
     {
-     "t": "Выбери правильную форму",
-     "q": "Ostavljam Vladana i Vladimira sa ostalima iz kvir ___.",
+     "t": "Выбери форму прилагательного",
+     "q": "imao sam i neke solo ___ momente tu i tamo,",
      "o": [
-      "zbor",
-      "zbora",
-      "zboru",
-      "zborom"
+      "aktivističkih",
+      "aktivistički",
+      "aktivističke",
+      "aktivistička"
      ],
-     "a": 1,
-     "e": "iz + род. падеж: iz zbora — из собрания."
+     "a": 2,
+     "e": "Прилагательное согласуется с существительным: momente — винительный падеж, мн. ч., м. р., значит aktivističke."
     }
    ]
   }

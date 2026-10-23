@@ -228,28 +228,28 @@
      "e": "Odvesti u + accusative case; for inanimate masculine nouns it coincides with the nominative: grad."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Ako pogodim svih pet ___ u Vlasotincu.",
+     "t": "Choose the verb aspect",
+     "q": "Ako ___ svih pet lokacija u Vlasotincu, to je grad u kome živim,",
      "o": [
-      "lokacije",
-      "lokacijama",
-      "lokacija",
-      "lokaciju"
+      "pogodim",
+      "pogađao",
+      "pogodio",
+      "pogađam"
      ],
-     "a": 2,
-     "e": "After the number 5 the genitive plural is used: lokacija."
+     "a": 0,
+     "e": "After ako, a single future result takes the perfective: pogodim. Pogađam is imperfective (ongoing)."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Geoguessr je igra u kojoj imate pet ___.",
+     "t": "Choose the preposition",
+     "q": "U svakoj rundi ostave vas negde ___ Google mapi,",
      "o": [
-      "runde",
-      "rundi",
-      "rundu",
-      "rundama"
+      "za",
+      "na",
+      "kod",
+      "u"
      ],
      "a": 1,
-     "e": "After the number 5 — the genitive plural: rundi."
+     "e": "\"On the map\": the preposition na + locative."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -264,16 +264,16 @@
      "e": "Za in answer to \"where?\" requires the instrumental case: za kompjuterom."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Bukvalno ispred ___, u centru.",
+     "t": "Choose the verb aspect",
+     "q": "Ljudi, ___ smo znak za Linovo.",
      "o": [
-      "opštinu",
-      "opštinom",
-      "opština",
-      "opštine"
+      "nalazio",
+      "našli",
+      "nalazili",
+      "našao"
      ],
-     "a": 3,
-     "e": "Ispred (\"in front of\") requires the genitive case: ispred opštine."
+     "a": 1,
+     "e": "They found it, with a result: perfective našli. Nalazili is imperfective (process). Smo is plural, so not našao."
     },
     {
      "t": "Выбери правильную форму слова",
@@ -288,16 +288,16 @@
      "e": "Pogoditi + object — accusative case: lokaciju."
     },
     {
-     "t": "Выбери правильную форму слова",
-     "q": "Poslednja lokacija je bukvalno kod ___.",
+     "t": "Choose the adjective form",
+     "q": "___ lokacija, pod znacima navoda najteža: pogodak, 5000 poena, nula metra promašaja.",
      "o": [
-      "stadion",
-      "stadiona",
-      "stadionu",
-      "stadionom"
+      "Poslednje",
+      "Poslednja",
+      "Poslednju",
+      "Poslednji"
      ],
      "a": 1,
-     "e": "Kod (\"at, near\") requires the genitive case: kod stadiona."
+     "e": "The adjective agrees with the noun: lokacija is feminine singular nominative, so poslednja."
     }
    ]
   }

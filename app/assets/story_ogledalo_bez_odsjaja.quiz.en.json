@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What disappeared from Mihailo Jovanović's locked villa?",
+     "o": [
+      "An expensive painting",
+      "His dog",
+      "His wife Sofija — only an empty frame was left",
+      "A safe full of money"
+     ],
+     "a": 2,
+     "e": "Sofija vanished from a locked house, leaving an empty frame."
+    },
+    {
+     "q": "What did Sofija do?",
+     "o": [
+      "She wrote books",
+      "She played the violin",
+      "She treated patients",
+      "She painted pictures"
+     ],
+     "a": 3,
+     "e": "She went into the room to finish her portrait."
+    },
+    {
+     "q": "Which suspect was Sofija's sister?",
+     "o": [
+      "Milica",
+      "Nada",
+      "Ana",
+      "Elena"
+     ],
+     "a": 3,
+     "e": "Elena was Sofija's younger sister."
+    },
+    {
+     "q": "What did Inspector Marko notice on the floor under the frame?",
+     "o": [
+      "Blood",
+      "Shards of glass",
+      "Shoe prints",
+      "Traces of white pigment used for ultraviolet paints"
+     ],
+     "a": 3,
+     "e": "White pigment used for ultraviolet paints."
+    },
+    {
+     "q": "What did Marko see on the “empty” canvas under ultraviolet light?",
+     "o": [
+      "The killer's signature",
+      "A terrifying portrait of Mihailo made of many screaming faces",
+      "A portrait of Sofija",
+      "A map of the house"
+     ],
+     "a": 1,
+     "e": "Under UV light a portrait of Mihailo made of tiny screaming faces appeared."
+    },
+    {
+     "q": "What was Mihailo's real plan?",
+     "o": [
+      "To sell the villa",
+      "To declare Sofija insane and take her paintings and the insurance",
+      "To go abroad",
+      "To make peace with Elena"
+     ],
+     "a": 1,
+     "e": "He planned to have her declared insane and seize her property."
+    },
+    {
+     "q": "How did it all end?",
+     "o": [
+      "Sofija was found dead",
+      "The case was closed",
+      "Mihailo was arrested, and Sofija found peace on the Adriatic coast and kept painting",
+      "Elena left the country"
+     ],
+     "a": 2,
+     "e": "Mihailo was arrested; Sofija resumed painting on the Adriatic coast."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Privatna *vila* Mihaila Jovanovića nalazila se na obodu grada.",
+     "o": [
+      "prison",
+      "yacht",
+      "villa",
+      "school"
+     ],
+     "a": 2,
+     "e": "Vila — villa, mansion."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "*Osumnjičenih* je bilo malo, ali svi su imali tajne.",
+     "o": [
+      "guests",
+      "neighbours",
+      "suspects",
+      "witnesses"
+     ],
+     "a": 2,
+     "e": "Osumnjičeni — suspect."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Mihailo je nedavno *osigurao* Sofijinu kolekciju.",
+     "o": [
+      "hid",
+      "insured",
+      "stole",
+      "sold"
+     ],
+     "a": 1,
+     "e": "Osigurati — to insure."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Elena je godinama bila u svađi sa Sofijom zbog porodičnog *nasleđa*.",
+     "o": [
+      "job",
+      "road",
+      "inheritance",
+      "name"
+     ],
+     "a": 2,
+     "e": "Nasleđe — inheritance."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Mihailo je *uhapšen*.",
+     "o": [
+      "rewarded",
+      "arrested",
+      "fired",
+      "wounded"
+     ],
+     "a": 1,
+     "e": "Uhapsiti — to arrest."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Marko je navukao svoj teški kišni ___.",
+     "o": [
+      "mantilom",
+      "mantila",
+      "mantilu",
+      "mantil"
+     ],
+     "a": 3,
+     "e": "An inanimate masculine noun in the accusative equals the nominative: mantil."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Elena je sedela pored ___ i crtala ugljem.",
+     "o": [
+      "prozorom",
+      "prozoru",
+      "prozora",
+      "prozor"
+     ],
+     "a": 2,
+     "e": "Pored + genitive: pored prozora."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Sofija se javila iz malog ___ na jadranskoj obali.",
+     "o": [
+      "grada",
+      "gradu",
+      "grad",
+      "gradom"
+     ],
+     "a": 0,
+     "e": "Iz + genitive: iz grada."
+    }
+   ]
+  }
+ ]
+}
