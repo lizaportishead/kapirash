@@ -547,6 +547,10 @@ class AppStore extends ChangeNotifier {
   Future<void> sendCode(String email) =>
       cloud!.auth.signInWithOtp(email: email, emailRedirectTo: kIsWeb ? null : authRedirect);
 
+  // Откроется браузер, сессия придёт обратно по ссылке и поймается в onAuthStateChange.
+  Future<void> signInWithGoogle() =>
+      cloud!.auth.signInWithOAuth(OAuthProvider.google, redirectTo: kIsWeb ? null : authRedirect);
+
   Future<void> verifyCode(String email, String code) =>
       cloud!.auth.verifyOTP(email: email, token: code, type: OtpType.email);
 

@@ -88,6 +88,14 @@ class _AuthPageState extends State<AuthPage> {
     }
   }
 
+  Future<void> _google() async {
+    if (!store.canSignIn) {
+      setState(() => _error = ui('Вход пока не подключён.'));
+      return;
+    }
+    await _run(store.signInWithGoogle);
+  }
+
   Future<void> _verify() async {
     final code = _code.text.trim();
     if (code.isEmpty) {
@@ -231,11 +239,10 @@ class _AuthPageState extends State<AuthPage> {
                       SizedBox(height: 12),
                       BigButton(ui('Продолжить'), onTap: _busy ? null : _sendCode),
                       SizedBox(height: 12),
-                      // Заглушка: вход через Google пока не подключён.
                       SizedBox(
                         height: 56,
                         child: OutlinedButton.icon(
-                          onPressed: null,
+                          onPressed: _busy ? null : _google,
                           icon: Icon(Icons.mail_outline, size: 20),
                           label: Text(ui('Войти через Gmail')),
                           style: OutlinedButton.styleFrom(
