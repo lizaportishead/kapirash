@@ -205,7 +205,12 @@ class ClipsStrip extends StatelessWidget {
 
 /// Все ролики одной темы поверх таббара.
 void openTopic(BuildContext context, String topic) {
-  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'TopicPage'),builder: (_) => TopicPage(topic)));
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'TopicPage'),
+      builder: (_) => TopicPage(topic),
+    ),
+  );
 }
 
 class TopicPage extends StatelessWidget {
@@ -227,17 +232,7 @@ class TopicPage extends StatelessWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 12),
-                        child: IconButton(
-                          tooltip: ui('Назад'),
-                          icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ),
-                    ),
+                    BackBar(),
                     PageTitle(topicLabel(topic)),
                     Expanded(
                       child: LayoutBuilder(

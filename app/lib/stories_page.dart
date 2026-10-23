@@ -292,7 +292,10 @@ void _openCollection(BuildContext context, {required String? searchHint}) {
       builder: (_) => CollectionPage<Story>(
         title: ui('Любимое'),
         icon: KIcons.stories,
-        items: [for (final s in stories) if (s.ready) s],
+        items: [
+          for (final s in stories)
+            if (s.ready) s,
+        ],
         likeId: (s) => s.wordKey,
         text: (s) => '${s.title} ${s.author}',
         tile: (s) => _StoryCard(s),
@@ -427,10 +430,7 @@ class _StoryCard extends StatelessWidget {
     child: Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 12,
-      children: [
-        if (story.level.isNotEmpty) DifficultyLabel(story.level),
-        _PageCount(story, inline: true),
-      ],
+      children: [if (story.level.isNotEmpty) DifficultyLabel(story.level), _PageCount(story, inline: true)],
     ),
   );
 
@@ -680,13 +680,16 @@ class _StoryReaderState extends State<StoryReader> {
             children: [
               ColoredBox(
                 color: cBg,
-                child: Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: _header()),
+                child: SizedBox(
+                  height: kTopBarHeight,
+                  child: Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: _header()),
+                ),
               ),
               Divider(height: 1, color: cLine),
               Expanded(
                 child: Center(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 720),
+                    constraints: BoxConstraints(maxWidth: 560),
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(24, 24, 24, 24),
                       child: Container(
@@ -694,7 +697,11 @@ class _StoryReaderState extends State<StoryReader> {
                           color: cBg,
                           borderRadius: BorderRadius.circular(28),
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withValues(alpha: 0.10), blurRadius: 32, offset: Offset(0, 8)),
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.10),
+                              blurRadius: 32,
+                              offset: Offset(0, 8),
+                            ),
                           ],
                         ),
                         clipBehavior: Clip.antiAlias,
@@ -723,7 +730,10 @@ class _StoryReaderState extends State<StoryReader> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Padding(padding: EdgeInsets.only(left: 12, right: 12), child: _header()),
+                SizedBox(
+                  height: kTopBarHeight,
+                  child: Padding(padding: EdgeInsets.only(left: 12, right: 12), child: _header()),
+                ),
                 Expanded(child: _body()),
                 if (_pages.isNotEmpty) _footer(),
               ],
@@ -878,7 +888,9 @@ class _StoryReaderState extends State<StoryReader> {
           Text(
             _quiz.isEmpty
                 ? ui('Вот и конец рассказа «{0}». Возвращайся к нему, чтобы повторить слова.', [store.conv(s.title)])
-                : ui('Вот и конец рассказа «{0}». Проверь, как ты его понял: ответь на вопросы по смыслу и словам.', [store.conv(s.title)]),
+                : ui('Вот и конец рассказа «{0}». Проверь, как ты его понял: ответь на вопросы по смыслу и словам.', [
+                    store.conv(s.title),
+                  ]),
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16, height: 1.5, color: cMuted),
           ),
@@ -917,7 +929,10 @@ class _StoryReaderState extends State<StoryReader> {
           SizedBox(height: 8),
           TextButton(
             onPressed: () => _ctl.animateToPage(0, duration: Duration(milliseconds: 350), curve: Curves.easeOut),
-            child: Text(ui('Читать сначала'), style: TextStyle(fontWeight: FontWeight.w700, color: cMuted)),
+            child: Text(
+              ui('Читать сначала'),
+              style: TextStyle(fontWeight: FontWeight.w700, color: cMuted),
+            ),
           ),
         ],
       ),

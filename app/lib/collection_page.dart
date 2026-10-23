@@ -121,17 +121,7 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
                         ),
                       )
                     else ...[
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 12),
-                          child: IconButton(
-                            tooltip: ui('Назад'),
-                            icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                            onPressed: () => Navigator.pop(context),
-                          ),
-                        ),
-                      ),
+                      BackBar(),
                       PageTitle('${widget.title}${list.isEmpty ? '' : ' · ${list.length}'}', icon: widget.icon),
                     ],
                     Expanded(

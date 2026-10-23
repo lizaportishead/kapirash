@@ -198,7 +198,11 @@ class _HomeShellState extends State<HomeShell> {
     Widget buildPages() => IndexedStack(
       index: _tab,
       children: [
-        HomePage(onVideos: () => _select(_feed), onStories: () => _select(_stories), onPodcasts: () => _select(_podcasts)),
+        HomePage(
+          onVideos: () => _select(_feed),
+          onStories: () => _select(_stories),
+          onPodcasts: () => _select(_podcasts),
+        ),
         FeedPage(),
         if (kAddVideoEnabled) MyVideosPage(),
         if (kStoriesTabEnabled) StoriesPage(),
@@ -215,7 +219,12 @@ class _HomeShellState extends State<HomeShell> {
         child: Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 720),
-            child: Column(children: [Expanded(child: pages), InstallBanner()]),
+            child: Column(
+              children: [
+                Expanded(child: pages),
+                InstallBanner(),
+              ],
+            ),
           ),
         ),
       ),
@@ -369,9 +378,9 @@ class _HomeShellState extends State<HomeShell> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // Высота совпадает с PageTitle (14 + 48 кнопка + 12), чтобы лого стояло на одной линии с заголовком.
+                  // Высота совпадает с PageTitle и шапками страниц справа.
                   SizedBox(
-                    height: 74,
+                    height: kTopBarHeight,
                     child: Padding(
                       padding: EdgeInsets.only(left: 28),
                       child: Align(

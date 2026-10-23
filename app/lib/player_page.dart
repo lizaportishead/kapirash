@@ -335,7 +335,8 @@ class _PlayerPageState extends State<PlayerPage> {
                           builder: (context, c) => SingleChildScrollView(
                             child: ConstrainedBox(
                               constraints: BoxConstraints(minHeight: c.maxHeight),
-                              child: Center(
+                              child: Align(
+                                alignment: Alignment.topCenter,
                                 child: ConstrainedBox(
                                   constraints: BoxConstraints(maxWidth: 960),
                                   child: Column(
@@ -629,13 +630,7 @@ class _PlayerPageState extends State<PlayerPage> {
     _push(
       SubPage(
         title: ui('Весь текст'),
-        child: Transcript(
-          sr: _sr,
-          cur: _curN,
-          ruFor: _showRu ? _ruFor : (_) => '',
-          onSeek: _seek,
-          showSr: _showSr,
-        ),
+        child: Transcript(sr: _sr, cur: _curN, ruFor: _showRu ? _ruFor : (_) => '', onSeek: _seek, showSr: _showSr),
       ),
     );
   }
@@ -652,7 +647,12 @@ class _PlayerPageState extends State<PlayerPage> {
                 ui('Задания'),
                 badge: _quiz.where((s) => store.quizResult(videoId, s.title) == null).length,
                 icon: KIcons.tasks,
-                onTap: () => _push(SubPage(title: ui('Задания'), child: QuizList(videoId: videoId, sections: _quiz))),
+                onTap: () => _push(
+                  SubPage(
+                    title: ui('Задания'),
+                    child: QuizList(videoId: videoId, sections: _quiz),
+                  ),
+                ),
               ),
             ),
           ),
@@ -675,7 +675,12 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   void _push(Widget page) {
-    Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'SubPage'), builder: (_) => page));
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        settings: RouteSettings(name: 'SubPage'),
+        builder: (_) => page,
+      ),
+    );
   }
 }
 
@@ -693,22 +698,25 @@ class SubPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: 12, right: 12),
-              child: Row(
-                children: [
-                  IconButton(
-                    tooltip: ui('Назад'),
-                    icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  Expanded(
-                    child: Text(
-                      title,
-                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+            SizedBox(
+              height: kTopBarHeight,
+              child: Padding(
+                padding: EdgeInsets.only(left: 12, right: 12),
+                child: Row(
+                  children: [
+                    IconButton(
+                      tooltip: ui('Назад'),
+                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                      onPressed: () => Navigator.pop(context),
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(

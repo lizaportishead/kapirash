@@ -27,8 +27,18 @@ const cInk = Color(0xFF111114);
 const cOnInk = Color(0xFFFFFFFF);
 
 class Pill extends StatelessWidget {
-  const Pill(this.text, {super.key, this.on = false, this.label, this.icon, this.badge = 0, this.onColor, required this.onTap});
+  const Pill(
+    this.text, {
+    super.key,
+    this.on = false,
+    this.label,
+    this.icon,
+    this.badge = 0,
+    this.onColor,
+    required this.onTap,
+  });
   final String text;
+
   /// Фон выбранной пилюли вместо стандартного; текст на нём тёмный.
   final Color? onColor;
   final int badge;
@@ -59,12 +69,17 @@ class Pill extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Без текста — кнопка-иконка, значок крупнее.
-                  if (icon != null) Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? (onColor != null ? cInk : cBg) : cText),
+                  if (icon != null)
+                    Icon(icon, size: text.isEmpty ? 24 : 16, color: on ? (onColor != null ? cInk : cBg) : cText),
                   if (icon != null && text.isNotEmpty) SizedBox(width: 6),
                   if (text.isNotEmpty)
                     Text(
                       text,
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: on ? (onColor != null ? cInk : cBg) : cText),
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700,
+                        color: on ? (onColor != null ? cInk : cBg) : cText,
+                      ),
                     ),
                   if (badge > 0) ...[
                     SizedBox(width: 6),
@@ -227,6 +242,9 @@ class Sticker extends StatelessWidget {
   }
 }
 
+/// Высота верхней полосы: у логотипа в боковой панели и у шапки страницы справа она одинаковая.
+const double kTopBarHeight = 64;
+
 /// Заголовок экрана в табе; справа можно положить кнопки.
 class PageTitle extends StatelessWidget {
   const PageTitle(this.text, {super.key, this.actions = const [], this.icon});
@@ -236,8 +254,10 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(16, 14, 12, 12),
+    return Container(
+      constraints: BoxConstraints(minHeight: kTopBarHeight),
+      padding: EdgeInsets.fromLTRB(16, 8, 12, 8),
+      alignment: Alignment.centerLeft,
       child: Row(
         children: [
           if (icon != null) ...[Icon(icon, size: 28, color: cViolet), SizedBox(width: 10)],
@@ -294,14 +314,17 @@ class BackBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Padding(
-        padding: EdgeInsets.only(left: 12),
-        child: IconButton(
-          tooltip: ui('Назад'),
-          icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-          onPressed: () => Navigator.pop(context),
+    return SizedBox(
+      height: kTopBarHeight,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          padding: EdgeInsets.only(left: 12),
+          child: IconButton(
+            tooltip: ui('Назад'),
+            icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
       ),
     );
