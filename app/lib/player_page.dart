@@ -381,7 +381,7 @@ class _PlayerPageState extends State<PlayerPage> {
         showSr: _showSr,
       ),
       1 => WordList(videoId: videoId, onSeek: _seek, popOnTap: false),
-      _ => QuizList(videoId: videoId, sections: _quiz),
+      _ => QuizList(videoId: videoId, sections: _quiz, flat: true),
     };
     final word = _word;
     return Container(

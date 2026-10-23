@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'dart:ui' show ImageFilter;
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
+import 'collection_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
 import 'l10n.dart';
@@ -27,15 +27,20 @@ class PodcastsPage extends StatelessWidget {
       builder: (context, _) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 14, 16, 10),
-            child: Semantics(
-              header: true,
-              child: Text(
-                ui('Подкасты'),
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
+          PageTitle(
+            ui('Подкасты'),
+            actions: [
+              IconButton(
+                tooltip: ui('Любимое'),
+                icon: Icon(KIcons.heart, size: 24, color: cText),
+                onPressed: () => _open(context, searchHint: null),
               ),
-            ),
+              IconButton(
+                tooltip: ui('Поиск'),
+                icon: Icon(KIcons.search, size: 24, color: cText),
+                onPressed: () => _open(context, searchHint: ui('Поиск по подкастам')),
+              ),
+            ],
           ),
           Expanded(
             child: LayoutBuilder(builder: (context, c) {
@@ -70,6 +75,23 @@ class PodcastsPage extends StatelessWidget {
       ),
     );
   }
+}
+
+void _open(BuildContext context, {required String? searchHint}) {
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => CollectionPage<Video>(
+        title: ui('Любимое'),
+        icon: KIcons.headphones,
+        items: podcasts,
+        likeId: (p) => p.id,
+        text: (p) => '${p.title} ${p.channel}',
+        tile: (p) => EpisodeTile(p),
+        searchHint: searchHint,
+        emptyLiked: ui('Ставь сердечко подкастам, к которым хочешь вернуться. Они появятся тут.'),
+      ),
+    ),
+  );
 }
 
 void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay = false}) {
@@ -124,7 +146,7 @@ class EpisodeTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: 8),
+                LikeButton(video.id),
                 Semantics(
                   button: true,
                   label: ui('Играть'),
@@ -419,9 +441,8 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     );
   }
 
-  // Десктоп: шапка на всю ширину; слева обложка на размытом фоне с плеером и фразой, справа — текст, слова и задания.
+  // Десктоп: шапка на всю ширину; слева обложка рядом с плеером и фраза под ними, справа — текст, слова и задания.
   Widget _desktop(Cue? cue) {
-    final asset = _covers[widget.video.channel];
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -438,25 +459,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                     icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
                     onPressed: () => Navigator.pop(context),
                   ),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.video.title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, height: 1.3, color: cText),
-                        ),
-                        SizedBox(height: 2),
-                        Text(
-                          widget.video.channel,
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cViolet),
-                        ),
-                      ],
-                    ),
-                  ),
+                  Spacer(),
                   LikeButton(id),
                 ],
               ),
@@ -470,51 +473,66 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                   children: [
                     Expanded(
                       flex: 3,
-                      child: Container(
-                        decoration: BoxDecoration(color: Color(0xFF17151F), borderRadius: BorderRadius.circular(32)),
-                        clipBehavior: Clip.antiAlias,
-                        child: Stack(
-                          children: [
-                            if (asset != null)
-                              Positioned.fill(
-                                child: ExcludeSemantics(
-                                  child: Opacity(
-                                    opacity: 0.55,
-                                    child: ImageFiltered(
-                                      imageFilter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
-                                      child: Image.asset(asset, fit: BoxFit.cover, errorBuilder: (_, _, _) => SizedBox.shrink()),
+                      child: LayoutBuilder(
+                        builder: (context, c) => SingleChildScrollView(
+                          padding: EdgeInsets.only(top: 4, bottom: 16),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: c.maxHeight),
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                spacing: 16,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.fromLTRB(16, 16, 16, 14),
+                                    decoration: BoxDecoration(
+                                      color: cBg,
+                                      borderRadius: BorderRadius.circular(24),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withValues(alpha: 0.08),
+                                          blurRadius: 16,
+                                          offset: Offset(0, 4),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            _Cover(size: 72, channel: widget.video.channel),
+                                            SizedBox(width: 12),
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    widget.video.channel,
+                                                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cViolet),
+                                                  ),
+                                                  SizedBox(height: 2),
+                                                  Text(
+                                                    widget.video.title,
+                                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 8),
+                                        _transport(),
+                                      ],
                                     ),
                                   ),
-                                ),
-                              ),
-                            LayoutBuilder(
-                              builder: (context, c) => SingleChildScrollView(
-                                padding: EdgeInsets.all(28),
-                                child: ConstrainedBox(
-                                  constraints: BoxConstraints(minHeight: c.maxHeight - 56),
-                                  child: Center(
-                                    child: ConstrainedBox(
-                                      constraints: BoxConstraints(maxWidth: 560),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                                        spacing: 16,
-                                        children: [
-                                          Center(child: _Cover(size: 200, channel: widget.video.channel)),
-                                          Container(
-                                            padding: EdgeInsets.fromLTRB(8, 8, 8, 14),
-                                            decoration: BoxDecoration(color: cBg, borderRadius: BorderRadius.circular(24)),
-                                            child: _transport(),
-                                          ),
-                                          _current(cue),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                  _current(cue),
+                                ],
                               ),
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
@@ -540,7 +558,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
       0 when _subsLoading => KapLoading(size: 40),
       0 => Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: _seek, popOnTap: false),
       1 => WordList(videoId: id, onSeek: _seek, popOnTap: false),
-      _ => QuizList(videoId: id, sections: _quiz),
+      _ => QuizList(videoId: id, sections: _quiz, flat: true),
     };
     return Container(
       decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),

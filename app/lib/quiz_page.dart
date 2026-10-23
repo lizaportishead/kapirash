@@ -56,7 +56,9 @@ const _cWrong = Color(0xFFFFCFC9);
 
 /// Список заданий к ролику: карточка на раздел, на ней — пройден ли он и с каким результатом.
 class QuizList extends StatelessWidget {
-  const QuizList({super.key, required this.videoId, required this.sections, this.inline = false});
+  const QuizList({super.key, required this.videoId, required this.sections, this.inline = false, this.flat = false});
+  /// Карточки без своей заливки — когда список лежит на общем сером фоне.
+  final bool flat;
   // Внутри общей прокрутки страницы список сам не прокручивается.
   final bool inline;
   final String videoId;
@@ -82,7 +84,7 @@ class QuizList extends StatelessWidget {
   Widget _card(BuildContext context, QuizSection s) {
     final r = store.quizResult(videoId, s.title);
     return Material(
-      color: cCard,
+      color: flat ? Colors.transparent : cCard,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
         borderRadius: BorderRadius.circular(24),
