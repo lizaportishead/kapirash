@@ -335,7 +335,7 @@ const _en = <String, String>{
   'Пока нет слов. Нажми на слово в тексте, чтобы добавить его.': 'No words yet. Tap a word in the text to add it.',
   'Не удалось открыть рассказ.': "Couldn't open the story.",
   'Добавленные слова': 'Saved words',
-  'Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.': 'Tap words to see their translation. Swipe right to start the story.',
+  'Нажимай на слова, чтобы увидеть перевод; удерживай и веди пальцем, чтобы выделить фразу. Листай вправо — рассказ начнётся.': 'Tap words to see their translation; press and hold, then drag to select a phrase. Swipe right to start the story.',
   'Предыдущая страница': 'Previous page',
   'Следующая страница': 'Next page',
   'Начало': 'Start',

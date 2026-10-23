@@ -169,7 +169,14 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   void _seek(double t) {
-    _yt.seekTo(seconds: t < 0.15 ? 0 : t - 0.15, allowSeekAhead: true);
+    final to = t < 0.15 ? 0.0 : t - 0.15;
+    // В вебе iframe-обёртка принимает у player.* только один JSON-аргумент, а seekTo шлёт два и молча
+    // не срабатывает, — там перематываем через loadVideoById (один объект-аргумент).
+    if (kIsWeb) {
+      _yt.loadVideoById(videoId: videoId, startSeconds: to);
+      return;
+    }
+    _yt.seekTo(seconds: to, allowSeekAhead: true);
     _yt.playVideo();
   }
 

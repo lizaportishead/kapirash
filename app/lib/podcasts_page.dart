@@ -229,7 +229,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   int get _cur => _curN.value;
   final _wordsKey = GlobalKey();
 
-  int _side = 0;
+  final _word = ValueNotifier<(String, Cue)?>(null);
   double _pos = 0, _total = 0;
   double? _drag;
   double _savedPos = -1;
@@ -292,6 +292,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     }
     _audio.dispose();
     _curN.dispose();
+    _word.dispose();
     super.dispose();
   }
 
@@ -361,6 +362,10 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   void _openWord(String raw, Cue cue) {
     if (cleanWord(raw).isEmpty) return;
     _audio.pause();
+    if (MediaQuery.sizeOf(context).width >= 960) {
+      _word.value = (raw, cue);
+      return;
+    }
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: id, flyTo: _wordsKey);
   }
 
@@ -557,47 +562,18 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   }
 
   Widget _sidePanel() {
-    final tabs = <(int, String, IconData)>[
-      if (_quiz.isNotEmpty) (2, ui('Задания'), KIcons.tasks),
-      (0, ui('Текст'), KIcons.text),
-      (1, '${ui('Слова')}${store.words.where((w) => w.video == id).isEmpty ? '' : ' · ${store.words.where((w) => w.video == id).length}'}', KIcons.wordsOn),
-    ];
-    final tab = _side.clamp(0, tabs.length - 1);
-    final Widget body = switch (tabs[tab].$1) {
-      0 when _subsLoading => KapLoading(size: 40),
-      0 => Transcript(sr: _sr, cur: _curN, ruFor: _ruFor, onSeek: _seek, popOnTap: false),
-      1 => WordList(videoId: id, onSeek: _seek, popOnTap: false),
-      _ => QuizList(videoId: id, sections: _quiz, flat: true),
-    };
-    return Container(
-      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(12),
-            child: Row(
-              spacing: 6,
-              children: [
-                for (var i = 0; i < tabs.length; i++)
-                  Expanded(
-                    child: Pill(
-                      tabs[i].$2,
-                      icon: tabs[i].$3,
-                      on: i == tab,
-                      onTap: () {
-                        if (tabs[i].$1 == 2) _audio.pause();
-                        setState(() => _side = i);
-                      },
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          Expanded(child: KeyedSubtree(key: ValueKey(tab), child: body)),
-        ],
-      ),
+    return VideoSidePanel(
+      videoId: id,
+      sr: _sr,
+      cur: _curN,
+      ruFor: _ruFor,
+      onSeek: _seek,
+      dict: _dict,
+      subsLoading: _subsLoading,
+      quiz: _quiz,
+      word: _word,
+      flyTo: _wordsKey,
+      onPause: _audio.pause,
     );
   }
 

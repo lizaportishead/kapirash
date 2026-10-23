@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -533,9 +534,14 @@ class _StoryReaderState extends State<StoryReader> {
   // Страницы текста: на каждой несколько абзацев, а каждый абзац — список слов с предложениями.
   List<List<List<_Token>>> _pages = [];
   Map<String, dynamic> _dict = {};
-  late final PageController _ctl;
+  late PageController _ctl;
+  final _oldCtls = <PageController>[];
+  // Разворот на широком экране: _i — левая (чётная) страница.
+  bool? _wasWide;
   late int _i = widget.page ?? store.positionOf(widget.story.wordKey)?.toInt() ?? 0;
   bool _failed = false;
+  // На широком экране перевод открывается в панели справа, а не в шторке.
+  (String, Cue, int)? _panel;
   List<QuizSection> _quiz = [];
 
   // Страница 0 — обложка, дальше текст, в конце — финальный экран.
@@ -554,6 +560,9 @@ class _StoryReaderState extends State<StoryReader> {
   @override
   void dispose() {
     _ctl.dispose();
+    for (final c in _oldCtls) {
+      c.dispose();
+    }
     super.dispose();
   }
 
@@ -597,10 +606,33 @@ class _StoryReaderState extends State<StoryReader> {
     return pages;
   }
 
+  bool get _wide => MediaQuery.sizeOf(context).width >= 960;
+
   void _go(int d) {
+    if (_wide) return _turn(d);
     final to = (_i + d).clamp(0, _count - 1);
     if (to == _i) return;
     _ctl.animateToPage(to, duration: Duration(milliseconds: 250), curve: Curves.easeOut);
+  }
+
+  void _save() => store.setPosition(widget.story.wordKey, _i == 0 ? null : _i.toDouble());
+
+  // Перелистнуть разворот: d = 1 вперёд, -1 назад.
+  void _turn(int d) {
+    final to = _i + 2 * d;
+    if (to < 0 || to > _count - 1) return;
+    setState(() => _i = to);
+    _save();
+  }
+
+  void _jump(int page) {
+    final to = page.clamp(0, _count - 1);
+    if (_wide) {
+      setState(() => _i = to & ~1);
+      _save();
+    } else if (_ctl.hasClients) {
+      _ctl.jumpToPage(to);
+    }
   }
 
   // Слова из этого рассказа; нажатие переносит на страницу, где слово было сохранено.
@@ -642,7 +674,7 @@ class _StoryReaderState extends State<StoryReader> {
                             onTap: () {
                               Navigator.pop(ctx);
                               final to = w.t.toInt().clamp(0, _count - 1);
-                              if (_ctl.hasClients) _ctl.jumpToPage(to);
+                              _jump(to);
                             },
                           ),
                       ],
@@ -654,74 +686,144 @@ class _StoryReaderState extends State<StoryReader> {
     );
   }
 
-  void _openWord(_Token t) {
+  // Одно слово или выделенная фраза (долгое нажатие и движение пальца).
+  void _openPhrase(List<_Token> ts, int page) {
     // Тире и прочие значки без букв не слова.
-    if (!RegExp(r'\p{L}', unicode: true).hasMatch(t.word)) return;
+    final words = [
+      for (final t in ts)
+        if (RegExp(r'\p{L}', unicode: true).hasMatch(t.word) || ts.length > 1) t.word,
+    ];
+    if (words.isEmpty || !RegExp(r'\p{L}', unicode: true).hasMatch(words.join())) return;
+    final cue = Cue(page.toDouble(), page.toDouble(), ts.first.sentence);
+    if (_wide) {
+      setState(() => _panel = (words.join(' '), cue, page));
+      return;
+    }
     showWord(
       context,
-      raw: t.word,
-      cue: Cue(_i.toDouble(), _i.toDouble(), t.sentence),
+      raw: words.join(' '),
+      cue: cue,
       dict: _dict,
       videoId: widget.story.wordKey,
-      place: ui('стр. {0}', [_i]),
+      place: ui('стр. {0}', [page]),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     // Широкий экран: шапка на всю ширину, а книга лежит на белой плашке с тенью на сером фоне.
-    final wide = MediaQuery.sizeOf(context).width >= 960;
+    final wide = _wide;
+    if (_wasWide != wide) {
+      if (_wasWide != null && !wide) {
+        _oldCtls.add(_ctl);
+        _ctl = PageController(initialPage: _i);
+      }
+      if (wide) _i &= ~1;
+      _wasWide = wide;
+    }
     if (wide) {
       return Scaffold(
         backgroundColor: cCard,
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ColoredBox(
-                color: cBg,
-                child: SizedBox(
-                  height: kTopBarHeight,
-                  child: Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: _header()),
-                ),
-              ),
-              Divider(height: 1, color: cLine),
-              Expanded(
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 560),
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(24, 24, 24, 24),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: cBg,
-                          borderRadius: BorderRadius.circular(28),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.10),
-                              blurRadius: 32,
-                              offset: Offset(0, 8),
-                            ),
-                          ],
-                        ),
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Expanded(child: _body()),
-                            if (_pages.isNotEmpty) _footer(),
-                          ],
-                        ),
-                      ),
-                    ),
+        body: Focus(
+          autofocus: true,
+          onKeyEvent: (_, e) {
+            if (e is! KeyDownEvent) return KeyEventResult.ignored;
+            if (e.logicalKey == LogicalKeyboardKey.arrowRight) {
+              _turn(1);
+              return KeyEventResult.handled;
+            }
+            if (e.logicalKey == LogicalKeyboardKey.arrowLeft) {
+              _turn(-1);
+              return KeyEventResult.handled;
+            }
+            return KeyEventResult.ignored;
+          },
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                ColoredBox(
+                  color: cBg,
+                  child: SizedBox(
+                    height: kTopBarHeight,
+                    child: Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: _header()),
                   ),
                 ),
-              ),
-            ],
+                Divider(height: 1, color: cLine),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(child: _bookArea()),
+                      if (_panel case (final raw, final cue, final page))
+                        Container(
+                          width: 400,
+                          decoration: BoxDecoration(
+                            color: cBg,
+                            border: Border(left: BorderSide(color: cLine)),
+                          ),
+                          child: Stack(
+                            children: [
+                              SingleChildScrollView(
+                                child: WordCard(
+                                  key: ValueKey('$raw@$page'),
+                                  raw: raw,
+                                  cue: cue,
+                                  dict: _dict,
+                                  videoId: widget.story.wordKey,
+                                  place: ui('стр. {0}', [page]),
+                                  onClose: () => setState(() => _panel = null),
+                                ),
+                              ),
+                              Positioned(
+                                top: 8,
+                                right: 8,
+                                child: IconButton(
+                                  icon: Icon(Icons.close, size: 20, color: cMuted),
+                                  onPressed: () => setState(() => _panel = null),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
     }
+    return _narrow();
+  }
+
+  Widget _bookArea() {
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 1280),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(24, 32, 24, 24),
+          child: Container(
+            decoration: BoxDecoration(
+              color: cBg,
+              borderRadius: BorderRadius.circular(4),
+              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.10), blurRadius: 32, offset: Offset(0, 8))],
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: _spread()),
+                if (_pages.isNotEmpty) _footer(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _narrow() {
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -797,70 +899,107 @@ class _StoryReaderState extends State<StoryReader> {
               itemCount: _count,
               onPageChanged: (i) {
                 setState(() => _i = i);
-                store.setPosition(widget.story.wordKey, i == 0 ? null : i.toDouble());
+                _save();
               },
-              itemBuilder: (_, i) => i == 0
-                  ? _cover()
-                  : i == _count - 1
-                  ? _finish()
-                  : _text(_pages[i - 1], last: i == _count - 2),
+              itemBuilder: (_, i) => _pageAt(i),
             ),
           );
   }
 
-  Widget _cover() {
-    final s = widget.story;
-    return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+  Widget _pageAt(int i) => i == 0
+      ? _cover()
+      : i == _count - 1
+      ? _finish()
+      : _text(_pages[i - 1], i, last: i == _count - 2);
+
+  // Поля листа на развороте.
+  Widget _paper(int i) => ColoredBox(
+    color: cBg,
+    child: i < 0 || i >= _count
+        ? SizedBox.expand()
+        : Padding(padding: EdgeInsets.fromLTRB(20, 32, 20, 0), child: _pageAt(i)),
+  );
+
+  // Два листа рядом.
+  Widget _spread() {
+    if (_failed) return _body();
+    if (_pages.isEmpty) return SizedBox.shrink();
+    return ListenableBuilder(
+      listenable: store,
+      builder: (context, _) => Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(24),
-            child: ExcludeSemantics(
-              // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
-              child: Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            store.conv(s.title),
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
-          ),
-          SizedBox(height: 4),
-          Text(s.author, style: TextStyle(fontSize: 14, color: cMuted)),
-          if (s.level.isNotEmpty) Padding(padding: EdgeInsets.only(top: 6), child: DifficultyLabel(s.level, size: 14)),
-          SizedBox(height: 14),
-          Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
-          SizedBox(height: 14),
-          Text(
-            ui('Нажимай на слова, чтобы увидеть перевод. Листай вправо — рассказ начнётся.'),
-            style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
-          ),
+          Expanded(child: _paper(_i)),
+          Expanded(child: _paper(_i + 1)),
         ],
       ),
     );
   }
 
-  Widget _text(List<List<_Token>> paragraphs, {bool last = false}) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          for (final para in paragraphs)
-            Padding(
-              padding: EdgeInsets.only(bottom: 16),
-              child: Wrap(spacing: 6, children: [for (final t in para) _word(t)]),
+  // Без полосы прокрутки: на Android/десктопе/вебе она рисуется поверх текста.
+  Widget _noBar(Widget child) =>
+      ScrollConfiguration(behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false), child: child);
+
+  Widget _cover() {
+    final s = widget.story;
+    return _noBar(
+      SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(24),
+              child: ExcludeSemantics(
+                // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
+                child: Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),
+              ),
             ),
-          if (last && widget.story.source.isNotEmpty) ...[
-            SizedBox(height: 8),
+            SizedBox(height: 20),
             Text(
-              ui('Источник: {0}', [widget.story.source]),
-              style: TextStyle(fontSize: 12, height: 1.45, color: cFaint),
+              store.conv(s.title),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
+            ),
+            SizedBox(height: 4),
+            Text(s.author, style: TextStyle(fontSize: 14, color: cMuted)),
+            if (s.level.isNotEmpty)
+              Padding(padding: EdgeInsets.only(top: 6), child: DifficultyLabel(s.level, size: 14)),
+            SizedBox(height: 14),
+            Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
+            SizedBox(height: 14),
+            Text(
+              ui(
+                'Нажимай на слова, чтобы увидеть перевод; удерживай и веди пальцем, чтобы выделить фразу. Листай вправо — рассказ начнётся.',
+              ),
+              style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
             ),
           ],
-        ],
+        ),
+      ),
+    );
+  }
+
+  Widget _text(List<List<_Token>> paragraphs, int page, {bool last = false}) {
+    return _noBar(
+      SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(_wide ? 16 : 20, 8, _wide ? 16 : 20, 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (final para in paragraphs)
+              Padding(
+                padding: EdgeInsets.only(bottom: 16),
+                child: _StoryPara(para, word: _word, onPhrase: (ts) => _openPhrase(ts, page)),
+              ),
+            if (last && widget.story.source.isNotEmpty) ...[
+              SizedBox(height: 8),
+              Text(
+                ui('Источник: {0}', [widget.story.source]),
+                style: TextStyle(fontSize: 12, height: 1.45, color: cFaint),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }
@@ -868,104 +1007,102 @@ class _StoryReaderState extends State<StoryReader> {
   // Последняя страница: рассказ прочитан, отсюда можно перейти к заданиям.
   Widget _finish() {
     final s = widget.story;
-    return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(24, 48, 24, 24),
-      child: Column(
-        children: [
-          Container(
-            width: 84,
-            height: 84,
-            decoration: BoxDecoration(color: cAccent, shape: BoxShape.circle),
-            child: Icon(KIcons.done, size: 44, color: cInk),
-          ),
-          SizedBox(height: 24),
-          Text(
-            ui('Рассказ прочитан'),
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.5, color: cText),
-          ),
-          SizedBox(height: 10),
-          Text(
-            _quiz.isEmpty
-                ? ui('Вот и конец рассказа «{0}». Возвращайся к нему, чтобы повторить слова.', [store.conv(s.title)])
-                : ui('Вот и конец рассказа «{0}». Проверь, как ты его понял: ответь на вопросы по смыслу и словам.', [
-                    store.conv(s.title),
-                  ]),
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, height: 1.5, color: cMuted),
-          ),
-          SizedBox(height: 28),
-          if (_quiz.isNotEmpty)
-            ListenableBuilder(
-              listenable: store,
-              builder: (context, _) {
-                final left = _quiz.where((q) => store.quizResult(s.asset!, q.title) == null).length;
-                return SizedBox(
-                  width: double.infinity,
-                  child: FilledButton.icon(
-                    style: FilledButton.styleFrom(
-                      backgroundColor: cViolet,
-                      foregroundColor: cOnViolet,
-                      minimumSize: Size.fromHeight(52),
-                    ),
-                    icon: Icon(KIcons.tasks, size: 20),
-                    label: Text(
-                      left > 0 ? ui('Задания · {0}', [left]) : ui('Задания'),
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                    ),
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        settings: RouteSettings(name: 'SubPage'),
-                        builder: (_) => SubPage(
-                          title: ui('Задания'),
-                          child: QuizList(videoId: s.asset!, sections: _quiz),
+    return _noBar(
+      SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(24, 48, 24, 24),
+        child: Column(
+          children: [
+            Container(
+              width: 84,
+              height: 84,
+              decoration: BoxDecoration(color: cAccent, shape: BoxShape.circle),
+              child: Icon(KIcons.done, size: 44, color: cInk),
+            ),
+            SizedBox(height: 24),
+            Text(
+              ui('Рассказ прочитан'),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.5, color: cText),
+            ),
+            SizedBox(height: 10),
+            Text(
+              _quiz.isEmpty
+                  ? ui('Вот и конец рассказа «{0}». Возвращайся к нему, чтобы повторить слова.', [store.conv(s.title)])
+                  : ui('Вот и конец рассказа «{0}». Проверь, как ты его понял: ответь на вопросы по смыслу и словам.', [
+                      store.conv(s.title),
+                    ]),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, height: 1.5, color: cMuted),
+            ),
+            SizedBox(height: 28),
+            if (_quiz.isNotEmpty)
+              ListenableBuilder(
+                listenable: store,
+                builder: (context, _) {
+                  final left = _quiz.where((q) => store.quizResult(s.asset!, q.title) == null).length;
+                  return SizedBox(
+                    width: double.infinity,
+                    child: FilledButton.icon(
+                      style: FilledButton.styleFrom(
+                        backgroundColor: cViolet,
+                        foregroundColor: cOnViolet,
+                        minimumSize: Size.fromHeight(52),
+                      ),
+                      icon: Icon(KIcons.tasks, size: 20),
+                      label: Text(
+                        left > 0 ? ui('Задания · {0}', [left]) : ui('Задания'),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                      ),
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          settings: RouteSettings(name: 'SubPage'),
+                          builder: (_) => SubPage(
+                            title: ui('Задания'),
+                            child: QuizList(videoId: s.asset!, sections: _quiz),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
+            SizedBox(height: 8),
+            TextButton(
+              onPressed: () => _wide
+                  ? _jump(0)
+                  : _ctl.animateToPage(0, duration: Duration(milliseconds: 350), curve: Curves.easeOut),
+              child: Text(
+                ui('Читать сначала'),
+                style: TextStyle(fontWeight: FontWeight.w700, color: cMuted),
+              ),
             ),
-          SizedBox(height: 8),
-          TextButton(
-            onPressed: () => _ctl.animateToPage(0, duration: Duration(milliseconds: 350), curve: Curves.easeOut),
-            child: Text(
-              ui('Читать сначала'),
-              style: TextStyle(fontWeight: FontWeight.w700, color: cMuted),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  Widget _word(_Token t) {
+  Widget _word(_Token t, bool selected) {
     final key = toLat(cleanWord(t.word)).toLowerCase();
     final saved = key.isNotEmpty && store.isSaved(key);
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () => _openWord(t),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 2),
-        child: Text(
-          store.conv(t.word),
-          style: TextStyle(
-            fontSize: 19,
-            height: 1.5,
-            color: cText,
-            // Сохранённые слова подчёркнуты фиолетовым, как в субтитрах.
-            decoration: saved ? TextDecoration.underline : null,
-            decorationColor: cViolet,
-            decorationThickness: 2,
-          ),
-        ),
+    return Text(
+      store.conv(t.word),
+      style: TextStyle(
+        fontSize: _wide ? 18 : 19,
+        height: 1.5,
+        color: cText,
+        // Сохранённые слова подчёркнуты фиолетовым, как в субтитрах.
+        decoration: saved ? TextDecoration.underline : null,
+        decorationColor: cViolet,
+        decorationThickness: 2,
       ),
     );
   }
 
   Widget _footer() {
     Widget arrow(int d, IconData icon, String label) {
-      final off = d < 0 ? _i == 0 : _i == _count - 1;
+      final step = _wide ? 2 : 1;
+      final off = d < 0 ? _i == 0 : _i + step > _count - 1;
       return Opacity(
         opacity: off ? 0.35 : 1,
         child: Pill('', icon: icon, label: label, onTap: () => _go(d)),
@@ -984,6 +1121,8 @@ class _StoryReaderState extends State<StoryReader> {
                     ? ui('Начало')
                     : _i == _count - 1
                     ? ui('Конец')
+                    : _wide
+                    ? '$_i–${(_i + 1).clamp(0, _count - 2)} из ${_count - 2}'
                     : '$_i из ${_count - 2}',
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
               ),
@@ -991,6 +1130,117 @@ class _StoryReaderState extends State<StoryReader> {
           ),
           arrow(1, KIcons.arrowRight, ui('Следующая страница')),
         ],
+      ),
+    );
+  }
+}
+
+/// Абзац: нажатие на слово открывает его карточку, долгое нажатие и движение пальца выделяют фразу.
+class _StoryPara extends StatefulWidget {
+  const _StoryPara(this.tokens, {required this.word, required this.onPhrase});
+  final List<_Token> tokens;
+  final Widget Function(_Token, bool selected) word;
+  final void Function(List<_Token>) onPhrase;
+
+  @override
+  State<_StoryPara> createState() => _StoryParaState();
+}
+
+class _StoryParaState extends State<_StoryPara> {
+  static const _gap = 6.0;
+  int? _from, _to;
+  List<GlobalKey> _keys = [];
+  // Мышь выделяет сразу при нажатии и движении, как обычный текст; палец — долгим нажатием.
+  bool _mouse = false;
+
+  void _down(PointerDownEvent e) {
+    _mouse = e.kind == PointerDeviceKind.mouse;
+    if (!_mouse) return;
+    final i = _wordAt(e.position);
+    setState(() => _from = _to = i);
+  }
+
+  void _move(PointerMoveEvent e) {
+    if (!_mouse || _from == null) return;
+    final j = _wordAt(e.position);
+    if (j != null && j != _to) setState(() => _to = j);
+  }
+
+  void _up(PointerUpEvent e) {
+    if (!_mouse) return;
+    _finish();
+  }
+
+  // Слово под пальцем; между словами берём ближайшее.
+  int? _wordAt(Offset global) {
+    int? best;
+    var bestD = double.infinity;
+    for (var i = 0; i < _keys.length; i++) {
+      final box = _keys[i].currentContext?.findRenderObject();
+      if (box is! RenderBox || !box.attached) continue;
+      final r = box.localToGlobal(Offset.zero) & box.size;
+      final d = r.inflate(_gap).contains(global) ? 0.0 : (r.center - global).distance;
+      if (d < bestD) {
+        bestD = d;
+        best = i;
+      }
+    }
+    return best;
+  }
+
+  void _finish() {
+    final a = _from, b = _to;
+    setState(() => _from = _to = null);
+    if (a == null || b == null) return;
+    final lo = a < b ? a : b, hi = a < b ? b : a;
+    widget.onPhrase(widget.tokens.sublist(lo, hi + 1));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final ts = widget.tokens;
+    if (_keys.length != ts.length) _keys = List.generate(ts.length, (_) => GlobalKey());
+    final a = _from, b = _to;
+    final lo = a == null || b == null ? -1 : (a < b ? a : b);
+    final hi = a == null || b == null ? -1 : (a < b ? b : a);
+    return MouseRegion(
+      cursor: SystemMouseCursors.text,
+      child: Listener(
+        onPointerDown: _down,
+        onPointerMove: _move,
+        onPointerUp: _up,
+        onPointerCancel: (_) => setState(() => _from = _to = null),
+        child: Wrap(
+          children: [
+            for (var i = 0; i < ts.length; i++)
+              GestureDetector(
+                key: _keys[i],
+                behavior: HitTestBehavior.opaque,
+                onTap: () {
+                  if (!_mouse) widget.onPhrase([ts[i]]);
+                },
+                onLongPressStart: (_) => setState(() => _from = _to = i),
+                onLongPressMoveUpdate: (d) {
+                  final j = _wordAt(d.globalPosition);
+                  if (j != null && j != _to) setState(() => _to = j);
+                },
+                onLongPressEnd: (_) => _finish(),
+                onLongPressCancel: () => setState(() => _from = _to = null),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: i >= lo && i <= hi ? cViolet.withValues(alpha: 0.3) : null,
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(i == lo ? 6 : 0),
+                      right: Radius.circular(i == hi ? 6 : 0),
+                    ),
+                  ),
+                  // Отступ справа внутри слова, чтобы пробел между выделенными словами тоже закрашивался.
+                  padding: EdgeInsets.only(top: 2, bottom: 2, right: _gap),
+                  child: widget.word(ts[i], i >= lo && i <= hi),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
