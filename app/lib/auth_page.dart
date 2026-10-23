@@ -237,15 +237,16 @@ class _AuthPageState extends State<AuthPage> {
                         ),
                       ),
                       SizedBox(height: 12),
-                      BigButton(ui('Продолжить'), onTap: _busy ? null : _sendCode),
+                      BigButton(ui('Войти по почте'), onTap: _busy ? null : _sendCode),
                       SizedBox(height: 12),
                       SizedBox(
                         height: 56,
                         child: OutlinedButton.icon(
                           onPressed: _busy ? null : _google,
-                          icon: Icon(Icons.mail_outline, size: 20),
+                          icon: CustomPaint(size: Size(22, 22), painter: _GmailPainter()),
                           label: Text(ui('Войти через Gmail')),
                           style: OutlinedButton.styleFrom(
+                            foregroundColor: cText,
                             disabledForegroundColor: cFaint,
                             side: BorderSide(color: cLine),
                             shape: StadiumBorder(),
@@ -318,4 +319,46 @@ class _AuthPageState extends State<AuthPage> {
       ),
     );
   }
+}
+
+/// Логотип Gmail: две цветные боковины и красная «M».
+class _GmailPainter extends CustomPainter {
+  const _GmailPainter();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.scale(size.width / 24, size.height / 24);
+    final fill = Paint()..style = PaintingStyle.fill;
+    canvas.drawRRect(
+      RRect.fromRectAndCorners(Rect.fromLTWH(1.5, 5, 4, 14), bottomLeft: Radius.circular(1.5)),
+      fill..color = const Color(0xFF4285F4),
+    );
+    canvas.drawRRect(
+      RRect.fromRectAndCorners(Rect.fromLTWH(18.5, 5, 4, 14), bottomRight: Radius.circular(1.5)),
+      fill..color = const Color(0xFF34A853),
+    );
+    canvas.drawPath(
+      Path()
+        ..moveTo(18.5, 5)
+        ..lineTo(22.5, 5)
+        ..lineTo(22.5, 8)
+        ..lineTo(18.5, 11)
+        ..close(),
+      fill..color = const Color(0xFFFBBC04),
+    );
+    canvas.drawPath(
+      Path()
+        ..moveTo(3.5, 7.5)
+        ..lineTo(12, 13.8)
+        ..lineTo(20.5, 7.5),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 3.6
+        ..strokeJoin = StrokeJoin.miter
+        ..color = const Color(0xFFEA4335),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter old) => false;
 }
