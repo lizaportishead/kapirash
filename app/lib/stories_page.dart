@@ -583,7 +583,8 @@ class _StoryReaderState extends State<StoryReader> {
     }
   }
 
-  // Абзацы набираем на страницу, пока не наберётся около 550 знаков.
+  // Предложения набираем на страницу, пока не наберётся около 550 знаков; абзац
+  // при этом можно разрезать, так что страницы получаются ровными.
   static List<List<List<_Token>>> _paginate(String text) {
     final pages = <List<List<_Token>>>[];
     var page = <List<_Token>>[];
@@ -591,16 +592,21 @@ class _StoryReaderState extends State<StoryReader> {
     for (final p in text.split(RegExp(r'\n\s*\n'))) {
       final para = p.trim();
       if (para.isEmpty) continue;
-      if (page.isNotEmpty && size + para.length > 560) {
-        pages.add(page);
-        page = [];
-        size = 0;
+      var tokens = <_Token>[];
+      for (final s in para.split(RegExp(r'(?<=[.!?])\s+'))) {
+        if (size > 0 && size + s.length > 560) {
+          if (tokens.isNotEmpty) page.add(tokens);
+          pages.add(page);
+          page = [];
+          tokens = [];
+          size = 0;
+        }
+        for (final w in s.split(' ')) {
+          tokens.add(_Token(w, s));
+        }
+        size += s.length + 1;
       }
-      page.add([
-        for (final s in para.split(RegExp(r'(?<=[.!?])\s+')))
-          for (final w in s.split(' ')) _Token(w, s),
-      ]);
-      size += para.length;
+      if (tokens.isNotEmpty) page.add(tokens);
     }
     if (page.isNotEmpty) pages.add(page);
     return pages;
@@ -751,38 +757,45 @@ class _StoryReaderState extends State<StoryReader> {
                 ),
                 Divider(height: 1, color: cLine),
                 Expanded(
-                  child: Row(
+                  child: Stack(
                     children: [
-                      Expanded(child: _bookArea()),
+                      Positioned.fill(child: _bookArea()),
                       if (_panel case (final raw, final cue, final page))
-                        Container(
+                        Positioned(
+                          right: 24,
+                          top: 24,
                           width: 400,
-                          decoration: BoxDecoration(
+                          child: Material(
                             color: cBg,
-                            border: Border(left: BorderSide(color: cLine)),
-                          ),
-                          child: Stack(
-                            children: [
-                              SingleChildScrollView(
-                                child: WordCard(
-                                  key: ValueKey('$raw@$page'),
-                                  raw: raw,
-                                  cue: cue,
-                                  dict: _dict,
-                                  videoId: widget.story.wordKey,
-                                  place: ui('стр. {0}', [page]),
-                                  onClose: () => setState(() => _panel = null),
-                                ),
+                            elevation: 8,
+                            borderRadius: BorderRadius.circular(24),
+                            clipBehavior: Clip.antiAlias,
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(maxHeight: 560),
+                              child: Stack(
+                                children: [
+                                  SingleChildScrollView(
+                                    child: WordCard(
+                                      key: ValueKey('$raw@$page'),
+                                      raw: raw,
+                                      cue: cue,
+                                      dict: _dict,
+                                      videoId: widget.story.wordKey,
+                                      place: ui('стр. {0}', [page]),
+                                      onClose: () => setState(() => _panel = null),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 8,
+                                    right: 8,
+                                    child: IconButton(
+                                      icon: Icon(Icons.close, size: 20, color: cMuted),
+                                      onPressed: () => setState(() => _panel = null),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Positioned(
-                                top: 8,
-                                right: 8,
-                                child: IconButton(
-                                  icon: Icon(Icons.close, size: 20, color: cMuted),
-                                  onPressed: () => setState(() => _panel = null),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                     ],
