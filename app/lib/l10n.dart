@@ -372,6 +372,7 @@ const _en = <String, String>{
   'Вопрос {0}': 'Question {0}',
   'Удалить {0}': 'Delete {0}',
   'Открыть в Glosbe': 'Open in Glosbe',
+  'Смотреть в Glosbe': 'View in Glosbe',
   'Прослушать {0}': 'Listen to {0}',
   'В процессе': 'In progress',
   'Выучено': 'Learned',

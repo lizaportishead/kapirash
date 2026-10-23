@@ -241,17 +241,6 @@ class _WordCardState extends State<WordCard> {
                       color: cText,
                     ),
                   ),
-                  SizedBox(height: 6),
-                  Text(
-                    '${store.cyr ? lat : cyr} · ${place ?? fmtTime(cue.start)}',
-                    style: TextStyle(fontSize: 15, color: cMuted),
-                  ),
-                  SizedBox(height: 14),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                    decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(20)),
-                    child: Text(store.conv(cue.text), style: TextStyle(fontSize: 15, height: 1.45, color: cText)),
-                  ),
                   SizedBox(height: 14),
                   if (isPhrase)
                     FutureBuilder<String?>(
@@ -281,6 +270,7 @@ class _WordCardState extends State<WordCard> {
                       Text(note, style: TextStyle(fontSize: 14, height: 1.45, color: cMuted)),
                     ],
                   ],
+                  if (!isPhrase) SizedBox(height: 10),
                   if (!isPhrase)
                     Align(
                       alignment: Alignment.centerLeft,
@@ -292,7 +282,7 @@ class _WordCardState extends State<WordCard> {
                         ),
                         icon: Image.asset('assets/glosbe.png', width: 18, height: 18),
                         label: Text(
-                          'Glosbe',
+                          ui('Смотреть в Glosbe'),
                           style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted),
                         ),
                         onPressed: () => launchUrl(
