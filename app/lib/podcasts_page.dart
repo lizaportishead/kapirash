@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 import 'collection_page.dart';
@@ -9,6 +8,7 @@ import 'kap_loader.dart';
 import 'analytics.dart';
 import 'l10n.dart';
 import 'phrase.dart';
+import 'pod_audio.dart';
 import 'player_page.dart';
 import 'quiz_page.dart';
 import 'store.dart';
@@ -219,7 +219,7 @@ class PodcastPlayerPage extends StatefulWidget {
 }
 
 class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
-  final _audio = AudioPlayer();
+  final _audio = PodAudio();
   final _subs = <StreamSubscription<Object?>>[];
   List<Cue> _sr = [], _ru = [];
   bool _subsLoading = true;
@@ -242,10 +242,10 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   void initState() {
     super.initState();
     _subs.addAll([
-      _audio.onPositionChanged.listen((d) => _onTime(d.inMilliseconds / 1000)),
-      _audio.onDurationChanged.listen((d) => setState(() => _total = d.inMilliseconds / 1000)),
-      _audio.onPlayerStateChanged.listen((s) => setState(() => _playing = s == PlayerState.playing)),
-      _audio.onPlayerComplete.listen((_) {
+      _audio.onPosition.listen((d) => _onTime(d.inMilliseconds / 1000)),
+      _audio.onDuration.listen((d) => setState(() => _total = d.inMilliseconds / 1000)),
+      _audio.onPlaying.listen((p) => setState(() => _playing = p)),
+      _audio.onComplete.listen((_) {
         store.setPosition(id, null);
         store.setProgress(id, 1);
         setState(() => _playing = false);
@@ -261,7 +261,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   Future<void> _open() async {
     final from = widget.startAt ?? store.positionOf(id) ?? 0;
     try {
-      await _audio.setSourceUrl(widget.video.audio);
+      await _audio.setSource(widget.video.audio);
       if (from > 0) await _audio.seek(Duration(milliseconds: (from * 1000).round()));
       if (mounted) setState(() => _pos = from);
       if (widget.autoplay && mounted) {
@@ -323,8 +323,14 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
 
   Future<void> _toggle() async {
     if (_playing) return _audio.pause();
+    final first = !_started;
     _started = true;
-    await _audio.resume();
+    // resume() right after setSourceUrl does nothing on web until the source is buffered; play() starts it at once.
+    if (first) {
+      await _audio.play(widget.video.audio, Duration(milliseconds: (_pos * 1000).round()));
+    } else {
+      await _audio.resume();
+    }
   }
 
   Future<void> _seek(double t) async {
@@ -343,7 +349,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
 
   Future<void> _setRate() async {
     _rate = _rate == 1 ? 0.8 : (_rate == 0.8 ? 0.6 : 1);
-    await _audio.setPlaybackRate(_rate);
+    await _audio.setRate(_rate);
     setState(() {});
   }
 
