@@ -24,9 +24,6 @@ class Video {
   bool get tiktok => kind == 'tiktok';
   bool get podcast => kind == 'podcast';
 
-  /// Заглушка для примерки ленты клипов, см. [kClipMocks]: обложка есть, самого ролика нет.
-  bool get mock => id.startsWith('mock-');
-
   /// Страница клипа в TikTok; имя автора в адресе не обязательно.
   String get tiktokUrl => 'https://www.tiktok.com/@_/video/$id';
 
@@ -111,11 +108,8 @@ class Creator {
 Map<String, Creator> creators = _builtInCreators;
 List<Video> videos = _builtInVideos;
 
-/// Временно: заглушки в ленте клипов, чтобы посмотреть, как она выглядит заполненной. Перед релизом выключить.
-const kClipMocks = true;
-
 /// Клипы из TikTok: у них своя вкладка и вертикальный плеер, в каталоге их нет.
-List<Video> clips = [..._builtInClips, if (kClipMocks) ..._mockClips];
+List<Video> clips = _builtInClips;
 
 /// Эпизоды подкастов: у них своя вкладка и аудиоплеер, в каталоге видео их нет.
 List<Video> podcasts = _builtInPodcasts;
@@ -128,7 +122,6 @@ void setCatalog(Map<String, dynamic> j) {
   clips = [
     ...all.where((v) => v.tiktok),
     ..._builtInClips.where((c) => !all.any((v) => v.id == c.id)),
-    if (kClipMocks) ..._mockClips,
   ];
   creators = {
     for (final c in (j['creators'] as List).cast<Map<String, dynamic>>())
@@ -748,66 +741,6 @@ const _builtInClips = <Video>[
     topic: 'Быт',
     level: 'B1',
     duration: '0:38',
-    kind: 'tiktok',
-  ),
-];
-
-// Обложки заглушек — кадры роликов из каталога: в id после «mock-» стоит id ролика на YouTube.
-const _mockClips = <Video>[
-  Video(
-    id: 'mock-Q6VsddwnvqY',
-    title: 'Kad odeš na selo kod bake',
-    topic: 'Юмор',
-    channel: 'Realno',
-    duration: '0:48',
-    kind: 'tiktok',
-  ),
-  Video(
-    id: 'mock-MZcZFyhKNKw',
-    title: 'Šta jedem u jednom danu',
-    topic: 'Еда',
-    channel: 'Mila kuva',
-    duration: '0:35',
-    kind: 'tiktok',
-  ),
-  Video(
-    id: 'mock-0Kc3ASUSPc0',
-    title: 'Pitao sam prolaznike gde je centar',
-    topic: 'Юмор',
-    channel: 'Ulična anketa',
-    duration: '1:12',
-    kind: 'tiktok',
-  ),
-  Video(
-    id: 'mock-HSh_hA97o7c',
-    title: 'Tipovi komšija u zgradi',
-    channel: 'Realno',
-    topic: 'Юмор',
-    duration: '0:52',
-    kind: 'tiktok',
-  ),
-  Video(
-    id: 'mock-XkYKK0qIm-E',
-    title: 'Kampovanje: očekivanja i stvarnost',
-    topic: 'Путешествия',
-    channel: 'Napolju',
-    duration: '0:41',
-    kind: 'tiktok',
-  ),
-  Video(
-    id: 'mock-YBwhDmteusg',
-    title: 'Tri reči koje stranci uvek pogreše',
-    topic: 'Язык',
-    channel: 'Srpski za minut',
-    duration: '0:58',
-    kind: 'tiktok',
-  ),
-  Video(
-    id: 'mock-psx84hGjqds',
-    title: 'Trening u parku za 5 minuta',
-    topic: 'Спорт',
-    channel: 'Vežbaj sa mnom',
-    duration: '1:05',
     kind: 'tiktok',
   ),
 ];

@@ -34,14 +34,6 @@ class ClipCover extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (v.mock) {
-      return Image.network(
-        'https://i.ytimg.com/vi/${v.id.substring(5)}/mqdefault.jpg',
-        fit: BoxFit.cover,
-        webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
-        errorBuilder: (_, _, _) => ColoredBox(color: cInk),
-      );
-    }
     return Image.asset(
       'assets/${v.id}.jpg',
       fit: BoxFit.cover,
@@ -658,7 +650,7 @@ class _ClipPageState extends State<_ClipPage> {
           fit: StackFit.expand,
           children: [
             ClipCover(widget.video),
-            if (widget.active && !_covered && !widget.video.mock)
+            if (widget.active && !_covered)
               TikTokPlayer(key: ObjectKey(_tt), id: videoId, controller: _tt),
             // Своих кнопок у плеера нет: нажатие по видео ставит его на паузу и снимает с неё.
             Semantics(
