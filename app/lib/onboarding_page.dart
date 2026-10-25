@@ -181,19 +181,23 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 }
 
-/// Жёлтая плашка «BETA» рядом с логотипом; размер подгоняется под кегль логотипа [logoSize].
+/// Плашка «BETA» (жёлтая на светлой теме, фиолетовая на тёмной) рядом с логотипом; размер подгоняется под кегль логотипа [logoSize].
 class BetaBadge extends StatelessWidget {
   const BetaBadge({super.key, required this.logoSize});
   final double logoSize;
 
   @override
   Widget build(BuildContext context) {
+    final dark = store.dark;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: logoSize * 0.34, vertical: logoSize * 0.1),
-      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(logoSize * 0.3)),
+      decoration: BoxDecoration(
+        color: dark ? cViolet.withValues(alpha: 0.12) : cAccent,
+        borderRadius: BorderRadius.circular(logoSize * 0.3),
+      ),
       child: Text(
         ui('бета').toUpperCase(),
-        style: TextStyle(fontSize: logoSize * 0.5, fontWeight: FontWeight.w900, letterSpacing: 0.2, height: 1.2, color: Colors.white),
+        style: TextStyle(fontSize: logoSize * 0.5, fontWeight: FontWeight.w900, letterSpacing: 0.2, height: 1.2, color: dark ? cViolet : Colors.white),
       ),
     );
   }
