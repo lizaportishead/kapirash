@@ -89,6 +89,7 @@ const _ytViews = <String, int>{
   'wZb4X0JnC6w': 122746,
   'it3nCG6JtYw': 5106,
   'aMBnmigQgQw': 4774,
+  'bjN_HyuFWj0': 51113,
 };
 
 /// Креатор из каталога: его канал на YouTube и аватарка оттуда же.
@@ -506,6 +507,14 @@ const _builtInVideos = <Video>[
     topic: 'Быт',
     level: 'B1',
     duration: '3:48',
+  ),
+  Video(
+    id: 'bjN_HyuFWj0',
+    title: 'Mamini Sinovi | Epizoda 1 (Domaća Serija)HD',
+    channel: 'Fresh Blekbuk Serije',
+    topic: 'Юмор',
+    level: 'C1',
+    duration: '26:31',
   ),
   Video(
     id: 'pZKCi5CwagI',
