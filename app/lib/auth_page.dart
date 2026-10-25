@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 
-import 'onboarding_page.dart' show OnboardingShowcase;
+import 'onboarding_page.dart' show LangSwitch, OnboardingShowcase;
 import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
@@ -215,7 +215,15 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                       ),
-                    _logo(),
+                    if (widget.intro)
+                      Stack(
+                        children: [
+                          _logo(),
+                          Positioned(right: 0, top: 0, child: LangSwitch(color: cText)),
+                        ],
+                      )
+                    else
+                      _logo(),
                     SizedBox(height: wide ? 32 : 88),
                     Headline(
                       _sentTo == null

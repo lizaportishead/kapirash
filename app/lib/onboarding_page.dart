@@ -113,22 +113,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding: EdgeInsets.only(right: 12),
-                        // На последнем экране пропускать нечего, но место держим, чтобы заголовок не прыгал.
-                        child: Visibility(
-                          visible: !last,
-                          maintainSize: true,
-                          maintainAnimation: true,
-                          maintainState: true,
-                          child: TextButton(
-                            onPressed: _finish,
-                            style: TextButton.styleFrom(
-                              foregroundColor: s.fg,
-                              textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
-                            ),
-                            child: Text(ui('Пропустить')),
-                          ),
-                        ),
+                        padding: EdgeInsets.fromLTRB(24, 12, 24, 0),
+                        child: LangSwitch(color: s.fg),
                       ),
                     ),
                     Expanded(
@@ -166,6 +152,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             fg: s.fg == cInk ? cOnInk : cInk,
                             onTap: _next,
                           ),
+                          // На последнем экране пропускать нечего, но место держим, чтобы кнопка не прыгала.
+                          Visibility(
+                            visible: !last,
+                            maintainSize: true,
+                            maintainAnimation: true,
+                            maintainState: true,
+                            child: TextButton(
+                              onPressed: _finish,
+                              style: TextButton.styleFrom(
+                                foregroundColor: s.fg,
+                                textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w600),
+                              ),
+                              child: Text(ui('Пропустить')),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -176,6 +177,48 @@ class _OnboardingPageState extends State<OnboardingPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Маленький переключатель языка «RU | EN» для экранов до входа.
+class LangSwitch extends StatelessWidget {
+  const LangSwitch({super.key, required this.color});
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListenableBuilder(
+      listenable: store,
+      builder: (_, _) {
+        Widget item(String code, String label) {
+          final on = store.lang == code;
+          return Semantics(
+            button: true,
+            selected: on,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => store.setLang(code),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: on ? FontWeight.w800 : FontWeight.w600,
+                    color: color.withValues(alpha: on ? 1 : 0.5),
+                  ),
+                ),
+              ),
+            ),
+          );
+        }
+
+        return Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [item('ru', 'RU'), Text('|', style: TextStyle(color: color.withValues(alpha: 0.3))), item('en', 'EN')],
+        );
+      },
     );
   }
 }
