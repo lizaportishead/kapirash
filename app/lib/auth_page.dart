@@ -232,19 +232,12 @@ class _AuthPageState extends State<AuthPage> {
                       color: cText,
                       mark: cAccent,
                     ),
-                    if (_sentTo != null || widget.intro) ...[
+                    if (_sentTo != null) ...[
                       SizedBox(height: 14),
                       Text(
-                        _sentTo == null
-                            ? ui(
-                                'Слова, лайки, история и прогресс сохранятся в облаке и не пропадут, если сменишь телефон '
-                                'или переустановишь приложение.',
-                              )
-                            : (kEmailCode
-                                  ? ui('Отправили код на {0}. Письмо может идти пару минут.', [_sentTo!])
-                                  : ui('Отправили ссылку на {0}. Открой её на этом телефоне — и ты войдёшь.', [
-                                      _sentTo!,
-                                    ])),
+                        kEmailCode
+                            ? ui('Отправили код на {0}. Письмо может идти пару минут.', [_sentTo!])
+                            : ui('Отправили ссылку на {0}. Открой её на этом телефоне — и ты войдёшь.', [_sentTo!]),
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, height: 1.4, color: cMuted),
                       ),
                     ],
