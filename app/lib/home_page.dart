@@ -4,6 +4,7 @@ import 'feed_page.dart';
 import 'icons.dart';
 import 'main.dart' show kStoriesTabEnabled;
 import 'liked_page.dart';
+import 'onboarding_page.dart' show BetaBadge;
 import 'podcasts_page.dart';
 import 'recommend.dart';
 import 'search_page.dart';
@@ -53,22 +54,29 @@ class HomePage extends StatelessWidget {
                               color: cText,
                             ),
                           )
-                        : Text.rich(
-                            TextSpan(
-                              text: 'Kapiraš',
-                              children: [
+                        : Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text.rich(
                                 TextSpan(
-                                  text: '?',
-                                  style: TextStyle(color: cAccent),
+                                  text: 'Kapiraš',
+                                  children: [
+                                    TextSpan(
+                                      text: '?',
+                                      style: TextStyle(color: cAccent),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            style: TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: -0.9,
-                              color: cViolet,
-                            ),
+                                style: TextStyle(
+                                  fontSize: 26,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: -0.9,
+                                  color: cViolet,
+                                ),
+                              ),
+                              SizedBox(width: 8),
+                              BetaBadge(logoSize: 26),
+                            ],
                           ),
                   ),
                 ),

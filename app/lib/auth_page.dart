@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 
-import 'onboarding_page.dart' show LangSwitch, OnboardingShowcase;
+import 'onboarding_page.dart' show BetaBadge, LangSwitch, OnboardingShowcase;
 import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
@@ -172,14 +172,7 @@ class _AuthPageState extends State<AuthPage> {
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),
             ),
             SizedBox(width: 10),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-              decoration: BoxDecoration(color: cViolet.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(9)),
-              child: Text(
-                ui('бета'),
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, letterSpacing: 0.3, color: cViolet),
-              ),
-            ),
+            BetaBadge(logoSize: 32),
           ],
         ),
         Text('* ${ui('понимаешь?')}', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted.withValues(alpha: 0.6))),
@@ -202,7 +195,7 @@ class _AuthPageState extends State<AuthPage> {
                   padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                   children: [
                     if (widget.intro)
-                      SizedBox(height: wide ? 0 : 48)
+                      SizedBox(height: wide ? 0 : 12)
                     else
                       Align(
                         alignment: Alignment.centerLeft,

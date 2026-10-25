@@ -416,22 +416,29 @@ class _HomeShellState extends State<HomeShell> {
                       padding: EdgeInsets.only(left: 28),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text.rich(
-                          TextSpan(
-                            text: 'Kapiraš',
-                            children: [
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text.rich(
                               TextSpan(
-                                text: '?',
-                                style: TextStyle(color: cAccent),
+                                text: 'Kapiraš',
+                                children: [
+                                  TextSpan(
+                                    text: '?',
+                                    style: TextStyle(color: cAccent),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                          style: TextStyle(
-                            fontSize: 22.5,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: -0.75,
-                            color: cViolet,
-                          ),
+                              style: TextStyle(
+                                fontSize: 22.5,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: -0.75,
+                                color: cViolet,
+                              ),
+                            ),
+                            SizedBox(width: 7),
+                            BetaBadge(logoSize: 22.5),
+                          ],
                         ),
                       ),
                     ),

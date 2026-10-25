@@ -32,7 +32,7 @@ List<_Slide> get _slides => [
     mark: cViolet,
     onMark: cOnViolet,
     title: ui('Учи *сербский* на\u00A0живом материале'),
-    text: ui('Ролики, подкасты и книги — с сербскими субтитрами и переводом на русский.'),
+    text: ui('Ролики, подкасты и книги — с сербскими субтитрами и переводом на русский'),
     art: _ImageArt('assets/ill_onboarding.png'),
   ),
   _Slide(
@@ -40,8 +40,8 @@ List<_Slide> get _slides => [
     fg: cOnViolet,
     mark: cAccent,
     onMark: cInk,
-    title: ui('Нажми на\u00A0*слово* — увидишь перевод.'),
-    text: ui('Каждое слово в субтитрах и тексте книги можно открыть, не уходя с экрана.'),
+    title: ui('Нажми на\u00A0*слово* — увидишь перевод'),
+    text: ui('Каждое слово в субтитрах и тексте книги можно открыть, не уходя с экрана'),
     art: _WordArt(),
   ),
   _Slide(
@@ -49,10 +49,10 @@ List<_Slide> get _slides => [
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: kAddVideoEnabled ? ui('Собирай *слова* отовсюду. *Добавляй* свои ролики.') : ui('Собирай *слова* из\u00A0роликов, подкастов и\u00A0книг.'),
+    title: kAddVideoEnabled ? ui('Собирай *слова* отовсюду. *Добавляй* свои ролики') : ui('Собирай *слова* из\u00A0роликов, подкастов и\u00A0книг'),
     text: kAddVideoEnabled
-        ? ui('Слова из роликов, подкастов и книг ждут в словарике, а любой ролик с YouTube можно добавить по ссылке.')
-        : ui('Сохранённые слова ждут в словарике — повторяй их карточками и мини-тестами, когда удобно.'),
+        ? ui('Слова из роликов, подкастов и книг ждут в словарике, а любой ролик с YouTube можно добавить по ссылке')
+        : ui('Сохранённые слова ждут в словарике — повторяй их карточками и мини-тестами, когда удобно'),
     art: _CardsArt(),
   ),
 ];
@@ -176,6 +176,24 @@ class _OnboardingPageState extends State<OnboardingPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// Жёлтая плашка «BETA» рядом с логотипом; размер подгоняется под кегль логотипа [logoSize].
+class BetaBadge extends StatelessWidget {
+  const BetaBadge({super.key, required this.logoSize});
+  final double logoSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: logoSize * 0.34, vertical: logoSize * 0.1),
+      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(logoSize * 0.3)),
+      child: Text(
+        ui('бета').toUpperCase(),
+        style: TextStyle(fontSize: logoSize * 0.5, fontWeight: FontWeight.w900, letterSpacing: 0.2, height: 1.2, color: Colors.white),
       ),
     );
   }
