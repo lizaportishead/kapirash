@@ -76,6 +76,15 @@
       el.classList.add('done');
       setTimeout(function () { el.remove(); }, 400);
     });
+    // Если за 20 секунд первого кадра нет (медленная сеть, блокировка), не оставляем вечный лоадер без объяснений.
+    setTimeout(function () {
+      var el = document.getElementById('kap-loader');
+      if (!el || el.classList.contains('done')) return;
+      var p = document.createElement('div');
+      p.style.cssText = 'position:absolute;left:0;right:0;bottom:12%;text-align:center;font:500 15px/1.4 -apple-system,Inter,Arial,sans-serif;color:#7357F6;padding:0 24px';
+      p.innerHTML = 'Загрузка идёт дольше обычного. Проверьте интернет или <a href="" style="color:inherit;text-decoration:underline">обновите страницу</a>.';
+      el.appendChild(p);
+    }, 20000);
   </script>
   <!--
     You can customize the "flutter_bootstrap.js" script.

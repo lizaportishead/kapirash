@@ -26,7 +26,7 @@ jobs:
           cache: true
       - name: Build web
         working-directory: app
-        run: flutter build web --release --base-href /kapirash/
+        run: flutter build web --release --no-web-resources-cdn --base-href /kapirash/
       - name: SPA fallback
         run: cp app/build/web/index.html app/build/web/404.html
       - uses: actions/upload-pages-artifact@v3
