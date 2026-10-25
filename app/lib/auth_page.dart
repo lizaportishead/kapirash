@@ -156,6 +156,37 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
+  // Тот же логотип, что в сайдбаре, с пометкой «бета» и переводом под словом.
+  Widget _logo() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text.rich(
+              TextSpan(
+                text: 'Kapiraš',
+                children: [TextSpan(text: '?', style: TextStyle(color: cAccent))],
+              ),
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),
+            ),
+            SizedBox(width: 10),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(color: cViolet.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(9)),
+              child: Text(
+                ui('бета'),
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, letterSpacing: 0.3, color: cViolet),
+              ),
+            ),
+          ],
+        ),
+        Text('* ${ui('понимаешь?')}', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted.withValues(alpha: 0.6))),
+      ],
+    );
+  }
+
   Widget _form(bool wide) {
     return Center(
       child: ConstrainedBox(
@@ -184,10 +215,8 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                       ),
-                    if (!wide) ...[
-                      ExcludeSemantics(child: Image.asset('assets/ill_my_videos.png', height: 150)),
-                      SizedBox(height: 24),
-                    ],
+                    _logo(),
+                    SizedBox(height: wide ? 32 : 88),
                     Headline(
                       _sentTo == null
                           ? ui('Войди в\u00A0*аккаунт*')
@@ -239,7 +268,21 @@ class _AuthPageState extends State<AuthPage> {
                       ),
                       SizedBox(height: 12),
                       BigButton(ui('Войти по почте'), onTap: _busy ? null : _sendCode),
-                      SizedBox(height: 12),
+                      SizedBox(height: 16),
+                      Row(
+                        children: [
+                          Expanded(child: Divider(height: 1, color: cLine)),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 14),
+                            child: Text(
+                              ui('или'),
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cMuted),
+                            ),
+                          ),
+                          Expanded(child: Divider(height: 1, color: cLine)),
+                        ],
+                      ),
+                      SizedBox(height: 16),
                       SizedBox(
                         height: 56,
                         child: OutlinedButton.icon(

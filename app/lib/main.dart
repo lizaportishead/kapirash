@@ -123,12 +123,33 @@ class _KapirasAppState extends State<KapirasApp> {
         // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
         // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
         child: !_onboarded
-            ? (kIsWeb ? AuthPage(intro: true, start: true) : OnboardingPage())
+            ? (kIsWeb ? _WebStart() : OnboardingPage())
             : !_surveyDone
             ? SurveyPage()
             : HomeShell(),
       ),
     );
+  }
+}
+
+/// Старт веба: на телефоне (PWA) сначала три слайда, потом вход; на широком экране вход со слайдами сбоку.
+class _WebStart extends StatefulWidget {
+  const _WebStart();
+
+  static bool slidesSeen = false;
+
+  @override
+  State<_WebStart> createState() => _WebStartState();
+}
+
+class _WebStartState extends State<_WebStart> {
+  @override
+  Widget build(BuildContext context) {
+    final narrow = MediaQuery.sizeOf(context).width < 1100;
+    if (narrow && !_WebStart.slidesSeen && store.user == null) {
+      return OnboardingPage(onDone: () => setState(() => _WebStart.slidesSeen = true));
+    }
+    return AuthPage(intro: true, start: true);
   }
 }
 

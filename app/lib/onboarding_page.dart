@@ -59,7 +59,10 @@ List<_Slide> get _slides => [
 
 /// Короткий онбординг: три экрана в жёлтом и фиолетовом перед входом. Показываем один раз.
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
+  const OnboardingPage({super.key, this.onDone});
+
+  /// Если задан (веб на телефоне), вместо завершения онбординга зовём его: дальше экран входа.
+  final VoidCallback? onDone;
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
@@ -76,6 +79,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _finish() {
+    if (widget.onDone != null) return widget.onDone!();
     // Вход необязателен: зовём один раз поверх каталога, экран можно закрыть.
     if (store.user == null && store.canSignIn) openAuth(context, intro: true);
     store.finishOnboarding();
