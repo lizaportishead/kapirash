@@ -1,0 +1,53 @@
+CUES = {}
+CUES['J_HSdmFaFh8'] = [
+(8.36,11.36,"Što nisi kupila leb? Što si donela opet ovu ciglu?","Почему ты не купила хлеб? Почему опять принесла этот кирпич?","Why didn't you buy bread? Why did you bring this brick again?"),
+(11.36,15.36,"Andrija, zašto svako jutro pričamo istu priču?","Андрия, почему мы каждое утро говорим об одном и том же?","Andrija, why do we have the same conversation every morning?"),
+(15.36,18.36,"Znači, dogovorili smo da jedemo zdrav organski hleb.","Мы ведь договорились есть здоровый органический хлеб.","So, we agreed to eat healthy organic bread."),
+(18.36,25.36,"Od heljdinog brašna, sa semenom lana, sa bundevom i tako dalje.","Из гречневой муки, с семенами льна, с тыквой и так далее.","Made of buckwheat flour, with flax seeds, with pumpkin and so on."),
+(25.36,29.36,"Svaki nutricionista to preporučuje i mi ćemo tako počinjati dan, okej?","Каждый диетолог это советует, и мы так будем начинать день, окей?","Every nutritionist recommends it and that's how we'll start the day, okay?"),
+(34.36,36.36,"Šta je s tobom? Šta mu fali?","Что с тобой? Что с ним не так?","What's wrong with you? What's wrong with it?"),
+(36.36,38.36,"Ovo nije radio pekar, nego automehaničar.","Это пёк не пекарь, а автомеханик.","This wasn't made by a baker but by a car mechanic."),
+(38.36,43.36,"Ajde, ajde, ajde, napravili smo kompromis: može jaja, može slanina, ali mora i zdrav hleb.","Ну давай, давай, мы пошли на компромисс: можно яйца, можно бекон, но и здоровый хлеб обязателен.","Come on, come on, we made a compromise: eggs are fine, bacon is fine, but healthy bread is a must."),
+(43.36,49.36,"A što mi ne kupiš normalan hleb, onaj koji svi normalni ljudi jedu, da mogu da umačem ova jaja, da mogu normalno da jedem?","А почему ты не купишь мне нормальный хлеб, какой едят все нормальные люди, чтобы я мог обмакивать в него яйца, чтобы нормально поесть?","And why don't you buy me normal bread, the kind all normal people eat, so I can dip these eggs, so I can eat normally?"),
+(64.53,66.53,"Pa zašto se trudim? Ja ne znam zašto se trudim.","Зачем я стараюсь? Я не знаю, зачем я стараюсь.","Why do I even bother? I don't know why I bother."),
+(66.53,71.53,"Trebalo je da ti kupim jednu kobasicu, da jedeš,","Надо было купить тебе одну сосиску, чтобы ты ел,","I should have bought you one sausage to eat,"),
+(71.53,75.53,"da ti jednostavno kupim jedan burek, masan, 300 grama,","просто купить тебе бурек, жирный, 300 граммов,","just bought you a burek, greasy, 300 grams,"),
+(75.53,79.53,"i da jedeš to. A ovo košta 500 dinara, bre.","и чтобы ты ел его. А это стоит 500 динаров.","and you'd eat that. And this costs 500 dinars, man."),
+(79.53,84.53,"Onda treba da traje sedam dana. – Sedam dana? – Tako je.","Значит, он должен храниться семь дней. — Семь дней? — Именно.","Then it has to last seven days. – Seven days? – That's right."),
+(84.53,87.53,"Ovo će da traje sedam godina, Anđelka, bre.","Это будет храниться семь лет, Анджелка.","This will last seven years, Andjelka."),
+]
+CUES['5BeV5VW_m04'] = [
+(2.48,3.48,"Ljubavi!","Любимый!","Love!"),
+(4.48,7.48,"Ne možeš da veruješ šta sam našla! – Šta?","Ты не поверишь, что я нашла! — Что?","You won't believe what I found! – What?"),
+(7.48,10.48,"Uspela sam da ga uzmem ispred nosa. Tadam!","Я успела взять его прямо из-под носа. Та-дам!","I managed to grab it right from under their noses. Ta-da!"),
+(10.48,12.48,"Šta će ti 48. parfem ove godine?","Зачем тебе 48-е духи в этом году?","What do you need a 48th perfume this year for?"),
+(12.48,17.48,"Nije 48., to je onaj moj specijalni koji najviše volim na svetu, ali je ovo limited edition.","Это не 48-е, это мои особенные, которые я люблю больше всего на свете, но это лимитированная серия.","It's not the 48th, it's my special one that I love most in the world, but this is a limited edition."),
+(17.48,19.48,"Limited edition? – Pa da!","Лимитированная серия? — Ну да!","Limited edition? – Well, yes!"),
+(19.48,23.48,"Ti imaš bolest kupovanja parfema, Anđelka. Ti imaš parfemitis, ili ne znam kako se zove.","У тебя болезнь покупать духи, Анджелка. У тебя парфюмит или как это называется.","You have a perfume-buying disease, Andjelka. You have perfumitis, or whatever it's called."),
+(23.48,26.96,"Normalno, bre, pa treba mi, zamisli kako je glupo da nemam to u svojoj kolekciji.","Конечно, мне это нужно, представь, как глупо не иметь их в своей коллекции.","Of course, I need it, imagine how silly it would be not to have it in my collection."),
+(26.96,28.56,"Možeš misliti kako je glupo. – Pa jeste.","Можно подумать, как глупо. — Ну да.","Oh sure, how silly. – Well, it is."),
+(28.56,31.0,"Rasipaš pare na marketinške trikove, na budalaštine, bre.","Ты разбрасываешься деньгами на маркетинговые трюки, на глупости.","You waste money on marketing tricks, on nonsense."),
+(31.4,34.96,"Znaš ti kada ćeš ti da prestaneš da rasipaš pare, Anđe? Kad počneš da ih zarađuješ, veruj mi.","Знаешь, когда ты перестанешь разбрасываться деньгами, Андже? Когда начнёшь их зарабатывать, поверь мне.","Do you know when you'll stop wasting money, Andje? When you start earning it, believe me."),
+(49.84,53.72,"Kupio si frižider za vino, nisi ga ni jednom upotrebio, svi znamo da piješ pivo!","Ты купил холодильник для вина, ни разу им не воспользовался, все знают, что ты пьёшь пиво!","You bought a wine fridge, you never used it once, we all know you drink beer!"),
+]
+CUES['mbgspHORxH0'] = [
+(0.78,6.02,"Anđe, koja je tebi najbitnija osobina kod muškarca?","Андже, какое для тебя самое важное качество в мужчине?","Andje, what is the most important trait in a man for you?"),
+(7.76,10.76,"Uf, Andrija. – Pa kaži mi, molim te.","Уф, Андрия. — Ну скажи мне, пожалуйста.","Ugh, Andrija. – Well, tell me, please."),
+(12.44,13.86,"Pa, iskrenost.","Ну, искренность.","Well, honesty."),
+(14.26,15.06,"Iskrenost, je l' da?","Искренность, да?","Honesty, right?"),
+(15.22,18.55,"Pa da. A tebi?","Ну да. А тебе?","Yes. And you?"),
+(19.77,20.73,"Kod muškarca ništa.","В мужчине — ничего.","In a man, nothing."),
+(23.55,28.05,"A kod žene? Pa, kod žena, recimo, meni su mnogo bitne dve osobine.","А в женщине? Ну, в женщине, скажем, мне очень важны два качества.","And in a woman? Well, in women, say, two traits are very important to me."),
+(29.01,32.07,"Znači, mora da ima veliko dupe i mora da ima velike sise.","То есть у неё должна быть большая попа и большая грудь.","So she has to have a big butt and big breasts."),
+(35.55,38.55,"Joj, bože, što li se ja budim pored tebe već devet godina?","Боже, почему я уже девять лет просыпаюсь рядом с тобой?","Oh God, why have I been waking up next to you for nine years?"),
+(38.89,41.49,"Pa zašto? Iskren sam. To je najbitnija osobina kod muškarca.","А что? Я искренний. Это самое важное качество в мужчине.","So what? I'm honest. That's the most important trait in a man."),
+(44.61,45.05,"Tačno.","Точно.","Exactly."),
+]
+CUES['c1Wocy8ldKM'] = [
+(4.56,9.67,"Šta se pretvaraš, bre, imaš 37 i 4.","Что ты притворяешься, у тебя 37 и 4.","What are you pretending for, you have 37.4."),
+(9.67,12.67,"Ko kaže, bre? – Pa kaže toplomer.","Кто сказал? — Ну, термометр говорит.","Who says so? – Well, the thermometer says so."),
+(12.67,15.67,"Ovo ti je pokvareno, bre!","Он у тебя сломан!","This one of yours is broken!"),
+(15.67,18.67,"Nemoj da mi donosiš ovaj toplomer koji mi pokazuje 37.","Не приноси мне этот термометр, который показывает 37.","Don't bring me this thermometer that shows 37."),
+(18.67,24.67,"Donesi mi toplomer koji mi pokazuje 42 i 9 ili 39 i 4, nebitno.","Принеси мне термометр, который показывает 42 и 9 или 39 и 4, неважно.","Bring me a thermometer that shows 42.9 or 39.4, doesn't matter."),
+(27.67,31.67,"Ja sam ovde mrtva bolesna, a ti mi donosiš toplomer sa 37.","Я тут при смерти больна, а ты приносишь мне термометр с 37.","I'm here deathly ill, and you bring me a thermometer with 37."),
+]

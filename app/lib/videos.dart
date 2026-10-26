@@ -664,6 +664,38 @@ const _builtInPodcasts = <Video>[
     level: 'B1',
     duration: '1:25',
   ),
+  Video(
+    id: 'J_HSdmFaFh8',
+    title: 'Andrija i Andjelka - Taj odvratni zdravi hleb',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '1:28',
+  ),
+  Video(
+    id: '5BeV5VW_m04',
+    title: 'Andrija i Andjelka - Bolest kupovanja parfema',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '1:15',
+  ),
+  Video(
+    id: 'mbgspHORxH0',
+    title: 'Ljubav i iskrenost i svi drugi recepti za sreću !',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '0:54',
+  ),
+  Video(
+    id: 'c1Wocy8ldKM',
+    title: 'Andrija i Andjelka - Daj pravi toplomer!',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '0:33',
+  ),
 ];
 
 const _builtInClips = <Video>[

@@ -1,7 +1,7 @@
 import sys, os, json
 sys.path.insert(0, os.path.dirname(__file__))
-from cues import CUES
-from quizzes import Q
+import importlib; CUES = importlib.import_module(os.environ.get('CUES','cues')).CUES
+import importlib; Q = importlib.import_module(os.environ.get('QUIZ','quizzes')).Q
 OUT = sys.argv[1]
 for vid, d in Q.items():
     sr = ' '.join(c[2] for c in CUES[vid])

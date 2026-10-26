@@ -1,12 +1,12 @@
 import sys, os, re, json, glob
 sys.path.insert(0, os.path.dirname(__file__))
-from cues import CUES
+import importlib; CUES = importlib.import_module(os.environ.get('CUES','cues')).CUES
 a, b = {}, {}
 for f in sorted(glob.glob('app/assets/*.dict.json')):
     if not f.endswith('.en.json'): a.update(json.load(open(f)))
 for f in sorted(glob.glob('app/assets/*.dict.en.json')): b.update(json.load(open(f)))
 new_ru, new_en = {}, {}
-for l in open(os.path.join(os.path.dirname(__file__), 'dict.tsv')):
+for l in open(os.path.join(os.path.dirname(__file__), os.environ.get('DICT','dict.tsv'))):
     if not l.strip(): continue
     w, r, rn, e, en = l.rstrip('\n').split('\t')
     new_ru[w] = [r, rn]; new_en[w] = [e, en]
@@ -16,6 +16,11 @@ extra_en = {
  'ljutiš': ['you are angry', 'ljutiti se — to be angry; 2nd pers. sg.'],
  'onoliko': ['that much', 'onoliko — that much, so much'],
  'parovima': ['pairs', 'par — pair; dat. case pl.'],
+ 'hleb': ['bread', 'hleb — bread (masc.)'],
+ 'mrtva': ['dead', 'mrtav — dead; fem.'],
+ 'muškarca': ['man', 'muškarac — man; acc. case'],
+ 'specijalni': ['special', 'specijalan — special; masc.'],
+ 'zamisli': ['imagine', 'zamisliti — to imagine; imperative 2nd pers. sg.'],
  'slušaš': ['you listen', 'slušati — to listen; 2nd pers. sg.'],
 }
 cw = lambda w: re.sub(r"[^\w'-]", '', w).replace('_', '')

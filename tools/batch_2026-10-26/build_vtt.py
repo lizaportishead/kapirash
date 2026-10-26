@@ -1,6 +1,6 @@
 import sys, os, re, json, glob
 sys.path.insert(0, os.path.dirname(__file__))
-from cues import CUES
+import importlib; CUES = importlib.import_module(os.environ.get('CUES','cues')).CUES
 OUT = sys.argv[1]; os.makedirs(OUT, exist_ok=True)
 def ts(t):
     ms = round(t*1000); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
@@ -27,4 +27,4 @@ for vid, cues in CUES.items():
             if k: words.add(k)
     miss = sorted(w for w in words if w not in known)
     print(vid, len(words), 'missing', len(miss))
-    open(f"{OUT}/{vid}.missing.txt","w").write("\n".join(miss))
+    open(f"{OUT}/{vid}.missing.txt","w").write("\n".join(miss)+"\n")
