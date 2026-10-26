@@ -632,6 +632,38 @@ const _builtInPodcasts = <Video>[
     kind: 'podcast',
     audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261021065959_768683-mp-sajam-knjiga.mp3',
   ),
+  Video(
+    id: 'TLVUjSOUWXk',
+    title: 'Andrija i Andjelka - Uputstvo za mazenje zene',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '1:49',
+  ),
+  Video(
+    id: 'vBFoKok2AwA',
+    title: 'Andrija i Andjelka - Pakao zvani porodicni izlet',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B2',
+    duration: '3:37',
+  ),
+  Video(
+    id: 'l-t7PyL2cbg',
+    title: 'Andrija i Andjelka - Ko je foka, a ko gorila?',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '2:10',
+  ),
+  Video(
+    id: 'K2fyqgV-x2A',
+    title: 'Andrija i Andjelka - Muska pomoc u kuhinji',
+    channel: 'Andrija i Andjelka',
+    topic: 'Юмор',
+    level: 'B1',
+    duration: '1:25',
+  ),
 ];
 
 const _builtInClips = <Video>[

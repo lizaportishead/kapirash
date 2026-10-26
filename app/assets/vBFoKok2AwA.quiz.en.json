@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How does the day's plan begin?",
+     "o": [
+      "Breakfast",
+      "The pool",
+      "Table tennis",
+      "A walk around town"
+     ],
+     "a": 1,
+     "e": "In the video: \"krećemo od bazena\" — we start at the pool."
+    },
+    {
+     "q": "Why does she ask them not to jump into the pool?",
+     "o": [
+      "The water is too cold",
+      "The tiles are very slippery",
+      "The pool is still closed",
+      "The kids can't swim"
+     ],
+     "a": 1,
+     "e": "In the video: \"pločice su jako klizave\" — the tiles are very slippery."
+    },
+    {
+     "q": "What has to be done every 15 minutes?",
+     "o": [
+      "Drink water",
+      "Apply sunscreen",
+      "Change sun loungers",
+      "Call family"
+     ],
+     "a": 1,
+     "e": "In the video: \"mazanje kremom na svakih 15 minuta\" — apply sunscreen every 15 minutes."
+    },
+    {
+     "q": "Where should the mobile phones be?",
+     "o": [
+      "In the room",
+      "At the reception",
+      "At the pool",
+      "In everyone's pocket"
+     ],
+     "a": 1,
+     "e": "In the video: \"mobilni telefon je na recepciji\" — the mobile phone is at the reception."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "pločice su jako *klizave*, proverila sam",
+     "o": [
+      "slippery",
+      "sharp",
+      "hot",
+      "dirty"
+     ],
+     "a": 0,
+     "e": "Klizav — slippery, from the verb kliziti \"to slide\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Raspored* morate da znate.",
+     "o": [
+      "schedule",
+      "luggage",
+      "key",
+      "paper"
+     ],
+     "a": 0,
+     "e": "Raspored — schedule, timetable."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad ću ja da vam nađem *olovke*.",
+     "o": [
+      "pencils",
+      "keys",
+      "towels",
+      "swimsuits"
+     ],
+     "a": 0,
+     "e": "Olovka — a pencil; olovke — pencils."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Dremež*, kafica, unutra u sobi.",
+     "o": [
+      "a nap",
+      "dinner",
+      "swimming",
+      "exercise"
+     ],
+     "a": 0,
+     "e": "Dremež — a short daytime nap."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Okej, posle ___ prelazimo na ručak.",
+     "o": [
+      "bazen",
+      "bazena",
+      "bazenu",
+      "bazenom"
+     ],
+     "a": 1,
+     "e": "The preposition posle (\"after\") takes the genitive case: bazena."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Igraće gubitnik s ___.",
+     "o": [
+      "pobednik",
+      "pobednika",
+      "pobednikom",
+      "pobedniku"
+     ],
+     "a": 2,
+     "e": "The preposition s(a) (\"with\") takes the instrumental case: pobednikom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam ___ da ćete vi da pišete.",
+     "o": [
+      "mislila",
+      "mislio",
+      "mislilo",
+      "misliti"
+     ],
+     "a": 0,
+     "e": "A woman is speaking: the past-tense verb is feminine — mislila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Napravila sam jedan ___ plan.",
+     "o": [
+      "lagan",
+      "laganog",
+      "lagana",
+      "laganu"
+     ],
+     "a": 0,
+     "e": "Plan is masculine, nominative: jedan lagan plan."
+    }
+   ]
+  }
+ ]
+}
