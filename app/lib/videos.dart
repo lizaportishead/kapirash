@@ -696,6 +696,14 @@ const _builtInPodcasts = <Video>[
     level: 'B1',
     duration: '0:33',
   ),
+  Video(
+    id: 'KzUV2G3IOm4',
+    title: 'Srđan Dinčić - StandUpFest 2020',
+    channel: 'Standuprs',
+    topic: 'Юмор',
+    level: 'B2',
+    duration: '18:40',
+  ),
 ];
 
 const _builtInClips = <Video>[
