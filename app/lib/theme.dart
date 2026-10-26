@@ -281,7 +281,8 @@ class PageTitle extends StatelessWidget {
   final l = level.toUpperCase();
   if (l.startsWith('A')) return (ui('Простое (A1-A2)'), Color(0xFF34A853));
   if (l == 'B1') return (ui('Среднее (B1)'), Color(0xFFF59E0B));
-  if (l.startsWith('B') || l.startsWith('C')) return (ui('Сложное (B2+)'), Color(0xFFE53935));
+  if (l.startsWith('B')) return (ui('Сложное (B2)'), Color(0xFFE53935));
+  if (l.startsWith('C')) return (ui('Очень сложное (C1)'), Color(0xFF8E24AA));
   return null;
 }
 
