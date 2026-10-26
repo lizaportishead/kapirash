@@ -235,13 +235,14 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   double? _drag;
   double _savedPos = -1;
   bool _playing = false, _started = false;
-  double _rate = 1;
+  final _rate = ValueNotifier<double>(1);
 
   String get id => widget.video.id;
 
   @override
   void initState() {
     super.initState();
+    _rate.addListener(_applyRate);
     _subs.addAll([
       _audio.onPosition.listen((d) => _onTime(d.inMilliseconds / 1000)),
       _audio.onDuration.listen((d) => setState(() => _total = d.inMilliseconds / 1000)),
@@ -287,6 +288,8 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
 
   @override
   void dispose() {
+    _rate.removeListener(_applyRate);
+    _rate.dispose();
     _savePos(leaving: true);
     for (final s in _subs) {
       s.cancel();
@@ -349,11 +352,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     _seek(_sr[i].start);
   }
 
-  Future<void> _setRate() async {
-    _rate = _rate == 1 ? 0.8 : (_rate == 0.8 ? 0.6 : 1);
-    await _audio.setRate(_rate);
-    setState(() {});
-  }
+  void _applyRate() => _audio.setRate(_rate.value);
 
   String _ruFor(Cue c) {
     final j = cueAt(_ru, (c.start + c.end) / 2);
@@ -397,6 +396,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                         onPressed: () => Navigator.pop(context),
                       ),
                       Spacer(),
+                      SettingsButton(title: ui('Настройки подкаста'), rate: _rate),
                       LikeButton(id),
                     ],
                   ),
@@ -477,6 +477,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                     onPressed: () => Navigator.pop(context),
                   ),
                   Spacer(),
+                  SettingsButton(title: ui('Настройки подкаста'), rate: _rate),
                   LikeButton(id),
                 ],
               ),
@@ -631,16 +632,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 20,
           children: [
-            SizedBox(
-              width: 56,
-              child: TextButton(
-                onPressed: _setRate,
-                child: Text(
-                  _rate == 1 ? '1×' : '$_rate×',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800, color: cInk),
-                ),
-              ),
-            ),
+            SizedBox(width: 56),
             round(KIcons.back15, ui('Назад на 15 секунд'), () => _seek(_pos - 15)),
             round(_playing ? KIcons.pause : KIcons.play, _playing ? ui('Пауза') : ui('Играть'), _toggle, size: 64, main: true),
             round(KIcons.forward15, ui('Вперёд на 15 секунд'), () => _seek(_pos + 15)),

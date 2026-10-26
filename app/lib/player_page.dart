@@ -48,6 +48,7 @@ class PlayerPage extends StatefulWidget {
 class _PlayerPageState extends State<PlayerPage> {
   late final YoutubePlayerController _yt;
   StreamSubscription<YoutubeVideoState>? _sub;
+  final _rate = ValueNotifier<double>(1);
   List<Cue> _sr = [], _ru = [];
   bool _subsLoading = true;
   Map<String, dynamic> _dict = {};
@@ -90,6 +91,7 @@ class _PlayerPageState extends State<PlayerPage> {
         showFullscreenButton: true,
       ),
     );
+    _rate.addListener(_applyRate);
     _cueVideo();
     _sub = _yt.videoStateStream.listen((s) => _onTime(s.position.inMilliseconds / 1000));
     _load();
@@ -127,6 +129,8 @@ class _PlayerPageState extends State<PlayerPage> {
   @override
   void dispose() {
     store.removeListener(_onStore);
+    _rate.removeListener(_applyRate);
+    _rate.dispose();
     _savePos(leaving: true);
     _sub?.cancel();
     _yt.close();
@@ -169,12 +173,15 @@ class _PlayerPageState extends State<PlayerPage> {
     setState(() => _curN.value = i);
   }
 
+  void _applyRate() => _yt.setPlaybackRate(_rate.value);
+
   void _seek(double t) {
     final to = t < 0.15 ? 0.0 : t - 0.15;
     // В вебе iframe-обёртка принимает у player.* только один JSON-аргумент, а seekTo шлёт два и молча
     // не срабатывает, — там перематываем через loadVideoById (один объект-аргумент).
     if (kIsWeb) {
       _yt.loadVideoById(videoId: videoId, startSeconds: to);
+      if (_rate.value != 1) _applyRate();
       return;
     }
     _yt.seekTo(seconds: to, allowSeekAhead: true);
@@ -588,52 +595,8 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
-  // Шестерёнка в шапке: какие субтитры показывать.
-  Widget _settingsButton() {
-    return IconButton(
-      tooltip: ui('Настройки ролика'),
-      icon: Icon(Icons.settings_outlined, size: 22, color: cMuted),
-      onPressed: () => showModalBottomSheet<void>(
-        context: context,
-        backgroundColor: cBg,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
-        builder: (_) => ListenableBuilder(
-          listenable: store,
-          builder: (ctx, _) => SafeArea(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    ui('Настройки ролика'),
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
-                  ),
-                  SizedBox(height: 8),
-                  for (final (label, value, set) in [
-                    (ui('Сербские субтитры'), store.showSr, store.setShowSr),
-                    (ui('Русские субтитры'), store.showRu, store.setShowRu),
-                  ])
-                    SwitchListTile(
-                      contentPadding: EdgeInsets.zero,
-                      title: Text(
-                        label,
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
-                      ),
-                      value: value,
-                      activeThumbColor: cOnViolet,
-                      activeTrackColor: cViolet,
-                      onChanged: set,
-                    ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  // Шестерёнка в шапке: какие субтитры показывать и каким письмом.
+  Widget _settingsButton() => SettingsButton(title: ui('Настройки ролика'), subtitles: true, rate: _rate);
 
   // Закреплены внизу: весь текст и сохранённые слова ролика открываются отдельными экранами.
   void _openText() {
@@ -867,8 +830,28 @@ class WordList extends StatelessWidget {
         final list = store.words.where((w) => w.video == videoId).toList().reversed.toList();
         if (list.isEmpty) {
           return Padding(
-            padding: EdgeInsets.all(24),
-            child: Text(ui('Нажми на слово в субтитрах и сохрани его.'), style: TextStyle(fontSize: 14, color: cMuted)),
+            padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
+                  Flexible(child: ExcludeSemantics(child: Image.asset('assets/ill_words.png', height: 173))),
+                  SizedBox(height: 16),
+                  Text(
+                    ui('Слова пока не добавлены'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: cText),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    ui('Нажимай на слова в субтитрах, чтобы сохранить их в словарь'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                  ),
+                ],
+              ),
+            ),
           );
         }
         return ListView.separated(
@@ -1158,6 +1141,92 @@ class StepButtons extends StatelessWidget {
         button(0, KIcons.refresh, ui('Ещё раз'), text: ui('Ещё раз')),
         button(1, KIcons.arrowRight, ui('Следующая фраза')),
       ],
+    );
+  }
+}
+
+
+/// Шестерёнка с листом настроек: письмо (латиница/кириллица) и, для роликов, показ субтитров.
+class SettingsButton extends StatelessWidget {
+  const SettingsButton({super.key, required this.title, this.subtitles = false, this.rate});
+  final String title;
+  final bool subtitles;
+
+  /// Скорость воспроизведения; без неё строки «Скорость» нет.
+  final ValueNotifier<double>? rate;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      tooltip: title,
+      icon: Icon(Icons.settings_outlined, size: 22, color: cMuted),
+      onPressed: () => showModalBottomSheet<void>(
+        context: context,
+        backgroundColor: cBg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
+        builder: (_) => ListenableBuilder(
+          listenable: Listenable.merge([store, rate]),
+          builder: (ctx, _) => SafeArea(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(24, 20, 24, 12),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText)),
+                  SizedBox(height: 8),
+                  if (subtitles)
+                    for (final (label, value, set) in [
+                      (ui('Сербские субтитры'), store.showSr, store.setShowSr),
+                      (ui('Русские субтитры'), store.showRu, store.setShowRu),
+                    ])
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(label, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText)),
+                        value: value,
+                        activeThumbColor: cOnViolet,
+                        activeTrackColor: cViolet,
+                        onChanged: set,
+                      ),
+                  if (rate case final r?)
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              ui('Скорость'),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
+                            ),
+                          ),
+                          Pill('0.5×', on: r.value == 0.5, onTap: () => r.value = 0.5),
+                          SizedBox(width: 6),
+                          Pill('1×', on: r.value == 1, onTap: () => r.value = 1),
+                        ],
+                      ),
+                    ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            ui('Письмо'),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
+                          ),
+                        ),
+                        Pill('Lat', on: !store.cyr, onTap: () => store.setCyr(false)),
+                        SizedBox(width: 6),
+                        Pill('Ћир', on: store.cyr, onTap: () => store.setCyr(true)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

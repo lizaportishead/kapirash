@@ -13,6 +13,7 @@ import 'quiz_page.dart';
 import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
+import 'player_page.dart' show SettingsButton;
 import 'video_card.dart' show LikeButton;
 import 'l10n.dart';
 
@@ -968,6 +969,7 @@ class _StoryReaderState extends State<StoryReader> {
             );
           },
         ),
+        SettingsButton(title: ui('Настройки книги')),
       ],
     );
   }
