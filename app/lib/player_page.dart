@@ -1052,7 +1052,7 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
     final tabs = <(int, String, IconData)>[
       if (widget.quiz.isNotEmpty) (2, ui('Задания'), KIcons.tasks),
       (0, ui('Текст'), KIcons.text),
-      (1, '${ui('Слова')}${words == 0 ? '' : ' · $words'}', KIcons.wordsOn),
+      (1, ui('Слова'), KIcons.wordsOn),
     ];
     final tab = _side.clamp(0, tabs.length - 1);
     final Widget body = switch (tabs[tab].$1) {
@@ -1083,6 +1083,8 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
                   Expanded(
                     child: Pill(
                       tabs[i].$2,
+                      key: tabs[i].$1 == 1 ? widget.flyTo : null,
+                      badge: tabs[i].$1 == 1 ? words : 0,
                       icon: tabs[i].$3,
                       on: i == tab,
                       onTap: () {

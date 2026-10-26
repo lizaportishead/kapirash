@@ -147,7 +147,7 @@ Future<String?> _translatePhrase(String lat) async {
   }
 }
 
-/// Шторка со словом: перевод из словарика ролика и кнопка «Добавить в словарь».
+/// Шторка со словом: перевод из словарика ролика и кнопка «Сохранить в словарь».
 void showWord(
   BuildContext context, {
   required String raw,
@@ -175,23 +175,6 @@ void showWord(
       onClose: () => Navigator.pop(ctx),
     ),
   );
-}
-
-// Части речи без форм: ссылку на таблицу для них не показываем.
-final _noForms = RegExp(
-  r'наречие|союз|предлог|частица|междометие|вводное|^имя$|\b(adverb|adv|conjunction|conj|preposition|prep|particle|interjection|interj)\b',
-);
-final _verbNote = RegExp(r'инфинитив|\bвр\b|повел|\bл\. |сов\. вид|несов|причастие|\b(verb|infinitive|past|imperative|person)\b');
-final _nounNote = RegExp(r'падеж|\bр\.|мн\. ч\.|сущ|прилаг|\b(noun|adj|adjective|case|masc|fem|neut|plural)\b');
-
-/// Подпись и начальная форма для ссылки на таблицу спряжения или склонения; null, если у слова форм нет.
-(String, String)? _formsLink(String key, String note) {
-  final n = note.toLowerCase();
-  if (_noForms.hasMatch(n)) return null;
-  final lemma = SavedWord.lemmaOf(key, note);
-  if (_verbNote.hasMatch(n)) return ('Спряжение {0}', lemma);
-  if (_nounNote.hasMatch(n)) return ('Склонение {0}', lemma);
-  return ('Все формы {0}', lemma);
 }
 
 /// Кнопка-ссылка в строке под переводом.
@@ -263,7 +246,6 @@ class _WordCardState extends State<WordCard> {
     final phraseTr = isPhrase ? _translatePhrase(lat) : null;
     final tr = isPhrase ? wordsTr : (entry == null ? '' : entry[0] as String);
     final note = entry == null ? '' : entry[1] as String;
-    final forms = isPhrase || entry == null ? null : _formsLink(key, note);
     final overlay = Overlay.of(context, rootOverlay: true);
     return RepaintBoundary(
       key: sheetKey,
@@ -333,7 +315,7 @@ class _WordCardState extends State<WordCard> {
                             style: TextStyle(fontFamily: 'serif', fontSize: 17, fontWeight: FontWeight.w700, height: 1, color: cMuted),
                           ),
                           label: ui('Смотреть в Wiktionary'),
-                          url: Uri.https('en.wiktionary.org', '/wiki/${forms?.$2 ?? key}').replace(fragment: 'Serbo-Croatian'),
+                          url: Uri.https('en.wiktionary.org', '/wiki/${SavedWord.lemmaOf(key, note)}').replace(fragment: 'Serbo-Croatian'),
                         ),
                       ],
                     ),
@@ -342,7 +324,7 @@ class _WordCardState extends State<WordCard> {
                     compact: widget.compact,
                     store.isSaved(key)
                         ? ui(isPhrase ? 'Убрать фразу' : 'Убрать слово')
-                        : ui(isPhrase ? 'Добавить фразу в словарь' : 'Добавить в словарь'),
+                        : ui(isPhrase ? 'Сохранить фразу в словарь' : 'Сохранить в словарь'),
                     bg: store.isSaved(key) ? cCard : null,
                     fg: store.isSaved(key) ? cText : null,
                     onTap: () async {
