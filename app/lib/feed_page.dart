@@ -1,3 +1,5 @@
+import 'dart:ui' show PointerDeviceKind;
+
 import 'package:flutter/material.dart';
 
 import 'add_video.dart';
@@ -11,7 +13,11 @@ import 'video_card.dart';
 import 'videos.dart';
 import 'l10n.dart';
 
-const _perSection = 4;
+/// Сколько карточек видно в ряд на широком экране.
+const _perRow = 4;
+
+/// Сколько роликов в секции: на широком экране 8 (листаются вправо), на телефоне 4.
+int _perSection(BuildContext context) => MediaQuery.sizeOf(context).width < 600 ? 4 : 8;
 
 class FeedPage extends StatelessWidget {
   const FeedPage({super.key});
@@ -23,7 +29,8 @@ class FeedPage extends StatelessWidget {
   Widget _feed(BuildContext context) {
     // Новые ролики добавляются в конец списка, поэтому «последние» — это хвост.
     final newest = videos.reversed.toList();
-    final popular = (videos.toList()..sort((a, b) => b.views.compareTo(a.views))).take(_perSection).toList();
+    final perSection = _perSection(context);
+    final popular = (videos.toList()..sort((a, b) => b.views.compareTo(a.views))).take(perSection).toList();
     final topics = <String>[
       for (final v in videos)
         if (v.topic.isNotEmpty) v.topic,
@@ -53,12 +60,12 @@ class FeedPage extends StatelessWidget {
             children: [
               VideoSection(title: ui('Мои ролики'), list: mine),
               VideoSection(title: ui('Популярное'), list: popular),
-              VideoSection(title: ui('Новое'), list: newest.take(_perSection).toList()),
+              VideoSection(title: ui('Новое'), list: newest.take(perSection).toList()),
               ClipsStrip(),
               for (final t in topics)
                 VideoSection(
                   title: topicLabel(t),
-                  list: videos.where((v) => v.topic == t).toList().reversed.take(_perSection).toList(),
+                  list: videos.where((v) => v.topic == t).toList().reversed.take(perSection).toList(),
                   onAll: () => openTopic(context, t),
                 ),
             ],
@@ -150,15 +157,21 @@ class VideoSection extends StatelessWidget {
               // Телефон: одна карточка и краешек второй. Широкий экран: четыре в ряд.
               final w = box.maxWidth < 600
                   ? box.maxWidth * 0.82
-                  : ((box.maxWidth - 24 - 12 * (_perSection - 1)) / _perSection).clamp(260.0, 400.0);
+                  : ((box.maxWidth - 24 - 12 * (_perRow - 1)) / _perRow).clamp(260.0, 400.0);
               return SizedBox(
                 height: videoCardHeight(w),
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.symmetric(horizontal: 12),
-                  itemCount: list.length,
-                  separatorBuilder: (_, _) => SizedBox(width: 12),
-                  itemBuilder: (_, i) => SizedBox(width: w, child: VideoCard(list[i])),
+                child: ScrollConfiguration(
+                  // На десктопе ряд можно листать и мышью.
+                  behavior: ScrollConfiguration.of(context).copyWith(
+                    dragDevices: {PointerDeviceKind.touch, PointerDeviceKind.mouse, PointerDeviceKind.trackpad},
+                  ),
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    itemCount: list.length,
+                    separatorBuilder: (_, _) => SizedBox(width: 12),
+                    itemBuilder: (_, i) => SizedBox(width: w, child: VideoCard(list[i])),
+                  ),
                 ),
               );
             },
