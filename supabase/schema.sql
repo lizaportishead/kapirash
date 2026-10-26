@@ -8,6 +8,9 @@ create table public.user_data (
   history jsonb not null default '[]',
   positions jsonb not null default '{}',
   progress jsonb not null default '{}',
+  level text,
+  interests jsonb not null default '[]',
+  survey_done boolean not null default false,
   updated_at timestamptz not null default now()
 );
 

@@ -511,6 +511,7 @@ class AppStore extends ChangeNotifier {
     _prefs?.setStringList('kap.interests', this.interests);
     _prefs?.setBool('kap.survey', true);
     notifyListeners();
+    _touch();
   }
 
   /// Для проверки: снова показывает лендинг (только веб), не трогая анкету.
@@ -612,6 +613,21 @@ class AppStore extends ChangeNotifier {
     } catch (_) {
       // Нет сети — отправим при следующем изменении или запуске.
     }
+    await _pushProfile();
+  }
+
+  /// Анкета лежит отдельным запросом: пока в облаке нет колонок (supabase/profile.sql), остальное не страдает.
+  Future<void> _pushProfile() async {
+    final uid = cloud?.auth.currentUser?.id;
+    if (uid == null || !surveyDone) return;
+    try {
+      await cloud!.from('user_data').upsert({
+        'user_id': uid,
+        'level': level,
+        'interests': interests,
+        'survey_done': true,
+      });
+    } catch (_) {}
   }
 
   /// [merge] — на устройстве есть своё (только что вошли или не успели отправить), складываем его с облаком.
@@ -644,6 +660,17 @@ class AppStore extends ChangeNotifier {
         history = rHistory;
         positions = rPos;
         progress = rProgress;
+      }
+      // Анкету, пройденную на другом устройстве, не спрашиваем заново.
+      if (row['survey_done'] == true && !surveyDone) {
+        surveyDone = true;
+        level = row['level'] as String?;
+        interests = ((row['interests'] as List?) ?? const []).cast<String>();
+        level == null ? _prefs?.remove('kap.level') : _prefs?.setString('kap.level', level!);
+        _prefs?.setStringList('kap.interests', interests);
+        _prefs?.setBool('kap.survey', true);
+      } else if (surveyDone && row['survey_done'] != true) {
+        unawaited(_pushProfile());
       }
       _prefs
         ?..setString('kap.words', jsonEncode(words))
