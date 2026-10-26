@@ -6,6 +6,7 @@ import 'collection_page.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
 import 'analytics.dart';
+import 'deep_link.dart';
 import 'l10n.dart';
 import 'phrase.dart';
 import 'pod_audio.dart';
@@ -100,7 +101,7 @@ void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay 
   store.markWatched(v.id);
   trackEvent('podcast_opened', {'video_id': v.id});
   Navigator.of(context).push(
-    MaterialPageRoute<void>(settings: RouteSettings(name: 'PodcastPlayerPage'), builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay)),
+    MaterialPageRoute<void>(settings: urlSettings('PodcastPlayerPage', '/podcast/${v.id}'), builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay)),
   );
 }
 
@@ -229,7 +230,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
   int get _cur => _curN.value;
   final _wordsKey = GlobalKey();
 
-  final _word = ValueNotifier<(String, Cue)?>(null);
+  final _word = ValueNotifier<(String, Cue, Rect)?>(null);
   double _pos = 0, _total = 0;
   double? _drag;
   double _savedPos = -1;
@@ -359,11 +360,13 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     return j >= 0 ? _ru[j].text : '';
   }
 
-  void _openWord(String raw, Cue cue) {
+  void _openWord(String raw, Cue cue, Rect at) {
     if (cleanWord(raw).isEmpty) return;
     _audio.pause();
     if (MediaQuery.sizeOf(context).width >= 960) {
-      _word.value = (raw, cue);
+      final w = _word.value;
+      // Повторное нажатие на то же слово закрывает карточку.
+      _word.value = w != null && w.$1 == raw && w.$2.start == cue.start ? null : (raw, cue, at);
       return;
     }
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: id, flyTo: _wordsKey);
@@ -704,7 +707,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (_subsLoading) Center(child: KapLoader(size: 32)),
-                  if (cue != null) PhraseWords(cue, onWord: (w) => _openWord(w, cue)),
+                  if (cue != null) PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at)),
                   if (ru.isNotEmpty) ...[
                     SizedBox(height: 6),
                     Text(

@@ -109,8 +109,10 @@ class Pill extends StatelessWidget {
 
 /// Главная кнопка экрана: чёрная «таблетка» во всю ширину. Цвета можно задать для цветного фона.
 class BigButton extends StatelessWidget {
-  const BigButton(this.text, {super.key, required this.onTap, this.bg, this.fg});
+  const BigButton(this.text, {super.key, required this.onTap, this.bg, this.fg, this.compact = false});
   final String text;
+  // Невысокая кнопка для плавающих карточек на десктопе.
+  final bool compact;
   final VoidCallback? onTap;
   final Color? bg, fg;
 
@@ -119,7 +121,7 @@ class BigButton extends StatelessWidget {
     // Главная кнопка экрана всегда фиолетовая; другие цвета — только для второстепенных.
     final bg = this.bg ?? cViolet, fg = this.fg ?? cOnViolet;
     return SizedBox(
-      height: 56,
+      height: compact ? 44 : 56,
       child: FilledButton(
         style: FilledButton.styleFrom(
           backgroundColor: bg,
@@ -127,7 +129,7 @@ class BigButton extends StatelessWidget {
           disabledBackgroundColor: bg.withValues(alpha: 0.4),
           disabledForegroundColor: fg,
           shape: StadiumBorder(),
-          textStyle: TextStyle(fontFamily: kFont, fontSize: 16, fontWeight: FontWeight.w700),
+          textStyle: TextStyle(fontFamily: kFont, fontSize: compact ? 15 : 16, fontWeight: FontWeight.w700),
         ),
         onPressed: onTap,
         child: Text(text),

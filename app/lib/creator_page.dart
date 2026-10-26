@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'feed_page.dart';
 import 'icons.dart';
 import 'theme.dart';
 import 'video_card.dart';
@@ -36,62 +37,69 @@ class CreatorPage extends StatelessWidget {
             Expanded(
               child: Center(
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 720),
+                  constraints: BoxConstraints(maxWidth: 1200),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Expanded(
-                        child: ListView.separated(
-                          padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
-                          itemCount: list.length + 1,
-                          separatorBuilder: (_, _) => SizedBox(height: 12),
-                          itemBuilder: (_, i) {
-                            if (i > 0) {
-                              return VideoCard(list[i - 1], showChannel: false);
-                            }
-                            return Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 4),
-                              child: Row(
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16, 4, 16, 12),
+                        child: Row(
+                          children: [
+                            CreatorAvatar(channel, size: 64),
+                            SizedBox(width: 14),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CreatorAvatar(channel, size: 64),
-                                  SizedBox(width: 14),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          channel,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                            fontSize: 26,
-                                            fontWeight: FontWeight.w800,
-                                            letterSpacing: -0.4,
-                                            color: cText,
-                                          ),
-                                        ),
-                                        SizedBox(height: 2),
-                                        Text(
-                                          '${list.length} ${plural(list.length, 'ролик', 'ролика', 'роликов')}',
-                                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cMuted),
-                                        ),
-                                        Text(
-                                          topics,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(fontSize: 13, color: cFaint),
-                                        ),
-                                      ],
+                                  Text(
+                                    channel,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.w800,
+                                      letterSpacing: -0.4,
+                                      color: cText,
                                     ),
                                   ),
-                                  if (url != null)
-                                    IconButton(
-                                      tooltip: ui('Канал на YouTube'),
-                                      icon: Icon(KIcons.youtube, size: 26, color: cText),
-                                      onPressed: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
-                                    ),
+                                  SizedBox(height: 2),
+                                  Text(
+                                    '${list.length} ${plural(list.length, 'ролик', 'ролика', 'роликов')}',
+                                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cMuted),
+                                  ),
+                                  Text(
+                                    topics,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(fontSize: 13, color: cFaint),
+                                  ),
                                 ],
                               ),
+                            ),
+                            if (url != null)
+                              IconButton(
+                                tooltip: ui('Канал на YouTube'),
+                                icon: Icon(KIcons.youtube, size: 26, color: cText),
+                                onPressed: () => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
+                              ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: LayoutBuilder(
+                          builder: (_, box) {
+                            final cols = (box.maxWidth / 340).floor().clamp(1, 4);
+                            final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
+                            return GridView.builder(
+                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: cols,
+                                crossAxisSpacing: 12,
+                                mainAxisSpacing: 12,
+                                mainAxisExtent: videoCardHeight(cardW),
+                              ),
+                              itemCount: list.length,
+                              itemBuilder: (_, i) => VideoCard(list[i], showChannel: false),
                             );
                           },
                         ),

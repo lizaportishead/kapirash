@@ -24,7 +24,7 @@ class PhraseWords extends StatefulWidget {
     this.center = false,
   });
   final Cue cue;
-  final void Function(String word) onWord;
+  final void Function(String word, Rect at) onWord;
   final double size, spacing, pad;
   final bool center;
 
@@ -64,7 +64,14 @@ class _PhraseWordsState extends State<PhraseWords> {
     setState(() => _from = _to = null);
     if (a == null || b == null) return;
     final lo = a < b ? a : b, hi = a < b ? b : a;
-    widget.onWord(words.sublist(lo, hi + 1).join(' '));
+    widget.onWord(words.sublist(lo, hi + 1).join(' '), _rectOf(lo));
+  }
+
+  /// Прямоугольник слова в экранных координатах: возле него показываем карточку перевода.
+  Rect _rectOf(int i) {
+    final box = _keys[i].currentContext?.findRenderObject();
+    if (box is! RenderBox || !box.attached) return Rect.zero;
+    return box.localToGlobal(Offset.zero) & box.size;
   }
 
   @override
@@ -80,7 +87,7 @@ class _PhraseWordsState extends State<PhraseWords> {
         for (var i = 0; i < words.length; i++)
           GestureDetector(
             key: _keys[i],
-            onTap: () => widget.onWord(words[i]),
+            onTap: () => widget.onWord(words[i], _rectOf(i)),
             onLongPressStart: (d) => setState(() => _from = _to = i),
             onLongPressMoveUpdate: (d) {
               final j = _wordAt(d.globalPosition);
@@ -170,6 +177,43 @@ void showWord(
   );
 }
 
+// Части речи без форм: ссылку на таблицу для них не показываем.
+final _noForms = RegExp(
+  r'наречие|союз|предлог|частица|междометие|вводное|^имя$|\b(adverb|adv|conjunction|conj|preposition|prep|particle|interjection|interj)\b',
+);
+final _verbNote = RegExp(r'инфинитив|\bвр\b|повел|\bл\. |сов\. вид|несов|причастие|\b(verb|infinitive|past|imperative|person)\b');
+final _nounNote = RegExp(r'падеж|\bр\.|мн\. ч\.|сущ|прилаг|\b(noun|adj|adjective|case|masc|fem|neut|plural)\b');
+
+/// Подпись и начальная форма для ссылки на таблицу спряжения или склонения; null, если у слова форм нет.
+(String, String)? _formsLink(String key, String note) {
+  final n = note.toLowerCase();
+  if (_noForms.hasMatch(n)) return null;
+  final lemma = SavedWord.lemmaOf(key, note);
+  if (_verbNote.hasMatch(n)) return ('Спряжение {0}', lemma);
+  if (_nounNote.hasMatch(n)) return ('Склонение {0}', lemma);
+  return ('Все формы {0}', lemma);
+}
+
+/// Кнопка-ссылка в строке под переводом.
+class _LinkButton extends StatelessWidget {
+  const _LinkButton({required this.icon, required this.label, required this.url});
+  final Widget icon;
+  final String label;
+  final Uri url;
+
+  @override
+  Widget build(BuildContext context) => TextButton.icon(
+    style: TextButton.styleFrom(
+      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      minimumSize: Size.zero,
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    ),
+    icon: SizedBox(width: 18, height: 18, child: Center(child: icon)),
+    label: Text(label, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted)),
+    onPressed: () => launchUrl(url, mode: LaunchMode.externalApplication),
+  );
+}
+
 /// Карточка слова: в шторке на телефоне и в правой колонке на десктопе.
 class WordCard extends StatefulWidget {
   const WordCard({
@@ -181,7 +225,9 @@ class WordCard extends StatefulWidget {
     required this.onClose,
     this.place,
     this.flyTo,
+    this.compact = false,
   });
+  final bool compact;
   final String raw, videoId;
   final Cue cue;
   final Map<String, dynamic> dict;
@@ -198,7 +244,7 @@ class _WordCardState extends State<WordCard> {
 
   @override
   Widget build(BuildContext context) {
-    final cue = widget.cue, dict = widget.dict, place = widget.place, flyTo = widget.flyTo;
+    final cue = widget.cue, dict = widget.dict, flyTo = widget.flyTo;
     final parts = [
       for (final p in widget.raw.split(RegExp(r'\s+')))
         if (cleanWord(p).isNotEmpty) cleanWord(p),
@@ -217,6 +263,7 @@ class _WordCardState extends State<WordCard> {
     final phraseTr = isPhrase ? _translatePhrase(lat) : null;
     final tr = isPhrase ? wordsTr : (entry == null ? '' : entry[0] as String);
     final note = entry == null ? '' : entry[1] as String;
+    final forms = isPhrase || entry == null ? null : _formsLink(key, note);
     final overlay = Overlay.of(context, rootOverlay: true);
     return RepaintBoundary(
       key: sheetKey,
@@ -272,27 +319,27 @@ class _WordCardState extends State<WordCard> {
                   ],
                   if (!isPhrase) SizedBox(height: 10),
                   if (!isPhrase)
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: TextButton.icon(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-                          minimumSize: Size.zero,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    Wrap(
+                      spacing: 8,
+                      children: [
+                        _LinkButton(
+                          icon: Image.asset('assets/glosbe.png', width: 18, height: 18),
+                          label: ui('Смотреть в Glosbe'),
+                          url: Uri.https('glosbe.com', '/sr/${store.lang == 'en' ? 'en' : 'ru'}/$cyr'),
                         ),
-                        icon: Image.asset('assets/glosbe.png', width: 18, height: 18),
-                        label: Text(
-                          ui('Смотреть в Glosbe'),
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted),
+                        _LinkButton(
+                          icon: Text(
+                            'W',
+                            style: TextStyle(fontFamily: 'serif', fontSize: 17, fontWeight: FontWeight.w700, height: 1, color: cMuted),
+                          ),
+                          label: ui('Смотреть в Wiktionary'),
+                          url: Uri.https('en.wiktionary.org', '/wiki/${forms?.$2 ?? key}').replace(fragment: 'Serbo-Croatian'),
                         ),
-                        onPressed: () => launchUrl(
-                          Uri.https('glosbe.com', '/sr/${store.lang == 'en' ? 'en' : 'ru'}/$cyr'),
-                          mode: LaunchMode.externalApplication,
-                        ),
-                      ),
+                      ],
                     ),
                   SizedBox(height: 12),
                   BigButton(
+                    compact: widget.compact,
                     store.isSaved(key)
                         ? ui(isPhrase ? 'Убрать фразу' : 'Убрать слово')
                         : ui(isPhrase ? 'Добавить фразу в словарь' : 'Добавить в словарь'),

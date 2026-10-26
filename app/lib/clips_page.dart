@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'creator_page.dart';
+import 'deep_link.dart';
 import 'icons.dart';
 import 'liked_page.dart';
 import 'phrase.dart';
@@ -21,7 +22,7 @@ import 'l10n.dart';
 void openClip(BuildContext context, Video v, {double? startAt, List<Video>? among}) {
   Navigator.of(context).push(
     MaterialPageRoute<void>(
-      settings: RouteSettings(name: 'ClipViewer'),
+      settings: urlSettings('ClipViewer', '/video/${v.id}'),
       builder: (_) => ClipViewer(video: v, startAt: startAt, among: among),
     ),
   );
@@ -271,7 +272,7 @@ class _ClipPageState extends State<_ClipPage> {
   List<QuizSection> _quiz = [];
   bool _subsLoading = true;
   // Слово, открытое карточкой в правой колонке на широком экране.
-  final _word = ValueNotifier<(String, Cue)?>(null);
+  final _word = ValueNotifier<(String, Cue, Rect)?>(null);
   final _wordsKey = GlobalKey();
   final _curN = ValueNotifier<int>(-1);
   int get _cur => _curN.value;
@@ -365,11 +366,13 @@ class _ClipPageState extends State<_ClipPage> {
     return j >= 0 ? _ru[j].text : '';
   }
 
-  void _openWord(String raw, Cue cue) {
+  void _openWord(String raw, Cue cue, Rect at) {
     if (cleanWord(raw).isEmpty) return;
     _tt.pause();
     if (MediaQuery.sizeOf(context).width >= 960) {
-      _word.value = (raw, cue);
+      final w = _word.value;
+      // Повторное нажатие на то же слово закрывает карточку.
+      _word.value = w != null && w.$1 == raw && w.$2.start == cue.start ? null : (raw, cue, at);
       return;
     }
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId);
@@ -410,8 +413,6 @@ class _ClipPageState extends State<_ClipPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
-                    _controls(),
                   ],
                 ),
               ),
@@ -432,8 +433,6 @@ class _ClipPageState extends State<_ClipPage> {
               children: [
                 Padding(padding: EdgeInsets.symmetric(horizontal: 4), child: _header()),
                 Expanded(child: Center(child: _video())),
-                SizedBox(height: 10),
-                Padding(padding: EdgeInsets.symmetric(horizontal: 12), child: _controls()),
                 SizedBox(height: 10),
                 // Минимальная высота, чтобы видео не прыгало на коротких фразах; длинная фраза
                 // показывается целиком, без прокрутки, и просто чуть сжимает видео.
@@ -679,30 +678,23 @@ class _ClipPageState extends State<_ClipPage> {
     );
   }
 
-  Widget _controls() {
-    return Row(
-      children: [
-        Expanded(
-          child: Pill('', icon: KIcons.arrowLeft, label: ui('Предыдущая фраза'), onTap: () => _step(-1)),
-        ),
-        SizedBox(width: 6),
-        Expanded(
-          child: Pill(ui('Ещё раз'), icon: KIcons.refresh, onTap: () => _step(0)),
-        ),
-        SizedBox(width: 6),
-        Expanded(
-          child: Pill('', icon: KIcons.arrowRight, label: ui('Следующая фраза'), onTap: () => _step(1)),
-        ),
-      ],
-    );
-  }
-
   Widget _phrase() {
+    // Кнопки на жёлтой карточке сверху, как у длинных видео.
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(20)),
-      alignment: Alignment.topLeft,
-      child: _phraseBody(size: 17, ruSize: 13),
+      padding: EdgeInsets.fromLTRB(12, 12, 12, 10),
+      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          StepButtons(onStep: _step),
+          SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 6),
+            child: Align(alignment: Alignment.topLeft, child: _phraseBody(size: 17, ruSize: 13)),
+          ),
+        ],
+      ),
     );
   }
 
@@ -713,7 +705,7 @@ class _ClipPageState extends State<_ClipPage> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (cue != null) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: size, pad: 2),
+        if (cue != null) PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at), size: size, pad: 2),
         if (ru.isNotEmpty) ...[
           SizedBox(height: 2),
           Text(

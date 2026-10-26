@@ -2,9 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'speak_io.dart' if (dart.library.js_interop) 'speak_web.dart';
+import 'speak.dart';
 import 'store.dart';
-import 'subs.dart';
 import 'theme.dart';
 import 'l10n.dart';
 
@@ -191,7 +190,7 @@ class _FlipCard extends StatelessWidget {
     final isForm = head != w.key;
     final tr = isForm && w.lemmaTr.isNotEmpty ? w.lemmaTr : w.tr;
     final word = Text(
-      store.conv(head),
+      store.stressed(head),
       textAlign: TextAlign.center,
       style: TextStyle(fontSize: 34, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
     );
@@ -214,7 +213,7 @@ class _FlipCard extends StatelessWidget {
         if (isForm) ...[
           SizedBox(height: 4),
           Text(
-            store.conv(w.key),
+            store.stressed(w.key),
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: cMuted),
           ),
@@ -276,7 +275,7 @@ class _FlipCard extends StatelessWidget {
             child: IconButton(
               tooltip: ui('Прослушать {0}', [head]),
               icon: Icon(Icons.volume_up_rounded, size: 24, color: cViolet),
-              onPressed: () => speakWord(toCyr(toLat(head))),
+              onPressed: () => speakWord(head),
             ),
           ),
         ],

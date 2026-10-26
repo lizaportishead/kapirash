@@ -7,6 +7,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'add_video.dart';
 import 'analytics.dart';
+import 'deep_link.dart';
 import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
@@ -15,6 +16,7 @@ import 'kap_loader.dart';
 import 'auth_page.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
+import 'player_page.dart';
 import 'profile_page.dart';
 import 'podcasts_page.dart';
 import 'stories_page.dart';
@@ -22,11 +24,13 @@ import 'store.dart';
 import 'survey_page.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
+import 'videos.dart';
 import 'words_page.dart';
 import 'l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  captureInitialLink();
   // Пока поднимаем облако и читаем сохранённое, показываем лоадер вместо пустого экрана.
   runApp(
     MaterialApp(
@@ -102,10 +106,20 @@ class _KapirasAppState extends State<KapirasApp> {
 
   @override
   Widget build(BuildContext context) {
+    final home = AnimatedSwitcher(
+      duration: Duration(milliseconds: 250),
+      // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
+      // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
+      child: !_onboarded
+          ? (kIsWeb ? _WebStart() : OnboardingPage())
+          : !_surveyDone
+          ? SurveyPage()
+          : HomeShell(),
+    );
     return MaterialApp(
       title: 'Kapiraš',
       debugShowCheckedModeBanner: false,
-      navigatorObservers: analyticsObservers(),
+      navigatorObservers: [UrlSync.root, ...analyticsObservers()],
       theme: ThemeData(
         brightness: _dark ? Brightness.dark : Brightness.light,
         fontFamily: kFont,
@@ -118,16 +132,10 @@ class _KapirasAppState extends State<KapirasApp> {
         value: _dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
         child: child!,
       ),
-      home: AnimatedSwitcher(
-        duration: Duration(milliseconds: 250),
-        // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
-        // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
-        child: !_onboarded
-            ? (kIsWeb ? _WebStart() : OnboardingPage())
-            : !_surveyDone
-            ? SurveyPage()
-            : HomeShell(),
-      ),
+      home: home,
+      // Адрес вида /#/video/<id> не должен искать маршруты по частям: всегда стартуем с главной,
+      // а нужный экран откроет HomeShell по pendingLink.
+      onGenerateInitialRoutes: (_) => [MaterialPageRoute<void>(settings: RouteSettings(name: '/'), builder: (_) => home)],
     );
   }
 }
@@ -196,6 +204,53 @@ class _HomeShellState extends State<HomeShell> {
     _navKey.currentState?.popUntil((r) => r.isFirst);
     setState(() => _tab = tab);
     trackScreen(_tabName(tab));
+    UrlSync.setTab(_tabPath(tab));
+  }
+
+  String _tabPath(int t) => t == _feed
+      ? '/feed'
+      : t == _words
+      ? '/words'
+      : '/';
+
+  Timer? _linkTimeout;
+
+  /// Открывает то, с чем пришли по ссылке: вкладку или экран поверх неё. Каталог мог ещё не загрузиться, тогда ждём его.
+  void _openLink(String link) {
+    final seg = Uri.tryParse(link)?.pathSegments ?? const <String>[];
+    if (seg.length != 2) return;
+    final kind = seg[0], id = seg[1];
+    // Страницы второго уровня в широкой раскладке открываются в своём навигаторе, чтобы меню слева осталось.
+    BuildContext ctx() => _navKey.currentState?.overlay?.context ?? context;
+    bool tryOpen() {
+      if (!mounted) return true;
+      if (kind == 'video') {
+        final v = videoById(id);
+        if (v == null) return false;
+        openVideo(ctx(), v);
+      } else if (kind == 'podcast') {
+        final v = videoById(id);
+        if (v == null) return false;
+        openPodcast(ctx(), v);
+      } else if (kind == 'story') {
+        final s = stories.where((s) => s.id == id).firstOrNull;
+        if (s == null) return false;
+        openStory(ctx(), s);
+      }
+      return true;
+    }
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (tryOpen()) return;
+      void retry() {
+        if (!tryOpen()) return;
+        store.removeListener(retry);
+        _linkTimeout?.cancel();
+      }
+
+      store.addListener(retry);
+      _linkTimeout = Timer(Duration(seconds: 8), () => store.removeListener(retry));
+    });
   }
 
   String _tabName(int t) => t == _home
@@ -215,7 +270,31 @@ class _HomeShellState extends State<HomeShell> {
   @override
   void initState() {
     super.initState();
+    final link = pendingLink;
+    pendingLink = null;
+    if (link != null) {
+      final seg = Uri.tryParse(link)?.pathSegments ?? const <String>[];
+      final kind = seg.isEmpty ? '' : seg[0];
+      _tab = kind == 'feed' || kind == 'video'
+          ? _feed
+          : kind == 'words'
+          ? _words
+          : kind == 'podcast'
+          ? _podcasts
+          : kind == 'story' && kStoriesTabEnabled
+          ? _stories
+          : _home;
+      _openLink(link);
+    }
     trackScreen(_tabName(_tab));
+    UrlSync.setTab(_tabPath(_tab));
+  }
+
+  @override
+  void dispose() {
+    _linkTimeout?.cancel();
+    UrlSync.setTab(null);
+    super.dispose();
   }
 
   Future<void> _addVideo() async {
@@ -469,7 +548,7 @@ class _HomeShellState extends State<HomeShell> {
               // Поля и ширину держат только вкладки; открытые поверх страницы занимают всю область, и их шапка идёт на всю ширину.
               child: Navigator(
                 key: _navKey,
-                observers: analyticsObservers(),
+                observers: [UrlSync.nested, ...analyticsObservers()],
                 onGenerateRoute: (_) => MaterialPageRoute<void>(
                   builder: (_) => Center(
                     child: ConstrainedBox(

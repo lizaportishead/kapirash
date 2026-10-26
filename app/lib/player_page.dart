@@ -18,6 +18,7 @@ import 'video_card.dart';
 import 'processing_page.dart';
 import 'videos.dart';
 import 'analytics.dart';
+import 'deep_link.dart';
 import 'l10n.dart';
 
 /// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
@@ -29,7 +30,7 @@ void openVideo(BuildContext context, Video v, {double? startAt}) {
   trackEvent('video_opened', {'video_id': v.id});
   Navigator.of(context).push(
     MaterialPageRoute<void>(
-      settings: RouteSettings(name: 'PlayerPage'),
+      settings: urlSettings('PlayerPage', '/video/${v.id}'),
       builder: (_) => PlayerPage(video: v, startAt: startAt),
     ),
   );
@@ -64,7 +65,7 @@ class _PlayerPageState extends State<PlayerPage> {
   // Ключ не даёт плееру перезагрузиться, когда поворот экрана переставляет его в другую раскладку.
   final _playerKey = GlobalKey();
   // Слово, открытое карточкой в правой колонке на десктопе.
-  final _word = ValueNotifier<(String, Cue)?>(null);
+  final _word = ValueNotifier<(String, Cue, Rect)?>(null);
 
   // Кнопка «Словарь» — сюда улетает шторка со словом.
   final _wordsKey = GlobalKey();
@@ -193,11 +194,13 @@ class _PlayerPageState extends State<PlayerPage> {
     return j >= 0 ? _ru[j].text : '';
   }
 
-  void _openWord(String raw, Cue cue) {
+  void _openWord(String raw, Cue cue, Rect at) {
     if (cleanWord(raw).isEmpty) return;
     _yt.pauseVideo();
     if (MediaQuery.sizeOf(context).width >= 960) {
-      _word.value = (raw, cue);
+      final w = _word.value;
+      // Повторное нажатие на то же слово закрывает карточку.
+      _word.value = w != null && w.$1 == raw && w.$2.start == cue.start ? null : (raw, cue, at);
       return;
     }
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: videoId, flyTo: _wordsKey);
@@ -449,7 +452,7 @@ class _PlayerPageState extends State<PlayerPage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (_showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue), size: 16, spacing: 5, pad: 0, center: true),
+          if (_showSr) PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at), size: 16, spacing: 5, pad: 0, center: true),
           if (ru.isNotEmpty)
             Text(
               ru,
@@ -551,7 +554,7 @@ class _PlayerPageState extends State<PlayerPage> {
                       style: TextStyle(fontSize: 14, height: 1.45, color: cInk.withValues(alpha: 0.72)),
                     ),
                   if (_subsLoading) Center(child: KapLoader(size: 32)),
-                  if (cue != null && _showSr) PhraseWords(cue, onWord: (w) => _openWord(w, cue)),
+                  if (cue != null && _showSr) PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at)),
                   if (ru.isNotEmpty) ...[
                     SizedBox(height: 6),
                     Text(
@@ -945,7 +948,7 @@ class VideoSidePanel extends StatefulWidget {
   final void Function(double) onSeek;
   final Map<String, dynamic> dict;
   // Слово, открытое карточкой поверх колонки; null — карточки нет.
-  final ValueNotifier<(String, Cue)?> word;
+  final ValueNotifier<(String, Cue, Rect)?> word;
   // Вкладка с заданиями ставит видео на паузу.
   final VoidCallback onPause;
   final bool showSr;
@@ -970,10 +973,76 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
   @override
   void dispose() {
     widget.word.removeListener(_onWord);
+    _card?.remove();
     super.dispose();
   }
 
-  void _onWord() => setState(() {});
+  // Карточка перевода плавает над страницей рядом со словом, по которому нажали.
+  OverlayEntry? _card;
+  static const _cardW = 320.0, _cardH = 480.0;
+
+  void _onWord() {
+    if (widget.word.value == null) {
+      _card?.remove();
+      _card = null;
+    } else if (_card == null) {
+      Overlay.of(context).insert(_card = OverlayEntry(builder: _cardBuilder));
+    } else {
+      _card!.markNeedsBuild();
+    }
+  }
+
+  Widget _cardBuilder(BuildContext context) {
+    final word = widget.word.value;
+    if (word == null) return SizedBox.shrink();
+    // Оверлей вложенного навигатора смещён относительно окна (сайдбар слева): считаем в его координатах.
+    final box = Overlay.of(this.context).context.findRenderObject();
+    final origin = box is RenderBox ? box.localToGlobal(Offset.zero) : Offset.zero;
+    final area = box is RenderBox ? box.size : MediaQuery.sizeOf(context);
+    final at = word.$3.shift(-origin);
+    final right = at.right + 12;
+    final left = (right + _cardW <= area.width - 8 ? right : at.left - 12 - _cardW)
+        .clamp(8.0, (area.width - _cardW - 8).clamp(8.0, double.infinity));
+    final top = at.top.clamp(8.0, (area.height - _cardH - 8).clamp(8.0, double.infinity));
+    return Positioned(
+      left: left,
+      top: top,
+      width: _cardW,
+      child: Material(
+        color: cBg,
+        elevation: 8,
+        borderRadius: BorderRadius.circular(24),
+        clipBehavior: Clip.antiAlias,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxHeight: _cardH),
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                child: WordCard(
+                  key: ValueKey('${word.$1}@${word.$2.start}'),
+                  raw: word.$1,
+                  cue: word.$2,
+                  dict: widget.dict,
+                  videoId: widget.videoId,
+                  flyTo: widget.flyTo,
+                  compact: true,
+                  onClose: () => widget.word.value = null,
+                ),
+              ),
+              Positioned(
+                top: 8,
+                right: 8,
+                child: IconButton(
+                  icon: Icon(Icons.close, size: 20, color: cMuted),
+                  onPressed: () => widget.word.value = null,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -999,7 +1068,6 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
       1 => WordList(videoId: videoId, onSeek: widget.onSeek, popOnTap: false),
       _ => QuizList(videoId: videoId, sections: widget.quiz, flat: true),
     };
-    final word = widget.word.value;
     return Container(
       decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
       clipBehavior: Clip.antiAlias,
@@ -1033,42 +1101,6 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
                 Positioned.fill(
                   child: KeyedSubtree(key: ValueKey(tab), child: body),
                 ),
-                if (word != null)
-                  Positioned(
-                    left: 12,
-                    right: 12,
-                    top: 0,
-                    child: Material(
-                      color: cBg,
-                      elevation: 6,
-                      borderRadius: BorderRadius.circular(24),
-                      clipBehavior: Clip.antiAlias,
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxHeight: 520),
-                        child: Stack(
-                          children: [
-                            WordCard(
-                              key: ValueKey('${word.$1}@${word.$2.start}'),
-                              raw: word.$1,
-                              cue: word.$2,
-                              dict: widget.dict,
-                              videoId: videoId,
-                              flyTo: widget.flyTo,
-                              onClose: () => widget.word.value = null,
-                            ),
-                            Positioned(
-                              top: 8,
-                              right: 8,
-                              child: IconButton(
-                                icon: Icon(Icons.close, size: 20, color: cMuted),
-                                onPressed: () => widget.word.value = null,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
               ],
             ),
           ),

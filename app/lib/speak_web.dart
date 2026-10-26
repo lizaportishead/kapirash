@@ -1,7 +1,7 @@
 import 'package:web/web.dart' as web;
 
-/// Озвучивает слово сербским голосом через speechSynthesis браузера.
-Future<void> speakWord(String text) async {
+/// Запасной вариант: озвучивает слово сербским голосом через speechSynthesis браузера.
+Future<void> speakWordSystem(String text) async {
   try {
     web.window.speechSynthesis.cancel();
     final u = web.SpeechSynthesisUtterance(text)

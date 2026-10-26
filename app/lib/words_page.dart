@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'icons.dart';
 import 'learn_page.dart';
-import 'speak_io.dart' if (dart.library.js_interop) 'speak_web.dart';
+import 'speak.dart';
 import 'player_page.dart';
 import 'store.dart';
 import 'stories_page.dart';
@@ -210,7 +210,7 @@ class _WordCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    store.conv(w.key),
+                    store.stressed(w.key),
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
                   ),
                   if (w.lemma != null && w.lemma != w.key)
@@ -276,7 +276,7 @@ class _WordCard extends StatelessWidget {
             IconButton(
               tooltip: ui('Прослушать {0}', [w.key]),
               icon: Icon(Icons.volume_up_rounded, size: 22, color: cViolet),
-              onPressed: () => speakWord(toCyr(toLat(w.key))),
+              onPressed: () => speakWord(w.key),
             ),
             IconButton(
               tooltip: ui('Удалить {0}', [w.key]),

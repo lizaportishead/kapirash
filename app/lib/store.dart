@@ -65,14 +65,19 @@ class SavedWord {
 
   /// Заполняет [lemma] по записи словарика: заметка вида «pas; вин. падеж» называет начальную форму,
   /// а заметка без неё («сущ. м. р.», «инфинитив», «наречие») значит, что слово уже в начальной форме.
-  void setLemmaFrom(Map<String, dynamic> dict) {
-    final entry = dict[key] as List?;
-    final note = entry != null && entry.length > 1 ? entry[1] as String : '';
+  /// Начальная форма слова по заметке словарика («biti — быть» → biti); без указания — само слово.
+  static String lemmaOf(String key, String note) {
     final m = RegExp(r"^([\p{L}'-]+)(?:\s*\(se\))?\s*(?:$|[;—–,:(])", unicode: true).firstMatch(note);
     final head = m?.group(1)?.toLowerCase();
     // В английских заметках часть речи тоже латиницей («noun, masc.»), поэтому её отличаем по списку.
     final isLatin = head != null && RegExp(r'^[a-zčćžšđ]', unicode: true).hasMatch(head) && !_enPos.contains(head);
-    lemma = isLatin ? toLat(head) : key;
+    return isLatin ? toLat(head) : key;
+  }
+
+  void setLemmaFrom(Map<String, dynamic> dict) {
+    final entry = dict[key] as List?;
+    final note = entry != null && entry.length > 1 ? entry[1] as String : '';
+    lemma = lemmaOf(key, note);
     final own = lemma == key ? tr : '';
     final other = dict[lemma] as List?;
     lemmaTr = other != null ? other[0] as String : own;
@@ -287,6 +292,9 @@ class AppStore extends ChangeNotifier {
 
   Future<void> load() async {
     final prefs = _prefs = await SharedPreferences.getInstance();
+    try {
+      _stress = jsonDecode(await rootBundle.loadString('assets/stress.json')) as Map<String, dynamic>;
+    } catch (_) {}
     cyr = prefs.getString('kap.script') == 'cyr';
     dark = prefs.getString('kap.theme') == 'dark';
     showSr = prefs.getBool('kap.showSr') ?? true;
@@ -342,6 +350,17 @@ class AppStore extends ChangeNotifier {
   }
 
   String conv(String s) => cyr ? toCyr(s) : toLat(s);
+
+  /// Ударения (assets/stress.json: слово латиницей → оно же с острым над ударной гласной), грузятся при старте.
+  Map<String, dynamic> _stress = {};
+
+  /// Слово в выбранной письменности, с ударением, если оно известно.
+  String stressed(String s) {
+    final lat = toLat(s);
+    final st = _stress[lat.toLowerCase()] as String?;
+    if (st == null) return conv(s);
+    return conv(lat[0] != lat[0].toLowerCase() ? st[0].toUpperCase() + st.substring(1) : st);
+  }
   bool isSaved(String key) => words.any((x) => x.key == key);
 
   void add(SavedWord w) {

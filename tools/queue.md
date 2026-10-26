@@ -19,3 +19,4 @@
 | 13 | jS4GWRs7FSk | Agelast | 15:35 | Ko je prvi osuđen zbog DNK analize | не слушала |
 | 14 | HSfU5lYuWY0 | Dva i po psihijatra | 44:22 | Ambicija (S03E08) | дольше 30 мин, по просьбе |
 | 15 | bjN_HyuFWj0 | Fresh Blekbuk Serije | 26:31 | Mamini Sinovi, эпизод 1 | в пробе серии: шум, диалект, Whisper путает слова — предупреждение |
+| 16 | __gE7IvRMEE | Andrija i Andjelka | 26:25 | Mamini Sinovi - Epizoda 02 | в очереди по просьбе (2026-10-26); эп. 1 уже добавлен, шум/диалект — предупреждение |

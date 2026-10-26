@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'collection_page.dart';
+import 'deep_link.dart';
 import 'icons.dart';
 import 'phrase.dart';
 import 'player_page.dart' show SubPage;
@@ -211,7 +212,7 @@ void openStory(BuildContext context, Story s, {int? page}) {
   if (!s.ready) return;
   Navigator.of(context).push(
     MaterialPageRoute<void>(
-      settings: RouteSettings(name: 'StoryReader'),
+      settings: urlSettings('StoryReader', '/story/${s.id}'),
       builder: (_) => StoryReader(story: s, page: page),
     ),
   );
@@ -340,6 +341,44 @@ class _PageCount extends StatelessWidget {
   }
 }
 
+/// Тонкая шкала прочитанного; видна, только если рассказ начат (позиция — номер страницы, 0 — обложка).
+class _StoryProgress extends StatelessWidget {
+  const _StoryProgress(this.story);
+  final Story story;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListenableBuilder(
+      listenable: store,
+      builder: (_, _) {
+        final at = store.positionOf(story.wordKey)?.toInt() ?? 0;
+        if (at <= 0) return SizedBox.shrink();
+        return FutureBuilder<int>(
+          future: _storyPages(story),
+          builder: (_, snap) {
+            final n = snap.data ?? 0;
+            if (n == 0) return SizedBox.shrink();
+            // Страницы: обложка, n страниц текста, финальный экран.
+            final value = (at / (n + 1)).clamp(0.0, 1.0);
+            return Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(999),
+                child: LinearProgressIndicator(
+                  value: value < 0.04 ? 0.04 : value,
+                  minHeight: 4,
+                  color: cViolet,
+                  backgroundColor: cCard2,
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+}
+
 class _StoryCard extends StatelessWidget {
   const _StoryCard(this.story, {this.vertical = false});
   final Story story;
@@ -389,6 +428,7 @@ class _StoryCard extends StatelessWidget {
                 SizedBox(height: 4),
                 Text(story.author, style: TextStyle(fontSize: 13, color: cText)),
                 if (ready) _meta(),
+                if (ready) _progress(),
                 SizedBox(height: 8),
                 if (!ready)
                   Text(
@@ -435,6 +475,8 @@ class _StoryCard extends StatelessWidget {
     ),
   );
 
+  Widget _progress() => _StoryProgress(story);
+
   /// Карточка для сетки: вертикальная обложка сверху, под ней название, автор и уровень.
   Widget _vertical(BuildContext context, bool ready) {
     final body = Padding(
@@ -479,6 +521,7 @@ class _StoryCard extends StatelessWidget {
             style: TextStyle(fontSize: 13, color: cText),
           ),
           if (ready) _meta(),
+          if (ready) _progress(),
           if (!ready)
             Padding(
               padding: EdgeInsets.only(top: 8),
@@ -541,7 +584,8 @@ class _StoryReaderState extends State<StoryReader> {
   late int _i = widget.page ?? store.positionOf(widget.story.wordKey)?.toInt() ?? 0;
   bool _failed = false;
   // На широком экране перевод открывается в панели справа, а не в шторке.
-  (String, Cue, int)? _panel;
+  (String, Cue, int, Rect)? _panel;
+  final _stackKey = GlobalKey();
   List<QuizSection> _quiz = [];
 
   // Страница 0 — обложка, дальше текст, в конце — финальный экран.
@@ -627,14 +671,20 @@ class _StoryReaderState extends State<StoryReader> {
   void _turn(int d) {
     final to = _i + 2 * d;
     if (to < 0 || to > _count - 1) return;
-    setState(() => _i = to);
+    setState(() {
+      _i = to;
+      _panel = null;
+    });
     _save();
   }
 
   void _jump(int page) {
     final to = page.clamp(0, _count - 1);
     if (_wide) {
-      setState(() => _i = to & ~1);
+      setState(() {
+        _i = to & ~1;
+        _panel = null;
+      });
       _save();
     } else if (_ctl.hasClients) {
       _ctl.jumpToPage(to);
@@ -693,7 +743,27 @@ class _StoryReaderState extends State<StoryReader> {
   }
 
   // Одно слово или выделенная фраза (долгое нажатие и движение пальца).
-  void _openPhrase(List<_Token> ts, int page) {
+  static const _cardW = 320.0, _cardH = 480.0;
+
+  Size get _area => (_stackKey.currentContext?.size) ?? MediaQuery.sizeOf(context);
+
+  double _cardLeft(Rect at) {
+    final w = _area.width;
+    final right = at.right + 12;
+    final left = right + _cardW <= w - 8 ? right : at.left - 12 - _cardW;
+    return left.clamp(8.0, (w - _cardW - 8).clamp(8.0, double.infinity));
+  }
+
+  double _cardTop(Rect at) => at.top.clamp(8.0, (_area.height - _cardH - 8).clamp(8.0, double.infinity));
+
+  // Прямоугольник слова из глобальных координат в координаты области книги.
+  Rect _toStack(Rect g) {
+    final box = _stackKey.currentContext?.findRenderObject();
+    if (box is! RenderBox) return g;
+    return g.shift(-box.localToGlobal(Offset.zero));
+  }
+
+  void _openPhrase(List<_Token> ts, int page, Rect at) {
     // Тире и прочие значки без букв не слова.
     final words = [
       for (final t in ts)
@@ -702,7 +772,10 @@ class _StoryReaderState extends State<StoryReader> {
     if (words.isEmpty || !RegExp(r'\p{L}', unicode: true).hasMatch(words.join())) return;
     final cue = Cue(page.toDouble(), page.toDouble(), ts.first.sentence);
     if (_wide) {
-      setState(() => _panel = (words.join(' '), cue, page));
+      final raw = words.join(' ');
+      // Повторное нажатие на то же слово закрывает карточку.
+      final p = _panel;
+      setState(() => _panel = p != null && p.$1 == raw && p.$3 == page ? null : (raw, cue, page, _toStack(at)));
       return;
     }
     showWord(
@@ -758,20 +831,22 @@ class _StoryReaderState extends State<StoryReader> {
                 Divider(height: 1, color: cLine),
                 Expanded(
                   child: Stack(
+                    key: _stackKey,
                     children: [
                       Positioned.fill(child: _bookArea()),
-                      if (_panel case (final raw, final cue, final page))
+                      if (_panel case (final raw, final cue, final page, final at))
                         Positioned(
-                          right: 24,
-                          top: 24,
-                          width: 400,
+                          // Карточка рядом со словом: справа, а если там тесно — слева.
+                          left: _cardLeft(at),
+                          top: _cardTop(at),
+                          width: _cardW,
                           child: Material(
                             color: cBg,
                             elevation: 8,
                             borderRadius: BorderRadius.circular(24),
                             clipBehavior: Clip.antiAlias,
                             child: ConstrainedBox(
-                              constraints: BoxConstraints(maxHeight: 560),
+                              constraints: BoxConstraints(maxHeight: 480),
                               child: Stack(
                                 children: [
                                   SingleChildScrollView(
@@ -782,6 +857,7 @@ class _StoryReaderState extends State<StoryReader> {
                                       dict: _dict,
                                       videoId: widget.story.wordKey,
                                       place: ui('стр. {0}', [page]),
+                                      compact: true,
                                       onClose: () => setState(() => _panel = null),
                                     ),
                                   ),
@@ -1002,7 +1078,7 @@ class _StoryReaderState extends State<StoryReader> {
             for (final para in paragraphs)
               Padding(
                 padding: EdgeInsets.only(bottom: 16),
-                child: _StoryPara(para, word: _word, onPhrase: (ts) => _openPhrase(ts, page)),
+                child: _StoryPara(para, word: _word, onPhrase: (ts, at) => _openPhrase(ts, page, at)),
               ),
             if (last && widget.story.source.isNotEmpty) ...[
               SizedBox(height: 8),
@@ -1153,7 +1229,7 @@ class _StoryPara extends StatefulWidget {
   const _StoryPara(this.tokens, {required this.word, required this.onPhrase});
   final List<_Token> tokens;
   final Widget Function(_Token, bool selected) word;
-  final void Function(List<_Token>) onPhrase;
+  final void Function(List<_Token>, Rect) onPhrase;
 
   @override
   State<_StoryPara> createState() => _StoryParaState();
@@ -1206,7 +1282,19 @@ class _StoryParaState extends State<_StoryPara> {
     setState(() => _from = _to = null);
     if (a == null || b == null) return;
     final lo = a < b ? a : b, hi = a < b ? b : a;
-    widget.onPhrase(widget.tokens.sublist(lo, hi + 1));
+    widget.onPhrase(widget.tokens.sublist(lo, hi + 1), _rectOf(lo, hi));
+  }
+
+  // Рамка выделенных слов в глобальных координатах.
+  Rect _rectOf(int lo, int hi) {
+    Rect? r;
+    for (var i = lo; i <= hi; i++) {
+      final box = _keys[i].currentContext?.findRenderObject();
+      if (box is! RenderBox || !box.attached) continue;
+      final w = box.localToGlobal(Offset.zero) & box.size;
+      r = r == null ? w : r.expandToInclude(w);
+    }
+    return r ?? Rect.zero;
   }
 
   @override
@@ -1230,7 +1318,7 @@ class _StoryParaState extends State<_StoryPara> {
                 key: _keys[i],
                 behavior: HitTestBehavior.opaque,
                 onTap: () {
-                  if (!_mouse) widget.onPhrase([ts[i]]);
+                  if (!_mouse) widget.onPhrase([ts[i]], _rectOf(i, i));
                 },
                 onLongPressStart: (_) => setState(() => _from = _to = i),
                 onLongPressMoveUpdate: (d) {
@@ -1238,7 +1326,10 @@ class _StoryParaState extends State<_StoryPara> {
                   if (j != null && j != _to) setState(() => _to = j);
                 },
                 onLongPressEnd: (_) => _finish(),
-                onLongPressCancel: () => setState(() => _from = _to = null),
+                // Мышь выделяет через Listener; её движение отменяет долгое нажатие, но выделение сбрасывать нельзя.
+                onLongPressCancel: () {
+                  if (!_mouse) setState(() => _from = _to = null);
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     color: i >= lo && i <= hi ? cViolet.withValues(alpha: 0.3) : null,
