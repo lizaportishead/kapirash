@@ -191,8 +191,10 @@ class ClipsStrip extends StatelessWidget {
   final List<Video>? list;
 
   @override
-  Widget build(BuildContext context) {
-    final list = this.list ?? clips.take(6).toList();
+  Widget build(BuildContext context) => LayoutBuilder(builder: (context, box) {
+    // На широком экране показываем столько обложек, сколько влезает в строку.
+    final fit = ((box.maxWidth - 24 + 10) / 145).floor();
+    final list = this.list ?? clips.take(fit < 6 ? 6 : fit).toList();
     if (list.isEmpty) return SizedBox.shrink();
     return Padding(
       padding: EdgeInsets.only(bottom: 20),
@@ -213,7 +215,7 @@ class ClipsStrip extends StatelessWidget {
         ],
       ),
     );
-  }
+  });
 }
 
 /// Все ролики одной темы поверх таббара.

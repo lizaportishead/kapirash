@@ -110,7 +110,7 @@ Map<String, Creator> creators = _builtInCreators;
 List<Video> videos = _builtInVideos;
 
 /// Клипы из TikTok: у них своя вкладка и вертикальный плеер, в каталоге их нет.
-List<Video> clips = _builtInClips;
+List<Video> clips = _builtInClips.reversed.toList();
 
 /// Эпизоды подкастов: у них своя вкладка и аудиоплеер, в каталоге видео их нет.
 List<Video> podcasts = _builtInPodcasts;
@@ -120,10 +120,11 @@ void setCatalog(Map<String, dynamic> j) {
   final all = [for (final v in j['videos'] as List) Video.fromJson(v as Map<String, dynamic>)];
   videos = all.where((v) => !v.tiktok && !v.podcast).toList();
   // Клипы из сборки остаются, даже если в облаке их ещё нет.
+  // Каталог и список сборки идут в порядке добавления, поэтому свежие клипы — в конце, и список переворачиваем.
   clips = [
-    ...all.where((v) => v.tiktok),
     ..._builtInClips.where((c) => !all.any((v) => v.id == c.id)),
-  ];
+    ...all.where((v) => v.tiktok),
+  ].reversed.toList();
   creators = {
     for (final c in (j['creators'] as List).cast<Map<String, dynamic>>())
       if (c['handle'] != null) c['name']: Creator(c['handle'], c['avatar_id']),
