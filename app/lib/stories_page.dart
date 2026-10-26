@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:flutter/services.dart';
 
 import 'collection_page.dart';
@@ -841,36 +842,38 @@ class _StoryReaderState extends State<StoryReader> {
                           left: _cardLeft(at),
                           top: _cardTop(at),
                           width: _cardW,
-                          child: Material(
-                            color: cBg,
-                            elevation: 8,
-                            borderRadius: BorderRadius.circular(24),
-                            clipBehavior: Clip.antiAlias,
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(maxHeight: 480),
-                              child: Stack(
-                                children: [
-                                  SingleChildScrollView(
-                                    child: WordCard(
-                                      key: ValueKey('$raw@$page'),
-                                      raw: raw,
-                                      cue: cue,
-                                      dict: _dict,
-                                      videoId: widget.story.wordKey,
-                                      place: ui('стр. {0}', [page]),
-                                      compact: true,
-                                      onClose: () => setState(() => _panel = null),
+                          child: PointerInterceptor(
+                            child: Material(
+                              color: cBg,
+                              elevation: 8,
+                              borderRadius: BorderRadius.circular(24),
+                              clipBehavior: Clip.antiAlias,
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(maxHeight: 480),
+                                child: Stack(
+                                  children: [
+                                    SingleChildScrollView(
+                                      child: WordCard(
+                                        key: ValueKey('$raw@$page'),
+                                        raw: raw,
+                                        cue: cue,
+                                        dict: _dict,
+                                        videoId: widget.story.wordKey,
+                                        place: ui('стр. {0}', [page]),
+                                        compact: true,
+                                        onClose: () => setState(() => _panel = null),
+                                      ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: 8,
-                                    right: 8,
-                                    child: IconButton(
-                                      icon: Icon(Icons.close, size: 20, color: cMuted),
-                                      onPressed: () => setState(() => _panel = null),
+                                    Positioned(
+                                      top: 8,
+                                      right: 8,
+                                      child: IconButton(
+                                        icon: Icon(Icons.close, size: 20, color: cMuted),
+                                        onPressed: () => setState(() => _panel = null),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

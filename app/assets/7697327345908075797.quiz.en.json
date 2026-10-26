@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What has started in Belgrade?",
+     "o": [
+      "The heating season",
+      "The school year",
+      "The tourist season",
+      "Road repairs"
+     ],
+     "a": 0,
+     "e": "In the video: \"Počela grejna sezona u Beogradu\" — the heating season has started in Belgrade."
+    },
+    {
+     "q": "What happened to heat prices?",
+     "o": [
+      "Stayed the same",
+      "Doubled",
+      "Fell",
+      "Abolished"
+     ],
+     "a": 0,
+     "e": "In the video: \"uz nepromenjene cene toplotne energije\" — with unchanged heat prices."
+    },
+    {
+     "q": "How will 60 out of 100 apartments be billed?",
+     "o": [
+      "By actual consumption",
+      "By number of residents",
+      "By floor",
+      "At a flat rate"
+     ],
+     "a": 0,
+     "e": "In the video: \"60 od 100 stanova prelazi na obračun po stvarnoj potrošnji umesto po kvadratu\" — 60 out of 100 apartments switch to billing by actual consumption instead of by square metres."
+    },
+    {
+     "q": "When does the system automatically switch off the heating?",
+     "o": [
+      "When it is above 15 degrees outside",
+      "When it is below 5 degrees",
+      "When it is above 25 degrees",
+      "On weekends"
+     ],
+     "a": 0,
+     "e": "In the video: \"automatski gasi grejanje kada spoljna temperatura pređe 15 stepeni\" — automatically switches off the heating when the outside temperature goes above 15 degrees."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ali 60 od 100 stanova *prelazi* na obračun po stvarnoj potrošnji",
+     "o": [
+      "switches",
+      "arrives",
+      "pays",
+      "returns"
+     ],
+     "a": 0,
+     "e": "Prelaziti — to cross over, switch (to another system)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Radi *uštede* sistem automatski gasi grejanje",
+     "o": [
+      "saving",
+      "safety",
+      "quiet",
+      "convenience"
+     ],
+     "a": 0,
+     "e": "Ušteda — saving; radi uštede — for the sake of saving."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "radijatori greju *neprekidno* 24 sata",
+     "o": [
+      "continuously",
+      "rarely",
+      "weakly",
+      "quietly"
+     ],
+     "a": 0,
+     "e": "Neprekidno — without a break, continuously."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "što građanima omogućava manje *račune* ukoliko štede energiju",
+     "o": [
+      "bills",
+      "taxes",
+      "radiators",
+      "windows"
+     ],
+     "a": 0,
+     "e": "Račun — a bill; račune — acc. pl."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Počela ___ sezona u Beogradu.",
+     "o": [
+      "grejni",
+      "grejna",
+      "grejnu",
+      "grejno"
+     ],
+     "a": 1,
+     "e": "Sezona is feminine nominative: grejna sezona."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "uz nepromenjene cene ___ energije",
+     "o": [
+      "toplotna",
+      "toplotne",
+      "toplotnu",
+      "toplotnoj"
+     ],
+     "a": 1,
+     "e": "Cene (of what?) energije — genitive fem.: toplotne energije."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "prelazi na obračun po ___ potrošnji",
+     "o": [
+      "stvarna",
+      "stvarnu",
+      "stvarnoj",
+      "stvarnom"
+     ],
+     "a": 2,
+     "e": "The preposition po (\"by\") here takes the dative/locative: po stvarnoj potrošnji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "dok pri ___ od nule i nižim radijatori greju",
+     "o": [
+      "temperatura",
+      "temperaturama",
+      "temperaturu",
+      "temperaturom"
+     ],
+     "a": 1,
+     "e": "The preposition pri (\"at, during\") takes the locative: pri temperaturama."
+    }
+   ]
+  }
+ ]
+}

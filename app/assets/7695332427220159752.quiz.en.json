@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "When does the family make this cake?",
+     "o": [
+      "For every birthday",
+      "At New Year",
+      "On Sundays",
+      "Only in summer"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ovo je torta koja se kod nas u kući pravi kad god je nekom rođendan\" — this is the cake we make at home whenever it is somebody's birthday."
+    },
+    {
+     "q": "What is cooked first?",
+     "o": [
+      "Vanilla pudding",
+      "Condensed milk",
+      "Cream",
+      "Cottage cheese"
+     ],
+     "a": 0,
+     "e": "In the video: \"Prvo skuvam puding od vanile\" — first I cook a vanilla pudding."
+    },
+    {
+     "q": "Into how many parts is the cream divided?",
+     "o": [
+      "Two",
+      "Three",
+      "Four",
+      "Five"
+     ],
+     "a": 1,
+     "e": "In the video: \"podelim je u tri jednaka dela\" — I divide it into three equal parts."
+    },
+    {
+     "q": "What goes into the third part?",
+     "o": [
+      "Melted dark chocolate",
+      "Nuts",
+      "Biscuit",
+      "Coconut flakes"
+     ],
+     "a": 0,
+     "e": "In the video: \"u treći rastopljenu crnu čokoladu\" — into the third melted dark chocolate."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Onda smesu pridodam pudingu i podelim je u tri *jednaka* dela.",
+     "o": [
+      "equal",
+      "small",
+      "different",
+      "thick"
+     ],
+     "a": 0,
+     "e": "Jednak — equal; jednaka — gen. pl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U prvi deo dodajem mlevenu plazmu, u drugi *krupno* mlevene lešnike.",
+     "o": [
+      "coarsely",
+      "finely",
+      "thinly",
+      "hot"
+     ],
+     "a": 0,
+     "e": "Krupno — coarsely, not finely."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvo skuvam puding od vanile, pokrijem i ostavim da se *ohladi*.",
+     "o": [
+      "cools down",
+      "boils",
+      "dissolves",
+      "thickens"
+     ],
+     "a": 0,
+     "e": "Ohladiti se — to cool down."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za to vreme *penasto* umutim puter i dodam šećer u prahu.",
+     "o": [
+      "until fluffy",
+      "slowly",
+      "slightly",
+      "at once"
+     ],
+     "a": 0,
+     "e": "Penasto — until foamy, airy."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvo skuvam puding od ___.",
+     "o": [
+      "vanila",
+      "vanile",
+      "vaniliju",
+      "vanili"
+     ],
+     "a": 1,
+     "e": "The preposition od (\"of, from\") takes the genitive: vanile."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Onda smesu pridodam ___ i podelim je u tri jednaka dela.",
+     "o": [
+      "puding",
+      "pudingu",
+      "pudingom",
+      "pudinga"
+     ],
+     "a": 1,
+     "e": "Pridodati (\"to add to\") takes the dative: pudingu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U prvi deo dodajem mlevenu ___.",
+     "o": [
+      "plazma",
+      "plazme",
+      "plazmu",
+      "plazmom"
+     ],
+     "a": 2,
+     "e": "Dodajem (\"I add\") + direct object takes the accusative: plazmu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Onda ređam redom prvo sloj sa ___.",
+     "o": [
+      "plazma",
+      "plazmu",
+      "plazmom",
+      "plazme"
+     ],
+     "a": 2,
+     "e": "The preposition sa (\"with\") takes the instrumental: plazmom."
+    }
+   ]
+  }
+ ]
+}

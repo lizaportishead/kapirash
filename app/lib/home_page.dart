@@ -128,24 +128,34 @@ class _Profile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.fromLTRB(12, 0, 12, 20),
       child: Material(
-        color: cCard,
+        color: cViolet,
         borderRadius: BorderRadius.circular(20),
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
           onTap: () => openSurvey(context),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(16, 12, 8, 12),
+            padding: EdgeInsets.fromLTRB(14, 12, 14, 12),
             child: Row(
               children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(color: cOnViolet.withValues(alpha: 0.2), shape: BoxShape.circle),
+                  child: Icon(Icons.auto_awesome_rounded, size: 22, color: cOnViolet),
+                ),
+                SizedBox(width: 12),
                 Expanded(
-                  child: Text(text, style: TextStyle(fontSize: 14, height: 1.35, color: cMuted)),
+                  child: Text(text, style: TextStyle(fontSize: 14, height: 1.35, color: cOnViolet)),
                 ),
-                SizedBox(width: 4),
-                Text(
-                  level == null ? ui('Пройти') : ui('Изменить'),
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cViolet),
+                SizedBox(width: 12),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                  decoration: BoxDecoration(color: cOnViolet, borderRadius: BorderRadius.circular(999)),
+                  child: Text(
+                    level == null ? ui('Пройти') : ui('Изменить'),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cViolet),
+                  ),
                 ),
-                SizedBox(width: 8),
               ],
             ),
           ),

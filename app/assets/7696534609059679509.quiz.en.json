@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "From what date will the new lines run?",
+     "o": [
+      "From 1 November",
+      "From 1 April",
+      "From 1 January",
+      "From 1 May"
+     ],
+     "a": 0,
+     "e": "In the video: \"Od 1. novembra četiri nove autobuske linije\" — from 1 November four new bus lines."
+    },
+    {
+     "q": "Where will the lines take passengers?",
+     "o": [
+      "To the Expo 2027 complex in Surčin",
+      "To Nikola Tesla airport",
+      "To Ada Ciganlija",
+      "To the stadium"
+     ],
+     "a": 0,
+     "e": "In the video: \"povezaće više delova Beograda sa kompleksom Expo 2027 u Surčinu\" — will connect more parts of Belgrade with the Expo 2027 complex in Surčin."
+    },
+    {
+     "q": "How many eco-buses will run?",
+     "o": [
+      "13",
+      "21",
+      "31",
+      "41"
+     ],
+     "a": 2,
+     "e": "In the video: \"Na ovim trasama saobraćaće 31 ekoautobus\" — 31 eco-buses will run on these routes."
+    },
+    {
+     "q": "How often will buses depart?",
+     "o": [
+      "Every 5–10 minutes",
+      "Every 15–22 minutes",
+      "Every 30–40 minutes",
+      "Once an hour"
+     ],
+     "a": 1,
+     "e": "In the video: \"sa polascima na svakih 15 do 22 minuta\" — with departures every 15 to 22 minutes."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Beograd dobija četiri nove *gradske* linije.",
+     "o": [
+      "city (adj.)",
+      "night",
+      "river",
+      "suburban"
+     ],
+     "a": 0,
+     "e": "Gradski — city (from grad \"city\")."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Expo 2 sa *okretnice* Beograd na vodi.",
+     "o": [
+      "terminus loop",
+      "bridge",
+      "park",
+      "square"
+     ],
+     "a": 0,
+     "e": "Okretnica — a terminus where vehicles turn around."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na ovim *trasama* saobraćaće 31 ekoautobus.",
+     "o": [
+      "routes",
+      "streets",
+      "stops",
+      "squares"
+     ],
+     "a": 0,
+     "e": "Trasa — a route; trasama — loc. pl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "dodatno *širenje* mreže na ukupno 10 linija",
+     "o": [
+      "expansion",
+      "reduction",
+      "closure",
+      "repair"
+     ],
+     "a": 0,
+     "e": "Širenje — expansion, spreading (from širiti \"to widen\")."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Od 1. novembra četiri nove autobuske ___.",
+     "o": [
+      "linije",
+      "linija",
+      "liniji",
+      "linijama"
+     ],
+     "a": 0,
+     "e": "After the number \"four\" the noun takes the -e form: linije."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "povezaće više delova Beograda sa ___ Expo 2027.",
+     "o": [
+      "kompleks",
+      "kompleksa",
+      "kompleksom",
+      "kompleksu"
+     ],
+     "a": 2,
+     "e": "The preposition sa (\"with\") takes the instrumental: kompleksom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Expo 3 iz ___.",
+     "o": [
+      "Zemun",
+      "Zemuna",
+      "Zemunu",
+      "Zemunom"
+     ],
+     "a": 1,
+     "e": "The preposition iz (\"from\") takes the genitive: Zemuna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "uključujući veze sa ___, železničkom stanicom.",
+     "o": [
+      "aerodrom",
+      "aerodroma",
+      "aerodromom",
+      "aerodromu"
+     ],
+     "a": 2,
+     "e": "The preposition sa (\"with\") takes the instrumental: aerodromom (like železničkom stanicom)."
+    }
+   ]
+  }
+ ]
+}

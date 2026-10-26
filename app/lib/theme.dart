@@ -249,19 +249,28 @@ const double kTopBarHeight = 64;
 
 /// Заголовок экрана в табе; справа можно положить кнопки.
 class PageTitle extends StatelessWidget {
-  const PageTitle(this.text, {super.key, this.actions = const [], this.icon});
+  const PageTitle(this.text, {super.key, this.actions = const [], this.icon, this.back = false});
   final String text;
   final IconData? icon;
   final List<Widget> actions;
+
+  /// Стрелка «назад» в той же строке, что и заголовок (для экранов, открытых поверх таббара).
+  final bool back;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(minHeight: kTopBarHeight),
-      padding: EdgeInsets.fromLTRB(16, 8, 12, 8),
+      padding: EdgeInsets.fromLTRB(back ? 12 : 16, 8, 12, 8),
       alignment: Alignment.centerLeft,
       child: Row(
         children: [
+          if (back)
+            IconButton(
+              tooltip: ui('Назад'),
+              icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+              onPressed: () => Navigator.pop(context),
+            ),
           if (icon != null) ...[Icon(icon, size: 28, color: cViolet), SizedBox(width: 10)],
           Expanded(
             child: Text(
@@ -281,10 +290,10 @@ class PageTitle extends StatelessWidget {
 /// Сложность по уровню (A1–C2): подпись и цвет кружка.
 (String, Color)? difficultyOf(String level) {
   final l = level.toUpperCase();
-  if (l.startsWith('A')) return (ui('Простое (A1-A2)'), Color(0xFF34A853));
-  if (l == 'B1') return (ui('Среднее (B1)'), Color(0xFFF59E0B));
-  if (l.startsWith('B')) return (ui('Сложное (B2)'), Color(0xFFE53935));
-  if (l.startsWith('C')) return (ui('Очень сложное (C1)'), Color(0xFF8E24AA));
+  if (l.startsWith('A')) return (ui('Простое'), Color(0xFF34A853));
+  if (l == 'B1') return (ui('Среднее'), Color(0xFFF59E0B));
+  if (l.startsWith('B')) return (ui('Сложное'), Color(0xFFE53935));
+  if (l.startsWith('C')) return (ui('Очень сложное'), Color(0xFF8E24AA));
   return null;
 }
 

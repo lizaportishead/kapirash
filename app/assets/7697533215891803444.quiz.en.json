@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What shape were the buildings meant to have?",
+     "o": [
+      "Complete triangles of 19 floors",
+      "Round towers",
+      "Square boxes",
+      "Pyramids"
+     ],
+     "a": 0,
+     "e": "In the video: \"u obliku potpunih trouglova od 19 spratova\" — in the form of complete triangles of 19 floors."
+    },
+    {
+     "q": "What was built instead of the triangles?",
+     "o": [
+      "Stepped towers",
+      "Flat blocks",
+      "Private houses",
+      "Glass towers"
+     ],
+     "a": 0,
+     "e": "In the video: \"umesto toga napravljeni današnji poznati stepenasti soliteri\" — instead, the famous stepped towers of today were built."
+    },
+    {
+     "q": "Which blocks are meant?",
+     "o": [
+      "1–4",
+      "27",
+      "61–64",
+      "45"
+     ],
+     "a": 2,
+     "e": "In the video: \"zgrade u blokovima 61-64\" — the buildings in blocks 61-64."
+    },
+    {
+     "q": "What kind of architecture did the experiment leave behind?",
+     "o": [
+      "Brutalist",
+      "Baroque",
+      "Art nouveau",
+      "Gothic"
+     ],
+     "a": 0,
+     "e": "In the video: \"u vidu jedinstvene brutalističke arhitekture\" — in the form of unique brutalist architecture."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "zgrade u blokovima 61-64 *prvobitno* trebalo da budu",
+     "o": [
+      "originally",
+      "recently",
+      "accidentally",
+      "later"
+     ],
+     "a": 0,
+     "e": "Prvobitno — originally, at first."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ali su tokom gradnje *isečene*",
+     "o": [
+      "cut down",
+      "sold",
+      "painted",
+      "destroyed"
+     ],
+     "a": 0,
+     "e": "Iseći — to cut off; isečene — cut down."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "današnji poznati *stepenasti* soliteri",
+     "o": [
+      "stepped",
+      "glass",
+      "old",
+      "round"
+     ],
+     "a": 0,
+     "e": "Stepenast — stepped (from stepen \"step\")."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "arhitekture koja i danas *fascinira* posetioce",
+     "o": [
+      "fascinates",
+      "scares",
+      "annoys",
+      "tires"
+     ],
+     "a": 0,
+     "e": "Fascinirati — to fascinate, captivate."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Davno zaboravljena tajna Novog ___ jeste da su zgrade",
+     "o": [
+      "Beograd",
+      "Beograda",
+      "Beogradu",
+      "Beogradom"
+     ],
+     "a": 1,
+     "e": "Tajna (of what?) takes the genitive: Novog Beograda."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "da su zgrade u ___ 61-64",
+     "o": [
+      "blokova",
+      "blokovima",
+      "bloku",
+      "blokovi"
+     ],
+     "a": 1,
+     "e": "The preposition u (\"in\") answering \"where?\" takes the locative pl.: u blokovima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "u obliku potpunih ___",
+     "o": [
+      "trougao",
+      "trougla",
+      "trouglova",
+      "trouglovi"
+     ],
+     "a": 2,
+     "e": "After obliku + potpunih the genitive pl. is needed: trouglova."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "trag u vidu jedinstvene brutalističke ___",
+     "o": [
+      "arhitektura",
+      "arhitekture",
+      "arhitekturu",
+      "arhitekturom"
+     ],
+     "a": 1,
+     "e": "The phrase u vidu (\"in the form of\") takes the genitive: arhitekture."
+    }
+   ]
+  }
+ ]
+}

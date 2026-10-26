@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What holiday is tomorrow?",
+     "o": [
+      "Saint Petka",
+      "Christmas",
+      "Easter",
+      "Saint Nicholas' Day"
+     ],
+     "a": 0,
+     "e": "In the video: \"Sutra je Sveta Petka\" — tomorrow is Saint Petka's day."
+    },
+    {
+     "q": "On what date is the holiday marked?",
+     "o": [
+      "27 October",
+      "27 September",
+      "1 November",
+      "7 January"
+     ],
+     "a": 0,
+     "e": "In the video: \"Srpska pravoslavna crkva 27. oktobra obeležava Svetu Petku\" — the Serbian Orthodox Church marks Saint Petka on 27 October."
+    },
+    {
+     "q": "What should be avoided on this day according to folk belief?",
+     "o": [
+      "Heavy physical and household chores",
+      "Travelling",
+      "Shopping",
+      "Eating"
+     ],
+     "a": 0,
+     "e": "In the video: \"trebalo bi izbegavati teške fizičke i kućne poslove\" — one should avoid heavy physical and household chores."
+    },
+    {
+     "q": "Which chores are mentioned especially?",
+     "o": [
+      "Laundry, sewing, spinning and weaving",
+      "Cooking and cleaning",
+      "Fishing and hunting",
+      "Shopping"
+     ],
+     "a": 0,
+     "e": "In the video: \"Posebno se pominju pranje veša, šivenje, predenje i tkanje\" — washing laundry, sewing, spinning and weaving are especially mentioned."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "jednu od najpoštovanijih *svetiteljki* u našem narodu",
+     "o": [
+      "female saints",
+      "neighbours",
+      "teachers",
+      "queens"
+     ],
+     "a": 0,
+     "e": "Svetiteljka — a female saint; svetiteljki — gen. pl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za ovaj praznik *vezuju* se brojni običaji",
+     "o": [
+      "tie, link",
+      "forget",
+      "cancel",
+      "prepare"
+     ],
+     "a": 0,
+     "e": "Vezivati se — to be tied; vezuju se — are tied."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Posebno se pominju pranje *veša*, šivenje",
+     "o": [
+      "laundry",
+      "dishes",
+      "windows",
+      "floor"
+     ],
+     "a": 0,
+     "e": "Veš — laundry; veša — gen. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "može doneti nesreću, bolest ili *nemir* porodici",
+     "o": [
+      "unrest",
+      "joy",
+      "money",
+      "guests"
+     ],
+     "a": 0,
+     "e": "Nemir — unrest, anxiety (ne- + mir \"peace\")."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sutra je ___ Petka.",
+     "o": [
+      "sveta",
+      "svetu",
+      "svete",
+      "svetoj"
+     ],
+     "a": 0,
+     "e": "Sveta Petka — nominative, feminine."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "obeležava Svetu ___",
+     "o": [
+      "Petka",
+      "Petke",
+      "Petku",
+      "Petkom"
+     ],
+     "a": 2,
+     "e": "Obeležava (what?) is a direct object, accusative: Petku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "jednu od najpoštovanijih svetiteljki u našem ___",
+     "o": [
+      "narod",
+      "naroda",
+      "narodu",
+      "narodom"
+     ],
+     "a": 2,
+     "e": "The preposition u (\"in, among\") answering \"where?\" takes the locative: u našem narodu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "prema narodnom ___ tog dana trebalo bi izbegavati",
+     "o": [
+      "verovanje",
+      "verovanja",
+      "verovanju",
+      "verovanjem"
+     ],
+     "a": 2,
+     "e": "The preposition prema (\"according to\") takes the dative: prema verovanju."
+    }
+   ]
+  }
+ ]
+}

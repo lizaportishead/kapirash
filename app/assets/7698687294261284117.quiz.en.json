@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What has begun to be removed in Belgrade?",
+     "o": [
+      "Illegal terraces of cafés and restaurants",
+      "Stalls",
+      "Graffiti",
+      "Kiosks"
+     ],
+     "a": 0,
+     "e": "In the video: \"ubrzano uklanjanje nelegalnih bašta kafića i restorana\" — accelerated removal of illegal terraces of cafés and restaurants."
+    },
+    {
+     "q": "When can inspectors issue a removal order?",
+     "o": [
+      "A few hours after an inspection",
+      "After a month",
+      "After a week",
+      "After a year"
+     ],
+     "a": 0,
+     "e": "In the video: \"mogu izdati nalog za uklanjanje u roku od samo nekoliko sati nakon kontrole\" — can issue a removal order within only a few hours after an inspection."
+    },
+    {
+     "q": "What does the City Assembly's decision introduce?",
+     "o": [
+      "Zero tolerance for illegal occupation of public areas",
+      "Free parking",
+      "New benefits",
+      "A coffee tax"
+     ],
+     "a": 0,
+     "e": "In the video: \"uvodi se nulta tolerancija na nelegalno zauzimanje javnih površina\" — zero tolerance for the illegal occupation of public areas is introduced."
+    },
+    {
+     "q": "What threatens offenders?",
+     "o": [
+      "Considerably increased fines",
+      "Prison",
+      "Loss of licence",
+      "Nothing"
+     ],
+     "a": 0,
+     "e": "In the video: \"protiv prekršilaca će biti izricane i znatno uvećane novčane kazne\" — considerably increased fines will also be imposed on offenders."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stupila na snagu nova *rigorozna* pravila.",
+     "o": [
+      "strict",
+      "simple",
+      "old",
+      "quiet"
+     ],
+     "a": 0,
+     "e": "Rigorozan — strict, harsh."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "komunalni *inspektori* mogu izdati nalog za uklanjanje",
+     "o": [
+      "inspectors",
+      "neighbours",
+      "tourists",
+      "cooks"
+     ],
+     "a": 0,
+     "e": "Inspektor — inspector; komunalni — municipal."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "nulta tolerancija na nelegalno *zauzimanje* javnih površina",
+     "o": [
+      "occupation",
+      "sale",
+      "cleaning",
+      "tidying"
+     ],
+     "a": 0,
+     "e": "Zauzimanje — occupying, taking over (from zauzeti)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "protiv *prekršilaca* će biti izricane",
+     "o": [
+      "offenders",
+      "neighbours",
+      "guests",
+      "builders"
+     ],
+     "a": 0,
+     "e": "Prekršilac — an offender; prekršilaca — gen. pl."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stupila na ___ nova rigorozna pravila.",
+     "o": [
+      "snaga",
+      "snagu",
+      "snage",
+      "snazi"
+     ],
+     "a": 1,
+     "e": "The set phrase stupiti na snagu — \"to come into force\", acc.: na snagu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "ubrzano uklanjanje nelegalnih ___",
+     "o": [
+      "bašta",
+      "bašte",
+      "baštama",
+      "baštu"
+     ],
+     "a": 0,
+     "e": "Uklanjanje (of what?) takes the genitive pl.: bašta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Odlukom ___ grada uvodi se nulta tolerancija",
+     "o": [
+      "Skupština",
+      "Skupštine",
+      "Skupštinu",
+      "Skupštini"
+     ],
+     "a": 1,
+     "e": "Odlukom (whose?) takes the genitive: Skupštine."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "izricane i znatno uvećane novčane ___",
+     "o": [
+      "kazna",
+      "kazne",
+      "kaznu",
+      "kaznom"
+     ],
+     "a": 1,
+     "e": "The subject kazne is fem. pl., like its agreeing adjectives: uvećane novčane kazne."
+    }
+   ]
+  }
+ ]
+}

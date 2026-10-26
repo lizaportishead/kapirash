@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
@@ -459,7 +460,8 @@ class _PlayerPageState extends State<PlayerPage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (_showSr) PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at), size: 16, spacing: 5, pad: 0, center: true),
+          if (_showSr)
+            PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at), size: 16, spacing: 5, pad: 0, center: true),
           if (ru.isNotEmpty)
             Text(
               ru,
@@ -984,43 +986,47 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
     final area = box is RenderBox ? box.size : MediaQuery.sizeOf(context);
     final at = word.$3.shift(-origin);
     final right = at.right + 12;
-    final left = (right + _cardW <= area.width - 8 ? right : at.left - 12 - _cardW)
-        .clamp(8.0, (area.width - _cardW - 8).clamp(8.0, double.infinity));
+    final left = (right + _cardW <= area.width - 8 ? right : at.left - 12 - _cardW).clamp(
+      8.0,
+      (area.width - _cardW - 8).clamp(8.0, double.infinity),
+    );
     final top = at.top.clamp(8.0, (area.height - _cardH - 8).clamp(8.0, double.infinity));
     return Positioned(
       left: left,
       top: top,
       width: _cardW,
-      child: Material(
-        color: cBg,
-        elevation: 8,
-        borderRadius: BorderRadius.circular(24),
-        clipBehavior: Clip.antiAlias,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: _cardH),
-          child: Stack(
-            children: [
-              SingleChildScrollView(
-                child: WordCard(
-                  key: ValueKey('${word.$1}@${word.$2.start}'),
-                  raw: word.$1,
-                  cue: word.$2,
-                  dict: widget.dict,
-                  videoId: widget.videoId,
-                  flyTo: widget.flyTo,
-                  compact: true,
-                  onClose: () => widget.word.value = null,
+      child: PointerInterceptor(
+        child: Material(
+          color: cBg,
+          elevation: 8,
+          borderRadius: BorderRadius.circular(24),
+          clipBehavior: Clip.antiAlias,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: _cardH),
+            child: Stack(
+              children: [
+                SingleChildScrollView(
+                  child: WordCard(
+                    key: ValueKey('${word.$1}@${word.$2.start}'),
+                    raw: word.$1,
+                    cue: word.$2,
+                    dict: widget.dict,
+                    videoId: widget.videoId,
+                    flyTo: widget.flyTo,
+                    compact: true,
+                    onClose: () => widget.word.value = null,
+                  ),
                 ),
-              ),
-              Positioned(
-                top: 8,
-                right: 8,
-                child: IconButton(
-                  icon: Icon(Icons.close, size: 20, color: cMuted),
-                  onPressed: () => widget.word.value = null,
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: IconButton(
+                    icon: Icon(Icons.close, size: 20, color: cMuted),
+                    onPressed: () => widget.word.value = null,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -1145,7 +1151,6 @@ class StepButtons extends StatelessWidget {
   }
 }
 
-
 /// Шестерёнка с листом настроек: письмо (латиница/кириллица) и, для роликов, показ субтитров.
 class SettingsButton extends StatelessWidget {
   const SettingsButton({super.key, required this.title, this.subtitles = false, this.rate});
@@ -1173,7 +1178,10 @@ class SettingsButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText)),
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: cText),
+                  ),
                   SizedBox(height: 8),
                   if (subtitles)
                     for (final (label, value, set) in [
@@ -1182,7 +1190,10 @@ class SettingsButton extends StatelessWidget {
                     ])
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: Text(label, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText)),
+                        title: Text(
+                          label,
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
+                        ),
                         value: value,
                         activeThumbColor: cOnViolet,
                         activeTrackColor: cViolet,

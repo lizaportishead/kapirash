@@ -40,10 +40,24 @@ class QuizSection {
   final List<QuizQuestion> questions;
 }
 
-/// Задания к ролику лежат в assets рядом с субтитрами; у большинства роликов их нет.
+/// Задания к ролику лежат в assets рядом с субтитрами, а если там нет — в бакете subs в облаке; у многих роликов их нет.
 Future<List<QuizSection>> loadQuiz(String videoId) async {
+  Future<String> text() async {
+    try {
+      return await store.assetText('$videoId.quiz.json', en: '$videoId.quiz.en.json');
+    } catch (_) {
+      final files = cloud!.storage.from('subs');
+      if (store.lang == 'en') {
+        try {
+          return utf8.decode(await files.download('$videoId.quiz.en.json'));
+        } catch (_) {}
+      }
+      return utf8.decode(await files.download('$videoId.quiz.json'));
+    }
+  }
+
   try {
-    final j = jsonDecode(await store.assetText('$videoId.quiz.json', en: '$videoId.quiz.en.json')) as Map<String, dynamic>;
+    final j = jsonDecode(await text()) as Map<String, dynamic>;
     return [for (final s in j['sections'] as List) QuizSection.fromJson(s as Map<String, dynamic>)];
   } catch (_) {
     return [];

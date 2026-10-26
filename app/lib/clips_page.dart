@@ -57,12 +57,15 @@ const clipGrid = SliverGridDelegateWithMaxCrossAxisExtent(
 
 /// Все короткие ролики на отдельном экране.
 void openClips(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'Scaffold'),builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [BackBar(), Expanded(child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage())))])))));
+  Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'Scaffold'),builder: (_) => Scaffold(body: SafeArea(bottom: false, child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [Expanded(child: Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 1200), child: ClipsPage(back: true))))])))));
 }
 
 /// Экран «Короткие ролики»: вертикальные ролики из TikTok.
 class ClipsPage extends StatefulWidget {
-  const ClipsPage({super.key});
+  const ClipsPage({super.key, this.back = false});
+
+  /// Открыт отдельным экраном: стрелка «назад» стоит в строке заголовка.
+  final bool back;
 
   @override
   State<ClipsPage> createState() => _ClipsPageState();
@@ -76,6 +79,7 @@ class _ClipsPageState extends State<ClipsPage> {
   Widget build(BuildContext context) => ListenableBuilder(listenable: store, builder: (context, _) => _page());
 
   Widget _page() {
+    final back = widget.back;
     final topics = {
       for (final v in clips)
         if (v.topic.isNotEmpty) v.topic,
@@ -86,6 +90,7 @@ class _ClipsPageState extends State<ClipsPage> {
       children: [
         PageTitle(
           ui('Шортсы'),
+          back: back,
           actions: [
             IconButton(
               tooltip: ui('Любимое'),

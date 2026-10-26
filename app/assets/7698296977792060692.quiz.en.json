@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What was planned on the site of Block 27?",
+     "o": [
+      "A large housing estate",
+      "An airport",
+      "A shopping mall",
+      "A stadium"
+     ],
+     "a": 0,
+     "e": "In the video: \"planirana gradnja velikog stambenog naselja\" — construction of a large housing estate was planned."
+    },
+    {
+     "q": "What are the city stories about?",
+     "o": [
+      "Underground tunnels, military facilities and strange phenomena",
+      "Treasure",
+      "Royal palaces",
+      "Missing trains"
+     ],
+     "a": 0,
+     "e": "In the video: \"o tajnim podzemnim tunelima, vojnim objektima i čudnim pojavama\" — about secret underground tunnels, military facilities and strange phenomena."
+    },
+    {
+     "q": "Why did construction really stop, according to experts?",
+     "o": [
+      "Marshy ground and technical problems",
+      "Money ran out",
+      "A war began",
+      "There were protests"
+     ],
+     "a": 0,
+     "e": "In the video: \"razlog odustajanja od gradnje bili močvarno zemljište i tehnički problemi\" — the reason for abandoning construction was marshy ground and technical problems."
+    },
+    {
+     "q": "Whom does this empty space attract today?",
+     "o": [
+      "Lovers of urban legends and mysteries",
+      "Fishermen",
+      "Builders",
+      "Athletes"
+     ],
+     "a": 0,
+     "e": "In the video: \"privlači pažnju ljubitelja urbanih legenda i misterija\" — attracts the attention of lovers of urban legends and mysteries."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "teren naglo i bez zvaničnog objašnjenja ostao *neizgrađen*",
+     "o": [
+      "undeveloped",
+      "flooded",
+      "sold",
+      "forgotten"
+     ],
+     "a": 0,
+     "e": "Neizgrađen — undeveloped (ne- + izgrađen \"built\")."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "podstakavši *brojne* gradske priče",
+     "o": [
+      "numerous",
+      "rare",
+      "old",
+      "new"
+     ],
+     "a": 0,
+     "e": "Brojan — numerous; brojne — acc. pl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ovaj *prazan* prostor u srcu Novog Beograda",
+     "o": [
+      "empty",
+      "cramped",
+      "noisy",
+      "new"
+     ],
+     "a": 0,
+     "e": "Prazan — empty."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Iako stručnjaci *objašnjavaju* da su razlog odustajanja",
+     "o": [
+      "explain",
+      "deny",
+      "forget",
+      "ask"
+     ],
+     "a": 0,
+     "e": "Objašnjavati — to explain (imperfective)."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Misterija ___ 27 jeste u tome",
+     "o": [
+      "blok",
+      "bloka",
+      "bloku",
+      "blokom"
+     ],
+     "a": 1,
+     "e": "Misterija (of what?) takes the genitive: bloka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "priče o tajnim podzemnim ___",
+     "o": [
+      "tuneli",
+      "tunela",
+      "tunelima",
+      "tunel"
+     ],
+     "a": 2,
+     "e": "The preposition o (\"about\") takes the locative: o tunelima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "razlog odustajanja od ___",
+     "o": [
+      "gradnja",
+      "gradnje",
+      "gradnju",
+      "gradnjom"
+     ],
+     "a": 1,
+     "e": "The preposition od (\"from\") takes the genitive: od gradnje."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "ovaj prazan prostor u ___ Novog Beograda",
+     "o": [
+      "srce",
+      "srcu",
+      "srca",
+      "srcem"
+     ],
+     "a": 1,
+     "e": "The preposition u (\"in\") answering \"where?\" takes the locative: u srcu."
+    }
+   ]
+  }
+ ]
+}
