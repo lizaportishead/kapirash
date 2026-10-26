@@ -106,15 +106,19 @@ class _KapirasAppState extends State<KapirasApp> {
 
   @override
   Widget build(BuildContext context) {
-    final home = AnimatedSwitcher(
-      duration: Duration(milliseconds: 250),
-      // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
-      // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
-      child: !_onboarded
-          ? (kIsWeb ? _WebStart() : OnboardingPage())
-          : !_surveyDone
-          ? SurveyPage()
-          : HomeShell(),
+    // Начальный маршрут строится один раз, поэтому сам слушает store: иначе после «Готово» или «Смотреть без авторизации» экран не сменится до перезагрузки.
+    Widget home() => ListenableBuilder(
+      listenable: store,
+      builder: (_, _) => AnimatedSwitcher(
+        duration: Duration(milliseconds: 250),
+        // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
+        // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
+        child: !store.onboarded
+            ? (kIsWeb ? _WebStart() : OnboardingPage())
+            : !store.surveyDone
+            ? SurveyPage()
+            : HomeShell(),
+      ),
     );
     return MaterialApp(
       title: 'Kapiraš',
@@ -132,10 +136,10 @@ class _KapirasAppState extends State<KapirasApp> {
         value: _dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
         child: child!,
       ),
-      home: home,
+      home: home(),
       // Адрес вида /#/video/<id> не должен искать маршруты по частям: всегда стартуем с главной,
       // а нужный экран откроет HomeShell по pendingLink.
-      onGenerateInitialRoutes: (_) => [MaterialPageRoute<void>(settings: RouteSettings(name: '/'), builder: (_) => home)],
+      onGenerateInitialRoutes: (_) => [MaterialPageRoute<void>(settings: RouteSettings(name: '/'), builder: (_) => home())],
     );
   }
 }
@@ -468,6 +472,22 @@ class _HomeShellState extends State<HomeShell> {
                       color: _tab == page ? cText : cMuted,
                     ),
                   ),
+                  if (page == _words) ...[
+                    Spacer(),
+                    ListenableBuilder(
+                      listenable: store,
+                      builder: (_, _) => store.words.isEmpty
+                          ? SizedBox.shrink()
+                          : Container(
+                              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              decoration: BoxDecoration(color: cViolet, borderRadius: BorderRadius.circular(10)),
+                              child: Text(
+                                '${store.words.length}',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cOnViolet),
+                              ),
+                            ),
+                    ),
+                  ],
                 ],
               ),
             ),
