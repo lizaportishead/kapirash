@@ -141,14 +141,20 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     final wide = MediaQuery.sizeOf(context).width >= 1100;
     final showcase = wide && (widget.start || widget.intro);
-    final form = _form(wide);
+    final form = _form(wide, showcase);
     return Scaffold(
       body: SafeArea(
         child: showcase
-            ? Row(
+            ? Stack(
                 children: [
-                  Expanded(flex: 2, child: form),
-                  Expanded(child: OnboardingShowcase()),
+                  Row(
+                    children: [
+                      Expanded(flex: 2, child: form),
+                      Expanded(child: OnboardingShowcase()),
+                    ],
+                  ),
+                  Positioned(left: 40, top: 32, child: _logo()),
+                  if (widget.intro) Positioned(right: 32, top: 32, child: LangSwitch(color: cText)),
                 ],
               )
             : form,
@@ -180,7 +186,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  Widget _form(bool wide) {
+  Widget _form(bool wide, bool showcase) {
     return Center(
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 480),
@@ -208,7 +214,9 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                       ),
-                    if (widget.intro)
+                    if (showcase)
+                      SizedBox.shrink()
+                    else if (widget.intro)
                       Stack(
                         children: [
                           _logo(),
