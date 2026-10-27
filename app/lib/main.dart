@@ -14,6 +14,7 @@ import 'icons.dart';
 import 'install_banner.dart';
 import 'kap_loader.dart';
 import 'auth_page.dart';
+import 'auth_callback_io.dart' if (dart.library.js_interop) 'auth_callback_web.dart';
 import 'my_videos_page.dart';
 import 'onboarding_page.dart';
 import 'player_page.dart';
@@ -44,14 +45,27 @@ Future<void> main() async {
     ),
   );
   if (supabaseKey.isNotEmpty) {
-    // После входа через Google initialize ждёт обмена кода из ссылки на сессию; если запрос завис или упал,
-    // не держим заставку вечно: клиент уже создан, а сессия подхватится позже через onAuthStateChange.
-    final init = Supabase.initialize(url: supabaseUrl, publishableKey: supabaseKey);
+    // На вебе автодетект сессии в адресе зависает на app_links.getInitialLink, и после входа через Google сессия
+    // не появляется. Поэтому на вебе обмениваем код из адреса сами.
+    final init = Supabase.initialize(
+      url: supabaseUrl,
+      publishableKey: supabaseKey,
+      authOptions: FlutterAuthClientOptions(detectSessionInUri: !kIsWeb),
+    );
     try {
       await init.timeout(Duration(seconds: 8));
     } catch (e) {
       debugPrint('Supabase init: $e');
       unawaited(init.then<void>((_) {}, onError: (_) {}));
+    }
+    final callback = webAuthCallback();
+    if (callback != null) {
+      try {
+        await Supabase.instance.client.auth.getSessionFromUrl(callback).timeout(Duration(seconds: 15));
+      } catch (e) {
+        debugPrint('Auth callback: $e');
+      }
+      clearWebAuthCallback();
     }
     cloud = Supabase.instance.client;
   }
