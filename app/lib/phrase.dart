@@ -178,8 +178,8 @@ void showWord(
 }
 
 /// Кнопка-ссылка в строке под переводом.
-class _LinkButton extends StatelessWidget {
-  const _LinkButton({required this.icon, required this.label, required this.url});
+class LinkButton extends StatelessWidget {
+  const LinkButton({super.key, required this.icon, required this.label, required this.url});
   final Widget icon;
   final String label;
   final Uri url;
@@ -304,12 +304,12 @@ class _WordCardState extends State<WordCard> {
                     Wrap(
                       spacing: 8,
                       children: [
-                        _LinkButton(
+                        LinkButton(
                           icon: Image.asset('assets/glosbe.png', width: 18, height: 18),
                           label: ui('Смотреть в Glosbe'),
                           url: Uri.https('glosbe.com', '/sr/${store.lang == 'en' ? 'en' : 'ru'}/$cyr'),
                         ),
-                        _LinkButton(
+                        LinkButton(
                           icon: Text(
                             'W',
                             style: TextStyle(fontFamily: 'serif', fontSize: 17, fontWeight: FontWeight.w700, height: 1, color: cMuted),

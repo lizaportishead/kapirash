@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'speak.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'l10n.dart';
@@ -267,15 +266,6 @@ class _FlipCard extends StatelessWidget {
                   );
                 },
               ),
-            ),
-          ),
-          Positioned(
-            top: 6,
-            right: 6,
-            child: IconButton(
-              tooltip: ui('Прослушать {0}', [head]),
-              icon: Icon(Icons.volume_up_rounded, size: 24, color: cViolet),
-              onPressed: () => speakWord(head),
             ),
           ),
         ],
