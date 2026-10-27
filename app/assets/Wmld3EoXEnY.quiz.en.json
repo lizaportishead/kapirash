@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is special about this video, according to the author?",
+     "o": [
+      "She prepared discounts for the viewers",
+      "She shows her new house",
+      "She is running a giveaway",
+      "She shows purchases from a market"
+     ],
+     "a": 0,
+     "e": "In the video: \"današnji video je poseban jer sam pripremila popuste za vas\" — today's video is special because I have prepared discounts for you."
+    },
+    {
+     "q": "What did she order first for the living room?",
+     "o": [
+      "A lamp and a rug",
+      "A set of chair covers and a tablecloth",
+      "New curtains",
+      "A Christmas tree"
+     ],
+     "a": 1,
+     "e": "In the video: \"naručila sam ovaj set za dnevnu sobu, za stolice i stolnjak\" — I ordered this set for the living room, for the chairs and a tablecloth."
+    },
+    {
+     "q": "Why does she like leg warmers and tights so much?",
+     "o": [
+      "She gets cold very easily",
+      "They are fashionable in her town",
+      "Her boyfriend gave them",
+      "They are cheap"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ja sam jako zimogrozna\" — I am very sensitive to cold."
+    },
+    {
+     "q": "Why does she need a chocolate mold?",
+     "o": [
+      "To make Dubai chocolate",
+      "To bake cakes",
+      "To fill with ice",
+      "To make soap"
+     ],
+     "a": 0,
+     "e": "In the video: \"zato što volim da pravim Dubai čokoladu\" — because I like making Dubai chocolate."
+    },
+    {
+     "q": "Why did she buy a burgundy handbag?",
+     "o": [
+      "Burgundy is in trend now",
+      "It has been her favorite color since childhood",
+      "The handbag was on sale",
+      "Her mom ordered the handbag"
+     ],
+     "a": 0,
+     "e": "In the video: \"Bordo je u trendu.\" — Burgundy is trendy."
+    },
+    {
+     "q": "Who did she order the jump rope for?",
+     "o": [
+      "For her brother",
+      "For her mom",
+      "For herself",
+      "For her boyfriend"
+     ],
+     "a": 3,
+     "e": "In the video: \"Vijaču sam naručila mom dečku.\" — I ordered the jump rope for my boyfriend."
+    },
+    {
+     "q": "Why does she take several screen protectors at once?",
+     "o": [
+      "They keep breaking",
+      "They fit different phones",
+      "She gives them as gifts",
+      "They are very expensive"
+     ],
+     "a": 0,
+     "e": "In the video: \"stalno mi se lomi\" — mine keeps breaking."
+    },
+    {
+     "q": "What does she say about diamond painting?",
+     "o": [
+      "It relaxes her",
+      "It is a very expensive hobby",
+      "It is too difficult",
+      "It gets boring"
+     ],
+     "a": 0,
+     "e": "In the video: \"i meni je to jako opuštajuće\" — and I find it very relaxing."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Besplatna *dostava*, brzo stižu paketi",
+     "o": [
+      "delivery",
+      "discount",
+      "refund",
+      "packaging"
+     ],
+     "a": 0,
+     "e": "dostava — delivery."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "i dobijete *stolnjak*",
+     "o": [
+      "a towel",
+      "a tablecloth",
+      "a napkin",
+      "a curtain"
+     ],
+     "a": 1,
+     "e": "stolnjak — tablecloth."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam jako *zimogrozna*",
+     "o": [
+      "cheerful",
+      "tired",
+      "sensitive to cold",
+      "sleepy"
+     ],
+     "a": 2,
+     "e": "zimogrozan — someone who gets cold easily."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Volim *hulahopke*, nosim zimi.",
+     "o": [
+      "gloves",
+      "hats",
+      "tights",
+      "scarves"
+     ],
+     "a": 2,
+     "e": "hulahopke — tights."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo su organizatori za *fioke*",
+     "o": [
+      "shelves",
+      "drawers",
+      "boxes",
+      "sacks"
+     ],
+     "a": 1,
+     "e": "fioka — a drawer."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobijete *daljinski*, LED sijalice",
+     "o": [
+      "an adapter",
+      "instructions",
+      "a case",
+      "a remote"
+     ],
+     "a": 3,
+     "e": "daljinski (upravljač) — remote control."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobije se *pinceta*",
+     "o": [
+      "pliers",
+      "scissors",
+      "tweezers",
+      "a knife"
+     ],
+     "a": 2,
+     "e": "pinceta — tweezers."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prelepa je i jedva čekam da je završim",
+     "o": [
+      "beautiful",
+      "expensive",
+      "heavy",
+      "old"
+     ],
+     "a": 0,
+     "e": "prelepa — very beautiful."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Choose the preposition",
+     "q": "naručila sam ovaj set ___ dnevnu sobu",
+     "o": [
+      "za",
+      "na",
+      "od",
+      "kod"
+     ],
+     "a": 0,
+     "e": "set za + acc. — a set for the living room."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Inače ___ nas ovo staklo košta preko hiljadu dinara",
+     "o": [
+      "na",
+      "od",
+      "kod",
+      "za"
+     ],
+     "a": 2,
+     "e": "kod nas — at our place (in our country)."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Sad ću odmah čim ___ snimanje da je stavim",
+     "o": [
+      "završavam",
+      "završim",
+      "završavaš",
+      "završavao"
+     ],
+     "a": 1,
+     "e": "After čim a perfective verb is needed: završim."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Jako je ___ materijal, kao vuna",
+     "o": [
+      "lepa",
+      "lepo",
+      "lepi",
+      "lep"
+     ],
+     "a": 3,
+     "e": "materijal is masculine, so lep."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Imam neke bordo ___, džemperiće",
+     "o": [
+      "haljina",
+      "haljinu",
+      "haljine",
+      "haljini"
+     ],
+     "a": 2,
+     "e": "Direct object, acc. pl.: haljine."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Vijaču sam naručila mom ___",
+     "o": [
+      "dečka",
+      "dečko",
+      "dečku",
+      "dečkom"
+     ],
+     "a": 2,
+     "e": "To whom? Dative: mom dečku."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Ubacite u veš ___ i onda možete kao više boja",
+     "o": [
+      "mašina",
+      "mašini",
+      "mašinom",
+      "mašinu"
+     ],
+     "a": 3,
+     "e": "ubaciti u + acc. (where to?): u mašinu."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "Ja sam ih uvek ___",
+     "o": [
+      "nosio",
+      "nosili",
+      "nosila",
+      "nosilo"
+     ],
+     "a": 2,
+     "e": "A woman is speaking: nosila (fem.)."
+    }
+   ]
+  }
+ ]
+}

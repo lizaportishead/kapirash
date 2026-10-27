@@ -141,6 +141,7 @@ const _builtInCreators = <String, Creator>{
   'Potrošački savetnik': Creator('potrosackisavetnik', 'ytc/AIdro_l2-5Y_pwsirmV9Tmy2ldh6oS4ahlk_KXIX-9mttinPCA'),
   'emisija Farma': Creator('emisijafarma', 'ytc/AIdro_mcvvLUDrn7BGid392GKyiuebmx_na6VvS73aw8a3v1krw'),
   'Južne vesti': Creator('juznevesti', 'ytc/AIdro_mf-BKRpXx3RLqm9uQn3l0E3Ba_KnCUN7bSGXJKrXWAwec'),
+  'Gruberka': Creator('gruuberka'),
   'Even M&N': Creator('evenmandn', '07q6K9QKEBYOtrOxGi1Dyf75VukTEvDJMdmjV8TDmA6J_Qn1_0oX-lZEwNcdXRhmqnHFlLqlvw'),
   'Ana Marija & Saša': Creator('anamarijasasa9486', 'ytc/AIdro_kiKflXXGUaqZpvD05mp_1_zcF3s5HPNkdcrnwaGvQyaw'),
   'Tomi tamas': Creator('kulacity', 'ytc/AIdro_nudmK7fH0b6TVfYxDQQynF9fbEagmHJzcW5yA-2sr9qJ8'),
@@ -636,6 +637,14 @@ const _builtInVideos = <Video>[
     topic: 'Юмор',
     level: 'B2',
     duration: '18:40',
+  ),
+  Video(
+    id: 'Wmld3EoXEnY',
+    title: 'TEMU HAUL - šta sam sve kupila?!',
+    channel: 'Gruberka',
+    topic: 'Быт',
+    level: 'B1',
+    duration: '17:11',
   ),
 ];
 
