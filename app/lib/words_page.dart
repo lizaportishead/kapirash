@@ -478,6 +478,11 @@ class _WordSheet extends StatelessWidget {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, height: 1.1, letterSpacing: -0.6, color: cText),
                   ),
                 ),
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  icon: Icon(Icons.close, size: 22, color: cMuted),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
               ],
             ),
             if (w.tr.isNotEmpty) ...[
@@ -494,38 +499,72 @@ class _WordSheet extends StatelessWidget {
             ],
             if (links != null) ...[SizedBox(height: 10), links],
             SizedBox(height: 12),
-            InkWell(
-              borderRadius: BorderRadius.circular(8),
-              onTap: onOpen,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 4),
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      ..._WordsPageState._ctxSpans(store.conv(w.ctx), {w.key, if (w.form != null) w.form!}),
-                      if (onOpen != null) ...[
-                        TextSpan(text: ' '),
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: Icon(Icons.arrow_forward_rounded, size: 16, color: cViolet),
-                        ),
+            Material(
+              color: cCard,
+              borderRadius: BorderRadius.circular(14),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(14),
+                onTap: onOpen,
+                child: Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        ..._WordsPageState._ctxSpans(store.conv(w.ctx), {w.key, if (w.form != null) w.form!}),
+                        if (onOpen != null) ...[
+                          TextSpan(text: ' '),
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: Icon(Icons.arrow_forward_rounded, size: 16, color: cViolet),
+                          ),
+                        ],
                       ],
-                    ],
+                    ),
+                    style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                   ),
-                  style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                 ),
               ),
             ),
             if (story != null || video != null) ...[
-              SizedBox(height: 6),
-              Text(
-                story != null ? ui('{0} · стр. {1}', [story.title, w.t.toInt()]) : (video?.title ?? ''),
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
+              SizedBox(height: 8),
+              Row(
+                children: [
+                  Icon(
+                    story != null
+                        ? Icons.menu_book_rounded
+                        : video!.podcast
+                        ? Icons.mic_rounded
+                        : Icons.play_circle_outline_rounded,
+                    size: 16,
+                    color: cFaint,
+                  ),
+                  SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      story != null ? ui('{0} · стр. {1}', [story.title, w.t.toInt()]) : (video?.title ?? ''),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cFaint),
+                    ),
+                  ),
+                ],
               ),
             ],
             SizedBox(height: 16),
             Row(
               children: [
+                TextButton.icon(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xFFFDE8E8),
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
+                  icon: Icon(Icons.delete_outline_rounded, size: 18, color: Color(0xFFD32F2F)),
+                  label: Text(ui('Удалить слово'), style: TextStyle(color: Color(0xFFD32F2F), fontWeight: FontWeight.w700)),
+                  onPressed: () {
+                    store.remove(w.key);
+                    Navigator.of(context).pop();
+                  },
+                ),
+                Spacer(),
                 if (w.learned)
                   TextButton.icon(
                     icon: Icon(Icons.undo_rounded, size: 18, color: cMuted),
@@ -535,15 +574,6 @@ class _WordSheet extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                   ),
-                Spacer(),
-                TextButton.icon(
-                  icon: Icon(Icons.close, size: 18, color: cMuted),
-                  label: Text(ui('Убрать слово'), style: TextStyle(color: cMuted)),
-                  onPressed: () {
-                    store.remove(w.key);
-                    Navigator.of(context).pop();
-                  },
-                ),
               ],
             ),
           ],

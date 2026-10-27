@@ -282,6 +282,7 @@ const _en = <String, String>{
   'Сохранить фразу в словарь': 'Save phrase to dictionary',
   'Этого слова нет в словарике ролика.': "This word isn't in the video's dictionary.",
   'Убрать слово': 'Remove word',
+  'Удалить слово': 'Delete word',
   'Сохранить в словарь': 'Save to dictionary',
   'Посмотри ролик и выполни задания': 'Watch the video and do the exercises',
   'Текст': 'Text',
