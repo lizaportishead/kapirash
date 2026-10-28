@@ -87,8 +87,15 @@ class _ProfilePageState extends State<ProfilePage> {
         SizedBox(height: 12),
         _Group([
           _Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut),
-          _Row(icon: Icons.delete_outline_rounded, title: ui('Удалить аккаунт'), onTap: _confirmDelete),
         ]),
+        SizedBox(height: 8),
+        Center(
+          child: TextButton(
+            onPressed: _confirmDelete,
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
+            child: Text(ui('Удалить аккаунт'), style: TextStyle(fontWeight: FontWeight.w600)),
+          ),
+        ),
       ],
     ];
   }
@@ -97,7 +104,8 @@ class _ProfilePageState extends State<ProfilePage> {
     final ok = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
-        title: Text(ui('Удалить аккаунт?')),
+        icon: Icon(Icons.error_rounded, color: Colors.red, size: 40),
+        title: Text(ui('Удалить аккаунт?'), textAlign: TextAlign.center),
         content: Text(ui('Аккаунт и данные в облаке будут удалены без возможности восстановления. Слова и прогресс на этом устройстве останутся.')),
         actions: [
           TextButton(onPressed: () => Navigator.pop(c, false), child: Text(ui('Отмена'))),
