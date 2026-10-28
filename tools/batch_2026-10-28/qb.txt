@@ -1,0 +1,184 @@
+3.0|6.5|Nekada davno čuda su se zaista događala.|Когда-то давно чудеса и правда случались.|Once upon a time, miracles really did happen.
+6.5|14.5|Neverovatne čarolije otvarale su vrata čarobne zemlje Simsale.|Невероятные чары открывали двери волшебной страны Симсалы.|Incredible spells opened the doors of the magical land of Simsala.
+14.5|20.5|Mesta gde su svi likovi iz bajki zaista živeli.|Места, где жили все герои сказок.|A place where all the characters from fairy tales really lived.
+20.5|23.0|Abrakadabra, Simsala Grim.|Абракадабра, Симсала Грим.|Abracadabra, Simsala Grim.
+139.0|141.0|I šta beše ono zadnje?|И что там было последним?|And what was that last one?
+141.0|143.0|Neočekivani događaji.|Неожиданные события.|Unexpected events.
+144.0|148.5|I kako jedva čekate da upoznate devojku iz vaših snova?|И как, вам не терпится встретить девушку своей мечты?|And how do you look forward to meeting the girl of your dreams?
+149.0|154.0|Ne, gospodine, nikad mi niste pričali o tome. Baš nijedno.|Нет, господин, вы никогда мне об этом не рассказывали. Совсем ни одного.|No, sir, you've never told me about that. Not a single one.
+167.0|172.0|Avantura, ljubav i neočekivani događaj.|Приключение, любовь и неожиданное событие.|Adventure, love and an unexpected event.
+172.0|176.0|Uskoro ću da krenem, ali vratiću se brzo.|Скоро я отправлюсь, но скоро вернусь.|I'm going to leave soon, but I'll be back quickly.
+191.0|194.0|Da, rekla si to već dva puta.|Да, ты уже говорила это два раза.|Yes, you've already said that twice.
+195.0|196.5|Pa šta čekaš?|Ну так чего ты ждёшь?|So what are you waiting for?
+197.0|204.0|Da, ali nikada do sada nisam izlazila na površinu i...|Да, но я никогда до сих пор не выплывала на поверхность и...|Yes, but I've never been up to the surface until now and...
+204.0|208.0|Pa, sada ti je dozvoljeno da ideš gore.|Ну, теперь тебе разрешено подняться наверх.|Well, now you're allowed to go up there.
+208.0|212.0|Danas puniš petnaest godina, vreme je da iskusiš život.|Сегодня тебе исполняется пятнадцать лет, пора испытать жизнь.|Today you turn fifteen, it's time to experience life.
+214.0|221.0|Idem ja sada na površinu, vratiću se brzo.|Я сейчас отправляюсь на поверхность, скоро вернусь.|I'm going up to the surface now, I'll be back soon.
+221.0|225.0|Da, to si već rekla. Tri puta.|Да, ты это уже говорила. Три раза.|Yes, you've said that already. Three times.
+227.0|230.0|Idem na površinu, idem na površinu.|Я иду на поверхность, я иду на поверхность.|I'm going to the surface, I'm going to the surface.
+245.0|247.0|Ne možete da dišete.|Вы не можете дышать.|You can't breathe.
+255.0|259.0|Hvala ti neizmerno što si nam spasla živote.|Огромное тебе спасибо, что спасла нам жизни.|Thank you so much for saving our lives.
+259.0|262.5|Ja sam doktor Kroki, naučnik, filozof.|Я доктор Кроки, учёный, философ.|I'm Doctor Croki, a scientist, a philosopher.
+262.5|267.0|A ja sam Jojo, najveći pustolov ikada.|А я Йойо, величайший искатель приключений на свете.|And I'm Yoyo, the greatest adventurer ever.
+268.0|271.0|Vas dvojica ste sigurno zalutali sa površine mora.|Вы двое, должно быть, заблудились и приплыли с поверхности моря.|You two must have strayed here from the surface of the sea.
+271.0|275.0|Danas vam je srećan dan. Upravo sam tamo krenula.|Сегодня у вас счастливый день. Я как раз туда направлялась.|Today is your lucky day. I was just heading there.
+275.0|280.0|Hajde, pokazaću vam put.|Пойдёмте, я покажу вам дорогу.|Come on, I'll show you the way.
+300.0|303.0|Nisam mislio da ću ponovo videti sunce.|Я не думал, что снова увижу солнце.|I didn't think I'd see the sun again.
+306.0|309.0|Sunce je ona velika, žuta stvar.|Солнце — это вон та большая жёлтая штука.|The sun is that big, yellow thing.
+309.0|312.0|Shvatam. A šta je, za ime Neptuna, ono?|Понимаю. А что это, во имя Нептуна, там?|I see. And what in the name of Neptune is that?
+314.0|316.0|Brod, to se zove brod.|Корабль, это называется корабль.|A ship, that's called a ship.
+320.0|323.0|A ono prelepo biće koje stoji na njemu?|А то прекрасное существо, которое стоит на нём?|And that beautiful creature standing on it?
+323.0|329.0|To mi zovemo zgodnim princem, ako te zanimaju takve stvari.|Мы называем это красивым принцем, если тебя интересуют такие вещи.|We call that a handsome prince, if you're interested in such things.
+340.0|344.0|Nikada nisam videla ništa slično.|Я никогда не видела ничего подобного.|I've never seen anything like it.
+354.0|357.0|Mislim da se neko zaljubio.|Кажется, кто-то влюбился.|I think someone has fallen in love.
+362.0|365.0|Kapetane Smaders, jeste li čuli nešto?|Капитан Смейдерс, вы что-нибудь слышали?|Captain Smeders, did you hear something?
+366.0|367.5|Neki lep glas?|Какой-то красивый голос?|Some beautiful voice?
+373.0|376.0|Bio je to očaravajući glas.|Это был очаровательный голос.|It was an enchanting voice.
+387.0|390.0|Najbolje je da siđete pod palubu, vaša visosti.|Лучше вам спуститься под палубу, ваше высочество.|You had better go below deck, Your Highness.
+393.0|396.0|Povetarac? Pa nisam od šećera, znate.|Ветерок? Я же не из сахара, знаете ли.|A breeze? Well, I'm not made of sugar, you know.
+506.0|513.0|Još važnije, diše i izgleda da će preživeti. Čekajte, neko dolazi.|Важнее другое: он дышит и, похоже, выживет. Подождите, кто-то идёт.|More importantly, he's breathing and it looks like he'll survive. Wait, someone's coming.
+514.0|517.0|Brzo, ljudi, da nas ne vide.|Скорее, ребята, чтобы нас не увидели.|Quickly, guys, so they don't see us.
+521.0|524.0|Oh, jesi li dobro?|О, ты в порядке?|Oh, are you all right?
+532.0|534.0|Šta, šta se dogodilo?|Что, что случилось?|What, what happened?
+535.0|540.0|Poslednje čega se sećam je snažna oluja i moj brod.|Последнее, что я помню, — сильная буря и мой корабль.|The last thing I remember is a powerful storm and my ship.
+540.0|543.0|Sada si bezbedan. Jesi li dobro?|Теперь ты в безопасности. Ты в порядке?|You're safe now. Are you all right?
+543.0|546.0|Ništa nije slomljeno. Dobro se osećam.|Ничего не сломано. Я хорошо себя чувствую.|Nothing is broken. I feel fine.
+546.0|551.0|Još neko je bio ovde. Nisam dobro video ko je to bio.|Здесь был кто-то ещё. Я не разглядел, кто это был.|Someone else was here. I didn't see well who it was.
+551.0|557.0|Ova oluja me je ošamutila. Ja sam Vincent. Da se predstavim.|Эта буря меня оглушила. Я Винсент. Позвольте представиться.|This storm has stunned me. I'm Vincent. Let me introduce myself.
+557.0|560.0|A ja sam Arabela. Hajde, odvešću te do hrama.|А я Арабела. Пойдём, я отведу тебя в храм.|And I'm Arabella. Come on, I'll take you to the temple.
+563.0|565.0|Nemoj da ideš, slatki prinče.|Не уходи, милый принц.|Don't go, sweet prince.
+566.0|569.0|Hoću li ga ikada više videti?|Увижу ли я его когда-нибудь ещё?|Will I ever see him again?
+569.0|571.0|Naravno da hoćeš.|Конечно, увидишь.|Of course you will.
+571.0|574.0|Ali kako, kad nas dele zemlja i more?|Но как, если нас разделяют земля и море?|But how, when land and sea divide us?
+579.0|584.0|O, volela bih da sam ljudsko biće. Volela bih da imam noge.|О, как бы я хотела быть человеком. Как бы я хотела иметь ноги.|Oh, I wish I were a human being. I wish I had legs.
+584.0|590.0|Hodala bih do njega i plesala sa njim. A on bi se zaljubio u mene.|Я бы шла к нему и танцевала с ним. И он бы в меня влюбился.|I'd walk to him and dance with him. And he'd fall in love with me.
+590.0|595.0|Za to je potrebna moćna čarolija, zar ne? Da bi dobila noge, mislim.|Для этого нужны мощные чары, не так ли? Чтобы обрести ноги, я имею в виду.|That takes a powerful spell, doesn't it? To get legs, I mean.
+595.0|601.0|Da, potrebna je moćna čarolija. Postoji neko koga mogu da pitam.|Да, нужны мощные чары. Есть тот, кого я могу спросить.|Yes, it takes a powerful spell. There is someone I can ask.
+601.0|605.0|Morsku vešticu? Morsku vešticu?|Морскую ведьму? Морскую ведьму?|The sea witch? The sea witch?
+616.0|621.0|Da li možeš bilo kako da mi pomogneš?|Можешь ли ты как-нибудь мне помочь?|Can you help me in any way?
+622.0|626.0|Želiš da postaneš ljudsko biće zbog ljubavi?|Ты хочешь стать человеком ради любви?|You want to become a human being for love?
+626.5|627.5|Da.|Да.|Yes.
+628.0|634.0|Znaš da sirene žive pet puta duže od ljudi, i voljna si da se odrekneš toga?|Ты знаешь, что русалки живут в пять раз дольше людей, и готова от этого отказаться?|You know that mermaids live five times longer than humans, and you're willing to give that up?
+635.0|641.0|Pa, za šansu da budem sa mojim princom, da. Želim da budem ljudsko biće da bih bila sa njim.|Ради шанса быть с моим принцем — да. Я хочу стать человеком, чтобы быть с ним.|Well, for a chance to be with my prince, yes. I want to be a human being so I can be with him.
+641.0|643.0|Da bih bila srećna.|Чтобы быть счастливой.|So that I can be happy.
+643.0|646.0|Postoji nešto što mogu da ti dam.|Есть кое-что, что я могу тебе дать.|There is something I can give you.
+650.0|655.0|Napitak koji će ti dati ljudski oblik. Da, to želim.|Зелье, которое даст тебе человеческий облик. Да, этого я хочу.|A potion that will give you a human form. Yes, that's what I want.
+655.0|661.0|Imaćeš noge i izgledaćeš kao ljudsko biće. Ali to ima svoju cenu.|У тебя будут ноги, и ты будешь выглядеть как человек. Но у этого есть своя цена.|You'll have legs and you'll look like a human being. But it has its price.
+668.0|669.5|Daću ti bilo šta.|Я отдам тебе что угодно.|I'll give you anything.
+670.0|671.5|Koja je cena?|Какова цена?|What's the price?
+675.0|678.0|Koštaće te tvog glasa.|Она будет стоить тебе твоего голоса.|It will cost you your voice.
+680.0|687.0|Moći ćeš da budeš sa svojim princom, ali više nikad nećeš moći da govoriš ni da pevaš.|Ты сможешь быть со своим принцем, но больше никогда не сможешь ни говорить, ни петь.|You'll be able to be with your prince, but you'll never be able to speak or sing again.
+688.0|690.0|Nemoj to da radiš!|Не делай этого!|Don't do it!
+690.5|692.0|Uradiću to.|Я сделаю это.|I'll do it.
+693.0|695.0|Sama si odabrala.|Ты сама выбрала.|You chose it yourself.
+699.0|701.0|Nadam se da je najbolji na svetu.|Надеюсь, он лучший на свете.|I hope he's the best in the world.
+701.0|707.0|Kad budeš dobila noge, neće ti biti lako da ih koristiš i boleće te.|Когда у тебя появятся ноги, тебе будет нелегко ими пользоваться, и тебе будет больно.|When you get legs, it won't be easy to use them and it will hurt.
+708.0|710.0|Ali imaću šansu da budem sa princom?|Но у меня будет шанс быть с принцем?|But I'll have a chance to be with the prince?
+710.0|719.0|Tačno, ostatak zavisi od tebe, ali ako se ne zaljubi u tebe, sledećeg dana ćeš se pretvoriti u morsku penu.|Верно, остальное зависит от тебя, но если он в тебя не влюбится, на следующий день ты превратишься в морскую пену.|Right, the rest is up to you, but if he doesn't fall in love with you, the next day you'll turn into sea foam.
+723.0|726.0|Ovo ne zvuči kao poštena cena.|Это не похоже на честную цену.|This doesn't sound like a fair price.
+757.0|759.0|Hoće li to da uradi ili ne?|Сделает ли она это или нет?|Will she do it or not?
+759.0|761.0|O, ne mogu više ovo da gledam.|О, я больше не могу на это смотреть.|Oh, I can't watch this anymore.
+766.0|770.0|Ko zna, možda ti se ne dopadne taj princ kad ga upoznaš.|Кто знает, может, тебе не понравится этот принц, когда ты его узнаешь.|Who knows, maybe you won't like that prince when you get to know him.
+770.0|776.0|Znam da si dobronameran, ali samo jednom u životu ti se pruža šansa za pravu sreću.|Я знаю, что ты желаешь добра, но лишь раз в жизни тебе выпадает шанс на настоящее счастье.|I know you mean well, but only once in your life are you given a chance at true happiness.
+778.0|780.0|Ovo je moja šansa.|Это мой шанс.|This is my chance.
+788.0|790.0|Jesi li dobro?|Ты в порядке?|Are you all right?
+822.0|823.5|Uplašila si me.|Ты меня напугала.|You scared me.
+825.0|830.0|Ja sam Vincent. Princ Vincent.|Я Винсент. Принц Винсент.|I'm Vincent. Prince Vincent.
+830.0|833.0|A ti si...|А ты...|And you are...
+833.0|841.0|Zar ne možeš da govoriš? Je li to u pitanju?|Ты не можешь говорить? В этом дело?|Can't you speak? Is that the problem?
+844.0|851.0|Dozvoli da pomognemo. Sire, ova devojka misli da si veoma zgodan princ.|Позволь нам помочь. Сир, эта девушка считает вас очень красивым принцем.|Allow us to help. Sire, this girl thinks you're a very handsome prince.
+854.0|856.0|Ozbiljno?|Серьёзно?|Seriously?
+857.0|863.0|Moj prijatelj hoće da kaže da joj se mnogo dopadaš.|Мой друг хочет сказать, что ты ей очень нравишься.|My friend wants to say that she likes you a lot.
+863.0|867.0|O, u tom slučaju, mogu li da plešem sa njom?|О, в таком случае, можно мне потанцевать с ней?|Oh, in that case, may I dance with her?
+886.0|892.0|Šta je ono? To je moj otac. Došao je.|Что это? Это мой отец. Он приехал.|What is that? It's my father. He has come.
+893.0|899.0|Moramo da se oprostimo, prelepa devojko. Drago mi je što sam te upoznao. I vas dvojicu.|Мы должны попрощаться, прекрасная девушка. Рад был с тобой познакомиться. И с вами двумя.|We have to say goodbye, beautiful girl. I'm glad I met you. And you two as well.
+899.0|901.0|Možda ćemo se opet sresti jednog dana.|Может быть, мы ещё встретимся однажды.|Maybe we'll meet again one day.
+902.0|907.0|Žao mi je što je morao da ode. Mislim da je ovo bilo vrlo uspešno upoznavanje.|Жаль, что ему пришлось уйти. Думаю, это было очень удачное знакомство.|I'm sorry he had to go. I think this was a very successful meeting.
+907.0|910.0|Da, rekao bih da mu se sviđaš.|Да, я бы сказал, что ты ему нравишься.|Yes, I'd say he likes you.
+924.0|926.0|Dobro si raspoložen, sine moj.|Ты в хорошем настроении, сын мой.|You're in a good mood, my son.
+927.0|933.0|A, oče, hodam po oblacima. Prvi put u životu sam se zaljubio.|А, отец, я хожу по облакам. Впервые в жизни я влюбился.|Ah, father, I'm walking on clouds. For the first time in my life I've fallen in love.
+933.0|937.0|Ovo nisam osetio nikada do sada, barem ne ovako.|Такого я не чувствовал никогда до сих пор, по крайней мере не так.|I've never felt this before, at least not like this.
+937.0|940.0|Žao mi je što to čujem, sine.|Мне жаль это слышать, сын.|I'm sorry to hear that, son.
+941.0|942.5|Da, da, znam.|Да, да, знаю.|Yes, yes, I know.
+942.5|944.0|Ne treba da te podsećam.|Мне не нужно тебе напоминать.|I don't need to remind you.
+944.0|946.0|Ne, znam.|Нет, знаю.|No, I know.
+946.0|950.0|Došao si ovamo da bi oženio čerku kralja Donatela.|Ты приехал сюда, чтобы жениться на дочери короля Донателя.|You came here to marry the daughter of King Donatello.
+951.0|953.0|Da oženim kraljevu čerku?|Жениться на дочери короля?|To marry the king's daughter?
+953.0|957.0|Zbog toga si došao ovamo, na to si pristao, to si mi obećao.|Ради этого ты приехал сюда, на это ты согласился, это ты мне обещал.|That's why you came here, that's what you agreed to, that's what you promised me.
+958.0|960.0|Znam, oče, ali ja sam se zaljubio.|Знаю, отец, но я влюбился.|I know, father, but I've fallen in love.
+961.0|962.0|Sutra ćeš se oženiti.|Завтра ты женишься.|Tomorrow you will get married.
+962.0|965.0|Ne, oče, neću. Ne mogu kad volim drugu.|Нет, отец, не женюсь. Не могу, когда люблю другую.|No, father, I won't. I can't when I love another.
+965.0|968.0|Mislim da mi je ona spasla život.|Думаю, она спасла мне жизнь.|I think she saved my life.
+969.0|970.5|Spasla ti je život?|Спасла тебе жизнь?|She saved your life?
+971.0|976.0|Kad je moj brod nestao u oluji, mislim da me je ona iznela na obalu.|Когда мой корабль пропал в буре, мне кажется, она вынесла меня на берег.|When my ship vanished in the storm, I think she carried me ashore.
+976.0|979.0|Jesi li se oprostio od razuma, sine?|Ты что, простился с разумом, сын?|Have you taken leave of your senses, son?
+980.0|982.0|Čerka kralja Donatela te čeka ispred.|Дочь короля Донателя ждёт тебя снаружи.|King Donatello's daughter is waiting for you outside.
+982.0|985.0|Prestani da se izmotavaš.|Перестань выкручиваться.|Stop making excuses.
+985.0|988.0|Onda ću sam da joj kažem da otkazujem venčanje.|Тогда я сам скажу ей, что отменяю свадьбу.|Then I'll tell her myself that I'm cancelling the wedding.
+988.0|990.0|Upravo si joj to rekao.|Ты только что ей это сказал.|You just told her that.
+993.0|996.0|Nisam hteo da pokažem nepoštovanje.|Я не хотел проявить неуважение.|I didn't mean to show disrespect.
+996.0|998.0|Reci šta imaš da mi kažeš.|Скажи, что ты хочешь мне сказать.|Say what you have to say to me.
+999.0|1003.0|Ne mogu da te oženim, jer sam se zaljubio u drugu.|Я не могу на тебе жениться, потому что влюбился в другую.|I can't marry you, because I've fallen in love with another.
+1003.0|1004.0|U drugu?|В другую?|With another?
+1004.0|1007.0|U prelepu devojku koja se zove...|В прекрасную девушку, которую зовут...|With a beautiful girl called...
+1010.0|1012.0|Arabela?|Арабела?|Arabella?
+1012.0|1014.0|Ti si čerka kralja Donatela?|Ты дочь короля Донателя?|You're King Donatello's daughter?
+1014.0|1015.0|Jesam.|Да.|I am.
+1016.0|1018.0|Ali mislio sam da si učenica u hramu.|Но я думал, что ты ученица в храме.|But I thought you were a pupil in the temple.
+1018.0|1022.0|Jesam. Moj otac me je poslao u hram da učim.|Да. Отец отправил меня в храм учиться.|I am. My father sent me to the temple to study.
+1022.0|1025.0|Ali ja jesam princeza Arabela, kćerka kralja Donatela.|Но я и есть принцесса Арабела, дочь короля Донателя.|But I am Princess Arabella, King Donatello's daughter.
+1026.0|1027.0|I biću tvoja kraljica.|И я стану твоей королевой.|And I will be your queen.
+1027.5|1029.0|Nikad nisam bio srećniji.|Никогда я не был счастливее.|I've never been happier.
+1056.0|1059.0|Možeš da preokreneš čaroliju.|Ты можешь обратить чары вспять.|You can reverse the spell.
+1059.0|1061.0|Možeš ponovo da budeš sirena.|Ты можешь снова стать русалкой.|You can be a mermaid again.
+1062.0|1066.0|Da povratiš svoj glas i živiš do kraja večnosti.|Вернуть свой голос и жить до скончания вечности.|To get your voice back and live until the end of eternity.
+1066.0|1071.0|Ali loše odluke ne mogu tek tako da se isprave.|Но плохие решения нельзя просто так исправить.|But bad decisions can't just be corrected like that.
+1071.0|1074.0|Postoji cena za to.|За это есть цена.|There is a price for it.
+1075.0|1078.0|Nadam se da nije veća od prethodne.|Надеюсь, она не больше предыдущей.|I hope it's not bigger than the previous one.
+1080.0|1084.0|Moraš da ubiješ princa u noći posle njegovog venčanja.|Ты должна убить принца в ночь после его свадьбы.|You have to kill the prince on the night after his wedding.
+1091.0|1093.0|Ne postoji drugi način.|Другого способа нет.|There is no other way.
+1093.0|1097.0|Pa to je sigurno greška. Kako možeš da tražiš nešto tako?|Это наверняка ошибка. Как ты можешь требовать такое?|Well, that must be a mistake. How can you ask for something like that?
+1097.0|1101.0|Da, što je veća želja, to je veća žrtva.|Да, чем больше желание, тем больше жертва.|Yes, the bigger the wish, the bigger the sacrifice.
+1102.0|1107.0|Sigurno postoji neki drugi način, pored toliko napitaka i toliko čarolija.|Наверняка есть какой-то другой способ, при стольких зельях и стольких чарах.|There must be some other way, with so many potions and so many spells.
+1107.0|1110.0|Budite zahvalni što postoji bilo kakav način.|Будьте благодарны, что хоть какой-то способ есть.|Be grateful that there is any way at all.
+1111.0|1113.0|Ponesi ovo sa sobom i razmisli o tome.|Возьми это с собой и подумай об этом.|Take this with you and think about it.
+1114.0|1116.0|Nemaš mnogo vremena.|У тебя мало времени.|You don't have much time.
+1140.0|1145.0|Nije pošteno. Kako mala sirena može da pronađe svoju sreću ako su joj ovo izbori?|Это нечестно. Как маленькая русалка может найти своё счастье, если у неё такой выбор?|It's not fair. How can the little mermaid find her happiness if these are her choices?
+1145.0|1147.0|Možda neće moći.|Может, не сможет.|Maybe she won't be able to.
+1147.0|1149.0|Kakav onda izbor ima?|Какой тогда у неё выбор?|What choice does she have, then?
+1149.0|1154.0|Možda neće moći da nađe sreću za sebe, ali može da pruži drugima njihovu sreću.|Может, она не найдёт счастья для себя, но может подарить счастье другим.|Maybe she won't be able to find happiness for herself, but she can give others their happiness.
+1158.0|1164.0|Na ovom mestu smo se upoznali, i zato je to savršeno mesto da se zauvek povežemo.|На этом месте мы познакомились, и потому оно идеально, чтобы навсегда соединиться.|We met in this place, and that's why it's the perfect place to be joined forever.
+1194.0|1197.0|Zar ne možemo da učinimo nešto za nju?|Разве мы не можем что-нибудь для неё сделать?|Can't we do something for her?
+1199.0|1202.0|Možda i možemo. Pa, kuda idemo?|Может, и можем. Ну, куда мы идём?|Maybe we can. So, where are we going?
+1203.0|1204.0|Na tvoje omiljeno mesto.|В твоё любимое место.|To your favorite place.
+1204.0|1211.0|O, dobro onda. Ovo nikako nije moje omiljeno mesto.|О, ну ладно. Это вовсе не моё любимое место.|Oh, all right then. This is by no means my favorite place.
+1213.0|1214.5|Šalio sam se.|Я пошутил.|I was joking.
+1217.0|1218.5|Vratili ste se.|Вы вернулись.|You came back.
+1223.0|1225.0|Došli smo zbog male sirene.|Мы пришли из-за маленькой русалки.|We came because of the little mermaid.
+1226.0|1227.5|Nije valjda prokleta?|Неужели она проклята?|She isn't cursed, is she?
+1227.5|1232.0|Da, naravno da nije prokleta. Mora da donese odluku.|Да, конечно, не проклята. Ей нужно принять решение.|Yes, of course she isn't cursed. She has to make a decision.
+1233.0|1235.0|Da izabere jednu od dve užasne stvari.|Выбрать одну из двух ужасных вещей.|To choose one of two terrible things.
+1235.5|1238.0|To nije odluka, to je...|Это не решение, это...|That's not a decision, that's...
+1238.0|1243.0|Postoji još jedan način da preživi i živi večno.|Есть ещё один способ выжить и жить вечно.|There is another way for her to survive and live forever.
+1244.0|1246.0|A zašto joj to nisi rekla?|А почему ты ей этого не сказала?|And why didn't you tell her that?
+1247.0|1250.0|Zato što ako zna za to, onda neće uspeti.|Потому что, если она об этом знает, у неё не получится.|Because if she knows about it, she won't succeed.
+1251.0|1252.5|A šta treba da uradi?|А что она должна сделать?|And what does she have to do?
+1253.0|1258.0|Mora da žrtvuje sebe za drugog, ali ne smete da joj kažete.|Она должна пожертвовать собой ради другого, но вы не должны ей говорить.|She has to sacrifice herself for another, but you must not tell her.
+1259.0|1262.0|Ne sme to da uradi znajući da će se izvući.|Она не должна делать это, зная, что выберется целой.|She must not do it knowing that she'll get away with it.
+1262.0|1264.0|A ako ne uradi to?|А если не сделает?|And if she doesn't do it?
+1264.0|1266.0|Ako se ne bude žrtvovala za drugog?|Если не пожертвует собой ради другого?|If she doesn't sacrifice herself for another?
+1266.0|1268.0|Onda je prokleta.|Тогда она проклята.|Then she is cursed.
+1268.0|1271.0|A sad odlazite. Dovoljno sam vam rekla.|А теперь уходите. Я сказала вам достаточно.|Now go away. I've told you enough.
+1290.0|1293.0|Moramo da je zaustavimo.|Мы должны её остановить.|We have to stop her.
+1339.0|1340.5|Nemoj to da radiš.|Не делай этого.|Don't do that.
+1342.0|1344.5|O, kako bih voleo da može da priča sa nama.|О, как бы я хотел, чтобы она могла говорить с нами.|Oh, how I wish she could talk to us.
+1409.0|1411.0|Želi da je pratimo.|Она хочет, чтобы мы шли за ней.|She wants us to follow her.
+1441.0|1443.0|Zbogom, mala sireno.|Прощай, маленькая русалка.|Farewell, little mermaid.
+1444.0|1445.5|Sada si jedna od nas.|Теперь ты одна из нас.|Now you are one of us.
+1446.0|1449.0|Čerko vazduha, dobro nam došla.|Дочь воздуха, добро пожаловать к нам.|Daughter of the air, welcome to us.
+1465.0|1467.0|Jojo, jesi li video ovo?|Йойо, ты видел это?|Yoyo, did you see this?
+1467.0|1469.5|Kao što je rekla morska veštica.|Как и сказала морская ведьма.|Just as the sea witch said.
+1483.0|1487.0|Simsala, Simsala, Simsala Grim!|Симсала, Симсала, Симсала Грим!|Simsala, Simsala, Simsala Grim!
+1496.0|1498.0|Misliš li da je srećna?|Как думаешь, она счастлива?|Do you think she's happy?
+1509.0|1511.0|Mislim da je srećna.|Думаю, счастлива.|I think she's happy.
+1546.0|1549.0|I živeli su još dugo i srećno.|И жили они ещё долго и счастливо.|And they lived happily ever after.

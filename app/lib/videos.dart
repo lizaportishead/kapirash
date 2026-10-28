@@ -646,6 +646,22 @@ const _builtInVideos = <Video>[
     level: 'B1',
     duration: '17:11',
   ),
+  Video(
+    id: 'Qb-JTu0gl6k',
+    title: 'Mala sirena - Simsala Grim',
+    channel: 'Crtani filmovi na srpskom',
+    topic: 'Культура',
+    level: 'A2',
+    duration: '26:00',
+  ),
+  Video(
+    id: 'xlb_hJPiOGU',
+    title: 'Kako sam naučio 5 stranih jezika BEZ KURSEVA?',
+    channel: 'Robert Dacešin',
+    topic: 'Наука',
+    level: 'B1',
+    duration: '15:03',
+  ),
 ];
 
 const _naPosla = 'https://d3ctxlq1ktw2nl.cloudfront.net/staging';
