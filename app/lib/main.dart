@@ -12,6 +12,7 @@ import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
 import 'install_banner.dart';
+import 'install_io.dart' if (dart.library.js_interop) 'install_web.dart' show webSafeBottom;
 import 'kap_loader.dart';
 import 'auth_page.dart';
 import 'auth_callback_io.dart' if (dart.library.js_interop) 'auth_callback_web.dart';
@@ -153,7 +154,12 @@ class _KapirasAppState extends State<KapirasApp> {
       home: home(),
       // Адрес вида /#/video/<id> не должен искать маршруты по частям: всегда стартуем с главной,
       // а нужный экран откроет HomeShell по pendingLink.
-      onGenerateInitialRoutes: (_) => [MaterialPageRoute<void>(settings: RouteSettings(name: '/'), builder: (_) => home())],
+      onGenerateInitialRoutes: (_) => [
+        MaterialPageRoute<void>(
+          settings: RouteSettings(name: '/'),
+          builder: (_) => home(),
+        ),
+      ],
     );
   }
 }
@@ -358,92 +364,96 @@ class _HomeShellState extends State<HomeShell> {
       ),
       bottomNavigationBar: DecoratedBox(
         decoration: BoxDecoration(
+          color: cBg,
           border: Border(top: BorderSide(color: cLine)),
         ),
-        child: NavigationBarTheme(
-          data: NavigationBarThemeData(
-            backgroundColor: cBg,
-            indicatorColor: cAccent,
-            height: 64,
-            labelTextStyle: WidgetStateProperty.resolveWith(
-              (s) => TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-                color: s.contains(WidgetState.selected) ? cText : cFaint,
+        child: Padding(
+          padding: EdgeInsets.only(bottom: kIsWeb ? webSafeBottom() : 0),
+          child: NavigationBarTheme(
+            data: NavigationBarThemeData(
+              backgroundColor: cBg,
+              indicatorColor: cAccent,
+              height: 64,
+              labelTextStyle: WidgetStateProperty.resolveWith(
+                (s) => TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w500,
+                  color: s.contains(WidgetState.selected) ? cText : cFaint,
+                ),
+              ),
+              iconTheme: WidgetStateProperty.resolveWith(
+                (s) => IconThemeData(color: s.contains(WidgetState.selected) ? cInk : cFaint),
               ),
             ),
-            iconTheme: WidgetStateProperty.resolveWith(
-              (s) => IconThemeData(color: s.contains(WidgetState.selected) ? cInk : cFaint),
-            ),
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              NavigationBar(
-                selectedIndex: _tab < _plus ? _tab : _tab + 1,
-                onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
-                destinations: [
-                  NavigationDestination(
-                    icon: Icon(KIcons.home),
-                    selectedIcon: Icon(KIcons.homeOn),
-                    label: ui('Главная'),
-                  ),
-                  NavigationDestination(
-                    icon: Icon(KIcons.catalog),
-                    selectedIcon: Icon(KIcons.catalogOn),
-                    label: ui('Видео'),
-                  ),
-                  if (kAddVideoEnabled) ...[
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                NavigationBar(
+                  selectedIndex: _tab < _plus ? _tab : _tab + 1,
+                  onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
+                  destinations: [
                     NavigationDestination(
-                      icon: Icon(KIcons.videos),
-                      selectedIcon: Icon(KIcons.videosOn),
-                      label: ui('Мои ролики'),
+                      icon: Icon(KIcons.home),
+                      selectedIcon: Icon(KIcons.homeOn),
+                      label: ui('Главная'),
                     ),
-                    ExcludeSemantics(
-                      child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
+                    NavigationDestination(
+                      icon: Icon(KIcons.catalog),
+                      selectedIcon: Icon(KIcons.catalogOn),
+                      label: ui('Видео'),
+                    ),
+                    if (kAddVideoEnabled) ...[
+                      NavigationDestination(
+                        icon: Icon(KIcons.videos),
+                        selectedIcon: Icon(KIcons.videosOn),
+                        label: ui('Мои ролики'),
+                      ),
+                      ExcludeSemantics(
+                        child: NavigationDestination(icon: SizedBox(width: 24, height: 24), label: ''),
+                      ),
+                    ],
+                    if (kStoriesTabEnabled)
+                      NavigationDestination(
+                        icon: Icon(KIcons.stories),
+                        selectedIcon: Icon(KIcons.storiesOn),
+                        label: ui('Рассказы'),
+                      ),
+                    NavigationDestination(
+                      icon: Icon(KIcons.headphones),
+                      selectedIcon: Icon(KIcons.headphonesOn),
+                      label: ui('Подкасты'),
+                    ),
+                    NavigationDestination(
+                      icon: Icon(KIcons.words),
+                      selectedIcon: Icon(KIcons.wordsOn),
+                      label: ui('Словарь'),
+                    ),
+                    NavigationDestination(
+                      icon: store.user == null ? Icon(KIcons.profile) : ProfileAvatar(radius: 13),
+                      selectedIcon: store.user == null ? Icon(KIcons.profileOn) : ProfileAvatar(radius: 13),
+                      label: ui('Профиль'),
                     ),
                   ],
-                  if (kStoriesTabEnabled)
-                    NavigationDestination(
-                      icon: Icon(KIcons.stories),
-                      selectedIcon: Icon(KIcons.storiesOn),
-                      label: ui('Рассказы'),
-                    ),
-                  NavigationDestination(
-                    icon: Icon(KIcons.headphones),
-                    selectedIcon: Icon(KIcons.headphonesOn),
-                    label: ui('Подкасты'),
-                  ),
-                  NavigationDestination(
-                    icon: Icon(KIcons.words),
-                    selectedIcon: Icon(KIcons.wordsOn),
-                    label: ui('Словарь'),
-                  ),
-                  NavigationDestination(
-                    icon: store.user == null ? Icon(KIcons.profile) : ProfileAvatar(radius: 13),
-                    selectedIcon: store.user == null ? Icon(KIcons.profileOn) : ProfileAvatar(radius: 13),
-                    label: ui('Профиль'),
-                  ),
-                ],
-              ),
-              if (kAddVideoEnabled)
-                SafeArea(
-                  top: false,
-                  child: Semantics(
-                    button: true,
-                    label: ui('Добавить ролик'),
-                    child: Material(
-                      color: cViolet,
-                      shape: CircleBorder(),
-                      clipBehavior: Clip.antiAlias,
-                      child: InkWell(
-                        onTap: _addVideo,
-                        child: SizedBox(width: 52, height: 52, child: Icon(KIcons.plus, size: 26, color: cOnViolet)),
+                ),
+                if (kAddVideoEnabled)
+                  SafeArea(
+                    top: false,
+                    child: Semantics(
+                      button: true,
+                      label: ui('Добавить ролик'),
+                      child: Material(
+                        color: cViolet,
+                        shape: CircleBorder(),
+                        clipBehavior: Clip.antiAlias,
+                        child: InkWell(
+                          onTap: _addVideo,
+                          child: SizedBox(width: 52, height: 52, child: Icon(KIcons.plus, size: 26, color: cOnViolet)),
+                        ),
                       ),
                     ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

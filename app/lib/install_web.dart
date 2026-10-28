@@ -14,3 +14,13 @@ String? installPlatform() {
   if (ua.contains('Android')) return 'android';
   return null;
 }
+
+/// Нижний отступ под индикатор «домой» на iPhone в PWA: Flutter web его не отдаёт, берём из CSS env().
+double webSafeBottom() {
+  final probe = web.document.createElement('div') as web.HTMLElement;
+  probe.style.cssText = 'position:fixed;left:0;bottom:0;width:0;height:env(safe-area-inset-bottom,0px);visibility:hidden;pointer-events:none';
+  web.document.body!.append(probe);
+  final h = probe.getBoundingClientRect().height;
+  probe.remove();
+  return h;
+}
