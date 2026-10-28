@@ -31,8 +31,8 @@ List<_Slide> get _slides => [
     fg: cInk,
     mark: cViolet,
     onMark: cOnViolet,
-    title: ui('Учи *сербский* на\u00A0живом материале'),
-    text: ui('Ролики, подкасты и книги — с сербскими субтитрами и переводом на русский'),
+    title: ui('Учи *сербский* по\u00A0роликам и\u00A0тик-токам'),
+    text: ui('А ещё по\u00A0книгам и\u00A0подкастам — с\u00A0сербскими субтитрами и\u00A0переводом на\u00A0русский'),
     art: _ImageArt('assets/ill_onboarding.png'),
   ),
   _Slide(
@@ -291,7 +291,7 @@ class _ImageArt extends StatelessWidget {
   final String asset;
 
   @override
-  Widget build(BuildContext context) => Image.asset(asset, height: 170);
+  Widget build(BuildContext context) => Image.asset(asset, height: 300);
 }
 
 /// Строка субтитров с подсвеченным словом и его переводом.
