@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -331,7 +332,7 @@ class _QuizPageState extends State<QuizPage> {
 
   Widget _result(double bottom) {
     final all = _qs.length;
-    return Padding(
+    final content = Padding(
       padding: EdgeInsets.fromLTRB(16, 0, 16, bottom),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -367,6 +368,8 @@ class _QuizPageState extends State<QuizPage> {
         ],
       ),
     );
+    if (_right != all) return content;
+    return Stack(children: [content, Positioned.fill(child: IgnorePointer(child: _Fireworks()))]);
   }
 
   Widget _mistakes(double bottom) {
@@ -436,4 +439,85 @@ class _QuizPageState extends State<QuizPage> {
       ),
     );
   }
+}
+
+
+/// Салют на экране «всё верно»: несколько залпов подряд, без внешних пакетов.
+class _Fireworks extends StatefulWidget {
+  @override
+  State<_Fireworks> createState() => _FireworksState();
+}
+
+class _FireworksState extends State<_Fireworks> with SingleTickerProviderStateMixin {
+  static const _colors = [
+    Color(0xFF7C3AED),
+    Color(0xFFF59E0B),
+    Color(0xFFEF4444),
+    Color(0xFF22C55E),
+    Color(0xFF38BDF8),
+    Color(0xFFEC4899),
+  ];
+  late final AnimationController _c = AnimationController(vsync: this, duration: Duration(milliseconds: 2200))..forward();
+  late final List<_Burst> _bursts;
+
+  @override
+  void initState() {
+    super.initState();
+    final r = math.Random();
+    _bursts = [
+      for (var k = 0; k < _colors.length; k++)
+        _Burst(
+          start: r.nextDouble() * 0.05,
+          x: 0.12 + (k + r.nextDouble() * 0.6) / _colors.length * 0.76,
+          y: 0.12 + r.nextDouble() * 0.4,
+          color: _colors[k],
+          angles: [for (var j = 0; j < 40; j++) (j / 40) * 2 * math.pi + r.nextDouble() * 0.1],
+          speeds: [for (var j = 0; j < 40; j++) 0.55 + r.nextDouble() * 0.45],
+        ),
+    ];
+  }
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) =>
+      AnimatedBuilder(animation: _c, builder: (_, _) => CustomPaint(painter: _FireworksPainter(_bursts, _c.value)));
+}
+
+class _Burst {
+  _Burst({required this.start, required this.x, required this.y, required this.color, required this.angles, required this.speeds});
+  final double start, x, y;
+  final Color color;
+  final List<double> angles, speeds;
+}
+
+class _FireworksPainter extends CustomPainter {
+  _FireworksPainter(this.bursts, this.t);
+  final List<_Burst> bursts;
+  final double t;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    const life = 0.85;
+    final reach = size.shortestSide * 0.5;
+    for (final b in bursts) {
+      final p = (t - b.start) / life;
+      if (p <= 0 || p >= 1) continue;
+      final ease = 1 - math.pow(1 - p, 3).toDouble();
+      final paint = Paint()..color = b.color.withValues(alpha: (1 - p * p).clamp(0.0, 1.0));
+      for (var j = 0; j < b.angles.length; j++) {
+        final d = reach * b.speeds[j] * ease;
+        final dx = b.x * size.width + math.cos(b.angles[j]) * d;
+        final dy = b.y * size.height + math.sin(b.angles[j]) * d + 90 * p * p;
+        canvas.drawCircle(Offset(dx, dy), 3.2 * (1 - p * 0.6), paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(_FireworksPainter old) => old.t != t;
 }
