@@ -6,6 +6,7 @@ import 'store.dart';
 import 'survey_page.dart';
 import 'theme.dart';
 import 'l10n.dart';
+import 'legal.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -77,11 +78,43 @@ class _ProfilePageState extends State<ProfilePage> {
         _Row(icon: Icons.tune_rounded, title: ui('Уровень и темы'), onTap: () => openSurvey(context)),
         _Row(icon: Icons.history_rounded, title: ui('История'), onTap: () => openHistory(context)),
       ]),
+      SizedBox(height: 12),
+      _Group([
+        _Row(icon: Icons.privacy_tip_outlined, title: ui('Политика конфиденциальности'), onTap: openPrivacy),
+        _Row(icon: Icons.description_outlined, title: ui('Условия использования'), onTap: openTerms),
+      ]),
       if (email != null) ...[
         SizedBox(height: 12),
-        _Group([_Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut)]),
+        _Group([
+          _Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut),
+          _Row(icon: Icons.delete_outline_rounded, title: ui('Удалить аккаунт'), onTap: _confirmDelete),
+        ]),
       ],
     ];
+  }
+
+  Future<void> _confirmDelete() async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(ui('Удалить аккаунт?')),
+        content: Text(ui('Аккаунт и данные в облаке будут удалены без возможности восстановления. Слова и прогресс на этом устройстве останутся.')),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(ui('Отмена'))),
+          TextButton(
+            onPressed: () => Navigator.pop(c, true),
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
+            child: Text(ui('Удалить')),
+          ),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    try {
+      await store.deleteAccount();
+    } catch (_) {
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(ui('Не получилось удалить аккаунт. Напиши на info@kapiras.app'))));
+    }
   }
 
   // ignore: unused_element

@@ -588,6 +588,12 @@ class AppStore extends ChangeNotifier {
   Future<void> verifyCode(String email, String code) =>
       cloud!.auth.verifyOTP(email: email, token: code, type: OtpType.email);
 
+  /// Удаляет аккаунт и облачные данные (функция delete_my_account, см. supabase/delete_account.sql), потом выходит.
+  Future<void> deleteAccount() async {
+    await cloud!.rpc('delete_my_account');
+    await signOut();
+  }
+
   /// Слова и свои ролики остаются на устройстве, приложением можно пользоваться и без входа.
   Future<void> signOut() async {
     user = null;

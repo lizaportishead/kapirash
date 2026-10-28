@@ -7,6 +7,7 @@ import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
 import 'l10n.dart';
+import 'legal.dart';
 
 const _kLastEmail = 'last_email';
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
@@ -344,6 +345,7 @@ class _AuthPageState extends State<AuthPage> {
                 ),
               ),
             ),
+            Padding(padding: EdgeInsets.fromLTRB(24, 0, 24, 12), child: LegalLine()),
             if (widget.intro)
               Padding(
                 padding: EdgeInsets.only(bottom: 8),
