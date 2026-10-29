@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'auth_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'history_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
@@ -80,6 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
       ]),
       SizedBox(height: 12),
       _Group([
+        _Row(icon: Icons.chat_bubble_outline_rounded, title: ui('Обратная связь'), onTap: () => launchUrl(Uri.parse('https://t.me/liza_portishead'), mode: LaunchMode.externalApplication)),
         _Row(icon: Icons.privacy_tip_outlined, title: ui('Политика конфиденциальности'), onTap: openPrivacy),
         _Row(icon: Icons.description_outlined, title: ui('Условия использования'), onTap: openTerms),
       ]),
