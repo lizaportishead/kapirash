@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'feed_page.dart' show videoCardHeight;
 import 'icons.dart';
 import 'store.dart';
 import 'theme.dart';
@@ -28,11 +29,10 @@ class LikedPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            BackBar(),
             Expanded(
               child: Center(
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 720),
+                  constraints: BoxConstraints(maxWidth: 1200),
                   child: ListenableBuilder(
                     listenable: store,
                     builder: (context, _) {
@@ -41,7 +41,7 @@ class LikedPage extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          PageTitle('${ui('Избранное')}${list.isEmpty ? '' : ' · ${list.length}'}', icon: KIcons.videos),
+                          ...pageHeader(context, '${ui('Избранное')}${list.isEmpty ? '' : ' · ${list.length}'}', icon: KIcons.videos),
                           Expanded(
                             child: list.isEmpty
                                 ? Padding(
@@ -52,7 +52,7 @@ class LikedPage extends StatelessWidget {
                                         // Картинка декоративная: на низком экране ужимается, а не обрезает текст.
                                         Flexible(
                                           child: ExcludeSemantics(
-                                            child: Image.asset('assets/ill_liked.png', height: 173),
+                                            child: Image.asset('assets/ill_liked.png', height: 220),
                                           ),
                                         ),
                                         SizedBox(height: 16),
@@ -66,11 +66,23 @@ class LikedPage extends StatelessWidget {
                                       ],
                                     ),
                                   )
-                                : ListView.separated(
-                                    padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-                                    itemCount: list.length,
-                                    separatorBuilder: (_, _) => SizedBox(height: 12),
-                                    itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                                : LayoutBuilder(
+                                    builder: (_, box) {
+                                      // Узкий экран — лента в одну колонку, на десктопе — плитки.
+                                      final cols = (box.maxWidth / 340).floor().clamp(1, 4);
+                                      final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
+                                      return GridView.builder(
+                                        padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: cols,
+                                          crossAxisSpacing: 12,
+                                          mainAxisSpacing: 12,
+                                          mainAxisExtent: videoCardHeight(cardW),
+                                        ),
+                                        itemCount: list.length,
+                                        itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                                      );
+                                    },
                                   ),
                           ),
                         ],
