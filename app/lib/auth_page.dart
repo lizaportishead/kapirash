@@ -301,6 +301,8 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 16),
+                      LegalLine(),
                     ] else ...[
                       if (kEmailCode) ...[
                         TextField(
@@ -345,7 +347,6 @@ class _AuthPageState extends State<AuthPage> {
                 ),
               ),
             ),
-            Padding(padding: EdgeInsets.fromLTRB(24, 0, 24, 12), child: LegalLine()),
             if (widget.intro)
               Padding(
                 padding: EdgeInsets.only(bottom: 8),
