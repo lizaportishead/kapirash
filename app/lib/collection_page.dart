@@ -6,7 +6,7 @@ import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
 
-/// Экран «Любимое» или поиска для раздела (рассказы, подкасты): [items] — всё, что есть в разделе,
+/// Экран «Избранное» или поиска для раздела (рассказы, подкасты): [items] — всё, что есть в разделе,
 /// [likeId] — ключ в store.liked, [text] — по чему искать, [tile] — карточка.
 class CollectionPage<T> extends StatefulWidget {
   const CollectionPage({

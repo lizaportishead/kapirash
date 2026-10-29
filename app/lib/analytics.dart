@@ -4,7 +4,7 @@ import 'package:posthog_flutter/posthog_flutter.dart';
 
 /// Project API Key из PostHog → Project settings. Он публичный, его можно коммитить.
 /// Пока ключ пустой, аналитика выключена. Для веба тот же ключ нужно вписать в web/index.html.
-const posthogKey = '';
+const posthogKey = 'phc_BHCkyZYubFM37ZGyMCj6UfFc3icjaQRYngossZguQ8b3';
 const posthogHost = 'https://eu.i.posthog.com';
 
 bool get analyticsOn => posthogKey.isNotEmpty;

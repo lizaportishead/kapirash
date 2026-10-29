@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
 import 'store.dart';
+import 'supabase_config.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'l10n.dart';
@@ -133,7 +134,7 @@ class _PhraseWordsState extends State<PhraseWords> {
   }
 }
 
-/// Перевод всей фразы целиком; null, если сервис недоступен.
+/// Перевод всей фразы целиком (на MyMemory, без контекста); null, если сервис недоступен.
 Future<String?> _translatePhrase(String lat) async {
   try {
     final to = store.lang == 'en' ? 'en' : 'ru';
@@ -142,6 +143,25 @@ Future<String?> _translatePhrase(String lat) async {
         .timeout(Duration(seconds: 8));
     final t = (jsonDecode(utf8.decode(r.bodyBytes))['responseData']?['translatedText'] as String?)?.trim();
     return t == null || t.isEmpty ? null : t;
+  } catch (_) {
+    return null;
+  }
+}
+
+/// Перевод фразы и всего предложения с учётом контекста (Claude через функцию translate).
+Future<({String phrase, String sentence})?> _translateInContext(String phrase, String sentence) async {
+  try {
+    final r = await http.get(
+      Uri.parse('$supabaseUrl/functions/v1/translate').replace(queryParameters: {
+        'p': toCyr(phrase),
+        's': toCyr(sentence),
+        'to': store.lang == 'en' ? 'en' : 'ru',
+      }),
+      headers: {'apikey': supabaseKey},
+    ).timeout(Duration(seconds: 10));
+    if (r.statusCode != 200) return null;
+    final j = jsonDecode(utf8.decode(r.bodyBytes));
+    return (phrase: j['phrase'] as String, sentence: j['sentence'] as String);
   } catch (_) {
     return null;
   }
@@ -250,7 +270,10 @@ class _WordCardState extends State<WordCard> {
         if (dict[toLat(p).toLowerCase()] case final List e) '${toLat(p).toLowerCase()} — ${e[0]}',
     ];
     final wordsTr = partTr.map((l) => l.split(' — ').last).join(' · ');
-    final phraseTr = isPhrase ? _translatePhrase(lat) : null;
+    // Основной путь — перевод с учётом предложения; если функция недоступна, переводим по отдельности.
+    final ctxTr = isPhrase ? _translateInContext(lat, cue.text) : null;
+    final phraseTr = isPhrase ? ctxTr!.then((c) async => c?.phrase ?? await _translatePhrase(lat)) : null;
+    final sentenceTr = isPhrase ? ctxTr!.then((c) async => c?.sentence ?? await _translatePhrase(cue.text)) : null;
     final tr = isPhrase ? wordsTr : (entry == null ? '' : entry[0] as String);
     final note = entry == null ? '' : entry[1] as String;
     final overlay = Overlay.of(context, rootOverlay: true);
@@ -278,7 +301,7 @@ class _WordCardState extends State<WordCard> {
                     ),
                   ),
                   SizedBox(height: 14),
-                  if (isPhrase)
+                  if (isPhrase) ...[
                     FutureBuilder<String?>(
                       future: phraseTr,
                       builder: (_, snap) {
@@ -293,7 +316,18 @@ class _WordCardState extends State<WordCard> {
                           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
                         );
                       },
-                    )
+                    ),
+                    SizedBox(height: 10),
+                    FutureBuilder<String?>(
+                      future: sentenceTr,
+                      builder: (_, snap) => snap.data == null
+                          ? SizedBox.shrink()
+                          : Text(
+                              '${ui('В контексте')}: ${snap.data}',
+                              style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                            ),
+                    ),
+                  ]
                   else if (entry == null)
                     Text(ui('Этого слова нет в словарике ролика.'), style: TextStyle(fontSize: 14, color: cMuted))
                   else ...[

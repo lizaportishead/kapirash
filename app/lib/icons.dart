@@ -5,10 +5,10 @@ import 'package:flutter/widgets.dart';
 abstract final class KIcons {
   static const home = IconData(0xe2c2, fontFamily: 'PhosphorLight');
   static const homeOn = IconData(0xe2c2, fontFamily: 'Phosphor');
-  static const heart = IconData(0xe2a8, fontFamily: 'Phosphor');
+  static const star = IconData(0xe46a, fontFamily: 'Phosphor');
   static const search = IconData(0xe30c, fontFamily: 'Phosphor');
-  static const catalog = IconData(0xe464, fontFamily: 'PhosphorLight');
-  static const catalogOn = IconData(0xe464, fontFamily: 'Phosphor');
+  static const catalog = IconData(0xe4da, fontFamily: 'PhosphorLight');
+  static const catalogOn = IconData(0xe4da, fontFamily: 'Phosphor');
   static const videos = IconData(0xe8c2, fontFamily: 'PhosphorLight');
   static const videosOn = IconData(0xe8c2, fontFamily: 'Phosphor');
   static const clips = IconData(0xe792, fontFamily: 'PhosphorLight');

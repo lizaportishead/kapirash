@@ -523,7 +523,7 @@ class _PhoneState extends State<LandingPhone> {
                       ),
                     ),
                   ),
-                  Positioned(right: 12, top: 190, child: Column(children: [action(KIcons.heart), SizedBox(height: 10), action(KIcons.words)])),
+                  Positioned(right: 12, top: 190, child: Column(children: [action(KIcons.star), SizedBox(height: 10), action(KIcons.words)])),
                   Positioned(
                     left: 12,
                     right: 12,

@@ -250,7 +250,7 @@ class AppStore extends ChangeNotifier {
   /// Id открытых роликов, последний открытый — в конце.
   List<String> history = [];
 
-  /// Id роликов с сердечком, последний отмеченный — в конце.
+  /// Id роликов со звёздочкой, последний отмеченный — в конце.
   List<String> liked = [];
 
   /// Секунда, на которой остановились в ролике; досмотренных роликов здесь нет.
@@ -495,7 +495,7 @@ class AppStore extends ChangeNotifier {
     notifyListeners();
   }
 
-  // ---- сердечки ----
+  // ---- звёздочки ----
 
   bool isLiked(String videoId) => liked.contains(videoId);
 
@@ -625,7 +625,7 @@ class AppStore extends ChangeNotifier {
   }
 
   // ---- облако ----
-  // У вошедшего в облаке лежит одна строка user_data: слова, сердечки, история и прогресс.
+  // У вошедшего в облаке лежит одна строка user_data: слова, звёздочки, история и прогресс.
   // Свои ролики и их субтитры остаются на устройстве.
 
   Timer? _pushTimer;

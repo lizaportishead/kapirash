@@ -43,8 +43,8 @@ class FeedPage extends StatelessWidget {
           ui('Видео'),
           actions: [
             IconButton(
-              tooltip: ui('Любимое'),
-              icon: Icon(KIcons.heart, size: 24, color: cText),
+              tooltip: ui('Избранное'),
+              icon: Icon(KIcons.star, size: 24, color: cText),
               onPressed: () => openLiked(context),
             ),
             IconButton(

@@ -232,8 +232,8 @@ class StoriesPage extends StatelessWidget {
           ui('Рассказы'),
           actions: [
             IconButton(
-              tooltip: ui('Любимое'),
-              icon: Icon(KIcons.heart, size: 24, color: cText),
+              tooltip: ui('Избранное'),
+              icon: Icon(KIcons.star, size: 24, color: cText),
               onPressed: () => _openCollection(context, searchHint: null),
             ),
             IconButton(
@@ -294,7 +294,7 @@ void _openCollection(BuildContext context, {required String? searchHint}) {
     MaterialPageRoute<void>(
       settings: RouteSettings(name: 'CollectionPage'),
       builder: (_) => CollectionPage<Story>(
-        title: ui('Любимое'),
+        title: ui('Избранное'),
         icon: KIcons.stories,
         items: [
           for (final s in stories)
@@ -304,7 +304,7 @@ void _openCollection(BuildContext context, {required String? searchHint}) {
         text: (s) => '${s.title} ${s.author}',
         tile: (s) => _StoryCard(s),
         searchHint: searchHint,
-        emptyLiked: ui('Ставь сердечко рассказам, которые хочешь прочитать позже. Они появятся тут.'),
+        emptyLiked: ui('Ставь звёздочку рассказам, которые хочешь прочитать позже. Они появятся тут.'),
       ),
     ),
   );
@@ -468,7 +468,7 @@ class _StoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
         ),
-        Positioned(top: 0, right: 0, child: _StoryHeart(story, onCover: false)),
+        Positioned(top: 0, right: 0, child: _StoryStar(story, onCover: false)),
       ],
     );
   }
@@ -559,7 +559,7 @@ class _StoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
         ),
-        Positioned(top: 0, right: 0, child: _StoryHeart(story, onCover: true)),
+        Positioned(top: 0, right: 0, child: _StoryStar(story, onCover: true)),
       ],
     );
   }
@@ -1364,21 +1364,21 @@ class _StoryParaState extends State<_StoryPara> {
   }
 }
 
-/// Сердечко рассказа; на вертикальной карточке лежит поверх обложки.
-class _StoryHeart extends StatelessWidget {
-  const _StoryHeart(this.story, {required this.onCover});
+/// Звёздочка рассказа; на вертикальной карточке лежит поверх обложки.
+class _StoryStar extends StatelessWidget {
+  const _StoryStar(this.story, {required this.onCover});
   final Story story;
   final bool onCover;
 
   @override
   Widget build(BuildContext context) {
-    final heart = LikeButton(story.wordKey);
-    if (!onCover) return heart;
+    final star = LikeButton(story.wordKey);
+    if (!onCover) return star;
     return Padding(
       padding: EdgeInsets.all(4),
       child: DecoratedBox(
         decoration: BoxDecoration(color: cBg.withValues(alpha: 0.85), shape: BoxShape.circle),
-        child: heart,
+        child: star,
       ),
     );
   }

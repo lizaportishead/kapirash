@@ -33,8 +33,8 @@ class PodcastsPage extends StatelessWidget {
             ui('Подкасты'),
             actions: [
               IconButton(
-                tooltip: ui('Любимое'),
-                icon: Icon(KIcons.heart, size: 24, color: cText),
+                tooltip: ui('Избранное'),
+                icon: Icon(KIcons.star, size: 24, color: cText),
                 onPressed: () => _open(context, searchHint: null),
               ),
               IconButton(
@@ -84,14 +84,14 @@ void _open(BuildContext context, {required String? searchHint}) {
     MaterialPageRoute<void>(
       settings: RouteSettings(name: 'CollectionPage'),
       builder: (_) => CollectionPage<Video>(
-        title: ui('Любимое'),
+        title: ui('Избранное'),
         icon: KIcons.headphones,
         items: podcasts,
         likeId: (p) => p.id,
         text: (p) => '${p.title} ${p.channel}',
         tile: (p) => EpisodeTile(p),
         searchHint: searchHint,
-        emptyLiked: ui('Ставь сердечко подкастам, к которым хочешь вернуться. Они появятся тут.'),
+        emptyLiked: ui('Ставь звёздочку подкастам, к которым хочешь вернуться. Они появятся тут.'),
       ),
     ),
   );

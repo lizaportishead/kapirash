@@ -184,7 +184,7 @@ class VideoTag extends StatelessWidget {
   }
 }
 
-/// Сердечко ролика: ставит и снимает отметку, список отмеченных — на экране «Любимое».
+/// Звёздочка ролика: ставит и снимает отметку, список отмеченных — на экране «Избранное».
 class LikeButton extends StatelessWidget {
   const LikeButton(this.videoId, {super.key});
   final String videoId;
@@ -196,10 +196,10 @@ class LikeButton extends StatelessWidget {
       builder: (context, _) {
         final on = store.isLiked(videoId);
         return IconButton(
-          tooltip: on ? ui('Убрать сердечко') : ui('Поставить сердечко'),
+          tooltip: on ? ui('Убрать звёздочку') : ui('Поставить звёздочку'),
           isSelected: on,
-          icon: Icon(KIcons.heart, size: 22, color: cMuted),
-          selectedIcon: Icon(Icons.favorite_rounded, size: 22, color: cViolet),
+          icon: Icon(KIcons.star, size: 22, color: cMuted),
+          selectedIcon: Icon(Icons.star_rounded, size: 22, color: cViolet),
           onPressed: () => store.toggleLike(videoId),
         );
       },
