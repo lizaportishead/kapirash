@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How much is the necklace?",
+     "o": [
+      "500",
+      "800",
+      "1000",
+      "1200"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ta ogrlica vam je 800\" — that necklace is 800."
+    },
+    {
+     "q": "How much change does the seller give for the necklace?",
+     "o": [
+      "100",
+      "200",
+      "300",
+      "500"
+     ],
+     "a": 1,
+     "e": "In the video: \"Evo 200\" — here is 200."
+    },
+    {
+     "q": "How much is the ring?",
+     "o": [
+      "100",
+      "300",
+      "800",
+      "1100"
+     ],
+     "a": 1,
+     "e": "In the video: \"Taj je 300\" — that one is 300."
+    },
+    {
+     "q": "What does the customer end up paying, once the seller treats her to 100?",
+     "o": [
+      "1100",
+      "1200",
+      "1000",
+      "800"
+     ],
+     "a": 0,
+     "e": "In the video: \"To je 1100 i tih 100 vas ja častim\" — that is 1100 and I treat you to those 100."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Izvinite, koliko je ova *ogrlica*?",
+     "o": [
+      "necklace",
+      "ring",
+      "watch",
+      "earring"
+     ],
+     "a": 0,
+     "e": "Ogrlica — a necklace."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A ovaj *prsten*?",
+     "o": [
+      "ring",
+      "bracelet",
+      "chain",
+      "scarf"
+     ],
+     "a": 0,
+     "e": "Prsten — a ring."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nema problema, imam ja da vam *vratim*.",
+     "o": [
+      "I give back",
+      "I buy",
+      "I sell",
+      "I lose"
+     ],
+     "a": 0,
+     "e": "Vratiti — to give back."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hvala, *prijatno*.",
+     "o": [
+      "take care",
+      "see you tomorrow",
+      "sorry",
+      "you are welcome"
+     ],
+     "a": 0,
+     "e": "Prijatno — take care, enjoy."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ta ogrlica ___ je 800.",
+     "o": [
+      "ti",
+      "vam",
+      "vas",
+      "vama"
+     ],
+     "a": 1,
+     "e": "Dative: vam je — \"for you\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nema ___, imam ja da vam vratim.",
+     "o": [
+      "problem",
+      "problema",
+      "problemu",
+      "problemom"
+     ],
+     "a": 1,
+     "e": "After nema the genitive is needed: nema problema."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nema problema, imam ja da ___ vratim.",
+     "o": [
+      "vam",
+      "vas",
+      "vi",
+      "vama"
+     ],
+     "a": 0,
+     "e": "To give back to whom? — the dative: vam."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "To je 1100 i tih 100 ___ ja častim.",
+     "o": [
+      "vi",
+      "vas",
+      "vama",
+      "vaš"
+     ],
+     "a": 1,
+     "e": "To treat whom? — the accusative: vas."
+    }
+   ]
+  }
+ ]
+}

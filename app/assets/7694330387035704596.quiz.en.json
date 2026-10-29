@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does everyone who sits in the armchair and answers questions get?",
+     "o": [
+      "Can choose one of the prizes",
+      "A cinema ticket",
+      "Only coffee",
+      "Nothing"
+     ],
+     "a": 0,
+     "e": "In the video: \"može izabrati neku od vrednih nagrada\" — can choose one of the valuable prizes."
+    },
+    {
+     "q": "Who gives the interviewee the feeling of home?",
+     "o": [
+      "Friends",
+      "The whole family",
+      "Colleagues",
+      "Neighbours"
+     ],
+     "a": 1,
+     "e": "In the video: \"Cijela moja porodica\" — my whole family."
+    },
+    {
+     "q": "What would happen if everybody could wear pyjamas all day?",
+     "o": [
+      "The world would be more comfortable",
+      "The world would be duller",
+      "Everybody would be late",
+      "Shops would close"
+     ],
+     "a": 0,
+     "e": "In the video: \"Svet bi bio udobnije mesto kada bi ljudi mogli po ceo dan da budu u pidžamama\" — the world would be a more comfortable place if people could be in pyjamas all day."
+    },
+    {
+     "q": "Which gift can be chosen?",
+     "o": [
+      "A shop gift card",
+      "A new phone",
+      "A concert ticket",
+      "An armchair"
+     ],
+     "a": 0,
+     "e": "In the video: \"Poklon kartica, Extreme Intimo\" — a gift card, Extreme Intimo."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Šta je za vas *udobnost*?",
+     "o": [
+      "comfort",
+      "speed",
+      "money",
+      "family"
+     ],
+     "a": 0,
+     "e": "Udobnost — comfort."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada sednem i *popijem* svoju kafu.",
+     "o": [
+      "I drink up",
+      "I brew",
+      "I buy",
+      "I spill"
+     ],
+     "a": 0,
+     "e": "Popiti — to drink (perfective)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "a da vas ne grize *savjest*?",
+     "o": [
+      "conscience",
+      "anxiety",
+      "hunger",
+      "boredom"
+     ],
+     "a": 0,
+     "e": "Savjest — conscience (ijekavian; in ekavian — savest)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo jedan mali *poklon* za vas",
+     "o": [
+      "gift",
+      "question",
+      "secret",
+      "chair"
+     ],
+     "a": 0,
+     "e": "Poklon — a gift."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kada ___ i popijem svoju kafu.",
+     "o": [
+      "sednem",
+      "sedneš",
+      "sednu",
+      "sedne"
+     ],
+     "a": 0,
+     "e": "The speaker is \"I\" — 1st person singular: sednem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Svako ko sedne na ___",
+     "o": [
+      "fotelja",
+      "fotelju",
+      "fotelji",
+      "foteljom"
+     ],
+     "a": 1,
+     "e": "The preposition na answering \"where to?\" takes the accusative: na fotelju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo jedan mali poklon za ___, možete da izaberete.",
+     "o": [
+      "vi",
+      "vas",
+      "vama",
+      "vašim"
+     ],
+     "a": 1,
+     "e": "The preposition za takes the accusative: za vas."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koja osoba ___ daje osjećaj doma?",
+     "o": [
+      "vas",
+      "vama",
+      "vami",
+      "vaš"
+     ],
+     "a": 1,
+     "e": "The verb \"to give\" + to whom? takes the dative: vama."
+    }
+   ]
+  }
+ ]
+}

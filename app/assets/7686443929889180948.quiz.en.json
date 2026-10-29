@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What has to happen for the game to start?",
+     "o": [
+      "Pick up the receiver of the black phone",
+      "Call Luka",
+      "Find the suitcase",
+      "Follow Luka"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ali niko još nema hrabrosti da podigne slušalicu\" — but nobody has the courage yet to pick up the receiver."
+    },
+    {
+     "q": "What colour is the suitcase?",
+     "o": [
+      "Red",
+      "Yellow",
+      "Black",
+      "Blue"
+     ],
+     "a": 1,
+     "e": "In the video: \"Negde u centru grada nalazi se žuti kofer\" — somewhere in the city centre there is a yellow suitcase."
+    },
+    {
+     "q": "How long do you have to find the suitcase?",
+     "o": [
+      "One minute",
+      "Five minutes",
+      "An hour",
+      "The whole day"
+     ],
+     "a": 0,
+     "e": "In the video: \"Imaš minut vremena da ga pronađeš\" — you have a minute to find it."
+    },
+    {
+     "q": "How many euros did the guy get for following Luka?",
+     "o": [
+      "10",
+      "50",
+      "100",
+      "200"
+     ],
+     "a": 2,
+     "e": "In the video: \"Pošto si rekao da me pratiš, zaslužuješ 100 evra\" — since you said you follow me, you deserve 100 euros."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali niko još nema hrabrosti da podigne *slušalicu*.",
+     "o": [
+      "receiver",
+      "bag",
+      "key",
+      "door"
+     ],
+     "a": 0,
+     "e": "Slušalica — a receiver (of a phone), also a headphone."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ljudi su prolazili i *začuđeno* gledali.",
+     "o": [
+      "in surprise",
+      "angrily",
+      "cheerfully",
+      "quickly"
+     ],
+     "a": 0,
+     "e": "Začuđeno — in surprise."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Jel može za vas jedan *buket* cveća?",
+     "o": [
+      "bouquet",
+      "wreath",
+      "gift",
+      "flower"
+     ],
+     "a": 0,
+     "e": "Buket — a bouquet."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imaš minut vremena da ga pronađeš. *Srećno*.",
+     "o": [
+      "Good luck",
+      "Thank you",
+      "Hello",
+      "Careful"
+     ],
+     "a": 0,
+     "e": "Srećno — a wish of good luck."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Tvoj sledeći zadatak je da pronađeš ___.",
+     "o": [
+      "Luka Averić",
+      "Luku Averića",
+      "Luki Averiću",
+      "Lukom Averićem"
+     ],
+     "a": 1,
+     "e": "The verb \"to find\" takes the accusative: Luku Averića."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Postavio sam crni telefon u ___ grada.",
+     "o": [
+      "centar",
+      "centru",
+      "centra",
+      "centrom"
+     ],
+     "a": 1,
+     "e": "The preposition u answering \"where?\" takes the locative: u centru."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pošto si rekao da me ___, zaslužuješ 100 evra.",
+     "o": [
+      "pratiš",
+      "pratim",
+      "prati",
+      "pratite"
+     ],
+     "a": 0,
+     "e": "We are talking about \"you\" — 2nd person singular: pratiš."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da li me možda pratiš na ___ mrežama?",
+     "o": [
+      "društvene",
+      "društvenim",
+      "društvenih",
+      "društvena"
+     ],
+     "a": 1,
+     "e": "The preposition na + \"where?\" takes the locative plural: na društvenim mrežama."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How many euros will the first person who stops and helps get?",
+     "o": [
+      "50",
+      "100",
+      "200",
+      "500"
+     ],
+     "a": 2,
+     "e": "In the video: \"Prva osoba koja stane i pomogne mi da zamenim gumu dobija 200 evra\" — the first person who stops and helps change the tyre gets 200 euros."
+    },
+    {
+     "q": "What does Luka ask the driver who stopped?",
+     "o": [
+      "Whether he has a jack",
+      "How to get to the centre",
+      "Whether he has water",
+      "What time it is"
+     ],
+     "a": 0,
+     "e": "In the video: \"Je li imate možda ovu dizalicu\" — do you happen to have this jack?"
+    },
+    {
+     "q": "What happened with the first driver who stopped?",
+     "o": [
+      "He helped and took the money",
+      "He stopped but could not help",
+      "He drove past without stopping",
+      "He asked for money"
+     ],
+     "a": 1,
+     "e": "In the video: \"ali nažalost nije mogao da mi pomogne\" — but unfortunately he could not help me."
+    },
+    {
+     "q": "What does Luka offer the driver as thanks?",
+     "o": [
+      "To treat him",
+      "To give him a lift",
+      "To fix his car",
+      "To give him a phone"
+     ],
+     "a": 0,
+     "e": "In the video: \"Hajde da vas počastim\" — let me treat you."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prva osoba koja stane i pomogne mi da zamenim *gumu*",
+     "o": [
+      "tyre",
+      "door",
+      "lamp",
+      "key"
+     ],
+     "a": 0,
+     "e": "Guma — rubber, tyre; gumu — acc. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Je li imate možda ovu *dizalicu*?",
+     "o": [
+      "jack",
+      "ladder",
+      "key",
+      "pump"
+     ],
+     "a": 0,
+     "e": "Dizalica — a jack, a crane."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ali *nažalost* nije mogao da mi pomogne",
+     "o": [
+      "unfortunately",
+      "fortunately",
+      "of course",
+      "immediately"
+     ],
+     "a": 0,
+     "e": "Nažalost — unfortunately."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali ovo je *zahvalnost* za tu pomoć.",
+     "o": [
+      "gratitude",
+      "reward",
+      "request",
+      "joke"
+     ],
+     "a": 0,
+     "e": "Zahvalnost — gratitude."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prolazilo je baš dosta ___",
+     "o": [
+      "automobil",
+      "automobila",
+      "automobilu",
+      "automobilom"
+     ],
+     "a": 1,
+     "e": "After words of quantity (dosta) the genitive is needed: automobila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "I kad dođem na ručak kod vas u ___",
+     "o": [
+      "restoran",
+      "restorana",
+      "restoranu",
+      "restoranom"
+     ],
+     "a": 0,
+     "e": "Movement \"where to?\" — the preposition u + accusative: u restoran."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Radite u ___?",
+     "o": [
+      "restoran",
+      "restorana",
+      "restoranu",
+      "restoranom"
+     ],
+     "a": 2,
+     "e": "The preposition u answering \"where?\" takes the locative: u restoranu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nema na ___, Luka.",
+     "o": [
+      "čemu",
+      "čega",
+      "čime",
+      "čim"
+     ],
+     "a": 0,
+     "e": "The set phrase \"nema na čemu\" (\"you're welcome\") uses the locative."
+    }
+   ]
+  }
+ ]
+}

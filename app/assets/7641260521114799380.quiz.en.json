@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the bracelet's original price?",
+     "o": [
+      "700",
+      "750",
+      "800",
+      "1000"
+     ],
+     "a": 3,
+     "e": "In the video: \"cena jedne narukvice hiljadu\" — the price of one bracelet is a thousand."
+    },
+    {
+     "q": "When is the seller ready to give a discount?",
+     "o": [
+      "If you take several pieces",
+      "If you pay by card",
+      "If you come tomorrow",
+      "Never"
+     ],
+     "a": 0,
+     "e": "In the video: \"zavisi koliko komada planirate da uzmete\" — it depends on how many pieces you plan to take."
+    },
+    {
+     "q": "What does the person selling say about themselves?",
+     "o": [
+      "He is the owner",
+      "He is just a worker",
+      "He owns a chain",
+      "He is a tourist"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ja sam samo radnik ovde\" — I am just a worker here."
+    },
+    {
+     "q": "What price does the seller name in the end?",
+     "o": [
+      "1000",
+      "1300",
+      "700",
+      "500"
+     ],
+     "a": 0,
+     "e": "In the video: \"Prava cena narukvice je 1000\" — the real price of the bracelet is 1000."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A može neki *popust*?",
+     "o": [
+      "discount",
+      "gift",
+      "receipt",
+      "bag"
+     ],
+     "a": 0,
+     "e": "Popust — a discount."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa zato što je *cena* jedne narukvice hiljadu.",
+     "o": [
+      "price",
+      "shape",
+      "weight",
+      "colour"
+     ],
+     "a": 0,
+     "e": "Cena — price."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stvarno, nije moja *roba*.",
+     "o": [
+      "merchandise",
+      "fault",
+      "idea",
+      "room"
+     ],
+     "a": 0,
+     "e": "Roba — goods."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Žao mi je, stvarno ne *mogu*.",
+     "o": [
+      "I can",
+      "I want",
+      "I know",
+      "I go"
+     ],
+     "a": 0,
+     "e": "Moći — can; mogu — 1st pers. sg."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koliko je ova ___?",
+     "o": [
+      "narukvica",
+      "narukvicu",
+      "narukvice",
+      "narukvicom"
+     ],
+     "a": 0,
+     "e": "The subject takes the nominative: narukvica."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa zato što je cena jedne ___ hiljadu.",
+     "o": [
+      "narukvica",
+      "narukvice",
+      "narukvici",
+      "narukvicu"
+     ],
+     "a": 1,
+     "e": "Price of what? — the genitive: narukvice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam samo radnik ___.",
+     "o": [
+      "ovde",
+      "ovo",
+      "ova",
+      "ovaj"
+     ],
+     "a": 0,
+     "e": "Adverb of place: ovde (\"here\")."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa onda nema ___.",
+     "o": [
+      "popust",
+      "popusta",
+      "popustu",
+      "popustom"
+     ],
+     "a": 1,
+     "e": "After nema the genitive is needed: nema popusta."
+    }
+   ]
+  }
+ ]
+}

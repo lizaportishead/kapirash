@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What did the girl want to buy?",
+     "o": [
+      "Ten big necklaces",
+      "Ten rings",
+      "One bag",
+      "Five bracelets"
+     ],
+     "a": 0,
+     "e": "In the video: \"htela sam da kupim deset ovih velikih ogrlica\" — I wanted to buy ten of these big necklaces."
+    },
+    {
+     "q": "How much do ten necklaces come to?",
+     "o": [
+      "Ten thousand",
+      "Fifteen thousand",
+      "Twenty thousand",
+      "Three thousand"
+     ],
+     "a": 1,
+     "e": "In the video: \"Deset puta hiljadu petsto, petnaest hiljada\" — ten times one thousand five hundred, fifteen thousand."
+    },
+    {
+     "q": "How much are the small necklaces?",
+     "o": [
+      "100 dinars",
+      "300 dinars",
+      "1500 dinars",
+      "5000 dinars"
+     ],
+     "a": 1,
+     "e": "In the video: \"to su male, od 300 dinara\" — those are small ones, 300 dinars each."
+    },
+    {
+     "q": "How did the saleswoman first answer the question whether they are open?",
+     "o": [
+      "That they are closed — done for today",
+      "That they are open until night",
+      "That they will open tomorrow",
+      "That a pass is needed"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ne, nažalost, gotovo je za danas\" — no, unfortunately, we are done for today."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ah, *šteta*, htela sam da kupim deset ovih velikih ogrlica.",
+     "o": [
+      "pity",
+      "good",
+      "funny",
+      "strange"
+     ],
+     "a": 0,
+     "e": "Šteta — a pity."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ma uđite, mislim, priđite *slobodno*.",
+     "o": [
+      "freely",
+      "quickly",
+      "quietly",
+      "carefully"
+     ],
+     "a": 0,
+     "e": "Slobodno — freely, feel free."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "I jao, koliko veliki *izbor*.",
+     "o": [
+      "selection",
+      "size",
+      "smell",
+      "sound"
+     ],
+     "a": 0,
+     "e": "Izbor — choice, selection."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Slobodno, ne *žurite*.",
+     "o": [
+      "hurry",
+      "think",
+      "look",
+      "make noise"
+     ],
+     "a": 0,
+     "e": "Žuriti — to hurry; žurite — 2nd pers. pl."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ah, šteta, htela sam da kupim deset ovih velikih ___.",
+     "o": [
+      "ogrlica",
+      "ogrlice",
+      "ogrlicu",
+      "ogrlicom"
+     ],
+     "a": 0,
+     "e": "After the numeral \"ten\" comes the genitive plural: ogrlica."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ma uđite, mislim, ___ slobodno.",
+     "o": [
+      "priđite",
+      "prišli",
+      "prilazim",
+      "prišao"
+     ],
+     "a": 0,
+     "e": "Imperative 2nd person plural: priđite."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "E, hvala ___ puno.",
+     "o": [
+      "vi",
+      "vam",
+      "vas",
+      "vama"
+     ],
+     "a": 1,
+     "e": "Thanks to whom? — the dative: hvala vam."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da, da, na njih sam ___.",
+     "o": [
+      "mislila",
+      "misliti",
+      "misleći",
+      "misli"
+     ],
+     "a": 0,
+     "e": "Feminine past: mislila sam."
+    }
+   ]
+  }
+ ]
+}

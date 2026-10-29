@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the girl have to do with her ex?",
+     "o": [
+      "Call and suggest making up",
+      "Write a letter",
+      "Visit his home",
+      "Block him"
+     ],
+     "a": 0,
+     "e": "In the video: \"nazovi ga i pitaj ga da se pomirite\" — call him and ask him to make up."
+    },
+    {
+     "q": "How long ago did they break up?",
+     "o": [
+      "Two days ago",
+      "Two weeks ago",
+      "Two months ago",
+      "Two years ago"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pre dve nedelje\" — two weeks ago."
+    },
+    {
+     "q": "What does the girl admit to her ex?",
+     "o": [
+      "That she made a mistake",
+      "That she found someone else",
+      "That she is moving",
+      "That she is offended"
+     ],
+     "a": 0,
+     "e": "In the video: \"mislim da sam napravila grešku\" — I think I made a mistake."
+    },
+    {
+     "q": "What does Gagi ask viewers to do at the end?",
+     "o": [
+      "Like and follow",
+      "Call him",
+      "Write a comment",
+      "Buy a ticket"
+     ],
+     "a": 0,
+     "e": "In the video: \"Lajkujte ovaj klip i zapratite me\" — like this clip and follow me."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li voliš svog *bivšeg*?",
+     "o": [
+      "ex",
+      "friend",
+      "brother",
+      "neighbour"
+     ],
+     "a": 0,
+     "e": "Bivši — ex; bivšeg — acc. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pre dve *nedelje*.",
+     "o": [
+      "weeks",
+      "days",
+      "years",
+      "hours"
+     ],
+     "a": 0,
+     "e": "Nedelja — a week; nedelje — gen. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa moram ja da sastavim neki *par*.",
+     "o": [
+      "couple",
+      "pie",
+      "steamer",
+      "party"
+     ],
+     "a": 0,
+     "e": "Par — a pair, a couple."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ma idemo *bre*!",
+     "o": [
+      "hey (interjection)",
+      "tomorrow",
+      "home",
+      "down"
+     ],
+     "a": 0,
+     "e": "Bre — a colloquial interjection for emphasis."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pre koliko ste ___?",
+     "o": [
+      "raskinuli",
+      "raskinula",
+      "raskinuo",
+      "raskinuće"
+     ],
+     "a": 0,
+     "e": "\"You\" plural — raskinuli."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Razmišljala sam dugo o ___.",
+     "o": [
+      "to",
+      "toga",
+      "tome",
+      "tim"
+     ],
+     "a": 2,
+     "e": "The preposition o (\"about\") + locative: o tome."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ajde da se ___, razmišljala sam dugo o tome.",
+     "o": [
+      "pomirimo",
+      "pomirite",
+      "pomire",
+      "pomirim"
+     ],
+     "a": 0,
+     "e": "\"Let's make up\" — 1st person plural: pomirimo."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne mogu samo da ___.",
+     "o": [
+      "rastavljam",
+      "rastavljaš",
+      "rastavlja",
+      "rastavljamo"
+     ],
+     "a": 0,
+     "e": "The speaker is \"I\" — 1st person singular: rastavljam."
+    }
+   ]
+  }
+ ]
+}

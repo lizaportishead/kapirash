@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Luka ask about first?",
+     "o": [
+      "The phone battery",
+      "The weather",
+      "The way",
+      "Work"
+     ],
+     "a": 0,
+     "e": "In the video: \"Da li vam baterija na telefonu traje tri dana\" — does your phone battery last three days?"
+    },
+    {
+     "q": "How long has the woman worked in the kitchen?",
+     "o": [
+      "Second year",
+      "Third year",
+      "Fourth year",
+      "Tenth year"
+     ],
+     "a": 2,
+     "e": "In the video: \"Četvrta godina\" — the fourth year."
+    },
+    {
+     "q": "Which phone is she given?",
+     "o": [
+      "iPhone 15",
+      "Redmi Note 17",
+      "Samsung S24",
+      "Nokia 3310"
+     ],
+     "a": 1,
+     "e": "In the video: \"spremili smo vam nov telefon, Redmi Note 17\" — we have prepared a new phone for you, the Redmi Note 17."
+    },
+    {
+     "q": "What is the new phone resistant to?",
+     "o": [
+      "Water and fire",
+      "Knocks and dust",
+      "Cold",
+      "Scratches"
+     ],
+     "a": 1,
+     "e": "In the video: \"otporan je i na udarce i na prašinu\" — it is resistant to both knocks and dust."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li vam *baterija* na telefonu traje tri dana?",
+     "o": [
+      "battery",
+      "screen",
+      "camera",
+      "case"
+     ],
+     "a": 0,
+     "e": "Baterija — a battery."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad imam jedno *iznenađenje* za vas.",
+     "o": [
+      "surprise",
+      "question",
+      "offer",
+      "apology"
+     ],
+     "a": 0,
+     "e": "Iznenađenje — a surprise."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pohvalili su vas da ste *vredni*, da ste radni",
+     "o": [
+      "hard-working",
+      "tall",
+      "cheerful",
+      "kind"
+     ],
+     "a": 0,
+     "e": "Vredan — hard-working, diligent."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Oooo, što je lepo *upakovano*.",
+     "o": [
+      "wrapped",
+      "decorated",
+      "hidden",
+      "bought"
+     ],
+     "a": 0,
+     "e": "Upakovati — to wrap; upakovano — wrapped."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koliko dugo već radite u ___?",
+     "o": [
+      "kuhinja",
+      "kuhinji",
+      "kuhinju",
+      "kuhinje"
+     ],
+     "a": 1,
+     "e": "The preposition u answering \"where?\" takes the locative: u kuhinji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Njemu baterija traje čak do tri ___",
+     "o": [
+      "dan",
+      "dana",
+      "dani",
+      "danu"
+     ],
+     "a": 1,
+     "e": "After the numerals 2–4 comes the genitive singular: tri dana."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nisam se nadala ___.",
+     "o": [
+      "telefon",
+      "telefonu",
+      "telefona",
+      "telefonom"
+     ],
+     "a": 1,
+     "e": "The verb nadati se (\"to hope, expect\") takes the dative: telefonu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imate li par minuta da ___ malo ukradem?",
+     "o": [
+      "vas",
+      "vam",
+      "vi",
+      "vama"
+     ],
+     "a": 0,
+     "e": "To steal whom? — the accusative: vas."
+    }
+   ]
+  }
+ ]
+}
