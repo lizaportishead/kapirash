@@ -68,7 +68,7 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
         bottom: false,
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 720),
+            constraints: BoxConstraints(maxWidth: searching ? 720 : double.infinity),
             child: ListenableBuilder(
               listenable: store,
               builder: (context, _) {
@@ -121,37 +121,44 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
                         ),
                       )
                     else ...[
-                      ...pageHeader(context, '${widget.title}${list.isEmpty ? '' : ' · ${list.length}'}', icon: widget.icon),
+                      ...pageHeader(context, '${widget.title}${list.isEmpty ? '' : ' · ${list.length}'}'),
                     ],
                     Expanded(
-                      child: list.isEmpty
-                          ? Padding(
-                              padding: EdgeInsets.all(24),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  if (!searching)
-                                    Flexible(
-                                      child: ExcludeSemantics(
-                                        child: Image.asset('assets/ill_liked.png', height: 220),
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 720),
+                          child: list.isEmpty
+                              ? Padding(
+                                  padding: EdgeInsets.all(24),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      if (!searching)
+                                        Flexible(
+                                          child: ExcludeSemantics(
+                                            child: Image.asset('assets/ill_liked.png', height: 220),
+                                          ),
+                                        ),
+                                      if (!searching) SizedBox(height: 16),
+                                      Text(
+                                        searching
+                                            ? ui('Ничего не нашлось. Попробуй другой запрос.')
+                                            : widget.emptyLiked,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
                                       ),
-                                    ),
-                                  if (!searching) SizedBox(height: 16),
-                                  Text(
-                                    searching ? ui('Ничего не нашлось. Попробуй другой запрос.') : widget.emptyLiked,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            )
-                          : ListView.separated(
-                              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-                              itemCount: list.length,
-                              separatorBuilder: (_, _) => SizedBox(height: 12),
-                              itemBuilder: (_, i) => widget.tile(list[i]),
-                            ),
+                                )
+                              : ListView.separated(
+                                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                                  padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                  itemCount: list.length,
+                                  separatorBuilder: (_, _) => SizedBox(height: 12),
+                                  itemBuilder: (_, i) => widget.tile(list[i]),
+                                ),
+                        ),
+                      ),
                     ),
                   ],
                 );

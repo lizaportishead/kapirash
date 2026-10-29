@@ -294,7 +294,7 @@ void _openCollection(BuildContext context, {required String? searchHint}) {
     MaterialPageRoute<void>(
       settings: RouteSettings(name: 'CollectionPage'),
       builder: (_) => CollectionPage<Story>(
-        title: ui('Избранное'),
+        title: ui('Избранные рассказы'),
         icon: KIcons.stories,
         items: [
           for (final s in stories)

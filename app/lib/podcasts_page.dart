@@ -84,7 +84,7 @@ void _open(BuildContext context, {required String? searchHint}) {
     MaterialPageRoute<void>(
       settings: RouteSettings(name: 'CollectionPage'),
       builder: (_) => CollectionPage<Video>(
-        title: ui('Избранное'),
+        title: ui('Избранные подкасты'),
         icon: KIcons.headphones,
         items: podcasts,
         likeId: (p) => p.id,

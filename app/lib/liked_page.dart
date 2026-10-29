@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'feed_page.dart' show videoCardHeight;
-import 'icons.dart';
 import 'podcasts_page.dart' show EpisodeTile;
 import 'stories_page.dart' show storyById, storyTile;
 import 'store.dart';
@@ -35,36 +34,35 @@ class LikedPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 1200),
-                  child: ListenableBuilder(
-                    listenable: store,
-                    builder: (context, _) {
-                      // Сверху — отмеченные последними.
-                      final podIds = {for (final p in podcasts) p.id};
-                      final all = store.liked.reversed.map(videoById).nonNulls.toList();
-                      final list = [
-                        for (final v in all)
-                          if (!this.all || !podIds.contains(v.id)) v,
-                      ];
-                      final pods = this.all
-                          ? [
-                              for (final v in all)
-                                if (podIds.contains(v.id)) v,
-                            ]
-                          : <Video>[];
-                      final books = this.all ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
-                      final total = list.length + pods.length + books.length;
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          ...pageHeader(
-                            context,
-                            '${ui('Избранное')}${total == 0 ? '' : ' · $total'}',
-                            icon: KIcons.videos,
-                          ),
-                          Expanded(
+              child: ListenableBuilder(
+                listenable: store,
+                builder: (context, _) {
+                  // Сверху — отмеченные последними.
+                  final podIds = {for (final p in podcasts) p.id};
+                  final all = store.liked.reversed.map(videoById).nonNulls.toList();
+                  final list = [
+                    for (final v in all)
+                      if (!this.all || !podIds.contains(v.id)) v,
+                  ];
+                  final pods = this.all
+                      ? [
+                          for (final v in all)
+                            if (podIds.contains(v.id)) v,
+                        ]
+                      : <Video>[];
+                  final books = this.all ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
+                  final total = list.length + pods.length + books.length;
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      ...pageHeader(
+                        context,
+                        '${ui(this.all ? 'Избранное' : 'Избранные ролики')}${total == 0 ? '' : ' · $total'}',
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 1200),
                             child: total == 0
                                 ? Padding(
                                     padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
@@ -152,11 +150,11 @@ class LikedPage extends StatelessWidget {
                                     },
                                   ),
                           ),
-                        ],
-                      );
-                    },
-                  ),
-                ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
           ],
