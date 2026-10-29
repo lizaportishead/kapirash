@@ -427,7 +427,7 @@ class _StoryCard extends StatelessWidget {
                   padding: EdgeInsets.only(right: ready ? 44 : 0),
                   child: Text(
                     store.conv(story.title),
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
                   ),
                 ),
                 SizedBox(height: 4),
@@ -519,7 +519,7 @@ class _StoryCard extends StatelessWidget {
             store.conv(story.title),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
           ),
           SizedBox(height: 4),
           Text(
