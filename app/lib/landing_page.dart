@@ -130,7 +130,7 @@ class _LandingPageState extends State<LandingPage> with SingleTickerProviderStat
       children: [
         Text.rich(
           TextSpan(
-            text: 'Kapiraš',
+            text: brandName,
             children: [TextSpan(text: '?', style: TextStyle(color: cAccent))],
           ),
           style: TextStyle(fontSize: 22.5, fontWeight: FontWeight.w900, letterSpacing: -0.75, color: Colors.white),

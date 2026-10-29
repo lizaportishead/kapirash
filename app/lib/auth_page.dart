@@ -180,7 +180,7 @@ class _AuthPageState extends State<AuthPage> {
           children: [
             Text.rich(
               TextSpan(
-                text: 'Kapiraš',
+                text: brandName,
                 children: [TextSpan(text: '?', style: TextStyle(color: cAccent))],
               ),
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),

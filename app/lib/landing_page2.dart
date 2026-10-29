@@ -335,7 +335,7 @@ class _LandingPage2State extends State<LandingPage2> {
         children: [
           Text.rich(
             TextSpan(
-              text: 'Kapiraš',
+              text: brandName,
               children: [
                 TextSpan(
                   text: '?',

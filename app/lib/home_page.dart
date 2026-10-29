@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
                             children: [
                               Text.rich(
                                 TextSpan(
-                                  text: 'Kapiraš',
+                                  text: brandName,
                                   children: [
                                     TextSpan(
                                       text: '?',

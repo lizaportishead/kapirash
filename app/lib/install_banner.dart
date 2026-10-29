@@ -37,8 +37,8 @@ class _InstallBannerState extends State<InstallBanner> {
   Widget build(BuildContext context) {
     if (!_show) return SizedBox.shrink();
     final text = _platform == 'ios'
-        ? ui('Добавь Kapiraš на экран «Домой»: нажми «Поделиться» и «На экран Домой»')
-        : ui('Добавь Kapiraš на главный экран: меню браузера → «Установить приложение»');
+        ? ui('Добавь Капираш на экран «Домой»: нажми «Поделиться» и «На экран Домой»')
+        : ui('Добавь Капираш на главный экран: меню браузера → «Установить приложение»');
     return Container(
       margin: EdgeInsets.fromLTRB(12, 0, 12, 8),
       padding: EdgeInsets.fromLTRB(10, 10, 2, 10),

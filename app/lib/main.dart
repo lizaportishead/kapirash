@@ -539,7 +539,7 @@ class _HomeShellState extends State<HomeShell> {
                           children: [
                             Text.rich(
                               TextSpan(
-                                text: 'Kapiraš',
+                                text: brandName,
                                 children: [
                                   TextSpan(
                                     text: '?',

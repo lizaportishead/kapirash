@@ -10,6 +10,9 @@ bool get isEn => uiLang == 'en';
 String defaultLang() => PlatformDispatcher.instance.locale.languageCode == 'ru' ? 'ru' : 'en';
 
 /// Перевод строки интерфейса; {0}, {1} в строке заменяются на [args].
+/// Название приложения: в русской версии кириллицей.
+String get brandName => isEn ? 'Kapiraš' : 'Капираш';
+
 String ui(String ru, [List<Object> args = const []]) {
   var s = isEn ? (_en[ru] ?? ru) : ru;
   for (var i = 0; i < args.length; i++) {
@@ -183,8 +186,8 @@ const _en = <String, String>{
   'Главная': 'Home',
   'Рассказы': 'Stories',
   'Профиль': 'Profile',
-  'Добавь Kapiraš на экран «Домой»: нажми «Поделиться» и «На экран Домой»': 'Add Kapiraš to your Home Screen: tap Share, then Add to Home Screen',
-  'Добавь Kapiraš на главный экран: меню браузера → «Установить приложение»': 'Add Kapiraš to your home screen: browser menu → Install app',
+  'Добавь Капираш на экран «Домой»: нажми «Поделиться» и «На экран Домой»': 'Add Kapiraš to your Home Screen: tap Share, then Add to Home Screen',
+  'Добавь Капираш на главный экран: меню браузера → «Установить приложение»': 'Add Kapiraš to your home screen: browser menu → Install app',
   'Играть': 'Play',
   'Назад на 15 секунд': 'Back 15 seconds',
   'Вперёд на 15 секунд': 'Forward 15 seconds',
