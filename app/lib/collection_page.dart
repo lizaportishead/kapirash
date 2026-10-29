@@ -121,8 +121,7 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
                         ),
                       )
                     else ...[
-                      BackBar(),
-                      PageTitle('${widget.title}${list.isEmpty ? '' : ' · ${list.length}'}', icon: widget.icon),
+                      ...pageHeader(context, '${widget.title}${list.isEmpty ? '' : ' · ${list.length}'}', icon: widget.icon),
                     ],
                     Expanded(
                       child: list.isEmpty

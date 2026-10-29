@@ -247,8 +247,7 @@ class TopicPage extends StatelessWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    BackBar(),
-                    PageTitle(topicLabel(topic)),
+                    ...pageHeader(context, topicLabel(topic)),
                     Expanded(
                       child: LayoutBuilder(
                         builder: (_, box) {

@@ -27,7 +27,6 @@ class HistoryPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            BackBar(),
             Expanded(
               child: Center(
                 child: ConstrainedBox(
@@ -40,7 +39,7 @@ class HistoryPage extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          PageTitle('${ui('История')}${list.isEmpty ? '' : ' · ${list.length}'}'),
+                          ...pageHeader(context, '${ui('История')}${list.isEmpty ? '' : ' · ${list.length}'}'),
                           Expanded(
                             child: list.isEmpty
                                 ? Center(
