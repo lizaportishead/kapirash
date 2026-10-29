@@ -7,8 +7,11 @@ import 'l10n.dart';
 
 /// Лоадер: жирная фиолетовая š, у которой жёлтая диакритика живёт отдельно — плавно парит и покачивается.
 class KapLoader extends StatefulWidget {
-  const KapLoader({super.key, this.size = 56});
+  const KapLoader({super.key, this.size = 56, this.flip = false});
   final double size;
+
+  /// Полноэкранный вариант: фон и буква с диакритикой меняются фиолетовым и жёлтым.
+  final bool flip;
 
   @override
   State<KapLoader> createState() => _KapLoaderState();
@@ -27,7 +30,7 @@ class _KapLoaderState extends State<KapLoader> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     final s = widget.size;
-    return Semantics(
+    final loader = Semantics(
       label: ui('Загрузка'),
       child: SizedBox(
         width: s,
@@ -46,14 +49,15 @@ class _KapLoaderState extends State<KapLoader> with SingleTickerProviderStateMix
                     fontSize: s,
                     height: 1,
                     fontWeight: FontWeight.w800,
-                    color: cViolet,
+                    color: widget.flip ? null : cViolet,
+                    decoration: TextDecoration.none,
                   ),
                 ),
                 Positioned(
                   top: s * 0.1 - t * s * 0.14,
                   child: Transform.rotate(
                     angle: (t * 12 - 6) * math.pi / 180,
-                    child: CustomPaint(size: Size(s * 0.5, s * 0.3), painter: _CaronPainter()),
+                    child: CustomPaint(size: Size(s * 0.5, s * 0.3), painter: _CaronPainter(widget.flip && _c.value >= 0.5 ? cViolet : cAccent)),
                   ),
                 ),
               ],
@@ -62,18 +66,35 @@ class _KapLoaderState extends State<KapLoader> with SingleTickerProviderStateMix
         ),
       ),
     );
+    if (!widget.flip) return loader;
+    return AnimatedBuilder(
+      animation: _c,
+      builder: (_, _) {
+        final inv = _c.value >= 0.5;
+        return Material(
+          color: inv ? cAccent : cViolet,
+          child: DefaultTextStyle.merge(
+            style: TextStyle(color: inv ? cViolet : cAccent),
+            child: Center(child: loader),
+          ),
+        );
+      },
+    );
   }
 }
 
 class _CaronPainter extends CustomPainter {
+  _CaronPainter(this.color);
+  final Color color;
+
   @override
   void paint(Canvas canvas, Size size) {
     final p = Paint()
-      ..color = cAccent
+      ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = size.width * 0.18
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round;
+      ..strokeCap = StrokeCap.butt
+      ..strokeJoin = StrokeJoin.miter;
     final w = size.width, h = size.height;
     canvas.drawPath(
       Path()
@@ -85,7 +106,7 @@ class _CaronPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_) => false;
+  bool shouldRepaint(_CaronPainter old) => old.color != color;
 }
 
 /// Лоадер по центру экрана на цвет фона — для мест, где нечего показать, пока что-то грузится.

@@ -51,28 +51,22 @@
   <title>Kapiraš? — сербский по видео, подкастам и рассказам</title>
   <link rel="manifest" href="manifest.json">
   <style>
-    #kap-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:99;transition:opacity .35s}
-    @media (prefers-color-scheme:dark){#kap-loader{background:#0E0E12}}
+    @font-face{font-family:"KapMont";src:url("assets/assets/fonts/Montserrat.ttf");font-weight:100 900;font-display:block}
+    #kap-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:99;transition:opacity .35s;background:#7357F6;color:#E6EC68;animation:kl-flip 2.4s steps(1) infinite}
     #kap-loader.done{opacity:0;pointer-events:none}
-    #kap-loader .w{display:flex;align-items:baseline;font:800 120px/1 -apple-system,"Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.02em;color:#7357F6}
-    #kap-loader .l{display:inline-block;animation:kl-wave 1.8s ease-in-out infinite;animation-delay:calc(var(--i)*.07s)}
-    #kap-loader .sh .l{font-weight:800;animation:none;transition:opacity .3s ease,transform .3s ease}
-    #kap-loader .sh.swap .l{opacity:0;transform:translateY(.08em)}
-    #kap-loader .caron{transition:opacity .3s ease}
-    #kap-loader .sh.swap .caron,#kap-loader .caron.off{opacity:0}
-    #kap-loader .sh{position:relative;display:inline-block;transform-origin:50% 100%;animation:kl-squash 2.4s ease-in-out infinite}
-    #kap-loader .caron{position:absolute;left:50%;top:-.02em;width:.5em;height:.3em;margin-left:-.25em;color:#E6EC68;transform-origin:50% 50%;animation:kl-caron 2.4s ease-in-out infinite}
-    @keyframes kl-wave{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-.08em)}}
+    #kap-loader .w{display:flex;align-items:baseline;font:800 120px/1 "KapMont",-apple-system,"Helvetica Neue",Arial,sans-serif}
+    #kap-loader .sh{position:relative;display:inline-block}
+    #kap-loader .caron{position:absolute;left:50%;top:-.02em;width:.5em;height:.3em;margin-left:-.25em;transform-origin:50% 50%;animation:kl-caron 2.4s ease-in-out infinite}
+    @keyframes kl-flip{0%{background:#7357F6;color:#E6EC68}50%{background:#E6EC68;color:#7357F6}}
     /* диакритика: плавно парит над s и чуть покачивается */
     @keyframes kl-caron{
       0%,100%{transform:translateY(0) rotate(-6deg)}
       50%{transform:translateY(-.14em) rotate(6deg)}}
-    @keyframes kl-squash{0%,100%{transform:scale(1,1)}50%{transform:scale(1,1.02)}}
   </style>
 </head>
 <body>
   <div id="kap-loader" aria-label="Loading"><div class="w">
-    <span class="sh"><span class="l" id="kap-ch">s</span><svg class="caron" id="kap-mark" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path id="kap-mark-p" d="M2 2l8 8 8-8"/></svg></span>
+    <span class="sh"><span id="kap-ch">s</span><svg class="caron" id="kap-mark" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="butt" stroke-linejoin="miter"><path id="kap-mark-p" d="M1.5 1.5l8.5 8.5 8.5-8.5"/></svg></span>
   </div></div>
   <script>
     window.addEventListener('flutter-first-frame', function () {
@@ -86,7 +80,7 @@
       var el = document.getElementById('kap-loader');
       if (!el || el.classList.contains('done')) return;
       var p = document.createElement('div');
-      p.style.cssText = 'position:absolute;left:0;right:0;bottom:12%;text-align:center;font:500 15px/1.4 -apple-system,Inter,Arial,sans-serif;color:#7357F6;padding:0 24px';
+      p.style.cssText = 'position:absolute;left:0;right:0;bottom:12%;text-align:center;font:500 15px/1.4 -apple-system,Inter,Arial,sans-serif;color:inherit;padding:0 24px';
       p.innerHTML = 'Загрузка идёт дольше обычного. Проверьте интернет или <a href="" style="color:inherit;text-decoration:underline">обновите страницу</a>.';
       el.appendChild(p);
     }, 20000);
@@ -102,7 +96,7 @@
   <!-- PostHog: вставьте Project API Key (тот же, что posthogKey в lib/analytics.dart). Пока пусто, аналитика не грузится. -->
   <script>
     (function () {
-      var POSTHOG_KEY = '';
+      var POSTHOG_KEY = 'phc_BHCkyZYubFM37ZGyMCj6UfFc3icjaQRYngossZguQ8b3';
       if (!POSTHOG_KEY) return;
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister identify reset opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing getFeatureFlag isFeatureEnabled onFeatureFlags reloadFeatureFlags group setPersonProperties".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       posthog.init(POSTHOG_KEY, { api_host: 'https://eu.i.posthog.com', autocapture: false, capture_pageview: false, person_profiles: 'identified_only' });

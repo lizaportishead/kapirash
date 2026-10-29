@@ -37,12 +37,7 @@ Future<void> main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ColoredBox(
-        color: WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark
-            ? Color(0xFF0E0E12)
-            : Color(0xFFFFFFFF),
-        child: KapLoading(size: 96),
-      ),
+      home: KapLoader(size: 96, flip: true),
     ),
   );
   if (supabaseKey.isNotEmpty) {
