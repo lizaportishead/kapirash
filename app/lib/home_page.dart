@@ -30,7 +30,12 @@ class HomePage extends StatelessWidget {
   Widget _page(BuildContext context) {
     final level = store.level, interests = store.interests;
     final forYou = recommendVideos(videos, level: level, interests: interests);
-    final shorts = recommendVideos(clips, level: level, interests: interests, limit: 6);
+    // Шортсы идут от новых к старым (clips уже в таком порядке); просмотренные — в конец, законченные скрыты.
+    final fresh = [
+      for (final v in clips)
+        if (!store.isFinished(v.id)) v,
+    ];
+    final shorts = [...fresh.where((v) => !store.isWatched(v.id)), ...fresh.where((v) => store.isWatched(v.id))].take(6).toList();
     final books = recommendStories(stories, level: level);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -125,37 +130,47 @@ class _Profile extends StatelessWidget {
               (interests.isEmpty
                   ? ''
                   : ' · ${interests.take(3).map(topicLabel).join(', ')}${interests.length > 3 ? ui(' и ещё {0}', [interests.length - 3]) : ''}');
+    final mobile = MediaQuery.sizeOf(context).width < 600;
     return Padding(
       padding: EdgeInsets.fromLTRB(12, 0, 12, 20),
       child: Material(
-        color: cViolet,
+        color: mobile ? cCard : cViolet,
         borderRadius: BorderRadius.circular(20),
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
           onTap: () => openSurvey(context),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(14, 12, 14, 12),
+            padding: mobile ? EdgeInsets.fromLTRB(16, 12, 8, 12) : EdgeInsets.fromLTRB(14, 12, 14, 12),
             child: Row(
               children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(color: cOnViolet.withValues(alpha: 0.2), shape: BoxShape.circle),
-                  child: Icon(Icons.auto_awesome_rounded, size: 22, color: cOnViolet),
-                ),
-                SizedBox(width: 12),
+                if (!mobile) ...[
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(color: cOnViolet.withValues(alpha: 0.2), shape: BoxShape.circle),
+                    child: Icon(Icons.auto_awesome_rounded, size: 22, color: cOnViolet),
+                  ),
+                  SizedBox(width: 12),
+                ],
                 Expanded(
-                  child: Text(text, style: TextStyle(fontSize: 14, height: 1.35, color: cOnViolet)),
+                  child: Text(text, style: TextStyle(fontSize: 14, height: 1.35, color: mobile ? cMuted : cOnViolet)),
                 ),
-                SizedBox(width: 12),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(color: cOnViolet, borderRadius: BorderRadius.circular(999)),
-                  child: Text(
+                SizedBox(width: mobile ? 4 : 12),
+                if (mobile)
+                  Text(
                     level == null ? ui('Пройти') : ui('Изменить'),
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cViolet),
+                  )
+                else
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(color: cOnViolet, borderRadius: BorderRadius.circular(999)),
+                    child: Text(
+                      level == null ? ui('Пройти') : ui('Изменить'),
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: cViolet),
+                    ),
                   ),
-                ),
+                if (mobile) SizedBox(width: 8),
               ],
             ),
           ),
