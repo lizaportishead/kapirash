@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'feed_page.dart' show videoCardHeight;
 import 'icons.dart';
+import 'podcasts_page.dart' show EpisodeTile;
+import 'stories_page.dart' show storyById, storyTile;
 import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
@@ -9,17 +11,20 @@ import 'videos.dart';
 import 'l10n.dart';
 
 /// Открывает ролики со звёздочкой поверх таббара.
-void openLiked(BuildContext context) {
+void openLiked(BuildContext context, {bool all = false}) {
   Navigator.of(context).push(
     MaterialPageRoute<void>(
       settings: RouteSettings(name: 'LikedPage'),
-      builder: (_) => LikedPage(),
+      builder: (_) => LikedPage(all: all),
     ),
   );
 }
 
 class LikedPage extends StatelessWidget {
-  const LikedPage({super.key});
+  const LikedPage({super.key, this.all = false});
+
+  /// С главной: вместе с подкастами и рассказами, а не только ролики.
+  final bool all;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +42,30 @@ class LikedPage extends StatelessWidget {
                     listenable: store,
                     builder: (context, _) {
                       // Сверху — отмеченные последними.
-                      final list = store.liked.reversed.map(videoById).nonNulls.toList();
+                      final podIds = {for (final p in podcasts) p.id};
+                      final all = store.liked.reversed.map(videoById).nonNulls.toList();
+                      final list = [
+                        for (final v in all)
+                          if (!this.all || !podIds.contains(v.id)) v,
+                      ];
+                      final pods = this.all
+                          ? [
+                              for (final v in all)
+                                if (podIds.contains(v.id)) v,
+                            ]
+                          : <Video>[];
+                      final books = this.all ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
+                      final total = list.length + pods.length + books.length;
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          ...pageHeader(context, '${ui('Избранное')}${list.isEmpty ? '' : ' · ${list.length}'}', icon: KIcons.videos),
+                          ...pageHeader(
+                            context,
+                            '${ui('Избранное')}${total == 0 ? '' : ' · $total'}',
+                            icon: KIcons.videos,
+                          ),
                           Expanded(
-                            child: list.isEmpty
+                            child: total == 0
                                 ? Padding(
                                     padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                                     child: Column(
@@ -58,7 +80,9 @@ class LikedPage extends StatelessWidget {
                                         SizedBox(height: 16),
                                         Text(
                                           ui(
-                                            'Ставь звёздочку роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
+                                            this.all
+                                                ? 'Ставь звёздочку тому, что хочешь сохранить: роликам, подкастам, рассказам. Это появится тут.'
+                                                : 'Ставь звёздочку роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
                                           ),
                                           textAlign: TextAlign.center,
                                           style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
@@ -71,16 +95,59 @@ class LikedPage extends StatelessWidget {
                                       // Узкий экран — лента в одну колонку, на десктопе — плитки.
                                       final cols = (box.maxWidth / 340).floor().clamp(1, 4);
                                       final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
-                                      return GridView.builder(
-                                        padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
-                                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: cols,
-                                          crossAxisSpacing: 12,
-                                          mainAxisSpacing: 12,
-                                          mainAxisExtent: videoCardHeight(cardW),
+                                      Widget title(String t) => Padding(
+                                        padding: EdgeInsets.fromLTRB(16, 8, 16, 10),
+                                        child: Text(
+                                          t,
+                                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: cText),
                                         ),
-                                        itemCount: list.length,
-                                        itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                                      );
+                                      Widget column(List<Widget> tiles) => Align(
+                                        alignment: Alignment.topLeft,
+                                        child: ConstrainedBox(
+                                          constraints: BoxConstraints(maxWidth: 720),
+                                          child: Padding(
+                                            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                            child: Column(
+                                              children: [
+                                                for (final t in tiles)
+                                                  Padding(padding: EdgeInsets.only(bottom: 12), child: t),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                      return CustomScrollView(
+                                        slivers: [
+                                          if (list.isNotEmpty) ...[
+                                            if (this.all) SliverToBoxAdapter(child: title(ui('Видео'))),
+                                            SliverPadding(
+                                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                              sliver: SliverGrid.builder(
+                                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                                  crossAxisCount: cols,
+                                                  crossAxisSpacing: 12,
+                                                  mainAxisSpacing: 12,
+                                                  mainAxisExtent: videoCardHeight(cardW),
+                                                ),
+                                                itemCount: list.length,
+                                                itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                                              ),
+                                            ),
+                                          ],
+                                          if (pods.isNotEmpty) ...[
+                                            SliverToBoxAdapter(child: title(ui('Подкасты'))),
+                                            SliverToBoxAdapter(
+                                              child: column([
+                                                for (final v in pods) EpisodeTile(v, key: ValueKey(v.id)),
+                                              ]),
+                                            ),
+                                          ],
+                                          if (books.isNotEmpty) ...[
+                                            SliverToBoxAdapter(child: title(ui('Рассказы'))),
+                                            SliverToBoxAdapter(child: column([for (final s in books) storyTile(s)])),
+                                          ],
+                                        ],
                                       );
                                     },
                                   ),

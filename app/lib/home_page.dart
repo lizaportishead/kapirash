@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
               IconButton(
                 tooltip: ui('Избранное'),
                 icon: Icon(KIcons.star, size: 24, color: cText),
-                onPressed: () => openLiked(context),
+                onPressed: () => openLiked(context, all: true),
               ),
               IconButton(
                 tooltip: ui('Поиск'),

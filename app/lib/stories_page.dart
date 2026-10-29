@@ -381,6 +381,9 @@ class _StoryProgress extends StatelessWidget {
   }
 }
 
+/// Карточка рассказа для других экранов (общее «Избранное»).
+Widget storyTile(Story s) => _StoryCard(s);
+
 class _StoryCard extends StatelessWidget {
   const _StoryCard(this.story, {this.vertical = false});
   final Story story;

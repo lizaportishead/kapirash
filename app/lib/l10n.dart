@@ -323,6 +323,7 @@ const _en = <String, String>{
   'Поиск по роликам': 'Search videos',
   'Поиск по рассказам': 'Search stories',
   'Поиск по подкастам': 'Search podcasts',
+  'Ставь звёздочку тому, что хочешь сохранить: роликам, подкастам, рассказам. Это появится тут.': 'Tap the star on whatever you want to keep: videos, podcasts, stories. It will show up here.',
   'Ставь звёздочку подкастам, к которым хочешь вернуться. Они появятся тут.': 'Tap the star on podcasts you want to come back to. They will show up here.',
   'Ставь звёздочку рассказам, которые хочешь прочитать позже. Они появятся тут.': 'Tap the star on stories you want to read later. They will show up here.',
   'Очистить': 'Clear',
