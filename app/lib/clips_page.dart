@@ -194,6 +194,10 @@ class ClipTile extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 12, color: cOnInk.withValues(alpha: 0.8)),
                       ),
+                      if (difficultyOf(v.level) != null) ...[
+                        SizedBox(height: 4),
+                        DifficultyLabel(v.level, size: 12, color: cOnInk.withValues(alpha: 0.8)),
+                      ],
                     ],
                   ),
                 ),
@@ -492,6 +496,7 @@ class _ClipPageState extends State<_ClipPage> {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 13, color: cMuted),
                       ),
+                      if (difficultyOf(v.level) != null) ...[SizedBox(height: 2), DifficultyLabel(v.level, size: 12)],
                     ],
                   ),
                 ),
@@ -595,11 +600,17 @@ class _ClipPageState extends State<_ClipPage> {
       children: [
         if (back) _back(),
         Expanded(
-          child: Text(
-            v.title,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                v.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+              ),
+              if (difficultyOf(v.level) != null) DifficultyLabel(v.level, size: 12),
+            ],
           ),
         ),
         _tiktokButton(),

@@ -298,9 +298,10 @@ class PageTitle extends StatelessWidget {
 }
 
 class DifficultyLabel extends StatelessWidget {
-  const DifficultyLabel(this.level, {super.key, this.size = 13});
+  const DifficultyLabel(this.level, {super.key, this.size = 13, this.color});
   final String level;
   final double size;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -313,7 +314,7 @@ class DifficultyLabel extends StatelessWidget {
         SizedBox(width: 5),
         Text(
           d.$1,
-          style: TextStyle(fontSize: size, color: cMuted),
+          style: TextStyle(fontSize: size, color: color ?? cMuted),
         ),
       ],
     );
