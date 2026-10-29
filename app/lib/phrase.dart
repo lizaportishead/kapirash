@@ -162,17 +162,21 @@ void showWord(
   if (cleanWord(raw).isEmpty) return;
   showModalBottomSheet<void>(
     context: context,
-    backgroundColor: cBg,
+    backgroundColor: Colors.transparent,
     isScrollControlled: true,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
-    builder: (ctx) => WordCard(
-      raw: raw,
-      cue: cue,
-      dict: dict,
-      videoId: videoId,
-      place: place,
-      flyTo: flyTo,
-      onClose: () => Navigator.pop(ctx),
+    builder: (ctx) => Container(
+      margin: EdgeInsets.fromLTRB(10, 0, 10, 10 + MediaQuery.of(ctx).padding.bottom * 0.5),
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(color: cBg, borderRadius: BorderRadius.circular(32)),
+      child: WordCard(
+        raw: raw,
+        cue: cue,
+        dict: dict,
+        videoId: videoId,
+        place: place,
+        flyTo: flyTo,
+        onClose: () => Navigator.pop(ctx),
+      ),
     ),
   );
 }
@@ -192,7 +196,10 @@ class LinkButton extends StatelessWidget {
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ),
     icon: SizedBox(width: 18, height: 18, child: Center(child: icon)),
-    label: Text(label, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted)),
+    label: Text(
+      label,
+      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted),
+    ),
     onPressed: () => launchUrl(url, mode: LaunchMode.externalApplication),
   );
 }
@@ -312,10 +319,19 @@ class _WordCardState extends State<WordCard> {
                         LinkButton(
                           icon: Text(
                             'W',
-                            style: TextStyle(fontFamily: 'serif', fontSize: 17, fontWeight: FontWeight.w700, height: 1, color: cMuted),
+                            style: TextStyle(
+                              fontFamily: 'serif',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
+                              color: cMuted,
+                            ),
                           ),
                           label: ui('Смотреть в Wiktionary'),
-                          url: Uri.https('en.wiktionary.org', '/wiki/${SavedWord.lemmaOf(key, note)}').replace(fragment: 'Serbo-Croatian'),
+                          url: Uri.https(
+                            'en.wiktionary.org',
+                            '/wiki/${SavedWord.lemmaOf(key, note)}',
+                          ).replace(fragment: 'Serbo-Croatian'),
                         ),
                       ],
                     ),

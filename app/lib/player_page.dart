@@ -997,36 +997,39 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
       top: top,
       width: _cardW,
       child: PointerInterceptor(
-        child: Material(
-          color: cBg,
-          elevation: 8,
-          borderRadius: BorderRadius.circular(24),
-          clipBehavior: Clip.antiAlias,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: _cardH),
-            child: Stack(
-              children: [
-                SingleChildScrollView(
-                  child: WordCard(
-                    key: ValueKey('${word.$1}@${word.$2.start}'),
-                    raw: word.$1,
-                    cue: word.$2,
-                    dict: widget.dict,
-                    videoId: widget.videoId,
-                    flyTo: widget.flyTo,
-                    compact: true,
-                    onClose: () => widget.word.value = null,
+        child: TapRegion(
+          onTapOutside: (_) => widget.word.value = null,
+          child: Material(
+            color: cBg,
+            elevation: 8,
+            borderRadius: BorderRadius.circular(24),
+            clipBehavior: Clip.antiAlias,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: _cardH),
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    child: WordCard(
+                      key: ValueKey('${word.$1}@${word.$2.start}'),
+                      raw: word.$1,
+                      cue: word.$2,
+                      dict: widget.dict,
+                      videoId: widget.videoId,
+                      flyTo: widget.flyTo,
+                      compact: true,
+                      onClose: () => widget.word.value = null,
+                    ),
                   ),
-                ),
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: IconButton(
-                    icon: Icon(Icons.close, size: 20, color: cMuted),
-                    onPressed: () => widget.word.value = null,
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child: IconButton(
+                      icon: Icon(Icons.close, size: 20, color: cMuted),
+                      onPressed: () => widget.word.value = null,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
