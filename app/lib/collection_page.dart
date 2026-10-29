@@ -127,10 +127,22 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
                       child: list.isEmpty
                           ? Padding(
                               padding: EdgeInsets.all(24),
-                              child: Text(
-                                searching ? ui('Ничего не нашлось. Попробуй другой запрос.') : widget.emptyLiked,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  if (!searching)
+                                    Flexible(
+                                      child: ExcludeSemantics(
+                                        child: Image.asset('assets/ill_liked.png', height: 220),
+                                      ),
+                                    ),
+                                  if (!searching) SizedBox(height: 16),
+                                  Text(
+                                    searching ? ui('Ничего не нашлось. Попробуй другой запрос.') : widget.emptyLiked,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                                  ),
+                                ],
                               ),
                             )
                           : ListView.separated(
