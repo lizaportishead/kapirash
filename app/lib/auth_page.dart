@@ -179,7 +179,7 @@ class _AuthPageState extends State<AuthPage> {
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),
             ),
             SizedBox(width: 10),
-            BetaBadge(logoSize: 32),
+            BetaBadge(logoSize: 22),
           ],
         ),
         Text('* ${ui('понимаешь?')}', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted.withValues(alpha: 0.6))),
@@ -226,7 +226,7 @@ class _AuthPageState extends State<AuthPage> {
                       )
                     else
                       _logo(),
-                    SizedBox(height: wide ? 32 : 88),
+                    SizedBox(height: wide ? 32 : 40),
                     Headline(
                       _sentTo == null
                           ? ui('Войди в\u00A0*аккаунт*')
