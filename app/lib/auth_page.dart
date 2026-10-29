@@ -45,7 +45,9 @@ class _AuthPageState extends State<AuthPage> {
     store.addListener(_onStore);
     _loadEmail();
     if (widget.start && store.user != null) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => store.finishOnboarding());
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!store.onboarded) store.finishOnboarding();
+      });
     }
   }
 
@@ -60,7 +62,12 @@ class _AuthPageState extends State<AuthPage> {
   // Вошли — по коду или по ссылке из письма, пока экран был открыт.
   void _onStore() {
     if (store.user == null || !mounted) return;
-    widget.start ? store.finishOnboarding() : Navigator.pop(context);
+    // finishOnboarding сам зовёт слушателей, в том числе этот: без проверки он вызывал бы себя бесконечно.
+    if (widget.start) {
+      if (!store.onboarded) store.finishOnboarding();
+    } else {
+      Navigator.pop(context);
+    }
   }
 
   @override
