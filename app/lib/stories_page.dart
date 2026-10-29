@@ -246,7 +246,7 @@ class StoriesPage extends StatelessWidget {
         Expanded(
           child: LayoutBuilder(
             builder: (_, box) {
-              const pad = 12.0, gap = 16.0;
+              const pad = 20.0, gap = 24.0;
               // На широком экране — сетка вертикальных карточек, на телефоне — список.
               if (box.maxWidth < 640) {
                 return ListView.separated(
@@ -256,14 +256,14 @@ class StoriesPage extends StatelessWidget {
                   itemBuilder: (_, i) => _StoryCard(stories[i]),
                 );
               }
-              final cols = ((box.maxWidth - 2 * pad + gap) / (260 + gap)).floor().clamp(2, 5);
+              final cols = ((box.maxWidth - 2 * pad + gap) / (190 + gap)).floor().clamp(2, 7);
               final cardW = (box.maxWidth - 2 * pad - gap * (cols - 1)) / cols;
               // Высота карточки — по содержимому (квадратная обложка + текст), без пустоты снизу.
               final rows = (stories.length / cols).ceil();
               return ListView.separated(
                 padding: EdgeInsets.fromLTRB(pad, 0, pad, 24),
                 itemCount: rows,
-                separatorBuilder: (_, _) => SizedBox(height: gap),
+                separatorBuilder: (_, _) => SizedBox(height: gap + 8),
                 itemBuilder: (_, r) => IntrinsicHeight(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -423,12 +423,18 @@ class _StoryCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 2),
-                Text(
-                  store.conv(story.title),
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+                Padding(
+                  padding: EdgeInsets.only(right: ready ? 44 : 0),
+                  child: Text(
+                    store.conv(story.title),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.2, color: cText),
+                  ),
                 ),
                 SizedBox(height: 4),
-                Text(story.author, style: TextStyle(fontSize: 13, color: cText)),
+                Padding(
+                  padding: EdgeInsets.only(right: ready ? 44 : 0),
+                  child: Text(story.author, style: TextStyle(fontSize: 13, color: cText)),
+                ),
                 if (ready) _meta(),
                 if (ready) _progress(),
                 SizedBox(height: 8),
