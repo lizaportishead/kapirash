@@ -22,5 +22,9 @@ double webSafeBottom() {
   web.document.body!.append(probe);
   final h = probe.getBoundingClientRect().height;
   probe.remove();
-  return h;
+  if (h > 0) return h;
+  // iOS мог закэшировать старый index.html без viewport-fit=cover, тогда env() даёт 0; в PWA на iPhone с индикатором это 34.
+  final iosStandalone = web.window.navigator.getProperty('standalone'.toJS).dartify() == true;
+  final iphone = web.window.navigator.userAgent.contains('iPhone') && web.window.screen.height >= 780;
+  return iosStandalone && iphone ? 34 : 0;
 }
