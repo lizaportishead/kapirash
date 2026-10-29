@@ -1,0 +1,33 @@
+Q = {}
+Q['RCWmyQdrqRo'] = {
+'M': [
+ ("Как часто героиня ела сладкое до эксперимента?","How often did the narrator eat sweets before the experiment?",["Раз в неделю","Только по праздникам","Каждый день","Только вечером"],["Once a week","Only on holidays","Every day","Only in the evening"],2,"Pojedem nešto slatko svakog dana bez izuzetka.","я съедаю что-нибудь сладкое каждый день, без исключений.","I eat something sweet every day, without exception."),
+ ("Что она считает хуже всего в сахаре?","What does she consider the worst thing about sugar?",["Он дорогой","Он вызывает зависимость, как наркотик","Он портит вкус кофе","Он делает еду пресной"],["It is expensive","It is addictive, like a drug","It spoils the taste of coffee","It makes food bland"],1,"a to je da je šećer na neki način droga.","а именно то, что сахар — в некотором смысле наркотик.","and that is that sugar is, in a way, a drug."),
+ ("Что случилось с кожей и энергией из-за сладкого?","What happened to her skin and energy because of sweets?",["Энергия выросла, кожа улучшилась","Энергия упала, кожа ухудшилась","Ничего не изменилось","Кожа высохла, энергия не изменилась"],["Energy rose and skin improved","Energy dropped and skin got worse","Nothing changed","Skin dried out, energy stayed the same"],1,"nivo energije mi je značajno opao i koža mi se pogoršala.","уровень энергии заметно упал, а кожа ухудшилась.","my energy level dropped significantly and my skin got worse."),
+ ("Что, по её словам, хуже всего в правилах эксперимента?","What does she say is the worst of the experiment's rules?",["Нет мяса","Нет сахара в кофе","Нет фруктов","Нет салатов"],["No meat","No sugar in coffee","No fruit","No salads"],1,"I što je najgore od svega, nema šećera u kafi.","И что хуже всего — никакого сахара в кофе.","And what's worst of all, no sugar in coffee."),
+ ("Какая рекомендуемая суточная норма сахара?","What is the recommended daily sugar intake?",["10 граммов","25 граммов","50 граммов","100 граммов"],["10 grams","25 grams","50 grams","100 grams"],1,"Preporučen dnevni unos šećera je 25 grama","Рекомендуемое суточное потребление сахара — 25 граммов","The recommended daily sugar intake is 25 grams"),
+ ("Что помогало ей вечером справиться с тягой к сладкому?","What helped her handle sweet cravings in the evening?",["Чашка чая","Фрукты","Прогулка","Сон"],["A cup of tea","Fruit","A walk","Sleep"],0,"Uveče bih napravila sebi šolju čaja od kamilice ili nane","Вечером я заваривала себе чашку ромашкового или мятного чая","In the evening I'd make myself a cup of chamomile or mint tea"),
+ ("Что произошло со вкусом привычных продуктов?","What happened to the taste of everyday foods?",["Они стали безвкусными","Они стали горькими","Они стали казаться сладкими","Ничего"],["They became tasteless","They became bitter","They started to taste sweet","Nothing"],2,"jeste da su sada stvari koje mi ranije nisu bile slatke,","то, что вещи, которые раньше не казались мне сладкими,","is that things that weren't sweet to me before"),
+ ("Сколько она потеряла в весе?","How much weight did she lose?",["Ничего","Один килограмм","Пять килограммов","Десять килограммов"],["Nothing","One kilogram","Five kilograms","Ten kilograms"],1,"Izgubila sam jedan kilogram","Я потеряла один килограмм","I lost one kilogram"),
+],
+'L': [
+ ("Prekomjeran unos šećera može izazvati *gojaznost*, dijabetes, probleme sa srcem,",["ожирение","кариес","депрессию","усталость"],["obesity","cavities","depression","tiredness"],0,"gojaznost — ожирение.","gojaznost — obesity."),
+ ("Nema suhog voća, nema voćnih *sokova*, nema gaziranih pića, nema alkohola,",["напитков","соков","конфет","сиропов"],["drinks","juices","candies","syrups"],1,"sok — сок; sokova — соков.","sok — juice; sokova — of juices."),
+ ("Nema vještačkih *zaslađivača*, poput aspartama, stevije.",["красителей","консервантов","подсластителей","добавок"],["colourings","preservatives","sweeteners","additives"],2,"zaslađivač — подсластитель.","zaslađivač — sweetener."),
+ ("Uveče bih napravila sebi šolju čaja od *kamilice* ili nane",["ромашки","лимона","шиповника","мёда"],["chamomile","lemon","rosehip","honey"],0,"kamilica — ромашка.","kamilica — chamomile."),
+ ("Osjećala sam se kao da su mi sve *lađe* potonule",["друзья ушли","корабли","деньги","силы"],["friends left","ships","money","strength"],1,"lađa — корабль; идиома «все корабли затонули» — всё пошло ко дну.","lađa — ship; the idiom means everything went down the drain."),
+ ("i samo sam željela da se pokrijem *ćebetom* preko glave i da prespavam cio dan,",["подушкой","зонтом","одеялом","шарфом"],["a pillow","an umbrella","a blanket","a scarf"],2,"ćebe — одеяло.","ćebe — blanket."),
+ ("Imala sam ovdje jednu *bubuljicu*, međutim neke ozbiljnije upalne procese na licu uopšte nemam.",["родинку","прыщик","морщину","царапину"],["a mole","a pimple","a wrinkle","a scratch"],1,"bubuljica — прыщик.","bubuljica — pimple."),
+ ("Danas za ručak imamo falafel, *špargle* i salatu.",["спаржа","шпинат","редис","горох"],["asparagus","spinach","radish","peas"],0,"špargla — спаржа.","špargla — asparagus."),
+],
+'G': [
+ ("Osim ukoliko ne živite u ___, do sada ste već naučili",["pećini","pećina","pećinu","pećine"],0,"После предлога «u» (где?) — местный падеж: u pećini.","After «u» (where?) use the locative: u pećini."),
+ ("Nema šećera u ___.",["kafi","kafa","kafu","kafe"],0,"После «u» (где?) — местный падеж: u kafi.","After «u» (where?) use the locative: u kafi."),
+ ("Prvi korak je bio da nađem sve što imam u ___",["kući","kuća","kuću","kuće"],0,"u kući — «в доме», местный падеж.","u kući — «in the house», locative."),
+ ("Krenula sam da kuvam zdravije obroke sa više ___",["zelenila","zelenilo","zelenilu","zelenilom"],0,"После «više» (больше) — родительный падеж: više zelenila.","After «više» (more) use the genitive: više zelenila."),
+ ("Ono što sam morala da uradim je da izbalansiram svoju ___",["dijetu","dijeta","dijete","dijetom"],0,"Прямое дополнение — винительный падеж: svoju dijetu.","Direct object — accusative: svoju dijetu."),
+ ("Kažite mi šta vi mislite o ___ ovome",["svemu","sve","svega","svim"],0,"После «o» (о чём?) — местный падеж: o svemu ovome.","After «o» (about what?) use the locative: o svemu ovome."),
+ ("Sa pozitivne ___, baš sam zadovoljna",["strane","strana","stranu","strani"],0,"Предлог «sa» + родительный: sa pozitivne strane — «с положительной стороны».","«sa» + genitive: sa pozitivne strane — «on the positive side»."),
+ ("Danas jedem špagete sa ___ od pečuraka i parmezanom",["sosom","sos","sosa","sosu"],0,"После «sa» (с чем?) — творительный падеж: sa sosom.","After «sa» (with what?) use the instrumental: sa sosom."),
+],
+}

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How often did the narrator eat sweets before the experiment?",
+     "o": [
+      "Once a week",
+      "Only on holidays",
+      "Every day",
+      "Only in the evening"
+     ],
+     "a": 2,
+     "e": "In the video: \"Pojedem nešto slatko svakog dana bez izuzetka.\" — I eat something sweet every day, without exception."
+    },
+    {
+     "q": "What does she consider the worst thing about sugar?",
+     "o": [
+      "It is expensive",
+      "It is addictive, like a drug",
+      "It spoils the taste of coffee",
+      "It makes food bland"
+     ],
+     "a": 1,
+     "e": "In the video: \"a to je da je šećer na neki način droga.\" — and that is that sugar is, in a way, a drug."
+    },
+    {
+     "q": "What happened to her skin and energy because of sweets?",
+     "o": [
+      "Energy rose and skin improved",
+      "Energy dropped and skin got worse",
+      "Nothing changed",
+      "Skin dried out, energy stayed the same"
+     ],
+     "a": 1,
+     "e": "In the video: \"nivo energije mi je značajno opao i koža mi se pogoršala.\" — my energy level dropped significantly and my skin got worse."
+    },
+    {
+     "q": "What does she say is the worst of the experiment's rules?",
+     "o": [
+      "No meat",
+      "No sugar in coffee",
+      "No fruit",
+      "No salads"
+     ],
+     "a": 1,
+     "e": "In the video: \"I što je najgore od svega, nema šećera u kafi.\" — And what's worst of all, no sugar in coffee."
+    },
+    {
+     "q": "What is the recommended daily sugar intake?",
+     "o": [
+      "10 grams",
+      "25 grams",
+      "50 grams",
+      "100 grams"
+     ],
+     "a": 1,
+     "e": "In the video: \"Preporučen dnevni unos šećera je 25 grama\" — The recommended daily sugar intake is 25 grams"
+    },
+    {
+     "q": "What helped her handle sweet cravings in the evening?",
+     "o": [
+      "A cup of tea",
+      "Fruit",
+      "A walk",
+      "Sleep"
+     ],
+     "a": 0,
+     "e": "In the video: \"Uveče bih napravila sebi šolju čaja od kamilice ili nane\" — In the evening I'd make myself a cup of chamomile or mint tea"
+    },
+    {
+     "q": "What happened to the taste of everyday foods?",
+     "o": [
+      "They became tasteless",
+      "They became bitter",
+      "They started to taste sweet",
+      "Nothing"
+     ],
+     "a": 2,
+     "e": "In the video: \"jeste da su sada stvari koje mi ranije nisu bile slatke,\" — is that things that weren't sweet to me before"
+    },
+    {
+     "q": "How much weight did she lose?",
+     "o": [
+      "Nothing",
+      "One kilogram",
+      "Five kilograms",
+      "Ten kilograms"
+     ],
+     "a": 1,
+     "e": "In the video: \"Izgubila sam jedan kilogram\" — I lost one kilogram"
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prekomjeran unos šećera može izazvati *gojaznost*, dijabetes, probleme sa srcem,",
+     "o": [
+      "obesity",
+      "cavities",
+      "depression",
+      "tiredness"
+     ],
+     "a": 0,
+     "e": "gojaznost — obesity."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nema suhog voća, nema voćnih *sokova*, nema gaziranih pića, nema alkohola,",
+     "o": [
+      "drinks",
+      "juices",
+      "candies",
+      "syrups"
+     ],
+     "a": 1,
+     "e": "sok — juice; sokova — of juices."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nema vještačkih *zaslađivača*, poput aspartama, stevije.",
+     "o": [
+      "colourings",
+      "preservatives",
+      "sweeteners",
+      "additives"
+     ],
+     "a": 2,
+     "e": "zaslađivač — sweetener."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Uveče bih napravila sebi šolju čaja od *kamilice* ili nane",
+     "o": [
+      "chamomile",
+      "lemon",
+      "rosehip",
+      "honey"
+     ],
+     "a": 0,
+     "e": "kamilica — chamomile."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Osjećala sam se kao da su mi sve *lađe* potonule",
+     "o": [
+      "friends left",
+      "ships",
+      "money",
+      "strength"
+     ],
+     "a": 1,
+     "e": "lađa — ship; the idiom means everything went down the drain."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "i samo sam željela da se pokrijem *ćebetom* preko glave i da prespavam cio dan,",
+     "o": [
+      "a pillow",
+      "an umbrella",
+      "a blanket",
+      "a scarf"
+     ],
+     "a": 2,
+     "e": "ćebe — blanket."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imala sam ovdje jednu *bubuljicu*, međutim neke ozbiljnije upalne procese na licu uopšte nemam.",
+     "o": [
+      "a mole",
+      "a pimple",
+      "a wrinkle",
+      "a scratch"
+     ],
+     "a": 1,
+     "e": "bubuljica — pimple."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Danas za ručak imamo falafel, *špargle* i salatu.",
+     "o": [
+      "asparagus",
+      "spinach",
+      "radish",
+      "peas"
+     ],
+     "a": 0,
+     "e": "špargla — asparagus."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Osim ukoliko ne živite u ___, do sada ste već naučili",
+     "o": [
+      "pećini",
+      "pećina",
+      "pećinu",
+      "pećine"
+     ],
+     "a": 0,
+     "e": "After «u» (where?) use the locative: u pećini."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nema šećera u ___.",
+     "o": [
+      "kafi",
+      "kafa",
+      "kafu",
+      "kafe"
+     ],
+     "a": 0,
+     "e": "After «u» (where?) use the locative: u kafi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvi korak je bio da nađem sve što imam u ___",
+     "o": [
+      "kući",
+      "kuća",
+      "kuću",
+      "kuće"
+     ],
+     "a": 0,
+     "e": "u kući — «in the house», locative."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Krenula sam da kuvam zdravije obroke sa više ___",
+     "o": [
+      "zelenila",
+      "zelenilo",
+      "zelenilu",
+      "zelenilom"
+     ],
+     "a": 0,
+     "e": "After «više» (more) use the genitive: više zelenila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ono što sam morala da uradim je da izbalansiram svoju ___",
+     "o": [
+      "dijetu",
+      "dijeta",
+      "dijete",
+      "dijetom"
+     ],
+     "a": 0,
+     "e": "Direct object — accusative: svoju dijetu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kažite mi šta vi mislite o ___ ovome",
+     "o": [
+      "svemu",
+      "sve",
+      "svega",
+      "svim"
+     ],
+     "a": 0,
+     "e": "After «o» (about what?) use the locative: o svemu ovome."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sa pozitivne ___, baš sam zadovoljna",
+     "o": [
+      "strane",
+      "strana",
+      "stranu",
+      "strani"
+     ],
+     "a": 0,
+     "e": "«sa» + genitive: sa pozitivne strane — «on the positive side»."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Danas jedem špagete sa ___ od pečuraka i parmezanom",
+     "o": [
+      "sosom",
+      "sos",
+      "sosa",
+      "sosu"
+     ],
+     "a": 0,
+     "e": "After «sa» (with what?) use the instrumental: sa sosom."
+    }
+   ]
+  }
+ ]
+}

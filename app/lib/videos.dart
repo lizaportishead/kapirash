@@ -84,7 +84,6 @@ const _ytViews = <String, int>{
   '7z1OP5z03EY': 20871,
   'UlNXx5V5_04': 42540,
   'aATqeedFD2U': 48999,
-  'ta4_7-GrAL0': 23796,
   'Su6oB9ZJB8U': 21562,
   'wZb4X0JnC6w': 122746,
   'it3nCG6JtYw': 5106,
@@ -471,14 +470,6 @@ const _builtInVideos = <Video>[
     duration: '9:16',
   ),
   Video(
-    id: 'ta4_7-GrAL0',
-    title: 'ISHRANA KOD HASHIMOTA | Saveti nutricioniste',
-    channel: 'Zdravo Tanja',
-    topic: 'Здоровье',
-    level: 'C1',
-    duration: '15:54',
-  ),
-  Video(
     id: 'Su6oB9ZJB8U',
     title: 'Nauči 90% Claude-a za manje od 10 minuta',
     channel: 'Vladimir Stanković',
@@ -661,6 +652,14 @@ const _builtInVideos = <Video>[
     topic: 'Наука',
     level: 'B1',
     duration: '15:03',
+  ),
+  Video(
+    id: 'RCWmyQdrqRo',
+    title: '30 DANA BEZ ŠEĆERA I OVO SE DESILO.',
+    channel: 'Tina Grabez',
+    topic: 'Здоровье',
+    level: 'B1',
+    duration: '9:46',
   ),
 ];
 

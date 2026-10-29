@@ -99,6 +99,5 @@ insert into public.videos (id, title, channel, topic, level, duration) values
   ('7z1OP5z03EY', 'PRVA SRPSKA KRALJEVINA: Stefan Vojislav i kruna iz Rima', 'Istorija Srba', 'История', 'B2', '11:00'),
   ('UlNXx5V5_04', 'Carl Gustav Jung / SLUČAJNOST NE POSTOJI', 'Nove misli', 'Психология', 'B2', '9:23'),
   ('aATqeedFD2U', 'Najisplativiji od svih Samsung telefona - Samsung Galaxy A56 recenzija', 'DMN', 'IT', 'B2', '9:16'),
-  ('ta4_7-GrAL0', 'ISHRANA KOD HASHIMOTA | Saveti nutricioniste', 'Zdravo Tanja', 'Здоровье', 'C1', '15:54'),
   ('Su6oB9ZJB8U', 'Nauči 90% Claude-a za manje od 10 minuta', 'Vladimir Stanković', 'IT', 'B2', '8:20'),
   ('wZb4X0JnC6w', 'Izokrenuta učionica - Deoba ćelije - Mitoza', 'Izokrenuta Učionica', 'Наука', 'B2', '10:28');
