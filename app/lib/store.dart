@@ -261,6 +261,8 @@ class AppStore extends ChangeNotifier {
 
   /// Результаты заданий: «ролик/раздел» → [верных ответов, всего вопросов]. Хранятся только на устройстве.
   Map<String, List<int>> quiz = {};
+  /// Сколько разделов заданий у ролика (запоминаем, когда его открывали).
+  Map<String, int> quizCount = {};
   bool cyr = false, dark = false;
 
   /// Какие строки субтитров показывать в плеере: сербские и русские.
@@ -337,6 +339,9 @@ class AppStore extends ChangeNotifier {
     );
     quiz = (jsonDecode(prefs.getString('kap.quiz') ?? '{}') as Map<String, dynamic>).map(
       (k, v) => MapEntry(k, (v as List).cast<int>()),
+    );
+    quizCount = (jsonDecode(prefs.getString('kap.quizCount') ?? '{}') as Map<String, dynamic>).map(
+      (k, v) => MapEntry(k, (v as num).toInt()),
     );
     final catalog = prefs.getString('kap.catalog');
     if (catalog != null) setCatalog(jsonDecode(catalog) as Map<String, dynamic>);
@@ -468,6 +473,21 @@ class AppStore extends ChangeNotifier {
   // ---- задания ----
 
   List<int>? quizResult(String videoId, String section) => quiz['$videoId/$section'];
+
+  void setQuizCount(String videoId, int n) {
+    if (quizCount[videoId] == n) return;
+    quizCount[videoId] = n;
+    _prefs?.setString('kap.quizCount', jsonEncode(quizCount));
+    notifyListeners();
+  }
+
+  /// Ролик просмотрен и все его задания выполнены.
+  bool isFinished(String videoId) {
+    final n = quizCount[videoId];
+    if (n == null || !isWatched(videoId)) return false;
+    final done = quiz.keys.where((k) => k.startsWith('$videoId/')).length;
+    return done >= n;
+  }
 
   void setQuizResult(String videoId, String section, int right, int total) {
     quiz['$videoId/$section'] = [right, total];

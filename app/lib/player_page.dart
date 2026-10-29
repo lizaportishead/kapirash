@@ -97,6 +97,7 @@ class _PlayerPageState extends State<PlayerPage> {
     _sub = _yt.videoStateStream.listen((s) => _onTime(s.position.inMilliseconds / 1000));
     _load();
     loadQuiz(videoId).then((q) {
+      store.setQuizCount(videoId, q.length);
       if (mounted && q.isNotEmpty) setState(() => _quiz = q);
     });
   }

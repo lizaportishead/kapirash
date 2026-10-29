@@ -38,11 +38,14 @@ double _levelScore(String itemLevel, String? me) {
 List<Video> recommendVideos(List<Video> list, {String? level, List<String> interests = const [], int limit = 8}) {
   double score(Video v) =>
       _levelScore(v.level, level) + (interests.contains(v.topic) ? 3 : 0) - (store.isWatched(v.id) ? 4 : 0);
-  final sorted = [...list]
-    ..sort((a, b) {
-      final d = score(b).compareTo(score(a));
-      return d != 0 ? d : b.views.compareTo(a.views);
-    });
+  final sorted =
+      [
+        for (final v in list)
+          if (!store.isFinished(v.id)) v,
+      ]..sort((a, b) {
+        final d = score(b).compareTo(score(a));
+        return d != 0 ? d : b.views.compareTo(a.views);
+      });
   return sorted.take(limit).toList();
 }
 
