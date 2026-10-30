@@ -30,12 +30,8 @@ class HomePage extends StatelessWidget {
   Widget _page(BuildContext context) {
     final level = store.level, interests = store.interests;
     final forYou = recommendVideos(videos, level: level, interests: interests);
-    // Шортсы идут от новых к старым (clips уже в таком порядке); просмотренные — в конец, законченные скрыты.
-    final fresh = [
-      for (final v in clips)
-        if (!store.isFinished(v.id)) v,
-    ];
-    final shorts = [...fresh.where((v) => !store.isWatched(v.id)), ...fresh.where((v) => store.isWatched(v.id))].take(6).toList();
+    // Шортсы: по уровню и темам, при равных баллах от новых к старым; просмотренные — в конец, законченные скрыты.
+    final shorts = recommendClips(clips, level: level, interests: interests);
     final books = recommendStories(stories, level: level);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

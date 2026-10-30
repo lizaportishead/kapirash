@@ -49,6 +49,21 @@ List<Video> recommendVideos(List<Video> list, {String? level, List<String> inter
   return sorted.take(limit).toList();
 }
 
+/// Шортсы для главной: подходящие уровню и темам первыми, просмотренные в конец, при равных баллах — новые (clips уже от новых к старым).
+List<Video> recommendClips(List<Video> list, {String? level, List<String> interests = const [], int limit = 6}) {
+  double score(Video v) =>
+      _levelScore(v.level, level) + (interests.contains(v.topic) ? 3 : 0) - (store.isWatched(v.id) ? 4 : 0);
+  final fresh = [
+    for (var i = 0; i < list.length; i++)
+      if (!store.isFinished(list[i].id)) (i, list[i]),
+  ];
+  fresh.sort((a, b) {
+    final d = score(b.$2).compareTo(score(a.$2));
+    return d != 0 ? d : a.$1.compareTo(b.$1);
+  });
+  return [for (final e in fresh.take(limit)) e.$2];
+}
+
 /// Готовые рассказы по уровню: подходящие первыми, остальные — по близости к нему.
 List<Story> recommendStories(List<Story> list, {String? level}) {
   final ready = [
