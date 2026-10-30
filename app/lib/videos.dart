@@ -729,6 +729,15 @@ const _builtInPodcasts = <Video>[
     kind: 'podcast',
     audio: 'https://sbs-podcast.streamguys1.com/sbs-serbian/20261021065959_768683-mp-sajam-knjiga.mp3',
   ),
+  Video(
+    id: 'dnevnik-studentski-zivot',
+    title: 'Studentski život između knjiga i cucle',
+    channel: 'Dnevnik jedne mladosti',
+    topic: 'Общество',
+    duration: '14:42',
+    kind: 'podcast',
+    audio: 'https://d3ctxlq1ktw2nl.cloudfront.net/staging/2026-9-11/56f6817c-e34f-3a9f-651d-dae905bcbaf1.mp3',
+  ),
 ];
 
 const _builtInClips = <Video>[

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What did Milica do instead of sleeping?",
+     "o": [
+      "Scrolled social media",
+      "Read a textbook",
+      "Wrote a paper",
+      "Went for a walk"
+     ],
+     "a": 0,
+     "e": "In the video: \"umesto da odspavam, uzela bih telefon i gledala društvene mreže\" — instead of getting some sleep, I would pick up my phone and watch social media."
+    },
+    {
+     "q": "Who is Ivana?",
+     "o": [
+      "A medical student and a mom",
+      "A law professor",
+      "A journalist from Niš",
+      "A practicing doctor"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ona je studentkinja Medicinskog fakulteta u Beogradu i mama trogodišnje Krune.\" — she is a student at the Faculty of Medicine in Belgrade and the mother of three-year-old Kruna."
+    },
+    {
+     "q": "How old was Kruna when Ivana left her with her mother?",
+     "o": [
+      "Three months",
+      "One year",
+      "Two years",
+      "One week"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kruna je u tom trenutku imala samo tri meseca\" — Kruna was only three months old at the time."
+    },
+    {
+     "q": "What was Kruna's dad until recently?",
+     "o": [
+      "A law student",
+      "A medical student",
+      "A journalist",
+      "A professor"
+     ],
+     "a": 0,
+     "e": "In the video: \"Krunin tata je doskoro bio student. I to ni manje ni više nego pravnog fakulteta.\" — Kruna's dad was a student until recently, and no less than at the law faculty."
+    },
+    {
+     "q": "What does Katarina do besides studying?",
+     "o": [
+      "Deputy editor of a youth newsroom",
+      "A translator",
+      "A teacher",
+      "A shop assistant"
+     ],
+     "a": 0,
+     "e": "In the video: \"Katarina nije samo mama studentkinja, već i zamenica urednika omladinske redakcije Pressing iz Niša.\" — Katarina is not only a student mom but also the deputy editor of the youth newsroom Pressing."
+    },
+    {
+     "q": "What does \"freezing the status\" of a student mean?",
+     "o": [
+      "Pause studies during pregnancy",
+      "Drop out of the faculty",
+      "Switch to paid tuition",
+      "Pass all exams early"
+     ],
+     "a": 0,
+     "e": "In the video: \"svaka studentkinja koja ostane trudna tokom studija ima pravo da zamrzne svoje studije\" — every student who gets pregnant during her studies has the right to freeze her studies."
+    },
+    {
+     "q": "How long does maternity leave count after the birth?",
+     "o": [
+      "One year",
+      "Three months",
+      "Two years",
+      "Half a year"
+     ],
+     "a": 0,
+     "e": "In the video: \"porodiljskog odsustva koje se računa godinu dana od porođaja\" — maternity leave, which counts as a year after the birth."
+    },
+    {
+     "q": "Why does Ivana keep filming for TikTok?",
+     "o": [
+      "To be an example for girls",
+      "To earn money",
+      "To become famous",
+      "To answer her critics"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ja sam stvarno samo tu da budem neki primer devojkama\" — I'm really only here to be an example to girls."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hvala ti na *čestitkama*.",
+     "o": [
+      "congratulations",
+      "advice",
+      "questions",
+      "books"
+     ],
+     "a": 0,
+     "e": "čestitka — congratulation; dat. pl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gradivo je *ogromno*",
+     "o": [
+      "enormous",
+      "boring",
+      "easy",
+      "short"
+     ],
+     "a": 0,
+     "e": "ogroman — enormous; neut."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imala sam mnogo ispita koje sam morala da *položim*",
+     "o": [
+      "pass",
+      "write",
+      "forget",
+      "check"
+     ],
+     "a": 0,
+     "e": "položiti ispit — to pass an exam"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "morao je da *sprema* ispite",
+     "o": [
+      "prepare for",
+      "give",
+      "cancel",
+      "skip"
+     ],
+     "a": 0,
+     "e": "spremati ispit — to prepare for an exam"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Najviše vremena mi je *oduzimao* TikTok",
+     "o": [
+      "took up",
+      "gave",
+      "saved",
+      "counted"
+     ],
+     "a": 0,
+     "e": "oduzimati — to take away"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ja nemam nikakav *izgovor*",
+     "o": [
+      "excuse",
+      "accent",
+      "answer",
+      "question"
+     ],
+     "a": 0,
+     "e": "izgovor — excuse (also: pronunciation)"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Heroinama koje se svakodnevno *bore* za bolju budućnost",
+     "o": [
+      "fight",
+      "dream",
+      "work",
+      "doubt"
+     ],
+     "a": 0,
+     "e": "boriti se — to fight, to struggle"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zato sam i odlučila da pitam svoje *sagovornice*",
+     "o": [
+      "interviewees",
+      "neighbors",
+      "friends",
+      "teachers"
+     ],
+     "a": 0,
+     "e": "sagovornica — interlocutor (f.)"
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala ti ___ čestitkama.",
+     "o": [
+      "na",
+      "za",
+      "o",
+      "po"
+     ],
+     "a": 0,
+     "e": "Hvala na + loc.: hvala na čestitkama — thanks for the congratulations."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ona je studentkinja novinarstva na ___ fakultetu u Nišu.",
+     "o": [
+      "Filozofskom",
+      "Filozofski",
+      "Filozofskog",
+      "Filozofska"
+     ],
+     "a": 0,
+     "e": "After na (where?) the locative is used: na Filozofskom fakultetu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Tada bih, konačno, ___ telefon i zamenila ga knjigom.",
+     "o": [
+      "ostavila",
+      "ostavljam",
+      "ostaviti",
+      "ostavljajući"
+     ],
+     "a": 0,
+     "e": "A single completed action takes the perfective: ostavila (fem. past with bih)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Saznanje da je ___ u drugom stanju Ivanu je ispunilo emocijama.",
+     "o": [
+      "ostala",
+      "ostao",
+      "ostalo",
+      "ostali"
+     ],
+     "a": 0,
+     "e": "The subject is female, so the past tense ends in -la: ostala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ivana je Krunu često morala da ostavlja kod svoje ___",
+     "o": [
+      "mame",
+      "mama",
+      "mamu",
+      "mami"
+     ],
+     "a": 0,
+     "e": "Kod + gen.: kod svoje mame — at her mom's."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Bez ___ bi verovatno ispunjavanje svih njihovih dnevnih obaveza bilo znatno teže",
+     "o": [
+      "nje",
+      "ona",
+      "njoj",
+      "njom"
+     ],
+     "a": 0,
+     "e": "Bez + gen.: bez nje — without her."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Katarina se vratila svom ___ poslu",
+     "o": [
+      "prethodnom",
+      "prethodni",
+      "prethodnog",
+      "prethodna"
+     ],
+     "a": 0,
+     "e": "Svom poslu is dative; the adjective agrees: prethodnom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mnogo je izazova u ___ studiranju i roditeljstvu.",
+     "o": [
+      "istovremenom",
+      "istovremeno",
+      "istovremenim",
+      "istovremena"
+     ],
+     "a": 0,
+     "e": "U + loc. neut.: u istovremenom studiranju."
+    }
+   ]
+  }
+ ]
+}

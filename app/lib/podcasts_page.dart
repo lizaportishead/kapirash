@@ -174,7 +174,12 @@ class EpisodeTile extends StatelessWidget {
 }
 
 /// Обложки шоу лежат в сборке; у шоу без картинки остаётся фиолетовая плитка с наушниками.
-const _covers = {'Naša posla': 'assets/podcast_nasa_posla.jpg', 'SBS na srpskom': 'assets/podcast_sbs.jpg'};
+const _covers = {
+  'Naša posla': 'assets/podcast_nasa_posla.jpg',
+  'SBS na srpskom': 'assets/podcast_sbs.jpg',
+  'Dnevnik jedne mladosti': 'assets/podcast_dnevnik.jpg',
+  'IT(H)S Talks': 'assets/podcast_iths.jpg',
+};
 
 class _Cover extends StatelessWidget {
   const _Cover({required this.size, required this.channel});
