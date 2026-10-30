@@ -445,21 +445,24 @@ class _HeaderAnchorState extends State<HeaderAnchor> {
             targetAnchor: Alignment.bottomLeft,
             showWhenUnlinked: false,
             child: IgnorePointer(
-              child: SizedBox(
-                width: box.maxWidth,
-                height: 10,
-                child: ValueListenableBuilder(
-                  valueListenable: scrolled,
-                  builder: (_, on, _) => AnimatedOpacity(
-                    duration: Duration(milliseconds: 150),
-                    // Скрытая вкладка не должна показывать тень поверх соседней.
-                    opacity: on && TickerMode.of(ctx) ? 1 : 0,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [Color(0x1A000000), Color(0x00000000)],
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: box.maxWidth,
+                  height: 6,
+                  child: ValueListenableBuilder(
+                    valueListenable: scrolled,
+                    builder: (_, on, _) => AnimatedOpacity(
+                      duration: Duration(milliseconds: 150),
+                      // Скрытая вкладка не должна показывать тень поверх соседней.
+                      opacity: on && TickerMode.of(ctx) ? 1 : 0,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0x1A000000), Color(0x00000000)],
+                          ),
                         ),
                       ),
                     ),
