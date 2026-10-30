@@ -198,8 +198,8 @@ class LikeButton extends StatelessWidget {
         return IconButton(
           tooltip: on ? ui('Убрать из избранного') : ui('Добавить в избранное'),
           isSelected: on,
-          icon: Icon(KIcons.star, size: 22, color: pale ? cFaint : cMuted),
-          selectedIcon: Icon(Icons.star_rounded, size: 22, color: cViolet),
+          icon: Icon(KIcons.star, size: 22, color: pale ? cStarOff : cMuted),
+          selectedIcon: Icon(Icons.star_rounded, size: 22, color: cAccent),
           onPressed: () => store.toggleLike(videoId),
         );
       },
