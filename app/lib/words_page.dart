@@ -361,18 +361,19 @@ class _WordCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           onTap: () => _showWordSheet(context, w),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(4, 12, 4, 12),
+            padding: EdgeInsets.fromLTRB(8, 12, 4, 12),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(
-                  tooltip: w.starred ? ui('Убрать звёздочку') : ui('Поставить звёздочку'),
+                  tooltip: w.starred ? ui('Убрать из избранного') : ui('Добавить в избранное'),
                   visualDensity: VisualDensity.compact,
                   isSelected: w.starred,
-                  icon: Icon(KIcons.star, size: 20, color: cMuted),
+                  icon: Icon(KIcons.star, size: 20, color: cFaint),
                   selectedIcon: Icon(Icons.star_rounded, size: 20, color: cViolet),
                   onPressed: () => store.toggleStar(w.key),
                 ),
+                SizedBox(width: 4),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

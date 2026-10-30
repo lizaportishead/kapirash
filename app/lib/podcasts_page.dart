@@ -93,7 +93,7 @@ void _open(BuildContext context, {required String? searchHint}) {
         text: (p) => '${p.title} ${p.channel}',
         tile: (p) => EpisodeTile(p),
         searchHint: searchHint,
-        emptyLiked: ui('Ставь звёздочку подкастам, к которым хочешь вернуться. Они появятся тут.'),
+        emptyLiked: ui('Добавляй в избранное подкасты, к которым хочешь вернуться. Они появятся тут.'),
       ),
     ),
   );
@@ -128,10 +128,11 @@ class EpisodeTile extends StatelessWidget {
           child: InkWell(
             onTap: () => openPodcast(context, video),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(4, 12, 12, 12),
+              padding: EdgeInsets.fromLTRB(8, 12, 12, 12),
               child: Row(
                 children: [
-                  LikeButton(video.id),
+                  LikeButton(video.id, pale: true),
+                  SizedBox(width: 4),
                   _Cover(size: 64, channel: video.channel),
                   SizedBox(width: 12),
                   Expanded(

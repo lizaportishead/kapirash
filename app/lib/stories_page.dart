@@ -304,7 +304,7 @@ void _openCollection(BuildContext context, {required String? searchHint}) {
         text: (s) => '${s.title} ${s.author}',
         tile: (s) => _StoryCard(s),
         searchHint: searchHint,
-        emptyLiked: ui('Ставь звёздочку рассказам, которые хочешь прочитать позже. Они появятся тут.'),
+        emptyLiked: ui('Добавляй в избранное рассказы, которые хочешь прочитать позже. Они появятся тут.'),
       ),
     ),
   );

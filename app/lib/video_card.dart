@@ -184,8 +184,10 @@ class VideoTag extends StatelessWidget {
 
 /// Звёздочка ролика: ставит и снимает отметку, список отмеченных — на экране «Избранное».
 class LikeButton extends StatelessWidget {
-  const LikeButton(this.videoId, {super.key});
+  const LikeButton(this.videoId, {super.key, this.pale = false});
   final String videoId;
+  // Бледная звёздочка для строк списка, где она не должна спорить с названием.
+  final bool pale;
 
   @override
   Widget build(BuildContext context) {
@@ -194,9 +196,9 @@ class LikeButton extends StatelessWidget {
       builder: (context, _) {
         final on = store.isLiked(videoId);
         return IconButton(
-          tooltip: on ? ui('Убрать звёздочку') : ui('Поставить звёздочку'),
+          tooltip: on ? ui('Убрать из избранного') : ui('Добавить в избранное'),
           isSelected: on,
-          icon: Icon(KIcons.star, size: 22, color: cMuted),
+          icon: Icon(KIcons.star, size: 22, color: pale ? cFaint : cMuted),
           selectedIcon: Icon(Icons.star_rounded, size: 22, color: cViolet),
           onPressed: () => store.toggleLike(videoId),
         );
