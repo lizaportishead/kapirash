@@ -315,6 +315,10 @@ class AppStore extends ChangeNotifier {
       if (s.event == AuthChangeEvent.signedIn && user == null && email != null) {
         // Ввели код или открыли ссылку из письма.
         user = email;
+        final created = DateTime.tryParse(s.session?.user.createdAt ?? '');
+        if (created != null && DateTime.now().difference(created).inMinutes < 15) {
+          trackEvent('signup', {'method': s.session?.user.appMetadata['provider']?.toString() ?? 'unknown'});
+        }
         notifyListeners();
         unawaited(_sync(merge: true));
       } else if (s.event == AuthChangeEvent.signedOut && user != null) {
@@ -372,6 +376,7 @@ class AppStore extends ChangeNotifier {
     if (isSaved(w.key)) return;
     words.add(w);
     _saveWords();
+    trackEvent('word_saved', {'video_id': w.video});
   }
 
   void setLearned(String key, bool v) {
@@ -491,6 +496,7 @@ class AppStore extends ChangeNotifier {
 
   void setQuizResult(String videoId, String section, int right, int total) {
     quiz['$videoId/$section'] = [right, total];
+    trackEvent('quiz_completed', {'video_id': videoId, 'section': section, 'right': right, 'total': total});
     _prefs?.setString('kap.quiz', jsonEncode(quiz));
     notifyListeners();
   }
@@ -500,7 +506,11 @@ class AppStore extends ChangeNotifier {
   bool isLiked(String videoId) => liked.contains(videoId);
 
   void toggleLike(String videoId) {
-    if (!liked.remove(videoId)) liked.add(videoId);
+    final added = !liked.remove(videoId);
+    if (added) {
+      liked.add(videoId);
+      trackEvent('video_liked', {'video_id': videoId});
+    }
     _saveLiked();
   }
 

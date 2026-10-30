@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import 'analytics.dart';
 import 'clips_page.dart';
 import 'icons.dart';
 import 'subs.dart';
@@ -23,9 +26,19 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   final _search = TextEditingController();
+  Timer? _searchTimer;
+
+  /// Шлём поисковый запрос, когда человек перестал печатать.
+  void _trackSearch() {
+    _searchTimer?.cancel();
+    final q = _search.text.trim();
+    if (q.length < 2) return;
+    _searchTimer = Timer(Duration(seconds: 1), () => trackEvent('search', {'query': q, 'clips': widget.clips}));
+  }
 
   @override
   void dispose() {
+    _searchTimer?.cancel();
     _search.dispose();
     super.dispose();
   }
@@ -66,7 +79,10 @@ class _SearchPageState extends State<SearchPage> {
                         child: TextField(
                           controller: _search,
                           autofocus: true,
-                          onChanged: (_) => setState(() {}),
+                          onChanged: (_) {
+                            setState(() {});
+                            _trackSearch();
+                          },
                           textInputAction: TextInputAction.search,
                           style: TextStyle(fontSize: 15, color: cText),
                           cursorColor: cViolet,
