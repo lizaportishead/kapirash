@@ -738,6 +738,15 @@ const _builtInPodcasts = <Video>[
     kind: 'podcast',
     audio: 'https://d3ctxlq1ktw2nl.cloudfront.net/staging/2026-9-11/56f6817c-e34f-3a9f-651d-dae905bcbaf1.mp3',
   ),
+  Video(
+    id: 'iths-inspiracija',
+    title: 'Inspiracija kroz IT priče',
+    channel: 'IT(H)S Talks',
+    topic: 'IT',
+    duration: '19:01',
+    kind: 'podcast',
+    audio: 'https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-11-9/391249353-44100-2-99021bde26fcc.mp3',
+  ),
 ];
 
 const _builtInClips = <Video>[

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Why did Viktor go to study in Belgrade?",
+     "o": [
+      "He couldn't find a suitable school in his hometown",
+      "His relatives live there",
+      "The national team invited him",
+      "He wanted to learn languages"
+     ],
+     "a": 0,
+     "e": "In the video: \"Nisam pronalazio odgovarajuće srednje škole u svom gradu, pa sam gledao negde drugde.\" — I couldn't find suitable high schools in my town, so I looked elsewhere."
+    },
+    {
+     "q": "How does the IT track differ from multimedia?",
+     "o": [
+      "IT is about programming, multimedia about graphics",
+      "IT is about video, multimedia about databases",
+      "They are the same",
+      "IT is only theory"
+     ],
+     "a": 0,
+     "e": "In the video: \"je IT smer više za programiranje, a multimedija više za grafiku\" — IT is more about programming, while multimedia is more about graphics."
+    },
+    {
+     "q": "What did Viktor make in the air pollution project?",
+     "o": [
+      "A budget air purifier",
+      "An electric car",
+      "A mobile game",
+      "A drone"
+     ],
+     "a": 0,
+     "e": "In the video: \"budžetni prečišćivač vazduha, koji sam ja napravio\" — a budget air purifier, which I built."
+    },
+    {
+     "q": "How is the purifier's casing made?",
+     "o": [
+      "3D printed",
+      "Machined from metal",
+      "Glued from cardboard",
+      "Bought ready-made"
+     ],
+     "a": 0,
+     "e": "In the video: \"Čitavo kućište je napravljeno 3D štampom\" — The whole casing is made by 3D printing."
+    },
+    {
+     "q": "What happens when you press the button on the ECG device?",
+     "o": [
+      "The measurement is sent to a web server",
+      "The device turns off",
+      "An alarm sounds",
+      "A receipt is printed"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kada se klikne dugme, to se šalje na živi web server\" — When you click the button, it is sent to a live web server."
+    },
+    {
+     "q": "What is Lea Moon?",
+     "o": [
+      "A UN simulation for students",
+      "A robotics olympiad",
+      "A start-up contest",
+      "A 3D printing exhibition"
+     ],
+     "a": 0,
+     "e": "In the video: \"O tome se radi da je to simulacija UN-a.\" — It is a simulation of the UN."
+    },
+    {
+     "q": "What place did Viktor's team take at the olympiad this year?",
+     "o": [
+      "76th",
+      "First",
+      "Third",
+      "Tenth"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ove godine je moj tim bio na 76. mestu u svetu\" — This year my team was in 76th place in the world."
+    },
+    {
+     "q": "What is the main theme of the First Global competition?",
+     "o": [
+      "Friendship and working together",
+      "Winning at any cost",
+      "Robot speed",
+      "Saving money"
+     ],
+     "a": 0,
+     "e": "In the video: \"jeste prijateljstvo i zajednički rad\" — is friendship and working together."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Škola *naruči* koje delove treba",
+     "o": [
+      "orders",
+      "sells",
+      "repairs",
+      "loses"
+     ],
+     "a": 0,
+     "e": "naručiti — to order"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Samo otvorimo *prozor* i vidimo da je veliko zagađenje.",
+     "o": [
+      "window",
+      "door",
+      "book",
+      "laptop"
+     ],
+     "a": 0,
+     "e": "prozor — window"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "a to je prevelika *cifra* za običnog građanina",
+     "o": [
+      "sum",
+      "task",
+      "road",
+      "joke"
+     ],
+     "a": 0,
+     "e": "cifra — here: sum, figure"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bilo je to divno *iskustvo*",
+     "o": [
+      "experience",
+      "place",
+      "time",
+      "job"
+     ],
+     "a": 0,
+     "e": "iskustvo — experience"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ali je bila velika *nestašica*",
+     "o": [
+      "shortage",
+      "joy",
+      "queue",
+      "discount"
+     ],
+     "a": 0,
+     "e": "nestašica — shortage"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "jer nije bitno koja alijansa *pobedi*",
+     "o": [
+      "wins",
+      "loses",
+      "starts",
+      "leaves"
+     ],
+     "a": 0,
+     "e": "pobediti — to win"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Obeležavamo *rođendane* naučnika",
+     "o": [
+      "birthdays",
+      "school anniversaries",
+      "holidays",
+      "lectures"
+     ],
+     "a": 0,
+     "e": "rođendan — birthday"
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vidimo prečišćivače vazduha koji *koštaju* dvesta-trista evra",
+     "o": [
+      "cost",
+      "weigh",
+      "give",
+      "break"
+     ],
+     "a": 0,
+     "e": "koštati — to cost"
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Od ___ razreda sam tražio koja bi to bila srednja škola.",
+     "o": [
+      "osmog",
+      "osmi",
+      "osmom",
+      "osmu"
+     ],
+     "a": 0,
+     "e": "Od + gen.: od osmog razreda — from eighth grade."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa, osnovnu školu sam završio ___ Crnoj Gori",
+     "o": [
+      "u",
+      "na",
+      "iz",
+      "kod"
+     ],
+     "a": 0,
+     "e": "Where? — u + loc. for countries: u Crnoj Gori."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "I kad projekat ___, imamo takmičenja.",
+     "o": [
+      "završimo",
+      "završavamo",
+      "završavajući",
+      "završen"
+     ],
+     "a": 0,
+     "e": "A single completed action after kad takes the perfective: završimo."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ko bolje zna programiranje, bavi se programerskim ___",
+     "o": [
+      "delom",
+      "deo",
+      "dela",
+      "delu"
+     ],
+     "a": 0,
+     "e": "Baviti se + instr.: bavi se programerskim delom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Radi ___ struju, na običnu utičnicu.",
+     "o": [
+      "na",
+      "za",
+      "u",
+      "pod"
+     ],
+     "a": 0,
+     "e": "Radi na + acc.: radi na struju — runs on electricity."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ljudi su imali ___ da kupe prečišćivače",
+     "o": [
+      "para",
+      "pare",
+      "paru",
+      "parama"
+     ],
+     "a": 0,
+     "e": "Imati para — to have money (gen. pl.)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ambasadorka ___ je pričala baš o svojoj misiji",
+     "o": [
+      "Danske",
+      "Danska",
+      "Dansku",
+      "Danskoj"
+     ],
+     "a": 0,
+     "e": "Ambasadorka Danske — the ambassador of Denmark (gen.)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prošle godine smo bili ___ u svetu",
+     "o": [
+      "treći",
+      "treće",
+      "trećeg",
+      "treća"
+     ],
+     "a": 0,
+     "e": "Predicate noun/adjective agrees in nom. masc. pl.: treći."
+    }
+   ]
+  }
+ ]
+}

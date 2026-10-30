@@ -1,7 +1,8 @@
 import json, os
 D = os.path.dirname(os.path.abspath(__file__))
-SEG = json.load(open('/private/tmp/claude-501/-Users-elizavetamatveeva-projects-kapiras-player/83c85825-077c-4865-8049-3469b137d9aa/scratchpad/dnevnik/ep.json'))
-def load(fn):
+SCR = '/private/tmp/claude-501/-Users-elizavetamatveeva-projects-kapiras-player/83c85825-077c-4865-8049-3469b137d9aa/scratchpad/dnevnik/'
+def load(fn, seg='ep.json'):
+    SEG = json.load(open(SCR + seg))
     rows = []
     for l in open(os.path.join(D, fn), encoding='utf-8'):
         if not l.strip(): continue
@@ -15,4 +16,4 @@ def load(fn):
             d = (b - a) * len(s) / tot
             rows.append((round(t, 2), round(t + d, 2), s, r, e)); t += d
     return rows
-CUES = {'dnevnik-studentski-zivot': load('dn.txt')}
+CUES = {'dnevnik-studentski-zivot': load('dn.txt'), 'iths-inspiracija': load('it2.txt', 'its2.json')}
