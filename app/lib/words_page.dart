@@ -43,7 +43,10 @@ class _WordsPageState extends State<WordsPage> {
   static List<TextSpan> _ctxSpans(String text, Set<String> words) {
     final targets = words.map(_norm).toSet();
     final spans = <TextSpan>[];
-    final hit = RegExp(r'[\p{L}\u0301]+', unicode: true).allMatches(text).where((m) => targets.contains(_norm(m.group(0)!))).firstOrNull;
+    final hit = RegExp(
+      r'[\p{L}\u0301]+',
+      unicode: true,
+    ).allMatches(text).where((m) => targets.contains(_norm(m.group(0)!))).firstOrNull;
     // Длинное предложение обрезаем вокруг слова, по границам слов.
     const span = 55;
     if (text.length > span * 2 + 20) {
@@ -64,7 +67,12 @@ class _WordsPageState extends State<WordsPage> {
     for (final m in RegExp(r'[\p{L}\u0301]+', unicode: true).allMatches(text)) {
       if (!targets.contains(_norm(m.group(0)!))) continue;
       if (m.start > last) spans.add(TextSpan(text: text.substring(last, m.start)));
-      spans.add(TextSpan(text: m.group(0), style: TextStyle(fontWeight: FontWeight.w800, color: cText)));
+      spans.add(
+        TextSpan(
+          text: m.group(0),
+          style: TextStyle(fontWeight: FontWeight.w800, color: cText),
+        ),
+      );
       last = m.end;
     }
     if (last < text.length) spans.add(TextSpan(text: text.substring(last)));
@@ -207,7 +215,8 @@ class _WordsPageState extends State<WordsPage> {
                           // Снизу запас под плавающую кнопку.
                           padding: EdgeInsets.fromLTRB(12, 4, 12, _searching ? 16 : 72),
                           itemCount: rows.length,
-                          separatorBuilder: (_, i) => SizedBox(height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : 16),
+                          separatorBuilder: (_, i) =>
+                              SizedBox(height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : 16),
                           itemBuilder: (_, i) {
                             final it = rows[i];
                             if (it is List<SavedWord>) {
@@ -329,7 +338,9 @@ void _openSource(BuildContext context, String id, {double? t}) {
   final video = videoById(id);
   final story = storyById(id);
   if (video != null) {
-    video.podcast ? openPodcast(context, video, startAt: t, autoplay: t != null) : openVideo(context, video, startAt: t);
+    video.podcast
+        ? openPodcast(context, video, startAt: t, autoplay: t != null)
+        : openVideo(context, video, startAt: t);
   } else if (story != null) {
     openStory(context, story, page: t?.toInt());
   }
@@ -342,57 +353,67 @@ class _WordCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: cCard,
-      borderRadius: BorderRadius.circular(8),
-      child: InkWell(
+    return Lift(
+      child: Material(
+        color: cCard,
         borderRadius: BorderRadius.circular(8),
-        onTap: () => _showWordSheet(context, w),
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 12, 4, 12),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      store.stressed(w.key),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: cText),
-                    ),
-                    if (w.tr.isNotEmpty)
-                      Padding(
-                        padding: EdgeInsets.only(top: 2),
-                        child: Text(
-                          w.tr,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, height: 1.25, color: cAccentText),
-                        ),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: () => _showWordSheet(context, w),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(16, 12, 4, 12),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        store.stressed(w.key),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: cText),
                       ),
-                    if (w.lemma != null && w.lemma != w.key)
-                      Padding(
-                        padding: EdgeInsets.only(top: 2),
-                        child: Text(
-                          ui('{0} от {1}', [formUi(w.form == null || w.form!.isEmpty ? 'Форма' : w.form!), store.conv(w.lemma!)]),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 12, height: 1.35, color: cMuted),
+                      if (w.tr.isNotEmpty)
+                        Padding(
+                          padding: EdgeInsets.only(top: 2),
+                          child: Text(
+                            w.tr,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              height: 1.25,
+                              color: cAccentText,
+                            ),
+                          ),
                         ),
-                      ),
-                  ],
+                      if (w.lemma != null && w.lemma != w.key)
+                        Padding(
+                          padding: EdgeInsets.only(top: 2),
+                          child: Text(
+                            ui('{0} от {1}', [
+                              formUi(w.form == null || w.form!.isEmpty ? 'Форма' : w.form!),
+                              store.conv(w.lemma!),
+                            ]),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 12, height: 1.35, color: cMuted),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
-              ),
-              IconButton(
-                tooltip: ui('Удалить {0}', [w.key]),
-                visualDensity: VisualDensity.compact,
-                icon: Icon(Icons.close, size: 18, color: cMuted),
-                onPressed: () => store.remove(w.key),
-              ),
-            ],
+                IconButton(
+                  tooltip: ui('Удалить {0}', [w.key]),
+                  visualDensity: VisualDensity.compact,
+                  icon: Icon(Icons.close, size: 18, color: cMuted),
+                  onPressed: () => store.remove(w.key),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -455,10 +476,19 @@ class _WordSheet extends StatelessWidget {
               LinkButton(
                 icon: Text(
                   'W',
-                  style: TextStyle(fontFamily: 'serif', fontSize: 17, fontWeight: FontWeight.w700, height: 1, color: cMuted),
+                  style: TextStyle(
+                    fontFamily: 'serif',
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    height: 1,
+                    color: cMuted,
+                  ),
                 ),
                 label: ui('Смотреть в Wiktionary'),
-                url: Uri.https('en.wiktionary.org', '/wiki/${toLat(w.lemma ?? w.key)}').replace(fragment: 'Serbo-Croatian'),
+                url: Uri.https(
+                  'en.wiktionary.org',
+                  '/wiki/${toLat(w.lemma ?? w.key)}',
+                ).replace(fragment: 'Serbo-Croatian'),
               ),
             ],
           );
@@ -475,7 +505,13 @@ class _WordSheet extends StatelessWidget {
                 Expanded(
                   child: Text(
                     store.stressed(w.key),
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, height: 1.1, letterSpacing: -0.6, color: cText),
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                      letterSpacing: -0.6,
+                      color: cText,
+                    ),
                   ),
                 ),
                 IconButton(
@@ -487,12 +523,18 @@ class _WordSheet extends StatelessWidget {
             ),
             if (w.tr.isNotEmpty) ...[
               SizedBox(height: 14),
-              Text(w.tr, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText)),
+              Text(
+                w.tr,
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText),
+              ),
             ],
             if (w.lemma != null && w.lemma != w.key) ...[
               SizedBox(height: 10),
               Text(
-                ui('{0} от {1}', [formUi(w.form == null || w.form!.isEmpty ? 'Форма' : w.form!), store.conv(w.lemma!)]) +
+                ui('{0} от {1}', [
+                      formUi(w.form == null || w.form!.isEmpty ? 'Форма' : w.form!),
+                      store.conv(w.lemma!),
+                    ]) +
                     (w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'),
                 style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
               ),
@@ -569,7 +611,10 @@ class _WordSheet extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
               ),
               icon: Icon(Icons.delete_outline_rounded, size: 18, color: Color(0xFFD32F2F)),
-              label: Text(ui('Удалить слово'), style: TextStyle(color: Color(0xFFD32F2F), fontWeight: FontWeight.w700)),
+              label: Text(
+                ui('Удалить слово'),
+                style: TextStyle(color: Color(0xFFD32F2F), fontWeight: FontWeight.w700),
+              ),
               onPressed: () {
                 store.remove(w.key);
                 Navigator.of(context).pop();

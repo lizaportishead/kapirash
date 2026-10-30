@@ -138,6 +138,7 @@ class _KapirasAppState extends State<KapirasApp> {
         brightness: _dark ? Brightness.dark : Brightness.light,
         fontFamily: kFont,
         scaffoldBackgroundColor: cBg,
+        hoverColor: Colors.transparent,
         colorScheme: _dark
             ? ColorScheme.dark(primary: cViolet, onPrimary: cOnViolet, surface: cCard2, onSurface: cText)
             : ColorScheme.light(primary: cViolet, onPrimary: cOnViolet, surface: cCard2, onSurface: cText),

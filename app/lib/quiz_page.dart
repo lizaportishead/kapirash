@@ -72,6 +72,7 @@ const _cWrong = Color(0xFFFFCFC9);
 /// Список заданий к ролику: карточка на раздел, на ней — пройден ли он и с каким результатом.
 class QuizList extends StatelessWidget {
   const QuizList({super.key, required this.videoId, required this.sections, this.inline = false, this.flat = false});
+
   /// Карточки без своей заливки — когда список лежит на общем сером фоне.
   final bool flat;
   // Внутри общей прокрутки страницы список сам не прокручивается.
@@ -98,64 +99,69 @@ class QuizList extends StatelessWidget {
 
   Widget _card(BuildContext context, QuizSection s) {
     final r = store.quizResult(videoId, s.title);
-    return Material(
-      color: flat ? Colors.transparent : cCard,
-      borderRadius: BorderRadius.circular(8),
-      child: InkWell(
+    return Lift(
+      enabled: !flat,
+      child: Material(
+        color: flat ? Colors.transparent : cCard,
         borderRadius: BorderRadius.circular(8),
-        onTap: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(
-            settings: RouteSettings(name: 'SubPage'),
-            builder: (_) => SubPage(
-              title: s.title,
-              child: QuizPage(s, videoId: videoId),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              settings: RouteSettings(name: 'SubPage'),
+              builder: (_) => SubPage(
+                title: s.title,
+                child: QuizPage(s, videoId: videoId),
+              ),
             ),
           ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(14),
-          child: Row(
-            children: [
-              Container(
-                width: 52,
-                height: 52,
-                decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(16)),
-                child: Icon(s.icon, size: 26, color: cInk),
-              ),
-              SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      s.title,
-                      style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: cText),
-                    ),
-                    if (s.about.isNotEmpty) ...[
-                      SizedBox(height: 2),
-                      Text(s.about, style: TextStyle(fontSize: 13, height: 1.3, color: cMuted)),
-                    ],
-                    SizedBox(height: 8),
-                    Row(
-                      children: [
-                        if (r != null) ...[Icon(KIcons.done, size: 16, color: cAccentText), SizedBox(width: 4)],
-                        Text(
-                          r == null
-                              ? ui('Не пройдено · {0}', ['${s.questions.length} ${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}'])
-                              : ui('Пройдено · {0} из {1}', [r[0], r[1]]),
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w700,
-                            color: r == null ? cFaint : cAccentText,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+          child: Padding(
+            padding: EdgeInsets.all(14),
+            child: Row(
+              children: [
+                Container(
+                  width: 52,
+                  height: 52,
+                  decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(16)),
+                  child: Icon(s.icon, size: 26, color: cInk),
                 ),
-              ),
-              Icon(KIcons.caretRight, size: 18, color: cFaint),
-            ],
+                SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        s.title,
+                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: cText),
+                      ),
+                      if (s.about.isNotEmpty) ...[
+                        SizedBox(height: 2),
+                        Text(s.about, style: TextStyle(fontSize: 13, height: 1.3, color: cMuted)),
+                      ],
+                      SizedBox(height: 8),
+                      Row(
+                        children: [
+                          if (r != null) ...[Icon(KIcons.done, size: 16, color: cAccentText), SizedBox(width: 4)],
+                          Text(
+                            r == null
+                                ? ui('Не пройдено · {0}', [
+                                    '${s.questions.length} ${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}',
+                                  ])
+                                : ui('Пройдено · {0} из {1}', [r[0], r[1]]),
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w700,
+                              color: r == null ? cFaint : cAccentText,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(KIcons.caretRight, size: 18, color: cFaint),
+              ],
+            ),
           ),
         ),
       ),
@@ -258,7 +264,10 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(16, 0, 16, bottom),
-          child: BigButton(_i == _qs.length - 1 ? ui('Результат') : ui('Дальше'), onTap: _picked == null ? null : _next),
+          child: BigButton(
+            _i == _qs.length - 1 ? ui('Результат') : ui('Дальше'),
+            onTap: _picked == null ? null : _next,
+          ),
         ),
       ],
     );
@@ -369,7 +378,12 @@ class _QuizPageState extends State<QuizPage> {
       ),
     );
     if (_right != all) return content;
-    return Stack(children: [content, Positioned.fill(child: IgnorePointer(child: _Fireworks()))]);
+    return Stack(
+      children: [
+        content,
+        Positioned.fill(child: IgnorePointer(child: _Fireworks())),
+      ],
+    );
   }
 
   Widget _mistakes(double bottom) {
@@ -386,7 +400,11 @@ class _QuizPageState extends State<QuizPage> {
               final q = _qs[wrong[n]];
               return Container(
                 padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8)),
+                decoration: BoxDecoration(
+                  color: cCard,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1))],
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -441,7 +459,6 @@ class _QuizPageState extends State<QuizPage> {
   }
 }
 
-
 /// Салют на экране «всё верно»: несколько залпов подряд, без внешних пакетов.
 class _Fireworks extends StatefulWidget {
   @override
@@ -457,7 +474,8 @@ class _FireworksState extends State<_Fireworks> with SingleTickerProviderStateMi
     Color(0xFF38BDF8),
     Color(0xFFEC4899),
   ];
-  late final AnimationController _c = AnimationController(vsync: this, duration: Duration(milliseconds: 2200))..forward();
+  late final AnimationController _c = AnimationController(vsync: this, duration: Duration(milliseconds: 2200))
+    ..forward();
   late final List<_Burst> _bursts;
 
   @override
@@ -484,12 +502,21 @@ class _FireworksState extends State<_Fireworks> with SingleTickerProviderStateMi
   }
 
   @override
-  Widget build(BuildContext context) =>
-      AnimatedBuilder(animation: _c, builder: (_, _) => CustomPaint(painter: _FireworksPainter(_bursts, _c.value)));
+  Widget build(BuildContext context) => AnimatedBuilder(
+    animation: _c,
+    builder: (_, _) => CustomPaint(painter: _FireworksPainter(_bursts, _c.value)),
+  );
 }
 
 class _Burst {
-  _Burst({required this.start, required this.x, required this.y, required this.color, required this.angles, required this.speeds});
+  _Burst({
+    required this.start,
+    required this.x,
+    required this.y,
+    required this.color,
+    required this.angles,
+    required this.speeds,
+  });
   final double start, x, y;
   final Color color;
   final List<double> angles, speeds;

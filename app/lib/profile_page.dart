@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'auth_page.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+
 import 'history_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
@@ -81,15 +83,17 @@ class _ProfilePageState extends State<ProfilePage> {
       ]),
       SizedBox(height: 12),
       _Group([
-        _Row(icon: Icons.chat_bubble_outline_rounded, title: ui('Обратная связь'), onTap: () => launchUrl(Uri.parse('https://t.me/liza_portishead'), mode: LaunchMode.externalApplication)),
+        _Row(
+          icon: Icons.chat_bubble_outline_rounded,
+          title: ui('Обратная связь'),
+          onTap: () => launchUrl(Uri.parse('https://t.me/liza_portishead'), mode: LaunchMode.externalApplication),
+        ),
         _Row(icon: Icons.privacy_tip_outlined, title: ui('Политика конфиденциальности'), onTap: openPrivacy),
         _Row(icon: Icons.description_outlined, title: ui('Условия использования'), onTap: openTerms),
       ]),
       if (email != null) ...[
         SizedBox(height: 12),
-        _Group([
-          _Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut),
-        ]),
+        _Group([_Row(icon: Icons.logout_rounded, title: ui('Выйти'), onTap: store.signOut)]),
         SizedBox(height: 8),
         Center(
           child: TextButton(
@@ -108,7 +112,11 @@ class _ProfilePageState extends State<ProfilePage> {
       builder: (c) => AlertDialog(
         icon: Icon(Icons.error_rounded, color: Colors.red, size: 40),
         title: Text(ui('Удалить аккаунт?'), textAlign: TextAlign.center),
-        content: Text(ui('Аккаунт и данные в облаке будут удалены без возможности восстановления. Слова и прогресс на этом устройстве останутся.')),
+        content: Text(
+          ui(
+            'Аккаунт и данные в облаке будут удалены без возможности восстановления. Слова и прогресс на этом устройстве останутся.',
+          ),
+        ),
         actions: [
           TextButton(onPressed: () => Navigator.pop(c, false), child: Text(ui('Отмена'))),
           TextButton(
@@ -123,7 +131,9 @@ class _ProfilePageState extends State<ProfilePage> {
     try {
       await store.deleteAccount();
     } catch (_) {
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(ui('Не получилось удалить аккаунт. Напиши на info@kapiras.app'))));
+      if (mounted)
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(ui('Не получилось удалить аккаунт. Напиши на info@kapiras.app'))));
     }
   }
 
@@ -229,10 +239,7 @@ class _SignIn extends StatelessWidget {
             ),
             style: TextStyle(fontSize: 14, height: 1.4, color: cInk),
           ),
-          if (!wide) ...[
-            SizedBox(height: 16),
-            BigButton(ui('Войти'), onTap: () => openAuth(context)),
-          ],
+          if (!wide) ...[SizedBox(height: 16), BigButton(ui('Войти'), onTap: () => openAuth(context))],
         ],
       ),
     );
@@ -245,14 +252,16 @@ class _Group extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: cCard,
-      borderRadius: BorderRadius.circular(8),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        children: [
-          for (var i = 0; i < rows.length; i++) ...[if (i > 0) Divider(height: 1, indent: 52, color: cLine), rows[i]],
-        ],
+    return Lift(
+      child: Material(
+        color: cCard,
+        borderRadius: BorderRadius.circular(8),
+        clipBehavior: Clip.antiAlias,
+        child: Column(
+          children: [
+            for (var i = 0; i < rows.length; i++) ...[if (i > 0) Divider(height: 1, indent: 52, color: cLine), rows[i]],
+          ],
+        ),
       ),
     );
   }
@@ -304,7 +313,11 @@ class _Stat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(
+        color: cCard,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1))],
+      ),
       child: Column(
         children: [
           Text(

@@ -22,16 +22,18 @@ class VideoCard extends StatelessWidget {
       color: cInk,
       child: Center(child: Icon(Icons.play_arrow_rounded, size: 56, color: cOnInk.withValues(alpha: 0.5))),
     );
-    final card = Material(
-      color: cCard,
-      borderRadius: BorderRadius.circular(8),
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: () => openVideo(context, v),
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          // Метки и шкала меняются, пока карточка на экране: ролик посмотрели, сохранили из него слово.
-          child: ListenableBuilder(listenable: store, builder: (context, _) => _body(context, placeholder)),
+    final card = Lift(
+      child: Material(
+        color: cCard,
+        borderRadius: BorderRadius.circular(8),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: () => openVideo(context, v),
+          child: Padding(
+            padding: EdgeInsets.all(8),
+            // Метки и шкала меняются, пока карточка на экране: ролик посмотрели, сохранили из него слово.
+            child: ListenableBuilder(listenable: store, builder: (context, _) => _body(context, placeholder)),
+          ),
         ),
       ),
     );
@@ -153,7 +155,10 @@ class VideoCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (difficultyOf(v.level) != null) ...[Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)), DifficultyLabel(v.level)],
+              if (difficultyOf(v.level) != null) ...[
+                Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)),
+                DifficultyLabel(v.level),
+              ],
             ],
           )
         else if (difficultyOf(v.level) != null)

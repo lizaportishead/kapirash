@@ -349,3 +349,41 @@ class BackBar extends StatelessWidget {
     );
   }
 }
+
+/// Белая плашка: в покое — лёгкая тень, при наведении поднимается и даёт большую фиолетовую тень.
+class Lift extends StatefulWidget {
+  const Lift({super.key, required this.child, this.enabled = true});
+  final Widget child;
+  final bool enabled;
+
+  @override
+  State<Lift> createState() => _LiftState();
+}
+
+class _LiftState extends State<Lift> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!widget.enabled) return widget.child;
+    final up = _hover;
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hover = true),
+      onExit: (_) => setState(() => _hover = false),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 160),
+        curve: Curves.easeOut,
+        transform: Matrix4.translationValues(0, up ? -3 : 0, 0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            up
+                ? BoxShadow(color: cViolet.withValues(alpha: 0.28), blurRadius: 22, offset: Offset(0, 8))
+                : BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1)),
+          ],
+        ),
+        child: widget.child,
+      ),
+    );
+  }
+}
