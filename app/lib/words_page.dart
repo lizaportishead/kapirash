@@ -464,7 +464,7 @@ class _WordSheet extends StatelessWidget {
           );
     return SafeArea(
       child: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
+        padding: EdgeInsets.fromLTRB(28, 24, 28, 28),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -486,19 +486,19 @@ class _WordSheet extends StatelessWidget {
               ],
             ),
             if (w.tr.isNotEmpty) ...[
-              SizedBox(height: 8),
+              SizedBox(height: 14),
               Text(w.tr, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.25, color: cAccentText)),
             ],
             if (w.lemma != null && w.lemma != w.key) ...[
-              SizedBox(height: 4),
+              SizedBox(height: 10),
               Text(
                 ui('{0} от {1}', [formUi(w.form == null || w.form!.isEmpty ? 'Форма' : w.form!), store.conv(w.lemma!)]) +
                     (w.lemmaTr.isEmpty ? '' : ' — ${w.lemmaTr}'),
                 style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
               ),
             ],
-            if (links != null) ...[SizedBox(height: 10), links],
-            SizedBox(height: 12),
+            if (links != null) ...[SizedBox(height: 18), links],
+            SizedBox(height: 22),
             Material(
               color: cCard,
               borderRadius: BorderRadius.circular(14),
@@ -506,7 +506,7 @@ class _WordSheet extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
                 onTap: onOpen,
                 child: Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: EdgeInsets.all(16),
                   child: Text.rich(
                     TextSpan(
                       children: [
@@ -526,7 +526,7 @@ class _WordSheet extends StatelessWidget {
               ),
             ),
             if (story != null || video != null) ...[
-              SizedBox(height: 8),
+              SizedBox(height: 16),
               Row(
                 children: [
                   Icon(
@@ -548,33 +548,31 @@ class _WordSheet extends StatelessWidget {
                 ],
               ),
             ],
-            SizedBox(height: 16),
-            Row(
-              children: [
-                TextButton.icon(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Color(0xFFFDE8E8),
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                  ),
-                  icon: Icon(Icons.delete_outline_rounded, size: 18, color: Color(0xFFD32F2F)),
-                  label: Text(ui('Удалить слово'), style: TextStyle(color: Color(0xFFD32F2F), fontWeight: FontWeight.w700)),
-                  onPressed: () {
-                    store.remove(w.key);
-                    Navigator.of(context).pop();
-                  },
-                ),
-                Spacer(),
-                if (w.learned)
-                  TextButton.icon(
-                    icon: Icon(Icons.undo_rounded, size: 18, color: cMuted),
-                    label: Text(ui('Вернуть в изучение'), style: TextStyle(color: cMuted)),
-                    onPressed: () {
-                      store.setLearned(w.key, false);
-                      Navigator.of(context).pop();
-                    },
-                  ),
-              ],
+            SizedBox(height: 28),
+            if (w.learned) ...[
+              TextButton.icon(
+                style: TextButton.styleFrom(padding: EdgeInsets.symmetric(vertical: 14)),
+                icon: Icon(Icons.undo_rounded, size: 18, color: cMuted),
+                label: Text(ui('Вернуть в изучение'), style: TextStyle(color: cMuted)),
+                onPressed: () {
+                  store.setLearned(w.key, false);
+                  Navigator.of(context).pop();
+                },
+              ),
+              SizedBox(height: 8),
+            ],
+            TextButton.icon(
+              style: TextButton.styleFrom(
+                backgroundColor: Color(0xFFFDE8E8),
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+              ),
+              icon: Icon(Icons.delete_outline_rounded, size: 18, color: Color(0xFFD32F2F)),
+              label: Text(ui('Удалить слово'), style: TextStyle(color: Color(0xFFD32F2F), fontWeight: FontWeight.w700)),
+              onPressed: () {
+                store.remove(w.key);
+                Navigator.of(context).pop();
+              },
             ),
           ],
         ),
