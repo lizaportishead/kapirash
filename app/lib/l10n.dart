@@ -362,6 +362,8 @@ const _en = <String, String>{
   'Не получилось': 'Failed',
   'Убрать звёздочку': 'Remove star',
   'Поставить звёздочку': 'Add star',
+  'Убрать из избранного': 'Remove from favorites',
+  'Добавить в избранное': 'Add to favorites',
   'Закрыть поиск': 'Close search',
   'Поиск по словам': 'Search words',
   'Пока пусто. Открой ролик, нажми на слово в субтитрах и сохрани его.': 'Nothing here yet. Open a video, tap a word in the subtitles and save it.',
