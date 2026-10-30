@@ -96,7 +96,7 @@ class VideoCard extends StatelessWidget {
             ),
           ),
         ),
-        Padding(padding: EdgeInsets.fromLTRB(8, 12, 8, 6), child: _text(context)),
+        Padding(padding: EdgeInsets.fromLTRB(8, 12, 8, 8), child: _text(context)),
       ],
     );
   }

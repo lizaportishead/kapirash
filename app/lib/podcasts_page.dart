@@ -119,7 +119,7 @@ class EpisodeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final done = store.isWatched(video.id);
     return Padding(
-      padding: EdgeInsets.only(bottom: roomy ? 20 : 8),
+      padding: EdgeInsets.only(bottom: roomy ? 12 : 8),
       child: Lift(
         child: Material(
           color: cCard,
@@ -128,7 +128,7 @@ class EpisodeTile extends StatelessWidget {
           child: InkWell(
             onTap: () => openPodcast(context, video),
             child: Padding(
-              padding: EdgeInsets.all(roomy ? 18 : 12),
+              padding: EdgeInsets.fromLTRB(4, 12, 12, 12),
               child: Row(
                 children: [
                   LikeButton(video.id),

@@ -534,7 +534,7 @@ class _StoryCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(8, 12, 8, 6),
+            padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

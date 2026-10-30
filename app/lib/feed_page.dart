@@ -101,7 +101,7 @@ class FeedPage extends StatelessWidget {
 }
 
 // Высота карточки: превью 16:9 плюс подпись.
-double videoCardHeight(double w) => (w - 16) * 9 / 16 + 108;
+double videoCardHeight(double w) => (w - 16) * 9 / 16 + 107;
 
 /// Заголовок полосы со ссылкой «Смотреть все», если есть куда вести.
 class SectionHeader extends StatelessWidget {
