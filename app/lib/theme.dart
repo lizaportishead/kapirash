@@ -24,7 +24,7 @@ Color get cAccentText => _c(0xFF5A3FE0, 0xFFB5A6FF);
 // Два цвета приложения, от темы не зависят: жёлтая заливка с тёмным текстом и фиолетовая — со светлым.
 const cAccent = Color(0xFFE6EC68);
 // Залитая звёздочка: тот же жёлтый, но темнее, чтобы читалась на белой плашке.
-const cStarOn = Color(0xFFCBD233);
+const cStarOn = Color(0xFFF5D81C);
 const cViolet = Color(0xFF7357F6);
 const cOnViolet = Color(0xFFFFFFFF);
 const cInk = Color(0xFF111114);
