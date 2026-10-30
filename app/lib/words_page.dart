@@ -370,7 +370,7 @@ class _WordCard extends StatelessWidget {
                   visualDensity: VisualDensity.compact,
                   isSelected: w.starred,
                   icon: Icon(KIcons.star, size: 20, color: cStarOff),
-                  selectedIcon: Icon(Icons.star_rounded, size: 20, color: cAccent),
+                  selectedIcon: Icon(Icons.star_rounded, size: 23.5, color: cStarOn),
                   onPressed: () => store.toggleStar(w.key),
                 ),
                 SizedBox(width: 4),
