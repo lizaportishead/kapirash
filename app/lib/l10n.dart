@@ -86,6 +86,8 @@ const _forms = <String, String>{
   'предложный': 'locative',
   'звательный': 'vocative',
   'падеж': 'case',
+  'аорист': 'aorist',
+  'имперфект': 'imperfect',
   'прошедшее время': 'past tense',
   'будущее время': 'future tense',
   'повелительное наклонение': 'imperative',

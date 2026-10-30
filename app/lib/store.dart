@@ -171,6 +171,8 @@ class SavedWord {
       ).allMatches(cm.group(1)!).map((m) => _cases[m.group(0)]).whereType<String>().toList();
       if (names.isNotEmpty) parts.add('${names.join('/')} падеж');
     }
+    if (n.contains('аорист')) parts.add('аорист');
+    if (n.contains('имперфект')) parts.add('имперфект');
     if (n.contains('прош. вр')) parts.add('прошедшее время');
     if (n.contains('буд. вр')) parts.add('будущее время');
     if (n.contains('повел. накл')) parts.add('повелительное наклонение');
