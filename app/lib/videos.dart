@@ -112,7 +112,8 @@ List<Video> videos = _builtInVideos;
 List<Video> clips = _builtInClips.reversed.toList();
 
 /// Эпизоды подкастов: у них своя вкладка и аудиоплеер, в каталоге видео их нет.
-List<Video> podcasts = _builtInPodcasts;
+// list is kept oldest-first (append new episodes at the end); shown newest-first
+List<Video> podcasts = _builtInPodcasts.reversed.toList();
 
 /// Подменяет каталог строками из Supabase или их копией с устройства.
 void setCatalog(Map<String, dynamic> j) {
