@@ -674,24 +674,26 @@ class SubPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: kTopBarHeight,
-              child: Padding(
-                padding: EdgeInsets.only(left: 12, right: 12),
-                child: Row(
-                  children: [
-                    IconButton(
-                      tooltip: ui('Назад'),
-                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    Expanded(
-                      child: Text(
-                        title,
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+            HeaderAnchor(
+              child: SizedBox(
+                height: kTopBarHeight,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 12, right: 12),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        tooltip: ui('Назад'),
+                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                        onPressed: () => Navigator.pop(context),
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: Text(
+                          title,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -34,12 +34,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   captureInitialLink();
   // Пока поднимаем облако и читаем сохранённое, показываем лоадер вместо пустого экрана.
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: KapLoader(size: 96, flip: true),
-    ),
-  );
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: KapLoader(size: 96, flip: true)));
   if (supabaseKey.isNotEmpty) {
     // На вебе автодетект сессии в адресе зависает на app_links.getInitialLink, и после входа через Google сессия
     // не появляется. Поэтому на вебе обмениваем код из адреса сами.
@@ -145,7 +140,7 @@ class _KapirasAppState extends State<KapirasApp> {
       ),
       builder: (_, child) => AnnotatedRegion<SystemUiOverlayStyle>(
         value: _dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
-        child: child!,
+        child: NotificationListener<ScrollNotification>(onNotification: HeaderShadow.handle, child: child!),
       ),
       home: home(),
       // Адрес вида /#/video/<id> не должен искать маршруты по частям: всегда стартуем с главной,

@@ -15,6 +15,8 @@ Color get cLine => _c(0xFFE2E3EA, 0xFF30303B);
 Color get cText => _c(0xFF111114, 0xFFF5F5F7);
 Color get cMuted => _c(0xFF565862, 0xFFB4B5C0);
 Color get cFaint => _c(0xFF6E707B, 0xFF8D8EA0);
+// Пустая звёздочка в строках списков: светло-серая.
+Color get cStarOff => _c(0xFFB7BAC5, 0xFF5E5F70);
 
 /// Акцент как цвет текста: фиолетовый, в тёмной теме — светлее.
 Color get cAccentText => _c(0xFF5A3FE0, 0xFFB5A6FF);
@@ -259,29 +261,31 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: BoxConstraints(minHeight: kTopBarHeight),
-      padding: EdgeInsets.fromLTRB(back ? 12 : 16, 8, 12, 8),
-      alignment: Alignment.centerLeft,
-      child: Row(
-        children: [
-          if (back)
-            IconButton(
-              tooltip: ui('Назад'),
-              icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-              onPressed: () => Navigator.pop(context),
+    return HeaderAnchor(
+      child: Container(
+        constraints: BoxConstraints(minHeight: kTopBarHeight),
+        padding: EdgeInsets.fromLTRB(back ? 12 : 16, 8, 12, 8),
+        alignment: Alignment.centerLeft,
+        child: Row(
+          children: [
+            if (back)
+              IconButton(
+                tooltip: ui('Назад'),
+                icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                onPressed: () => Navigator.pop(context),
+              ),
+            if (icon != null) ...[Icon(icon, size: 28, color: cViolet), SizedBox(width: 10)],
+            Expanded(
+              child: Text(
+                text,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
+              ),
             ),
-          if (icon != null) ...[Icon(icon, size: 28, color: cViolet), SizedBox(width: 10)],
-          Expanded(
-            child: Text(
-              text,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
-            ),
-          ),
-          ...actions,
-        ],
+            ...actions,
+          ],
+        ),
       ),
     );
   }
@@ -398,3 +402,117 @@ class HoverInfo extends InheritedWidget {
   bool updateShouldNotify(HoverInfo old) => hovered != old.hovered;
 }
 
+/// Шапка страницы: когда список под ней прокручен, снизу появляется тень.
+/// Какая шапка принадлежит какому списку, узнаём по ближайшему общему предку (см. [HeaderShadow.handle]).
+class HeaderAnchor extends StatefulWidget {
+  const HeaderAnchor({super.key, required this.child});
+  final Widget child;
+
+  @override
+  State<HeaderAnchor> createState() => _HeaderAnchorState();
+}
+
+class _HeaderAnchorState extends State<HeaderAnchor> {
+  final _portal = OverlayPortalController();
+  final _link = LayerLink();
+  final scrolled = ValueNotifier(false);
+
+  @override
+  void initState() {
+    super.initState();
+    HeaderShadow._anchors.add(this);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _portal.show();
+    });
+  }
+
+  @override
+  void dispose() {
+    HeaderShadow._anchors.remove(this);
+    scrolled.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (_, box) => CompositedTransformTarget(
+        link: _link,
+        child: OverlayPortal(
+          controller: _portal,
+          overlayChildBuilder: (ctx) => CompositedTransformFollower(
+            link: _link,
+            targetAnchor: Alignment.bottomLeft,
+            showWhenUnlinked: false,
+            child: IgnorePointer(
+              child: SizedBox(
+                width: box.maxWidth,
+                height: 10,
+                child: ValueListenableBuilder(
+                  valueListenable: scrolled,
+                  builder: (_, on, _) => AnimatedOpacity(
+                    duration: Duration(milliseconds: 150),
+                    // Скрытая вкладка не должна показывать тень поверх соседней.
+                    opacity: on && TickerMode.of(ctx) ? 1 : 0,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Color(0x1A000000), Color(0x00000000)],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          child: widget.child,
+        ),
+      ),
+    );
+  }
+}
+
+class HeaderShadow {
+  static final _anchors = <_HeaderAnchorState>{};
+  static final _owner = Expando<_HeaderAnchorState>();
+
+  /// Слушатель прокрутки на уровне приложения: включает тень у шапки той же страницы.
+  static bool handle(ScrollNotification n) {
+    if (n.depth != 0 || n.metrics.axis != Axis.vertical) return false;
+    final ctx = n.context;
+    if (ctx == null) return false;
+    var anchor = _owner[ctx];
+    if (anchor == null || !anchor.mounted) {
+      anchor = _find(ctx);
+      _owner[ctx] = anchor;
+    }
+    anchor?.scrolled.value = n.metrics.pixels > 1;
+    return false;
+  }
+
+  // Ближайший предок списка, внутри которого есть шапка, — это страница; её шапка и нужна.
+  static _HeaderAnchorState? _find(BuildContext ctx) {
+    _HeaderAnchorState? found;
+    ctx.visitAncestorElements((a) {
+      for (final h in _anchors) {
+        var inside = false;
+        h.context.visitAncestorElements((x) {
+          if (identical(x, a)) {
+            inside = true;
+            return false;
+          }
+          return true;
+        });
+        if (inside) {
+          found = h;
+          return false;
+        }
+      }
+      return true;
+    });
+    return found;
+  }
+}
