@@ -404,12 +404,12 @@ class _StoryCard extends StatelessWidget {
     final ready = story.ready;
     if (vertical) return _vertical(context, ready);
     final body = Padding(
-      padding: EdgeInsets.zero,
+      padding: EdgeInsets.all(12),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(8),
             child: SizedBox(
               width: 100,
               height: 100,
@@ -469,20 +469,23 @@ class _StoryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
-            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(8), child: body),
+            child: Material(color: cCard, borderRadius: BorderRadius.circular(8), child: body),
           ),
         ),
       );
     }
-    return Stack(
-      children: [
-        Material(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(8),
-          child: InkWell(borderRadius: BorderRadius.circular(8), onTap: () => openStory(context, story), child: body),
+    return Lift(
+      child: Material(
+        color: cCard,
+        borderRadius: BorderRadius.circular(8),
+        clipBehavior: Clip.antiAlias,
+        child: Stack(
+          children: [
+            InkWell(onTap: () => openStory(context, story), child: body),
+            Positioned(top: 4, right: 4, child: _StoryStar(story, onCover: false)),
+          ],
         ),
-        Positioned(top: 0, right: 0, child: _StoryStar(story, onCover: false)),
-      ],
+      ),
     );
   }
 
