@@ -82,6 +82,8 @@ class _PhraseWordsState extends State<PhraseWords> {
     final a = _from, b = _to;
     final lo = a == null || b == null ? -1 : (a < b ? a : b);
     final hi = a == null || b == null ? -1 : (a < b ? b : a);
+    // На десктопе мышью выделяем сразу протяжкой, без долгого удержания (оно сбрасывается при малейшем сдвиге).
+    final drag = MediaQuery.sizeOf(context).width >= 960;
     return Wrap(
       alignment: widget.center ? WrapAlignment.center : WrapAlignment.start,
       children: [
@@ -96,6 +98,15 @@ class _PhraseWordsState extends State<PhraseWords> {
             },
             onLongPressEnd: (_) => _finish(words),
             onLongPressCancel: () => setState(() => _from = _to = null),
+            onPanStart: drag ? (_) => setState(() => _from = _to = i) : null,
+            onPanUpdate: drag
+                ? (d) {
+                    final j = _wordAt(d.globalPosition);
+                    if (j != null && j != _to) setState(() => _to = j);
+                  }
+                : null,
+            onPanEnd: drag ? (_) => _finish(words) : null,
+            onPanCancel: drag ? () => setState(() => _from = _to = null) : null,
             child: Padding(
               padding: EdgeInsets.only(right: i >= lo && i < hi ? 0 : widget.spacing),
               child: Container(
