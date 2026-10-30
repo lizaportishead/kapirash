@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RendererBinding;
 
 import 'clips_page.dart';
 import 'creator_page.dart';
@@ -77,6 +78,7 @@ class VideoCard extends StatelessWidget {
                     child: VideoTag('$words ${plural(words, 'слово', 'слова', 'слов')}', accent: true),
                   ),
                 if (v.duration.isNotEmpty) Positioned(right: 10, bottom: 10, child: VideoTag(v.duration)),
+                Positioned(top: 2, right: 2, child: StarOnCover(v.id)),
                 if (progress > 0)
                   Positioned(
                     left: 0,
@@ -94,16 +96,7 @@ class VideoCard extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(8, 12, 0, 6),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: _text(context)),
-              LikeButton(v.id),
-            ],
-          ),
-        ),
+        Padding(padding: EdgeInsets.fromLTRB(8, 12, 8, 6), child: _text(context)),
       ],
     );
   }
@@ -206,6 +199,39 @@ class LikeButton extends StatelessWidget {
           icon: Icon(KIcons.star, size: 22, color: cMuted),
           selectedIcon: Icon(Icons.star_rounded, size: 22, color: cViolet),
           onPressed: () => store.toggleLike(videoId),
+        );
+      },
+    );
+  }
+}
+
+/// Звёздочка на обложке: на десктопе появляется при наведении на карточку, на телефоне видна всегда.
+/// Поставленная звёздочка остаётся видна и без наведения.
+class StarOnCover extends StatelessWidget {
+  const StarOnCover(this.id, {super.key});
+  final String id;
+
+  @override
+  Widget build(BuildContext context) {
+    final hovered = HoverInfo.of(context);
+    final hasMouse = RendererBinding.instance.mouseTracker.mouseIsConnected;
+    return ListenableBuilder(
+      listenable: store,
+      builder: (_, _) {
+        final show = hovered || !hasMouse || store.isLiked(id);
+        return Padding(
+          padding: EdgeInsets.all(4),
+          child: AnimatedOpacity(
+            duration: Duration(milliseconds: 120),
+            opacity: show ? 1 : 0,
+            child: IgnorePointer(
+              ignoring: !show,
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: cBg.withValues(alpha: 0.85), shape: BoxShape.circle),
+                child: LikeButton(id),
+              ),
+            ),
+          ),
         );
       },
     );

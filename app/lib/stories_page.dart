@@ -15,7 +15,7 @@ import 'store.dart';
 import 'subs.dart';
 import 'theme.dart';
 import 'player_page.dart' show SettingsButton;
-import 'video_card.dart' show LikeButton;
+import 'video_card.dart' show LikeButton, StarOnCover;
 import 'l10n.dart';
 
 /// Рассказ в читалке. [asset] — имя файлов в assets без расширения; у рассказов-заглушек его нет.
@@ -345,8 +345,10 @@ class _PageCount extends StatelessWidget {
 
 /// Тонкая шкала прочитанного; видна, только если рассказ начат (позиция — номер страницы, 0 — обложка).
 class _StoryProgress extends StatelessWidget {
-  const _StoryProgress(this.story);
+  const _StoryProgress(this.story, {this.overlay = false});
   final Story story;
+  // На обложке: шкала лежит по нижнему краю картинки, как у ролика.
+  final bool overlay;
 
   @override
   Widget build(BuildContext context) {
@@ -362,6 +364,14 @@ class _StoryProgress extends StatelessWidget {
             if (n == 0) return SizedBox.shrink();
             // Страницы: обложка, n страниц текста, финальный экран.
             final value = (at / (n + 1)).clamp(0.0, 1.0);
+            if (overlay) {
+              return LinearProgressIndicator(
+                value: value < 0.04 ? 0.04 : value,
+                minHeight: 4,
+                color: cViolet,
+                backgroundColor: cOnInk.withValues(alpha: 0.35),
+              );
+            }
             return Padding(
               padding: EdgeInsets.only(top: 8),
               child: ClipRRect(
@@ -491,7 +501,7 @@ class _StoryCard extends StatelessWidget {
   /// Карточка для сетки: вертикальная обложка сверху, под ней название, автор и уровень.
   Widget _vertical(BuildContext context, bool ready) {
     final body = Padding(
-      padding: EdgeInsets.zero,
+      padding: EdgeInsets.all(8),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -501,15 +511,21 @@ class _StoryCard extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 1,
               child: ready
-                  ? ExcludeSemantics(
-                      child: Image.asset(
-                        'assets/${story.asset}.png',
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, _, _) => ColoredBox(
-                          color: cCard2,
-                          child: Icon(KIcons.stories, size: 36, color: cFaint),
+                  ? Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        ExcludeSemantics(
+                          child: Image.asset(
+                            'assets/${story.asset}.png',
+                            fit: BoxFit.cover,
+                            errorBuilder: (_, _, _) => ColoredBox(
+                              color: cCard2,
+                              child: Icon(KIcons.stories, size: 36, color: cFaint),
+                            ),
+                          ),
                         ),
-                      ),
+                        Positioned(left: 0, right: 0, bottom: 0, child: _StoryProgress(story, overlay: true)),
+                      ],
                     )
                   : ColoredBox(
                       color: cCard2,
@@ -517,30 +533,36 @@ class _StoryCard extends StatelessWidget {
                     ),
             ),
           ),
-          SizedBox(height: 12),
-          Text(
-            store.conv(story.title),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
-          ),
-          SizedBox(height: 4),
-          Text(
-            story.author,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 13, color: cText),
-          ),
-          if (ready) _meta(),
-          if (ready) _progress(),
-          if (!ready)
-            Padding(
-              padding: EdgeInsets.only(top: 8),
-              child: Text(
-                ui('Скоро'),
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
-              ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(8, 12, 8, 6),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  store.conv(story.title),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  story.author,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 13, color: cText),
+                ),
+                if (ready) _meta(),
+                if (!ready)
+                  Padding(
+                    padding: EdgeInsets.only(top: 8),
+                    child: Text(
+                      ui('Скоро'),
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                    ),
+                  ),
+              ],
             ),
+          ),
         ],
       ),
     );
@@ -550,20 +572,23 @@ class _StoryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
-            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(8), child: body),
+            child: Material(color: cCard, borderRadius: BorderRadius.circular(8), child: body),
           ),
         ),
       );
     }
-    return Stack(
-      children: [
-        Material(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(8),
-          child: InkWell(borderRadius: BorderRadius.circular(8), onTap: () => openStory(context, story), child: body),
+    return Lift(
+      child: Material(
+        color: cCard,
+        borderRadius: BorderRadius.circular(8),
+        clipBehavior: Clip.antiAlias,
+        child: Stack(
+          children: [
+            InkWell(onTap: () => openStory(context, story), child: body),
+            Positioned(top: 8, right: 8, child: _StoryStar(story, onCover: true)),
+          ],
         ),
-        Positioned(top: 0, right: 0, child: _StoryStar(story, onCover: true)),
-      ],
+      ),
     );
   }
 }
@@ -1375,14 +1400,7 @@ class _StoryStar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final star = LikeButton(story.wordKey);
-    if (!onCover) return star;
-    return Padding(
-      padding: EdgeInsets.all(4),
-      child: DecoratedBox(
-        decoration: BoxDecoration(color: cBg.withValues(alpha: 0.85), shape: BoxShape.circle),
-        child: star,
-      ),
-    );
+    if (!onCover) return LikeButton(story.wordKey);
+    return StarOnCover(story.wordKey);
   }
 }

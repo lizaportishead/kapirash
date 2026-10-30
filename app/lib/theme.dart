@@ -322,10 +322,9 @@ class DifficultyLabel extends StatelessWidget {
 }
 
 /// Шапка страницы второго уровня: на десктопе «назад» и заголовок в одной строке, на телефоне — отдельная полоса сверху.
-List<Widget> pageHeader(BuildContext context, String text, {IconData? icon}) =>
-    MediaQuery.sizeOf(context).width >= 600
-        ? [PageTitle(text, icon: icon, back: true)]
-        : [BackBar(), PageTitle(text, icon: icon)];
+List<Widget> pageHeader(BuildContext context, String text, {IconData? icon}) => MediaQuery.sizeOf(context).width >= 600
+    ? [PageTitle(text, icon: icon, back: true)]
+    : [BackBar(), PageTitle(text, icon: icon)];
 
 /// Шапка страницы второго уровня: кнопка «Назад» у левого края на всю ширину экрана.
 class BackBar extends StatelessWidget {
@@ -382,8 +381,20 @@ class _LiftState extends State<Lift> {
                 : BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1)),
           ],
         ),
-        child: widget.child,
+        child: HoverInfo(hovered: up, child: widget.child),
       ),
     );
   }
 }
+
+/// Говорит потомкам, наведён ли курсор на карточку.
+class HoverInfo extends InheritedWidget {
+  const HoverInfo({super.key, required this.hovered, required super.child});
+  final bool hovered;
+
+  static bool of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<HoverInfo>()?.hovered ?? false;
+
+  @override
+  bool updateShouldNotify(HoverInfo old) => hovered != old.hovered;
+}
+

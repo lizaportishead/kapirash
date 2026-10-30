@@ -26,11 +26,15 @@ class SavedWord {
     this.lemmaTr = '',
     this.form,
     this.learned = false,
+    this.starred = false,
   });
   final String key, tr, ctx, video;
 
   /// Слово выучено: отмечено «Знаю» в карточках. Такие слова не попадают в колоду.
   bool learned;
+
+  /// Слово отмечено звёздочкой как избранное.
+  bool starred;
   final double t;
 
   /// Начальная форма (им. п. ед. ч., инфинитив) и её перевод. null — ещё не определена.
@@ -50,6 +54,7 @@ class SavedWord {
     if (lemmaTr.isNotEmpty) 'lemmaTr': lemmaTr,
     if (form != null) 'form': form,
     if (learned) 'learned': true,
+    if (starred) 'starred': true,
   };
   static SavedWord fromJson(Map<String, dynamic> j) => SavedWord(
     key: j['key'],
@@ -61,6 +66,7 @@ class SavedWord {
     lemmaTr: j['lemmaTr'] ?? '',
     form: j['form'],
     learned: j['learned'] == true,
+    starred: j['starred'] == true,
   );
 
   /// Заполняет [lemma] по записи словарика: заметка вида «pas; вин. падеж» называет начальную форму,
@@ -384,6 +390,13 @@ class AppStore extends ChangeNotifier {
   void setLearned(String key, bool v) {
     for (final w in words) {
       if (w.key == key) w.learned = v;
+    }
+    _saveWords();
+  }
+
+  void toggleStar(String key) {
+    for (final w in words) {
+      if (w.key == key) w.starred = !w.starred;
     }
     _saveWords();
   }

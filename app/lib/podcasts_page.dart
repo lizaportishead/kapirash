@@ -131,6 +131,7 @@ class EpisodeTile extends StatelessWidget {
               padding: EdgeInsets.all(roomy ? 18 : 12),
               child: Row(
                 children: [
+                  LikeButton(video.id),
                   _Cover(size: 64, channel: video.channel),
                   SizedBox(width: 12),
                   Expanded(
@@ -156,7 +157,7 @@ class EpisodeTile extends StatelessWidget {
                       ],
                     ),
                   ),
-                  LikeButton(video.id),
+                  SizedBox(width: 8),
                   Semantics(
                     button: true,
                     label: ui('Играть'),
