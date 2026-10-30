@@ -132,7 +132,7 @@ class BigButton extends StatelessWidget {
           textStyle: TextStyle(fontFamily: kFont, fontSize: compact ? 15 : 16, fontWeight: FontWeight.w700),
         ),
         onPressed: onTap,
-        child: Text(text),
+        child: FittedBox(fit: BoxFit.scaleDown, child: Text(text, maxLines: 1, softWrap: false)),
       ),
     );
   }

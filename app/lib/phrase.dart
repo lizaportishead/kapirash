@@ -158,7 +158,7 @@ Future<({String phrase, String sentence})?> _translateInContext(String phrase, S
         'to': store.lang == 'en' ? 'en' : 'ru',
       }),
       headers: {'apikey': supabaseKey},
-    ).timeout(Duration(seconds: 10));
+    ).timeout(Duration(seconds: 6));
     if (r.statusCode != 200) return null;
     final j = jsonDecode(utf8.decode(r.bodyBytes));
     return (phrase: j['phrase'] as String, sentence: j['sentence'] as String);
@@ -306,9 +306,16 @@ class _WordCardState extends State<WordCard> {
                       future: phraseTr,
                       builder: (_, snap) {
                         if (snap.connectionState != ConnectionState.done) {
-                          return Text(
-                            '…',
-                            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: cMuted),
+                          return SizedBox(
+                            height: 28,
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(strokeWidth: 2.5, color: cViolet),
+                              ),
+                            ),
                           );
                         }
                         return Text(
