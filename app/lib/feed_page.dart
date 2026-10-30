@@ -159,7 +159,7 @@ class VideoSection extends StatelessWidget {
                   ? box.maxWidth * 0.82
                   : ((box.maxWidth - 24 - 12 * (_perRow - 1)) / _perRow).clamp(260.0, 400.0);
               return SizedBox(
-                height: videoCardHeight(w),
+                height: videoCardHeight(w) + 16,
                 child: ScrollConfiguration(
                   // На десктопе ряд можно листать и мышью.
                   behavior: ScrollConfiguration.of(context).copyWith(
@@ -167,7 +167,7 @@ class VideoSection extends StatelessWidget {
                   ),
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     itemCount: list.length,
                     separatorBuilder: (_, _) => SizedBox(width: 12),
                     itemBuilder: (_, i) => SizedBox(width: w, child: VideoCard(list[i])),

@@ -373,12 +373,12 @@ class _LiftState extends State<Lift> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 160),
         curve: Curves.easeOut,
-        transform: Matrix4.translationValues(0, up ? -3 : 0, 0),
+        transform: Matrix4.translationValues(0, up ? -2 : 0, 0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             up
-                ? BoxShadow(color: cViolet.withValues(alpha: 0.28), blurRadius: 22, offset: Offset(0, 8))
+                ? BoxShadow(color: cViolet.withValues(alpha: 0.25), blurRadius: 10, offset: Offset(0, 3))
                 : BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1)),
           ],
         ),
