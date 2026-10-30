@@ -564,7 +564,8 @@ class _WordSheet extends StatelessWidget {
             TextButton.icon(
               style: TextButton.styleFrom(
                 backgroundColor: Color(0xFFFDE8E8),
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                minimumSize: Size.fromHeight(52),
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
               ),
               icon: Icon(Icons.delete_outline_rounded, size: 18, color: Color(0xFFD32F2F)),
