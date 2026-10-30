@@ -246,7 +246,7 @@ class StoriesPage extends StatelessWidget {
         Expanded(
           child: LayoutBuilder(
             builder: (_, box) {
-              const pad = 20.0, gap = 24.0;
+              const pad = 12.0, gap = 12.0;
               // На широком экране — сетка вертикальных карточек, на телефоне — список.
               if (box.maxWidth < 640) {
                 return ListView.separated(
@@ -263,7 +263,7 @@ class StoriesPage extends StatelessWidget {
               return ListView.separated(
                 padding: EdgeInsets.fromLTRB(pad, 0, pad, 24),
                 itemCount: rows,
-                separatorBuilder: (_, _) => SizedBox(height: gap + 8),
+                separatorBuilder: (_, _) => SizedBox(height: gap),
                 itemBuilder: (_, r) => IntrinsicHeight(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
