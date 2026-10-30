@@ -314,7 +314,7 @@ class _WordArt extends StatelessWidget {
               angle: -0.04,
               child: Container(
                 padding: EdgeInsets.fromLTRB(20, 16, 20, 18),
-                decoration: BoxDecoration(color: cOnInk, borderRadius: BorderRadius.circular(28)),
+                decoration: BoxDecoration(color: cOnInk, borderRadius: BorderRadius.circular(8)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -399,7 +399,7 @@ class _CardsArt extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(20, 14, 20, 16),
                   decoration: BoxDecoration(
                     color: cOnInk,
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: cInk, width: 2),
                   ),
                   child: Column(
@@ -481,7 +481,7 @@ class _OnboardingShowcaseState extends State<OnboardingShowcase> {
       duration: Duration(milliseconds: 300),
       decoration: BoxDecoration(
         color: s.bg,
-        borderRadius: BorderRadius.horizontal(left: Radius.circular(36)),
+        borderRadius: BorderRadius.horizontal(left: Radius.circular(8)),
       ),
       clipBehavior: Clip.antiAlias,
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),

@@ -344,9 +344,9 @@ class _WordCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: cCard,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(8),
       child: InkWell(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         onTap: () => _showWordSheet(context, w),
         child: Padding(
           padding: EdgeInsets.fromLTRB(16, 12, 4, 12),
@@ -409,7 +409,7 @@ void _showWordSheet(BuildContext context, SavedWord w) {
       context: context,
       builder: (ctx) => Dialog(
         backgroundColor: cBg,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 560), child: body(ctx)),
       ),
     );
@@ -418,7 +418,7 @@ void _showWordSheet(BuildContext context, SavedWord w) {
       context: context,
       isScrollControlled: true,
       backgroundColor: cBg,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(28))),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
       builder: body,
     );
   }

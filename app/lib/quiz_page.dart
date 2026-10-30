@@ -100,9 +100,9 @@ class QuizList extends StatelessWidget {
     final r = store.quizResult(videoId, s.title);
     return Material(
       color: flat ? Colors.transparent : cCard,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(8),
       child: InkWell(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(8),
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute<void>(
             settings: RouteSettings(name: 'SubPage'),
@@ -386,7 +386,7 @@ class _QuizPageState extends State<QuizPage> {
               final q = _qs[wrong[n]];
               return Container(
                 padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+                decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [

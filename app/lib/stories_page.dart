@@ -459,7 +459,7 @@ class _StoryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
-            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(24), child: body),
+            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(8), child: body),
           ),
         ),
       );
@@ -468,8 +468,8 @@ class _StoryCard extends StatelessWidget {
       children: [
         Material(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(24),
-          child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+          borderRadius: BorderRadius.circular(8),
+          child: InkWell(borderRadius: BorderRadius.circular(8), onTap: () => openStory(context, story), child: body),
         ),
         Positioned(top: 0, right: 0, child: _StoryStar(story, onCover: false)),
       ],
@@ -550,7 +550,7 @@ class _StoryCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Opacity(
             opacity: 0.55,
-            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(24), child: body),
+            child: Material(color: Colors.transparent, borderRadius: BorderRadius.circular(8), child: body),
           ),
         ),
       );
@@ -559,8 +559,8 @@ class _StoryCard extends StatelessWidget {
       children: [
         Material(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(24),
-          child: InkWell(borderRadius: BorderRadius.circular(24), onTap: () => openStory(context, story), child: body),
+          borderRadius: BorderRadius.circular(8),
+          child: InkWell(borderRadius: BorderRadius.circular(8), onTap: () => openStory(context, story), child: body),
         ),
         Positioned(top: 0, right: 0, child: _StoryStar(story, onCover: true)),
       ],
@@ -857,7 +857,7 @@ class _StoryReaderState extends State<StoryReader> {
                               child: Material(
                                 color: cBg,
                                 elevation: 8,
-                                borderRadius: BorderRadius.circular(24),
+                                borderRadius: BorderRadius.circular(8),
                                 clipBehavior: Clip.antiAlias,
                                 child: ConstrainedBox(
                                   constraints: BoxConstraints(maxHeight: 480),
@@ -1055,7 +1055,7 @@ class _StoryReaderState extends State<StoryReader> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(8),
               child: ExcludeSemantics(
                 // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
                 child: Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),

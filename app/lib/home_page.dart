@@ -131,9 +131,9 @@ class _Profile extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(12, 0, 12, 20),
       child: Material(
         color: mobile ? cCard : cViolet,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         child: InkWell(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(8),
           onTap: () => openSurvey(context),
           child: Padding(
             padding: mobile ? EdgeInsets.fromLTRB(16, 12, 8, 12) : EdgeInsets.fromLTRB(14, 12, 14, 12),
@@ -216,13 +216,13 @@ class _BookCard extends StatelessWidget {
     return SizedBox(
       width: 140,
       child: InkWell(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         onTap: () => openStory(context, story),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(8),
               child: SizedBox(
                 width: 140,
                 height: 140,

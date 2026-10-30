@@ -24,7 +24,7 @@ class VideoCard extends StatelessWidget {
     );
     final card = Material(
       color: cCard,
-      borderRadius: BorderRadius.circular(28),
+      borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () => openVideo(context, v),
@@ -52,7 +52,7 @@ class VideoCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(8),
           child: AspectRatio(
             aspectRatio: 16 / 9,
             child: Stack(

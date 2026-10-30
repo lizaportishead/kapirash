@@ -8,8 +8,8 @@ const kFont = 'Montserrat';
 // Цвета двух тем: светлая по умолчанию, тёмная включается в профиле.
 Color _c(int light, int dark) => Color(store.dark ? dark : light);
 
-Color get cBg => _c(0xFFFFFFFF, 0xFF0E0E12);
-Color get cCard => _c(0xFFF3F4F7, 0xFF1A1A21);
+Color get cBg => _c(0xFFF3F4F7, 0xFF0E0E12);
+Color get cCard => _c(0xFFFFFFFF, 0xFF1A1A21);
 Color get cCard2 => _c(0xFFE7E8EE, 0xFF272731);
 Color get cLine => _c(0xFFE2E3EA, 0xFF30303B);
 Color get cText => _c(0xFF111114, 0xFFF5F5F7);

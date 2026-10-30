@@ -117,7 +117,7 @@ class EpisodeTile extends StatelessWidget {
       padding: EdgeInsets.only(bottom: roomy ? 20 : 8),
       child: Material(
         color: cCard,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () => openPodcast(context, video),
@@ -512,7 +512,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                                     padding: EdgeInsets.fromLTRB(16, 16, 16, 14),
                                     decoration: BoxDecoration(
                                       color: cBg,
-                                      borderRadius: BorderRadius.circular(24),
+                                      borderRadius: BorderRadius.circular(8),
                                       boxShadow: [
                                         BoxShadow(
                                           color: Colors.black.withValues(alpha: 0.08),
@@ -689,7 +689,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     final ru = cue != null ? _ruFor(cue) : '';
     return Material(
       color: cAccent,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: Column(
         mainAxisSize: MainAxisSize.min,

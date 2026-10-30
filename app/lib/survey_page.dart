@@ -253,11 +253,11 @@ class _LangCard extends StatelessWidget {
       child: Material(
         color: selected ? cViolet.withValues(alpha: 0.1) : cCard,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           side: BorderSide(color: selected ? cViolet : Colors.transparent, width: 2),
         ),
         child: InkWell(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           onTap: onTap,
           child: Padding(
             padding: EdgeInsets.all(20),
@@ -293,11 +293,11 @@ class _LevelCard extends StatelessWidget {
       child: Material(
         color: selected ? cViolet.withValues(alpha: 0.1) : cCard,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           side: BorderSide(color: selected ? cViolet : Colors.transparent, width: 2),
         ),
         child: InkWell(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           onTap: onTap,
           child: Padding(
             padding: EdgeInsets.all(16),

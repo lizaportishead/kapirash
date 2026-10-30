@@ -187,7 +187,7 @@ class _SignIn extends StatelessWidget {
     );
     return Container(
       padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
+      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(8)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -247,7 +247,7 @@ class _Group extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: cCard,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
@@ -304,7 +304,7 @@ class _Stat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(24)),
+      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
           Text(

@@ -147,7 +147,7 @@ class ClipTile extends StatelessWidget {
       label: '${v.title}, ${v.channel}',
       child: Material(
         color: cInk,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () => openClip(context, v, among: among),
@@ -557,7 +557,7 @@ class _ClipPageState extends State<_ClipPage> {
   Widget _current() {
     return Material(
       color: cAccent,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -660,7 +660,7 @@ class _ClipPageState extends State<_ClipPage> {
     return AspectRatio(
       aspectRatio: 9 / 16,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -698,7 +698,7 @@ class _ClipPageState extends State<_ClipPage> {
     // Кнопки на жёлтой карточке сверху, как у длинных видео.
     return Container(
       padding: EdgeInsets.fromLTRB(12, 12, 12, 10),
-      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
+      decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(8)),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
