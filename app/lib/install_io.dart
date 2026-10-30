@@ -1,3 +1,7 @@
+bool isStandalone() => false;
+
+void onAppInstalled(void Function() cb) {}
+
 /// На телефоне-приложении баннер «добавить на экран» не нужен.
 String? installPlatform() => null;
 

@@ -62,6 +62,7 @@ Future<void> main() async {
   }
   await store.load();
   await initAnalytics();
+  trackHomeScreenInstall();
   identifyUser(cloud?.auth.currentUser?.id);
   runApp(KapirasApp());
 }
