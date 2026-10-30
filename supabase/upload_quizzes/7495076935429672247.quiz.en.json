@@ -1,0 +1,176 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How many places did Petra and Martina visit in a day?",
+     "o": [
+      "Six",
+      "Two",
+      "Ten",
+      "Four"
+     ],
+     "a": 3,
+     "e": "In the video: \"u jednom danu obišli četiri potpuno različita\" — in one day they visited four completely different ones."
+    },
+    {
+     "q": "Where did the trip start?",
+     "o": [
+      "At Manasija Monastery",
+      "At the Veliki Buk waterfall",
+      "At the Resava Cave",
+      "At the Krupaja spring"
+     ],
+     "a": 0,
+     "e": "In the video: \"Prvo smo posetili manastir Manasiju\" — first we visited Manasija Monastery."
+    },
+    {
+     "q": "What came next, underground?",
+     "o": [
+      "The Resava Cave",
+      "A mine",
+      "The metro",
+      "A museum basement"
+     ],
+     "a": 0,
+     "e": "In the video: \"smo se spustili duboko pod zemlju, u magični svet Resavske pećine.\" — we went deep underground, into the magical world of the Resava Cave."
+    },
+    {
+     "q": "Where did they stop for lunch?",
+     "o": [
+      "In Belgrade",
+      "At the monastery",
+      "In the cave",
+      "By the Veliki Buk waterfall"
+     ],
+     "a": 3,
+     "e": "In the video: \"pauzu za ručak uz pogled na spektakularni vodopad Veliki buk\" — a lunch break with a view of the spectacular Veliki Buk waterfall."
+    },
+    {
+     "q": "Through which app was the trip booked?",
+     "o": [
+      "Airbnb",
+      "GetYourGuide",
+      "Booking",
+      "Google Maps"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ovaj izlet smo rezervisali preko aplikacije GetYourGuide\"."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Evo kako je izgledao naš savršeni jednodnevni *izlet* u Srbiji.",
+     "o": [
+      "trip, excursion",
+      "vacation",
+      "dinner",
+      "holiday"
+     ],
+     "a": 0,
+     "e": "Izlet — a short trip, an excursion; jednodnevni — one-day."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U jednom danu smo *obišli* četiri mesta.",
+     "o": [
+      "forgot",
+      "visited",
+      "bought",
+      "found"
+     ],
+     "a": 1,
+     "e": "Obići — to go around, to visit (several places)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovaj izlet smo *rezervisali* preko aplikacije.",
+     "o": [
+      "booked",
+      "came up with",
+      "canceled",
+      "paid for"
+     ],
+     "a": 0,
+     "e": "Rezervisati — to book, to reserve."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A ti *sačuvaj* ovaj video za inspiraciju.",
+     "o": [
+      "delete (imperative)",
+      "buy (imperative)",
+      "take off (imperative)",
+      "save (imperative)"
+     ],
+     "a": 3,
+     "e": "Sačuvati — to save, to preserve. The form sačuvaj is the imperative."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvo smo posetili ___ Manasiju.",
+     "o": [
+      "manastirom",
+      "manastira",
+      "manastiru",
+      "manastir"
+     ],
+     "a": 3,
+     "e": "Posetiti (\"to visit\") requires the accusative case. For inanimate masculine nouns it coincides with the nominative: manastir."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zatim smo se spustili duboko pod ___.",
+     "o": [
+      "zemljom",
+      "zemlje",
+      "zemlja",
+      "zemlju"
+     ],
+     "a": 3,
+     "e": "Pod in answer to \"where to?\" requires the accusative case: pod zemlju — \"underground\"."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ smo pauzu za ručak",
+     "o": [
+      "Napravio",
+      "Napravili",
+      "Pravili",
+      "Pravio"
+     ],
+     "a": 1,
+     "e": "One break, a completed action — perfective napraviti. Pravili is imperfective (process). Smo is plural."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovaj izlet smo rezervisali preko ___.",
+     "o": [
+      "aplikaciji",
+      "aplikacije",
+      "aplikacijom",
+      "aplikaciju"
+     ],
+     "a": 1,
+     "e": "The preposition preko (\"via\") requires the genitive case: preko aplikacije."
+    }
+   ]
+  }
+ ]
+}

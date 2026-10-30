@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What, according to the author, should this video not replace?",
+     "o": [
+      "School textbooks",
+      "Formal education on this topic",
+      "A telescope",
+      "The work of scientists"
+     ],
+     "a": 1,
+     "e": "In the video: \"ne treba da zameni vaše formalno obrazovanje na ovu temu\" — it shouldn't replace your formal education on this topic."
+    },
+    {
+     "q": "What does the author call the Moon in the cosmic \"neighborhood\"?",
+     "o": [
+      "The most distant planet",
+      "The first neighbor",
+      "A star",
+      "A gas giant"
+     ],
+     "a": 1,
+     "e": "In the video: \"Naš prvi komšija je Mesec\" — our first neighbor is the Moon."
+    },
+    {
+     "q": "What is the Goldilocks zone?",
+     "o": [
+      "A too-hot region",
+      "A too-cold region",
+      "A zone where it is neither too hot nor too cold",
+      "The zone around Jupiter"
+     ],
+     "a": 2,
+     "e": "In the video: \"Niti je suviše vruće, niti suviše hladno, već taman kako treba\" — it's neither too hot nor too cold, but just right."
+    },
+    {
+     "q": "What is the Great Red Spot on Jupiter?",
+     "o": [
+      "A crater",
+      "A hurricane the size of three Earths",
+      "A volcano",
+      "A lake"
+     ],
+     "a": 1,
+     "e": "In the video: \"uragan veličine tri planete Zemlje koji besni na Jupiteru već stotinama godina\" — a hurricane the size of three Earths that has been raging on Jupiter for hundreds of years."
+    },
+    {
+     "q": "What happened to Pluto?",
+     "o": [
+      "It disappeared",
+      "It lost its planet status because of its small size",
+      "It became a star",
+      "It collided with Jupiter"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pluton, koji je nedavno izgubio status planete zbog svoje male veličine\" — Pluto, which recently lost its planet status because of its small size."
+    },
+    {
+     "q": "What is the icy shell around the Solar System called?",
+     "o": [
+      "The Oort cloud",
+      "The asteroid belt",
+      "The Milky Way",
+      "The Local Group"
+     ],
+     "a": 0,
+     "e": "In the video: \"zove se Ortov oblak\" — it is called the Oort cloud."
+    },
+    {
+     "q": "How far from the galactic center is the Solar System?",
+     "o": [
+      "About 30 light-years",
+      "About 300 light-years",
+      "About 30,000 light-years",
+      "About 3 million light-years"
+     ],
+     "a": 2,
+     "e": "In the video: \"udaljeni smo nekih 30.000 svetlosnih godina\" — we are about 30,000 light-years away."
+    },
+    {
+     "q": "Why can't we see parts of the universe beyond the cosmic horizon?",
+     "o": [
+      "They are too small",
+      "The light from there hasn't reached us yet",
+      "There are no stars there",
+      "They are covered by clouds"
+     ],
+     "a": 1,
+     "e": "In the video: \"svetlost iz tih udaljenih regija još uvek nije stigla da pređe celu razdaljinu do nas\" — the light from those distant regions has not yet managed to cross the whole distance to us."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svemir je *beskrajan*.",
+     "o": [
+      "boundless",
+      "dark",
+      "new",
+      "cold"
+     ],
+     "a": 0,
+     "e": "Beskrajan — boundless, endless."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mesec *orbitira* oko Zemlje.",
+     "o": [
+      "falls onto",
+      "orbits",
+      "stands above",
+      "moves away from"
+     ],
+     "a": 1,
+     "e": "Orbitirati — to orbit."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Saturn je okružen *prstenom* leda i stenja.",
+     "o": [
+      "a ring",
+      "a cloud",
+      "a core",
+      "a sea"
+     ],
+     "a": 0,
+     "e": "Prsten — a ring."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pluton spada u *patuljaste* planete.",
+     "o": [
+      "gas",
+      "dwarf",
+      "solid",
+      "new"
+     ],
+     "a": 1,
+     "e": "Patuljast — dwarf."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Naš Sunčev sistem je deo *galaksije*.",
+     "o": [
+      "galaxies",
+      "planets",
+      "stars",
+      "comets"
+     ],
+     "a": 0,
+     "e": "Galaksija — a galaxy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svetlost putuje *svetlosnih* godina.",
+     "o": [
+      "dark",
+      "light",
+      "bright",
+      "new"
+     ],
+     "a": 1,
+     "e": "Svetlosna godina — a light-year."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Teleskopi* detektuju svetlost.",
+     "o": [
+      "telescopes",
+      "rockets",
+      "planets",
+      "satellites"
+     ],
+     "a": 0,
+     "e": "Teleskop — a telescope."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Voyager 1 je *sonda*.",
+     "o": [
+      "probe",
+      "star",
+      "comet",
+      "planet"
+     ],
+     "a": 0,
+     "e": "Sonda — a probe."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Choose the adjective form",
+     "q": "Od centra ___ galaksije udaljeni smo nekih 30.000 svetlosnih godina.",
+     "o": [
+      "naše",
+      "našu",
+      "našoj",
+      "naša"
+     ],
+     "a": 0,
+     "e": "Od + genitive. Galaksija is feminine, so naše galaksije."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Jupiter ima masu veću od mase svih ostalih ___ Sunčevog sistema.",
+     "o": [
+      "planeta",
+      "planete",
+      "planetama",
+      "planetu"
+     ],
+     "a": 0,
+     "e": "Svih + genitive plural: svih planeta."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Idemo ka neistraženim ___ Svemira.",
+     "o": [
+      "prostranstva",
+      "prostranstvima",
+      "prostranstvo",
+      "prostranstvom"
+     ],
+     "a": 1,
+     "e": "Ka + dative case: ka prostranstvima."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Ako ___ dalje, nakon Saturna naići ćemo na Uran i Neptun,",
+     "o": [
+      "nastavljao",
+      "nastavio",
+      "nastavljamo",
+      "nastavimo"
+     ],
+     "a": 3,
+     "e": "After ako a hypothetical step takes the perfective: nastavimo. Nastavljamo is imperfective (ongoing)."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mars je nekada imao svoje ___.",
+     "o": [
+      "reka",
+      "reke",
+      "reci",
+      "rekom"
+     ],
+     "a": 1,
+     "e": "Imati + accusative plural: imao svoje reke."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Sunce drži uz sebe sve ___.",
+     "o": [
+      "planete",
+      "planeta",
+      "planetama",
+      "planeti"
+     ],
+     "a": 0,
+     "e": "Držati + accusative plural: sve planete."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ova planeta je ___ od svih ostalih.",
+     "o": [
+      "veliki",
+      "veća",
+      "velika",
+      "veliko"
+     ],
+     "a": 1,
+     "e": "Comparative, feminine: veća planeta."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mi se nalazimo u ___ galaksiji.",
+     "o": [
+      "jednoj",
+      "jedna",
+      "jednu",
+      "jednom"
+     ],
+     "a": 0,
+     "e": "U + locative case, feminine: u jednoj galaksiji."
+    }
+   ]
+  }
+ ]
+}

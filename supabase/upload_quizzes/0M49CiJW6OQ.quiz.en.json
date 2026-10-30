@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the author's name and what is the channel called?",
+     "o": [
+      "Marko, Berza Srbija",
+      "Đorđe, Lične finansije",
+      "Nikola, Pare i ja",
+      "Dušan, Štednja"
+     ],
+     "a": 1,
+     "e": "In the video: \"ja sam Đorđe i dobrodošli na kanal Lične finansije\" — I'm Đorđe, welcome to the \"Personal Finance\" channel."
+    },
+    {
+     "q": "What does the author show in the picture at the beginning?",
+     "o": [
+      "His capital gains tax",
+      "The NVIDIA share price",
+      "His portfolio's performance and the S&P 500 ETF",
+      "A list of cryptocurrencies"
+     ],
+     "a": 2,
+     "e": "In the video: \"Zelenom bojom su označene performanse mog portfolija\" — the green color shows my portfolio's performance."
+    },
+    {
+     "q": "What is the author's first request to viewers?",
+     "o": [
+      "To subscribe to the channel and hit the bell",
+      "To buy an ETF",
+      "To like every video",
+      "To write to the bank"
+     ],
+     "a": 0,
+     "e": "In the video: \"da se pretplatite i da pritisnete zvonce\" — subscribe and hit the bell."
+    },
+    {
+     "q": "What does the author warn about regarding year-to-date performance?",
+     "o": [
+      "It always goes up",
+      "It can change both up and down",
+      "It's the same for everyone",
+      "It doesn't matter"
+     ],
+     "a": 1,
+     "e": "In the video: \"One se mogu menjati i na gore i na dole\" — they can change both up and down."
+    },
+    {
+     "q": "What share of funds does the author recommend putting into the core?",
+     "o": [
+      "From 10 to 20%",
+      "From 30 to 40%",
+      "From 50 to 60%",
+      "From 70 to 80%"
+     ],
+     "a": 3,
+     "e": "In the video: \"U jezgro ćemo uložiti od 70 do 80% naših raspoloživih sredstava za investiranje\" — we'll put 70 to 80% of our investable funds into the core."
+    },
+    {
+     "q": "What, according to the author, should make up the core?",
+     "o": [
+      "Individual stocks",
+      "An ETF or several ETFs",
+      "Gold",
+      "Real estate"
+     ],
+     "a": 1,
+     "e": "In the video: \"da ETF ili nekoliko ETF-ova čini tvoje jezgro\" — so that one ETF or several ETFs make up your core."
+    },
+    {
+     "q": "What are satellite positions for?",
+     "o": [
+      "To avoid paying taxes altogether",
+      "To bet on one's convictions and get a return higher than the core",
+      "To reduce fees",
+      "To keep money at home"
+     ],
+     "a": 1,
+     "e": "In the video: \"mi želimo onako malo da se kladimo na to svoje ubeđenje\" — we want to bet a little on that conviction of ours."
+    },
+    {
+     "q": "What did the author do with one of his satellite positions?",
+     "o": [
+      "Increased it",
+      "Closed it",
+      "Sold the core",
+      "Gave it away"
+     ],
+     "a": 1,
+     "e": "In the video: \"odlučio da zatvorim jednu svoju satelitsku poziciju\" — decided to close one of my satellite positions."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dolazi do pada tržišta, a *portfolio* treba da bude otporan.",
+     "o": [
+      "portfolio",
+      "account",
+      "tax",
+      "loan"
+     ],
+     "a": 0,
+     "e": "Portfolio — an investment portfolio."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pokazao bih ti *prinos* u procentima.",
+     "o": [
+      "return",
+      "loss",
+      "tax",
+      "price"
+     ],
+     "a": 0,
+     "e": "Prinos — return, yield, income."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U portfolio mogu ući *obveznice* i zlato.",
+     "o": [
+      "rights",
+      "bonds",
+      "apartments",
+      "cards"
+     ],
+     "a": 1,
+     "e": "Obveznica — a bond."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sklonost ka *riziku* je različita kod svakoga.",
+     "o": [
+      "to income",
+      "to risk",
+      "to tax",
+      "to time"
+     ],
+     "a": 1,
+     "e": "Rizik — risk."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To je *jezgro* mog portfolija.",
+     "o": [
+      "core",
+      "outskirts",
+      "roof",
+      "part"
+     ],
+     "a": 0,
+     "e": "Jezgro — core; in the metaphor \"jezgro i sateliti\" (core and satellites)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svako ima drugačiji *investicioni* cilj.",
+     "o": [
+      "tax (adj.)",
+      "investment (adj.)",
+      "working (adj.)",
+      "personal (adj.)"
+     ],
+     "a": 1,
+     "e": "Investicioni — investment (adj.)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogu da *nadmaše* performanse ETF-a.",
+     "o": [
+      "will repeat",
+      "will surpass",
+      "will lose",
+      "will forget"
+     ],
+     "a": 1,
+     "e": "Nadmašiti — to surpass."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ne smemo da *zapustimo* jezgro.",
+     "o": [
+      "we'll neglect",
+      "we'll build",
+      "we'll sell",
+      "we'll find"
+     ],
+     "a": 0,
+     "e": "Zapustiti — to launch, to neglect."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Pokazao bih ti rezultate na jednoj ___.",
+     "o": [
+      "slika",
+      "slici",
+      "sliku",
+      "slikom"
+     ],
+     "a": 1,
+     "e": "Na + prepositional (locative) case: na jednoj slici — \"in one picture\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Prinos ETF-a prati ___ S&P 500.",
+     "o": [
+      "indeks",
+      "indeksa",
+      "indeksu",
+      "indeksom"
+     ],
+     "a": 0,
+     "e": "Pratiti + accusative case: prati indeks."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Koristimo ETF koji u sebi sadrži akcije preko 3000 ___.",
+     "o": [
+      "kompanija",
+      "kompaniju",
+      "kompaniji",
+      "kompanijom"
+     ],
+     "a": 0,
+     "e": "Preko + number: genitive plural — kompanija."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "da li želi prihod ___ dividende.",
+     "o": [
+      "iz",
+      "od",
+      "sa",
+      "kod"
+     ],
+     "a": 1,
+     "e": "Prihod od + genitive: prihod od dividende — income from dividends."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ulažemo novac u ___.",
+     "o": [
+      "jezgro",
+      "jezgra",
+      "jezgru",
+      "jezgrom"
+     ],
+     "a": 0,
+     "e": "U + accusative case (where to): u jezgro."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Svojim ___ sam došao do jedne strategije koja se ukratko može opisati kao jezgro i sateliti.",
+     "o": [
+      "istraživanjem",
+      "istraživanje",
+      "istraživanju",
+      "istraživanja"
+     ],
+     "a": 0,
+     "e": "Means or method takes the instrumental: svojim istraživanjem — through my own research."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Investiraš u akcije ___ kao što su NVIDIA i AMD.",
+     "o": [
+      "kompanije",
+      "kompanija",
+      "kompaniji",
+      "kompanijom"
+     ],
+     "a": 1,
+     "e": "Akcije + genitive plural: akcije kompanija — \"shares of companies\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Možeš da kupiš ETF koji sadrži samo ___ kompanije.",
+     "o": [
+      "kineske",
+      "kineski",
+      "kinesku",
+      "kineskih"
+     ],
+     "a": 0,
+     "e": "Kompanije — plural, feminine: kineske kompanije."
+    }
+   ]
+  }
+ ]
+}

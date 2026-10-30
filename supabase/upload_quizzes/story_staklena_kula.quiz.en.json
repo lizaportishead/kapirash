@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Who was Ilza's father?",
+     "o": [
+      "A poor woodcutter",
+      "A hunter",
+      "A rich merchant",
+      "A miller"
+     ],
+     "a": 0,
+     "e": "She lived with her father, a poor woodcutter."
+    },
+    {
+     "q": "What did the old witch Prelja do?",
+     "o": [
+      "Collected herbs",
+      "Built towers",
+      "She spun human destinies instead of wool",
+      "Brewed potions"
+     ],
+     "a": 2,
+     "e": "She did not spin wool but human destinies."
+    },
+    {
+     "q": "What did the witch offer Ilza in exchange for medicine for her father?",
+     "o": [
+      "To give up her golden hair",
+      "To give up her house",
+      "To bring three treasures",
+      "To serve her for a year and a day"
+     ],
+     "a": 3,
+     "e": "“You must serve me for a year and a day.”"
+    },
+    {
+     "q": "What did Ilza notice while spinning?",
+     "o": [
+      "Sighs and weeping came from the spools — they were stolen human lives",
+      "That the witch never slept",
+      "That the yarn glowed",
+      "That the tower was growing"
+     ],
+     "a": 0,
+     "e": "Quiet sighs and whispers came from every spool."
+    },
+    {
+     "q": "Who told Ilza the witch's secrets?",
+     "o": [
+      "A raven",
+      "A fox",
+      "An old neighbour",
+      "Her mother in a dream"
+     ],
+     "a": 0,
+     "e": "A large black raven landed on the windowsill."
+    },
+    {
+     "q": "How did Ilza destroy the tower?",
+     "o": [
+      "With fire",
+      "With a spell from a book",
+      "With a pure song and the silver thimble that cut the black thread",
+      "With a magic sword"
+     ],
+     "a": 2,
+     "e": "She sang, and the silver thimble cut through the black thread."
+    },
+    {
+     "q": "What happened to the forest after the witch's death?",
+     "o": [
+      "It vanished",
+      "It remained as gloomy as before",
+      "It became bright and green and was renamed the “Bright Forest”",
+      "It burned down"
+     ],
+     "a": 2,
+     "e": "The forest was no longer called Veresova Vrtača but Svetla Šuma."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Živela je sa ocem, siromašnim *drvosečom*.",
+     "o": [
+      "fisherman",
+      "blacksmith",
+      "shepherd",
+      "woodcutter"
+     ],
+     "a": 3,
+     "e": "Drvoseča — woodcutter."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Jedino bogatstvo bilo je staro *vreteno*.",
+     "o": [
+      "clock",
+      "scissors",
+      "spindle",
+      "mirror"
+     ],
+     "a": 2,
+     "e": "Vreteno — spindle."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Imali su jedan srebrni *naprstak*.",
+     "o": [
+      "thimble",
+      "key",
+      "bracelet",
+      "ring"
+     ],
+     "a": 0,
+     "e": "Naprstak — thimble."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "*Groznica* ga je sagorevala iznutra.",
+     "o": [
+      "joy",
+      "fever",
+      "hunger",
+      "tiredness"
+     ],
+     "a": 1,
+     "e": "Groznica — fever."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Na parapet je sleteo veliki crni *gavran*.",
+     "o": [
+      "raven",
+      "pigeon",
+      "falcon",
+      "owl"
+     ],
+     "a": 0,
+     "e": "Gavran — raven."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Uzela je majčino vreteno i srebrni ___.",
+     "o": [
+      "naprstka",
+      "naprstku",
+      "naprstkom",
+      "naprstak"
+     ],
+     "a": 3,
+     "e": "An inanimate masculine noun in the accusative equals the nominative: naprstak."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Pošla je za ___ u crnu šumu.",
+     "o": [
+      "staricom",
+      "staricu",
+      "starice",
+      "starica"
+     ],
+     "a": 0,
+     "e": "Za (after whom?) + instrumental: za staricom."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Ilza je zatvorila oči i ___.",
+     "o": [
+      "zapevala",
+      "pevati",
+      "pevala",
+      "pevam"
+     ],
+     "a": 0,
+     "e": "The start of an action takes the perfective: zapevala (began to sing)."
+    }
+   ]
+  }
+ ]
+}

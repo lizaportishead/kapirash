@@ -1,0 +1,130 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What did Andjelka manage to buy?",
+     "o": [
+      "A limited-edition perfume",
+      "A dress",
+      "A bag",
+      "Shoes"
+     ],
+     "a": 0,
+     "e": "In the video: \"ali je ovo limited edition\" — but this is a limited edition."
+    },
+    {
+     "q": "What does Andrija call her perfume-buying habit?",
+     "o": [
+      "A hobby",
+      "A disease, \"perfumitis\"",
+      "A profession",
+      "A tradition"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ti imaš bolest kupovanja parfema, Anđelka.\" — you have a perfume-buying disease, Andjelka."
+    },
+    {
+     "q": "When, according to Andrija, will she stop wasting money?",
+     "o": [
+      "When she starts earning it herself",
+      "When she gets married",
+      "When perfume gets more expensive",
+      "When he forbids it"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kad počneš da ih zarađuješ, veruj mi.\" — when you start earning it, believe me."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "zamisli kako je glupo da nemam to u svojoj *kolekciji*.",
+     "o": [
+      "collection",
+      "room",
+      "bag",
+      "wardrobe"
+     ],
+     "a": 0,
+     "e": "Kolekcija — a collection."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Rasipaš* pare na marketinške trikove, na budalaštine, bre.",
+     "o": [
+      "waste",
+      "save up",
+      "steal",
+      "count"
+     ],
+     "a": 0,
+     "e": "Rasipati — to squander, waste."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Rasipaš pare na marketinške trikove, na *budalaštine*, bre.",
+     "o": [
+      "nonsense",
+      "presents",
+      "trifles",
+      "rags"
+     ],
+     "a": 0,
+     "e": "Budalaština — nonsense, foolishness (from budala \"fool\")."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Šta će ti 48. ___ ove godine?",
+     "o": [
+      "parfem",
+      "parfema",
+      "parfemu",
+      "parfemom"
+     ],
+     "a": 0,
+     "e": "The subject is in the nominative: parfem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ti imaš bolest ___ parfema, Anđelka.",
+     "o": [
+      "kupovanje",
+      "kupovanja",
+      "kupovanju",
+      "kupovanjem"
+     ],
+     "a": 1,
+     "e": "\"A disease of what?\" — genitive case: bolest kupovanja."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Znaš ti kada ćeš ti da ___ da rasipaš pare, Anđe?",
+     "o": [
+      "prestaneš",
+      "prestati",
+      "prestao",
+      "prestani"
+     ],
+     "a": 0,
+     "e": "After da — the present tense; prestati is perfective (\"to stop\"), 2nd pers. sg.: prestaneš."
+    }
+   ]
+  }
+ ]
+}

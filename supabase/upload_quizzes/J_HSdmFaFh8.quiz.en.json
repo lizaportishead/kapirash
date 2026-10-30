@@ -1,0 +1,130 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Andrija say about the bread Andjelka brought?",
+     "o": [
+      "That it's very tasty",
+      "That it wasn't made by a baker but by a car mechanic",
+      "That it's too expensive",
+      "That it's perfectly fresh"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ovo nije radio pekar, nego automehaničar.\" — this wasn't made by a baker but by a car mechanic."
+    },
+    {
+     "q": "What compromise did they reach?",
+     "o": [
+      "Eggs and bacon are fine, but the bread must be healthy",
+      "Only vegetables for breakfast",
+      "No eggs",
+      "Any bread is fine"
+     ],
+     "a": 0,
+     "e": "In the video: \"napravili smo kompromis: može jaja, može slanina, ali mora i zdrav hleb\" — we made a compromise: eggs are fine, bacon is fine, but healthy bread is a must."
+    },
+    {
+     "q": "How many days, according to Andjelka, should the purchase last?",
+     "o": [
+      "Two",
+      "Three",
+      "Seven",
+      "Fourteen"
+     ],
+     "a": 2,
+     "e": "In the video: \"Onda treba da traje sedam dana.\" — then it has to last seven days."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Što si donela opet ovu *ciglu*?",
+     "o": [
+      "brick",
+      "loaf",
+      "bun",
+      "flatbread"
+     ],
+     "a": 0,
+     "e": "Cigla — a brick. That's what Andrija calls the heavy bread."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Trebalo je da ti kupim jednu *kobasicu*, da jedeš,",
+     "o": [
+      "sausage",
+      "bun",
+      "candy",
+      "cheese"
+     ],
+     "a": 0,
+     "e": "Kobasica — a sausage."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "da mogu da *umačem* ova jaja, da mogu normalno da jedem?",
+     "o": [
+      "dip",
+      "crack",
+      "fry",
+      "buy"
+     ],
+     "a": 0,
+     "e": "Umakati — to dip (bread into egg)."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Što nisi ___ leb?",
+     "o": [
+      "kupila",
+      "kupio",
+      "kupiti",
+      "kupi"
+     ],
+     "a": 0,
+     "e": "It's about a woman: feminine past tense — kupila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Od ___ brašna, sa semenom lana, sa bundevom i tako dalje.",
+     "o": [
+      "heljdin",
+      "heljdinog",
+      "heljdinom",
+      "heljdino"
+     ],
+     "a": 1,
+     "e": "The preposition od (\"from, of\") takes the genitive: od heljdinog brašna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo košta 500 ___, bre.",
+     "o": [
+      "dinar",
+      "dinara",
+      "dinari",
+      "dinaru"
+     ],
+     "a": 1,
+     "e": "After the number 5 and above the noun is in the genitive plural: 500 dinara."
+    }
+   ]
+  }
+ ]
+}

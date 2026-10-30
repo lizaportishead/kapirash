@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How many foreign languages did he learn after English?",
+     "o": [
+      "Two",
+      "Three",
+      "Four",
+      "Six"
+     ],
+     "a": 2,
+     "e": "In the video: \"Od tog trenutka naučio sam četiri strana jezika: španski, portugalski, italijanski i slovački.\" — from that moment I learned four foreign languages: Spanish, Portuguese, Italian and Slovak."
+    },
+    {
+     "q": "What does he advise doing in the first step?",
+     "o": [
+      "Reading newspapers",
+      "Every day learn three nouns, three verbs and an adjective",
+      "Going to courses twice a week",
+      "Watching series"
+     ],
+     "a": 1,
+     "e": "In the video: \"Svaki dan naučite tri imenice, tri glagola i jedan pridjev.\" — every day learn three nouns, three verbs and one adjective."
+    },
+    {
+     "q": "How many words does this system give in a year?",
+     "o": [
+      "About 500",
+      "About 1000",
+      "More than 2000",
+      "More than 10,000"
+     ],
+     "a": 2,
+     "e": "In the video: \"to je preko 2000 riječi za godinu dana, što je sasvim dovoljno da komunicirate s nekim.\" — that's over 2000 words in a year, which is quite enough to communicate with someone."
+    },
+    {
+     "q": "What does he like about Duolingo?",
+     "o": [
+      "You can learn the language when you want",
+      "There is a live teacher",
+      "It teaches only in the evenings",
+      "It is expensive but high quality"
+     ],
+     "a": 0,
+     "e": "In the video: \"Super stvar je to što mogu da učim jezik onda kada ja hoću.\" — the great thing is that I can learn the language when I want to."
+    },
+    {
+     "q": "Who did he speak Portuguese with for the first time in his life?",
+     "o": [
+      "With a teacher at school",
+      "With a Brazilian who stayed in his apartment",
+      "With his mother",
+      "With a colleague at work"
+     ],
+     "a": 1,
+     "e": "In the video: \"Tokom 2013. godine u mom stanu je boravio jedan Brazilac imena Nathan\" — during 2013 a Brazilian named Nathan stayed in my apartment"
+    },
+    {
+     "q": "What does he advise doing with songs in the language you study?",
+     "o": [
+      "Only listen in the background",
+      "Find 2–3 songs a week and translate the lyrics",
+      "Sing them at karaoke",
+      "Memorize all the songs"
+     ],
+     "a": 1,
+     "e": "In the video: \"Svakih sedam dana pronađite dvije-tri pjesme koje vam se dopadaju na tom jeziku,\" — every seven days find two or three songs you like in that language,"
+    },
+    {
+     "q": "What are many language learners afraid of?",
+     "o": [
+      "Speaking up",
+      "Spending money",
+      "Forgetting the alphabet",
+      "Travelling abroad"
+     ],
+     "a": 0,
+     "e": "In the video: \"pa čak i onih koji ga govore, je strah da progovore.\" — even those who speak it, is a fear of speaking up."
+    },
+    {
+     "q": "What is the main bonus tip?",
+     "o": [
+      "Talent and speed",
+      "Persistence and patience",
+      "Expensive courses",
+      "Moving to another country"
+     ],
+     "a": 1,
+     "e": "In the video: \"Stoga, glavni savjet za učenje stranih jezika je ustrajnost i strpljenje.\" — so, the main tip for learning foreign languages is persistence and patience."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaki dan naučite tri *imenice*",
+     "o": [
+      "nouns",
+      "verbs",
+      "prepositions",
+      "digits"
+     ],
+     "a": 0,
+     "e": "imenica — noun."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "tri glagola i jedan *pridjev*",
+     "o": [
+      "adverb",
+      "adjective",
+      "pronoun",
+      "preposition"
+     ],
+     "a": 1,
+     "e": "pridjev — adjective."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Duolingo je *besplatna* aplikacija",
+     "o": [
+      "paid",
+      "free",
+      "old",
+      "new"
+     ],
+     "a": 1,
+     "e": "besplatan — free of charge."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Čitajte *novine* iz te zemlje",
+     "o": [
+      "letters",
+      "books",
+      "newspapers",
+      "magazines"
+     ],
+     "a": 2,
+     "e": "novine — newspaper (plural only)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "idete u *teretanu*",
+     "o": [
+      "gym",
+      "theater",
+      "shop",
+      "bank"
+     ],
+     "a": 0,
+     "e": "teretana — gym."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "uradite 100 *sklekova*",
+     "o": [
+      "squats",
+      "push-ups",
+      "jumps",
+      "steps"
+     ],
+     "a": 1,
+     "e": "sklek — push-up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "jer imaju *strah*",
+     "o": [
+      "joy",
+      "fear",
+      "time",
+      "money"
+     ],
+     "a": 1,
+     "e": "strah — fear."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Cijenićete njegov *trud*",
+     "o": [
+      "effort, work",
+      "accent",
+      "voice",
+      "answer"
+     ],
+     "a": 0,
+     "e": "trud — effort, labor."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ukoliko želite da naučite neki jezik, trebate svaki dan biti u ___ s njim",
+     "o": [
+      "kontakt",
+      "kontaktu",
+      "kontaktom",
+      "kontakta"
+     ],
+     "a": 1,
+     "e": "biti u + locative: u kontaktu — in contact."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne moram da učim jezik ___ i petkom",
+     "o": [
+      "srijedom",
+      "srijeda",
+      "srijedu",
+      "srijede"
+     ],
+     "a": 0,
+     "e": "The instrumental for recurring days: srijedom — on Wednesdays."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nakon što bih naučio osnovne riječi tog jezika i prešao većinu lekcija ___ Duolingu",
+     "o": [
+      "za",
+      "iz",
+      "na",
+      "od"
+     ],
+     "a": 2,
+     "e": "lekcije na Duolingu — lessons on Duolingo («na» + locative)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koristeći Duolingo, nakon samo šest do osam mjeseci stekao sam dovoljan ___",
+     "o": [
+      "vokabulara",
+      "vokabularu",
+      "vokabulare",
+      "vokabular"
+     ],
+     "a": 3,
+     "e": "dovoljan + masculine nominative/accusative: dovoljan vokabular."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dok sam učio španski i portugalski, imao sam u svom telefonu preko 300-400 ___",
+     "o": [
+      "pjesama",
+      "pjesme",
+      "pjesmu",
+      "pjesmom"
+     ],
+     "a": 0,
+     "e": "After preko + numeral — genitive plural: pjesama."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Čitajte novine iz te ___ čak i ako ne razumijete nijednu riječ",
+     "o": [
+      "zemlja",
+      "zemlje",
+      "zemlju",
+      "zemlji"
+     ],
+     "a": 1,
+     "e": "iz + genitive: iz te zemlje — from that country."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nikada niko neće reći kako si loše ___ neki jezik",
+     "o": [
+      "učio",
+      "učiti",
+      "naučio",
+      "naučiti"
+     ],
+     "a": 2,
+     "e": "The result of learning — a perfective verb: naučio."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zamislite sebe u poziciji da vam ___ neko ko uči naš jezik",
+     "o": [
+      "dolazi",
+      "dođe",
+      "došao",
+      "doći"
+     ],
+     "a": 1,
+     "e": "After «da» — perfective present: da vam dođe."
+    }
+   ]
+  }
+ ]
+}

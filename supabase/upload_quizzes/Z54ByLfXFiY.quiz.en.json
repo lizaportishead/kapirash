@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the host's name and what is the channel called?",
+     "o": [
+      "Milica, Yoga Plus",
+      "Zorka, Samo Yoga",
+      "Ana, Fit Srbija",
+      "Jelena, Vežbaj"
+     ],
+     "a": 1,
+     "e": "In the video: \"ovo je kanal Samo Yoga, ja se zovem Zorka\" — this is the Samo Yoga channel, my name is Zorka."
+    },
+    {
+     "q": "What equipment is needed for the exercise?",
+     "o": [
+      "Dumbbells",
+      "A resistance band",
+      "None",
+      "A mat and a block"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ne treba vam dodatna oprema\" — you don't need additional equipment."
+    },
+    {
+     "q": "From what position can the exercises be done?",
+     "o": [
+      "Only lying down",
+      "From a seated or standing one",
+      "Only standing on a mat",
+      "Only sitting on a chair"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ove vežbe možete da radite iz sedećeg ili stojećeg položaja\" — you can do these exercises from a seated or standing position."
+    },
+    {
+     "q": "Where should the shoulders be lowered?",
+     "o": [
+      "Forward and up",
+      "Back and down, away from the ears",
+      "Toward the ears",
+      "Forward and down"
+     ],
+     "a": 1,
+     "e": "In the video: \"opustite ramena nazad i dole, daleko od ušiju\" — relax your shoulders back and down, far from your ears."
+    },
+    {
+     "q": "What is the exercise of opening and closing the palms good for?",
+     "o": [
+      "It strengthens the back",
+      "It stretches the forearms and wrists",
+      "It teaches breathing",
+      "It develops the abs"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ova vežba je sjajna jer isteže podlaktice i ručne zglobove\" — this exercise is great because it stretches the forearms and wrists."
+    },
+    {
+     "q": "At what angle should the elbows be held?",
+     "o": [
+      "30 degrees",
+      "45 degrees",
+      "60 degrees",
+      "90 degrees"
+     ],
+     "a": 3,
+     "e": "In the video: \"Zadržite laktove pod uglom od devedeset stepeni\" — keep your elbows at an angle of ninety degrees."
+    },
+    {
+     "q": "What does Zorka say near the end about sensations?",
+     "o": [
+      "You are tired",
+      "You can probably already feel warmth in your hands",
+      "Your shoulders hurt",
+      "You are bored"
+     ],
+     "a": 1,
+     "e": "In the video: \"Verovatno već osećate toplinu u rukama\" — you probably already feel warmth in your hands."
+    },
+    {
+     "q": "What exercise does she do at the very end?",
+     "o": [
+      "Jumping",
+      "A shoulder stretch, right arm to the left",
+      "A plank",
+      "Squats"
+     ],
+     "a": 1,
+     "e": "In the video: \"Polako možemo da privučemo desnu ruku do leve, istežemo ramena\" — slowly we can pull the right arm toward the left, stretching the shoulders."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Koristićemo *sopstveno* telo.",
+     "o": [
+      "someone else's",
+      "one's own",
+      "new",
+      "healthy"
+     ],
+     "a": 1,
+     "e": "Sopstveni — one's own."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Otvorite *dlanove* ka nebu.",
+     "o": [
+      "palms",
+      "fingers",
+      "elbows",
+      "shoulders"
+     ],
+     "a": 0,
+     "e": "Dlan — a palm."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ova vežba isteže *podlaktice*.",
+     "o": [
+      "thighs",
+      "back",
+      "forearms",
+      "neck"
+     ],
+     "a": 2,
+     "e": "Podlaktica — a forearm."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Opustite ramena daleko od *ušiju*.",
+     "o": [
+      "of the eye",
+      "of the nose",
+      "of the cheeks",
+      "of the ears"
+     ],
+     "a": 3,
+     "e": "Uvo (pl. uši) — an ear; daleko od ušiju — far from the ears."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Uzmite dubok *udah*.",
+     "o": [
+      "inhale",
+      "exhale",
+      "step",
+      "weight"
+     ],
+     "a": 0,
+     "e": "Udah — an inhalation; izdah — an exhalation."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Angažujte *stomak*.",
+     "o": [
+      "knees",
+      "belly",
+      "back",
+      "neck"
+     ],
+     "a": 1,
+     "e": "Stomak — the belly."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stegnite *lopatice* na leđima.",
+     "o": [
+      "knees",
+      "wrists",
+      "shoulder blades",
+      "fingers"
+     ],
+     "a": 2,
+     "e": "Lopatica — a shoulder blade."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Opustite ruke pored *tela*.",
+     "o": [
+      "of the head",
+      "of the floor",
+      "of the window",
+      "of the body"
+     ],
+     "a": 3,
+     "e": "Telo — the body; pored tela — along the body."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Choose the adjective form",
+     "q": "Verovatno već osećate toplinu u rukama, nastavite da dišete, uskoro smo ___.",
+     "o": [
+      "gotovi",
+      "gotova",
+      "gotove",
+      "gotovo"
+     ],
+     "a": 0,
+     "e": "The adjective agrees with the subject: smo (we) is plural, so gotovi."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Radite vežbe iz ___ položaja.",
+     "o": [
+      "sedeći",
+      "sedećeg",
+      "sedećem",
+      "sedeću"
+     ],
+     "a": 1,
+     "e": "Iz + genitive case: iz sedećeg položaja."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Zadržite laktove pod ___ od devedeset stepeni.",
+     "o": [
+      "uglu",
+      "ugao",
+      "ugla",
+      "uglom"
+     ],
+     "a": 3,
+     "e": "Pod + instrumental (at what angle?): pod uglom."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Otvorite dlanove ___ nebu.",
+     "o": [
+      "ka",
+      "od",
+      "bez",
+      "iz"
+     ],
+     "a": 0,
+     "e": "Ka + dative case: ka nebu — \"toward the sky\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Savijte ruke u ___.",
+     "o": [
+      "laktovima",
+      "laktove",
+      "laktova",
+      "laktom"
+     ],
+     "a": 0,
+     "e": "U + locative case: u laktovima — \"in the elbows\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Opustite ramena daleko od ___.",
+     "o": [
+      "uši",
+      "ušiju",
+      "ušima",
+      "ušne"
+     ],
+     "a": 1,
+     "e": "Od + genitive plural: od ušiju."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Sa ___ opustite ruke.",
+     "o": [
+      "izdah",
+      "izdaha",
+      "izdahom",
+      "izdahu"
+     ],
+     "a": 2,
+     "e": "Sa + instrumental case: sa izdahom — \"on the exhale\"."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Hvala vam što ste mi se pridružili na ovom ___.",
+     "o": [
+      "čas",
+      "času",
+      "časom",
+      "časa"
+     ],
+     "a": 1,
+     "e": "Na + locative case: na ovom času — \"in this class\"."
+    }
+   ]
+  }
+ ]
+}

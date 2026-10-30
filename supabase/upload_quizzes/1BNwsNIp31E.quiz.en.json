@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What problem is investigated in the video's example?",
+     "o": [
+      "Long lines for coffee in a café",
+      "Bad service",
+      "A lack of parking",
+      "Expensive coffee"
+     ],
+     "a": 0,
+     "e": "In the video: \"Sedite u kafiću i gledate kako se stvara ogroman red... odlučujete da istražite ovaj problem\"."
+    },
+    {
+     "q": "How many people need to be interviewed in the example?",
+     "o": [
+      "2",
+      "50",
+      "10",
+      "100"
+     ],
+     "a": 2,
+     "e": "In the video: \"pronađete 10 osoba sa kojima ćete da obavite intervju\"."
+    },
+    {
+     "q": "What is an empathy map for?",
+     "o": [
+      "To draw a route",
+      "To calculate a budget",
+      "To structure interview data and learn more from it",
+      "To choose a brand color"
+     ],
+     "a": 2,
+     "e": "In the video: \"sada morate da nekako strukturirate ove podatke kako biste saznali nešto novo... mapa empatije\"."
+    },
+    {
+     "q": "What are the four sections in the author's map?",
+     "o": [
+      "Goal, deadline, price, risk",
+      "Says, thinks, does, feels",
+      "Strengths, weaknesses, opportunities, threats",
+      "Who, what, where, when"
+     ],
+     "a": 1,
+     "e": "In the video: \"Prva sekcija je „kaže“, druga sekcija je „misli“, treća sekcija je „radi“ i četvrta\"."
+    },
+    {
+     "q": "How old is Sara Sarić, the interviewee, and where does she live?",
+     "o": [
+      "50 years old, in a village",
+      "19 years old, in Novi Sad",
+      "35 years old, in Niš",
+      "27 years old, in Belgrade"
+     ],
+     "a": 3,
+     "e": "In the video: \"Sara Sarić ima 27 godina, živi u velikom gradu, neka to bude Beograd\"."
+    },
+    {
+     "q": "Why does Sara get coffee at Starbucks and not at the nearest café?",
+     "o": [
+      "Her friend works there",
+      "So she doesn't have to stand in line — she orders through the app",
+      "It's tastier there",
+      "It's cheaper there"
+     ],
+     "a": 1,
+     "e": "In the video: \"zašto ne ide u obližnji kafić, nego uzima kafu u Starbaksu, ona je rekla da onda neće čekati red\"."
+    },
+    {
+     "q": "What is Sara still not fully happy about?",
+     "o": [
+      "The app is expensive",
+      "No sugar",
+      "She likes homemade coffee",
+      "The coffee is too hot"
+     ],
+     "a": 2,
+     "e": "In the video: \"i dalje nije u potpunosti zadovoljna... Sara je takođe rekla da voli domaću kafu.\"."
+    },
+    {
+     "q": "Do you need to make a separate empathy map for every user?",
+     "o": [
+      "Yes, always",
+      "Only for the first one",
+      "Only for the last one",
+      "No, you can make one for a group of similar ones"
+     ],
+     "a": 3,
+     "e": "In the video: \"Mapu empatije ne morate da kreirate za svakog korisnika posebno. Možete da izdvojite neke slične korisnike\"."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gledate kako se stvara ogroman *red*.",
+     "o": [
+      "queue",
+      "delay",
+      "noise",
+      "crowd"
+     ],
+     "a": 0,
+     "e": "Red — queue, order, row."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sa desne strane možete da vidite moje *beleške*.",
+     "o": [
+      "notes",
+      "mistakes",
+      "drawings",
+      "photographs"
+     ],
+     "a": 0,
+     "e": "Beleška — a note; beležiti — to write down."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Šta su to neka Sarina *uverenja*?",
+     "o": [
+      "complaints",
+      "dreams",
+      "habits",
+      "beliefs"
+     ],
+     "a": 3,
+     "e": "Uverenje — belief, conviction."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogli ste da *zaključite* na osnovu onoga što vam je rekla.",
+     "o": [
+      "guess the price",
+      "forget",
+      "refuse",
+      "draw a conclusion"
+     ],
+     "a": 3,
+     "e": "Zaključiti — to draw a conclusion; zaključak — conclusion."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sara je *nestrpljiva*, zato što nema vremena da čeka.",
+     "o": [
+      "cheerful",
+      "calm",
+      "curious",
+      "impatient"
+     ],
+     "a": 3,
+     "e": "Nestrpljiv — impatient; strpljenje — patience."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ona pazi da ne *prospe* kafu.",
+     "o": [
+      "will boil",
+      "will buy",
+      "will drink",
+      "will spill"
+     ],
+     "a": 3,
+     "e": "Prosuti — to spill, to scatter."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sara na posao ide *bajsom*.",
+     "o": [
+      "on foot",
+      "by bicycle",
+      "by scooter",
+      "by bus"
+     ],
+     "a": 1,
+     "e": "Bajs — colloquial for \"bicycle\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ima *natrpan* raspored na poslu.",
+     "o": [
+      "boring",
+      "comfortable",
+      "packed, overcrowded",
+      "free"
+     ],
+     "a": 2,
+     "e": "Natrpan — crammed, overloaded."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sedite u ___ i gledate kako se stvara ogroman red.",
+     "o": [
+      "kafića",
+      "kafićem",
+      "kafić",
+      "kafiću"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative case: u kafiću."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ko sve može da ima ovaj ___?",
+     "o": [
+      "problema",
+      "problemom",
+      "problem",
+      "problemu"
+     ],
+     "a": 2,
+     "e": "Imati + object — accusative case; for inanimate masculine nouns it coincides with the nominative: problem."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Onda, Sara je ___, zato što nema vremena da čeka u redu.",
+     "o": [
+      "nestrpljivi",
+      "nestrpljivo",
+      "nestrpljiva",
+      "nestrpljiv"
+     ],
+     "a": 2,
+     "e": "The adjective agrees with the subject: Sara is feminine singular, so nestrpljiva."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mapu empatije možete da napravite na ___.",
+     "o": [
+      "papiru",
+      "papir",
+      "papira",
+      "papirom"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"on what?\" — locative case: na papiru."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "pokazaću vam na jednom ___ primeru.",
+     "o": [
+      "praktičan",
+      "praktičnom",
+      "praktično",
+      "praktični"
+     ],
+     "a": 1,
+     "e": "Na + locative. Primer is masculine, so the ending is -om: na jednom praktičnom primeru."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Pored toga, ___ smo još neke nove zanimljive stvari.",
+     "o": [
+      "saznavali",
+      "saznali",
+      "saznao",
+      "saznavao"
+     ],
+     "a": 1,
+     "e": "The result is that they found out something new: perfective saznali. Saznavali is imperfective. Smo is plural."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sara na posao ide ___.",
+     "o": [
+      "bajs",
+      "bajsa",
+      "bajsom",
+      "bajsu"
+     ],
+     "a": 2,
+     "e": "Ići + instrument (by what) — instrumental case: bajsom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupili biste mali set sticky ___.",
+     "o": [
+      "notove",
+      "notovi",
+      "notova",
+      "notovima"
+     ],
+     "a": 2,
+     "e": "Set of what? Genitive plural: notova."
+    }
+   ]
+  }
+ ]
+}

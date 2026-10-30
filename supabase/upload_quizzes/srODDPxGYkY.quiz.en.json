@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is a Prince Rupert's drop and how is it made?",
+     "o": [
+      "Frozen water",
+      "Molten glass quickly cooled in water",
+      "Resin hardened in the air",
+      "Metal cast in a mold"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pravi se tako što se istopljeno staklo brzo ohladi u vodi\" — it's made by quickly cooling molten glass in water."
+    },
+    {
+     "q": "Why wasn't the glass from a jar suitable?",
+     "o": [
+      "It's impure, with additives",
+      "It's colored",
+      "It's too thick",
+      "It's too soft"
+     ],
+     "a": 0,
+     "e": "In the video: \"staklo koje sam koristio da napravim ovu kapljicu nije adekvatno... nije čisto, već ima neke primese kako bi bilo jeftinije\" — the glass I used to make this drop is not adequate... it's not pure but has some additives to make it cheaper."
+    },
+    {
+     "q": "What did the author order for new attempts?",
+     "o": [
+      "Quartz sand",
+      "Laboratory glass rods",
+      "Mirrors",
+      "Glass beads"
+     ],
+     "a": 1,
+     "e": "In the video: \"poručio laboratorijsko staklo, to su kao neki štapići koji se koriste za mešanje u hemijskoj laboratoriji.\" — I ordered laboratory glass, it's like little sticks used for stirring in a chemistry lab."
+    },
+    {
+     "q": "How many successful drops did the author end up with?",
+     "o": [
+      "Six",
+      "One",
+      "Twenty",
+      "Three"
+     ],
+     "a": 0,
+     "e": "In the video: \"dok nisam imao šest uspešnih celih kapljica\" — until I had six successful whole drops."
+    },
+    {
+     "q": "What did the drop withstand?",
+     "o": [
+      "Pliers, a hammer blow and strong squeezing in a vise",
+      "Nothing",
+      "Only fire",
+      "Only a hammer blow"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kapljica je izdržala klešta... preživela je i udarac čekićem\" and \"kapljica nije ni mrdnula\" in the vise."
+    },
+    {
+     "q": "What happened to the drop whose tail was cut off?",
+     "o": [
+      "It became soft",
+      "It didn't explode, but then it cracked and stopped being indestructible",
+      "It melted",
+      "It exploded immediately"
+     ],
+     "a": 1,
+     "e": "In the video: \"iako nije eksplodirala sama od sebe prilikom presecanja repa, izgubila je svojstvo da bude neuništiva.\" — although it did not explode by itself when the tail was cut, it lost the property of being indestructible."
+    },
+    {
+     "q": "Why is the drop strong at one end and brittle at the other?",
+     "o": [
+      "The tail is made of a different glass",
+      "The outer layer cools and contracts faster, creating tension inside",
+      "There is air in the tail",
+      "The head is heated more"
+     ],
+     "a": 1,
+     "e": "In the video: \"spoljni sloj kapljice se naglo hladi i skuplja, dok unutrašnji deo ostaje tečan duže vreme. I zbog toga se u kapljici stvara napetost.\" — the outer layer of the drop cools and contracts suddenly, while the inner part stays liquid longer. And because of that tension forms in the drop."
+    },
+    {
+     "q": "What did the super-slow-motion footage of a bullet hit show?",
+     "o": [
+      "The drop bounced off",
+      "The bullet pierced the head",
+      "The head withstood the impact, then the tail vibrated and the drop cracked",
+      "The drop caught fire"
+     ],
+     "a": 2,
+     "e": "In the video: \"Kada projektil udari kapljicu, ne dešava se ništa. Međutim, od udarca rep počne da vibrira. I tek tada primećujemo kako kapljica puca.\" — when the projectile hits the drop, nothing happens. However, from the impact the tail starts to vibrate. And only then do we see the drop shatter."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pravi se tako što se *istopljeno* staklo brzo ohladi u vodi.",
+     "o": [
+      "cloudy",
+      "colored",
+      "broken",
+      "molten"
+     ],
+     "a": 3,
+     "e": "Istopiti — to melt; istopljen — molten."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nosite naočare. I *rukavice*.",
+     "o": [
+      "gloves",
+      "mask",
+      "hat",
+      "robe"
+     ],
+     "a": 0,
+     "e": "Rukavice — gloves; ruka — a hand."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa da probamo da je polomimo *kleštima*.",
+     "o": [
+      "with a hammer",
+      "with hands",
+      "with a foot",
+      "with pliers"
+     ],
+     "a": 3,
+     "e": "Klešta — pliers, tongs. Kleštima — instrumental case: \"with pliers\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ispada da sam *džabe* lomio onu teglicu.",
+     "o": [
+      "carefully",
+      "in vain",
+      "quickly",
+      "on purpose"
+     ],
+     "a": 1,
+     "e": "Džabe — colloquial for \"in vain, for nothing\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kapljica je čvrsta na jednom kraju, a *krhka* na drugom.",
+     "o": [
+      "transparent",
+      "light",
+      "hot",
+      "brittle"
+     ],
+     "a": 3,
+     "e": "Krhak — brittle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U kapljici se stvara *napetost*.",
+     "o": [
+      "bubble",
+      "crack",
+      "light",
+      "tension"
+     ],
+     "a": 3,
+     "e": "Napetost — tension; napeti — to stretch tight."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada ovoj kapljici presečete *rep*, trebalo bi da eksplodira.",
+     "o": [
+      "glass",
+      "head",
+      "tip",
+      "tail"
+     ],
+     "a": 3,
+     "e": "Rep — a tail."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo je skoro *neuništiva* kapljica.",
+     "o": [
+      "huge",
+      "glass",
+      "hot",
+      "indestructible"
+     ],
+     "a": 3,
+     "e": "Uništiti — to destroy; neuništiv — indestructible."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kada radite nešto sa ___, nemojte biti glupi.",
+     "o": [
+      "staklo",
+      "staklu",
+      "staklom",
+      "stakla"
+     ],
+     "a": 2,
+     "e": "Sa (\"with\") requires the instrumental case: sa staklom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Staklo se topi na ___ od oko 1400 stepeni.",
+     "o": [
+      "temperatura",
+      "temperaturi",
+      "temperaturom",
+      "temperaturu"
+     ],
+     "a": 1,
+     "e": "Na in answer to \"at what?\" — locative case: na temperaturi."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ smo jednu kapljicu, da vidimo da li je uspelo.",
+     "o": [
+      "Topili",
+      "Istopio",
+      "Topio",
+      "Istopili"
+     ],
+     "a": 3,
+     "e": "One drop, a result obtained — perfective istopiti. Topili is imperfective (process). Smo is plural."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pucamo vazdušnom ___.",
+     "o": [
+      "puška",
+      "puškom",
+      "pušku",
+      "puške"
+     ],
+     "a": 1,
+     "e": "The adjective vazdušnom is in the instrumental case, so the noun is too: puškom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kapljica je izdržala ___.",
+     "o": [
+      "kleštima",
+      "klešti",
+      "klešta",
+      "kleštama"
+     ],
+     "a": 2,
+     "e": "Izdržati what — accusative case; for klešta (neuter plural) it coincides with the nominative."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Staklo je i ___ nego što sam mislio.",
+     "o": [
+      "čvrsta",
+      "čvršće",
+      "čvrst",
+      "čvrsto"
+     ],
+     "a": 1,
+     "e": "Comparative degree: čvrst → čvršće (\"harder\"). Staklo is neuter, hence the ending -e."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "kada sam uzeo onu kapljicu ___ sam malopre presekao rep,",
+     "o": [
+      "kojoj",
+      "koju",
+      "koje",
+      "koja"
+     ],
+     "a": 0,
+     "e": "Cut the tail of whom/what? Dative: kapljici → kojoj (\"to which\")."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad čekamo da ti stakleni ___ stignu.",
+     "o": [
+      "štapićima",
+      "štapić",
+      "štapića",
+      "štapići"
+     ],
+     "a": 3,
+     "e": "The subject is in the plural, nominative case: štapići."
+    }
+   ]
+  }
+ ]
+}

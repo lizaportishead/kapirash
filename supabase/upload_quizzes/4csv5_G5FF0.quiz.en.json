@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is Mokrin House, which Tamara runs?",
+     "o": [
+      "A school",
+      "A hotel in the mountains",
+      "A farmers' market",
+      "A rural space for shared living and working (co-living and co-working)"
+     ],
+     "a": 3,
+     "e": "In the video: \"izvršna direktorka Mokrin Housea, koji je ruralni co-working i co-living prostor\"."
+    },
+    {
+     "q": "How long do guests stay at Mokrin House on average?",
+     "o": [
+      "One day",
+      "A year",
+      "A bit under three weeks",
+      "Forever"
+     ],
+     "a": 2,
+     "e": "In the video: \"borave kod nas tri dana, tri nedelje, tri meseca... u proseku nešto ispod tri nedelje\"."
+    },
+    {
+     "q": "What professions were among the guests?",
+     "o": [
+      "Only students",
+      "Only doctors",
+      "Not only programmers, but also poets, accountants, psychotherapists",
+      "Only programmers"
+     ],
+     "a": 2,
+     "e": "In the video: \"Imali smo pesnike, imali smo računovođe, psihoterapeute koji rade svoj posao onlajn\"."
+    },
+    {
+     "q": "What is the main difficulty of living at work?",
+     "o": [
+      "Too few people",
+      "There is no boundary between work and rest: they can call at any time",
+      "No internet",
+      "Expensive rent"
+     ],
+     "a": 1,
+     "e": "In the video: \"ja tehnički, kao, izađem iz kancelarije, ali zapravo ne izađem... neko će me pozvati u jedanaest, u dva ujutru\"."
+    },
+    {
+     "q": "What two problems did Ctrip want to solve?",
+     "o": [
+      "Bad advertising and high taxes",
+      "High rent in Shanghai and staff turnover",
+      "A shortage of clients and outdated computers",
+      "The language barrier"
+     ],
+     "a": 1,
+     "e": "In the video: \"renta strašno visoka... imaju neverovatnu fluktuaciju zaposlenih\"."
+    },
+    {
+     "q": "How was it chosen who would work from home?",
+     "o": [
+      "By choice",
+      "By height",
+      "By position",
+      "By date of birth: even — at home, odd — in the office"
+     ],
+     "a": 3,
+     "e": "In the video: \"svi koji su rođeni na parni datum će raditi od kuće, a ovi neparni će ostati u kancelariji\"."
+    },
+    {
+     "q": "By how much did productivity grow for those who worked at home?",
+     "o": [
+      "By 13 percent",
+      "By 1 percent",
+      "By 130 percent",
+      "Fell by 13 percent"
+     ],
+     "a": 0,
+     "e": "In the video: \"Njihova produktivnost je skočila za 13%\"."
+    },
+    {
+     "q": "Why did half of the employees go back to the office anyway?",
+     "o": [
+      "Because of the boss",
+      "Because of loneliness",
+      "Because of salary",
+      "Because of bad internet"
+     ],
+     "a": 1,
+     "e": "In the video: \"Glavni njihov razlog za povratak u kancelariju bio je usamljenost\"."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve smo *omašili*.",
+     "o": [
+      "made a mistake, missed",
+      "bought",
+      "lost",
+      "won"
+     ],
+     "a": 0,
+     "e": "Omašiti — to miss, to make a mistake."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo radni prostor, *teretanu*, bazen i bicikle.",
+     "o": [
+      "parking",
+      "kitchen",
+      "garden",
+      "gym"
+     ],
+     "a": 3,
+     "e": "Teretana — a gym."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Neophodna je ljudska *prisnost* i fizički kontakt.",
+     "o": [
+      "distance",
+      "closeness",
+      "price",
+      "speed"
+     ],
+     "a": 1,
+     "e": "Prisnost — closeness, intimacy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imali su neverovatnu *fluktuaciju* zaposlenih.",
+     "o": [
+      "advertising",
+      "salary",
+      "turnover",
+      "workload"
+     ],
+     "a": 2,
+     "e": "Fluktuacija — staff turnover."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prva ideja je bila: ljudi će da *bleje* od kuće.",
+     "o": [
+      "study",
+      "work",
+      "vacation at the seaside",
+      "laze around"
+     ],
+     "a": 3,
+     "e": "Blejati — colloquial \"to laze around, to hang about\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imali su manje *ometanja*.",
+     "o": [
+      "tasks",
+      "money",
+      "distractions",
+      "meetings"
+     ],
+     "a": 2,
+     "e": "Ometanje — a disturbance, a distraction."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za tih devet meseci ljudi su manje išli na *bolovanja*.",
+     "o": [
+      "vacation",
+      "courses",
+      "meetings",
+      "sick leave"
+     ],
+     "a": 3,
+     "e": "Bolovanje — sick leave, being on sick leave."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Glavni razlog za povratak bila je *usamljenost*.",
+     "o": [
+      "boredom",
+      "loneliness",
+      "fatigue",
+      "illness"
+     ],
+     "a": 1,
+     "e": "Usamljenost — loneliness; sam — alone."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala, Majo, na ovoj ___.",
+     "o": [
+      "najavom",
+      "najavu",
+      "najava",
+      "najavi"
+     ],
+     "a": 3,
+     "e": "Hvala na + locative case: na ovoj najavi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Preselila sam se sa Dorćola u ___.",
+     "o": [
+      "Mokrinom",
+      "Mokrina",
+      "Mokrin",
+      "Mokrinu"
+     ],
+     "a": 2,
+     "e": "Preseliti se u + accusative case; for inanimate nouns it coincides with the nominative: u Mokrin."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "To je jedno selo pokraj ___.",
+     "o": [
+      "Kikinde",
+      "Kikindu",
+      "Kikinda",
+      "Kikindom"
+     ],
+     "a": 0,
+     "e": "Pokraj (\"next to\") requires the genitive case: pokraj Kikinde."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "i videli su da su ljudi ___",
+     "o": [
+      "zadovoljne",
+      "zadovoljni",
+      "zadovoljna",
+      "zadovoljan"
+     ],
+     "a": 1,
+     "e": "The adjective agrees with the noun: ljudi is masculine plural, so zadovoljni."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Ja sam ___ svoj mejl, i ovo su prve stvari",
+     "o": [
+      "pogledala",
+      "gledala",
+      "pogledao",
+      "gledao"
+     ],
+     "a": 0,
+     "e": "Looked once — perfective pogledala. A woman is speaking (sam + -la), so not pogledao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo našu ___ i gajimo koke, patke i guske.",
+     "o": [
+      "baštu",
+      "bašte",
+      "bašta",
+      "baštom"
+     ],
+     "a": 0,
+     "e": "Imati + object — accusative case: baštu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja živim iza ovih ___.",
+     "o": [
+      "vratom",
+      "vratima",
+      "vrati",
+      "vrata"
+     ],
+     "a": 3,
+     "e": "Iza (\"behind\") requires the genitive case; vrata — genitive plural: iza ovih vrata."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "sa ___ koji su radili u kancelariji.",
+     "o": [
+      "ovi",
+      "ove",
+      "ovih",
+      "ovima"
+     ],
+     "a": 3,
+     "e": "Sa (\"with\") + instrumental plural: sa ovima — with those who..."
+    }
+   ]
+  }
+ ]
+}

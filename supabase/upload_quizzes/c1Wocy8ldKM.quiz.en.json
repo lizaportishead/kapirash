@@ -1,0 +1,95 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the thermometer show, according to Andrija?",
+     "o": [
+      "36.6",
+      "37.4",
+      "38.9",
+      "42.9"
+     ],
+     "a": 1,
+     "e": "In the video: \"imaš 37 i 4\" — you have 37.4."
+    },
+    {
+     "q": "What kind of thermometer does she demand?",
+     "o": [
+      "One that shows 37",
+      "One that shows 36.6",
+      "One that shows 42.9 or 39.4",
+      "An electronic one"
+     ],
+     "a": 2,
+     "e": "In the video: \"Donesi mi toplomer koji mi pokazuje 42 i 9 ili 39 i 4, nebitno.\" — bring me a thermometer that shows 42.9 or 39.4, doesn't matter."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo ti je *pokvareno*, bre!",
+     "o": [
+      "broken",
+      "expensive",
+      "old",
+      "someone else's"
+     ],
+     "a": 0,
+     "e": "Pokvaren — broken, spoiled."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam ovde mrtva *bolesna*, a ti mi donosiš toplomer sa 37.",
+     "o": [
+      "sick",
+      "hungry",
+      "tired",
+      "angry"
+     ],
+     "a": 0,
+     "e": "Mrtva bolesna — \"deathly ill\", an exaggeration."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nemoj da mi ___ ovaj toplomer koji mi pokazuje 37.",
+     "o": [
+      "donosiš",
+      "donositi",
+      "donosio",
+      "donesi"
+     ],
+     "a": 0,
+     "e": "Nemoj da + present tense 2nd pers. sg.: nemoj da donosiš — \"don't bring\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Donesi mi toplomer koji mi ___ 42 i 9.",
+     "o": [
+      "pokazuje",
+      "pokazuju",
+      "pokazujem",
+      "pokaži"
+     ],
+     "a": 0,
+     "e": "The subject is toplomer (3rd pers. sg.): pokazuje."
+    }
+   ]
+  }
+ ]
+}

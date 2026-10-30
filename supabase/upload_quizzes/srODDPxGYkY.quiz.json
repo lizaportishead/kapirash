@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Что такое капля Принца Руперта и как её делают?",
+     "o": [
+      "Замороженная вода",
+      "Расплавленное стекло, быстро охлаждённое в воде",
+      "Смола, застывшая на воздухе",
+      "Металл, отлитый в форму"
+     ],
+     "a": 1,
+     "e": "В ролике: «Pravi se tako što se istopljeno staklo brzo ohladi u vodi»."
+    },
+    {
+     "q": "Почему стекло из банки не подошло?",
+     "o": [
+      "Оно нечистое, с примесями",
+      "Оно цветное",
+      "Оно слишком толстое",
+      "Оно слишком мягкое"
+     ],
+     "a": 0,
+     "e": "В ролике: «staklo koje sam koristio da napravim ovu kapljicu nije adekvatno... nije čisto, već ima neke primese kako bi bilo jeftinije»."
+    },
+    {
+     "q": "Что автор заказал для новых попыток?",
+     "o": [
+      "Кварцевый песок",
+      "Лабораторные стеклянные палочки",
+      "Зеркала",
+      "Стеклянные шарики"
+     ],
+     "a": 1,
+     "e": "В ролике: «poručio laboratorijsko staklo, to su kao neki štapići koji se koriste za mešanje u hemijskoj laboratoriji.»."
+    },
+    {
+     "q": "Сколько удачных капель у автора получилось в итоге?",
+     "o": [
+      "Шесть",
+      "Одна",
+      "Двадцать",
+      "Три"
+     ],
+     "a": 0,
+     "e": "В ролике: «dok nisam imao šest uspešnih celih kapljica»."
+    },
+    {
+     "q": "Что выдержала капля?",
+     "o": [
+      "Клещи, удар молотка и сильное сжатие в тисках",
+      "Ничего",
+      "Только огонь",
+      "Только удар молотка"
+     ],
+     "a": 0,
+     "e": "В ролике: «Kapljica je izdržala klešta... preživela je i udarac čekićem» и «kapljica nije ni mrdnula» в стеге."
+    },
+    {
+     "q": "Что случилось с каплей, у которой отрезали хвост?",
+     "o": [
+      "Она стала мягкой",
+      "Она не взорвалась, но потом треснула и перестала быть неразрушимой",
+      "Она расплавилась",
+      "Она взорвалась сразу"
+     ],
+     "a": 1,
+     "e": "В ролике: «iako nije eksplodirala sama od sebe prilikom presecanja repa, izgubila je svojstvo da bude neuništiva.»."
+    },
+    {
+     "q": "Почему капля прочна на одном конце и хрупка на другом?",
+     "o": [
+      "Хвост сделан из другого стекла",
+      "Внешний слой остывает и сжимается быстрее, внутри возникает напряжение",
+      "В хвосте воздух",
+      "Голова нагрета сильнее"
+     ],
+     "a": 1,
+     "e": "В ролике: «spoljni sloj kapljice se naglo hladi i skuplja, dok unutrašnji deo ostaje tečan duže vreme. I zbog toga se u kapljici stvara napetost.»."
+    },
+    {
+     "q": "Что показала сверхзамедленная съёмка попадания пули?",
+     "o": [
+      "Капля отскочила",
+      "Пуля пробила голову",
+      "Голова выдержала удар, затем хвост завибрировал и капля треснула",
+      "Капля загорелась"
+     ],
+     "a": 2,
+     "e": "В ролике: «Kada projektil udari kapljicu, ne dešava se ništa. Međutim, od udarca rep počne da vibrira. I tek tada primećujemo kako kapljica puca.»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pravi se tako što se *istopljeno* staklo brzo ohladi u vodi.",
+     "o": [
+      "мутное",
+      "цветное",
+      "разбитое",
+      "расплавленное"
+     ],
+     "a": 3,
+     "e": "Istopiti — расплавить; istopljen — расплавленный."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nosite naočare. I *rukavice*.",
+     "o": [
+      "перчатки",
+      "маску",
+      "шапку",
+      "халат"
+     ],
+     "a": 0,
+     "e": "Rukavice — перчатки; ruka — рука."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa da probamo da je polomimo *kleštima*.",
+     "o": [
+      "молотком",
+      "руками",
+      "ногой",
+      "клещами"
+     ],
+     "a": 3,
+     "e": "Klešta — клещи, плоскогубцы. Kleštima — творительный падеж: «клещами»."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ispada da sam *džabe* lomio onu teglicu.",
+     "o": [
+      "осторожно",
+      "зря",
+      "быстро",
+      "нарочно"
+     ],
+     "a": 1,
+     "e": "Džabe — разговорное «зря, даром»."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kapljica je čvrsta na jednom kraju, a *krhka* na drugom.",
+     "o": [
+      "прозрачная",
+      "лёгкая",
+      "горячая",
+      "хрупкая"
+     ],
+     "a": 3,
+     "e": "Krhak — хрупкий."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U kapljici se stvara *napetost*.",
+     "o": [
+      "пузырь",
+      "трещина",
+      "свет",
+      "напряжение"
+     ],
+     "a": 3,
+     "e": "Napetost — напряжение; napeti — натянуть."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada ovoj kapljici presečete *rep*, trebalo bi da eksplodira.",
+     "o": [
+      "стекло",
+      "голову",
+      "кончик",
+      "хвост"
+     ],
+     "a": 3,
+     "e": "Rep — хвост."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo je skoro *neuništiva* kapljica.",
+     "o": [
+      "огромная",
+      "стеклянная",
+      "горячая",
+      "неразрушимая"
+     ],
+     "a": 3,
+     "e": "Uništiti — уничтожить; neuništiv — неуничтожимый, неразрушимый."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kada radite nešto sa ___, nemojte biti glupi.",
+     "o": [
+      "staklo",
+      "staklu",
+      "staklom",
+      "stakla"
+     ],
+     "a": 2,
+     "e": "Sa («с») требует творительного падежа: sa staklom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Staklo se topi na ___ od oko 1400 stepeni.",
+     "o": [
+      "temperatura",
+      "temperaturi",
+      "temperaturom",
+      "temperaturu"
+     ],
+     "a": 1,
+     "e": "Na на вопрос «при чём?» — местный падеж: na temperaturi."
+    },
+    {
+     "t": "Выбери вид глагола",
+     "q": "___ smo jednu kapljicu, da vidimo da li je uspelo.",
+     "o": [
+      "Topili",
+      "Istopio",
+      "Topio",
+      "Istopili"
+     ],
+     "a": 3,
+     "e": "Одна капля, результат получен — совершенный вид: istopiti. Topili — несовершенный (процесс). Smo — мн. ч."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pucamo vazdušnom ___.",
+     "o": [
+      "puška",
+      "puškom",
+      "pušku",
+      "puške"
+     ],
+     "a": 1,
+     "e": "Прилагательное vazdušnom стоит в творительном падеже, значит и существительное: puškom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kapljica je izdržala ___.",
+     "o": [
+      "kleštima",
+      "klešti",
+      "klešta",
+      "kleštama"
+     ],
+     "a": 2,
+     "e": "Izdržati что — винительный падеж; у klešta (мн. ч. среднего рода) он совпадает с именительным."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "Staklo je i ___ nego što sam mislio.",
+     "o": [
+      "čvrsta",
+      "čvršće",
+      "čvrst",
+      "čvrsto"
+     ],
+     "a": 1,
+     "e": "Сравнительная степень: čvrst → čvršće («твёрже»). Staklo — средний род, поэтому окончание -e."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "kada sam uzeo onu kapljicu ___ sam malopre presekao rep,",
+     "o": [
+      "kojoj",
+      "koju",
+      "koje",
+      "koja"
+     ],
+     "a": 0,
+     "e": "Presekao rep — кому/чему? Дательный падеж: kapljici → kojoj («которой»)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad čekamo da ti stakleni ___ stignu.",
+     "o": [
+      "štapićima",
+      "štapić",
+      "štapića",
+      "štapići"
+     ],
+     "a": 3,
+     "e": "Подлежащее во множественном числе, именительный падеж: štapići."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Who made Karin's first red shoes?",
+     "o": [
+      "A rich shoemaker from the city",
+      "The queen",
+      "An old village cobbler woman, from scraps of red leather",
+      "Her mother"
+     ],
+     "a": 2,
+     "e": "The old cobbler woman made them from old pieces of red leather."
+    },
+    {
+     "q": "What did the old lady do with those shoes?",
+     "o": [
+      "Threw them in the fire",
+      "Gave them to a poor girl",
+      "Sold them",
+      "Hid them in a cupboard"
+     ],
+     "a": 0,
+     "e": "She found them hideous and threw them into the fire."
+    },
+    {
+     "q": "What was Karin thinking about in church during the ceremony?",
+     "o": [
+      "About her new dress",
+      "About her mother",
+      "Only about her red shoes",
+      "About the prayer"
+     ],
+     "a": 2,
+     "e": "She thought only of the shoes while the priest laid his hand on her head."
+    },
+    {
+     "q": "What happened when the old soldier said, “What pretty shoes for dancing!”?",
+     "o": [
+      "The soldier vanished",
+      "The shoes fell apart",
+      "The shoes made Karin dance and she could not stop",
+      "Karin fell down"
+     ],
+     "a": 2,
+     "e": "The shoes took control and her feet kept dancing."
+    },
+    {
+     "q": "Why did Karin go to the ball when the old lady was ill?",
+     "o": [
+      "She couldn't resist and put on the red shoes",
+      "She wanted to say goodbye to friends",
+      "She was forced to",
+      "The old lady sent her"
+     ],
+     "a": 0,
+     "e": "She looked at the red shoes, put them on and went to the dance."
+    },
+    {
+     "q": "How did Karin get rid of the shoes?",
+     "o": [
+      "She drowned them in a river",
+      "She took them off herself",
+      "The executioner chopped off her feet along with the shoes",
+      "A priest blessed her"
+     ],
+     "a": 2,
+     "e": "The executioner struck her feet with his axe."
+    },
+    {
+     "q": "How did Karin's story end?",
+     "o": [
+      "She became a queen",
+      "The shoes came back to her",
+      "An angel came to her, and she died in peace and joy, her soul flying to Heaven",
+      "She returned to the village rich"
+     ],
+     "a": 2,
+     "e": "Her soul flew up to Heaven on the sunbeams."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "U sredini sela živela je stara *obućarska* žena.",
+     "o": [
+      "seamstress's",
+      "weaver's",
+      "baker's",
+      "cobbler's"
+     ],
+     "a": 3,
+     "e": "Obućarski — cobbler's."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Naišla je velika stara *kočija*.",
+     "o": [
+      "sled",
+      "ladder",
+      "boat",
+      "carriage"
+     ],
+     "a": 3,
+     "e": "Kočija — carriage."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Sledeće nedelje bilo je *pričešćivanje*.",
+     "o": [
+      "communion",
+      "funeral",
+      "wedding",
+      "fair"
+     ],
+     "a": 0,
+     "e": "Pričešćivanje — communion."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ovde je živeo *dželat*.",
+     "o": [
+      "executioner",
+      "judge",
+      "soldier",
+      "priest"
+     ],
+     "a": 0,
+     "e": "Dželat — executioner."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Tužno je gledala u svoje *štake*.",
+     "o": [
+      "gloves",
+      "shovels",
+      "bonfires",
+      "crutches"
+     ],
+     "a": 3,
+     "e": "Štaka — crutch."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Obula ih je na ___ noge.",
+     "o": [
+      "bosa",
+      "bose",
+      "bosim",
+      "bosi"
+     ],
+     "a": 1,
+     "e": "Na + accusative plural: na bose noge."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Karin je mislila samo na svoje crvene ___.",
+     "o": [
+      "cipelom",
+      "cipela",
+      "cipele",
+      "cipelama"
+     ],
+     "a": 2,
+     "e": "Misliti na + accusative: na cipele."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Starica je zakoračila u svoju ___.",
+     "o": [
+      "kočijom",
+      "kočija",
+      "kočiji",
+      "kočiju"
+     ],
+     "a": 3,
+     "e": "U + accusative (where to?): u kočiju."
+    }
+   ]
+  }
+ ]
+}

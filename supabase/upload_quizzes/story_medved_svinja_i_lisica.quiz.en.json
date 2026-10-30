@@ -1,0 +1,187 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What did the bear, the pig and the fox decide to do together?",
+     "o": [
+      "Build a house",
+      "Plough a field and sow wheat",
+      "Open a mill",
+      "Go on a journey"
+     ],
+     "a": 1,
+     "e": "“Dogovore se da oru zemlju i da siju pšenicu” — they agreed to plough and sow wheat."
+    },
+    {
+     "q": "What did the fox use to work in the field?",
+     "o": [
+      "Her paws",
+      "Her snout",
+      "Her horns",
+      "Her tail"
+     ],
+     "a": 3,
+     "e": "The fox: “Ja ću mojim repom podrljati” — she harrowed with her tail."
+    },
+    {
+     "q": "How did the bear divide the grain?",
+     "o": [
+      "He gave the pig only straw, took the wheat himself and gave the fox nothing",
+      "He gave it all to the pig",
+      "He gave it all to the fox",
+      "Equally among the three"
+     ],
+     "a": 0,
+     "e": "He gave the pig only straw, took the wheat himself, and gave the fox nothing."
+    },
+    {
+     "q": "How did the fox threaten the bear and the pig?",
+     "o": [
+      "She said she would complain to the wolf",
+      "She said she would bring an emperor's man to divide the grain fairly",
+      "She said she would take the grain by force",
+      "She said she would burn the threshing floor"
+     ],
+     "a": 1,
+     "e": "The fox says she will bring an emperor's man who will divide the grain fairly."
+    },
+    {
+     "q": "Who did the fox actually bring?",
+     "o": [
+      "A cat",
+      "A hunter",
+      "A wolf",
+      "A dog"
+     ],
+     "a": 0,
+     "e": "“Lisica otide te nađe mačku” — the fox went and found a cat."
+    },
+    {
+     "q": "How did it all end?",
+     "o": [
+      "The pig beat the fox",
+      "All three made peace",
+      "The bear fell from the pear tree and died, and the fox got all the grain",
+      "The cat kept the grain"
+     ],
+     "a": 2,
+     "e": "The bear falls from the pear tree and dies; the fox is left with all the grain and straw."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Svinja reče: Ja ću *provaliti* koš i ukrašću sjeme.",
+     "o": [
+      "to lift",
+      "to mend",
+      "to break into",
+      "to paint"
+     ],
+     "a": 2,
+     "e": "Provaliti — to break into."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Dođe *žetva*.",
+     "o": [
+      "wedding",
+      "harvest",
+      "fair",
+      "winter"
+     ],
+     "a": 1,
+     "e": "Žetva — harvest."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Međed reče: Ja ću snoplje *vezati*.",
+     "o": [
+      "to tie",
+      "to cut",
+      "to count",
+      "to burn"
+     ],
+     "a": 0,
+     "e": "Vezati — to tie, to bind."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Rasrdi se lisica, pa otide na *tužbu*.",
+     "o": [
+      "a feast",
+      "a hunt",
+      "a complaint",
+      "a fair"
+     ],
+     "a": 2,
+     "e": "Ići na tužbu — to go to complain."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "*Uplaši* se svinja i međed.",
+     "o": [
+      "got happy",
+      "were surprised",
+      "took offence",
+      "got scared"
+     ],
+     "a": 3,
+     "e": "Uplašiti se — to get frightened."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Ja ću mojim ___ podrljati.",
+     "o": [
+      "rep",
+      "repom",
+      "repu",
+      "repa"
+     ],
+     "a": 1,
+     "e": "With what? — instrumental: repom."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Zakopaj se ti, svinjo, u ___.",
+     "o": [
+      "slamu",
+      "slami",
+      "slamom",
+      "slama"
+     ],
+     "a": 0,
+     "e": "U + accusative (where to?): u slamu."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Međed se pope na ___.",
+     "o": [
+      "krušku",
+      "kruška",
+      "kruške",
+      "kruškom"
+     ],
+     "a": 0,
+     "e": "Na + accusative (where to?): na krušku."
+    }
+   ]
+  }
+ ]
+}

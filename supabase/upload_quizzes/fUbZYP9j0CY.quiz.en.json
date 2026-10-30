@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the film \"Death Camp in Karašok\" about?",
+     "o": [
+      "A trip to Oslo",
+      "The suffering of Serbs in Norway during World War II",
+      "Football",
+      "Modern Norway"
+     ],
+     "a": 1,
+     "e": "In the video: \"film... koji govori o stradalim Srbima tokom Drugog svetskog rata u Norveškoj\" — a film... about the Serbs who suffered in Norway during World War II."
+    },
+    {
+     "q": "How many people from the territory of the former Yugoslavia were taken to Norway?",
+     "o": [
+      "About 40",
+      "Exactly 500",
+      "More than 100,000",
+      "More than 4000"
+     ],
+     "a": 3,
+     "e": "In the video: \"više od 4.000 ljudi sa teritorije bivše Jugoslavije... odvedeno u Norvešku\" — more than 4,000 people from the territory of the former Yugoslavia... were taken to Norway."
+    },
+    {
+     "q": "What share of the prisoners did not return home?",
+     "o": [
+      "More than half",
+      "None stayed",
+      "Every tenth",
+      "Almost everyone returned"
+     ],
+     "a": 0,
+     "e": "In the video: \"više od polovine nije se vratilo kući\" — more than half did not return home."
+    },
+    {
+     "q": "Where is the film's director from?",
+     "o": [
+      "From Sweden",
+      "From Serbia",
+      "From Norway",
+      "From Germany"
+     ],
+     "a": 2,
+     "e": "In the video: \"režiser filma iz Norveške, Šetil Palmkvist\" — the film's director from Norway, Sjetil Palmkvist."
+    },
+    {
+     "q": "Which camp in Niš are they filming?",
+     "o": [
+      "Bubanj",
+      "Crveni Krst",
+      "Sajmište",
+      "Jajinci"
+     ],
+     "a": 1,
+     "e": "In the video: \"snimati po drugi put logor Crveni krst. Odavde je veliki broj logoraša zapravo poslat u smrt, u Norvešku.\" — to film the Red Cross camp for the second time. From here a large number of prisoners were actually sent to their deaths, in Norway."
+    },
+    {
+     "q": "What percentage of those who died in the camps in Norway were Serbs?",
+     "o": [
+      "None",
+      "About 5 percent",
+      "Half",
+      "More than 95 percent"
+     ],
+     "a": 3,
+     "e": "In the video: \"preko 95% stradalih u logorima u Norveškoj zapravo bili Srbi\" — over 95% of those who died in the camps in Norway were in fact Serbs."
+    },
+    {
+     "q": "What was the camp in Karašok like?",
+     "o": [
+      "With warm barracks",
+      "An open-type camp, cold down to minus 50, torment by the guards",
+      "A camp with good food",
+      "A resort"
+     ],
+     "a": 1,
+     "e": "In the video: \"Logori u Karašoku su bili otvorenog tipa. Temperatura od minus 50 stepeni... brutalnih mučenja od strane stražara\" — the camps in Karašok were of the open type. Temperatures of minus 50 degrees... brutal torture by the guards."
+    },
+    {
+     "q": "When do they plan to finish the film?",
+     "o": [
+      "Next summer — for the 80th anniversary of the prisoners' deaths",
+      "In a month",
+      "It's already finished",
+      "In 10 years"
+     ],
+     "a": 0,
+     "e": "In the video: \"Plan je da se film završi sledeće godine na leto, jer u junu... 80 godina od stradanja\" — the plan is to finish the film next summer, because in June... it will be 80 years since the suffering."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Logor* smrti u Karašoku.",
+     "o": [
+      "island",
+      "city",
+      "camp",
+      "factory"
+     ],
+     "a": 2,
+     "e": "Logor — a camp."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Intervjui sa direktnim *očevicima* ovih stradanja.",
+     "o": [
+      "by scientists",
+      "by eyewitnesses",
+      "by sons",
+      "by judges"
+     ],
+     "a": 1,
+     "e": "Očevidac — an eyewitness; oči — eyes, vidjeti — to see."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na nama je zadatak da to sačuvamo od *zaborava*.",
+     "o": [
+      "of water",
+      "of fire",
+      "of oblivion",
+      "of cold"
+     ],
+     "a": 2,
+     "e": "Zaborav — oblivion; zaboraviti — to forget."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da ne zaborave stradanje svojih *predaka*.",
+     "o": [
+      "of friends",
+      "of neighbors",
+      "of ancestors",
+      "of teachers"
+     ],
+     "a": 2,
+     "e": "Predak — an ancestor."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Veliki broj *potomaka* se javio.",
+     "o": [
+      "of musicians",
+      "of descendants",
+      "of historians",
+      "of journalists"
+     ],
+     "a": 1,
+     "e": "Potomak — a descendant."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bilo je brutalnih *mučenja*.",
+     "o": [
+      "of disputes",
+      "of conversations",
+      "of tortures",
+      "of jokes"
+     ],
+     "a": 2,
+     "e": "Mučenje — torture, torment."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Od strane *stražara*.",
+     "o": [
+      "of guests",
+      "of guards",
+      "of doctors",
+      "of neighbors"
+     ],
+     "a": 1,
+     "e": "Stražar — a guard, a watchman."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Položili smo *venac* zahvalnosti na njegovom grobu.",
+     "o": [
+      "wreath",
+      "candle",
+      "flower",
+      "stone"
+     ],
+     "a": 0,
+     "e": "Venac — a wreath."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U toku je snimanje ___.",
+     "o": [
+      "filmom",
+      "filma",
+      "film",
+      "filmu"
+     ],
+     "a": 1,
+     "e": "Snimanje of what? Genitive case: snimanje filma."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film govori o stradalim ___ tokom Drugog svetskog rata.",
+     "o": [
+      "Srbima",
+      "Srbi",
+      "Srba",
+      "Srbe"
+     ],
+     "a": 0,
+     "e": "O in answer to \"about whom?\" requires the locative case: o Srbima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Od 2008. ste u ___.",
+     "o": [
+      "Norveškom",
+      "Norveška",
+      "Norveškoj",
+      "Norvešku"
+     ],
+     "a": 2,
+     "e": "U in answer to \"where?\" — locative case: u Norveškoj."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Više od 4.000 ljudi je odvedeno u ___.",
+     "o": [
+      "Norvešku",
+      "Norveška",
+      "Norveške",
+      "Norveškoj"
+     ],
+     "a": 0,
+     "e": "Odvesti u + accusative case: u Norvešku."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "i režiser filma ___ Norveške, Šetil Palmkvist,",
+     "o": [
+      "na",
+      "u",
+      "iz",
+      "kod"
+     ],
+     "a": 2,
+     "e": "Iz (\"from\") + genitive: iz Norveške — from Norway."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Pre 14-15 godina ___ sam gospodina Šetila Palmkvista,",
+     "o": [
+      "upoznao",
+      "upoznavao",
+      "upoznala",
+      "upoznavala"
+     ],
+     "a": 0,
+     "e": "The meeting happened once at a definite moment — perfective upoznao. A man is speaking, so not upoznala."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "jer je naboj emocija bio toliko ___ da smo i mi plakali zajedno sa svedocima.",
+     "o": [
+      "velike",
+      "velika",
+      "veliki",
+      "veliko"
+     ],
+     "a": 2,
+     "e": "The adjective agrees with the subject: naboj is masculine singular, so veliki."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Oni koji nisu mogli da odgovore ___ koji su postavljeni, bili su ubijani.",
+     "o": [
+      "zadataka",
+      "zadatke",
+      "zadacima",
+      "zadaci"
+     ],
+     "a": 2,
+     "e": "Odgovoriti to what — dative case: zadacima."
+    }
+   ]
+  }
+ ]
+}

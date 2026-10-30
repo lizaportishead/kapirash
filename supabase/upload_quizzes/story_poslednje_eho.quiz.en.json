@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Where did the ship “Helios 7” arrive?",
+     "o": [
+      "At the Moon",
+      "At a black hole",
+      "At Mars",
+      "In orbit around the extinct planet Aeron"
+     ],
+     "a": 3,
+     "e": "The shuttle floats in orbit around Aeron, an extinct planet."
+    },
+    {
+     "q": "Who is ASTRA?",
+     "o": [
+      "The ship's artificial intelligence",
+      "Viktor's sister",
+      "An alien",
+      "A human assistant"
+     ],
+     "a": 0,
+     "e": "ASTRA, a tenth-series artificial intelligence."
+    },
+    {
+     "q": "Why did Viktor land on the planet?",
+     "o": [
+      "He was looking for treasure",
+      "The signal matched the one from ten years ago when his father vanished",
+      "He had orders",
+      "He wanted to collect minerals"
+     ],
+     "a": 1,
+     "e": "The same frequency as when his father disappeared."
+    },
+    {
+     "q": "Whom did Viktor find in the capsule?",
+     "o": [
+      "An old friend",
+      "His father, Dr Marko Lazarević",
+      "No one",
+      "An alien"
+     ],
+     "a": 1,
+     "e": "In the capsule lay his father, Dr Marko Lazarević."
+    },
+    {
+     "q": "What did the glowing being say about Viktor's father?",
+     "o": [
+      "That he is a prisoner",
+      "That he is dead",
+      "That he stayed voluntarily to guard the civilization's memory and is happy",
+      "That he must be rescued"
+     ],
+     "a": 2,
+     "e": "He chose of his own will to stay and preserve memories."
+    },
+    {
+     "q": "Why did Viktor not wake his father?",
+     "o": [
+      "ASTRA forbade it",
+      "He couldn't open the capsule",
+      "He feared the storm",
+      "The old body would not survive the trip, and wanting to bring him back was selfishness"
+     ],
+     "a": 3,
+     "e": "His wish to bring him back was his own selfishness."
+    },
+    {
+     "q": "What did Viktor tell ASTRA to do with the data on the underground complex?",
+     "o": [
+      "Hand it to the government",
+      "Delete it",
+      "Send it to Earth",
+      "Keep it, but under the code “Protected by ideals”"
+     ],
+     "a": 3,
+     "e": "“Ostavi ih, pod šifrom ‘Zaštićeno idealima’.”"
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Modul se probio kroz guste oblake *prašine*.",
+     "o": [
+      "smoke",
+      "snow",
+      "dust",
+      "steam"
+     ],
+     "a": 2,
+     "e": "Prašina — dust."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Njegova želja da ga vrati bila je njegova *sebičnost*.",
+     "o": [
+      "courage",
+      "tiredness",
+      "selfishness",
+      "wisdom"
+     ],
+     "a": 2,
+     "e": "Sebičnost — selfishness."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Budi *spokojan*, oče.",
+     "o": [
+      "fast",
+      "calm",
+      "careful",
+      "angry"
+     ],
+     "a": 1,
+     "e": "Spokojan — calm."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "*Solarna* oluja na površini bila je sve jača.",
+     "o": [
+      "solar",
+      "marine",
+      "lunar",
+      "nuclear"
+     ],
+     "a": 0,
+     "e": "Solarni — solar."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Neke tajne moraju ostati *zaključane* u svemiru.",
+     "o": [
+      "forgotten",
+      "open",
+      "shared",
+      "locked"
+     ],
+     "a": 3,
+     "e": "Zaključan — locked."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Šatl je plutao kroz tišinu orbite oko ___.",
+     "o": [
+      "Aeronom",
+      "Aeronu",
+      "Aerona",
+      "Aeron"
+     ],
+     "a": 2,
+     "e": "Oko + genitive: oko Aerona."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Viktor je prišao ___ i dodirnuo je.",
+     "o": [
+      "kapsuli",
+      "kapsulom",
+      "kapsula",
+      "kapsulu"
+     ],
+     "a": 0,
+     "e": "Prići + dative (to what?): prišao kapsuli."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Ostavio je poruku sa svog ___.",
+     "o": [
+      "skeneru",
+      "skener",
+      "skenerom",
+      "skenera"
+     ],
+     "a": 3,
+     "e": "Sa (from what?) + genitive: sa skenera."
+    }
+   ]
+  }
+ ]
+}

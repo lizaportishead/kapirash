@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What car did the buyers want to purchase?",
+     "o": [
+      "A Fiat 500L from the authorized dealer MSD Trade",
+      "Volkswagen Golf",
+      "Renault Clio",
+      "Yugo"
+     ],
+     "a": 0,
+     "e": "In the video: \"Fiat 500L hteli da kupe preko ovlašćenog Fiatovog dilera, firme MSD Trade iz Obrenovca\" — they wanted to buy a Fiat 500L through an authorized Fiat dealer, the firm MSD Trade from Obrenovac."
+    },
+    {
+     "q": "Why did the buyers consider this choice reliable?",
+     "o": [
+      "The car was new",
+      "The dealer was a friend",
+      "There was a discount",
+      "The state also stands behind the Fiat project"
+     ],
+     "a": 3,
+     "e": "In the video: \"smatrali da je to sigurna opcija, jer i država stoji iza Fiatovog projekta\" — they considered it a safe option, because the state also stands behind the Fiat project."
+    },
+    {
+     "q": "What did the bank do in mid-June 2013?",
+     "o": [
+      "Returned the money to the buyer",
+      "Paid the money to the dealer",
+      "Refused a loan",
+      "Closed the account"
+     ],
+     "a": 1,
+     "e": "In the video: \"Sredinom juna banka je već svoju obavezu ispunila prema dileru\" — by mid-June the bank had already fulfilled its obligation to the dealer."
+    },
+    {
+     "q": "What did FAS report in November 2013?",
+     "o": [
+      "That the dealer is closed",
+      "That they received no payment from MSD Trade for Branko's car",
+      "That the factory is on holiday",
+      "That the car has already been shipped"
+     ],
+     "a": 1,
+     "e": "In the video: \"FAS nije primio nikakvu uplatu od firme MSD Trade u vezi sa kupovinom vozila na ime Branka Simića\" — FAS did not receive any payment from the firm MSD Trade in connection with the purchase of a vehicle in the name of Branko Simić."
+    },
+    {
+     "q": "How did the dealer explain the delay?",
+     "o": [
+      "A breakdown of the car",
+      "A vacation",
+      "The blocking of its account",
+      "A strike"
+     ],
+     "a": 2,
+     "e": "In the video: \"razlog za višemesečno odlaganje isporuke to što su ušli u blokadu\" — the reason for the months-long delay in delivery is that they went into a blockade."
+    },
+    {
+     "q": "What did the documents on the blockade show?",
+     "o": [
+      "The blockade began only on October 31, two months after the delivery deadline",
+      "The blockade was in June",
+      "The blockade was in 2012",
+      "There was no blockade"
+     ],
+     "a": 0,
+     "e": "In the video: \"MSD Trade je u blokadi tek od 31. oktobra 2013... dva meseca nakon što je istekao rok za isporuku\" — MSD Trade has been blocked only since October 31, 2013... two months after the delivery deadline expired."
+    },
+    {
+     "q": "What happened after the first report aired?",
+     "o": [
+      "The buyers withdrew their lawsuit",
+      "The buyers received their cars",
+      "Fiat closed the factory",
+      "The dealer shut down"
+     ],
+     "a": 1,
+     "e": "In the video: \"dva dana, bukvalno, posle emitovanja vašeg priloga dobio sam auto\" — literally two days after your segment aired, I got the car."
+    },
+    {
+     "q": "What compensation did one of the buyers receive?",
+     "o": [
+      "Nothing",
+      "A new car",
+      "Warranty extended from two to four years, two service vouchers and 650 euros for the air conditioner",
+      "Money for gasoline"
+     ],
+     "a": 2,
+     "e": "In the video: \"produžetak garancije sa dve na četiri godine... dva vaučera gratis... povraćaj novca za ugradnju klime, 650 evra\" — the warranty extended from two to four years... two free vouchers... a refund for installing the air conditioner, 650 euros."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za pojedince koji nekako uspeju da sebi *priušte* to zadovoljstvo.",
+     "o": [
+      "will sell",
+      "will afford",
+      "will lose",
+      "will find"
+     ],
+     "a": 1,
+     "e": "Priuštiti sebi — to afford."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Fiatovog *ovlašćenog* dilera.",
+     "o": [
+      "official, authorized",
+      "former",
+      "local",
+      "only"
+     ],
+     "a": 0,
+     "e": "Ovlašćen — authorized, official."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam već četiri *rate* uplatio banci.",
+     "o": [
+      "of the installment",
+      "of the tax",
+      "of the percent",
+      "of the fine"
+     ],
+     "a": 0,
+     "e": "Rata — an installment, a payment by instalments."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Neverovatno *kašnjenje* isporuke.",
+     "o": [
+      "quality",
+      "price",
+      "discount",
+      "delay"
+     ],
+     "a": 3,
+     "e": "Kašnjenje — lateness, a delay; kasniti — to be late."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Petoro ljudi koji su *prevareni*.",
+     "o": [
+      "rewarded",
+      "fired",
+      "deceived",
+      "punished"
+     ],
+     "a": 2,
+     "e": "Prevariti — to deceive."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Počeo je da smatra da ga je i Fiat *izneverio*.",
+     "o": [
+      "praised",
+      "hired",
+      "saved",
+      "let down"
+     ],
+     "a": 3,
+     "e": "Izneveriti — to let down, to betray trust."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobio sam *povraćaj* novca za ugradnju klime.",
+     "o": [
+      "refund",
+      "installment plan",
+      "discount",
+      "tax"
+     ],
+     "a": 0,
+     "e": "Povraćaj — a refund."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stalno pomerao *rok*.",
+     "o": [
+      "deadline",
+      "contract",
+      "date of birth",
+      "price"
+     ],
+     "a": 0,
+     "e": "Rok — a deadline."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupovina novog ___ je teško dostižan san.",
+     "o": [
+      "automobila",
+      "automobilu",
+      "automobilom",
+      "automobil"
+     ],
+     "a": 0,
+     "e": "Kupovina of what? Genitive case: novog automobila."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Takvo loše iskustvo ima nekoliko kupaca ___ Lazarevca i okoline,",
+     "o": [
+      "u",
+      "iz",
+      "sa",
+      "kod"
+     ],
+     "a": 1,
+     "e": "Iz (\"from\") + genitive: kupci iz Lazarevca — buyers from Lazarevac. U and kod don't fit the meaning."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Branko je odluku o kupovini ___ još tokom proleća 2013. godine,",
+     "o": [
+      "doneo",
+      "donosila",
+      "donosio",
+      "donela"
+     ],
+     "a": 0,
+     "e": "A decision is made once and the action is complete, so the perfective doneo (donositi is imperfective, for repeated action). Branko is masculine, so not donela."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "Kupci su nam ___ da oni nikako ne mogu da shvate",
+     "o": [
+      "rekao",
+      "rekla",
+      "rekle",
+      "rekli"
+     ],
+     "a": 3,
+     "e": "The past participle agrees with the subject: kupci is masculine plural, so rekli. Rekao is singular, rekle is feminine plural, rekla is feminine singular."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "FAS nije primio nikakvu uplatu od firme MSD Trade u vezi sa ___ vozila na ime Branka Simića.",
+     "o": [
+      "kupovinu",
+      "kupovinom",
+      "kupovini",
+      "kupovina"
+     ],
+     "a": 1,
+     "e": "Sa (\"with\") + instrumental: u vezi sa kupovinom — in connection with the purchase."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Teško je poverovati u objašnjenje da ___ vozilo nije isporučeno zbog ulaska MSD Trade-a u blokadu,",
+     "o": [
+      "Branka",
+      "Brankom",
+      "Branku",
+      "Branko"
+     ],
+     "a": 2,
+     "e": "Deliver to whom? Dative: Branku — the person the car was (not) delivered to."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ smo svoje automobile 16. decembra.",
+     "o": [
+      "Preuzimali",
+      "Preuzimao",
+      "Preuzeo",
+      "Preuzeli"
+     ],
+     "a": 3,
+     "e": "A single event on a specific date calls for the perfective preuzeli. Preuzimali is imperfective (process, repetition). Smo is plural, so not preuzeo."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "MSD Trade je bio u blokadi ___ dugovanja od preko 24 miliona dinara.",
+     "o": [
+      "zbog",
+      "prema",
+      "bez",
+      "pored"
+     ],
+     "a": 0,
+     "e": "Zbog (\"because of\") + genitive: zbog dugovanja — because of debts."
+    }
+   ]
+  }
+ ]
+}

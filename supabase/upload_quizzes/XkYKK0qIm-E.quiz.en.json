@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where do the friends set up camp every year?",
+     "o": [
+      "In the mountains",
+      "To the seaside",
+      "In Novi Sad",
+      "In Vlasotince by the river"
+     ],
+     "a": 3,
+     "e": "In the video: \"Svake godine početkom avgusta kampujemo u Vlasotincu pored reke\" — every year at the beginning of August we camp in Vlasotince by the river."
+    },
+    {
+     "q": "Which year did they skip?",
+     "o": [
+      "2019",
+      "2022",
+      "2018",
+      "2020 — because of the virus"
+     ],
+     "a": 3,
+     "e": "In the video: \"propustili smo samo jednu godinu, 2020. Tada nismo mogli zbog virusa\" — we missed only one year, 2020. We couldn't then because of the virus."
+    },
+    {
+     "q": "Where did David find the barrels for the raft?",
+     "o": [
+      "At a dump on his street",
+      "In a shop",
+      "At his grandfather's",
+      "In Novi Sad"
+     ],
+     "a": 0,
+     "e": "In the video: \"David ih je našao, pogađajte gde? Na otpadu u njegovoj ulici\" — David found them, guess where? At a dump on his street."
+    },
+    {
+     "q": "What were the benches made from?",
+     "o": [
+      "From pallets",
+      "From barrels",
+      "From old boards",
+      "From Stefan's felled walnut tree"
+     ],
+     "a": 3,
+     "e": "In the video: \"on se ponudio da isečemo njegov orah za klupice\" — he offered that we cut down his walnut tree for benches."
+    },
+    {
+     "q": "Where did they buy the mattress to sleep on?",
+     "o": [
+      "At the Jysk store in Leskovac",
+      "At the market in Niš",
+      "In Belgrade",
+      "Online"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ljudi, dobrodošli u Jysk\" — after the words \"idemo za Leskovac da kupimo dušek za spavanje\" (we're going to Leskovac to buy a mattress for sleeping)."
+    },
+    {
+     "q": "Where did they get electricity for the camp?",
+     "o": [
+      "They asked permission from the person who provides it every year",
+      "They brought a generator",
+      "They took it from the river",
+      "They ran it without permission"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa da vas pitamo da li može opet da uzmemo struju od vas\" — \"Da, može\" — so we wanted to ask whether we can take electricity from you again — \"Yes, you can\"."
+    },
+    {
+     "q": "What unexpected thing happened when everything was ready?",
+     "o": [
+      "The car broke down",
+      "A cable got lost",
+      "A downpour began",
+      "They drained the lake by raising the dam"
+     ],
+     "a": 3,
+     "e": "In the video: \"upravo dižu branu. Znači, jezero u kojem se kupamo... sutra neće biti tu\" — they're just raising the dam. So the lake we swim in... won't be there tomorrow."
+    },
+    {
+     "q": "What was on the camping to-do list?",
+     "o": [
+      "Rope jumping, a campfire, a raft, a projector, a lamb",
+      "Only a raft",
+      "City tours",
+      "Fishing and hunting"
+     ],
+     "a": 0,
+     "e": "In the video: \"da zavežemo konopac za skakanje, da napravimo logorsku vatru, ... da napravimo veliki splav, da ispečemo jagnje\" — to tie up the jumping rope, to make a campfire, ... to build a big raft, to roast a lamb."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kupiti buriće za *splav*.",
+     "o": [
+      "boat",
+      "tent",
+      "raft",
+      "table"
+     ],
+     "a": 2,
+     "e": "Splav — a raft."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kupiti *dušek* za spavanje.",
+     "o": [
+      "mattress",
+      "wardrobe",
+      "pillow",
+      "blanket"
+     ],
+     "a": 0,
+     "e": "Dušek — a mattress."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Doneti moj *šator* iz sela.",
+     "o": [
+      "lounge chair",
+      "tent",
+      "backpack",
+      "suitcase"
+     ],
+     "a": 1,
+     "e": "Šator — a tent."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "David ih je našao na *otpadu*.",
+     "o": [
+      "warehouse",
+      "dump",
+      "construction site",
+      "market"
+     ],
+     "a": 1,
+     "e": "Otpad — waste; colloquially, a dump."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Idemo napolje da kovemo *klinove*.",
+     "o": [
+      "boards",
+      "pegs",
+      "nails",
+      "pipes"
+     ],
+     "a": 1,
+     "e": "Klin — a wedge, a peg."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Si poneo *čekić*?",
+     "o": [
+      "hammer",
+      "axe",
+      "flashlight",
+      "knife"
+     ],
+     "a": 0,
+     "e": "Čekić — a hammer."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Otkrili smo što ne radi: *sijalica* izgorela.",
+     "o": [
+      "cable",
+      "fuse",
+      "socket",
+      "light bulb"
+     ],
+     "a": 3,
+     "e": "Sijalica — a light bulb."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Upravo dižu *branu*.",
+     "o": [
+      "bridge",
+      "dam",
+      "barrier",
+      "gate"
+     ],
+     "a": 1,
+     "e": "Brana — a dam."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Svake godine kampujemo u ___ pored reke.",
+     "o": [
+      "Vlasotinca",
+      "Vlasotincem",
+      "Vlasotincu",
+      "Vlasotinac"
+     ],
+     "a": 2,
+     "e": "U in answer to \"where?\" — locative case: u Vlasotincu."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Idemo ___ kablove i Davidove stvari.",
+     "o": [
+      "od",
+      "po",
+      "za",
+      "bez"
+     ],
+     "a": 1,
+     "e": "Ići po + accusative means \"go to fetch something\": idemo po kablove."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Propustili smo samo jednu ___.",
+     "o": [
+      "godine",
+      "godinu",
+      "godina",
+      "godinom"
+     ],
+     "a": 1,
+     "e": "Propustiti what — accusative case: godinu."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ smo šest komada, biće to dovoljno.",
+     "o": [
+      "Kupili",
+      "Kupovao",
+      "Kupio",
+      "Kupovali"
+     ],
+     "a": 0,
+     "e": "A specific quantity bought in one go is perfective: kupili. Kupovali is imperfective (process, regular action). Smo is plural, so not kupio."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "Sinoć je ___ kiša, sad je već suvo.",
+     "o": [
+      "palo",
+      "pali",
+      "pala",
+      "pao"
+     ],
+     "a": 2,
+     "e": "The participle agrees with the subject: kiša is feminine singular, so pala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moramo kod ___ koji nam daje struju.",
+     "o": [
+      "čoveka",
+      "čoveku",
+      "čovek",
+      "čovekom"
+     ],
+     "a": 0,
+     "e": "Kod requires the genitive case: kod čoveka."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Moram u mrklom mraku da idem sad ___ ovu šumu",
+     "o": [
+      "kroz",
+      "od",
+      "bez",
+      "do"
+     ],
+     "a": 0,
+     "e": "Kroz (\"through\") + accusative: kroz ovu šumu. Bez, od and do take the genitive."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Šta si radio s ___, Davide?",
+     "o": [
+      "njim",
+      "on",
+      "njega",
+      "njemu"
+     ],
+     "a": 0,
+     "e": "S(a) (\"with\") + instrumental: on → njim. S njim — \"with him\"."
+    }
+   ]
+  }
+ ]
+}

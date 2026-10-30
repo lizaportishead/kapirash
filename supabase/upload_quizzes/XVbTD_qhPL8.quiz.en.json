@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Who is the guest of the program?",
+     "o": [
+      "Slavimir Stojanović, a graphic designer",
+      "A rock musician",
+      "A politician",
+      "A footballer"
+     ],
+     "a": 0,
+     "e": "In the video: \"Slavimir Stojanović je sa nama, grafički dizajner pre svega\" — Slavimir Stojanović is with us, a graphic designer above all."
+    },
+    {
+     "q": "How many years has he worked in the profession?",
+     "o": [
+      "30",
+      "50",
+      "10",
+      "3"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kada proslavljate 30 godina rada\" — when you celebrate 30 years of work."
+    },
+    {
+     "q": "What did he buy the sneakers with?",
+     "o": [
+      "His first fee for winning a poster competition",
+      "His salary",
+      "A gift",
+      "A scholarship"
+     ],
+     "a": 0,
+     "e": "In the video: \"dobio sam čak i prvi honorar tada. Za te pare... kupio sam starke\" — I even got my first fee then. With that money... I bought Starkes."
+    },
+    {
+     "q": "Why did he move from drawing comics to design?",
+     "o": [
+      "He didn't like drawing",
+      "He was forced to",
+      "Drawing through the nights was hard — his neck hurt, while design with a computer gave more free time",
+      "There were no paints"
+     ],
+     "a": 2,
+     "e": "In the video: \"Boleo me vrat, imao sam spondilozu... kroz dizajn stekao daleko više vremena.\" — my neck hurt, I had spondylosis... through design I gained far more time."
+    },
+    {
+     "q": "Where do his best ideas come to him?",
+     "o": [
+      "While doing other things — on a walk, with his daughter",
+      "In his sleep",
+      "At meetings",
+      "At the computer in the studio"
+     ],
+     "a": 0,
+     "e": "In the video: \"sve smišljam u glavi dok radim bilo šta drugo. Da li se šetam po prirodi, igram sa ćerkom\" — I think everything up in my head while doing anything else. Whether I'm walking in nature or playing with my daughter."
+    },
+    {
+     "q": "Why did he leave advertising?",
+     "o": [
+      "Because of a move",
+      "For moral reasons: advertising in Serbia comes down to selling",
+      "Because of illness",
+      "Because of a low salary"
+     ],
+     "a": 1,
+     "e": "In the video: \"iz prosto tih nekih moralnih razloga i zbog toga što se naš advertajzing u Srbiji svodi na puku prodaju\" — simply for some moral reasons and because our advertising in Serbia comes down to mere selling."
+    },
+    {
+     "q": "What is his exhibition called?",
+     "o": [
+      "\"Complicated Simplicity\"",
+      "\"New Times\"",
+      "\"Fur\"",
+      "\"Belgrade\""
+     ],
+     "a": 0,
+     "e": "In the video: \"Izložba se zove „Komplikovana jednostavnost“\" — the exhibition is called \"Complicated Simplicity\"."
+    },
+    {
+     "q": "What will be shown at the exhibition?",
+     "o": [
+      "One sculpture",
+      "Only posters",
+      "More than 500 works at the Museum of Applied Art",
+      "10 paintings"
+     ],
+     "a": 2,
+     "e": "In the video: \"videće preko 500 radova\" — you will see over 500 works."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobio sam čak i prvi *honorar*.",
+     "o": [
+      "diploma",
+      "prize",
+      "praise",
+      "fee"
+     ],
+     "a": 3,
+     "e": "Honorar — a fee."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Deca *tumaraju* sa fakulteta na fakultet.",
+     "o": [
+      "are in a hurry",
+      "are riding",
+      "wander, searching for themselves",
+      "study"
+     ],
+     "a": 2,
+     "e": "Tumarati — to wander, to roam."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Lenjost* me navela. Lenjost je nekada i dobra.",
+     "o": [
+      "laziness",
+      "shame",
+      "fear",
+      "luck"
+     ],
+     "a": 0,
+     "e": "Lenjost — laziness."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Živimo u društvu *pokvarenih* ogledala.",
+     "o": [
+      "spoiled",
+      "big",
+      "new",
+      "clean"
+     ],
+     "a": 0,
+     "e": "Pokvaren — spoiled, broken."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam gledao te *uzore*.",
+     "o": [
+      "models, idols",
+      "magazines",
+      "films",
+      "schools"
+     ],
+     "a": 0,
+     "e": "Uzor — a model to emulate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Omoti* za CD-ove, od Rambo Amadeusa do EKV-a.",
+     "o": [
+      "covers",
+      "posters",
+      "tickets",
+      "discs"
+     ],
+     "a": 0,
+     "e": "Omot — a cover, a wrapper."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ceo taj *dijapazon* bavljenja.",
+     "o": [
+      "price",
+      "range",
+      "deadline",
+      "list"
+     ],
+     "a": 1,
+     "e": "Dijapazon — a range."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Beograd ima značajne umetnike kojima može da se *ponosi*.",
+     "o": [
+      "to be interested",
+      "to be proud",
+      "to laugh",
+      "to complain"
+     ],
+     "a": 1,
+     "e": "Ponositi se — to be proud; ponos — pride."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kada proslavljate 30 ___ rada.",
+     "o": [
+      "godinu",
+      "godinom",
+      "godina",
+      "godine"
+     ],
+     "a": 2,
+     "e": "After numbers from 5 the genitive plural is used: godina."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "kako da ___ u Srbiji?",
+     "o": [
+      "zarade",
+      "zarađuje",
+      "zarađuju",
+      "zaradi"
+     ],
+     "a": 0,
+     "e": "After \"kako da\" a possible outcome takes the perfective: zarade (\"to earn\"). Zarađuju is imperfective (ongoing)."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Da, bilo je važno, i onda sam ___ da tu može neki nivo komunikacije,",
+     "o": [
+      "shvatila",
+      "shvatio",
+      "shvatala",
+      "shvatao"
+     ],
+     "a": 1,
+     "e": "A moment of realisation is perfective: shvatio. Shvatao is imperfective (ongoing). A man is speaking."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "koji su ___ baš zbog toga što nisu krenuli pravim putem,",
+     "o": [
+      "nezadovoljna",
+      "nezadovoljne",
+      "nezadovoljan",
+      "nezadovoljni"
+     ],
+     "a": 3,
+     "e": "The adjective agrees with the subject: koji (ljudi) is masculine plural, so nezadovoljni."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nisam hteo da celu noć crtam ___.",
+     "o": [
+      "stripovima",
+      "stripove",
+      "stripova",
+      "stripovi"
+     ],
+     "a": 1,
+     "e": "Crtati what — accusative plural: stripove."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Igram sa ___.",
+     "o": [
+      "ćerkom",
+      "ćerka",
+      "ćerke",
+      "ćerku"
+     ],
+     "a": 0,
+     "e": "Sa (\"with\") requires the instrumental case: sa ćerkom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Izložba je u ___ primenjene umetnosti.",
+     "o": [
+      "Muzejom",
+      "Muzeju",
+      "Muzeja",
+      "Muzej"
+     ],
+     "a": 1,
+     "e": "U in answer to \"where?\" — locative case: u Muzeju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Videće preko 500 ___.",
+     "o": [
+      "radovi",
+      "rad",
+      "radove",
+      "radova"
+     ],
+     "a": 3,
+     "e": "After numbers from 5 the genitive plural is used: radova."
+    }
+   ]
+  }
+ ]
+}

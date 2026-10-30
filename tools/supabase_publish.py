@@ -43,14 +43,15 @@ def rows(table):
 
 up = {"Prefer": "resolution=ignore-duplicates,return=minimal"}
 creators = [dict(zip(["name", "handle", "avatar_id"], r)) for r in rows("creators")]
-videos = [dict(zip(["id", "title", "channel", "topic", "level", "duration"], r)) for r in rows("videos")]
+videos = [dict(zip(["id", "title", "channel", "topic", "level", "duration", "kind"], r)) for r in rows("videos")]
 print("creators", call("POST", "/rest/v1/creators?on_conflict=name", creators, up))
 print("videos", call("POST", "/rest/v1/videos?on_conflict=id", videos, up))
 
 for name in sorted(os.listdir(folder)):
     if name.startswith("."):
         continue
-    ctype = "application/json" if name.endswith(".json") else "text/vtt"
+    ctype = ("application/json" if name.endswith(".json") else
+             "image/jpeg" if name.endswith(".jpg") else "text/vtt")
     with open(os.path.join(folder, name), "rb") as f:
         code = call("POST", f"/storage/v1/object/subs/{name}", f.read(),
                     {"Content-Type": ctype, "x-upsert": "true"}, raw=True)

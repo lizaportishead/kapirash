@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What do these pancakes taste like?",
+     "o": [
+      "Like plum dumplings",
+      "Like pancakes with honey",
+      "Like apple pie",
+      "Like cheese casserole"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ukus je kao knedle sa šljivama\" — the taste is like plum dumplings."
+    },
+    {
+     "q": "How is the batter mixed?",
+     "o": [
+      "With a hand blender",
+      "With a whisk",
+      "With a fork",
+      "It isn't mixed"
+     ],
+     "a": 0,
+     "e": "In the video: \"Mutim štapnim mikserom da ne bi bilo grudvica\" — I whisk with a hand blender so there are no lumps."
+    },
+    {
+     "q": "At what temperature is it baked?",
+     "o": [
+      "150 degrees",
+      "180 degrees",
+      "200 degrees",
+      "250 degrees"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ide u rernu na 200 stepeni\" — it goes into the oven at 200 degrees."
+    },
+    {
+     "q": "What do people get for installing the store's app?",
+     "o": [
+      "5% off any purchase",
+      "15% off the first purchase",
+      "Free delivery",
+      "A gift"
+     ],
+     "a": 1,
+     "e": "In the video: \"ostvarujete čak 15% popusta na prvu kupovinu\" — you get as much as 15% off your first purchase."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mutim štapnim mikserom da ne bi bilo *grudvica*.",
+     "o": [
+      "lumps",
+      "bubbles",
+      "crumbs",
+      "stains"
+     ],
+     "a": 0,
+     "e": "Grudvica — a lump; here gen. pl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U činiji pomešajte jednu *šolju* brašna.",
+     "o": [
+      "cup",
+      "spoon",
+      "pot",
+      "plate"
+     ],
+     "a": 0,
+     "e": "Šolja — a cup; šolju — acc. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ide u rernu na 200 stepeni, a za to vreme na malo *putera* propržim 100 grama prezle i šećera.",
+     "o": [
+      "butter",
+      "milk",
+      "sour cream",
+      "cheese"
+     ],
+     "a": 0,
+     "e": "Puter — butter; putera — gen. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve namirnice sam naravno *pazarila* u Gomexu.",
+     "o": [
+      "bought",
+      "cooked",
+      "forgot",
+      "ordered"
+     ],
+     "a": 0,
+     "e": "Pazariti — to shop, to buy."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U činiji pomešajte jednu šolju ___.",
+     "o": [
+      "brašno",
+      "brašna",
+      "brašnu",
+      "brašnom"
+     ],
+     "a": 1,
+     "e": "After words of quantity (šolja \"cup\") the genitive is needed: brašna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ide u ___ na 200 stepeni.",
+     "o": [
+      "rerna",
+      "rernu",
+      "rerne",
+      "rerni"
+     ],
+     "a": 1,
+     "e": "The preposition u answering \"where to?\" takes the accusative: u rernu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mutim ___ mikserom da ne bi bilo grudvica.",
+     "o": [
+      "štapni",
+      "štapnim",
+      "štapnog",
+      "štapnom"
+     ],
+     "a": 1,
+     "e": "Mikserom is masculine instrumental; the adjective agrees: štapnim."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ukus je kao knedle sa ___.",
+     "o": [
+      "šljive",
+      "šljivama",
+      "šljivu",
+      "šljiva"
+     ],
+     "a": 1,
+     "e": "The preposition sa (\"with\") takes the instrumental: šljivama."
+    }
+   ]
+  }
+ ]
+}

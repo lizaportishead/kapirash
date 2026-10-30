@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the little mermaid allowed to do for the first time on her fifteenth birthday?",
+     "o": [
+      "Go up to the surface",
+      "Get married",
+      "Build a palace",
+      "Swim to another sea"
+     ],
+     "a": 0,
+     "e": "In the video: \"Danas puniš petnaest godina, vreme je da iskusiš život.\" — today you turn fifteen, it's time to experience life."
+    },
+    {
+     "q": "How does the mermaid explain the sun to Yoyo?",
+     "o": [
+      "It's a big blue star",
+      "It's that big, yellow thing",
+      "It's a huge ship",
+      "It's a glowing fish"
+     ],
+     "a": 1,
+     "e": "In the video: \"Sunce je ona velika, žuta stvar.\" — The sun is that big, yellow thing."
+    },
+    {
+     "q": "What price does the sea witch name for the legs?",
+     "o": [
+      "Her hair",
+      "Her voice",
+      "Her ship",
+      "Her home"
+     ],
+     "a": 1,
+     "e": "In the video: \"Koštaće te tvog glasa.\" — It will cost you your voice."
+    },
+    {
+     "q": "What will happen if the prince doesn't fall in love with the mermaid?",
+     "o": [
+      "She will become a queen",
+      "She will turn into sea foam",
+      "She will lose her memory",
+      "She will stay on land forever"
+     ],
+     "a": 1,
+     "e": "In the video: \"ako se ne zaljubi u tebe, sledećeg dana ćeš se pretvoriti u morsku penu.\" — if he doesn't fall in love with you, the next day you'll turn into sea foam."
+    },
+    {
+     "q": "Why doesn't the prince want to marry the king's daughter?",
+     "o": [
+      "He doesn't like her character",
+      "He has fallen in love with another",
+      "He wants to become a captain",
+      "He is afraid of his father"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ne mogu da te oženim, jer sam se zaljubio u drugu.\" — I can't marry you, because I've fallen in love with another."
+    },
+    {
+     "q": "Who does Arabella turn out to be?",
+     "o": [
+      "King Donatello's daughter",
+      "A servant in the temple",
+      "The sea witch",
+      "The prince's sister"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ali ja jesam princeza Arabela, kćerka kralja Donatela.\" — But I am Princess Arabella, King Donatello's daughter."
+    },
+    {
+     "q": "What does the witch demand of the mermaid to reverse the spell?",
+     "o": [
+      "Give up a pearl",
+      "Kill the prince after his wedding",
+      "Sing a song",
+      "Swim far away"
+     ],
+     "a": 1,
+     "e": "In the video: \"Moraš da ubiješ princa u noći posle njegovog venčanja.\" — you have to kill the prince on the night after his wedding."
+    },
+    {
+     "q": "What other way is there for the mermaid to survive and live forever?",
+     "o": [
+      "Find a magic stone",
+      "Sacrifice herself for another",
+      "Go back home",
+      "Marry Yoyo"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mora da žrtvuje sebe za drugog, ali ne smete da joj kažete.\" — She has to sacrifice herself for another, but you must not tell her."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sunce je ona velika, *žuta* stvar",
+     "o": [
+      "yellow",
+      "red",
+      "green",
+      "white"
+     ],
+     "a": 0,
+     "e": "žut — yellow."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A ono prelepo *biće* koje stoji na njemu",
+     "o": [
+      "place",
+      "creature",
+      "dress",
+      "tree"
+     ],
+     "a": 1,
+     "e": "biće — creature, being."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Povetarac*? Pa nisam od šećera, znate",
+     "o": [
+      "storm",
+      "rain",
+      "breeze",
+      "fog"
+     ],
+     "a": 2,
+     "e": "povetarac — a light wind."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Idem na *površinu*, idem na površinu",
+     "o": [
+      "bottom",
+      "surface",
+      "shore",
+      "ship"
+     ],
+     "a": 1,
+     "e": "površina — surface."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imaćeš *noge* i izgledaćeš kao ljudsko biće",
+     "o": [
+      "wings",
+      "legs",
+      "hands",
+      "eyes"
+     ],
+     "a": 1,
+     "e": "noga — leg."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Koštaće te tvog *glasa*",
+     "o": [
+      "voice",
+      "heart",
+      "home",
+      "name"
+     ],
+     "a": 0,
+     "e": "glas — voice."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Moraš da *ubiješ* princa",
+     "o": [
+      "to save",
+      "to kill",
+      "to find",
+      "to wake"
+     ],
+     "a": 1,
+     "e": "ubiti — to kill."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Onda ću sam da joj kažem da otkazujem *venčanje*",
+     "o": [
+      "wedding",
+      "trip",
+      "lunch",
+      "ball"
+     ],
+     "a": 0,
+     "e": "venčanje — wedding."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hodala bih do njega i plesala ___ njim",
+     "o": [
+      "za",
+      "sa",
+      "na",
+      "od"
+     ],
+     "a": 1,
+     "e": "plesati sa nekim — to dance with someone («sa» + instrumental)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ali kako, kad nas dele zemlja i ___?",
+     "o": [
+      "mora",
+      "more",
+      "moru",
+      "morem"
+     ],
+     "a": 1,
+     "e": "The subject is in the nominative: zemlja i more."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam doktor Kroki, naučnik, ___.",
+     "o": [
+      "filozofa",
+      "filozofu",
+      "filozof",
+      "filozofom"
+     ],
+     "a": 2,
+     "e": "After «biti» comes the nominative: naučnik, filozof."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ali loše odluke ne mogu tek tako da se ___",
+     "o": [
+      "isprave",
+      "ispravljaju",
+      "ispravio",
+      "ispravljati"
+     ],
+     "a": 0,
+     "e": "After «da», a perfective present form: da se isprave."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Znam da si dobronameran, ali samo jednom u životu ti se pruža šansa ___ pravu sreću",
+     "o": [
+      "u",
+      "na",
+      "o",
+      "za"
+     ],
+     "a": 3,
+     "e": "šansa za nešto — a chance at something («za» + accusative)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moraš da ubiješ princa u noći ___ njegovog venčanja",
+     "o": [
+      "pre",
+      "posle",
+      "kod",
+      "bez"
+     ],
+     "a": 1,
+     "e": "posle + genitive — after something."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kad je moj brod nestao u ___, mislim da me je ona iznela na obalu",
+     "o": [
+      "oluja",
+      "olujom",
+      "oluji",
+      "oluju"
+     ],
+     "a": 2,
+     "e": "nestati u + locative: u oluji — in the storm."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Došli smo zbog male ___",
+     "o": [
+      "sirenu",
+      "sirene",
+      "sirenom",
+      "sirena"
+     ],
+     "a": 1,
+     "e": "zbog + genitive: zbog male sirene — because of the little mermaid."
+    }
+   ]
+  }
+ ]
+}

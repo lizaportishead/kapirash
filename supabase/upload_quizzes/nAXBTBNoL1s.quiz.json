@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "О чём режиссёр размышляет в начале видео?",
+     "o": [
+      "О новых технологиях",
+      "О политике",
+      "О путешествиях",
+      "О потребности людей оставлять следы и фиксировать жизнь"
+     ],
+     "a": 3,
+     "e": "В ролике: «Odakle dolazi ta naša potreba da nešto zabeležimo, dokumentujemo, da se sećamo?»"
+    },
+    {
+     "q": "Как называли кинотеатр его детства?",
+     "o": [
+      "Парк",
+      "Бувара",
+      "Союз",
+      "Колизей"
+     ],
+     "a": 1,
+     "e": "В ролике: «bioskop... zvao se Lekino brdo, a mi smo ga zvali Buvara»."
+    },
+    {
+     "q": "Что делал киномеханик со срезанными кусками плёнки?",
+     "o": [
+      "Отправлял на склад",
+      "Выбрасывал",
+      "Раздавал детям",
+      "Продавал"
+     ],
+     "a": 2,
+     "e": "В ролике: «kad je on sekao tu traku i lepio je... skupljao i delio je to deci»."
+    },
+    {
+     "q": "Какую камеру он захотел в 16–17 лет?",
+     "o": [
+      "Американскую «Бэлл»",
+      "Японскую «Никон»",
+      "Немецкую «Лейку»",
+      "Русскую любительскую 8-мм «Кварц»"
+     ],
+     "a": 3,
+     "e": "В ролике: «ruska amaterska filmska kamera, 8 mm, marke Kvarc»."
+    },
+    {
+     "q": "Как он получил эту камеру?",
+     "o": [
+      "Мать купила её на память о снесённом доме",
+      "Подарил друг",
+      "Купил на свои деньги",
+      "Он выиграл"
+     ],
+     "a": 0,
+     "e": "В ролике: «rušili kuću... majka je pitala... šta želimo da nam kupi kao uspomenu na tu kuću... ja sam kao iz puške rekao: rusku filmsku kameru»."
+    },
+    {
+     "q": "Где он снял первые кадры?",
+     "o": [
+      "В Топчидерском парке",
+      "В школе",
+      "В зоопарке",
+      "На Калемегдане"
+     ],
+     "a": 0,
+     "e": "В ролике: «prve svoje snimke napravio baš u ovom parku, Topčiderskom parku»."
+    },
+    {
+     "q": "Чем документальное кино привлекает режиссёра?",
+     "o": [
+      "Простотой съёмок",
+      "Всегда есть доля неопределённости и непредвиденного",
+      "Короткими сроками",
+      "Высокими гонорарами"
+     ],
+     "a": 1,
+     "e": "В ролике: «koliko god da se vi pripremite za to snimanje, postoji neka doza neizvesnosti... uvek se desi nešto nepredviđeno»."
+    },
+    {
+     "q": "Каким своим фильмом он доволен полностью?",
+     "o": [
+      "«Круг»",
+      "«Хранители тишины»",
+      "Ни одним",
+      "«Гетто»"
+     ],
+     "a": 1,
+     "e": "В ролике: «„Čuvari tišine“, na primer, film o kojem mogu da kažem da je jedini film sa kojim sam potpuno zadovoljan»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ljudi su za sobom ostavljali *tragove* svog postojanja.",
+     "o": [
+      "вещи",
+      "следы",
+      "деньги",
+      "книги"
+     ],
+     "a": 1,
+     "e": "Trag — след."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kinooperater je sekao *traku* i lepio je.",
+     "o": [
+      "плёнку",
+      "ткань",
+      "верёвку",
+      "бумагу"
+     ],
+     "a": 0,
+     "e": "Traka — лента, плёнка."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Našao sam neki *objektiv*, verovatno od projektora.",
+     "o": [
+      "объектив",
+      "экран",
+      "лампочку",
+      "кабель"
+     ],
+     "a": 0,
+     "e": "Objektiv — объектив."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam tu u *izlogu* primetio jedan aparat.",
+     "o": [
+      "витрине",
+      "окне автобуса",
+      "зеркале",
+      "журнале"
+     ],
+     "a": 0,
+     "e": "Izlog — витрина магазина."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Veliku dozu *uverljivosti*.",
+     "o": [
+      "убедительности",
+      "красоты",
+      "опасности",
+      "скорости"
+     ],
+     "a": 0,
+     "e": "Uverljiv — убедительный, правдоподобный."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Uvek se desi nešto *nepredviđeno*.",
+     "o": [
+      "непредвиденное",
+      "смешное",
+      "дорогое",
+      "красивое"
+     ],
+     "a": 0,
+     "e": "Predvideti — предвидеть; nepredviđen — непредвиденный."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Život *osuđenika* u nekoliko zatvora u Srbiji.",
+     "o": [
+      "учеников",
+      "врачей",
+      "охранников",
+      "осуждённых"
+     ],
+     "a": 3,
+     "e": "Osuđenik — осуждённый."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad mi se čini da je to sterilno, zato što je sve *ispeglano*.",
+     "o": [
+      "нарисовано",
+      "испорчено",
+      "разбито",
+      "отглажено, выверено"
+     ],
+     "a": 3,
+     "e": "Ispeglati — отгладить; здесь «слишком гладко, выверено»."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери вид глагола",
+     "q": "Još od nastanka civilizacije ljudi su za sobom ___ tragove svog postojanja.",
+     "o": [
+      "ostavljali",
+      "ostavio",
+      "ostavljao",
+      "ostavili"
+     ],
+     "a": 0,
+     "e": "Действие повторялось веками — несовершенный вид: ostavljali. Ostavili — совершенный (один раз)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stanovao sam na Lekinom ___.",
+     "o": [
+      "brdom",
+      "brda",
+      "brdo",
+      "brdu"
+     ],
+     "a": 3,
+     "e": "Na на вопрос «где?» — местный падеж: na Lekinom brdu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pokušavao sam da napravim nešto što će biti neki ___.",
+     "o": [
+      "projektoru",
+      "projektora",
+      "projektorom",
+      "projektor"
+     ],
+     "a": 3,
+     "e": "Biti + именительный падеж: neki projektor."
+    },
+    {
+     "t": "Выбери форму глагола",
+     "q": "gde je danas knjižara, nekad je ___ prodavnica Cinefoto,",
+     "o": [
+      "bila",
+      "bilo",
+      "bio",
+      "bili"
+     ],
+     "a": 0,
+     "e": "Причастие согласуется с подлежащим: prodavnica — женский род, ед. ч., значит bila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Majka je pitala sestru i ___ šta želimo.",
+     "o": [
+      "ja",
+      "meni",
+      "mnom",
+      "mene"
+     ],
+     "a": 3,
+     "e": "Pitati кого — винительный падеж: sestru i mene."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film je prikazan na brojnim ___.",
+     "o": [
+      "festivalima",
+      "festivale",
+      "festivala",
+      "festivali"
+     ],
+     "a": 0,
+     "e": "Na на вопрос «где?» — местный падеж множественного числа: na festivalima."
+    },
+    {
+     "t": "Выбери форму глагола",
+     "q": "i naravno, s tim je ___ da ide i projektor i tako dalje.",
+     "o": [
+      "morali",
+      "morao",
+      "morala",
+      "moralo"
+     ],
+     "a": 1,
+     "e": "Причастие согласуется с подлежащим: projektor — мужской род, ед. ч., значит morao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Snimali smo tri dana u nekoj ___.",
+     "o": [
+      "kolibu",
+      "kolibi",
+      "koliba",
+      "kolibom"
+     ],
+     "a": 1,
+     "e": "U на вопрос «где?» — местный падеж: u kolibi."
+    }
+   ]
+  }
+ ]
+}

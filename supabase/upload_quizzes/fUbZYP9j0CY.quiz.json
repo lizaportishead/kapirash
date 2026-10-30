@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "О чём фильм «Лагерь смерти в Карашоке»?",
+     "o": [
+      "О путешествии в Осло",
+      "О страданиях сербов в Норвегии во время Второй мировой войны",
+      "О футболе",
+      "О современной Норвегии"
+     ],
+     "a": 1,
+     "e": "В ролике: «film... koji govori o stradalim Srbima tokom Drugog svetskog rata u Norveškoj»."
+    },
+    {
+     "q": "Сколько людей с территории бывшей Югославии вывезли в Норвегию?",
+     "o": [
+      "Около 40",
+      "Ровно 500",
+      "Более 100 000",
+      "Более 4000"
+     ],
+     "a": 3,
+     "e": "В ролике: «više od 4.000 ljudi sa teritorije bivše Jugoslavije... odvedeno u Norvešku»."
+    },
+    {
+     "q": "Какая часть узников не вернулась домой?",
+     "o": [
+      "Больше половины",
+      "Никто не остался",
+      "Каждый десятый",
+      "Почти все вернулись"
+     ],
+     "a": 0,
+     "e": "В ролике: «više od polovine nije se vratilo kući»."
+    },
+    {
+     "q": "Откуда режиссёр фильма?",
+     "o": [
+      "Из Швеции",
+      "Из Сербии",
+      "Из Норвегии",
+      "Из Германии"
+     ],
+     "a": 2,
+     "e": "В ролике: «režiser filma iz Norveške, Šetil Palmkvist»."
+    },
+    {
+     "q": "Какой лагерь в Нише снимают?",
+     "o": [
+      "Бубань",
+      "Красный Крест",
+      "Саймиште",
+      "Яйинци"
+     ],
+     "a": 1,
+     "e": "В ролике: «snimati po drugi put logor Crveni krst. Odavde je veliki broj logoraša zapravo poslat u smrt, u Norvešku.»."
+    },
+    {
+     "q": "Какой процент погибших в лагерях в Норвегии составляли сербы?",
+     "o": [
+      "Ни одного",
+      "Около 5 процентов",
+      "Половина",
+      "Более 95 процентов"
+     ],
+     "a": 3,
+     "e": "В ролике: «preko 95% stradalih u logorima u Norveškoj zapravo bili Srbi»."
+    },
+    {
+     "q": "Каким был лагерь в Карашоке?",
+     "o": [
+      "С тёплыми бараками",
+      "Лагерь открытого типа, холод до минус 50, мучения от охранников",
+      "Лагерь с хорошей едой",
+      "Курорт"
+     ],
+     "a": 1,
+     "e": "В ролике: «Logori u Karašoku su bili otvorenog tipa. Temperatura od minus 50 stepeni... brutalnih mučenja od strane stražara»."
+    },
+    {
+     "q": "Когда планируют завершить фильм?",
+     "o": [
+      "Следующим летом — к 80-летию со времён гибели узников",
+      "Через месяц",
+      "Уже завершён",
+      "Через 10 лет"
+     ],
+     "a": 0,
+     "e": "В ролике: «Plan je da se film završi sledeće godine na leto, jer u junu... 80 godina od stradanja»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Logor* smrti u Karašoku.",
+     "o": [
+      "остров",
+      "город",
+      "лагерь",
+      "завод"
+     ],
+     "a": 2,
+     "e": "Logor — лагерь."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Intervjui sa direktnim *očevicima* ovih stradanja.",
+     "o": [
+      "учёными",
+      "очевидцами",
+      "сыновьями",
+      "судьями"
+     ],
+     "a": 1,
+     "e": "Očevidac — очевидец; oči — глаза, vidjeti — видеть."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na nama je zadatak da to sačuvamo od *zaborava*.",
+     "o": [
+      "воды",
+      "пожара",
+      "забвения",
+      "холода"
+     ],
+     "a": 2,
+     "e": "Zaborav — забвение; zaboraviti — забыть."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da ne zaborave stradanje svojih *predaka*.",
+     "o": [
+      "друзей",
+      "соседей",
+      "предков",
+      "учителей"
+     ],
+     "a": 2,
+     "e": "Predak — предок."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Veliki broj *potomaka* se javio.",
+     "o": [
+      "музыкантов",
+      "потомков",
+      "историков",
+      "журналистов"
+     ],
+     "a": 1,
+     "e": "Potomak — потомок."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bilo je brutalnih *mučenja*.",
+     "o": [
+      "споров",
+      "разговоров",
+      "пыток",
+      "шуток"
+     ],
+     "a": 2,
+     "e": "Mučenje — пытка, мучение."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Od strane *stražara*.",
+     "o": [
+      "гостей",
+      "охранников",
+      "врачей",
+      "соседей"
+     ],
+     "a": 1,
+     "e": "Stražar — охранник, страж."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Položili smo *venac* zahvalnosti na njegovom grobu.",
+     "o": [
+      "венок",
+      "свечу",
+      "цветок",
+      "камень"
+     ],
+     "a": 0,
+     "e": "Venac — венок."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U toku je snimanje ___.",
+     "o": [
+      "filmom",
+      "filma",
+      "film",
+      "filmu"
+     ],
+     "a": 1,
+     "e": "Snimanje чего? Родительный падеж: snimanje filma."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Film govori o stradalim ___ tokom Drugog svetskog rata.",
+     "o": [
+      "Srbima",
+      "Srbi",
+      "Srba",
+      "Srbe"
+     ],
+     "a": 0,
+     "e": "O на вопрос «о ком?» требует местного падежа: o Srbima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Od 2008. ste u ___.",
+     "o": [
+      "Norveškom",
+      "Norveška",
+      "Norveškoj",
+      "Norvešku"
+     ],
+     "a": 2,
+     "e": "U на вопрос «где?» — местный падеж: u Norveškoj."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Više od 4.000 ljudi je odvedeno u ___.",
+     "o": [
+      "Norvešku",
+      "Norveška",
+      "Norveške",
+      "Norveškoj"
+     ],
+     "a": 0,
+     "e": "Odvesti u + винительный падеж: u Norvešku."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "i režiser filma ___ Norveške, Šetil Palmkvist,",
+     "o": [
+      "na",
+      "u",
+      "iz",
+      "kod"
+     ],
+     "a": 2,
+     "e": "Iz («из») + родительный падеж: iz Norveške — из Норвегии."
+    },
+    {
+     "t": "Выбери вид глагола",
+     "q": "Pre 14-15 godina ___ sam gospodina Šetila Palmkvista,",
+     "o": [
+      "upoznao",
+      "upoznavao",
+      "upoznala",
+      "upoznavala"
+     ],
+     "a": 0,
+     "e": "Знакомство произошло один раз в определённый момент — совершенный вид: upoznao. Говорит мужчина, поэтому не upoznala."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "jer je naboj emocija bio toliko ___ da smo i mi plakali zajedno sa svedocima.",
+     "o": [
+      "velike",
+      "velika",
+      "veliki",
+      "veliko"
+     ],
+     "a": 2,
+     "e": "Прилагательное согласуется с подлежащим: naboj — мужской род, ед. ч., значит veliki."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Oni koji nisu mogli da odgovore ___ koji su postavljeni, bili su ubijani.",
+     "o": [
+      "zadataka",
+      "zadatke",
+      "zadacima",
+      "zadaci"
+     ],
+     "a": 2,
+     "e": "Odgovoriti чему — дательный падеж: zadacima."
+    }
+   ]
+  }
+ ]
+}

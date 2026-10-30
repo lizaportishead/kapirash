@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is this recipe about?",
+     "o": [
+      "About apple pie",
+      "About pizza",
+      "About pancakes",
+      "About proja — cornbread"
+     ],
+     "a": 3,
+     "e": "In the video: \"Kako da proja ne bude suva, da bude savršeno mekana i sočna\" — how to keep the proja from being dry, so that it is perfectly soft and juicy."
+    },
+    {
+     "q": "What is the main secret?",
+     "o": [
+      "Exact proportions",
+      "Expensive cheese",
+      "Long kneading",
+      "Special flour"
+     ],
+     "a": 0,
+     "e": "In the video: \"Tajna je u tačnim merama\" — the secret is in exact measurements."
+    },
+    {
+     "q": "What should be done with the pieces of cheese?",
+     "o": [
+      "Leave the pieces",
+      "Mash into a paste",
+      "Remove them",
+      "Freeze them"
+     ],
+     "a": 0,
+     "e": "In the video: \"slobodno ostavite ovako komadiće sira\" — feel free to leave the pieces of cheese like this."
+    },
+    {
+     "q": "How should the proja be baked?",
+     "o": [
+      "An hour at 150",
+      "40 minutes at 220",
+      "5 minutes at 250",
+      "10 minutes at 200, then 20 minutes at 180"
+     ],
+     "a": 3,
+     "e": "In the video: \"Prvih 10 minuta pecite na 200 stepeni, a onda smanjite na 180 i pecite još 20 minuta\" — bake for the first 10 minutes at 200 degrees, then reduce to 180 and bake for another 20 minutes."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kako da proja ne bude *suva*?",
+     "o": [
+      "unleavened",
+      "dry",
+      "salty",
+      "hot"
+     ],
+     "a": 1,
+     "e": "Suv — dry."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da bude mekana, sočna i *vazdušasta*.",
+     "o": [
+      "airy",
+      "heavy",
+      "dense",
+      "fatty"
+     ],
+     "a": 0,
+     "e": "Vazdušast — airy; vazduh — air."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pomešajte 12 *kašika* kukuruznog brašna.",
+     "o": [
+      "handfuls",
+      "glasses",
+      "grams",
+      "spoons"
+     ],
+     "a": 3,
+     "e": "Kašika — a spoon."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvih 10 minuta *pecite* na 200 stepeni.",
+     "o": [
+      "chill (imperative)",
+      "boil (imperative)",
+      "bake (imperative)",
+      "fry (imperative)"
+     ],
+     "a": 2,
+     "e": "Peći — to bake; the form pecite is the imperative."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pomešajte 12 ___ kukuruznog brašna.",
+     "o": [
+      "kašike",
+      "kašiku",
+      "kašikama",
+      "kašika"
+     ],
+     "a": 3,
+     "e": "After the number 12 the genitive plural is used: kašika."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Prvih 10 minuta pecite ___ 200 stepeni,",
+     "o": [
+      "na",
+      "za",
+      "od",
+      "u"
+     ],
+     "a": 0,
+     "e": "Peći na + locative (temperature): na 200 stepeni."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "a onda ___ na 180 i pecite još 20 minuta.",
+     "o": [
+      "smanjujte",
+      "smanjivao",
+      "smanjite",
+      "smanjio"
+     ],
+     "a": 2,
+     "e": "\"And then\" is the next single step, so perfective: smanjite. Smanjujte is imperfective (ongoing)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Uživajte u najmekšoj i najsočnijoj ___.",
+     "o": [
+      "proja",
+      "projom",
+      "proju",
+      "proji"
+     ],
+     "a": 3,
+     "e": "Uživati in what — locative case: u proji."
+    }
+   ]
+  }
+ ]
+}

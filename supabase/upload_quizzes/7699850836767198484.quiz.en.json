@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What question opens the clip?",
+     "o": [
+      "Who does the House of Flowers belong to?",
+      "Who built the House of Flowers?",
+      "How much is entry?",
+      "When did it open?"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kome pripada Kuća cveća?\" — Who does the House of Flowers belong to?"
+    },
+    {
+     "q": "What kind of land was the House of Flowers built on?",
+     "o": [
+      "Private",
+      "State",
+      "Church",
+      "Military"
+     ],
+     "a": 0,
+     "e": "In the video: \"izgrađena na privatnom zemljištu\" — built on private land."
+    },
+    {
+     "q": "Who owned the land before the war?",
+     "o": [
+      "The engineer and mayor Miloš Savčić",
+      "The king",
+      "The church",
+      "A merchant"
+     ],
+     "a": 0,
+     "e": "In the video: \"pripadalo čuvenom inženjeru i gradonačelniku Beograda Milošu Savčiću\" — belonged to the famous engineer and mayor of Belgrade Miloš Savčić."
+    },
+    {
+     "q": "In what year did the state take his family's property?",
+     "o": [
+      "1918",
+      "1946",
+      "1960",
+      "1999"
+     ],
+     "a": 1,
+     "e": "In the video: \"Njegovoj porodici država je oduzela imovinu 1946. godine\" — the state confiscated his family's property in 1946."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kuća cveća je izgrađena na privatnom *zemljištu*.",
+     "o": [
+      "land, plot",
+      "roof",
+      "street",
+      "river"
+     ],
+     "a": 0,
+     "e": "Zemljište — a plot of land; zemljištu — loc. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "koje je pre Drugog svetskog rata pripadalo *čuvenom* inženjeru",
+     "o": [
+      "famous",
+      "young",
+      "poor",
+      "local"
+     ],
+     "a": 0,
+     "e": "Čuven — famous, renowned."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Njegovoj porodici država je *oduzela* imovinu 1946. godine",
+     "o": [
+      "confiscated",
+      "bought",
+      "returned",
+      "sold"
+     ],
+     "a": 0,
+     "e": "Oduzeti — to take away, confiscate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "koje je pre *Drugog* svetskog rata pripadalo čuvenom inženjeru",
+     "o": [
+      "Second",
+      "First",
+      "Third",
+      "Cold"
+     ],
+     "a": 0,
+     "e": "Drugi — second; Drugog — gen. masc."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kome ___ Kuća cveća?",
+     "o": [
+      "pripada",
+      "pripadaš",
+      "pripadam",
+      "pripadaju"
+     ],
+     "a": 0,
+     "e": "The subject Kuća is 3rd pers. sg.: pripada."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kuća ___ je izgrađena na privatnom zemljištu.",
+     "o": [
+      "cveće",
+      "cveća",
+      "cvetu",
+      "cvećem"
+     ],
+     "a": 1,
+     "e": "The name Kuća cveća — \"House of Flowers\", genitive: cveća."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "gradonačelniku ___ Milošu Savčiću",
+     "o": [
+      "Beograd",
+      "Beograda",
+      "Beogradu",
+      "Beogradom"
+     ],
+     "a": 1,
+     "e": "Gradonačelnik (of what?) takes the genitive: Beograda."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Njegovoj ___ država je oduzela imovinu",
+     "o": [
+      "porodica",
+      "porodici",
+      "porodicu",
+      "porodice"
+     ],
+     "a": 1,
+     "e": "Oduzeti (from whom?) takes the dative: porodici."
+    }
+   ]
+  }
+ ]
+}

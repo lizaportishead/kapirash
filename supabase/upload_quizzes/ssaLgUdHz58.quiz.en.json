@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Who is coming to visit the host?",
+     "o": [
+      "Parents and a sister",
+      "A brother with his family: two adults and two children",
+      "Work colleagues",
+      "Neighbors"
+     ],
+     "a": 1,
+     "e": "In the video: \"Danas mi dolaze gosti: dve odrasle osobe i dvoje dece\" — today I'm having guests: two adults and two children."
+    },
+    {
+     "q": "How does she want to set out the food?",
+     "o": [
+      "A regular table",
+      "A buffet on the kitchen counter",
+      "A picnic in the yard",
+      "A separate plate for each"
+     ],
+     "a": 1,
+     "e": "In the video: \"ne postavljam standardno sto, nego pult bude kao švedski sto\" — I'm not setting up a standard table, but the counter will be like a buffet."
+    },
+    {
+     "q": "What is the tortilla dough made from, and with what?",
+     "o": [
+      "Flour, milk and yeast",
+      "Flour, yogurt, baking powder and a little salt",
+      "Flour, water and eggs",
+      "Potatoes and flour"
+     ],
+     "a": 1,
+     "e": "In the video: \"ide brašno, jogurt, prašak za pecivo i malo soli\" — in goes flour, yogurt, baking powder and a little salt."
+    },
+    {
+     "q": "By what method does she measure the ingredients?",
+     "o": [
+      "Exactly by the scale",
+      "By a recipe from a book",
+      "\"By eye\"",
+      "By an app"
+     ],
+     "a": 2,
+     "e": "In the video: \"Danas idemo odokativnom metodom\" — today we're going by the \"by-eye\" method."
+    },
+    {
+     "q": "What meat did she take instead of turkey?",
+     "o": [
+      "Lamb",
+      "Beef",
+      "Chicken",
+      "Pork"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ja sam uzela juneće meso\" — I took beef."
+    },
+    {
+     "q": "Why is the onion and pepper mixture put in a colander?",
+     "o": [
+      "To cool down",
+      "To release water so the meat isn't watery",
+      "To remove the bitterness",
+      "To make it softer"
+     ],
+     "a": 1,
+     "e": "In the video: \"da ne bude dosta vodenasto ovo meso\" — so that this meat isn't too watery."
+    },
+    {
+     "q": "How long does the meat bake in the oven?",
+     "o": [
+      "About twenty minutes",
+      "About forty minutes",
+      "Two hours",
+      "About ten minutes"
+     ],
+     "a": 1,
+     "e": "In the video: \"To se peče nekih četrdeset minuta\" — it bakes for about forty minutes."
+    },
+    {
+     "q": "What did she decide to add to the salad, although the recipe doesn't call for it?",
+     "o": [
+      "Garlic",
+      "Spring onion",
+      "Cheese",
+      "An apple"
+     ],
+     "a": 1,
+     "e": "In the video: \"ali može malo mladog luka\" — but a little spring onion is fine."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Idem u *špajz* po brašno.",
+     "o": [
+      "cellar",
+      "pantry",
+      "store",
+      "cellar"
+     ],
+     "a": 1,
+     "e": "Špajz — a food pantry."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Treba mi jedna velika *činija*.",
+     "o": [
+      "frying pan",
+      "saucepan",
+      "bowl",
+      "plate"
+     ],
+     "a": 2,
+     "e": "Činija — a bowl."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Uzmite veliki *pleh* od rerne.",
+     "o": [
+      "baking tray",
+      "tray",
+      "lid",
+      "cake pan"
+     ],
+     "a": 0,
+     "e": "Pleh — a baking tray."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Moram da *iseckam* luk i papriku.",
+     "o": [
+      "I will boil",
+      "I will slice",
+      "I will buy",
+      "I will peel"
+     ],
+     "a": 1,
+     "e": "Iseckati — to slice, to chop."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo testo se ne *lepi* za ruke.",
+     "o": [
+      "sticks",
+      "melts",
+      "dries out",
+      "burns"
+     ],
+     "a": 0,
+     "e": "Lepiti se — to stick."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Smesa stoji u *zamrzivaču* šest meseci.",
+     "o": [
+      "in the refrigerator",
+      "in the oven",
+      "in the freezer",
+      "in the pantry"
+     ],
+     "a": 2,
+     "e": "Zamrzivač — a freezer, a freezer compartment."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dodajte malo *sirćeta* i soli.",
+     "o": [
+      "of oil",
+      "of vinegar",
+      "of sugar",
+      "of pepper"
+     ],
+     "a": 1,
+     "e": "Sirće — vinegar."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Koliko god, nadam se da vam je bio od *koristi*.",
+     "o": [
+      "of benefit",
+      "of joy",
+      "to time",
+      "of boredom"
+     ],
+     "a": 0,
+     "e": "Od koristi — \"useful\": biti od koristi."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Idem u špajz po ___.",
+     "o": [
+      "brašno",
+      "brašna",
+      "brašnom",
+      "brašnu"
+     ],
+     "a": 0,
+     "e": "Po + accusative case: \"to fetch something\" — po brašno."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "Lepinje sam ___.",
+     "o": [
+      "napravili",
+      "napravio",
+      "napravila",
+      "napravilo"
+     ],
+     "a": 2,
+     "e": "A woman is speaking (sam + feminine participle): napravila. Napravio is masculine, napravili is plural."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mešamo ga sa malo limunovog ___.",
+     "o": [
+      "sok",
+      "soka",
+      "sokom",
+      "soku"
+     ],
+     "a": 1,
+     "e": "Malo + genitive case: malo limunovog soka."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Salata ide u ___ da se ohladi.",
+     "o": [
+      "frižideru",
+      "frižideri",
+      "frižider",
+      "frižidera"
+     ],
+     "a": 2,
+     "e": "U + accusative case (where to?): u frižider."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Smesu formiramo ___ ili oklagijom.",
+     "o": [
+      "ruke",
+      "rukama",
+      "rukom",
+      "ruka"
+     ],
+     "a": 1,
+     "e": "With what? — instrumental case: rukama ili oklagijom."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mleveno meso izručimo na ___.",
+     "o": [
+      "površina",
+      "površinu",
+      "površine",
+      "površini"
+     ],
+     "a": 1,
+     "e": "Na + accusative case (where to?): na površinu."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Uzmete i ___ u tortilju domaću koju ste napravili.",
+     "o": [
+      "ubaciti",
+      "ubacite",
+      "ubacujem",
+      "ubacujete"
+     ],
+     "a": 1,
+     "e": "Consecutive one-off actions: uzmete i ubacite — perfective. Ubacujete is imperfective (ongoing)."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Zahvaljujem vam se ___ podršku.",
+     "o": [
+      "za",
+      "od",
+      "bez",
+      "kod"
+     ],
+     "a": 0,
+     "e": "Zahvaliti se za nešto — to thank for something: za + accusative."
+    }
+   ]
+  }
+ ]
+}

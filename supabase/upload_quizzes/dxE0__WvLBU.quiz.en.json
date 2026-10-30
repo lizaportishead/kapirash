@@ -1,0 +1,375 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "How many settlements did the guys decide to visit?",
+     "o": [
+      "6",
+      "8",
+      "10",
+      "12"
+     ],
+     "a": 2,
+     "e": "In the video: \"Obilazimo deset naselja sa najčudnijim imenima\" — we're visiting ten settlements with the strangest names."
+    },
+    {
+     "q": "What do they do in each village?",
+     "o": [
+      "Interview the residents",
+      "Stick a sticker on the sign and take a photo",
+      "Buy a souvenir",
+      "Film the village with a drone"
+     ],
+     "a": 1,
+     "e": "In the video: \"Lepimo nalepnicu i slikamo se ispred znaka\" — we stick a sticker and take a photo in front of the sign."
+    },
+    {
+     "q": "Who is Kepawoz?",
+     "o": [
+      "A driver",
+      "A resident of the village of Mozgovo",
+      "A cameraman",
+      "A YouTuber from Kruševac who drew the stickers"
+     ],
+     "a": 3,
+     "e": "In the video: \"Ovo je Kepawoz, jutjuber iz Kruševca\" — the author asked him to draw the stickers."
+    },
+    {
+     "q": "Why is David behind the wheel?",
+     "o": [
+      "The trip was his idea",
+      "It's his car",
+      "He's the only one who can drive",
+      "He lost a bet"
+     ],
+     "a": 0,
+     "e": "In the video: \"Budući da je ovo Davidova ideja, on vozi\" — since this is David's idea, he drives."
+    },
+    {
+     "q": "Where are most of the villages on the list located?",
+     "o": [
+      "In the north of Serbia",
+      "Near Belgrade",
+      "In the south of Serbia",
+      "Near the border with Bosnia"
+     ],
+     "a": 2,
+     "e": "In the video: \"Skontao sam da su skoro sva sela na jugu Srbije\" — I figured out that almost all the villages are in the south of Serbia."
+    },
+    {
+     "q": "Why did the guys regret what they had thought about the shop?",
+     "o": [
+      "It was expensive there",
+      "The shop assistant turned out to be very nice and friendly",
+      "The shop turned out to be closed",
+      "There was no food there"
+     ],
+     "a": 1,
+     "e": "In the video: \"Žena koja radi je bila toliko fina i ljubazna da smo se odmah pokajali\" — the woman who works there was so nice and kind that we immediately felt sorry."
+    },
+    {
+     "q": "What happened to the car on the way?",
+     "o": [
+      "It ran out of gas",
+      "A tire got punctured",
+      "It got stuck in the mud",
+      "The engine overheated"
+     ],
+     "a": 3,
+     "e": "In the video: \"Auto nam se malo pregrejao. Krenula je voda u hladnjaku da kipi\" — our car overheated a little. The water in the radiator started to boil."
+    },
+    {
+     "q": "Why couldn't the \"Dupci\" sticker be put up at first?",
+     "o": [
+      "The navigator led uphill, where there was neither a road nor a sign",
+      "The sticker got lost",
+      "The locals forbade it",
+      "It was too dark"
+     ],
+     "a": 0,
+     "e": "In the video: \"Google mape su nas vodile u brdo. Niti ima znaka, niti ima puta\" — Google Maps led us up a hill. There's neither a sign nor a road."
+    },
+    {
+     "q": "Why did the \"Kurići\" sticker end up on the sign of another village?",
+     "o": [
+      "They mixed up the road",
+      "The sign was too high",
+      "Kurići is part of a village and has no sign of its own",
+      "The sign was stolen"
+     ],
+     "a": 2,
+     "e": "In the video: \"Kurići su samo neko naselje pored sela Korlače\" — it's part of another village, with no sign of its own. The sticker was put on the Piskanje sign."
+    },
+    {
+     "q": "Why were the last two villages filmed with a lamp?",
+     "o": [
+      "It looks better on camera",
+      "By the time they arrived, it had already gotten dark",
+      "The headlights broke",
+      "Kepa asked for it"
+     ],
+     "a": 1,
+     "e": "In the video: \"Malo pada mrak, tako da preostala dva sela ćemo snimiti po mraku\" — it's getting a bit dark, so we'll film the remaining two villages in the dark."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sada lepimo *nalepnicu* i slikamo se ispred znaka.",
+     "o": [
+      "postcard",
+      "sticker",
+      "plaque",
+      "note"
+     ],
+     "a": 1,
+     "e": "Nalepnica — a sticker, from the verb lepiti \"to stick\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Skontao sam da su *skoro* sva sela na jugu Srbije.",
+     "o": [
+      "soon",
+      "exactly",
+      "almost",
+      "only"
+     ],
+     "a": 2,
+     "e": "False friend: skoro means \"almost\", not \"soon\". \"Soon\" in Serbian is uskoro."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na putu do sledećeg sela smo malo *ogladneli*.",
+     "o": [
+      "got hungry",
+      "got tired",
+      "got cold",
+      "got lost"
+     ],
+     "a": 0,
+     "e": "Ogladneti — to get hungry, from gladan \"hungry\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svratili smo u *najjeziviju* prodavnicu koju smo ikada videli.",
+     "o": [
+      "the cheapest",
+      "the smallest",
+      "the best known",
+      "the creepiest"
+     ],
+     "a": 3,
+     "e": "Jeziv — creepy, from jeza \"a shiver, a chill\". The prefix naj- gives the superlative."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Odmah smo se pokajali zbog takvog *mišljenja*.",
+     "o": [
+      "of thinking",
+      "of opinion",
+      "of behavior",
+      "of decision"
+     ],
+     "a": 1,
+     "e": "False friend: mišljenje means \"opinion\", not \"thinking\". From misliti \"to think, to consider\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Auto nam se malo *pregrejao*.",
+     "o": [
+      "broke down",
+      "got stuck",
+      "overheated",
+      "stalled"
+     ],
+     "a": 2,
+     "e": "Pregrejati se — to overheat: pre- \"over-\" and grejati \"to heat\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nakon sat i po puta, *konačno* smo stigli.",
+     "o": [
+      "finally",
+      "of course",
+      "by chance",
+      "quickly"
+     ],
+     "a": 0,
+     "e": "False friend: konačno means \"finally\", not \"of course\". \"Of course\" in Serbian is naravno."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovamo levo je *skretanje* za selo Dupci.",
+     "o": [
+      "sign",
+      "turn",
+      "detour",
+      "stop"
+     ],
+     "a": 1,
+     "e": "Skretanje — a turn, from skrenuti \"to turn\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovde David i ja pripadamo jer smo *pametni*.",
+     "o": [
+      "memorable",
+      "local",
+      "brave",
+      "smart"
+     ],
+     "a": 3,
+     "e": "False friend: pametan means \"smart\", not \"memorable\". Pamet means \"intellect\"."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa smo *odustali* i krenuli ka narednom selu.",
+     "o": [
+      "fell behind",
+      "rested",
+      "gave up on the idea",
+      "stopped"
+     ],
+     "a": 2,
+     "e": "Odustati — to give up on something planned, to surrender. Don't confuse it with ostati \"to stay\"."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Konjino je jedno od naselja sa najsmešnijim ___ u Srbiji.",
+     "o": [
+      "imena",
+      "imenima",
+      "imenom",
+      "ime"
+     ],
+     "a": 1,
+     "e": "After sa (\"with\") the instrumental case is needed. For ime in the plural it is imenima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Cela Srbija je puna ___ sa glupim imenima.",
+     "o": [
+      "selo",
+      "selima",
+      "sela",
+      "selu"
+     ],
+     "a": 2,
+     "e": "Pun (\"full of something\") requires the genitive case. The plural of selo is sela."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je jutjuber koji je stajao sa ___ u Trouglu.",
+     "o": [
+      "mene",
+      "meni",
+      "ja",
+      "mnom"
+     ],
+     "a": 3,
+     "e": "After sa the instrumental case is needed: ja → mnom. Sa mnom — \"with me\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Skoro sva sela su na ___ Srbije.",
+     "o": [
+      "jugu",
+      "jug",
+      "juga",
+      "jugom"
+     ],
+     "a": 0,
+     "e": "The question \"where?\" is answered by na with the locative case: jug → na jugu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Krenuli smo dalje, spremni da skejtujemo u ___.",
+     "o": [
+      "Kruševac",
+      "Kruševca",
+      "Kruševcu",
+      "Kruševcem"
+     ],
+     "a": 2,
+     "e": "\"Where?\" — u with the locative case: u Kruševcu (the fleeting a drops out). U Kruševac would be \"where to?\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Skontao sam da smo prošli pored ___.",
+     "o": [
+      "on",
+      "njega",
+      "njemu",
+      "njim"
+     ],
+     "a": 1,
+     "e": "Pored (\"past, next to\") requires the genitive case: on → njega."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "Slikamo se ___ svakog natpisa na ulazu.",
+     "o": [
+      "iza",
+      "između",
+      "ispred",
+      "preko"
+     ],
+     "a": 2,
+     "e": "Ispred — \"in front of\": they are photographed in front of the sign. Iza — \"behind\", između — \"between\", preko — \"across\"."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "Prvo selo je udaljeno samo 30 km ___ našeg grada.",
+     "o": [
+      "od",
+      "iz",
+      "sa",
+      "do"
+     ],
+     "a": 0,
+     "e": "Udaljen od — \"distant from\", followed by the genitive case. Do would be \"up to\": 30 km do grada."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "Očekujem da mu se zahvalite ___ ove nalepnice.",
+     "o": [
+      "o",
+      "od",
+      "sa",
+      "za"
+     ],
+     "a": 3,
+     "e": "Zahvaliti se za — \"to thank for\", followed by the accusative case."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "Preostala dva sela ćemo snimiti ___ mraku.",
+     "o": [
+      "na",
+      "po",
+      "za",
+      "od"
+     ],
+     "a": 1,
+     "e": "Po mraku — \"in the dark\": a fixed expression, po with the locative case."
+    }
+   ]
+  }
+ ]
+}

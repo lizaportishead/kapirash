@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Что такое CFF?",
+     "o": [
+      "Сила зрения",
+      "Острота слуха",
+      "Частота, при которой существо перестаёт замечать мерцание света",
+      "Скорость бега животного"
+     ],
+     "a": 2,
+     "e": "В ролике: «kritičnu frekvenciju fuzije treptanja... koliko brzo svetlo mora da treperi kako bi neko živo biće prestalo da primećuje treptanje.»."
+    },
+    {
+     "q": "От чего зависит CFF?",
+     "o": [
+      "От размера глаз",
+      "От цвета шерсти",
+      "От возраста",
+      "От скорости метаболизма"
+     ],
+     "a": 3,
+     "e": "В ролике: «ono što diktira koliki će nam biti CFF je brzina našeg metabolizma»."
+    },
+    {
+     "q": "Почему собака не видит видео на телефоне с частотой 60 Гц?",
+     "o": [
+      "Её CFF ниже 20 Гц",
+      "Её CFF выше 80 Гц",
+      "Она видит только чёрно-белое",
+      "Она не смотрит на экран"
+     ],
+     "a": 1,
+     "e": "В ролике: «psi vide sa CFF-om većim od 80 Hz»."
+    },
+    {
+     "q": "Какие цвета видят собаки?",
+     "o": [
+      "Красный и зелёный",
+      "Только чёрный и белый",
+      "Синий и жёлтый",
+      "Все как человек"
+     ],
+     "a": 2,
+     "e": "В ролике: «psi mogu videti manji spektar boja, odnosno samo plavu i žutu boju»."
+    },
+    {
+     "q": "Чем кошки отличаются по CFF от людей?",
+     "o": [
+      "Он такой же",
+      "У них он выше, чем у собак",
+      "Его у них нет",
+      "У них он ниже — 50 Гц, и они видят нас немного ускоренно"
+     ],
+     "a": 3,
+     "e": "В ролике: «mačke imaju manji CFF čak i od nas... 50 Hz. Znači, mačke nas vide malo ubrzano»."
+    },
+    {
+     "q": "Кого автор называет победителем по зрению?",
+     "o": [
+      "Рептилий",
+      "Птиц",
+      "Грызунов",
+      "Собак"
+     ],
+     "a": 1,
+     "e": "В ролике: «Imaju i dobar periferni vid, što ih čini definitivnim pobednikom što se tiče vida»."
+    },
+    {
+     "q": "От чего зависит CFF у рептилий?",
+     "o": [
+      "От температуры",
+      "От размера",
+      "От сытости",
+      "От времени суток"
+     ],
+     "a": 0,
+     "e": "В ролике: «sa promenom temperature menja i brzina njihovog metabolizma. Samim tim i CFF.»."
+    },
+    {
+     "q": "Какое животное живёт очень долго и имеет CFF всего 10 Гц?",
+     "o": [
+      "Колибри",
+      "Сухопутная черепаха",
+      "Слон",
+      "Хомяк"
+     ],
+     "a": 1,
+     "e": "В ролике: «kopnena kornjača... CFF od samo 10 Hz»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kako bi *treptanje* sijalice bilo neprimetno.",
+     "o": [
+      "свечение",
+      "жужжание",
+      "мерцание",
+      "нагрев"
+     ],
+     "a": 2,
+     "e": "Treptanje — мигание, мерцание; treptati — мигать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A sve ostalo prepoznaju izvanrednim *njuhom*.",
+     "o": [
+      "вкусом",
+      "слухом",
+      "зрением",
+      "нюхом"
+     ],
+     "a": 3,
+     "e": "Njuh — нюх."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vide dosta *oštrije* od pasa.",
+     "o": [
+      "темнее",
+      "медленнее",
+      "чётче",
+      "дальше"
+     ],
+     "a": 2,
+     "e": "Oštar — острый, чёткий; oštrije — острее, чётче."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zanima vas kako vide *glodari*.",
+     "o": [
+      "рептилии",
+      "насекомые",
+      "птицы",
+      "грызуны"
+     ],
+     "a": 3,
+     "e": "Glodar — грызун; glodati — грызть."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mačke nas vide malo *ubrzano*.",
+     "o": [
+      "размыто",
+      "ускоренно",
+      "тёмным",
+      "замедленно"
+     ],
+     "a": 1,
+     "e": "Ubrzati — ускорить; ubrzano — ускоренно."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hrčci i *veverice* idu na oko 80 Hz.",
+     "o": [
+      "белки",
+      "зайцы",
+      "мыши",
+      "ёжики"
+     ],
+     "a": 0,
+     "e": "Veverica — белка."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pčelama pomaže da lakše nađu *cvet*.",
+     "o": [
+      "мёд",
+      "цветок",
+      "улей",
+      "воду"
+     ],
+     "a": 1,
+     "e": "Cvet — цветок."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Životinja koja živi veoma dugo je kopnena *kornjača*.",
+     "o": [
+      "рыба",
+      "черепаха",
+      "змея",
+      "ящерица"
+     ],
+     "a": 1,
+     "e": "Kornjača — черепаха."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "Iako odlično vide u mraku, vid im nije ___ strana,",
+     "o": [
+      "najjači",
+      "najjača",
+      "najjače",
+      "najjaču"
+     ],
+     "a": 1,
+     "e": "Прилагательное согласуется с существительным: strana — женский род, ед. ч., значит najjača."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ljudi imaju tri vrste ___.",
+     "o": [
+      "fotoreceptore",
+      "fotoreceptorima",
+      "fotoreceptora",
+      "fotoreceptori"
+     ],
+     "a": 2,
+     "e": "Vrste чего? Родительный падеж множественного числа: fotoreceptora."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "Fokus im je mnogo ___ od ljudskog",
+     "o": [
+      "bolja",
+      "bolje",
+      "bolji",
+      "bolju"
+     ],
+     "a": 2,
+     "e": "Прилагательное согласуется с подлежащим: fokus — мужской род, значит bolji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Skoro sve ___ imaju čak 4 vrste fotoreceptora.",
+     "o": [
+      "ptica",
+      "ptici",
+      "pticama",
+      "ptice"
+     ],
+     "a": 3,
+     "e": "Подлежащее — именительный падеж множественного числа: ptice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zato u najmračnijim ___ vide izvanredno dobro.",
+     "o": [
+      "prostorija",
+      "prostorijom",
+      "prostorije",
+      "prostorijama"
+     ],
+     "a": 3,
+     "e": "U на вопрос «где?» — местный падеж мн. ч.: prostorijama."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ribe koje žive u ___ vodama.",
+     "o": [
+      "dubokih",
+      "dubokim",
+      "duboko",
+      "duboke"
+     ],
+     "a": 1,
+     "e": "Прилагательное согласуется с vodama в местном падеже множественного числа: dubokim."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kod ___ je skoro sve drugačije.",
+     "o": [
+      "insektima",
+      "insekti",
+      "insekte",
+      "insekata"
+     ],
+     "a": 3,
+     "e": "Kod («у») требует родительного падежа: kod insekata."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Oni vide plavu, zelenu i ___ boju.",
+     "o": [
+      "ultraljubičastom",
+      "ultraljubičasta",
+      "ultraljubičastu",
+      "ultraljubičaste"
+     ],
+     "a": 2,
+     "e": "Прилагательное в винительном падеже женского рода, как и boju: ultraljubičastu."
+    }
+   ]
+  }
+ ]
+}

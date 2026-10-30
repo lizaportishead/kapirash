@@ -1,0 +1,200 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What used to be in this place?",
+     "o": [
+      "A flower bed",
+      "A manhole shaft",
+      "A pool",
+      "A garage"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ovde je bila šahta\" — there used to be a manhole here."
+    },
+    {
+     "q": "Who fell into the manhole?",
+     "o": [
+      "Čičko",
+      "The cameraman Miki",
+      "Aleksandar",
+      "Grandma Zorka"
+     ],
+     "a": 1,
+     "e": "In the video: \"upao nam je samo jedan naš drug\" — only one of our friends fell in (the cameraman Miki)."
+    },
+    {
+     "q": "What is left to bring into the house?",
+     "o": [
+      "Carpets",
+      "Flowers",
+      "Wooden furniture",
+      "Appliances"
+     ],
+     "a": 3,
+     "e": "In the video: \"Još nam je ostalo da unesemo belu tehniku\" — we still have to bring in the appliances."
+    },
+    {
+     "q": "Which cookware brands are mentioned?",
+     "o": [
+      "Metalac and Sigma",
+      "IKEA and Lidl",
+      "Samsung and LG",
+      "Bosch and Gorenje"
+     ],
+     "a": 0,
+     "e": "In the video: \"Nemamo samo Metalac, imamo i Sigmu\" — we don't have only Metalac, we also have Sigma."
+    },
+    {
+     "q": "Who helped this week?",
+     "o": [
+      "The whole street",
+      "Nobody",
+      "Only the crew",
+      "The army"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ogromnu pomoć cele ulice smo imali\" — the whole street helped us enormously."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovde je bila *šahta*.",
+     "o": [
+      "manhole",
+      "door",
+      "stairs",
+      "stove"
+     ],
+     "a": 0,
+     "e": "Šahta — manhole."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Naš *snimatelj* Miki je upao.",
+     "o": [
+      "cameraman",
+      "driver",
+      "cook",
+      "builder"
+     ],
+     "a": 0,
+     "e": "Snimatelj — cameraman."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo *posuđe* i pokućstvo za kuhinju.",
+     "o": [
+      "clothes",
+      "books",
+      "dishes",
+      "toys"
+     ],
+     "a": 2,
+     "e": "Posuđe — dishes."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve ovo je *pokućstvo* za kuhinju.",
+     "o": [
+      "tools",
+      "clothes",
+      "household items",
+      "furniture"
+     ],
+     "a": 2,
+     "e": "Pokućstvo — household items."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ove nedelje smo baš *jeli*.",
+     "o": [
+      "ran",
+      "sang",
+      "slept",
+      "ate"
+     ],
+     "a": 3,
+     "e": "Jesti — eat, jeli — ate."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Hvala Bogu da sve ide kako ___.",
+     "o": [
+      "trebaš",
+      "trebaju",
+      "trebam",
+      "treba"
+     ],
+     "a": 3,
+     "e": "Impersonal treba — «as it should»."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Čeka me moj drug sa ___ kutija.",
+     "o": [
+      "gomila",
+      "gomile",
+      "gomilu",
+      "gomilom"
+     ],
+     "a": 3,
+     "e": "S + instrumental: sa gomilom."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ smo do samog kraja.",
+     "o": [
+      "Stizali",
+      "Stigao",
+      "Stizao",
+      "Stigli"
+     ],
+     "a": 3,
+     "e": "Reached the end — a result, so perfective: stigli. Stizali is imperfective. Smo is plural."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ti onda ređaj ___.",
+     "o": [
+      "tamu",
+      "tama",
+      "tame",
+      "tamo"
+     ],
+     "a": 3,
+     "e": "Tamo — the adverb «there»."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Metalac, paket tiganja ___ Tefala, sve što volimo.",
+     "o": [
+      "za",
+      "u",
+      "od",
+      "na"
+     ],
+     "a": 2,
+     "e": "Od + genitive — \"from, made by\": od Tefala."
+    }
+   ]
+  }
+ ]
+}

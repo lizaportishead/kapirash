@@ -1,0 +1,176 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What theory is the video about?",
+     "o": [
+      "The theory of fate",
+      "The theory of the invisible thread",
+      "The theory of the Big Bang",
+      "The theory of six handshakes"
+     ],
+     "a": 1,
+     "e": "In the video: \"Jeste čuli za teoriju nevidljive žice?\" — have you heard of the theory of the invisible thread?"
+    },
+    {
+     "q": "What does this theory claim?",
+     "o": [
+      "Love does not exist",
+      "We are connected to people long before we meet them",
+      "We meet people by chance",
+      "Friends are not needed"
+     ],
+     "a": 1,
+     "e": "In the video: \"smo sa nekim ljudima povezani mnogo pre nego što uopšte znamo da oni postoje\" — we are connected with some people long before we even know they exist."
+    },
+    {
+     "q": "Where might the person who will become the most important one be sitting?",
+     "o": [
+      "In the next room",
+      "In your building",
+      "In a café where you have never been",
+      "In an office"
+     ],
+     "a": 2,
+     "e": "In the video: \"sedi u nekom kafiću u kom ti nikada nisi ni bio\" — sitting in some café where you've never been."
+    },
+    {
+     "q": "What can connect the thread?",
+     "o": [
+      "A letter",
+      "The most ordinary decision — to go or travel somewhere",
+      "A lottery",
+      "A call from an unknown number"
+     ],
+     "a": 1,
+     "e": "In the video: \"jedna obična odluka, recimo da odeš negde, da izađeš tamo, da otputuješ negde, da tu žicu poveže\" — one ordinary decision, say to go somewhere, to go out there, to travel somewhere, can connect that thread."
+    },
+    {
+     "q": "What does the author advise not to think?",
+     "o": [
+      "That love is impossible",
+      "That you need to go",
+      "That we have already seen everything in life",
+      "That you need to hurry"
+     ],
+     "a": 2,
+     "e": "In the video: \"Nemojmo misliti da smo već sve videli od života\" — let's not think that we have already seen everything life has to offer."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Smo sa nekim ljudima *povezani*.",
+     "o": [
+      "acquainted",
+      "similar",
+      "connected",
+      "separated"
+     ],
+     "a": 2,
+     "e": "Povezan — connected; povezati — to connect."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Već si je sreo i *mimoišli* ste se.",
+     "o": [
+      "quarreled",
+      "missed each other",
+      "hugged",
+      "became friends"
+     ],
+     "a": 1,
+     "e": "Mimoići se — to miss each other, to pass by one another."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nisi je ni *primetio*.",
+     "o": [
+      "noticed",
+      "loved",
+      "knew",
+      "heard"
+     ],
+     "a": 0,
+     "e": "Primetiti — to notice."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Tebi *naizgled* jedna obična odluka.",
+     "o": [
+      "for sure",
+      "seemingly",
+      "later",
+      "sometimes"
+     ],
+     "a": 1,
+     "e": "Naizgled — at first glance; izgled — appearance."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Choose the verb aspect",
+     "q": "Nemojmo misliti da smo već sve ___ od života,",
+     "o": [
+      "video",
+      "gledao",
+      "videli",
+      "gledali"
+     ],
+     "a": 2,
+     "e": "The result \"already seen everything\" is perfective: videli. Gledali is imperfective (process). Smo is plural."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Tvoj budući najbolji prijatelj živi u nekoj drugoj ___.",
+     "o": [
+      "državu",
+      "državi",
+      "država",
+      "državom"
+     ],
+     "a": 1,
+     "e": "U + locative case: u državi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Jeste li čuli za ___ nevidljive žice?",
+     "o": [
+      "teoriju",
+      "teorijom",
+      "teorije",
+      "teorija"
+     ],
+     "a": 0,
+     "e": "Čuti za someone/something — accusative case: za teoriju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Smo sa nekim ___ povezani.",
+     "o": [
+      "ljudske",
+      "ljude",
+      "ljudima",
+      "ljudi"
+     ],
+     "a": 2,
+     "e": "Sa (\"with\") requires the instrumental case: sa ljudima."
+    }
+   ]
+  }
+ ]
+}

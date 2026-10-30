@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Minister Milan Krkobabić warn about?",
+     "o": [
+      "That more than 1200 villages in the south of Serbia are on the verge of disappearing",
+      "That new factories need to be built",
+      "That land prices are falling",
+      "That there are few people in the cities"
+     ],
+     "a": 0,
+     "e": "In the video: \"upozorava na poraznu demografsku statistiku u selima na jugu Srbije, gde je više od 1200 ruralnih zajednica na pragu gašenja\" — warns of devastating demographic statistics in the villages of southern Serbia, where more than 1200 rural communities are on the verge of dying out."
+    },
+    {
+     "q": "How many villages did the National Team choose to save?",
+     "o": [
+      "Three",
+      "Ten",
+      "One hundred",
+      "A thousand"
+     ],
+     "a": 2,
+     "e": "In the video: \"Nacionalni tim za spas sela definisao njih stotinu koja imaju šansu da opstanu\" — the National Team for Saving Villages identified a hundred of them that have a chance to survive."
+    },
+    {
+     "q": "What changed with the number of sheep in Pirot over 30 years?",
+     "o": [
+      "There were over 60 thousand, now about 10 thousand",
+      "No sheep are left",
+      "It hasn't changed",
+      "It doubled"
+     ],
+     "a": 0,
+     "e": "In the video: \"Grad Pirot je imao preko 60 hiljada ovaca. Mi danas u Pirotu... imamo negde svega oko 10 hiljada ovaca\" — the city of Pirot had over 60 thousand sheep. Today in Pirot... we have somewhere around 10 thousand sheep."
+    },
+    {
+     "q": "What is unusual about the plan of the former director of \"Tigar\"?",
+     "o": [
+      "He is building a hotel",
+      "He is making cheese",
+      "He is growing grapes",
+      "He brews craft beer, but built production in Pirot, not in the village"
+     ],
+     "a": 3,
+     "e": "In the video: \"je, na primer, bivši direktor u pirotskom Tigru odlučio da proizvodi zanatsko pivo i prodaje ga isključivo u svom rodnom selu Dojkinci.\" — for example, the former director at Pirot's Tigar decided to produce craft beer and sell it exclusively in his native village of Dojkinci."
+    },
+    {
+     "q": "What is the main problem for business in the village?",
+     "o": [
+      "No customers",
+      "Taxes",
+      "A shortage of labor",
+      "No land"
+     ],
+     "a": 2,
+     "e": "In the video: \"Jednostavno, najveći problem gore jeste radna snaga\" — simply, the biggest problem up there is labor."
+    },
+    {
+     "q": "What is Gostuša?",
+     "o": [
+      "A monastery",
+      "A stone village with houses built without mortar and roofs of stone slabs",
+      "A ski center",
+      "A modern resort"
+     ],
+     "a": 1,
+     "e": "In the video: \"kameno selo Gostuša, u kome je očuvana gradnja kuća bez vezivnog materijala i sa krovovima od kamenih ploča\" — the stone village of Gostuša, where the construction of houses without binding material and with roofs of stone slabs has been preserved."
+    },
+    {
+     "q": "What threatens the look of Gostuša?",
+     "o": [
+      "Tourists",
+      "Fire",
+      "Locals are replacing stone slabs with red tiles",
+      "Flood"
+     ],
+     "a": 2,
+     "e": "In the video: \"umesto kamenih ploča na kućama se crveni crep, što narušava arhitektonsku celinu\" — instead of stone slabs, red tiles appear on the houses, which spoils the architectural whole."
+    },
+    {
+     "q": "What is Vurdijada?",
+     "o": [
+      "A concert",
+      "A festival of the dairy product vurda in Babušnica",
+      "A machinery fair",
+      "A football match"
+     ],
+     "a": 1,
+     "e": "In the video: \"Vurdijadu, manifestaciju posvećenu promociji ovdašnjeg mlečnog specijaliteta\" — the Vurdijada, an event dedicated to promoting the local dairy specialty."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Poljoprivredno domaćinstvo, objedinjeno u *zadruge*.",
+     "o": [
+      "parks",
+      "banks",
+      "schools",
+      "cooperatives"
+     ],
+     "a": 3,
+     "e": "Zadruga — a cooperative."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogu da budu *zamajac* razvoja.",
+     "o": [
+      "engine",
+      "goal",
+      "obstacle",
+      "stop"
+     ],
+     "a": 0,
+     "e": "Zamajac — a flywheel; figuratively, a driving force."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sela koja imaju šansu da *opstanu*.",
+     "o": [
+      "will be bought",
+      "will survive",
+      "will overgrow",
+      "will disappear"
+     ],
+     "a": 1,
+     "e": "Opstati — to survive, to endure."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stara planina obiluje nepreglednim *pašnjacima*.",
+     "o": [
+      "pastures",
+      "fields",
+      "forests",
+      "lakes"
+     ],
+     "a": 0,
+     "e": "Pašnjak — a pasture; pasti — to graze."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na kućama se crveni *crep*.",
+     "o": [
+      "brick",
+      "roof tile",
+      "glass",
+      "iron"
+     ],
+     "a": 1,
+     "e": "Crep — a roof tile."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve veći broj *meštana* obnavlja pradedovska ognjišta.",
+     "o": [
+      "tourists",
+      "local residents",
+      "officials",
+      "builders"
+     ],
+     "a": 1,
+     "e": "Meštanin — a local resident."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Privrednici *oklevaju* da investiraju.",
+     "o": [
+      "are glad",
+      "are in a hurry",
+      "refuse forever",
+      "hesitate"
+     ],
+     "a": 3,
+     "e": "Oklevati — to hesitate, to delay."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To bi bio najveći *mamac* za mlade ljude.",
+     "o": [
+      "obstacle",
+      "gift",
+      "bait",
+      "threat"
+     ],
+     "a": 2,
+     "e": "Mamac — bait, a lure."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ministar upozorava na poraznu demografsku ___.",
+     "o": [
+      "statistika",
+      "statistike",
+      "statistiku",
+      "statistikom"
+     ],
+     "a": 2,
+     "e": "Upozoriti na + accusative case: na statistiku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Više od 1200 ruralnih ___ na pragu gašenja.",
+     "o": [
+      "zajednica",
+      "zajednice",
+      "zajednicu",
+      "zajednicama"
+     ],
+     "a": 0,
+     "e": "After numbers from 5 the genitive plural is used: zajednica."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "ministar je ___ pre 3 meseca na Saboru zadrugara u Nišu.",
+     "o": [
+      "saopštavala",
+      "saopštavao",
+      "saopštila",
+      "saopštio"
+     ],
+     "a": 3,
+     "e": "Announced once — perfective saopštio. Saopštavao is imperfective (process, repetition). Ministar is masculine."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na Saboru zadrugara u ___.",
+     "o": [
+      "Niša",
+      "Niš",
+      "Nišom",
+      "Nišu"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative case: u Nišu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pirot se bori sa poraznim ___.",
+     "o": [
+      "statistikama",
+      "statistike",
+      "statistici",
+      "statistika"
+     ],
+     "a": 0,
+     "e": "Boriti se sa (\"to fight with\") requires the instrumental case: sa statistikama."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Veliku šansu ___ oporavak ruralnih sredina ovde vide u razvoju seoskog turizma.",
+     "o": [
+      "od",
+      "za",
+      "kod",
+      "o"
+     ],
+     "a": 1,
+     "e": "Šansa za + accusative means \"a chance for something\": šansa za oporavak."
+    },
+    {
+     "t": "Choose the verb form",
+     "q": "a one su se ___ u sela koja se nalaze pored grada,",
+     "o": [
+      "spustio",
+      "spustile",
+      "spustilo",
+      "spustili"
+     ],
+     "a": 1,
+     "e": "The participle agrees with the subject: one (ovce) is feminine plural, so spustile."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Projekat je dobio 2016. ___ Evropa Nostra.",
+     "o": [
+      "nagradu",
+      "nagradom",
+      "nagrade",
+      "nagrada"
+     ],
+     "a": 0,
+     "e": "Dobiti what — accusative case: nagradu."
+    }
+   ]
+  }
+ ]
+}

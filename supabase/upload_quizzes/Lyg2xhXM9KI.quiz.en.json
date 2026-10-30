@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where is the Piva Nature Park located?",
+     "o": [
+      "In Serbia below Zlatibor",
+      "In Croatia",
+      "In Bosnia",
+      "In Montenegro, 109 km from Podgorica"
+     ],
+     "a": 3,
+     "e": "In the video: \"Na svega 109 km od Podgorice i oko 380 km od Beograda nalazi se\" — just 109 km from Podgorica and about 380 km from Belgrade is located..."
+    },
+    {
+     "q": "What is the owner of the ethno-village called?",
+     "o": [
+      "Dragan",
+      "Petar",
+      "Novica",
+      "Milan"
+     ],
+     "a": 2,
+     "e": "In the video: \"dočekao nas je srdačni domaćin, gospodin Novica\" — we were welcomed by the warm host, Mr. Novica."
+    },
+    {
+     "q": "What started 30 years ago?",
+     "o": [
+      "His father built a small village tavern",
+      "They opened a shop",
+      "They built a hotel",
+      "They bought boats"
+     ],
+     "a": 0,
+     "e": "In the video: \"moj pokojni otac je sagradio jednu malu seosku kafanu ovde na ovoj lokaciji\" — my late father built a small village tavern here at this location."
+    },
+    {
+     "q": "When did the idea of an ethno-village come about?",
+     "o": [
+      "In 2020",
+      "Around 2007",
+      "In 1950",
+      "In 1990"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mi smo negdje 2007. došli na ideju da pravimo etno-selo\" — around 2007 we came up with the idea of building an ethno-village."
+    },
+    {
+     "q": "How many cottages are currently in operation?",
+     "o": [
+      "5",
+      "2",
+      "11",
+      "30"
+     ],
+     "a": 2,
+     "e": "In the video: \"Sad trenutno je 11 kućica u funkciji\" — right now 11 cottages are in operation."
+    },
+    {
+     "q": "Who are the first guests of the season?",
+     "o": [
+      "Tourists from China",
+      "Fishermen",
+      "Families with children",
+      "Bikers and cyclists"
+     ],
+     "a": 3,
+     "e": "In the video: \"Prvi gosti su bajkeri i biciklisti\" — the first guests are bikers and cyclists."
+    },
+    {
+     "q": "What share of guests are foreigners?",
+     "o": [
+      "All locals",
+      "95 percent",
+      "5 percent",
+      "50 percent"
+     ],
+     "a": 1,
+     "e": "In the video: \"osim te 2020. i dijelom 21., 95% strani gosti\" — except for 2020 and partly 2021, 95% are foreign guests."
+    },
+    {
+     "q": "What, in the host's view, is the main secret of successful rural tourism?",
+     "o": [
+      "A low price",
+      "Loans",
+      "Big advertising",
+      "A family business"
+     ],
+     "a": 3,
+     "e": "In the video: \"ključni model je porodični biznis. Kod nas je uključena kompletna porodica\" — the key model is a family business. In our case the entire family is involved."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pravi *dragulj* Crne Gore, Park prirode Piva.",
+     "o": [
+      "mountain",
+      "river",
+      "village",
+      "gem, jewel"
+     ],
+     "a": 3,
+     "e": "Dragulj — a gemstone, a jewel."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Naš *vodič* Petar.",
+     "o": [
+      "host",
+      "driver",
+      "cook",
+      "guide"
+     ],
+     "a": 3,
+     "e": "Vodič — a guide, a guidebook; voditi — to lead."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imao sam dobru ideju, ali podigao sam 10.000 *kredita*.",
+     "o": [
+      "of euros",
+      "of ideas",
+      "of guests",
+      "of a loan"
+     ],
+     "a": 3,
+     "e": "Kredit — a loan; podići kredit — to take out a loan."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvih pet bungalova su *dotrajali*.",
+     "o": [
+      "grew up",
+      "fell into disrepair",
+      "burned down",
+      "got sold"
+     ],
+     "a": 1,
+     "e": "Dotrajati — to wear out, to fall into disrepair."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada pročitate *recenzije*, uočićete da se mnogi žale.",
+     "o": [
+      "newspapers",
+      "recipes",
+      "reviews",
+      "laws"
+     ],
+     "a": 2,
+     "e": "Recenzija — a review."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sjajni su predjeli za *planinarenje*.",
+     "o": [
+      "mountain hikes",
+      "swimming",
+      "hunting",
+      "riding"
+     ],
+     "a": 0,
+     "e": "Planinarenje — mountain hiking; planina — a mountain."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kod nas je uključena supruga, dva sina i *snaha*.",
+     "o": [
+      "daughter-in-law",
+      "aunt",
+      "sister",
+      "daughter"
+     ],
+     "a": 0,
+     "e": "Snaha — a daughter-in-law (a son's wife)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi smo prošlu sezonu bili skoro maksimalno *popunjeni*.",
+     "o": [
+      "full",
+      "closed",
+      "roads",
+      "empty"
+     ],
+     "a": 0,
+     "e": "Popunjen — filled; popunjenost — occupancy."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na svega 109 km od ___.",
+     "o": [
+      "Podgoricom",
+      "Podgorice",
+      "Podgoricu",
+      "Podgorica"
+     ],
+     "a": 1,
+     "e": "Od (\"from\") requires the genitive case: od Podgorice."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Tako da smo ___ jedan težak period stvaranja etno-sela.",
+     "o": [
+      "prelazili",
+      "prešao",
+      "prešli",
+      "prelazio"
+     ],
+     "a": 2,
+     "e": "The period is over and completed, so perfective: prešli. Prelazili is imperfective (ongoing). Smo is plural, so not prešao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sa lijepim pogledom na Pivsko ___.",
+     "o": [
+      "jezero",
+      "jezera",
+      "jezeru",
+      "jezerom"
+     ],
+     "a": 0,
+     "e": "Pogled na + accusative case; for neuter nouns it coincides with the nominative: jezero."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Vidjeli ste vi da su naši objekti spolja ___ od kamena, od drveta,",
+     "o": [
+      "urađeni",
+      "urađene",
+      "urađena",
+      "urađen"
+     ],
+     "a": 0,
+     "e": "The participle agrees with the subject: objekti is masculine plural, so urađeni."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Radimo ___ proširenju, malo nas je poremetila korona, kriza,",
+     "o": [
+      "za",
+      "na",
+      "o",
+      "u"
+     ],
+     "a": 1,
+     "e": "Raditi na + locative means \"to work on something\": radimo na proširenju — we are working on the expansion."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Radimo sve od prirodnih ___.",
+     "o": [
+      "materijala",
+      "materijale",
+      "materijali",
+      "materijalima"
+     ],
+     "a": 0,
+     "e": "Od (\"out of\") requires the genitive case: od prirodnih materijala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Rafting na ___ mi organizujemo sa partnerima.",
+     "o": [
+      "Tara",
+      "Tarom",
+      "Taru",
+      "Tari"
+     ],
+     "a": 3,
+     "e": "Na in answer to \"where?\" — locative case: na Tari."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "U kvalitet gastronomske ponude smo se i sami ___.",
+     "o": [
+      "uveravali",
+      "uverili",
+      "uverio",
+      "uveravao"
+     ],
+     "a": 1,
+     "e": "They convinced themselves on the spot, with a result: perfective uveriti se. Uveravati se is imperfective. Smo is plural, so not uverio."
+    }
+   ]
+  }
+ ]
+}

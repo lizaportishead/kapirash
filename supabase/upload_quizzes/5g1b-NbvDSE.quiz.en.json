@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Tanja draw in this video?",
+     "o": [
+      "A comic",
+      "An illustrated diary (art journal)",
+      "A portrait of her son",
+      "A landscape from life"
+     ],
+     "a": 1,
+     "e": "In the video: \"Danas crtamo u moj Art Journal, ili ilustrovani dnevnik\" — today we're drawing in my art journal, or illustrated diary."
+    },
+    {
+     "q": "When did she start keeping this diary?",
+     "o": [
+      "This year",
+      "Many years ago",
+      "Last year, when her daughter was very small",
+      "Yesterday"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ovaj dnevnik počela sam da vodim prošle godine\" — I started keeping this diary last year."
+    },
+    {
+     "q": "What will the drawings on this spread be about?",
+     "o": [
+      "A trip to the seaside",
+      "The fair in Ruma",
+      "A working day",
+      "A new kitchen"
+     ],
+     "a": 1,
+     "e": "In the video: \"biće nešto sa vašara u Rumi\" — it will be something from the fair in Ruma."
+    },
+    {
+     "q": "Why did she need a narrow ladle?",
+     "o": [
+      "It's prettier than the big one",
+      "It was a gift",
+      "So as not to scratch a narrow deep saucepan with a metal spoon",
+      "It's cheaper"
+     ],
+     "a": 2,
+     "e": "In the video: \"mi treba uža varjača da ga ne izgrebem metalnom kašikom\" — I need a narrower ladle so as not to scratch it with a metal spoon."
+    },
+    {
+     "q": "What is unusual about the lemon she saw?",
+     "o": [
+      "It's very big",
+      "It's orange",
+      "It has no seeds",
+      "It grows on a tree in a pot"
+     ],
+     "a": 1,
+     "e": "In the video: \"narandžasti limun, koji ja nikad do sad nisam videla\" — an orange lemon, which I'd never seen before."
+    },
+    {
+     "q": "What was printed on Vuk's T-shirt?",
+     "o": [
+      "A fox",
+      "A swordfish",
+      "A pike",
+      "A bear"
+     ],
+     "a": 2,
+     "e": "In the video: \"odštampali štuku na majici\" — they printed a pike on the T-shirt."
+    },
+    {
+     "q": "Why does Tanja draw the lines in brown rather than black?",
+     "o": [
+      "The black ran out",
+      "Black is too strong for delicate watercolor",
+      "Brown is cheaper",
+      "It's easier to erase"
+     ],
+     "a": 1,
+     "e": "In the video: \"Linije volim da radim u braon boji jer mi je crna suviše jaka za nežne vodene boje\" — I like to do the lines in brown because black is too strong for delicate watercolors."
+    },
+    {
+     "q": "What is actually inside the palette labeled \"šminke\"?",
+     "o": [
+      "Cosmetics",
+      "Pencils",
+      "Van Gogh watercolors",
+      "Pastels"
+     ],
+     "a": 2,
+     "e": "In the video: \"ali unutra nisu šminke, nego sam ja stavila Van Gogh vodene boje\" — but inside it's not cosmetics, I put Van Gogh watercolors there."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kupila sam usku *varjaču* na vašaru.",
+     "o": [
+      "ladle",
+      "frying pan",
+      "grater",
+      "knife"
+     ],
+     "a": 0,
+     "e": "Varjača — a ladle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nacrtaću stvari sa *vašara* u Rumi.",
+     "o": [
+      "of the market",
+      "of the fair",
+      "of the festival",
+      "of the exhibition"
+     ],
+     "a": 1,
+     "e": "Vašar — a fair."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "On obožava *pecanje*.",
+     "o": [
+      "swimming",
+      "hunting",
+      "fishing",
+      "drawing"
+     ],
+     "a": 2,
+     "e": "Pecanje — fishing, catching fish."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nekad su to *dosadne* stvari.",
+     "o": [
+      "dangerous",
+      "expensive",
+      "boring",
+      "beautiful"
+     ],
+     "a": 2,
+     "e": "Dosadan — boring. Don't confuse it with \"dosta\" — enough."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zabeležila sam jednu *uspomenu* iz života.",
+     "o": [
+      "idea",
+      "memory",
+      "mistake",
+      "photograph"
+     ],
+     "a": 1,
+     "e": "Uspomena — a memory, a keepsake of something."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Crna mi je *suviše* jaka.",
+     "o": [
+      "too",
+      "not very",
+      "almost",
+      "completely"
+     ],
+     "a": 0,
+     "e": "Suviše — too, excessively."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Crna je jaka za *nežne* vodene boje.",
+     "o": [
+      "bright",
+      "delicate",
+      "cheap",
+      "thick"
+     ],
+     "a": 1,
+     "e": "Nežan — delicate, tender."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pregledaću šta sam tamo *fotkala*.",
+     "o": [
+      "was losing",
+      "was buying",
+      "was photographing",
+      "was drawing"
+     ],
+     "a": 2,
+     "e": "Fotkati — to photograph (colloquial, from \"foto\")."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Bavim se ___ i slikanjem.",
+     "o": [
+      "crtanje",
+      "crtanja",
+      "crtanjem",
+      "crtanju"
+     ],
+     "a": 2,
+     "e": "Baviti se + instrumental case: bavim se crtanjem."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "koji smo ___ sad za vikend, pa ću sad da pregledam",
+     "o": [
+      "posećivali",
+      "posećivao",
+      "posetio",
+      "posetili"
+     ],
+     "a": 3,
+     "e": "A single completed visit — perfective posetili. Posećivali is imperfective (regular visits). Smo is plural."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Varjaču sam kupila na ___.",
+     "o": [
+      "vašar",
+      "vašara",
+      "vašaru",
+      "vašarom"
+     ],
+     "a": 2,
+     "e": "Na + locative case (where?): na vašaru."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Dugo sam tražila varjaču koja nije ovakva, ova velika, tako da sam konačno ___",
+     "o": [
+      "našla",
+      "nalazio",
+      "našao",
+      "nalazila"
+     ],
+     "a": 0,
+     "e": "\"Finally\" signals a result, so perfective: našla. A woman is speaking (tražila sam), so not našao."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Boje koristim u ovoj ___.",
+     "o": [
+      "paleta",
+      "palete",
+      "paletu",
+      "paleti"
+     ],
+     "a": 3,
+     "e": "U + locative case (where?): u ovoj paleti."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Obrisala sam linije grafitnom ___.",
+     "o": [
+      "olovka",
+      "olovke",
+      "olovkom",
+      "olovku"
+     ],
+     "a": 2,
+     "e": "With what? — instrumental case: grafitnom olovkom."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Crna je suviše jaka ___ nežne vodene boje.",
+     "o": [
+      "na",
+      "za",
+      "od",
+      "po"
+     ],
+     "a": 1,
+     "e": "Jak za nešto — \"too strong for something\": the preposition za."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Idem napolje da šetam sa ___.",
+     "o": [
+      "beba",
+      "bebu",
+      "bebe",
+      "bebom"
+     ],
+     "a": 3,
+     "e": "Sa + instrumental case (with whom?): sa bebom."
+    }
+   ]
+  }
+ ]
+}

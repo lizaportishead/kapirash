@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Who is Tanja drawing the series of forest animals for?",
+     "o": [
+      "For a friend",
+      "For her son Lazar",
+      "For an exhibition",
+      "For a book"
+     ],
+     "a": 1,
+     "e": "In the video: \"seriju ilustracija šumskih životinja koje on najviše voli\" — a series of illustrations of forest animals that he loves the most."
+    },
+    {
+     "q": "Which book inspired the illustration?",
+     "o": [
+      "\"Ten Little Indians\"",
+      "\"The Little Prince\"",
+      "\"Little Red Riding Hood\"",
+      "\"Winnie-the-Pooh\""
+     ],
+     "a": 0,
+     "e": "In the video: \"Inspiraciju za tu ilustraciju sam našla u ovoj knjizi\" — I found the inspiration for that illustration in this book."
+    },
+    {
+     "q": "What year is this edition of the book?",
+     "o": [
+      "1953",
+      "1973",
+      "1993",
+      "2013"
+     ],
+     "a": 1,
+     "e": "In the video: \"To je neko izdanje iz 1973. godine\" — it's an edition from 1973."
+    },
+    {
+     "q": "Why does Laza laugh on one page of the book?",
+     "o": [
+      "A funny bear is there",
+      "A hare is hiding in a hollow",
+      "A bird is singing there",
+      "A car has fallen"
+     ],
+     "a": 1,
+     "e": "In the video: \"Laza se kikoće i smeje se što se taj zeka tu sakrio\" — Laza giggles and laughs that the bunny hid there."
+    },
+    {
+     "q": "What became the main problem with the first paper?",
+     "o": [
+      "It's too expensive",
+      "It's too thin",
+      "It's not watercolor paper",
+      "It's yellow"
+     ],
+     "a": 2,
+     "e": "In the video: \"Jedan problem je što ovo nije papir za vodene boje\" — one problem is that this is not watercolor paper."
+    },
+    {
+     "q": "Why did the silhouettes of the trees bleed in the first attempt?",
+     "o": [
+      "She didn't have the patience to wait for the paper to dry",
+      "The paint ran out",
+      "A drop of water fell",
+      "The brush was dirty"
+     ],
+     "a": 0,
+     "e": "In the video: \"nisam imala strpljenja\" — I didn't have the patience."
+    },
+    {
+     "q": "What paper did she choose for the third attempt?",
+     "o": [
+      "Fabriano",
+      "Baohong",
+      "Canson",
+      "The same one"
+     ],
+     "a": 1,
+     "e": "In the video: \"kad sam videla da se onaj Baohong papir lepo ponaša u ilustraciji sa jazavcem\" — when I saw that the Baohong paper behaves nicely in the illustration with the badger."
+    },
+    {
+     "q": "What advice did the friend give after the photo?",
+     "o": [
+      "Change the paper",
+      "Remove the hare",
+      "Add more contrast and darken the hollow",
+      "Draw another bird"
+     ],
+     "a": 2,
+     "e": "In the video: \"samo daj malo više kontrasta, malo potamni tu šupljinu debla iza zeke\" — just add a little more contrast, darken that hollow in the trunk behind the hare a bit."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nisam imala *strpljenja*.",
+     "o": [
+      "of patience",
+      "to time",
+      "money",
+      "of strength"
+     ],
+     "a": 0,
+     "e": "Strpljenje — patience."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvo sam uradila veliko *deblo*.",
+     "o": [
+      "root",
+      "trunk",
+      "branch",
+      "foliage"
+     ],
+     "a": 1,
+     "e": "Deblo — a tree trunk."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Teško je izvući *krzno* tankom četkicom.",
+     "o": [
+      "grass",
+      "sky",
+      "fur",
+      "water"
+     ],
+     "a": 2,
+     "e": "Krzno — fur, pelt."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dodala sam i *bubamaru*.",
+     "o": [
+      "butterfly",
+      "bee",
+      "fly",
+      "ladybug"
+     ],
+     "a": 3,
+     "e": "Bubamara — a ladybug."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Drago mi je da sam *istrajala*.",
+     "o": [
+      "made it to the end",
+      "rested",
+      "confessed",
+      "made a mistake"
+     ],
+     "a": 0,
+     "e": "Istrajati — to hold out, not to give up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Laza voli *maslačke*.",
+     "o": [
+      "daisies",
+      "dandelions",
+      "roses",
+      "tulips"
+     ],
+     "a": 1,
+     "e": "Maslačak — a dandelion."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvo sam *pokvasila* papir vodom.",
+     "o": [
+      "folded",
+      "cut",
+      "wet",
+      "dried"
+     ],
+     "a": 2,
+     "e": "Pokvasiti — to wet, to moisten."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Poslala sam sliku *drugaricama*.",
+     "o": [
+      "to the neighbors",
+      "to enemies",
+      "to the parents",
+      "to girlfriends"
+     ],
+     "a": 3,
+     "e": "Drugarica — a girlfriend; dative plural: drugaricama."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Hoću seriju ilustracija ___ životinja.",
+     "o": [
+      "šumske",
+      "šumskih",
+      "šumskim",
+      "šumska"
+     ],
+     "a": 1,
+     "e": "A series of what? — genitive plural: šumskih životinja."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Laza je nasledio knjigu od ___.",
+     "o": [
+      "tata",
+      "tatu",
+      "tate",
+      "tati"
+     ],
+     "a": 2,
+     "e": "Od + genitive case: od tate."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Uradila sam linije ___ olovkom.",
+     "o": [
+      "hemijska",
+      "hemijske",
+      "hemijskom",
+      "hemijsku"
+     ],
+     "a": 2,
+     "e": "With what? — instrumental case: hemijskom olovkom."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Laza je opsednut ___.",
+     "o": [
+      "detelina",
+      "detelinu",
+      "deteline",
+      "detelinom"
+     ],
+     "a": 3,
+     "e": "Opsednut + instrumental case: opsednut detelinom."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Kad sam pokazala ___, svidelo mu se.",
+     "o": [
+      "Laza",
+      "Lazi",
+      "Lazu",
+      "Lazom"
+     ],
+     "a": 1,
+     "e": "Pokazati to whom? — dative case: Lazi."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ovaj papir je odličan ___ pejzaže.",
+     "o": [
+      "za",
+      "iz",
+      "bez",
+      "kod"
+     ],
+     "a": 0,
+     "e": "Za + accusative case: za pejzaže — \"for landscapes\"."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "bila sam nekako ___ kad sam je uradila.",
+     "o": [
+      "zadovoljna",
+      "zadovoljno",
+      "zadovoljan",
+      "zadovoljni"
+     ],
+     "a": 0,
+     "e": "A woman is speaking (bila sam, uradila), so zadovoljna."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "___ sam mu, oduševljen je, i meni je zbog toga jako drago.",
+     "o": [
+      "Pokazivala",
+      "Pokazao",
+      "Pokazivao",
+      "Pokazala"
+     ],
+     "a": 3,
+     "e": "Showed once — perfective pokazati. Pokazivala is imperfective. A woman is speaking."
+    }
+   ]
+  }
+ ]
+}

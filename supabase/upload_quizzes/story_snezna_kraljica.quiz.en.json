@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What kind of mirror did the evil spirit make?",
+     "o": [
+      "One that granted wishes",
+      "One that showed the future",
+      "One that distorted everything: the good and beautiful vanished, the ugly became uglier",
+      "One that made everything prettier"
+     ],
+     "a": 2,
+     "e": "Everything good and beautiful faded in it, and everything ugly looked even uglier."
+    },
+    {
+     "q": "What happened to the mirror when the imps carried it up toward heaven?",
+     "o": [
+      "It shook, fell from their hands and shattered into countless pieces",
+      "It blinded the imps",
+      "It turned to gold",
+      "It melted"
+     ],
+     "a": 0,
+     "e": "It smashed on the ground into millions of shards."
+    },
+    {
+     "q": "How did Kay and Gerda live?",
+     "o": [
+      "Like siblings, in neighbouring attics with a shared little garden on the gutter",
+      "In different cities",
+      "In one house, as husband and wife",
+      "In a big palace"
+     ],
+     "a": 0,
+     "e": "They weren't brother and sister, but loved each other like real siblings."
+    },
+    {
+     "q": "What happened to Kay when the clock struck five?",
+     "o": [
+      "Splinters of the mirror got into his eye and his heart",
+      "His grandmother called him",
+      "He fell ill",
+      "He fell off the roof"
+     ],
+     "a": 0,
+     "e": "A splinter of glass got into his eye and into his heart."
+    },
+    {
+     "q": "How did Kay change?",
+     "o": [
+      "He became mean and mocking: he broke the roses and teased Gerda and his grandmother",
+      "He became kinder",
+      "He became silent",
+      "He began reading a lot"
+     ],
+     "a": 0,
+     "e": "He tore off the roses and teased Gerda and his grandmother."
+    },
+    {
+     "q": "How did Kay end up with the Snow Queen?",
+     "o": [
+      "A wolf stole him",
+      "He tied his sled to her white sleigh and she carried him out of the city",
+      "The queen came to his house",
+      "He walked into the mountains himself"
+     ],
+     "a": 1,
+     "e": "He tied his sled to the Snow Queen's white sleigh."
+    },
+    {
+     "q": "What did Gerda do when Kay disappeared?",
+     "o": [
+      "Waited at home",
+      "Put on her red shoes and went to the river to ask about Kay",
+      "Called her neighbours",
+      "Went to the king"
+     ],
+     "a": 1,
+     "e": "“I'll put on my red shoes and go to the river; I'll ask it about him.”"
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ogledalo se razbilo u milijune *rbina*.",
+     "o": [
+      "shards",
+      "feathers",
+      "twigs",
+      "drops"
+     ],
+     "a": 0,
+     "e": "Rbina — shard."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Između krovova bijaše *žlijeb*.",
+     "o": [
+      "gutter",
+      "staircase",
+      "window",
+      "fence"
+     ],
+     "a": 0,
+     "e": "Žlijeb — gutter."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Kay brže-bolje priveza svoje *saonice* za bijele saone.",
+     "o": [
+      "wheel",
+      "boat",
+      "basket",
+      "sled"
+     ],
+     "a": 3,
+     "e": "Saonice — sled."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Dječak dođe s velikim *povećalom*.",
+     "o": [
+      "scales",
+      "clock",
+      "magnifying glass",
+      "lantern"
+     ],
+     "a": 2,
+     "e": "Povećalo — magnifying glass."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Osuo gust snijeg, zavila *mećava*.",
+     "o": [
+      "fog",
+      "blizzard",
+      "thunderstorm",
+      "heat"
+     ],
+     "a": 1,
+     "e": "Mećava — blizzard."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Kay i Gerda gledaju ___.",
+     "o": [
+      "slikovnicu",
+      "slikovnica",
+      "slikovnici",
+      "slikovnicom"
+     ],
+     "a": 0,
+     "e": "Gledati what? — accusative: slikovnicu."
+    },
+    {
+     "t": "Choose the correct verb form",
+     "q": "Gerda poljubi baku, koja je još ___.",
+     "o": [
+      "spavao",
+      "spavalo",
+      "spavali",
+      "spavala"
+     ],
+     "a": 3,
+     "e": "The verb agrees with “baka” — feminine singular: spavala."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Gerda uđe u ___ što bijaše u trščaku.",
+     "o": [
+      "čamca",
+      "čamac",
+      "čamcem",
+      "čamcu"
+     ],
+     "a": 1,
+     "e": "U + accusative (where to?); inanimate: u čamac."
+    }
+   ]
+  }
+ ]
+}

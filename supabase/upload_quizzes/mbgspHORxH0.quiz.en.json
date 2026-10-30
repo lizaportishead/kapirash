@@ -1,0 +1,95 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Which trait in a man did Andjelka name as the most important?",
+     "o": [
+      "Intelligence",
+      "Honesty",
+      "Money",
+      "Height"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pa, iskrenost.\" — well, honesty."
+    },
+    {
+     "q": "How does Andrija justify his rude answer?",
+     "o": [
+      "Says he was joking",
+      "Says honesty is a man's most important trait",
+      "Apologizes",
+      "Stays silent"
+     ],
+     "a": 1,
+     "e": "In the video: \"Iskren sam. To je najbitnija osobina kod muškarca.\" — I'm honest. That's the most important trait in a man."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Koja je tebi najbitnija *osobina* kod muškarca?",
+     "o": [
+      "trait",
+      "height",
+      "profession",
+      "age"
+     ],
+     "a": 0,
+     "e": "Osobina — a trait, quality."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Što li se ja *budim* pored tebe već devet godina?",
+     "o": [
+      "wake up",
+      "fall asleep",
+      "live",
+      "work"
+     ],
+     "a": 0,
+     "e": "Buditi se — to wake up."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Joj, bože, što li se ja budim pored ___ već devet godina?",
+     "o": [
+      "ti",
+      "tebe",
+      "tebi",
+      "tobom"
+     ],
+     "a": 1,
+     "e": "The preposition pored (\"next to\") takes the genitive: pored tebe."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koja je ___ najbitnija osobina kod muškarca?",
+     "o": [
+      "tebe",
+      "tebi",
+      "ti",
+      "tobom"
+     ],
+     "a": 1,
+     "e": "Koja je tebi … — \"which is for you …\": dative case tebi."
+    }
+   ]
+  }
+ ]
+}

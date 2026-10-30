@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where, according to the writer, does a person feel \"at home\"?",
+     "o": [
+      "Where it's warm",
+      "Where the family lives",
+      "Where he was born",
+      "Where he has a good command of the language"
+     ],
+     "a": 3,
+     "e": "In the video: \"mesto gde se najviše osećaš domaći je tamo gde dobro vladaš jezikom\" — the place where you feel most at home is where you have a good command of the language."
+    },
+    {
+     "q": "How did he start translating?",
+     "o": [
+      "A publisher asked him",
+      "Reading Saramago in Portuguese, he \"translated in his head\" and decided to write the translation down on the computer",
+      "He received a commission",
+      "He studied to become a translator"
+     ],
+     "a": 1,
+     "e": "In the video: \"da bih je pročitao, treba da je praktično prevedem u glavi. I onda sam ja, umesto da prevodim u glavi, seo za kompjuter i svaku rečenicu lepo preveo\" — to read it, I practically have to translate it in my head. And then, instead of translating in my head, I sat down at the computer and nicely translated every sentence."
+    },
+    {
+     "q": "Which Andrić book did he translate seven years after Saramago?",
+     "o": [
+      "\"The Cursed Yard\"",
+      "\"The Girl on the Bridge\"",
+      "\"The Bridge on the Drina\"",
+      "\"The Travnik Chronicle\""
+     ],
+     "a": 0,
+     "e": "In the video: \"Nekih sedam godina potom sam uzeo „Prokletu avliju“ i rekao: ajde sada da probam ovo\" — some seven years later I picked up \"Prokleta avlija\" and said: let me try this now."
+    },
+    {
+     "q": "How, as he noticed later, are his books connected with each other?",
+     "o": [
+      "A love of sports",
+      "The theme of the identity of \"displaced\" people and immigrants",
+      "Recipes",
+      "The history of the city"
+     ],
+     "a": 1,
+     "e": "In the video: \"jedino i bavim identitetom izmeštenih ljudi.... uglavnom neki imigranti\" — the only thing I deal with is the identity of displaced people... mostly immigrants."
+    },
+    {
+     "q": "Why did he go to London in 1989?",
+     "o": [
+      "For a summer internship at the height of the construction boom under Thatcher",
+      "To study at university",
+      "On vacation",
+      "To visit relatives"
+     ],
+     "a": 0,
+     "e": "In the video: \"otišao sam za London... na neku praksu preko leta, jer je u to vreme bio neki veliki procvat pod Tačerkom\" — I went to London... for some internship over the summer, because at that time there was a big boom under Thatcher."
+    },
+    {
+     "q": "How did he solve the problem with documents in London?",
+     "o": [
+      "He got a work visa",
+      "He hired a lawyer",
+      "He married for the papers — and stayed best friends with his wife",
+      "He returned to Belgrade"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ja sam rešio svoj problem u Londonu tako što sam se oženio... To je bilo za papire. Dan-danas smo najbolji drugari\" — I solved my problem in London by getting married... That was for the papers. To this day we are best friends."
+    },
+    {
+     "q": "How did he contact José Saramago after the bombing of Serbia?",
+     "o": [
+      "Met at a conference",
+      "Called him and asked him to speak out against it; he did",
+      "Wrote a letter",
+      "Went to Lisbon"
+     ],
+     "a": 1,
+     "e": "In the video: \"počelo bombardovanje Srbije. I onda sam ga ja lepo pozvao telefonom i zamolio ga da se on izjasni protiv toga, što je on i\" — the bombing of Serbia began. And then I nicely called him by phone and asked him to speak out against it, which he did."
+    },
+    {
+     "q": "Why can't one live professionally from literature in Serbia?",
+     "o": [
+      "It's forbidden by law",
+      "There aren't enough readers",
+      "There are no publishers",
+      "There are too many writers"
+     ],
+     "a": 1,
+     "e": "In the video: \"U Srbiji... nemoguće je baviti se profesionalno književnošću... nema dovoljno čitalaca\" — in Serbia... it's impossible to practice literature professionally... there aren't enough readers."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gde dobro *vladaš* jezikom, tu se osećaš domaći.",
+     "o": [
+      "you study",
+      "you write",
+      "you command",
+      "you speak loudly"
+     ],
+     "a": 2,
+     "e": "Vladati jezikom — to have a command of a language."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobro vladam sa tri jezika, a još dva *natucam*.",
+     "o": [
+      "I forget",
+      "I study at school",
+      "I hate",
+      "I know a little"
+     ],
+     "a": 3,
+     "e": "Natucati — to know a little, to get by somehow."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bavim se identitetom *izmeštenih* ljudi.",
+     "o": [
+      "elderly",
+      "lonely",
+      "displaced",
+      "famous"
+     ],
+     "a": 2,
+     "e": "Izmešten — displaced, deprived of one's home place."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi jesmo bili *izbeglice*.",
+     "o": [
+      "tourists",
+      "guests",
+      "refugees",
+      "students"
+     ],
+     "a": 2,
+     "e": "Izbeglica — a refugee."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Plašio sam se policije, da me ne uhvate i ne *proteraju*.",
+     "o": [
+      "will reward",
+      "will praise",
+      "will expel",
+      "will punish"
+     ],
+     "a": 2,
+     "e": "Proterati — to expel, to drive out."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi smo svi *privređivali*, niko nije bio na socijalnoj pomoći.",
+     "o": [
+      "were losing",
+      "were earning",
+      "were resting",
+      "were studying"
+     ],
+     "a": 1,
+     "e": "Privređivati — to earn, to run a household economy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vinogradarsko imanje koje je imao moj pokojni *tast*.",
+     "o": [
+      "uncle",
+      "father-in-law",
+      "grandfather",
+      "neighbor"
+     ],
+     "a": 1,
+     "e": "Tast — a father-in-law (the wife's father)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nikome ne moram da se *dodvoravam*.",
+     "o": [
+      "to call",
+      "to curry favor",
+      "to write",
+      "to show up"
+     ],
+     "a": 1,
+     "e": "Dodvoravati se — to curry favor, to suck up."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nisam imao nameru da se bavim ___.",
+     "o": [
+      "prevođenju",
+      "prevođenja",
+      "prevođenje",
+      "prevođenjem"
+     ],
+     "a": 3,
+     "e": "Baviti se with what — instrumental case: prevođenjem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Seo sam za ___ i svaku rečenicu lepo preveo.",
+     "o": [
+      "kompjuterom",
+      "kompjuteru",
+      "kompjuter",
+      "kompjutera"
+     ],
+     "a": 2,
+     "e": "Sesti za + accusative case; for inanimate nouns it coincides with the nominative: za kompjuter."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kad mi je prva Saramagova knjiga dopala u ___.",
+     "o": [
+      "rukama",
+      "ruka",
+      "ruku",
+      "ruke"
+     ],
+     "a": 3,
+     "e": "Dopasti u ruke — \"to fall into one's hands\"; accusative plural: ruke."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "mi smo ___ njih jako direktni, jako smo grublji,",
+     "o": [
+      "o",
+      "kod",
+      "za",
+      "od"
+     ],
+     "a": 2,
+     "e": "Za njih — \"for them, compared to them\": za + accusative."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Odavde sam otišao za ___ 1989. godine.",
+     "o": [
+      "London",
+      "Londona",
+      "Londonu",
+      "Londonom"
+     ],
+     "a": 0,
+     "e": "Ići za + a city in the accusative case; for inanimate nouns it coincides with the nominative: za London."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Zato ja sve što pišem ___ na jednom jeziku, pa ga prevodim na drugi,",
+     "o": [
+      "pisao",
+      "napisao",
+      "pišem",
+      "napišem"
+     ],
+     "a": 3,
+     "e": "The result is a finished text: perfective napišem. Pišem is imperfective (ongoing)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moj susret sa ___ dogodio se tako što sam preveo njegovu knjigu.",
+     "o": [
+      "Saramagu",
+      "Saramaga",
+      "Saramagom",
+      "Saramago"
+     ],
+     "a": 2,
+     "e": "Sa (\"with\") requires the instrumental case: sa Saramagom."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Ja prvo, kad uđem u ___ grad, imam potpunu metodologiju.",
+     "o": [
+      "strana",
+      "strani",
+      "stranom",
+      "stranog"
+     ],
+     "a": 1,
+     "e": "U + accusative (where to?). For inanimate masculine nouns it equals the nominative: u strani grad."
+    }
+   ]
+  }
+ ]
+}

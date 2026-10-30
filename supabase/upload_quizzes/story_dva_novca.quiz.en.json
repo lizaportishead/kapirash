@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What did each of the two men carry to the fair?",
+     "o": [
+      "One a sack of moss covered with wool, the other a sack of cones covered with nuts",
+      "Both real nuts",
+      "One flour, the other salt",
+      "One hay, the other apples"
+     ],
+     "a": 0,
+     "e": "One carries moss with wool on top, the other pine cones with nuts on top."
+    },
+    {
+     "q": "How much did one blood brother owe the other?",
+     "o": [
+      "Ten ducats",
+      "Nothing",
+      "Two novacs",
+      "One sheep"
+     ],
+     "a": 2,
+     "e": "The one with the cones remained in debt for two novacs."
+    },
+    {
+     "q": "Where did one brother propose to lower the other in order to “pay”?",
+     "o": [
+      "Into a well in the square",
+      "Into a pit behind the priest's house",
+      "Into a merchant's cellar",
+      "Into a cave in the mountains"
+     ],
+     "a": 1,
+     "e": "A big pit behind the priest's house."
+    },
+    {
+     "q": "What did the brother find in the pit?",
+     "o": [
+      "Nothing, it was empty and deep",
+      "Gold",
+      "Weapons",
+      "Only grain"
+     ],
+     "a": 3,
+     "e": "He found nothing but grain."
+    },
+    {
+     "q": "How did the debtor try to avoid paying when his brother came to his home?",
+     "o": [
+      "He pretended to be dead",
+      "He hid in the attic",
+      "He ran away into the forest",
+      "He gave away his house"
+     ],
+     "a": 0,
+     "e": "He lay on his back with crossed arms while his wife said he had died."
+    },
+    {
+     "q": "Who came at night into the church where the “dead man” lay?",
+     "o": [
+      "Guards",
+      "Travellers looking for shelter",
+      "The priest and his helpers",
+      "Robbers dividing their loot"
+     ],
+     "a": 3,
+     "e": "Outlaws came in to share their plunder."
+    },
+    {
+     "q": "Why did the robbers flee in terror?",
+     "o": [
+      "The “corpse” sat up and shouted, and a voice answered from the corner: “We're all ready”",
+      "The bell rang",
+      "The guards appeared",
+      "The candle went out"
+     ],
+     "a": 0,
+     "e": "The corpse sat up shouting, and the brother answered from the corner."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Nabere vreću *mahovine* i metne odozgo malo vune.",
+     "o": [
+      "snow",
+      "moss",
+      "sand",
+      "straw"
+     ],
+     "a": 1,
+     "e": "Mahovina — moss."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ponese vreću na *vašar* da proda.",
+     "o": [
+      "fair",
+      "wedding",
+      "war",
+      "church"
+     ],
+     "a": 0,
+     "e": "Vašar — fair."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Posle dugoga *cenkanja* pogode se.",
+     "o": [
+      "journey",
+      "haggling",
+      "quarrel",
+      "singing"
+     ],
+     "a": 1,
+     "e": "Cenkanje — haggling."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Onoga nazovi mrca metnu na *nosila*.",
+     "o": [
+      "sled",
+      "stretcher",
+      "cart",
+      "bed"
+     ],
+     "a": 1,
+     "e": "Nosila — stretcher."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Onu noć udare onuda nekaki *hajduci*.",
+     "o": [
+      "soldiers",
+      "merchants",
+      "monks",
+      "outlaws"
+     ],
+     "a": 3,
+     "e": "Hajduk — outlaw, brigand."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Idući tako sastane se s jednim ___.",
+     "o": [
+      "čovek",
+      "čoveku",
+      "čovekom",
+      "čoveka"
+     ],
+     "a": 2,
+     "e": "S (with) takes the instrumental: s čovekom."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Spusti me u ___.",
+     "o": [
+      "jamom",
+      "jami",
+      "jamu",
+      "jama"
+     ],
+     "a": 2,
+     "e": "U + accusative (where to?): u jamu."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Pobratim ga ___ preko srede, pa spusti u jamu.",
+     "o": [
+      "sveže",
+      "vezuje",
+      "vezujem",
+      "vezivao"
+     ],
+     "a": 0,
+     "e": "A single completed action takes the perfective: sveže."
+    }
+   ]
+  }
+ ]
+}

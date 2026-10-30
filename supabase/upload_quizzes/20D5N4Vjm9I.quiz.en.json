@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is this video about?",
+     "o": [
+      "About hairstyles",
+      "About everyday makeup",
+      "About travel",
+      "About a recipe"
+     ],
+     "a": 1,
+     "e": "In the video: \"u današnjem videu ću vam pokazati everyday makeup\"."
+    },
+    {
+     "q": "Which product does the author apply first?",
+     "o": [
+      "Mascara",
+      "Catrice serum-milk",
+      "Lipstick",
+      "Foundation"
+     ],
+     "a": 1,
+     "e": "In the video: \"Prva stvar koju stavljam na svoje lice jeste ovaj Catrice Sensitive Moisturizing Serum Milk\"."
+    },
+    {
+     "q": "What does the Nivea BB cream do?",
+     "o": [
+      "Removes shine",
+      "Defines the eyebrows",
+      "Moisturizes",
+      "Gives a light tint"
+     ],
+     "a": 3,
+     "e": "In the video: \"ona daje neku blagu boju\"."
+    },
+    {
+     "q": "Where does the author apply concealer?",
+     "o": [
+      "On the hair",
+      "On the neck",
+      "Under the eyes and on freckles",
+      "On the lips"
+     ],
+     "a": 2,
+     "e": "In the video: \"ispod očiju gde imam podočnjake... gde imam pegice\"."
+    },
+    {
+     "q": "Why does she add a little powder after the concealer?",
+     "o": [
+      "So that nothing smears when applying bronzer, highlighter and blush",
+      "To set the mascara",
+      "To make the color darker",
+      "To make the face shine"
+     ],
+     "a": 0,
+     "e": "In the video: \"preko ovog korektora da mi ne bi se sve razmazivalo posle kad budem stavljala bronzere, hajlajtere, rumenila\"."
+    },
+    {
+     "q": "What is the Astra highlighter suitable for?",
+     "o": [
+      "Only for lips",
+      "Only for eyes",
+      "Only for nails",
+      "For face and body"
+     ],
+     "a": 3,
+     "e": "In the video: \"Znači on se može koristiti i za lice i za telo\"."
+    },
+    {
+     "q": "Why does she use the empty Givenchy mascara?",
+     "o": [
+      "Because of the very good brush",
+      "It's her favorite color",
+      "The mascara is no longer sold",
+      "It's a gift"
+     ],
+     "a": 0,
+     "e": "In the video: \"ova maskara je prazna. Ali ja koristim zbog ove četkice jer je mnogo dobra\"."
+    },
+    {
+     "q": "What does she finally do with the lipstick?",
+     "o": [
+      "Uses only red",
+      "Doesn't use lipstick",
+      "Applies red over the light and dark ones",
+      "Uses only gloss"
+     ],
+     "a": 2,
+     "e": "In the video: \"Zapravo ovog puta ću malo promeniti. I staviću crven preko ovoga... Ispalo je prelepo\"."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sada ga samo rukama *razmažem* svuda.",
+     "o": [
+      "I will buy",
+      "I will choose",
+      "I will blend",
+      "I will remove"
+     ],
+     "a": 2,
+     "e": "Razmazati — to smear, to blend."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ispod očiju gde imam *podočnjake*.",
+     "o": [
+      "wrinkles",
+      "dark circles under the eyes",
+      "moles",
+      "eyelashes"
+     ],
+     "a": 1,
+     "e": "Podočnjak — dark circles under the eyes; pod + oči."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na mesta gde imam *pegice*.",
+     "o": [
+      "scars",
+      "freckles",
+      "wrinkles",
+      "pimples"
+     ],
+     "a": 1,
+     "e": "Pegica — a freckle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za njega koristim veliku *četkicu*.",
+     "o": [
+      "compact",
+      "comb",
+      "sponge",
+      "small brush"
+     ],
+     "a": 3,
+     "e": "Četkica — a small brush."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sledeća stvar je *rumenilo*.",
+     "o": [
+      "foundation",
+      "lipstick",
+      "mascara",
+      "blush"
+     ],
+     "a": 3,
+     "e": "Rumenilo — blush; rumen — rosy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bukvalno sve su *šljokičaste*.",
+     "o": [
+      "shiny",
+      "matte",
+      "warm",
+      "dark"
+     ],
+     "a": 0,
+     "e": "Šljokičast — with glitter."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Staviću *senku* na oči.",
+     "o": [
+      "eyeshadows",
+      "glasses",
+      "pencil",
+      "mascara"
+     ],
+     "a": 0,
+     "e": "Senka — shadow; on the eyes it means eyeshadow."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Poslednja stvar je *ruž* za usne.",
+     "o": [
+      "lipstick",
+      "pencil",
+      "cream",
+      "gloss"
+     ],
+     "a": 0,
+     "e": "Ruž — lipstick."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prva stvar koju stavljam na svoje ___ jeste serum.",
+     "o": [
+      "lice",
+      "licu",
+      "lica",
+      "licem"
+     ],
+     "a": 0,
+     "e": "Na in answer to \"where to?\" — accusative case; for neuter nouns it coincides with the nominative: lice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Stavim ga ispod ___ gde imam podočnjake.",
+     "o": [
+      "očima",
+      "očiju",
+      "oka",
+      "oči"
+     ],
+     "a": 1,
+     "e": "Ispod (\"under\") requires the genitive case: ispod očiju."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "A zatim ___ i ovaj Make Me Brow koji je od Essence.",
+     "o": [
+      "stavljam",
+      "stavljao",
+      "stavio",
+      "stavim"
+     ],
+     "a": 3,
+     "e": "\"Then\" introduces the next step, so the perfective: stavim. Stavljam is imperfective (process or habit)."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "za njega inače koristim ovu veliku četkicu jer mi je s ___ najlakše.",
+     "o": [
+      "nju",
+      "njom",
+      "nje",
+      "ona"
+     ],
+     "a": 1,
+     "e": "S(a) + instrumental: ona → njom. Četkica is feminine: s njom — \"with it\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Rumenilo stavljam sa ovom ___.",
+     "o": [
+      "četkicom",
+      "četkice",
+      "četkica",
+      "četkicu"
+     ],
+     "a": 0,
+     "e": "Sa (\"with\") requires the instrumental case: sa četkicom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na ___ oka malo da produžim senku.",
+     "o": [
+      "uglu",
+      "uglom",
+      "ugla",
+      "ugao"
+     ],
+     "a": 3,
+     "e": "Na in answer to \"where to?\" — accusative case: na ugao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala vam što ste ___ ovaj video.",
+     "o": [
+      "gledalo",
+      "gledali",
+      "gledala",
+      "gledate"
+     ],
+     "a": 1,
+     "e": "What you watched — past tense, plural: ste gledali."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dole u ___ mi pišite šta još želite.",
+     "o": [
+      "komentare",
+      "komentara",
+      "komentari",
+      "komentarima"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative plural: u komentarima."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Why did the son decide to leave home?",
+     "o": [
+      "He wanted to learn a trade",
+      "He was looking for treasure",
+      "He wanted to be a soldier",
+      "He quarrelled with his father"
+     ],
+     "a": 0,
+     "e": "“I'm going into the world to learn a trade.”"
+    },
+    {
+     "q": "Who turned out to be the master in green clothes?",
+     "o": [
+      "The devil",
+      "A travelling merchant",
+      "A wizard",
+      "A king"
+     ],
+     "a": 0,
+     "e": "“To je bio đavo.”"
+    },
+    {
+     "q": "What did the old woman advise the boy to say to the master?",
+     "o": [
+      "That he missed home",
+      "That the master was the best in the world",
+      "That he had learned everything",
+      "That he had learned nothing"
+     ],
+     "a": 3,
+     "e": "“Always say you haven't learned anything.”"
+    },
+    {
+     "q": "How long did the boy stay with the devil?",
+     "o": [
+      "Three years",
+      "A month",
+      "Ten years",
+      "One year"
+     ],
+     "a": 0,
+     "e": "Three years passed."
+    },
+    {
+     "q": "What did the son turn into at the first fair?",
+     "o": [
+      "A dog",
+      "A golden cup",
+      "A bird",
+      "A beautiful horse"
+     ],
+     "a": 3,
+     "e": "The boy turned into a horse like no other."
+    },
+    {
+     "q": "What instruction did the son give his father for selling the horse?",
+     "o": [
+      "Not to sell the horse at all",
+      "Take the money but not hand over the bridle — strike it on the ground",
+      "Sell the horse cheaply",
+      "Give the bridle to the buyer"
+     ],
+     "a": 1,
+     "e": "“Don't give the bridle — strike it on the ground.”"
+    },
+    {
+     "q": "What did the son turn into while the devil chased him?",
+     "o": [
+      "A stone",
+      "A tree",
+      "A wolf",
+      "A pigeon, then a ring on the emperor's daughter's hand"
+     ],
+     "a": 3,
+     "e": "A pigeon, then a ring on the princess's hand."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Idem u svet da učim kakav *zanat*.",
+     "o": [
+      "trade, craft",
+      "prayer",
+      "song",
+      "language"
+     ],
+     "a": 0,
+     "e": "Zanat — trade, craft."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Majstor skoči u vodu i stane *plivati*.",
+     "o": [
+      "to swim",
+      "to run",
+      "to drown",
+      "to jump"
+     ],
+     "a": 0,
+     "e": "Plivati — to swim."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Preda ga jednoj staroj *babi* da ga uči.",
+     "o": [
+      "old woman",
+      "girl",
+      "emperor",
+      "soldier"
+     ],
+     "a": 0,
+     "e": "Baba — old woman."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Odmah mi *ular* skini s glave pa udri njime o zemlju.",
+     "o": [
+      "horseshoe",
+      "saddle",
+      "bridle",
+      "whip"
+     ],
+     "a": 2,
+     "e": "Ular — bridle."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "A od Turčina stvori se *kobac*.",
+     "o": [
+      "sparrow",
+      "pigeon",
+      "hawk",
+      "hen"
+     ],
+     "a": 2,
+     "e": "Kobac — hawk."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Idem u ___ da učim zanat.",
+     "o": [
+      "svet",
+      "sveta",
+      "svetu",
+      "svetom"
+     ],
+     "a": 0,
+     "e": "U + accusative (where to?); inanimate masculine: u svet."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Majstor uzme dete za ___.",
+     "o": [
+      "vratu",
+      "vrat",
+      "vratom",
+      "vrata"
+     ],
+     "a": 1,
+     "e": "Za (by what?) + accusative: za vrat."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Ja ću se ___ lep konj.",
+     "o": [
+      "stvorio",
+      "stvoriti",
+      "stvarati",
+      "stvaram"
+     ],
+     "a": 1,
+     "e": "After ću comes the infinitive; the result of the transformation takes the perfective: stvoriti."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What dish is being cooked in the video?",
+     "o": [
+      "Lasagna",
+      "Borscht",
+      "Cabbage rolls",
+      "Meatballs in tomato sauce"
+     ],
+     "a": 3,
+     "e": "In the video: \"Domaće ćufte u paradajz sosu\" — homemade meatballs in tomato sauce."
+    },
+    {
+     "q": "What are the meatballs fried in?",
+     "o": [
+      "On a grill",
+      "In the oven without oil",
+      "In lard",
+      "In olive oil"
+     ],
+     "a": 2,
+     "e": "In the video: \"Obavezno ih pržim na masti sa obe strane dok ne porumene\" — I always fry them in lard on both sides until they turn golden."
+    },
+    {
+     "q": "What is added after the meatballs are taken out?",
+     "o": [
+      "Wine",
+      "Flour and sweet paprika",
+      "Sour cream",
+      "Cheese"
+     ],
+     "a": 1,
+     "e": "In the video: \"Zatim ih izvadim, a potom dodam brašno i alevu papriku\" — then I take them out and add flour and ground paprika."
+    },
+    {
+     "q": "What is the secret of any red sauce?",
+     "o": [
+      "A pinch of salt",
+      "A bay leaf",
+      "A spoonful of vinegar",
+      "A little sugar"
+     ],
+     "a": 3,
+     "e": "In the video: \"A tajna za svaki crveni sos je malo šećera\" — and the secret of every red sauce is a little sugar."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Mlevenom* mesu dodamo crni i beli luk.",
+     "o": [
+      "fried (dat.)",
+      "raw (dat.)",
+      "minced (dat.)",
+      "frozen (dat.)"
+     ],
+     "a": 2,
+     "e": "Mleveno meso — minced meat; mleti — to grind."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dodamo crni i *beli luk*.",
+     "o": [
+      "ginger",
+      "leek",
+      "chives",
+      "garlic"
+     ],
+     "a": 3,
+     "e": "Crni luk — onion (literally \"black onion\"), beli luk — garlic (\"white onion\")."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pržim ih na masti dok ne *porumene*.",
+     "o": [
+      "will cool down",
+      "will burn",
+      "will overcook",
+      "will turn golden"
+     ],
+     "a": 3,
+     "e": "Poruméneti — to turn golden-brown; rumen — rosy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve to lepo zamesimo i formiramo *kuglice*.",
+     "o": [
+      "little balls",
+      "sausages",
+      "flatbreads",
+      "squares"
+     ],
+     "a": 0,
+     "e": "Kuglica — a little ball; kugla — a ball."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "___ mesu dodamo crni i beli luk.",
+     "o": [
+      "Mleveno",
+      "Mlevenog",
+      "Mlevenim",
+      "Mlevenom"
+     ],
+     "a": 3,
+     "e": "Dodati (\"to add\") requires the dative case for what is added to: mlevenom mesu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nalijem ___ i dodam domaći sos.",
+     "o": [
+      "vode",
+      "voda",
+      "vodom",
+      "vodu"
+     ],
+     "a": 2,
+     "e": "Pour with what: instrumental case — vodom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dodam domaći Barilla ___ bez konzervansa.",
+     "o": [
+      "sosa",
+      "sosu",
+      "sosom",
+      "sos"
+     ],
+     "a": 3,
+     "e": "Direct object, inanimate, masculine: the accusative coincides with the nominative — sos."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "A tajna za svaki ___ sos je malo šećera.",
+     "o": [
+      "crveni",
+      "crvena",
+      "crvenim",
+      "crvenog"
+     ],
+     "a": 0,
+     "e": "The adjective agrees with sos in the masculine singular: crveni sos."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is mitosis for, according to the example at the start of the video?",
+     "o": [
+      "So that a lizard can regrow its tail",
+      "So that birds can fly",
+      "So that plants can bloom",
+      "So that fish can swim"
+     ],
+     "a": 0,
+     "e": "In the video: \"Da bi gušteru izrastao rep\" — so that a lizard can regrow its tail."
+    },
+    {
+     "q": "What did all of us arise from, according to the author?",
+     "o": [
+      "From two cells",
+      "From a single fertilized egg cell",
+      "From a hundred cells",
+      "From water"
+     ],
+     "a": 1,
+     "e": "In the video: \"svi smo mi nastali od jedne jedine oplođene jajne ćelije\" — all of us arose from a single fertilized egg cell."
+    },
+    {
+     "q": "How many chromosomes does a human have?",
+     "o": [
+      "23",
+      "46",
+      "48",
+      "94"
+     ],
+     "a": 1,
+     "e": "In the video: \"Hromozoma kod čoveka ima 46\" — humans have 46 chromosomes."
+    },
+    {
+     "q": "What does the number of chromosomes in different species show?",
+     "o": [
+      "The complexity of an organism does not depend on the number of chromosomes",
+      "The more chromosomes, the smarter the organism",
+      "There are always 46 chromosomes",
+      "Only humans have chromosomes"
+     ],
+     "a": 0,
+     "e": "In the video: \"složenost organizma nema nikakve veze sa količinom hromozoma\" — the complexity of an organism has nothing to do with the number of chromosomes."
+    },
+    {
+     "q": "What is a chromosome made of two sister chromatids?",
+     "o": [
+      "A doubled chromosome joined by a centromere",
+      "A cell",
+      "A nucleus",
+      "A fiber"
+     ],
+     "a": 0,
+     "e": "In the video: \"hromozom koji se sastoji od dve sestrinske hromatide\" — a chromosome consisting of two sister chromatids."
+    },
+    {
+     "q": "What is the whole stage of preparing for division called?",
+     "o": [
+      "Prophase",
+      "Interphase",
+      "Metaphase",
+      "Telophase"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pa ceo onaj deo pripreme za deobu zove se interfaza\" — well, that whole stage of preparing for division is called interphase."
+    },
+    {
+     "q": "What happens in metaphase?",
+     "o": [
+      "The chromosomes line up in the middle",
+      "The cell dies",
+      "The nucleus forms",
+      "The cell grows"
+     ],
+     "a": 0,
+     "e": "In the video: \"a hromozomi u sredini, to je metafaza\" — and the chromosomes in the middle, that's metaphase."
+    },
+    {
+     "q": "What is the result of mitosis?",
+     "o": [
+      "Two identical daughter cells",
+      "One big cell",
+      "Four different cells",
+      "Nothing"
+     ],
+     "a": 0,
+     "e": "In the video: \"mitoza daje nove identične ćelije\" — mitosis produces new identical cells."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaka *ćelija* ima jedro.",
+     "o": [
+      "cell",
+      "fabric",
+      "bone",
+      "blood"
+     ],
+     "a": 0,
+     "e": "Ćelija — a cell."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hromozomi su u *jedru*.",
+     "o": [
+      "in the nucleus",
+      "in water",
+      "in the skin",
+      "in the air"
+     ],
+     "a": 0,
+     "e": "Jedro — the nucleus (of a cell)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mitoza je ćelijska *deoba*.",
+     "o": [
+      "death",
+      "division",
+      "connection",
+      "food"
+     ],
+     "a": 1,
+     "e": "Deoba — division."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "DNK se *udvostručava*.",
+     "o": [
+      "doubles",
+      "gets lost",
+      "grows",
+      "disappears"
+     ],
+     "a": 0,
+     "e": "Udvostručiti — to double."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hromatide se kreću ka *polovima*.",
+     "o": [
+      "to the poles",
+      "to friends",
+      "to roots",
+      "to banks"
+     ],
+     "a": 0,
+     "e": "Pol — a pole."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gušter dobija novi *rep*.",
+     "o": [
+      "tail",
+      "of the eye",
+      "finger",
+      "tongue"
+     ],
+     "a": 0,
+     "e": "Rep — a tail."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Nasledni* materijal je DNK.",
+     "o": [
+      "hereditary",
+      "new",
+      "old",
+      "foreign"
+     ],
+     "a": 0,
+     "e": "Nasledni — hereditary."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hromozomi se postavljaju na *sredini*.",
+     "o": [
+      "at the edge",
+      "in the middle",
+      "at the bottom",
+      "at the top"
+     ],
+     "a": 1,
+     "e": "Sredina — the middle."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму",
+     "q": "Ćelija se sprema za ___.",
+     "o": [
+      "deoba",
+      "deobu",
+      "deobe",
+      "deobom"
+     ],
+     "a": 1,
+     "e": "Spremati se za + accusative case: za deobu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Imamo dve nove ___.",
+     "o": [
+      "ćelije",
+      "ćelija",
+      "ćeliji",
+      "ćelijom"
+     ],
+     "a": 0,
+     "e": "Dve + nominative plural: dve ćelije."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Broj hromozoma je konstantan i karakterističan za ___.",
+     "o": [
+      "vrsta",
+      "vrstu",
+      "vrste",
+      "vrsti"
+     ],
+     "a": 1,
+     "e": "Za + accusative case: za vrstu."
+    },
+    {
+     "t": "Choose the preposition",
+     "q": "Iz svakog para jedan dolazi ___ oca, a drugi od majke.",
+     "o": [
+      "od",
+      "na",
+      "u",
+      "za"
+     ],
+     "a": 0,
+     "e": "Dolaziti od + genitive means \"to come from\": od oca, od majke."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "i tek tada je spremna za ___ deobu, odnosno za svoju smrt,",
+     "o": [
+      "nove",
+      "novoj",
+      "nova",
+      "novu"
+     ],
+     "a": 3,
+     "e": "Za + accusative. Deoba is feminine, so za novu deobu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Hromatide odlaze na ___.",
+     "o": [
+      "polovi",
+      "polove",
+      "polova",
+      "polovima"
+     ],
+     "a": 1,
+     "e": "Na + accusative case (where to): na polove."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Citoplazma se ugiba na tom ___ mestu.",
+     "o": [
+      "središnji",
+      "središnjem",
+      "središnja",
+      "središnjim"
+     ],
+     "a": 1,
+     "e": "Na + locative case, neuter: na središnjem mestu."
+    },
+    {
+     "t": "Выбери правильную форму",
+     "q": "Mitoza je stalno prisutna u ___ kože.",
+     "o": [
+      "ćelije",
+      "ćelijama",
+      "ćelijom",
+      "ćelija"
+     ],
+     "a": 1,
+     "e": "U + locative plural: u ćelijama."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What did the stepmother demand of her husband?",
+     "o": [
+      "To send the children to school",
+      "To take the children away from the house",
+      "To give her more money",
+      "To sell the house"
+     ],
+     "a": 1,
+     "e": "“I can't stand these three children — take them out of the house.”"
+    },
+    {
+     "q": "How did the children find their way home the first time?",
+     "o": [
+      "By the stars",
+      "They asked a shepherd",
+      "By footprints",
+      "By the ashes they scattered along the way"
+     ],
+     "a": 3,
+     "e": "They scattered ashes along the path."
+    },
+    {
+     "q": "Why couldn't they return the second time?",
+     "o": [
+      "Their father tied them up",
+      "Animals ate the bran they scattered",
+      "Rain washed away the tracks",
+      "They got lost in the fog"
+     ],
+     "a": 1,
+     "e": "Beasts had eaten the bran."
+    },
+    {
+     "q": "How did the girl save her brother from the strangers?",
+     "o": [
+      "She called the neighbours",
+      "She tricked the guard",
+      "She led him away at night",
+      "She had the old woman sit on the shovel, and the woman was baked in the oven"
+     ],
+     "a": 3,
+     "e": "The old woman sat on the shovel and was baked in the oven."
+    },
+    {
+     "q": "Whom did the children meet at the spring?",
+     "o": [
+      "A woman who blessed the girl",
+      "A wolf",
+      "Robbers",
+      "The emperor"
+     ],
+     "a": 0,
+     "e": "At the spring the woman blessed the girl."
+    },
+    {
+     "q": "What gift did the woman give the kind girl?",
+     "o": [
+      "A golden carriage",
+      "Pearls from her eyes when she wept, golden roses from her mouth when she spoke",
+      "The ability to fly",
+      "Immortality"
+     ],
+     "a": 1,
+     "e": "Pearls instead of tears, golden roses instead of words."
+    },
+    {
+     "q": "What happened to the stepmother's daughter after meeting the woman?",
+     "o": [
+      "She got pearls too",
+      "Nothing changed",
+      "She became a queen",
+      "Bloody tears flowed from her eyes and spit sprayed from her mouth"
+     ],
+     "a": 3,
+     "e": "Bloody tears and spitting instead of pearls and roses."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Bio čovek *udov* i imao jedno muško i jedno žensko dete.",
+     "o": [
+      "soldier",
+      "widower",
+      "rich man",
+      "orphan"
+     ],
+     "a": 1,
+     "e": "Udov — widower."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Napunimo džepove *pepela*.",
+     "o": [
+      "flour",
+      "sand",
+      "snow",
+      "ash"
+     ],
+     "a": 3,
+     "e": "Pepeo — ash."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ne našavši pepela nakupe *mekinja* u džepove.",
+     "o": [
+      "leaves",
+      "bran",
+      "stones",
+      "berries"
+     ],
+     "a": 1,
+     "e": "Mekinje — bran."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Dođu na jedan *izvor*.",
+     "o": [
+      "road",
+      "spring",
+      "mountain",
+      "bridge"
+     ],
+     "a": 1,
+     "e": "Izvor — spring."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Tek devojka zaviri u glavu, stane *pljuvati*.",
+     "o": [
+      "to shout",
+      "to sing",
+      "to cry",
+      "to spit"
+     ],
+     "a": 3,
+     "e": "Pljuvati — to spit."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases, verb forms",
+   "questions": [
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Deca su prosipala za sobom pomalo ___.",
+     "o": [
+      "pepelu",
+      "pepelom",
+      "pepeo",
+      "pepela"
+     ],
+     "a": 3,
+     "e": "A portion of something takes the genitive: pepela."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Deca ostanu sama u ___.",
+     "o": [
+      "planinom",
+      "planina",
+      "planinu",
+      "planini"
+     ],
+     "a": 3,
+     "e": "U + locative (where?): u planini."
+    },
+    {
+     "t": "Choose the correct form of the word",
+     "q": "Ona sedne na ___.",
+     "o": [
+      "lopatu",
+      "lopati",
+      "lopata",
+      "lopatom"
+     ],
+     "a": 0,
+     "e": "Na + accusative (where to?): na lopatu."
+    }
+   ]
+  }
+ ]
+}

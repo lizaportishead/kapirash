@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is coming to Belgrade from Mount Athos?",
+     "o": [
+      "A part of the Honorable Cross",
+      "Relics of Saint Sava",
+      "An old icon",
+      "A bell"
+     ],
+     "a": 0,
+     "e": "In the video: \"u Beograd stiže deo Časnog krsta sa Svete Gore\" — a part of the Honorable Cross is coming to Belgrade from Mount Athos."
+    },
+    {
+     "q": "Who gave the relic to the Vatopedi monastery?",
+     "o": [
+      "Holy Prince Lazar",
+      "Emperor Dušan",
+      "Stefan Nemanja",
+      "Rastko Nemanjić"
+     ],
+     "a": 0,
+     "e": "In the video: \"koji je sveti knez Lazar darovao manastiru Vatoped\" — which Holy Prince Lazar gave to the Vatopedi monastery."
+    },
+    {
+     "q": "Who announced this joyful news?",
+     "o": [
+      "Patriarch Porfirije",
+      "The president",
+      "A minister",
+      "The abbot of Vatopedi"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ovu radosnu vest objavio je patrijarh Porfirije\" — this joyful news was announced by Patriarch Porfirije."
+    },
+    {
+     "q": "What happened in May at the Temple of Saint Sava?",
+     "o": [
+      "Believers welcomed the Belt of the Mother of God",
+      "A new monastery opened",
+      "A new patriarch was chosen",
+      "A concert took place"
+     ],
+     "a": 0,
+     "e": "In the video: \"koji su u maju u hramu Svetog Save dočekali Časni pojas Presvete Bogorodice\" — who in May welcomed the Honorable Belt of the Most Holy Mother of God in the Temple of Saint Sava."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "koji je sveti knez Lazar *darovao* manastiru Vatoped",
+     "o": [
+      "gave",
+      "built",
+      "destroyed",
+      "sold"
+     ],
+     "a": 0,
+     "e": "Darovati — to give, donate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "nakon razgovora sa *igumanom* Vatopeda",
+     "o": [
+      "abbot",
+      "ambassador",
+      "doctor",
+      "prince"
+     ],
+     "a": 0,
+     "e": "Iguman — an abbot; igumanom — instr. case."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovu *radosnu* vest objavio je patrijarh Porfirije",
+     "o": [
+      "joyful",
+      "sad",
+      "terrible",
+      "old"
+     ],
+     "a": 0,
+     "e": "Radostan — joyful; radosnu — acc. fem."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "sledi nakon ogromnog *odziva* vernika",
+     "o": [
+      "response",
+      "fear",
+      "dispute",
+      "departure"
+     ],
+     "a": 0,
+     "e": "Odziv — a response; odziva — gen. case."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Posle pojasa Presvete ___ u Beograd stiže deo Časnog krsta",
+     "o": [
+      "Bogorodica",
+      "Bogorodice",
+      "Bogorodicu",
+      "Bogorodici"
+     ],
+     "a": 1,
+     "e": "Pojas (whose?) Bogorodice — genitive."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "deo Časnog ___ sa Svete Gore",
+     "o": [
+      "krst",
+      "krsta",
+      "krstu",
+      "krstom"
+     ],
+     "a": 1,
+     "e": "Deo (of what?) takes the genitive: krsta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "koji je sveti knez Lazar darovao ___ Vatoped",
+     "o": [
+      "manastir",
+      "manastira",
+      "manastiru",
+      "manastirom"
+     ],
+     "a": 2,
+     "e": "Darovati (to whom?) takes the dative: manastiru."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "koji su u maju u ___ Svetog Save dočekali",
+     "o": [
+      "hram",
+      "hrama",
+      "hramu",
+      "hramom"
+     ],
+     "a": 2,
+     "e": "The preposition u (\"in\") answering \"where?\" takes the locative: u hramu."
+    }
+   ]
+  }
+ ]
+}

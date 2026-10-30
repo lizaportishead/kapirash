@@ -1,0 +1,130 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What was the documentary Andrija watched about?",
+     "o": [
+      "That every person has traits of some animal",
+      "Life in a zoo",
+      "How to breed cats",
+      "A trip to Africa"
+     ],
+     "a": 0,
+     "e": "In the video: \"svaki čovek ima psihičko ili fizičko svojstvo neke životinje\" — every person has a mental or physical trait of some animal."
+    },
+    {
+     "q": "What does Andjelka think she is?",
+     "o": [
+      "A swan",
+      "A panther",
+      "A seal",
+      "A gorilla"
+     ],
+     "a": 1,
+     "e": "In the video: \"ja baš osećam da sam ja neki panter\" — I really feel that I'm some kind of panther."
+    },
+    {
+     "q": "What does Andrija call Andjelka?",
+     "o": [
+      "A panther",
+      "A swan",
+      "A seal",
+      "A lioness"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ti si, ljubavi, foka.\" — You, my love, are a seal."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Panter je, bre, *hrabar*, vižljast, brzo trči.",
+     "o": [
+      "brave",
+      "lazy",
+      "stupid",
+      "old"
+     ],
+     "a": 0,
+     "e": "Hrabar — brave, courageous."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ide uvek u jednom pravcu, istom brzinom, *smiren*.",
+     "o": [
+      "calm",
+      "fast",
+      "angry",
+      "lonely"
+     ],
+     "a": 0,
+     "e": "Smiren — calm, at peace."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Onda njih treba uvek da paziš, da maziš, da se brineš, inače će da *riknu*.",
+     "o": [
+      "die",
+      "run away",
+      "wake up",
+      "freeze"
+     ],
+     "a": 0,
+     "e": "Riknuti — colloquial \"to croak, die\"."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ti si, ljubavi, ___.",
+     "o": [
+      "foku",
+      "foke",
+      "foka",
+      "foki"
+     ],
+     "a": 2,
+     "e": "After the linking verb biti (\"to be\") the noun is in the nominative: foka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "I majke mi, daćemo ti ___ da jedeš.",
+     "o": [
+      "riba",
+      "ribu",
+      "ribe",
+      "ribi"
+     ],
+     "a": 1,
+     "e": "\"We'll give you fish\" — the direct object is in the accusative: ribu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Anđe, nemoj da se ___.",
+     "o": [
+      "ljutiš",
+      "ljuti",
+      "ljutim",
+      "ljutimo"
+     ],
+     "a": 0,
+     "e": "Nemoj da + present tense 2nd pers. sg.: nemoj da se ljutiš — \"don't be angry\"."
+    }
+   ]
+  }
+ ]
+}

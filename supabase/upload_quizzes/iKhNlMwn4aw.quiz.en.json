@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Who gives the talk about design thinking?",
+     "o": [
+      "An IBM director",
+      "A journalist",
+      "Milovan Dekić, co-author of a book and head of the user research group at Nordeus",
+      "The founder of Airbnb"
+     ],
+     "a": 2,
+     "e": "In the video: \"Milovan Dekić, koji će nam pričati o design thinkingu. Milovan je inače koautor knjige o ovome i vođa grupe za istraživanja korisnika pri Nordeusu.\" — Milovan Dekić, who will talk to us about design thinking. Milovan is, by the way, the co-author of a book on this and the head of the user research group at Nordeus."
+    },
+    {
+     "q": "What does the IBM example show about prototyping?",
+     "o": [
+      "IBM wrote the program right away",
+      "IBM sold the patent",
+      "IBM shut down the project",
+      "You can simulate the experience: while a typist typed in the corner, people thought speech recognition was working"
+     ],
+     "a": 3,
+     "e": "In the video: \"daktilografkinja sedela sakrivena u ćošku, i ono što ovaj priča, ona je kucala. Dakle, niste razvijali softver, nego ste fejkovali to iskustvo.\" — a typist sat hidden in the corner, and whatever this person said, she typed. So you weren't developing software, you were faking the experience."
+    },
+    {
+     "q": "What is empathy in design thinking?",
+     "o": [
+      "Conduct a phone survey",
+      "Copy a competitor",
+      "Spend time with the people you're creating the product for, and understand them",
+      "Hire a psychologist"
+     ],
+     "a": 2,
+     "e": "In the video: \"ti ljudi koji će to da koriste — budite malo zajedno s njima. Vidite šta rade, kako rade... To je ideja empatije\" — those people who will use it — be together with them a bit. See what they do, how they do it... That's the idea of empathy."
+    },
+    {
+     "q": "What happened to Airbnb's business after talking to users?",
+     "o": [
+      "It didn't change",
+      "It grew by 400 percent",
+      "It halved",
+      "It shut down"
+     ],
+     "a": 1,
+     "e": "In the video: \"nakon nekih promena, skočio biznis za 400%\" — after some changes, the business jumped by 400%."
+    },
+    {
+     "q": "What conclusion was drawn from the McDonald's milkshake example?",
+     "o": [
+      "People needed a thicker milkshake so that it would last for a long commute",
+      "The price should be lowered",
+      "The strawberry flavor should be removed",
+      "More sugar should be added"
+     ],
+     "a": 0,
+     "e": "In the video: \"Napravili su ga gušćim, da zapravo može duže da traje, ukoliko vam je put do posla duži\" — they made it thicker, so that it can actually last longer if your trip to work is longer."
+    },
+    {
+     "q": "What is the \"five whys\" method?",
+     "o": [
+      "Five ideas on a board",
+      "Five product tests",
+      "Five questions in a survey",
+      "Ask the interviewee \"why is this a problem\" five times to understand the real problem"
+     ],
+     "a": 3,
+     "e": "In the video: \"five whys, pet puta ih pitajte: zašto ti je to problem?\" — five whys, ask them five times: why is this a problem for you?"
+    },
+    {
+     "q": "What did the Product Hunt example show?",
+     "o": [
+      "The author created a simple mailing list on Twitter and checked whether there was demand — 150 people signed up instead of 100",
+      "The author spent 100,000 euros",
+      "The author gave up the idea",
+      "The author hired developers"
+     ],
+     "a": 0,
+     "e": "In the video: \"napravio običnu mejling listu i okačio na Tviter... Umesto sto, neka se prijavilo 150 ljudi\" — he made an ordinary mailing list and posted it on Twitter... Instead of a hundred, say 150 people signed up."
+    },
+    {
+     "q": "How did Nordeus test the game on real people?",
+     "o": [
+      "They didn't test it",
+      "Only over the internet",
+      "They offered to play for a mug of beer by the fountain at Obilićev venac",
+      "With a closed group in the office"
+     ],
+     "a": 2,
+     "e": "In the video: \"Je l' možeš da odvojiš 20 minuta za mene, i ja te častim pivom?... sedeli danima s ljudima na Obilićevom vencu\" — can you spare 20 minutes for me, and I'll buy you a beer?... we sat for days with people at Obilićev venac."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Spremni ste za našeg sledećeg *predavača*.",
+     "o": [
+      "of the guest",
+      "of the driver",
+      "of the cook",
+      "of the speaker, lecturer"
+     ],
+     "a": 3,
+     "e": "Predavač — a lecturer; predavanje — a lecture."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zato što je jako obimna i *glomazna* tema.",
+     "o": [
+      "new (fem.)",
+      "interesting",
+      "boring",
+      "bulky"
+     ],
+     "a": 3,
+     "e": "Glomazan — bulky, voluminous."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Daktilografkinja* je sedela sakrivena u ćošku.",
+     "o": [
+      "secretary",
+      "actress",
+      "dancer",
+      "typist"
+     ],
+     "a": 3,
+     "e": "Daktilografkinja — a typist."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Niko živ nije *iznajmljivao* stanove.",
+     "o": [
+      "built",
+      "sold",
+      "rented out or rented",
+      "painted"
+     ],
+     "a": 2,
+     "e": "Iznajmljivati — to rent out or to rent."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vaš glavni *konkurent* ne mora da bude iz vaše oblasti.",
+     "o": [
+      "competitor",
+      "partner",
+      "client",
+      "friend"
+     ],
+     "a": 0,
+     "e": "Konkurent — a competitor."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Postoji *potražnja* na tržištu.",
+     "o": [
+      "advertising",
+      "demand",
+      "tax",
+      "supply"
+     ],
+     "a": 1,
+     "e": "Potražnja — demand; tražiti — to seek, to demand."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Probajte da napravite nešto *opipljivo*.",
+     "o": [
+      "huge",
+      "beautiful",
+      "expensive",
+      "tangible"
+     ],
+     "a": 3,
+     "e": "Opipljiv — tangible; pipati — to feel by touch."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Krenuli smo u neku *kladionicu* na Novom Beogradu.",
+     "o": [
+      "library",
+      "betting shop",
+      "coffee shop",
+      "pharmacy"
+     ],
+     "a": 1,
+     "e": "Kladionica — a betting shop."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala ___ na pozivu.",
+     "o": [
+      "organizatorima",
+      "organizatori",
+      "organizatora",
+      "organizatore"
+     ],
+     "a": 0,
+     "e": "Hvala to whom — dative case: organizatorima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Milovan je vođa grupe za istraživanja ___.",
+     "o": [
+      "korisnici",
+      "korisnicima",
+      "korisnike",
+      "korisnika"
+     ],
+     "a": 3,
+     "e": "Research of what? Genitive plural: korisnika."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "idite da pričate sa svojim ___.",
+     "o": [
+      "korisnika",
+      "korisniku",
+      "korisnici",
+      "korisnicima"
+     ],
+     "a": 3,
+     "e": "Sa (\"with\") + instrumental plural: sa korisnicima — with users."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Daktilografkinja je sedela sakrivena u ___.",
+     "o": [
+      "ćoškom",
+      "ćošak",
+      "ćoška",
+      "ćošku"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative case: u ćošku."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "Tako što ___ i razvijate softver za voice recognition.",
+     "o": [
+      "sednete",
+      "sedali",
+      "seli",
+      "sedate"
+     ],
+     "a": 0,
+     "e": "A one-off action before an ongoing process is perfective: sednete (\"sit down\"). Sedate is imperfective."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ko je glavni konkurent ___?",
+     "o": [
+      "Netfliksom",
+      "Netfliks",
+      "Netfliksa",
+      "Netfliksu"
+     ],
+     "a": 3,
+     "e": "Konkurent to what/whom — dative case: konkurent Netfliksu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne morate da ulupate hiljade evra u brži ___.",
+     "o": [
+      "lift",
+      "liftom",
+      "liftu",
+      "lifta"
+     ],
+     "a": 0,
+     "e": "Ulupati u + accusative case; for inanimate nouns it coincides with the nominative: lift."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prototip aplikacije možete da napravite za pet do šest ___.",
+     "o": [
+      "minut",
+      "minute",
+      "minuta",
+      "minutama"
+     ],
+     "a": 2,
+     "e": "After numbers from 5 the genitive plural is used: minuta."
+    }
+   ]
+  }
+ ]
+}

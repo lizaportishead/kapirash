@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Где, по словам писателя, человек чувствует себя «как дома»?",
+     "o": [
+      "Там, где тепло",
+      "Там, где живёт семья",
+      "Там, где родился",
+      "Там, где хорошо владеет языком"
+     ],
+     "a": 3,
+     "e": "В ролике: «mesto gde se najviše osećaš domaći je tamo gde dobro vladaš jezikom»."
+    },
+    {
+     "q": "Как он начал переводить?",
+     "o": [
+      "Его попросило издательство",
+      "Читая Сарамаго по-португальски, он «переводил в голове» и решил записывать перевод на компьютере",
+      "Он получил заказ",
+      "Он учился на переводчика"
+     ],
+     "a": 1,
+     "e": "В ролике: «da bih je pročitao, treba da je praktično prevedem u glavi. I onda sam ja, umesto da prevodim u glavi, seo za kompjuter i svaku rečenicu lepo preveo»."
+    },
+    {
+     "q": "Какую книгу Андрича он перевёл через семь лет после Сарамаго?",
+     "o": [
+      "«Проклятый двор»",
+      "«Девушка на мосту»",
+      "«Мост на Дрине»",
+      "«Травницкая хроника»"
+     ],
+     "a": 0,
+     "e": "В ролике: «Nekih sedam godina potom sam uzeo „Prokletu avliju“ i rekao: ajde sada da probam ovo»."
+    },
+    {
+     "q": "Чем, как он заметил позже, его книги связаны между собой?",
+     "o": [
+      "Любовью к спорту",
+      "Темой идентичности «перемещённых» людей и иммигрантов",
+      "Рецептами",
+      "Историей города"
+     ],
+     "a": 1,
+     "e": "В ролике: «jedino i bavim identitetom izmeštenih ljudi.... uglavnom neki imigranti»."
+    },
+    {
+     "q": "Почему он поехал в Лондон в 1989 году?",
+     "o": [
+      "На летнюю практику в разгар строительного бума при Тэтчер",
+      "Учиться в университете",
+      "В отпуск",
+      "К родственникам"
+     ],
+     "a": 0,
+     "e": "В ролике: «otišao sam za London... na neku praksu preko leta, jer je u to vreme bio neki veliki procvat pod Tačerkom»."
+    },
+    {
+     "q": "Как он решил проблему с документами в Лондоне?",
+     "o": [
+      "Получил рабочую визу",
+      "Нанял адвоката",
+      "Женился ради документов — и остался с женой лучшим другом",
+      "Вернулся в Белград"
+     ],
+     "a": 2,
+     "e": "В ролике: «Ja sam rešio svoj problem u Londonu tako što sam se oženio... To je bilo za papire. Dan-danas smo najbolji drugari»."
+    },
+    {
+     "q": "Как он связался с Жозе Сарамаго после бомбардировки Сербии?",
+     "o": [
+      "Встретился на конференции",
+      "Позвонил ему и попросил высказаться против; тот так и сделал",
+      "Написал письмо",
+      "Поехал в Лиссабон"
+     ],
+     "a": 1,
+     "e": "В ролике: «počelo bombardovanje Srbije. I onda sam ga ja lepo pozvao telefonom i zamolio ga da se on izjasni protiv toga, što je on i»."
+    },
+    {
+     "q": "Почему в Сербии нельзя профессионально жить литературой?",
+     "o": [
+      "Запрещено законом",
+      "Недостаточно читателей",
+      "Нет издательств",
+      "Слишком много писателей"
+     ],
+     "a": 1,
+     "e": "В ролике: «U Srbiji... nemoguće je baviti se profesionalno književnošću... nema dovoljno čitalaca»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gde dobro *vladaš* jezikom, tu se osećaš domaći.",
+     "o": [
+      "учишься",
+      "пишешь",
+      "владеешь",
+      "говоришь громко"
+     ],
+     "a": 2,
+     "e": "Vladati jezikom — владеть языком."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobro vladam sa tri jezika, a još dva *natucam*.",
+     "o": [
+      "забываю",
+      "учу в школе",
+      "ненавижу",
+      "знаю понемногу"
+     ],
+     "a": 3,
+     "e": "Natucati — знать немного, объясняться кое-как."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bavim se identitetom *izmeštenih* ljudi.",
+     "o": [
+      "пожилых",
+      "одиноких",
+      "перемещённых",
+      "известных"
+     ],
+     "a": 2,
+     "e": "Izmešten — перемещённый, лишённый родного места."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi jesmo bili *izbeglice*.",
+     "o": [
+      "туристами",
+      "гостями",
+      "беженцами",
+      "студентами"
+     ],
+     "a": 2,
+     "e": "Izbeglica — беженец."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Plašio sam se policije, da me ne uhvate i ne *proteraju*.",
+     "o": [
+      "наградят",
+      "похвалят",
+      "выдворят",
+      "накажут"
+     ],
+     "a": 2,
+     "e": "Proterati — выслать, выдворить."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mi smo svi *privređivali*, niko nije bio na socijalnoj pomoći.",
+     "o": [
+      "проигрывали",
+      "зарабатывали",
+      "отдыхали",
+      "учились"
+     ],
+     "a": 1,
+     "e": "Privređivati — зарабатывать, вести хозяйство."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vinogradarsko imanje koje je imao moj pokojni *tast*.",
+     "o": [
+      "дядя",
+      "тесть",
+      "дед",
+      "сосед"
+     ],
+     "a": 1,
+     "e": "Tast — тесть (отец жены)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nikome ne moram da se *dodvoravam*.",
+     "o": [
+      "звонить",
+      "угождать, заискивать",
+      "писать",
+      "показываться"
+     ],
+     "a": 1,
+     "e": "Dodvoravati se — заискивать, подлизываться."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nisam imao nameru da se bavim ___.",
+     "o": [
+      "prevođenju",
+      "prevođenja",
+      "prevođenje",
+      "prevođenjem"
+     ],
+     "a": 3,
+     "e": "Baviti se чем — творительный падеж: prevođenjem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Seo sam za ___ i svaku rečenicu lepo preveo.",
+     "o": [
+      "kompjuterom",
+      "kompjuteru",
+      "kompjuter",
+      "kompjutera"
+     ],
+     "a": 2,
+     "e": "Sesti za + винительный падеж; у неодушевлённых он совпадает с именительным: za kompjuter."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kad mi je prva Saramagova knjiga dopala u ___.",
+     "o": [
+      "rukama",
+      "ruka",
+      "ruku",
+      "ruke"
+     ],
+     "a": 3,
+     "e": "Dopasti u ruke — «попасть в руки»; винительный падеж множественного числа: ruke."
+    },
+    {
+     "t": "Выбери предлог",
+     "q": "mi smo ___ njih jako direktni, jako smo grublji,",
+     "o": [
+      "o",
+      "kod",
+      "za",
+      "od"
+     ],
+     "a": 2,
+     "e": "Za njih — «для них, по сравнению с ними»: za + винительный падеж."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Odavde sam otišao za ___ 1989. godine.",
+     "o": [
+      "London",
+      "Londona",
+      "Londonu",
+      "Londonom"
+     ],
+     "a": 0,
+     "e": "Ići za + город в винительном падеже; у неодушевлённых он совпадает с именительным: za London."
+    },
+    {
+     "t": "Выбери вид глагола",
+     "q": "Zato ja sve što pišem ___ na jednom jeziku, pa ga prevodim na drugi,",
+     "o": [
+      "pisao",
+      "napisao",
+      "pišem",
+      "napišem"
+     ],
+     "a": 3,
+     "e": "Результат — готовый текст: совершенный вид napišem («напишу»). Pišem — несовершенный (процесс)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moj susret sa ___ dogodio se tako što sam preveo njegovu knjigu.",
+     "o": [
+      "Saramagu",
+      "Saramaga",
+      "Saramagom",
+      "Saramago"
+     ],
+     "a": 2,
+     "e": "Sa («с») требует творительного падежа: sa Saramagom."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "Ja prvo, kad uđem u ___ grad, imam potpunu metodologiju.",
+     "o": [
+      "strana",
+      "strani",
+      "stranom",
+      "stranog"
+     ],
+     "a": 1,
+     "e": "U + винительный падеж (куда?). У неодушевлённых мужского рода он совпадает с именительным: u strani grad."
+    }
+   ]
+  }
+ ]
+}

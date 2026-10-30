@@ -1,0 +1,130 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the heroine ask Andrija for?",
+     "o": [
+      "To help her in the kitchen",
+      "To go shopping",
+      "To wash the dishes",
+      "To turn on the TV"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa daj, pomozi mi nešto, čoveče.\" — — come on, help me with something."
+    },
+    {
+     "q": "Why doesn't she let him cut the cucumber?",
+     "o": [
+      "He cuts it too thick",
+      "He'll cut his finger",
+      "There are no cucumbers left",
+      "The cucumber is spoiled"
+     ],
+     "a": 0,
+     "e": "In the video: \"uvek debelo seckaš i posle mi to ne bude dobro\" — you always cut it thick and then it doesn't turn out well."
+    },
+    {
+     "q": "What happens if you chop a tomato finely?",
+     "o": [
+      "The salad will be spicy",
+      "The salad will turn to slush",
+      "The tomato will turn sweet",
+      "Nothing special"
+     ],
+     "a": 1,
+     "e": "In the video: \"To će samo da se napravi neka bljuzgavica u salati\" — it'll just turn into some kind of slush in the salad."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hoćeš da iseckam ovaj *krastavac*?",
+     "o": [
+      "cucumber",
+      "tomato",
+      "onion",
+      "pepper"
+     ],
+     "a": 0,
+     "e": "Krastavac — a cucumber."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Andrija, ne možeš paradajz da seckaš tako *sitno*.",
+     "o": [
+      "finely",
+      "coarsely",
+      "quickly",
+      "crookedly"
+     ],
+     "a": 0,
+     "e": "Sitan — small, fine; sitno — finely."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa čoveče, seci normalno, na *kriške*.",
+     "o": [
+      "slices",
+      "cubes",
+      "halves",
+      "ice cubes"
+     ],
+     "a": 0,
+     "e": "Kriška — a slice."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hoćeš da ___ ovaj krastavac?",
+     "o": [
+      "iseckam",
+      "seckam",
+      "isecaš",
+      "sečen"
+     ],
+     "a": 0,
+     "e": "A single completed action \"cut up\" — perfective iseckam (1st pers. sg.)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "To će samo da se napravi neka bljuzgavica u ___.",
+     "o": [
+      "salata",
+      "salati",
+      "salatu",
+      "salate"
+     ],
+     "a": 1,
+     "e": "The preposition u (\"in\") answering \"where?\" takes the locative: u salati."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nemoj krastavac da mi ___.",
+     "o": [
+      "diraš",
+      "dirati",
+      "diraj",
+      "dirao"
+     ],
+     "a": 0,
+     "e": "Nemoj da + present tense 2nd pers. sg.: nemoj da diraš — \"don't touch\"."
+    }
+   ]
+  }
+ ]
+}

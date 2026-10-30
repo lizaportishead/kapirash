@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is CFF?",
+     "o": [
+      "Visual acuity",
+      "Sharpness of hearing",
+      "The frequency at which a creature stops noticing the flicker of light",
+      "An animal's running speed"
+     ],
+     "a": 2,
+     "e": "In the video: \"kritičnu frekvenciju fuzije treptanja... koliko brzo svetlo mora da treperi kako bi neko živo biće prestalo da primećuje treptanje.\" — the critical flicker fusion frequency... how fast a light must flicker for a living being to stop noticing the flicker."
+    },
+    {
+     "q": "What does CFF depend on?",
+     "o": [
+      "Eye size",
+      "Fur color",
+      "Age",
+      "Metabolic rate"
+     ],
+     "a": 3,
+     "e": "In the video: \"ono što diktira koliki će nam biti CFF je brzina našeg metabolizma\" — what dictates how big our CFF will be is the speed of our metabolism."
+    },
+    {
+     "q": "Why can't a dog see a video on a 60 Hz phone?",
+     "o": [
+      "Its CFF is below 20 Hz",
+      "Its CFF is above 80 Hz",
+      "It sees only black and white",
+      "It doesn't look at the screen"
+     ],
+     "a": 1,
+     "e": "In the video: \"psi vide sa CFF-om većim od 80 Hz\" — dogs see with a CFF greater than 80 Hz."
+    },
+    {
+     "q": "What colors do dogs see?",
+     "o": [
+      "Red and green",
+      "Only black and white",
+      "Blue and yellow",
+      "All, like a human"
+     ],
+     "a": 2,
+     "e": "In the video: \"psi mogu videti manji spektar boja, odnosno samo plavu i žutu boju\" — dogs can see a smaller spectrum of colors, namely only blue and yellow."
+    },
+    {
+     "q": "How do cats differ from humans in CFF?",
+     "o": [
+      "It's the same",
+      "Theirs is higher than a dog's",
+      "They don't have one",
+      "Theirs is lower — 50 Hz, and they see us slightly sped up"
+     ],
+     "a": 3,
+     "e": "In the video: \"mačke imaju manji CFF čak i od nas... 50 Hz. Znači, mačke nas vide malo ubrzano\" — cats have a lower CFF even than us... 50 Hz. So cats see us slightly sped up."
+    },
+    {
+     "q": "Whom does the author call the winner in vision?",
+     "o": [
+      "Reptiles",
+      "Birds",
+      "Rodents",
+      "Dogs"
+     ],
+     "a": 1,
+     "e": "In the video: \"Imaju i dobar periferni vid, što ih čini definitivnim pobednikom što se tiče vida\" — they also have good peripheral vision, which makes them the definitive winner when it comes to vision."
+    },
+    {
+     "q": "What does CFF depend on in reptiles?",
+     "o": [
+      "Temperature",
+      "Size",
+      "Satiety",
+      "Time of day"
+     ],
+     "a": 0,
+     "e": "In the video: \"sa promenom temperature menja i brzina njihovog metabolizma. Samim tim i CFF.\" — with a change in temperature, the speed of their metabolism changes. And therefore the CFF too."
+    },
+    {
+     "q": "Which animal lives a very long time and has a CFF of only 10 Hz?",
+     "o": [
+      "Hummingbird",
+      "Land tortoise",
+      "Elephant",
+      "Hamster"
+     ],
+     "a": 1,
+     "e": "In the video: \"kopnena kornjača... CFF od samo 10 Hz\" — the land tortoise... a CFF of only 10 Hz."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kako bi *treptanje* sijalice bilo neprimetno.",
+     "o": [
+      "glow",
+      "buzzing",
+      "flicker",
+      "heating"
+     ],
+     "a": 2,
+     "e": "Treptanje — blinking, flickering; treptati — to blink."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A sve ostalo prepoznaju izvanrednim *njuhom*.",
+     "o": [
+      "taste",
+      "hearing",
+      "sight",
+      "sense of smell"
+     ],
+     "a": 3,
+     "e": "Njuh — the sense of smell."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vide dosta *oštrije* od pasa.",
+     "o": [
+      "darker",
+      "slower",
+      "sharper",
+      "farther"
+     ],
+     "a": 2,
+     "e": "Oštar — sharp, crisp; oštrije — sharper, crisper."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zanima vas kako vide *glodari*.",
+     "o": [
+      "reptiles",
+      "insects",
+      "birds",
+      "rodents"
+     ],
+     "a": 3,
+     "e": "Glodar — a rodent; glodati — to gnaw."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mačke nas vide malo *ubrzano*.",
+     "o": [
+      "blurred",
+      "sped up",
+      "dark",
+      "slowed down"
+     ],
+     "a": 1,
+     "e": "Ubrzati — to speed up; ubrzano — sped up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hrčci i *veverice* idu na oko 80 Hz.",
+     "o": [
+      "squirrels",
+      "hares",
+      "mice",
+      "hedgehogs"
+     ],
+     "a": 0,
+     "e": "Veverica — a squirrel."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pčelama pomaže da lakše nađu *cvet*.",
+     "o": [
+      "honey",
+      "flower",
+      "hive",
+      "water"
+     ],
+     "a": 1,
+     "e": "Cvet — a flower."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Životinja koja živi veoma dugo je kopnena *kornjača*.",
+     "o": [
+      "fish",
+      "turtle",
+      "snake",
+      "lizard"
+     ],
+     "a": 1,
+     "e": "Kornjača — a turtle, a tortoise."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Choose the adjective form",
+     "q": "Iako odlično vide u mraku, vid im nije ___ strana,",
+     "o": [
+      "najjači",
+      "najjača",
+      "najjače",
+      "najjaču"
+     ],
+     "a": 1,
+     "e": "The adjective agrees with the noun: strana is feminine singular, so najjača."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ljudi imaju tri vrste ___.",
+     "o": [
+      "fotoreceptore",
+      "fotoreceptorima",
+      "fotoreceptora",
+      "fotoreceptori"
+     ],
+     "a": 2,
+     "e": "Vrste of what? Genitive plural: fotoreceptora."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "Fokus im je mnogo ___ od ljudskog",
+     "o": [
+      "bolja",
+      "bolje",
+      "bolji",
+      "bolju"
+     ],
+     "a": 2,
+     "e": "The adjective agrees with the subject: fokus is masculine, so bolji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Skoro sve ___ imaju čak 4 vrste fotoreceptora.",
+     "o": [
+      "ptica",
+      "ptici",
+      "pticama",
+      "ptice"
+     ],
+     "a": 3,
+     "e": "The subject is in the nominative plural: ptice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zato u najmračnijim ___ vide izvanredno dobro.",
+     "o": [
+      "prostorija",
+      "prostorijom",
+      "prostorije",
+      "prostorijama"
+     ],
+     "a": 3,
+     "e": "U in answer to \"where?\" — locative plural: prostorijama."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ribe koje žive u ___ vodama.",
+     "o": [
+      "dubokih",
+      "dubokim",
+      "duboko",
+      "duboke"
+     ],
+     "a": 1,
+     "e": "The adjective agrees with vodama in the locative plural: dubokim."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kod ___ je skoro sve drugačije.",
+     "o": [
+      "insektima",
+      "insekti",
+      "insekte",
+      "insekata"
+     ],
+     "a": 3,
+     "e": "Kod (\"in\") requires the genitive case: kod insekata."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Oni vide plavu, zelenu i ___ boju.",
+     "o": [
+      "ultraljubičastom",
+      "ultraljubičasta",
+      "ultraljubičastu",
+      "ultraljubičaste"
+     ],
+     "a": 2,
+     "e": "The adjective is in the accusative case, feminine, like boju: ultraljubičastu."
+    }
+   ]
+  }
+ ]
+}

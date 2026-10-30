@@ -1,0 +1,130 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the heroine unhappy about?",
+     "o": [
+      "Her husband forgot her birthday",
+      "She feels her husband has stopped cuddling her",
+      "She thinks she works too much",
+      "Her husband doesn't want to go visiting"
+     ],
+     "a": 1,
+     "e": "In the video: \"uopšte me više ne maziš kao ranije\" — you don't cuddle me at all anymore like you used to."
+    },
+    {
+     "q": "How many little cuddles a day does a woman need, according to her?",
+     "o": [
+      "8",
+      "12",
+      "18",
+      "30"
+     ],
+     "a": 2,
+     "e": "In the video: \"minimum osamnaest malih maženja\" — at least eighteen little cuddles."
+    },
+    {
+     "q": "What does Andrija suggest instead of eighteen cuddles?",
+     "o": [
+      "One big sexy cuddle",
+      "A trip to a restaurant",
+      "A present",
+      "A massage"
+     ],
+     "a": 0,
+     "e": "In the video: \"Može li tih osamnaest maženja da zameni jedno veliko seksi maženje?\" — — can those eighteen cuddles be replaced by one big sexy cuddle?"
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pritom sam čitala da ženi treba *dnevno* minimum osamnaest malih maženja.",
+     "o": [
+      "per day",
+      "once a week",
+      "at night",
+      "together"
+     ],
+     "a": 0,
+     "e": "Dnevno — daily, per day (from dan \"day\")."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Debela sam, imam *bore* i to je to.",
+     "o": [
+      "wrinkles",
+      "bruises",
+      "freckles",
+      "problems"
+     ],
+     "a": 0,
+     "e": "Bora — a wrinkle, bore — wrinkles."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa onda leptirić, recimo, poljubac *trepavicama*.",
+     "o": [
+      "with eyelashes",
+      "with fingers",
+      "with lips",
+      "with palms"
+     ],
+     "a": 0,
+     "e": "Trepavica — an eyelash; trepavicama — with eyelashes (instr. pl.)."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja tebi više nisam ___.",
+     "o": [
+      "privlačan",
+      "privlačna",
+      "privlačno",
+      "privlačni"
+     ],
+     "a": 1,
+     "e": "A woman is speaking, so the adjective is feminine: privlačna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa mi češkaš ___, četvrto.",
+     "o": [
+      "rukica",
+      "rukicu",
+      "rukice",
+      "rukici"
+     ],
+     "a": 1,
+     "e": "Češkati \"to scratch\" takes the accusative case: rukicu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Znači, ___ me po obrazu, to je jedno.",
+     "o": [
+      "maziš",
+      "pomaziš",
+      "mazio",
+      "mazim"
+     ],
+     "a": 1,
+     "e": "This is a count — \"one, two, three…\", each action is a single act — perfective pomaziš (\"you stroke\")."
+    }
+   ]
+  }
+ ]
+}

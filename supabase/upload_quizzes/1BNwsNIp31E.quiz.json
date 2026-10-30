@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Смысл",
+   "icon": "idea",
+   "about": "Что происходит в ролике",
+   "questions": [
+    {
+     "q": "Какую проблему исследуют в примере ролика?",
+     "o": [
+      "Длинные очереди за кофе в кофейне",
+      "Плохой сервис",
+      "Нехватку парковки",
+      "Дорогой кофе"
+     ],
+     "a": 0,
+     "e": "В ролике: «Sedite u kafiću i gledate kako se stvara ogroman red... odlučujete da istražite ovaj problem»."
+    },
+    {
+     "q": "Сколько людей нужно опросить в примере?",
+     "o": [
+      "2",
+      "50",
+      "10",
+      "100"
+     ],
+     "a": 2,
+     "e": "В ролике: «pronađete 10 osoba sa kojima ćete da obavite intervju»."
+    },
+    {
+     "q": "Для чего нужна карта эмпатии?",
+     "o": [
+      "Чтобы нарисовать маршрут",
+      "Чтобы посчитать бюджет",
+      "Чтобы структурировать данные интервью и узнать из них больше",
+      "Чтобы выбрать цвет бренда"
+     ],
+     "a": 2,
+     "e": "В ролике: «sada morate da nekako strukturirate ove podatke kako biste saznali nešto novo... mapa empatije»."
+    },
+    {
+     "q": "Какие четыре секции в карте автора?",
+     "o": [
+      "Цель, срок, цена, риск",
+      "Говорит, думает, делает, чувствует",
+      "Плюсы, минусы, шансы, угрозы",
+      "Кто, что, где, когда"
+     ],
+     "a": 1,
+     "e": "В ролике: «Prva sekcija je „kaže“, druga sekcija je „misli“, treća sekcija je „radi“ i četvrta»."
+    },
+    {
+     "q": "Сколько лет героине интервью Саре Сарич и где она живёт?",
+     "o": [
+      "50 лет, в селе",
+      "19 лет, в Нови-Саде",
+      "35 лет, в Нише",
+      "27 лет, в Белграде"
+     ],
+     "a": 3,
+     "e": "В ролике: «Sara Sarić ima 27 godina, živi u velikom gradu, neka to bude Beograd»."
+    },
+    {
+     "q": "Почему Сара берёт кофе в Starbucks, а не в ближайшем кафе?",
+     "o": [
+      "Там работает её друг",
+      "Чтобы не стоять в очереди — она заказывает через приложение",
+      "Там вкуснее",
+      "Там дешевле"
+     ],
+     "a": 1,
+     "e": "В ролике: «zašto ne ide u obližnji kafić, nego uzima kafu u Starbaksu, ona je rekla da onda neće čekati red»."
+    },
+    {
+     "q": "Чем Сара всё же не до конца довольна?",
+     "o": [
+      "Приложение дорогое",
+      "Нет сахара",
+      "Она любит домашний кофе",
+      "Кофе слишком горячий"
+     ],
+     "a": 2,
+     "e": "В ролике: «i dalje nije u potpunosti zadovoljna... Sara je takođe rekla da voli domaću kafu.»."
+    },
+    {
+     "q": "Нужно ли делать отдельную карту эмпатии для каждого пользователя?",
+     "o": [
+      "Да, всегда",
+      "Только для первого",
+      "Только для последнего",
+      "Нет, можно сделать одну для группы похожих"
+     ],
+     "a": 3,
+     "e": "В ролике: «Mapu empatije ne morate da kreirate za svakog korisnika posebno. Možete da izdvojite neke slične korisnike»."
+    }
+   ]
+  },
+  {
+   "title": "Лексика",
+   "icon": "translate",
+   "about": "Слова из ролика и их перевод",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Gledate kako se stvara ogroman *red*.",
+     "o": [
+      "очередь",
+      "задержка",
+      "шум",
+      "толпа"
+     ],
+     "a": 0,
+     "e": "Red — очередь, порядок, ряд."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sa desne strane možete da vidite moje *beleške*.",
+     "o": [
+      "заметки",
+      "ошибки",
+      "рисунки",
+      "фотографии"
+     ],
+     "a": 0,
+     "e": "Beleška — заметка; beležiti — записывать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Šta su to neka Sarina *uverenja*?",
+     "o": [
+      "жалобы",
+      "мечты",
+      "привычки",
+      "убеждения"
+     ],
+     "a": 3,
+     "e": "Uverenje — убеждение, уверенность."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogli ste da *zaključite* na osnovu onoga što vam je rekla.",
+     "o": [
+      "угадать цену",
+      "забыть",
+      "отказаться",
+      "сделать вывод"
+     ],
+     "a": 3,
+     "e": "Zaključiti — сделать вывод; zaključak — вывод."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sara je *nestrpljiva*, zato što nema vremena da čeka.",
+     "o": [
+      "весёлая",
+      "спокойная",
+      "любопытная",
+      "нетерпеливая"
+     ],
+     "a": 3,
+     "e": "Nestrpljiv — нетерпеливый; strpljenje — терпение."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ona pazi da ne *prospe* kafu.",
+     "o": [
+      "сварит",
+      "купит",
+      "выпьет",
+      "прольёт"
+     ],
+     "a": 3,
+     "e": "Prosuti — пролить, рассыпать."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sara na posao ide *bajsom*.",
+     "o": [
+      "пешком",
+      "на велосипеде",
+      "на самокате",
+      "на автобусе"
+     ],
+     "a": 1,
+     "e": "Bajs — разговорное «велосипед»."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ima *natrpan* raspored na poslu.",
+     "o": [
+      "скучный",
+      "удобный",
+      "плотный, перегруженный",
+      "свободный"
+     ],
+     "a": 2,
+     "e": "Natrpan — набитый, перегруженный."
+    }
+   ]
+  },
+  {
+   "title": "Грамматика",
+   "icon": "puzzle",
+   "about": "Падежи и предлоги",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sedite u ___ i gledate kako se stvara ogroman red.",
+     "o": [
+      "kafića",
+      "kafićem",
+      "kafić",
+      "kafiću"
+     ],
+     "a": 3,
+     "e": "U на вопрос «где?» — местный падеж: u kafiću."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ko sve može da ima ovaj ___?",
+     "o": [
+      "problema",
+      "problemom",
+      "problem",
+      "problemu"
+     ],
+     "a": 2,
+     "e": "Imati что — винительный падеж; у неодушевлённого мужского рода он совпадает с именительным: problem."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "Onda, Sara je ___, zato što nema vremena da čeka u redu.",
+     "o": [
+      "nestrpljivi",
+      "nestrpljivo",
+      "nestrpljiva",
+      "nestrpljiv"
+     ],
+     "a": 2,
+     "e": "Прилагательное согласуется с подлежащим: Sara — женский род, ед. ч., значит nestrpljiva."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mapu empatije možete da napravite na ___.",
+     "o": [
+      "papiru",
+      "papir",
+      "papira",
+      "papirom"
+     ],
+     "a": 0,
+     "e": "Na на вопрос «на чём?» — местный падеж: na papiru."
+    },
+    {
+     "t": "Выбери форму прилагательного",
+     "q": "pokazaću vam na jednom ___ primeru.",
+     "o": [
+      "praktičan",
+      "praktičnom",
+      "praktično",
+      "praktični"
+     ],
+     "a": 1,
+     "e": "Na + местный падеж. Primer — мужской род, значит окончание -om: na jednom praktičnom primeru."
+    },
+    {
+     "t": "Выбери вид глагола",
+     "q": "Pored toga, ___ smo još neke nove zanimljive stvari.",
+     "o": [
+      "saznavali",
+      "saznali",
+      "saznao",
+      "saznavao"
+     ],
+     "a": 1,
+     "e": "Результат — выяснили новое: совершенный вид saznali. Saznavali — несовершенный. Smo — мн. ч."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sara na posao ide ___.",
+     "o": [
+      "bajs",
+      "bajsa",
+      "bajsom",
+      "bajsu"
+     ],
+     "a": 2,
+     "e": "Ići чем (на чём) — творительный падеж: bajsom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupili biste mali set sticky ___.",
+     "o": [
+      "notove",
+      "notovi",
+      "notova",
+      "notovima"
+     ],
+     "a": 2,
+     "e": "Set чего? Родительный падеж множественного числа: notova."
+    }
+   ]
+  }
+ ]
+}

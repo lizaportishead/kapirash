@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the word \"Rom\" mean in the Romani language?",
+     "o": [
+      "A friend",
+      "A traveler",
+      "A musician",
+      "A person"
+     ],
+     "a": 3,
+     "e": "In the video: \"Rom na ciganskom znači čovek\" — Rom in Romani means a person."
+    },
+    {
+     "q": "Which word, according to the speaker, must be used in official speech?",
+     "o": [
+      "Nomad",
+      "Cigan",
+      "Rom",
+      "Putnik"
+     ],
+     "a": 2,
+     "e": "In the video: \"u zvaničnom jeziku mora se koristiti reč koja pripada nama... to je Rom\" — in official language the word that belongs to us must be used... that is Rom."
+    },
+    {
+     "q": "Which book by Mika Antić changed the author's path?",
+     "o": [
+      "«Plavi čuperak»",
+      "«Gluvo doba»",
+      "«Tamburaši»",
+      "«Garavi sokak»"
+     ],
+     "a": 3,
+     "e": "In the video: \"do mene je slučajno došla zbirka pesama „Garavi sokak“ od Mike Antića, i ja sam posle pet pesama rekao: to je to\" — a poetry collection \"Garavi sokak\" by Mika Antić came into my hands by chance, and after five poems I said: that's it."
+    },
+    {
+     "q": "How old was the author when he met Mika?",
+     "o": [
+      "40",
+      "8",
+      "65",
+      "18"
+     ],
+     "a": 3,
+     "e": "In the video: \"Ja sam bio vrlo mlad, 18 godina, kad sam upoznao Miku\" — I was very young, 18 years old, when I met Mika."
+    },
+    {
+     "q": "Who was Mile Dileja?",
+     "o": [
+      "A famous singer",
+      "A teacher",
+      "A school friend of Mika's father, a talented boy with a vivid imagination",
+      "A neighbor from Belgrade"
+     ],
+     "a": 2,
+     "e": "In the video: \"Mile Dileja zaista postoji. On je bio tatin školski drug... pun mašte\" — Mile Dileja really exists. He was Dad's school friend... full of imagination."
+    },
+    {
+     "q": "What did Žarko Jovanović, known as Jagdino, come up with?",
+     "o": [
+      "A new dance",
+      "The name of a city",
+      "The Roma flag — blue sky, green grass and a wheel",
+      "The school curriculum"
+     ],
+     "a": 2,
+     "e": "In the video: \"izmislio onu zastavu njihovu: plavo nebo, zelena trava i točak u sredini\" — he invented their flag: blue sky, green grass and a wheel in the middle."
+    },
+    {
+     "q": "What are the Roma afraid of, according to the narrator?",
+     "o": [
+      "Evil spirits (čohani), water and people in uniform",
+      "Only the cold",
+      "Dogs",
+      "Music"
+     ],
+     "a": 0,
+     "e": "In the video: \"strah od vode... strah od uniformisanih lica... ali najveći strah je strah od čohana\" — fear of water... fear of uniformed persons... but the greatest fear is the fear of čohani."
+    },
+    {
+     "q": "How does the narrator describe Romani music?",
+     "o": [
+      "Only quiet",
+      "Only religious",
+      "Sad and cheerful at the same time, about life, love and death",
+      "Only fast"
+     ],
+     "a": 2,
+     "e": "In the video: \"Život, ljubav, smrt... muziku koja je vrlo tužna, vrlo osećajna i vrlo vesela\" — life, love, death... music that is very sad, very emotional and very cheerful."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Reč se koristi u pežorativnom, odnosno *pogrdnom* kontekstu.",
+     "o": [
+      "scientific",
+      "jocular",
+      "offensive",
+      "legal"
+     ],
+     "a": 2,
+     "e": "Pogrdan — offensive, derogatory."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Do mene je slučajno došla *zbirka* pesama.",
+     "o": [
+      "poster",
+      "collection",
+      "recording",
+      "newspaper"
+     ],
+     "a": 1,
+     "e": "Zbirka — a collection, an anthology."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zanat se može naučiti, ali *mašta* ne.",
+     "o": [
+      "speed",
+      "fantasy",
+      "attention",
+      "strength"
+     ],
+     "a": 1,
+     "e": "Mašta — imagination, fantasy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Izmislio je i onu *zastavu*.",
+     "o": [
+      "song",
+      "book",
+      "painting",
+      "flag"
+     ],
+     "a": 3,
+     "e": "Zastava — a flag."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Napravio je romski *rečnik*.",
+     "o": [
+      "story",
+      "calendar",
+      "dictionary",
+      "album"
+     ],
+     "a": 2,
+     "e": "Rečnik — a dictionary; reč — a word."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Taj talentovani dečak je bio *streljan*.",
+     "o": [
+      "saved",
+      "sent",
+      "shot",
+      "forgotten"
+     ],
+     "a": 2,
+     "e": "Streljati — to shoot; streljan — shot (executed)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Oni su umeli da nam poruče tu *dragocenu* filozofiju.",
+     "o": [
+      "boring",
+      "precious",
+      "new",
+      "simple"
+     ],
+     "a": 1,
+     "e": "Dragocen — precious, valuable."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Čohano, to znači *strašilo*, vampir.",
+     "o": [
+      "scarecrow",
+      "wanderer",
+      "teacher",
+      "dragon"
+     ],
+     "a": 0,
+     "e": "Strašilo — a scarecrow; strah — fear."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U koje spadate i vi koji ste ovde sa ___.",
+     "o": [
+      "meni",
+      "mnom",
+      "ja",
+      "mene"
+     ],
+     "a": 1,
+     "e": "Sa (\"with\") requires the instrumental case: ja → sa mnom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Po svom načinu života i po ___.",
+     "o": [
+      "tradiciji",
+      "tradiciju",
+      "tradicija",
+      "tradicijom"
+     ],
+     "a": 0,
+     "e": "Po requires the dative/locative case: po tradiciji."
+    },
+    {
+     "t": "Choose the verb aspect",
+     "q": "ja onda ___ to što njih na neki način pogađa,",
+     "o": [
+      "osetio",
+      "osetim",
+      "osećao",
+      "osećam"
+     ],
+     "a": 1,
+     "e": "\"Then\" marks a next moment, so perfective: osetim. Osećam is imperfective (a continuing state)."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "i grad Pariz ___ je omogućio",
+     "o": [
+      "njega",
+      "ga",
+      "on",
+      "mu"
+     ],
+     "a": 3,
+     "e": "Omogućiti kome? Dative: on → mu (\"to him\")."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Upoznali su se sa mojim ___ i njegovom suprugom.",
+     "o": [
+      "oca",
+      "ocem",
+      "ocu",
+      "otac"
+     ],
+     "a": 1,
+     "e": "Sa (\"with\") requires the instrumental case: sa ocem."
+    },
+    {
+     "t": "Choose the adjective form",
+     "q": "U tim, kobajagi ___, pesmama",
+     "o": [
+      "dečjim",
+      "dečje",
+      "dečji",
+      "dečjih"
+     ],
+     "a": 0,
+     "e": "The adjective agrees with the noun: u tim pesmama is locative plural, so dečjim."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Romi imaju kolektivni strah od ___.",
+     "o": [
+      "vodom",
+      "vodu",
+      "voda",
+      "vode"
+     ],
+     "a": 3,
+     "e": "Strah od (\"fear of\") requires the genitive case: od vode."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kada smo veseli, kada smo ___, tu su instrumenti.",
+     "o": [
+      "tužna",
+      "tužnu",
+      "tužno",
+      "tužni"
+     ],
+     "a": 3,
+     "e": "The adjective agrees with the subject \"we\" in the masculine plural: tužni."
+    }
+   ]
+  }
+ ]
+}
