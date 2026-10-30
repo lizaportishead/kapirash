@@ -89,13 +89,13 @@ class CreatorPage extends StatelessWidget {
                         child: LayoutBuilder(
                           builder: (_, box) {
                             final cols = (box.maxWidth / 340).floor().clamp(1, 4);
-                            final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
+                            final cardW = (box.maxWidth - 32 - 16 * (cols - 1)) / cols;
                             return GridView.builder(
-                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                              padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: cols,
-                                crossAxisSpacing: 12,
-                                mainAxisSpacing: 12,
+                                crossAxisSpacing: 16,
+                                mainAxisSpacing: 16,
                                 mainAxisExtent: videoCardHeight(cardW),
                               ),
                               itemCount: list.length,

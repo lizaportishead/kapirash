@@ -128,7 +128,7 @@ class _Profile extends StatelessWidget {
                   : ' · ${interests.take(3).map(topicLabel).join(', ')}${interests.length > 3 ? ui(' и ещё {0}', [interests.length - 3]) : ''}');
     final mobile = MediaQuery.sizeOf(context).width < 600;
     return Padding(
-      padding: EdgeInsets.fromLTRB(12, 0, 12, 20),
+      padding: EdgeInsets.fromLTRB(16, 0, 16, 20),
       child: Lift(
         enabled: mobile,
         child: Material(
@@ -148,7 +148,7 @@ class _Profile extends StatelessWidget {
                       decoration: BoxDecoration(color: cOnViolet.withValues(alpha: 0.2), shape: BoxShape.circle),
                       child: Icon(Icons.auto_awesome_rounded, size: 22, color: cOnViolet),
                     ),
-                    SizedBox(width: 12),
+                    SizedBox(width: 16),
                   ],
                   Expanded(
                     child: Text(text, style: TextStyle(fontSize: 14, height: 1.35, color: mobile ? cMuted : cOnViolet)),
@@ -198,9 +198,9 @@ class _Books extends StatelessWidget {
             height: 212,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 12),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               itemCount: list.length,
-              separatorBuilder: (_, _) => SizedBox(width: 12),
+              separatorBuilder: (_, _) => SizedBox(width: 16),
               itemBuilder: (_, i) => _BookCard(list[i]),
             ),
           ),
@@ -270,7 +270,7 @@ class _Podcasts extends StatelessWidget {
       children: [
         SectionHeader(ui('Подкасты для тебя'), onAll: onAll, allLabel: ui('Все')),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(children: [for (final p in podcasts.take(3)) EpisodeTile(p)]),
         ),
       ],

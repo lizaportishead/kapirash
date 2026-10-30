@@ -50,8 +50,8 @@ class ClipCover extends StatelessWidget {
 /// Сетка вертикальных обложек клипов.
 const clipGrid = SliverGridDelegateWithMaxCrossAxisExtent(
   maxCrossAxisExtent: 240,
-  mainAxisSpacing: 10,
-  crossAxisSpacing: 10,
+  mainAxisSpacing: 16,
+  crossAxisSpacing: 16,
   childAspectRatio: 9 / 16,
 );
 
@@ -121,7 +121,7 @@ class _ClipsPageState extends State<ClipsPage> {
         SizedBox(height: 12),
         Expanded(
           child: GridView.builder(
-            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
             gridDelegate: clipGrid,
             itemCount: list.length,
             // Из выбранной темы листаются только её клипы.

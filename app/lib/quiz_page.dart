@@ -89,9 +89,9 @@ class QuizList extends StatelessWidget {
         physics: inline ? NeverScrollableScrollPhysics() : null,
         padding: inline
             ? EdgeInsets.only(top: 4)
-            : EdgeInsets.fromLTRB(12, 8, 12, 12 + MediaQuery.paddingOf(context).bottom),
+            : EdgeInsets.fromLTRB(16, 8, 16, 16 + MediaQuery.paddingOf(context).bottom),
         itemCount: sections.length,
-        separatorBuilder: (_, _) => SizedBox(height: 8),
+        separatorBuilder: (_, _) => SizedBox(height: 16),
         itemBuilder: (context, i) => _card(context, sections[i]),
       ),
     );
@@ -393,9 +393,9 @@ class _QuizPageState extends State<QuizPage> {
       children: [
         Expanded(
           child: ListView.separated(
-            padding: EdgeInsets.fromLTRB(12, 8, 12, 12),
+            padding: EdgeInsets.fromLTRB(16, 8, 16, 16),
             itemCount: wrong.length,
-            separatorBuilder: (_, _) => SizedBox(height: 8),
+            separatorBuilder: (_, _) => SizedBox(height: 16),
             itemBuilder: (_, n) {
               final q = _qs[wrong[n]];
               return Container(

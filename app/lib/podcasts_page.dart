@@ -50,7 +50,7 @@ class PodcastsPage extends StatelessWidget {
                 final wide = c.maxWidth >= 720;
                 if (!wide) {
                   return ListView(
-                    padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
+                    padding: EdgeInsets.fromLTRB(16, 4, 16, 16),
                     children: [for (final p in podcasts) EpisodeTile(p)],
                   );
                 }
@@ -63,7 +63,7 @@ class PodcastsPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Expanded(child: EpisodeTile(podcasts[i], roomy: true)),
-                            SizedBox(width: 20),
+                            SizedBox(width: 16),
                             Expanded(
                               child: i + 1 < podcasts.length ? EpisodeTile(podcasts[i + 1], roomy: true) : SizedBox(),
                             ),
@@ -119,7 +119,7 @@ class EpisodeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final done = store.isWatched(video.id);
     return Padding(
-      padding: EdgeInsets.only(bottom: roomy ? 12 : 8),
+      padding: EdgeInsets.only(bottom: 16),
       child: Lift(
         child: Material(
           color: cCard,

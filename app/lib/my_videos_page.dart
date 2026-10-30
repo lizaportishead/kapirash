@@ -78,9 +78,9 @@ class MyVideosPage extends StatelessWidget {
                       ),
                     )
                   : ListView.separated(
-                      padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                      padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                       itemCount: list.length,
-                      separatorBuilder: (_, _) => SizedBox(height: 12),
+                      separatorBuilder: (_, _) => SizedBox(height: 16),
                       itemBuilder: (_, i) => _MyVideoCard(list[i], onRemove: () => _remove(context, list[i])),
                     ),
             ),

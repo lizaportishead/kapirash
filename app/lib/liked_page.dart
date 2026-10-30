@@ -92,7 +92,7 @@ class LikedPage extends StatelessWidget {
                                     builder: (_, box) {
                                       // Узкий экран — лента в одну колонку, на десктопе — плитки.
                                       final cols = (box.maxWidth / 340).floor().clamp(1, 4);
-                                      final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
+                                      final cardW = (box.maxWidth - 32 - 16 * (cols - 1)) / cols;
                                       Widget title(String t) => Padding(
                                         padding: EdgeInsets.fromLTRB(16, 8, 16, 10),
                                         child: Text(
@@ -105,7 +105,7 @@ class LikedPage extends StatelessWidget {
                                         child: ConstrainedBox(
                                           constraints: BoxConstraints(maxWidth: 720),
                                           child: Padding(
-                                            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                                             child: Column(
                                               children: [
                                                 for (final t in tiles)
@@ -120,12 +120,12 @@ class LikedPage extends StatelessWidget {
                                           if (list.isNotEmpty) ...[
                                             if (this.all) SliverToBoxAdapter(child: title(ui('Видео'))),
                                             SliverPadding(
-                                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                              padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                                               sliver: SliverGrid.builder(
                                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                                   crossAxisCount: cols,
-                                                  crossAxisSpacing: 12,
-                                                  mainAxisSpacing: 12,
+                                                  crossAxisSpacing: 16,
+                                                  mainAxisSpacing: 16,
                                                   mainAxisExtent: videoCardHeight(cardW),
                                                 ),
                                                 itemCount: list.length,

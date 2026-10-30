@@ -135,7 +135,7 @@ class _WordsPageState extends State<WordsPage> {
             ),
             if (every.isNotEmpty)
               Padding(
-                padding: EdgeInsets.fromLTRB(12, 12, 12, 20),
+                padding: EdgeInsets.fromLTRB(16, 12, 16, 20),
                 child: Row(
                   children: [
                     Pill(
@@ -154,7 +154,7 @@ class _WordsPageState extends State<WordsPage> {
               ),
             if (_searching && every.isNotEmpty)
               Padding(
-                padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
+                padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
                 child: TextField(
                   controller: _search,
                   autofocus: true,
@@ -213,7 +213,7 @@ class _WordsPageState extends State<WordsPage> {
                       : ListView.separated(
                           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                           // Снизу запас под плавающую кнопку.
-                          padding: EdgeInsets.fromLTRB(12, 4, 12, _searching ? 16 : 72),
+                          padding: EdgeInsets.fromLTRB(16, 4, 16, _searching ? 16 : 72),
                           itemCount: rows.length,
                           separatorBuilder: (_, i) =>
                               SizedBox(height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : 16),
