@@ -252,7 +252,12 @@ class _Group extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Lift(
+    // Группа настроек не одна кнопка, поэтому при наведении не поднимается — только лёгкая тень в покое.
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1))],
+      ),
       child: Material(
         color: cCard,
         borderRadius: BorderRadius.circular(8),
