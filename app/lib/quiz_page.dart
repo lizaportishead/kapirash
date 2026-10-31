@@ -403,7 +403,7 @@ class _QuizPageState extends State<QuizPage> {
                 decoration: BoxDecoration(
                   color: cCard,
                   borderRadius: BorderRadius.circular(8),
-                  boxShadow: [BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1))],
+                  boxShadow: [BoxShadow(color: Color(0x0D000000), blurRadius: 3, offset: Offset(0, 1))],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,

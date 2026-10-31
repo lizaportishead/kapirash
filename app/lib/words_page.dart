@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'icons.dart';
 import 'learn_page.dart';
+import 'liked_page.dart';
 import 'phrase.dart';
 import 'player_page.dart';
 import 'podcasts_page.dart';
@@ -125,6 +126,11 @@ class _WordsPageState extends State<WordsPage> {
             PageTitle(
               '${ui('Словарь')}${every.isEmpty ? '' : ' · ${every.length}'}',
               actions: [
+                IconButton(
+                  tooltip: ui('Избранные слова'),
+                  icon: Icon(KIcons.star, size: 24, color: cText),
+                  onPressed: () => openLiked(context, words: true),
+                ),
                 if (every.isNotEmpty)
                   IconButton(
                     tooltip: _searching ? ui('Закрыть поиск') : ui('Поиск'),

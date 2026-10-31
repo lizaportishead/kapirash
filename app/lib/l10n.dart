@@ -271,7 +271,6 @@ const _en = <String, String>{
   'Сохранено': 'Saved',
   'Лендинг': 'Landing page',
   'Пропустить': 'Skip',
-  'бета': 'beta',
   'или': 'or',
   'понимаешь?': 'you get it?',
   'Начать': 'Get started',
@@ -435,4 +434,6 @@ const _en = <String, String>{
   'Словарь · {0}': 'Dictionary · {0}',
   'Встречается на странице {0}': 'On page {0}',
   'Слова': 'Words',
+  'Избранные слова': 'Favorite words',
+  'Нажимай на звёздочку у слов в словаре, чтобы они появились тут.': 'Tap the star on words in your dictionary and they will show up here.',
 };

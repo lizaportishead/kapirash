@@ -119,7 +119,7 @@ class EpisodeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final done = store.isWatched(video.id);
     return Padding(
-      padding: EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.only(bottom: MediaQuery.sizeOf(context).width < 600 ? 8 : 16),
       child: Lift(
         child: Material(
           color: cCard,

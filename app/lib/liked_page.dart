@@ -11,17 +11,20 @@ import 'words_page.dart' show wordCard;
 import 'l10n.dart';
 
 /// Открывает ролики со звёздочкой поверх таббара.
-void openLiked(BuildContext context, {bool all = false}) {
+void openLiked(BuildContext context, {bool all = false, bool words = false}) {
   Navigator.of(context).push(
     MaterialPageRoute<void>(
       settings: RouteSettings(name: 'LikedPage'),
-      builder: (_) => LikedPage(all: all),
+      builder: (_) => LikedPage(all: all, onlyWords: words),
     ),
   );
 }
 
 class LikedPage extends StatelessWidget {
-  const LikedPage({super.key, this.all = false});
+  const LikedPage({super.key, this.all = false, this.onlyWords = false});
+
+  /// Из словаря: только слова со звёздочкой.
+  final bool onlyWords;
 
   /// С главной: вместе с подкастами и рассказами, а не только ролики.
   final bool all;
@@ -43,15 +46,15 @@ class LikedPage extends StatelessWidget {
                   final all = store.liked.reversed.map(videoById).nonNulls.toList();
                   final list = [
                     for (final v in all)
-                      if (!this.all || !podIds.contains(v.id)) v,
+                      if (!onlyWords && (!this.all || !podIds.contains(v.id))) v,
                   ];
-                  final pods = this.all
+                  final pods = this.all && !onlyWords
                       ? [
                           for (final v in all)
                             if (podIds.contains(v.id)) v,
                         ]
                       : <Video>[];
-                  final books = this.all ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
+                  final books = this.all && !onlyWords ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
                   final words = this.all ? store.words.reversed.where((w) => w.starred).toList() : <SavedWord>[];
                   final total = list.length + pods.length + books.length + words.length;
                   return Column(
@@ -59,7 +62,7 @@ class LikedPage extends StatelessWidget {
                     children: [
                       ...pageHeader(
                         context,
-                        '${ui(this.all ? 'Избранное' : 'Избранные ролики')}${total == 0 ? '' : ' · $total'}',
+                        '${ui(onlyWords ? 'Избранные слова' : this.all ? 'Избранное' : 'Избранные ролики')}${total == 0 ? '' : ' · $total'}',
                       ),
                       Expanded(
                         child: Center(
@@ -80,7 +83,9 @@ class LikedPage extends StatelessWidget {
                                         SizedBox(height: 16),
                                         Text(
                                           ui(
-                                            this.all
+                                            onlyWords
+                                                ? 'Нажимай на звёздочку у слов в словаре, чтобы они появились тут.'
+                                                : this.all
                                                 ? 'Добавляй в избранное то, что хочешь сохранить: ролики, подкасты, рассказы. Это появится тут.'
                                                 : 'Добавляй в избранное ролики, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
                                           ),
@@ -111,7 +116,7 @@ class LikedPage extends StatelessWidget {
                                             child: Column(
                                               children: [
                                                 for (final t in tiles)
-                                                  Padding(padding: EdgeInsets.only(bottom: 12), child: t),
+                                                  Padding(padding: EdgeInsets.only(bottom: box.maxWidth < 600 ? 0 : 12), child: t),
                                               ],
                                             ),
                                           ),
@@ -127,7 +132,7 @@ class LikedPage extends StatelessWidget {
                                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                                   crossAxisCount: cols,
                                                   crossAxisSpacing: 16,
-                                                  mainAxisSpacing: 16,
+                                                  mainAxisSpacing: box.maxWidth < 600 ? 8 : 16,
                                                   mainAxisExtent: videoCardHeight(cardW),
                                                 ),
                                                 itemCount: list.length,

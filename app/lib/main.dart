@@ -551,8 +551,6 @@ class _HomeShellState extends State<HomeShell> {
                                 color: cViolet,
                               ),
                             ),
-                            SizedBox(width: 7),
-                            BetaBadge(logoSize: 22.5),
                           ],
                         ),
                       ),

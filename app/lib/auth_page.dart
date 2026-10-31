@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 
-import 'onboarding_page.dart' show BetaBadge, LangSwitch, OnboardingShowcase;
+import 'onboarding_page.dart' show LangSwitch, OnboardingShowcase;
 import 'store.dart';
 import 'supabase_config.dart';
 import 'theme.dart';
@@ -170,7 +170,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  // Тот же логотип, что в сайдбаре, с пометкой «бета» и переводом под словом.
+  // Тот же логотип, что в сайдбаре, с переводом под словом.
   Widget _logo() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,8 +185,6 @@ class _AuthPageState extends State<AuthPage> {
               ),
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900, letterSpacing: -1, color: cViolet),
             ),
-            SizedBox(width: 10),
-            BetaBadge(logoSize: 22),
           ],
         ),
         Text('* ${ui('понимаешь?')}', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted.withValues(alpha: 0.6))),

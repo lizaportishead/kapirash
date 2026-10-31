@@ -258,7 +258,7 @@ class TopicPage extends StatelessWidget {
                             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: cols,
                               crossAxisSpacing: 16,
-                              mainAxisSpacing: 16,
+                              mainAxisSpacing: box.maxWidth < 600 ? 8 : 16,
                               mainAxisExtent: videoCardHeight(cardW),
                             ),
                             itemCount: list.length,

@@ -4,7 +4,6 @@ import 'feed_page.dart';
 import 'icons.dart';
 import 'main.dart' show kStoriesTabEnabled;
 import 'liked_page.dart';
-import 'onboarding_page.dart' show BetaBadge;
 import 'podcasts_page.dart';
 import 'recommend.dart';
 import 'search_page.dart';
@@ -75,8 +74,6 @@ class HomePage extends StatelessWidget {
                                   color: cViolet,
                                 ),
                               ),
-                              SizedBox(width: 8),
-                              BetaBadge(logoSize: 26),
                             ],
                           ),
                   ),

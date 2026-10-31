@@ -73,8 +73,7 @@ const stories = [
     id: 'kod-lekara',
     title: 'Kod lekara',
     author: 'Kapiraš',
-    blurb:
-        'Sofija se razbolela: razgovor sa izabranim lekarom, recept, bolovanje i odlazak u apoteku.',
+    blurb: 'Sofija se razbolela: razgovor sa izabranim lekarom, recept, bolovanje i odlazak u apoteku.',
     level: 'A2',
     asset: 'story_kod_lekara',
   ),
@@ -92,8 +91,7 @@ const stories = [
     id: 'na-pijaci',
     title: 'Na pijaci',
     author: 'Kapiraš',
-    blurb:
-        'Subotnje jutro na pijaci: Milica kupuje paradajz, sir i jagode, cenka se i razgovara sa prodavcima.',
+    blurb: 'Subotnje jutro na pijaci: Milica kupuje paradajz, sir i jagode, cenka se i razgovara sa prodavcima.',
     level: 'A2',
     asset: 'story_na_pijaci',
   ),
@@ -421,12 +419,11 @@ class _PageCount extends StatelessWidget {
   }
 }
 
-/// Тонкая шкала прочитанного; видна, только если рассказ начат (позиция — номер страницы, 0 — обложка).
+/// Тонкая шкала прочитанного по нижнему краю обложки, как у ролика; видна, только если рассказ начат
+/// (позиция — номер страницы, 0 — обложка).
 class _StoryProgress extends StatelessWidget {
-  const _StoryProgress(this.story, {this.overlay = false});
+  const _StoryProgress(this.story);
   final Story story;
-  // На обложке: шкала лежит по нижнему краю картинки, как у ролика.
-  final bool overlay;
 
   @override
   Widget build(BuildContext context) {
@@ -442,25 +439,11 @@ class _StoryProgress extends StatelessWidget {
             if (n == 0) return SizedBox.shrink();
             // Страницы: обложка, n страниц текста, финальный экран.
             final value = (at / (n + 1)).clamp(0.0, 1.0);
-            if (overlay) {
-              return LinearProgressIndicator(
-                value: value < 0.04 ? 0.04 : value,
-                minHeight: 4,
-                color: cViolet,
-                backgroundColor: cOnInk.withValues(alpha: 0.35),
-              );
-            }
-            return Padding(
-              padding: EdgeInsets.only(top: 8),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(999),
-                child: LinearProgressIndicator(
-                  value: value < 0.04 ? 0.04 : value,
-                  minHeight: 4,
-                  color: cViolet,
-                  backgroundColor: cCard2,
-                ),
-              ),
+            return LinearProgressIndicator(
+              value: value < 0.04 ? 0.04 : value,
+              minHeight: 4,
+              color: cViolet,
+              backgroundColor: cOnInk.withValues(alpha: 0.35),
             );
           },
         );
@@ -492,15 +475,21 @@ class _StoryCard extends StatelessWidget {
               width: 100,
               height: 100,
               child: ready
-                  ? ExcludeSemantics(
-                      child: Image.asset(
-                        'assets/${story.asset}.png',
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, _, _) => ColoredBox(
-                          color: cCard2,
-                          child: Icon(KIcons.stories, size: 36, color: cFaint),
+                  ? Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        ExcludeSemantics(
+                          child: Image.asset(
+                            'assets/${story.asset}.png',
+                            fit: BoxFit.cover,
+                            errorBuilder: (_, _, _) => ColoredBox(
+                              color: cCard2,
+                              child: Icon(KIcons.stories, size: 36, color: cFaint),
+                            ),
+                          ),
                         ),
-                      ),
+                        Positioned(left: 0, right: 0, bottom: 0, child: _StoryProgress(story)),
+                      ],
                     )
                   : ColoredBox(
                       color: cCard2,
@@ -527,7 +516,6 @@ class _StoryCard extends StatelessWidget {
                   child: Text(story.author, style: TextStyle(fontSize: 13, color: cText)),
                 ),
                 if (ready) _meta(),
-                if (ready) _progress(),
                 SizedBox(height: 8),
                 if (!ready)
                   Text(
@@ -577,8 +565,6 @@ class _StoryCard extends StatelessWidget {
     ),
   );
 
-  Widget _progress() => _StoryProgress(story);
-
   /// Карточка для сетки: вертикальная обложка сверху, под ней название, автор и уровень.
   Widget _vertical(BuildContext context, bool ready) {
     final body = Padding(
@@ -605,7 +591,7 @@ class _StoryCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Positioned(left: 0, right: 0, bottom: 0, child: _StoryProgress(story, overlay: true)),
+                        Positioned(left: 0, right: 0, bottom: 0, child: _StoryProgress(story)),
                       ],
                     )
                   : ColoredBox(
@@ -919,7 +905,7 @@ class _StoryReaderState extends State<StoryReader> {
     }
     if (wide) {
       return Scaffold(
-        backgroundColor: cCard,
+        backgroundColor: cBg,
         body: Focus(
           autofocus: true,
           onKeyEvent: (_, e) {
@@ -1016,7 +1002,7 @@ class _StoryReaderState extends State<StoryReader> {
           padding: EdgeInsets.fromLTRB(24, 32, 24, 24),
           child: Container(
             decoration: BoxDecoration(
-              color: cBg,
+              color: cCard,
               borderRadius: BorderRadius.circular(4),
               boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.10), blurRadius: 32, offset: Offset(0, 8))],
             ),
@@ -1126,7 +1112,7 @@ class _StoryReaderState extends State<StoryReader> {
 
   // Поля листа на развороте.
   Widget _paper(int i) => ColoredBox(
-    color: cBg,
+    color: cCard,
     child: i < 0 || i >= _count
         ? SizedBox.expand()
         : Padding(padding: EdgeInsets.fromLTRB(20, 32, 20, 0), child: _pageAt(i)),
@@ -1154,38 +1140,49 @@ class _StoryReaderState extends State<StoryReader> {
 
   Widget _cover() {
     final s = widget.story;
-    return _noBar(
-      SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: ExcludeSemantics(
-                // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
-                child: Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),
+    return LayoutBuilder(
+      builder: (context, box) => _noBar(
+        SingleChildScrollView(
+          padding: EdgeInsets.fromLTRB(20, 8, 20, 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: ExcludeSemantics(
+                    // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
+                    // На развороте обложка ниже трети листа, чтобы страница обошлась без прокрутки.
+                    child: _wide
+                        ? ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight: box.maxHeight * 0.34),
+                            child: Image.asset('assets/${s.asset}.png', fit: BoxFit.contain),
+                          )
+                        : Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              store.conv(s.title),
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
-            ),
-            SizedBox(height: 4),
-            Text(s.author, style: TextStyle(fontSize: 14, color: cMuted)),
-            if (s.level.isNotEmpty)
-              Padding(padding: EdgeInsets.only(top: 6), child: DifficultyLabel(s.level, size: 14)),
-            SizedBox(height: 14),
-            Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
-            SizedBox(height: 14),
-            Text(
-              ui(
-                'Нажимай на слова, чтобы увидеть перевод; удерживай и веди пальцем, чтобы выделить фразу. Листай вправо — рассказ начнётся.',
+              SizedBox(height: 20),
+              Text(
+                store.conv(s.title),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6, color: cText),
               ),
-              style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
-            ),
-          ],
+              SizedBox(height: 4),
+              Text(s.author, style: TextStyle(fontSize: 14, color: cMuted)),
+              if (s.level.isNotEmpty)
+                Padding(padding: EdgeInsets.only(top: 6), child: DifficultyLabel(s.level, size: 14)),
+              SizedBox(height: 14),
+              Text(store.conv(s.blurb), style: TextStyle(fontSize: 16, height: 1.5, color: cText)),
+              SizedBox(height: 14),
+              Text(
+                ui(
+                  'Нажимай на слова, чтобы увидеть перевод; удерживай и веди пальцем, чтобы выделить фразу. Листай вправо — рассказ начнётся.',
+                ),
+                style: TextStyle(fontSize: 13, height: 1.45, color: cFaint),
+              ),
+            ],
+          ),
         ),
       ),
     );
