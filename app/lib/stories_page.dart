@@ -328,7 +328,7 @@ class StoriesPage extends StatelessWidget {
                 return ListView.separated(
                   padding: EdgeInsets.fromLTRB(pad, 0, pad, 16),
                   itemCount: stories.length,
-                  separatorBuilder: (_, _) => SizedBox(height: 16),
+                  separatorBuilder: (_, _) => SizedBox(height: 8),
                   itemBuilder: (_, i) => _StoryCard(stories[i]),
                 );
               }

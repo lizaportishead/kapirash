@@ -223,7 +223,7 @@ class _WordsPageState extends State<WordsPage> {
                           itemCount: rows.length,
                           separatorBuilder: (_, i) =>
                               SizedBox(
-                                height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : (MediaQuery.sizeOf(context).width < 600 ? 8 : 16),
+                                height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : 8,
                               ),
                           itemBuilder: (_, i) {
                             final it = rows[i];
@@ -233,7 +233,7 @@ class _WordsPageState extends State<WordsPage> {
                                   crossAxisAlignment: CrossAxisAlignment.stretch,
                                   children: [
                                     for (var k = 0; k < cols; k++) ...[
-                                      if (k > 0) SizedBox(width: 16),
+                                      if (k > 0) SizedBox(width: 8),
                                       Expanded(child: k < it.length ? _WordCard(it[k]) : SizedBox.shrink()),
                                     ],
                                   ],
