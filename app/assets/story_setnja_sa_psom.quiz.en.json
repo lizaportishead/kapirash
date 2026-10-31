@@ -61,6 +61,28 @@
      "e": "You must register him at the vet and microchip him, it is compulsory."
     },
     {
+     "q": "What did Ivana tell the girl about Riki?",
+     "o": [
+      "That he is mean",
+      "That he does not bite, but likes to sniff first",
+      "That he must not be touched",
+      "That he is asleep"
+     ],
+     "a": 1,
+     "e": "He does not bite, but likes to sniff you first."
+    },
+    {
+     "q": "What did the mother say before the girl petted someone else's dog?",
+     "o": [
+      "Ask the owner",
+      "Put on gloves",
+      "Give the dog food",
+      "Not to come close"
+     ],
+     "a": 0,
+     "e": "you should always ask the owner."
+    },
+    {
      "q": "What did Riki do while the dogs were playing?",
      "o": [
       "Bit Vuk",
@@ -78,6 +100,30 @@
    "icon": "translate",
    "about": "Words from the story and their translations",
    "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Mešanac*. Ne znamo tačno šta je sve u njemu.",
+     "o": [
+      "a puppy",
+      "a mixed breed",
+      "a breed",
+      "a hunter"
+     ],
+     "a": 1,
+     "e": "Mešanac — a mixed breed."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Samo polako, malo je *stidljiv*.",
+     "o": [
+      "hungry",
+      "angry",
+      "shy",
+      "old"
+     ],
+     "a": 2,
+     "e": "Stidljiv — shy."
+    },
     {
      "t": "Выбери перевод выделенного слова",
      "q": "Toga jutra je u park došla sa *povocem* u jednoj ruci",
@@ -145,6 +191,18 @@
    "icon": "puzzle",
    "about": "Cases and verb forms",
    "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mama, vidi kuče! Može li da ga ___?",
+     "o": [
+      "pogladim",
+      "pogladi",
+      "pogladio",
+      "pogladiš"
+     ],
+     "a": 0,
+     "e": "Da + 1st person: da ga pogladim (“may I pet him”)."
+    },
     {
      "t": "Выбери правильную форму слова",
      "q": "Toga jutra je u park došla sa ___ u jednoj ruci i kesicom u drugoj.",

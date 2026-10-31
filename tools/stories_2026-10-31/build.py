@@ -42,6 +42,7 @@ EXTRA_EN = {
  'zdravlja': ['health', 'zdravlje — health; gen. case'],
  'zvono': ['bell, ring', 'zvono — bell, ring; neut.'],
  'čuva': ['protects', 'čuvati — to protect; 3rd pers. sg.'],
+ 'tuđeg': ['someone else\'s', 'tuđ — someone else\'s; gen. case masc.'],
  'doktorka': ['doctor (female)', 'doktorka — doctor (female); nom. case'],
  'napisala': ['wrote', 'napisati — to write; past fem. sg.'],
  'šezdeset': ['sixty', 'šezdeset — sixty; numeral'],
