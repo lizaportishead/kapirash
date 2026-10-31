@@ -195,13 +195,13 @@
      "t": "Выбери правильную форму слова",
      "q": "Mama, vidi kuče! Može li da ga ___?",
      "o": [
-      "pogladim",
-      "pogladi",
-      "pogladio",
-      "pogladiš"
+      "pomazim",
+      "pomazi",
+      "pomazao",
+      "pomaziš"
      ],
      "a": 0,
-     "e": "Da + 1st person: da ga pogladim (“may I pet him”)."
+     "e": "Da + 1st person: da ga pomazim (“may I pet him”; for a dog you say maziti / pomaziti)."
     },
     {
      "t": "Выбери правильную форму слова",

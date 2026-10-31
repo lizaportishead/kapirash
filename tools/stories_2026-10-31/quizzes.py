@@ -374,7 +374,7 @@ L=[
 ("I *vakcina* protiv besnila je svake godine.", ["еда", "прививка", "игрушка", "лекарство"], ["food", "a vaccination", "a toy", "a medicine"], 1, "Vakcina — прививка.", "Vakcina — vaccination."),
 ],
 G=[
-("Mama, vidi kuče! Može li da ga ___?", ["pogladim", "pogladi", "pogladio", "pogladiš"], 0, "Да + 1 л. ед. ч.: da ga pogladim («можно мне погладить»).", "Da + 1st person: da ga pogladim (“may I pet him”)."),
+("Mama, vidi kuče! Može li da ga ___?", ["pomazim", "pomazi", "pomazao", "pomaziš"], 0, "Да + 1 л. ед. ч.: da ga pomazim («можно мне погладить»; о собаке говорят maziti / pomaziti).", "Da + 1st person: da ga pomazim (“may I pet him”; for a dog you say maziti / pomaziti)."),
 ("Toga jutra je u park došla sa ___ u jednoj ruci i kesicom u drugoj.", ["povodac", "povocem", "povoca", "povocu"], 1, "Sa + творительный: sa povocem.", "Sa + instrumental: sa povocem."),
 ("Ivana je ___ glavom i otišla do ograđenog prostora.", ["klimala", "klimnula", "klimati", "klimnuti"], 1, "Один кивок — совершенный вид: klimnula.", "One nod — perfective: klimnula."),
 ("Pored ___ psa stajao je visok mladić sa slušalicama.", ["crni", "crnog", "crnom", "crnim"], 1, "Pored + родительный: pored crnog psa.", "Pored + genitive: pored crnog psa."),

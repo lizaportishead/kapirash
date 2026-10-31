@@ -195,13 +195,13 @@
      "t": "Выбери правильную форму слова",
      "q": "Mama, vidi kuče! Može li da ga ___?",
      "o": [
-      "pogladim",
-      "pogladi",
-      "pogladio",
-      "pogladiš"
+      "pomazim",
+      "pomazi",
+      "pomazao",
+      "pomaziš"
      ],
      "a": 0,
-     "e": "Да + 1 л. ед. ч.: da ga pogladim («можно мне погладить»)."
+     "e": "Да + 1 л. ед. ч.: da ga pomazim («можно мне погладить»; о собаке говорят maziti / pomaziti)."
     },
     {
      "t": "Выбери правильную форму слова",
