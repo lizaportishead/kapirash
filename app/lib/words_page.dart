@@ -120,6 +120,7 @@ class _WordsPageState extends State<WordsPage> {
           }
           rows.add(row);
         }
+        final wide = MediaQuery.sizeOf(context).width >= 600;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -232,10 +233,10 @@ class _WordsPageState extends State<WordsPage> {
                                     style: FilledButton.styleFrom(
                                       backgroundColor: cViolet,
                                       foregroundColor: cOnViolet,
-                                      minimumSize: Size(0, 44),
-                                      padding: EdgeInsets.symmetric(horizontal: 22),
+                                      minimumSize: Size(0, wide ? 56 : 44),
+                                      padding: EdgeInsets.symmetric(horizontal: wide ? 36 : 22),
                                       shape: StadiumBorder(),
-                                      textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w700),
+                                      textStyle: TextStyle(fontFamily: kFont, fontSize: wide ? 17 : 14, fontWeight: FontWeight.w700),
                                     ),
                                     onPressed: () => openLearn(context),
                                     child: Text(ui('Учить слова')),
@@ -294,13 +295,13 @@ class _WordsPageState extends State<WordsPage> {
                       child: Center(
                         child: FilledButton(
                           style: FilledButton.styleFrom(
-                            backgroundColor: cText,
-                            foregroundColor: cBg,
+                            backgroundColor: cViolet,
+                            foregroundColor: cOnViolet,
                             elevation: 6,
-                            minimumSize: Size(0, 44),
-                            padding: EdgeInsets.symmetric(horizontal: 22),
+                            minimumSize: Size(0, wide ? 56 : 44),
+                            padding: EdgeInsets.symmetric(horizontal: wide ? 36 : 22),
                             shape: StadiumBorder(),
-                            textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w700),
+                            textStyle: TextStyle(fontFamily: kFont, fontSize: wide ? 17 : 14, fontWeight: FontWeight.w700),
                           ),
                           onPressed: () => openLearn(context),
                           child: Text(ui('Учить слова')),
