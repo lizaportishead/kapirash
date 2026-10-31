@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'collection_page.dart';
 import 'deep_link.dart';
+import 'feed_page.dart' show SectionHeader;
 import 'icons.dart';
 import 'phrase.dart';
 import 'player_page.dart' show SubPage;
@@ -28,9 +29,15 @@ class Story {
     this.level = '',
     this.asset,
     this.source = '',
+    this.landscape = false,
+    this.topic = '',
   });
   final String id, title, author, blurb, level, source;
+  // Тема для секций на странице рассказов (по-русски, как у видео; перевод — topicLabel).
+  final String topic;
   final String? asset;
+  // Горизонтальная обложка: на развороте тянется на всю ширину листа, лишнее по высоте обрезается.
+  final bool landscape;
 
   bool get ready => asset != null;
 
@@ -48,6 +55,8 @@ const stories = [
         'potvrda o taksi, prijava adrese, pa i štampani papir.',
     level: 'A2',
     asset: 'story_na_salteru',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'otvaranje-racuna',
@@ -58,6 +67,8 @@ const stories = [
         'preko aplikacije.',
     level: 'A2',
     asset: 'story_otvaranje_racuna',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'novi-stan',
@@ -68,6 +79,8 @@ const stories = [
         'i pitanje ko plaća popravke.',
     level: 'A2',
     asset: 'story_novi_stan',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'kod-lekara',
@@ -76,6 +89,8 @@ const stories = [
     blurb: 'Sofija se razbolela: razgovor sa izabranim lekarom, recept, bolovanje i odlazak u apoteku.',
     level: 'A2',
     asset: 'story_kod_lekara',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'razgovor-za-posao',
@@ -86,6 +101,8 @@ const stories = [
         'i radnu dozvolu.',
     level: 'B1',
     asset: 'story_razgovor_za_posao',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'na-pijaci',
@@ -94,6 +111,8 @@ const stories = [
     blurb: 'Subotnje jutro na pijaci: Milica kupuje paradajz, sir i jagode, cenka se i razgovara sa prodavcima.',
     level: 'A2',
     asset: 'story_na_pijaci',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'u-restoranu',
@@ -104,6 +123,8 @@ const stories = [
         'pristojna napojnica.',
     level: 'A2',
     asset: 'story_u_restoranu',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'slava-kod-komsija',
@@ -114,6 +135,8 @@ const stories = [
         'slavski kolač, rakiju i „živeli“.',
     level: 'B1',
     asset: 'story_slava_kod_komsija',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
   ),
   Story(
     id: 'crvene-cipele',
@@ -124,6 +147,7 @@ const stories = [
         'a kad ih je dobila više nije mogla da ih skine već je morala u njima zauvek da pleše.',
     level: 'B1',
     asset: 'story_crvene_cipele',
+    topic: 'Классика',
   ),
   Story(
     id: 'princeza-na-zrnu-grasku',
@@ -134,6 +158,7 @@ const stories = [
         'kraljica pod dvadeset dušeka stavlja zrno graška da to proveri.',
     level: 'B1',
     asset: 'story_princeza_na_zrnu_grasku',
+    topic: 'Классика',
     source:
         'Hans Kristijan Andersen, Bajke, prevod Đido (1888), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
@@ -146,6 +171,7 @@ const stories = [
         'dok je ne poveri zemlji – iz jame ipak izraste zova.',
     level: 'B1',
     asset: 'story_u_cara_trojana_kozje_usi',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -157,6 +183,7 @@ const stories = [
         'maćehina rođena kći se vraća s ništa manje nego što je zaslužila.',
     level: 'B1',
     asset: 'story_kako_su_radile_onako_su_i_prosle',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -168,6 +195,7 @@ const stories = [
         'a novčić, pretvoren u mačka, na kraju mu donosi pravo bogatstvo.',
     level: 'B2',
     asset: 'story_prava_se_muka_ne_da_sakriti',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -179,6 +207,7 @@ const stories = [
         'međed prevari lisicu – a ona se sveti na svoj način.',
     level: 'B1',
     asset: 'story_medved_svinja_i_lisica',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -190,6 +219,7 @@ const stories = [
         'pa se dugo sudare oko dva novca duga, sve dok ne dođe do neobične poente.',
     level: 'B2',
     asset: 'story_dva_novca',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -201,6 +231,7 @@ const stories = [
         'i odvede ga na dno vode.',
     level: 'B2',
     asset: 'story_djavo_i_njegov_segrt',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -212,6 +243,7 @@ const stories = [
         'sledeća noć dovodi u neobičnu opasnost.',
     level: 'B2',
     asset: 'story_opet_maceha_i_pastorka',
+    topic: 'Народные сказки',
     source: 'Vuk Stef. Karadžić, Srpske narodne pripovijetke (1870), preuzeto sa sr.wikisource.org; tekst prenet u latinicu',
   ),
   Story(
@@ -223,6 +255,7 @@ const stories = [
         'kako njegova porodica proslavlja slavu uprkos oskudici.',
     level: 'C1',
     asset: 'story_slava',
+    topic: 'Классика',
     source: 'Radoje Domanović, Slava (1903), preuzeto sa sr.wikisource.org (domanovic.org); tekst prenet u latinicu',
   ),
   Story(
@@ -235,6 +268,7 @@ const stories = [
         'Za sada je dostupan samo početak bajke, ostatak stiže uskoro.',
     level: 'B2',
     asset: 'story_snezna_kraljica',
+    topic: 'Классика',
   ),
   Story(
     id: 'staklena-kula',
@@ -245,6 +279,7 @@ const stories = [
         'gde se prede ljudske sudbine, i čistom pesmom razbila njenu čaroliju.',
     level: 'B1',
     asset: 'story_staklena_kula',
+    topic: 'Современные рассказы',
   ),
   Story(
     id: 'ogledalo-bez-odsjaja',
@@ -255,6 +290,7 @@ const stories = [
         'i pod ultraljubičastim svetlom otkriva istinu o njenom mužu.',
     level: 'B2',
     asset: 'story_ogledalo_bez_odsjaja',
+    topic: 'Современные рассказы',
   ),
   Story(
     id: 'tkacica-zaboravljenih-snova',
@@ -265,6 +301,7 @@ const stories = [
         'ali je shvatio da je bol cena ljubavi.',
     level: 'B1',
     asset: 'story_tkacica_zaboravljenih_snova',
+    topic: 'Современные рассказы',
   ),
   Story(
     id: 'poslednje-eho',
@@ -275,6 +312,7 @@ const stories = [
         'pronalazi oca zarobljenog u kristalu sećanja i mora da odluči da li da ga vrati kući.',
     level: 'B2',
     asset: 'story_poslednje_eho',
+    topic: 'Современные рассказы',
   ),
 ];
 
@@ -323,40 +361,66 @@ class StoriesPage extends StatelessWidget {
           child: LayoutBuilder(
             builder: (_, box) {
               const pad = 16.0, gap = 16.0;
-              // На широком экране — сетка вертикальных карточек, на телефоне — список.
-              if (box.maxWidth < 640) {
-                return ListView.separated(
-                  padding: EdgeInsets.fromLTRB(pad, 0, pad, 16),
-                  itemCount: stories.length,
-                  separatorBuilder: (_, _) => SizedBox(height: 8),
-                  itemBuilder: (_, i) => _StoryCard(stories[i]),
-                );
+              final topics = <String>[];
+              for (final s in stories) {
+                if (s.topic.isNotEmpty && !topics.contains(s.topic)) topics.add(s.topic);
               }
+              // На широком экране — сетка вертикальных карточек, на телефоне — список.
+              final wide = box.maxWidth >= 640;
               final cols = ((box.maxWidth - 2 * pad + gap) / (190 + gap)).floor().clamp(2, 7);
               final cardW = (box.maxWidth - 2 * pad - gap * (cols - 1)) / cols;
-              // Высота карточки — по содержимому (квадратная обложка + текст), без пустоты снизу.
-              final rows = (stories.length / cols).ceil();
-              return ListView.separated(
-                padding: EdgeInsets.fromLTRB(pad, 0, pad, 24),
-                itemCount: rows,
-                separatorBuilder: (_, _) => SizedBox(height: gap),
-                itemBuilder: (_, r) => IntrinsicHeight(
-                  child: Row(
+              Widget section(String topic) {
+                final list = [
+                  for (final s in stories)
+                    if (s.topic == topic) s,
+                ];
+                final rows = (list.length / cols).ceil();
+                return Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      for (var c = 0; c < cols; c++) ...[
-                        if (c > 0) SizedBox(width: gap),
-                        SizedBox(
-                          width: cardW,
-                          child: r * cols + c < stories.length
-                              ? _StoryCard(stories[r * cols + c], vertical: true)
-                              : null,
-                        ),
-                      ],
+                      SectionHeader(topicLabel(topic)),
+                      if (!wide)
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: pad),
+                          child: Column(
+                            children: [
+                              for (var i = 0; i < list.length; i++) ...[
+                                if (i > 0) SizedBox(height: gap),
+                                _StoryCard(list[i]),
+                              ],
+                            ],
+                          ),
+                        )
+                      else
+                        // Высота карточки — по содержимому (квадратная обложка + текст), без пустоты снизу.
+                        for (var r = 0; r < rows; r++)
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(pad, r > 0 ? gap : 0, pad, 0),
+                            child: IntrinsicHeight(
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  for (var c = 0; c < cols; c++) ...[
+                                    if (c > 0) SizedBox(width: gap),
+                                    SizedBox(
+                                      width: cardW,
+                                      child: r * cols + c < list.length
+                                          ? _StoryCard(list[r * cols + c], vertical: true)
+                                          : null,
+                                    ),
+                                  ],
+                                ],
+                              ),
+                            ),
+                          ),
                     ],
                   ),
-                ),
-              );
+                );
+              }
+
+              return ListView(padding: EdgeInsets.only(bottom: 16), children: [for (final t in topics) section(t)]);
             },
           ),
         ),
@@ -1154,7 +1218,13 @@ class _StoryReaderState extends State<StoryReader> {
                   child: ExcludeSemantics(
                     // Обложки бывают и горизонтальными, и вертикальными — показываем целиком.
                     // На развороте обложка ниже трети листа, чтобы страница обошлась без прокрутки.
-                    child: _wide
+                    child: _wide && s.landscape
+                        ? SizedBox(
+                            width: double.infinity,
+                            height: box.maxHeight * 0.34,
+                            child: Image.asset('assets/${s.asset}.png', fit: BoxFit.cover),
+                          )
+                        : _wide
                         ? ConstrainedBox(
                             constraints: BoxConstraints(maxHeight: box.maxHeight * 0.34),
                             child: Image.asset('assets/${s.asset}.png', fit: BoxFit.contain),

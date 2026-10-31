@@ -55,6 +55,10 @@ const _plurals = <String, (String, String)>{
 };
 
 const _topics = <String, String>{
+  'Жизнь в Сербии': 'Life in Serbia',
+  'Классика': 'Classics',
+  'Народные сказки': 'Folk tales',
+  'Современные рассказы': 'Modern stories',
   'Путешествия': 'Travel',
   'Эксперименты': 'Experiments',
   'Наука': 'Science',
