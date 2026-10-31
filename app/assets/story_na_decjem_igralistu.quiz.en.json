@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "How old is Luka?",
+     "o": [
+      "Three",
+      "Five",
+      "Six",
+      "Four"
+     ],
+     "a": 3,
+     "e": "Luka is four years old."
+    },
+    {
+     "q": "When is the preparatory programme compulsory?",
+     "o": [
+      "A year before school, free of charge",
+      "From two years old, paid",
+      "After school",
+      "Only for foreigners"
+     ],
+     "a": 0,
+     "e": "the preparatory programme is compulsory a year before school and is free."
+    },
+    {
+     "q": "How long have Marina and her son been in Serbia?",
+     "o": [
+      "A week",
+      "A year",
+      "Three months",
+      "Ten days"
+     ],
+     "a": 2,
+     "e": "We have been here for three months."
+    },
+    {
+     "q": "Why did Nikola start crying?",
+     "o": [
+      "He fell off the swing",
+      "Luka was not given the slide",
+      "He lost his mum",
+      "Luka took his spade"
+     ],
+     "a": 3,
+     "e": "Luka came up to the sand and took Nikola's spade."
+    },
+    {
+     "q": "How did Jelena help when Luka fell?",
+     "o": [
+      "She gave a plaster",
+      "She called a doctor",
+      "She brought water",
+      "She took him home"
+     ],
+     "a": 0,
+     "e": "I have a plaster in my bag."
+    },
+    {
+     "q": "Where were Marina and her son invited on Sunday?",
+     "o": [
+      "To the cinema",
+      "To Nikola's birthday party",
+      "To the kindergarten",
+      "To a toy shop"
+     ],
+     "a": 1,
+     "e": "On Sunday Nikola celebrates his birthday at a play centre."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "kopao je u pesku sa velikom plastičnom *lopaticom*",
+     "o": [
+      "a spade",
+      "a bucket",
+      "a toy car",
+      "a stick"
+     ],
+     "a": 0,
+     "e": "Lopatica — a (small) spade."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "neka su se spuštala niz *tobogan*",
+     "o": [
+      "a ladder",
+      "a slide",
+      "a path",
+      "a mountain"
+     ],
+     "a": 1,
+     "e": "Tobogan — a slide."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imam *flaster* u torbi",
+     "o": [
+      "a key",
+      "a plaster",
+      "a tissue",
+      "water"
+     ],
+     "a": 1,
+     "e": "Flaster — a plaster."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Luka je pao sa ljuljaške i ogrebao *koleno*.",
+     "o": [
+      "an elbow",
+      "a nose",
+      "an arm",
+      "a knee"
+     ],
+     "a": 3,
+     "e": "Koleno — knee."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imam kod kuće jabuke i *kiflice*",
+     "o": [
+      "sweets",
+      "cheese",
+      "rolls",
+      "juice"
+     ],
+     "a": 2,
+     "e": "Kiflica — a bread roll."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Luka je prišao pesku i uzeo ___ lopaticu.",
+     "o": [
+      "Nikola",
+      "Nikole",
+      "Nikoli",
+      "Nikolu"
+     ],
+     "a": 2,
+     "e": "Take from someone — dative: Nikoli."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Luka je ___ sa ljuljaške i ogrebao koleno.",
+     "o": [
+      "pao",
+      "padao",
+      "padati",
+      "pasti"
+     ],
+     "a": 0,
+     "e": "He fell once — perfective past: pao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pored Marine je ___ žena sa kolicima.",
+     "o": [
+      "sela",
+      "seo",
+      "selo",
+      "seli"
+     ],
+     "a": 0,
+     "e": "The subject is žena, feminine: sela."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ove jeseni je krenuo u ___ grupu.",
+     "o": [
+      "pripremna",
+      "pripremnu",
+      "pripremne",
+      "pripremnoj"
+     ],
+     "a": 1,
+     "e": "Where to? U + accusative: u pripremnu grupu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Posle deset minuta dečaci su zajedno pravili veliki zamak ___ peska.",
+     "o": [
+      "od",
+      "iz",
+      "sa",
+      "do"
+     ],
+     "a": 0,
+     "e": "Made of something: od + genitive: od peska."
+    }
+   ]
+  }
+ ]
+}

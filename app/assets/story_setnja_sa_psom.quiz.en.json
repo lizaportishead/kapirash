@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "When did Ivana move to Belgrade?",
+     "o": [
+      "A month ago",
+      "A year ago",
+      "Yesterday",
+      "Ten years ago"
+     ],
+     "a": 0,
+     "e": "I moved here a month ago."
+    },
+    {
+     "q": "Where can dogs run without a leash?",
+     "o": [
+      "On any lawn",
+      "In the fenced part of the park",
+      "Only in the street",
+      "Nowhere"
+     ],
+     "a": 1,
+     "e": "where they can run freely."
+    },
+    {
+     "q": "Where should you throw the bag?",
+     "o": [
+      "Into any bin in town",
+      "Into the river",
+      "Into the green bin next to the bench",
+      "Leave it on the grass"
+     ],
+     "a": 2,
+     "e": "Into the green bin next to the bench."
+    },
+    {
+     "q": "What can happen if you do not clean up after your dog?",
+     "o": [
+      "Nothing",
+      "A fine",
+      "A ban from the park",
+      "A warning by phone"
+     ],
+     "a": 1,
+     "e": "If you do not clean up, you can get a fine."
+    },
+    {
+     "q": "What is compulsory for a dog in Serbia?",
+     "o": [
+      "Buy a collar",
+      "Sign up for training",
+      "Register it at the vet and get a microchip",
+      "Build a kennel"
+     ],
+     "a": 2,
+     "e": "You must register him at the vet and microchip him, it is compulsory."
+    },
+    {
+     "q": "What did Riki do while the dogs were playing?",
+     "o": [
+      "Bit Vuk",
+      "Picked something up from the ground and started chewing",
+      "Ran out of the park",
+      "Fell asleep on the grass"
+     ],
+     "a": 1,
+     "e": "Riki picked something up from the ground."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Toga jutra je u park došla sa *povocem* u jednoj ruci",
+     "o": [
+      "a leash",
+      "an umbrella",
+      "a bag",
+      "a ball"
+     ],
+     "a": 0,
+     "e": "Povodac — leash."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Doveli smo ga iz *skloništa*.",
+     "o": [
+      "a shop",
+      "a shelter",
+      "a village",
+      "a clinic"
+     ],
+     "a": 1,
+     "e": "Sklonište — a shelter."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bio je gladan i *mokar*.",
+     "o": [
+      "dirty",
+      "wet",
+      "sick",
+      "small"
+     ],
+     "a": 1,
+     "e": "Mokar — wet."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vuk je pravi *mazalica*.",
+     "o": [
+      "a guard",
+      "a fighter",
+      "a coward",
+      "a cuddly one"
+     ],
+     "a": 3,
+     "e": "Mazalica — a cuddly one."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "I *vakcina* protiv besnila je svake godine.",
+     "o": [
+      "food",
+      "a vaccination",
+      "a toy",
+      "a medicine"
+     ],
+     "a": 1,
+     "e": "Vakcina — vaccination."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Toga jutra je u park došla sa ___ u jednoj ruci i kesicom u drugoj.",
+     "o": [
+      "povodac",
+      "povocem",
+      "povoca",
+      "povocu"
+     ],
+     "a": 1,
+     "e": "Sa + instrumental: sa povocem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ivana je ___ glavom i otišla do ograđenog prostora.",
+     "o": [
+      "klimala",
+      "klimnula",
+      "klimati",
+      "klimnuti"
+     ],
+     "a": 1,
+     "e": "One nod — perfective: klimnula."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pored ___ psa stajao je visok mladić sa slušalicama.",
+     "o": [
+      "crni",
+      "crnog",
+      "crnom",
+      "crnim"
+     ],
+     "a": 1,
+     "e": "Pored + genitive: pored crnog psa."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam svog ___ ispred zgrade.",
+     "o": [
+      "našao",
+      "našla",
+      "našli",
+      "našlo"
+     ],
+     "a": 0,
+     "e": "Nemanja, a man, is speaking: našao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Tamo je Riki odmah potrčao ka velikom crnom ___.",
+     "o": [
+      "psa",
+      "pas",
+      "psu",
+      "psom"
+     ],
+     "a": 2,
+     "e": "Ka + dative: ka psu."
+    }
+   ]
+  }
+ ]
+}
