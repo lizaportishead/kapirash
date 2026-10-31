@@ -256,7 +256,7 @@ class _Group extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        boxShadow: [BoxShadow(color: Color(0x0D000000), blurRadius: 3, offset: Offset(0, 1))],
+        boxShadow: [BoxShadow(color: Color(0x07000000), blurRadius: 3, offset: Offset(0, 1))],
       ),
       child: Material(
         color: cCard,
@@ -321,7 +321,7 @@ class _Stat extends StatelessWidget {
       decoration: BoxDecoration(
         color: cCard,
         borderRadius: BorderRadius.circular(8),
-        boxShadow: [BoxShadow(color: Color(0x0D000000), blurRadius: 3, offset: Offset(0, 1))],
+        boxShadow: [BoxShadow(color: Color(0x07000000), blurRadius: 3, offset: Offset(0, 1))],
       ),
       child: Column(
         children: [

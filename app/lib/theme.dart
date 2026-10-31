@@ -384,7 +384,7 @@ class _LiftState extends State<Lift> {
           boxShadow: [
             up
                 ? BoxShadow(color: cViolet.withValues(alpha: 0.25), blurRadius: 10, offset: Offset(0, 3))
-                : BoxShadow(color: Color(0x0D000000), blurRadius: 3, offset: Offset(0, 1)),
+                : BoxShadow(color: Color(0x07000000), blurRadius: 3, offset: Offset(0, 1)),
           ],
         ),
         child: HoverInfo(hovered: up, child: widget.child),
