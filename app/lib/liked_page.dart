@@ -116,7 +116,7 @@ class LikedPage extends StatelessWidget {
                                             child: Column(
                                               children: [
                                                 for (final t in tiles)
-                                                  Padding(padding: EdgeInsets.only(bottom: box.maxWidth < 600 ? (t is EpisodeTile ? 0 : 8) : 12), child: t),
+                                                  Padding(padding: EdgeInsets.only(bottom: t is EpisodeTile ? 0 : (box.maxWidth < 600 ? 8 : 16)), child: t),
                                               ],
                                             ),
                                           ),
