@@ -271,7 +271,7 @@ class _AuthPageState extends State<AuthPage> {
                           fillColor: cCard,
                           contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide.none,
                           ),
                         ),
@@ -332,7 +332,7 @@ class _AuthPageState extends State<AuthPage> {
                             fillColor: cCard,
                             contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide.none,
                             ),
                           ),

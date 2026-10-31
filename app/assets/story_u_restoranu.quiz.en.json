@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Where is Tomas from?",
+     "o": [
+      "The Czech Republic",
+      "Poland",
+      "Slovakia",
+      "Russia"
+     ],
+     "a": 1,
+     "e": "who had come from Poland."
+    },
+    {
+     "q": "What are ćevapi?",
+     "o": [
+      "A salad",
+      "A soup",
+      "Grilled minced meat",
+      "A dessert"
+     ],
+     "a": 2,
+     "e": "Meat from the grill, minced, in the shape of little rolls."
+    },
+    {
+     "q": "What did Jelena order?",
+     "o": [
+      "A pljeskavica with potatoes",
+      "Ćevapi",
+      "Fish",
+      "Pasta"
+     ],
+     "a": 0,
+     "e": "I will have a pljeskavica with a side of potatoes."
+    },
+    {
+     "q": "Which beer did Tomas pick?",
+     "o": [
+      "Dark",
+      "Unfiltered",
+      "Non-alcoholic",
+      "Light"
+     ],
+     "a": 3,
+     "e": "Then the light one."
+    },
+    {
+     "q": "What did Jelena order for dessert?",
+     "o": [
+      "Baklava",
+      "Ice cream",
+      "Pancakes with walnuts",
+      "A cake"
+     ],
+     "a": 2,
+     "e": "I would have pancakes with walnuts."
+    },
+    {
+     "q": "How much of a tip is usual?",
+     "o": [
+      "About ten percent",
+      "Fifty percent",
+      "None at all",
+      "One percent"
+     ],
+     "a": 0,
+     "e": "About ten percent, Jelena said."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Seli su i dobili *jelovnik*.",
+     "o": [
+      "the menu",
+      "the bill",
+      "napkins",
+      "water"
+     ],
+     "a": 0,
+     "e": "Jelovnik — a menu."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Konobar* se vratio sa blokčićem.",
+     "o": [
+      "The cook",
+      "The waiter",
+      "The owner",
+      "The guest"
+     ],
+     "a": 1,
+     "e": "Konobar — a waiter."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Račun*, molim vas.",
+     "o": [
+      "The menu",
+      "Water",
+      "The bill",
+      "A napkin"
+     ],
+     "a": 2,
+     "e": "Račun — the bill."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A kolika je pristojna *napojnica*?",
+     "o": [
+      "discount",
+      "tax",
+      "price",
+      "tip"
+     ],
+     "a": 3,
+     "e": "Napojnica — a tip."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imamo *palačinke* i baklavu.",
+     "o": [
+      "pancakes",
+      "pies",
+      "cutlets",
+      "cheese fritters"
+     ],
+     "a": 0,
+     "e": "Palačinke — pancakes."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo jedan sto ___ prozora.",
+     "o": [
+      "u",
+      "na",
+      "kraj",
+      "iza"
+     ],
+     "a": 2,
+     "e": "Kraj + genitive: kraj prozora (by the window)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja ću pljeskavicu sa ___ od krompira.",
+     "o": [
+      "prilog",
+      "priloga",
+      "prilogu",
+      "prilogom"
+     ],
+     "a": 3,
+     "e": "Sa + instrumental: sa prilogom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Posle jela konobar je ___ desert.",
+     "o": [
+      "nudio",
+      "ponudio",
+      "nuditi",
+      "ponuditi"
+     ],
+     "a": 1,
+     "e": "He offered once — perfective, masculine: ponudio."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Čuo sam da je ___ pivo dobro.",
+     "o": [
+      "lokalna",
+      "lokalnog",
+      "lokalno",
+      "lokalni"
+     ],
+     "a": 2,
+     "e": "Adjective with pivo (neut.): lokalno."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kod nas se ___ više poštuje",
+     "o": [
+      "tišinu",
+      "tišine",
+      "tišini",
+      "tišina"
+     ],
+     "a": 3,
+     "e": "Subject (what is respected?) — nominative: tišina."
+    }
+   ]
+  }
+ ]
+}

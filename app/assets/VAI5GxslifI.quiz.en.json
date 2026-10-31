@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Danijela consider the main point about anxiety?",
+     "o": [
+      "It is not an illness",
+      "It is a serious heart disease",
+      "It is a life sentence",
+      "It is just a whim"
+     ],
+     "a": 0,
+     "e": "In the video: \"anksioznost nije bolest\" — anxiety is not an illness."
+    },
+    {
+     "q": "Why does she make short YouTube videos?",
+     "o": [
+      "To say more than in an Instagram post",
+      "She was forbidden to write texts",
+      "A publisher asked her",
+      "She is paid per view"
+     ],
+     "a": 0,
+     "e": "In the video: \"na taj način mogu puno više da kažem nego da napišem u onu Instagram formu\" — this way I can say much more than I could write in that Instagram format."
+    },
+    {
+     "q": "According to her experience, what sometimes helps more than a pill?",
+     "o": [
+      "One good explanation or video",
+      "A long vacation",
+      "A trip to a shopping mall",
+      "A new job"
+     ],
+     "a": 0,
+     "e": "In the video: \"jedan video na temu edukacije, šta je to anksioznost, zna mnogo da pomogne, više nego bilo kakva tableta\" — one video on what anxiety is can help more than any pill."
+    },
+    {
+     "q": "How long, she says, does a visit to a psychiatrist last?",
+     "o": [
+      "Five to ten minutes",
+      "A full hour",
+      "Two hours",
+      "Three minutes"
+     ],
+     "a": 0,
+     "e": "In the video: \"zadržavanje kod psihijatra traje pet ili deset minuta\" — a visit to a psychiatrist lasts five or ten minutes."
+    },
+    {
+     "q": "How does anxiety differ from real fear?",
+     "o": [
+      "It is invented in our heads",
+      "It is always more dangerous to life",
+      "It is caused by a heart disease",
+      "It causes no sensations in the body"
+     ],
+     "a": 0,
+     "e": "In the video: \"anksioznost je neurotski strah, dakle, izmišljen u našoj glavi\" — anxiety is neurotic fear, that is, invented in our heads."
+    },
+    {
+     "q": "What happens if you run away from anxiety?",
+     "o": [
+      "It gets stronger",
+      "It disappears",
+      "It turns into a heart disease",
+      "Nothing changes"
+     ],
+     "a": 0,
+     "e": "In the video: \"svaki put kad pobjegnete od anksioznosti, ona se učvrsti\" — every time you run away from anxiety, it gets entrenched."
+    },
+    {
+     "q": "In how many sessions, she says, can panic attacks be dealt with?",
+     "o": [
+      "Two or three",
+      "A hundred",
+      "One day",
+      "Never"
+     ],
+     "a": 0,
+     "e": "In the video: \"mi možemo napad panike, ali i anksioznost završiti u dvije seanse, u tri seanse\" — we can finish a panic attack and anxiety in two or three sessions."
+    },
+    {
+     "q": "What are the two things to remember?",
+     "o": [
+      "It is not an illness and nobody came to harm from it",
+      "You need to take pills every day",
+      "You need to stay at home",
+      "You need to avoid elevators"
+     ],
+     "a": 0,
+     "e": "In the video: \"anksioznost nije bolest, to je jedno stanje u koje uđemo svojim načinom razmišljanja\" — anxiety is not an illness, it is a state we enter through our way of thinking."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobio je neku terapiju, dobio je nešto za *smirenje*",
+     "o": [
+      "calming down",
+      "fun",
+      "sleep",
+      "appetite"
+     ],
+     "a": 0,
+     "e": "smirenje — calming down."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Meni vrlo često dolaze sa ogromnim *fasciklama* pregleda",
+     "o": [
+      "folders",
+      "backpacks",
+      "boxes",
+      "wallets"
+     ],
+     "a": 0,
+     "e": "fascikla — folder."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali anksioznost je neurotski strah, dakle, *izmišljen* u našoj glavi",
+     "o": [
+      "made up",
+      "forgotten",
+      "found",
+      "bought"
+     ],
+     "a": 0,
+     "e": "izmišljen — made up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "jedna dobra *edukativna* forma",
+     "o": [
+      "educational",
+      "expensive",
+      "accidental",
+      "secret"
+     ],
+     "a": 0,
+     "e": "edukativan — educational."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ono što je važno jeste da znate da anksioznost nije *bolest*",
+     "o": [
+      "illness",
+      "job",
+      "habit",
+      "game"
+     ],
+     "a": 0,
+     "e": "bolest — illness."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "mi smo već na *dvojci*",
+     "o": [
+      "two",
+      "ten",
+      "zero",
+      "a hundred"
+     ],
+     "a": 0,
+     "e": "dvojka — a two."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Strah je *evolucijska* emocija",
+     "o": [
+      "evolutionary",
+      "accidental",
+      "harmful",
+      "childish"
+     ],
+     "a": 0,
+     "e": "evolucijski — evolutionary."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "ona se učvrsti, *betonira*, postaje još jača",
+     "o": [
+      "gets concreted",
+      "disappears",
+      "laughs",
+      "dances"
+     ],
+     "a": 0,
+     "e": "betonirati — to concrete, set firm."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hej, dobar ___, dragi ljudi.",
+     "o": [
+      "dan",
+      "dana",
+      "danu",
+      "danom"
+     ],
+     "a": 0,
+     "e": "Dobar dan — nominative in the greeting."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Evo mene danas ___ novim videom",
+     "o": [
+      "sa",
+      "bez",
+      "do",
+      "iz"
+     ],
+     "a": 0,
+     "e": "Sa + instr.: sa novim videom — with a new video."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zašto ___ temu anksioznosti?",
+     "o": [
+      "na",
+      "u",
+      "za",
+      "od"
+     ],
+     "a": 0,
+     "e": "Na temu + gen.: on the topic of anxiety."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Znači, anksioznost, ljudi moji, nije ___",
+     "o": [
+      "bolest",
+      "bolesti",
+      "bolešću",
+      "bolesna"
+     ],
+     "a": 0,
+     "e": "Nije + nom. predicate: nije bolest."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "kada smo u realnoj životnoj ___",
+     "o": [
+      "opasnosti",
+      "opasnost",
+      "opasnošću",
+      "opasna"
+     ],
+     "a": 0,
+     "e": "U + loc.: u opasnosti — in danger."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "da ako sam uspjela da ___ jednog čovjeka",
+     "o": [
+      "pokrenem",
+      "pokrećem",
+      "pokretala",
+      "pokrećući"
+     ],
+     "a": 0,
+     "e": "A single result takes the perfective: pokrenem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "svaki put kad ___ od anksioznosti, ona se učvrsti",
+     "o": [
+      "pobjegnete",
+      "bježite",
+      "bježali",
+      "bježanje"
+     ],
+     "a": 0,
+     "e": "After kad a single completed action takes the perfective: pobjegnete."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "vi niste ___ psihijatrijski slučajevi",
+     "o": [
+      "nikakvi",
+      "nikakva",
+      "nikakvog",
+      "nikakvom"
+     ],
+     "a": 0,
+     "e": "Agrees with slučajevi (masc. pl. nom.): nikakvi."
+    }
+   ]
+  }
+ ]
+}

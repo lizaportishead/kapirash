@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RendererBinding;
 
 import 'clips_page.dart';
 import 'creator_page.dart';
@@ -22,16 +23,18 @@ class VideoCard extends StatelessWidget {
       color: cInk,
       child: Center(child: Icon(Icons.play_arrow_rounded, size: 56, color: cOnInk.withValues(alpha: 0.5))),
     );
-    final card = Material(
-      color: cCard,
-      borderRadius: BorderRadius.circular(28),
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: () => openVideo(context, v),
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          // Метки и шкала меняются, пока карточка на экране: ролик посмотрели, сохранили из него слово.
-          child: ListenableBuilder(listenable: store, builder: (context, _) => _body(context, placeholder)),
+    final card = Lift(
+      child: Material(
+        color: cCard,
+        borderRadius: BorderRadius.circular(8),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: () => openVideo(context, v),
+          child: Padding(
+            padding: EdgeInsets.all(8),
+            // Метки и шкала меняются, пока карточка на экране: ролик посмотрели, сохранили из него слово.
+            child: ListenableBuilder(listenable: store, builder: (context, _) => _body(context, placeholder)),
+          ),
         ),
       ),
     );
@@ -52,7 +55,7 @@ class VideoCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(8),
           child: AspectRatio(
             aspectRatio: 16 / 9,
             child: Stack(
@@ -75,6 +78,7 @@ class VideoCard extends StatelessWidget {
                     child: VideoTag('$words ${plural(words, 'слово', 'слова', 'слов')}', accent: true),
                   ),
                 if (v.duration.isNotEmpty) Positioned(right: 10, bottom: 10, child: VideoTag(v.duration)),
+                Positioned(top: 2, right: 2, child: StarOnCover(v.id)),
                 if (progress > 0)
                   Positioned(
                     left: 0,
@@ -92,16 +96,7 @@ class VideoCard extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(8, 12, 0, 6),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: _text(context)),
-              LikeButton(v.id),
-            ],
-          ),
-        ),
+        Padding(padding: EdgeInsets.fromLTRB(8, 12, 8, 8), child: _text(context)),
       ],
     );
   }
@@ -153,7 +148,10 @@ class VideoCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (difficultyOf(v.level) != null) ...[Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)), DifficultyLabel(v.level)],
+              if (difficultyOf(v.level) != null) ...[
+                Text(' · ', style: TextStyle(fontSize: 13, color: cMuted)),
+                DifficultyLabel(v.level),
+              ],
             ],
           )
         else if (difficultyOf(v.level) != null)
@@ -186,8 +184,10 @@ class VideoTag extends StatelessWidget {
 
 /// Звёздочка ролика: ставит и снимает отметку, список отмеченных — на экране «Избранное».
 class LikeButton extends StatelessWidget {
-  const LikeButton(this.videoId, {super.key});
+  const LikeButton(this.videoId, {super.key, this.pale = false});
   final String videoId;
+  // Бледная звёздочка для строк списка, где она не должна спорить с названием.
+  final bool pale;
 
   @override
   Widget build(BuildContext context) {
@@ -196,11 +196,44 @@ class LikeButton extends StatelessWidget {
       builder: (context, _) {
         final on = store.isLiked(videoId);
         return IconButton(
-          tooltip: on ? ui('Убрать звёздочку') : ui('Поставить звёздочку'),
+          tooltip: on ? ui('Убрать из избранного') : ui('Добавить в избранное'),
           isSelected: on,
-          icon: Icon(KIcons.star, size: 22, color: cMuted),
-          selectedIcon: Icon(Icons.star_rounded, size: 22, color: cViolet),
+          icon: Icon(KIcons.star, size: 22, color: pale ? cStarOff : cMuted),
+          selectedIcon: Icon(Icons.star_rounded, size: 26, color: cStarOn),
           onPressed: () => store.toggleLike(videoId),
+        );
+      },
+    );
+  }
+}
+
+/// Звёздочка на обложке: на десктопе появляется при наведении на карточку, на телефоне видна всегда.
+/// Поставленная звёздочка остаётся видна и без наведения.
+class StarOnCover extends StatelessWidget {
+  const StarOnCover(this.id, {super.key});
+  final String id;
+
+  @override
+  Widget build(BuildContext context) {
+    final hovered = HoverInfo.of(context);
+    final hasMouse = RendererBinding.instance.mouseTracker.mouseIsConnected;
+    return ListenableBuilder(
+      listenable: store,
+      builder: (_, _) {
+        final show = hovered || !hasMouse || store.isLiked(id);
+        return Padding(
+          padding: EdgeInsets.all(4),
+          child: AnimatedOpacity(
+            duration: Duration(milliseconds: 120),
+            opacity: show ? 1 : 0,
+            child: IgnorePointer(
+              ignoring: !show,
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: cBg.withValues(alpha: 0.85), shape: BoxShape.circle),
+                child: LikeButton(id),
+              ),
+            ),
+          ),
         );
       },
     );

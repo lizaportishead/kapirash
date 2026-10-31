@@ -21,7 +21,7 @@ Future<void> showAddVideo(BuildContext context) async {
     context: context,
     backgroundColor: cBg,
     isScrollControlled: true,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
     builder: (_) => _AddVideoSheet(),
   );
   if (video != null && context.mounted) openVideo(context, video);
@@ -151,7 +151,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
                 filled: true,
                 fillColor: cCard,
                 contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide.none),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
               ),
             ),
             SizedBox(height: 16),

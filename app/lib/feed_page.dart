@@ -101,7 +101,7 @@ class FeedPage extends StatelessWidget {
 }
 
 // Высота карточки: превью 16:9 плюс подпись.
-double videoCardHeight(double w) => (w - 16) * 9 / 16 + 108;
+double videoCardHeight(double w) => (w - 16) * 9 / 16 + 107;
 
 /// Заголовок полосы со ссылкой «Смотреть все», если есть куда вести.
 class SectionHeader extends StatelessWidget {
@@ -157,9 +157,9 @@ class VideoSection extends StatelessWidget {
               // Телефон: одна карточка и краешек второй. Широкий экран: четыре в ряд.
               final w = box.maxWidth < 600
                   ? box.maxWidth * 0.82
-                  : ((box.maxWidth - 24 - 12 * (_perRow - 1)) / _perRow).clamp(260.0, 400.0);
+                  : ((box.maxWidth - 32 - 16 * (_perRow - 1)) / _perRow).clamp(260.0, 400.0);
               return SizedBox(
-                height: videoCardHeight(w),
+                height: videoCardHeight(w) + 16,
                 child: ScrollConfiguration(
                   // На десктопе ряд можно листать и мышью.
                   behavior: ScrollConfiguration.of(context).copyWith(
@@ -167,9 +167,9 @@ class VideoSection extends StatelessWidget {
                   ),
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     itemCount: list.length,
-                    separatorBuilder: (_, _) => SizedBox(width: 12),
+                    separatorBuilder: (_, _) => SizedBox(width: 16),
                     itemBuilder: (_, i) => SizedBox(width: w, child: VideoCard(list[i])),
                   ),
                 ),
@@ -193,7 +193,7 @@ class ClipsStrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LayoutBuilder(builder: (context, box) {
     // На широком экране показываем столько обложек, сколько влезает в строку.
-    final fit = ((box.maxWidth - 24 + 10) / 145).floor();
+    final fit = ((box.maxWidth - 32 + 16) / 151).floor();
     final list = this.list ?? clips.take(fit < 6 ? 6 : fit).toList();
     if (list.isEmpty) return SizedBox.shrink();
     return Padding(
@@ -206,9 +206,9 @@ class ClipsStrip extends StatelessWidget {
             height: 240,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 12),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               itemCount: list.length,
-              separatorBuilder: (_, _) => SizedBox(width: 10),
+              separatorBuilder: (_, _) => SizedBox(width: 16),
               itemBuilder: (_, i) => SizedBox(width: 135, child: ClipTile(list[i], among: list)),
             ),
           ),
@@ -252,13 +252,13 @@ class TopicPage extends StatelessWidget {
                       child: LayoutBuilder(
                         builder: (_, box) {
                           final cols = (box.maxWidth / 340).floor().clamp(1, 4);
-                          final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
+                          final cardW = (box.maxWidth - 32 - 16 * (cols - 1)) / cols;
                           return GridView.builder(
-                            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: cols,
-                              crossAxisSpacing: 12,
-                              mainAxisSpacing: 12,
+                              crossAxisSpacing: 16,
+                              mainAxisSpacing: 16,
                               mainAxisExtent: videoCardHeight(cardW),
                             ),
                             itemCount: list.length,

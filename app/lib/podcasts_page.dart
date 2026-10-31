@@ -45,33 +45,35 @@ class PodcastsPage extends StatelessWidget {
             ],
           ),
           Expanded(
-            child: LayoutBuilder(builder: (context, c) {
-              final wide = c.maxWidth >= 720;
-              if (!wide) {
+            child: LayoutBuilder(
+              builder: (context, c) {
+                final wide = c.maxWidth >= 720;
+                if (!wide) {
+                  return ListView(
+                    padding: EdgeInsets.fromLTRB(16, 4, 16, 16),
+                    children: [for (final p in podcasts) EpisodeTile(p)],
+                  );
+                }
                 return ListView(
-                  padding: EdgeInsets.fromLTRB(12, 4, 12, 16),
-                  children: [for (final p in podcasts) EpisodeTile(p)],
-                );
-              }
-              return ListView(
-                padding: EdgeInsets.fromLTRB(16, 8, 16, 32),
-                children: [
-                  for (var i = 0; i < podcasts.length; i += 2)
-                    IntrinsicHeight(
-                      child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Expanded(child: EpisodeTile(podcasts[i], roomy: true)),
-                        SizedBox(width: 20),
-                        Expanded(
-                          child: i + 1 < podcasts.length ? EpisodeTile(podcasts[i + 1], roomy: true) : SizedBox(),
+                  padding: EdgeInsets.fromLTRB(16, 8, 16, 32),
+                  children: [
+                    for (var i = 0; i < podcasts.length; i += 2)
+                      IntrinsicHeight(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(child: EpisodeTile(podcasts[i], roomy: true)),
+                            SizedBox(width: 16),
+                            Expanded(
+                              child: i + 1 < podcasts.length ? EpisodeTile(podcasts[i + 1], roomy: true) : SizedBox(),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    ),
-                ],
-              );
-            }),
+                      ),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
@@ -91,7 +93,7 @@ void _open(BuildContext context, {required String? searchHint}) {
         text: (p) => '${p.title} ${p.channel}',
         tile: (p) => EpisodeTile(p),
         searchHint: searchHint,
-        emptyLiked: ui('Ставь звёздочку подкастам, к которым хочешь вернуться. Они появятся тут.'),
+        emptyLiked: ui('Добавляй в избранное подкасты, к которым хочешь вернуться. Они появятся тут.'),
       ),
     ),
   );
@@ -101,7 +103,10 @@ void openPodcast(BuildContext context, Video v, {double? startAt, bool autoplay 
   store.markWatched(v.id);
   trackEvent('podcast_opened', {'video_id': v.id});
   Navigator.of(context).push(
-    MaterialPageRoute<void>(settings: urlSettings('PodcastPlayerPage', '/podcast/${v.id}'), builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay)),
+    MaterialPageRoute<void>(
+      settings: urlSettings('PodcastPlayerPage', '/podcast/${v.id}'),
+      builder: (_) => PodcastPlayerPage(video: v, startAt: startAt, autoplay: autoplay),
+    ),
   );
 }
 
@@ -114,57 +119,61 @@ class EpisodeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final done = store.isWatched(video.id);
     return Padding(
-      padding: EdgeInsets.only(bottom: roomy ? 20 : 8),
-      child: Material(
-        color: cCard,
-        borderRadius: BorderRadius.circular(20),
-        clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: () => openPodcast(context, video),
-          child: Padding(
-            padding: EdgeInsets.all(roomy ? 18 : 12),
-            child: Row(
-              children: [
-                _Cover(size: 64, channel: video.channel),
-                SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        video.channel,
-                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cViolet),
-                      ),
-                      SizedBox(height: 2),
-                      Text(
-                        video.title,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        [video.duration, if (done) ui('Открывали')].join(' · '),
-                        style: TextStyle(fontSize: 12, color: cMuted),
-                      ),
-                    ],
-                  ),
-                ),
-                LikeButton(video.id),
-                Semantics(
-                  button: true,
-                  label: ui('Играть'),
-                  child: Material(
-                    color: cViolet,
-                    shape: CircleBorder(),
-                    clipBehavior: Clip.antiAlias,
-                    child: InkWell(
-                      onTap: () => openPodcast(context, video, autoplay: true),
-                      child: SizedBox(width: 44, height: 44, child: Icon(KIcons.play, size: 22, color: cOnViolet)),
+      padding: EdgeInsets.only(bottom: 16),
+      child: Lift(
+        child: Material(
+          color: cCard,
+          borderRadius: BorderRadius.circular(8),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: () => openPodcast(context, video),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(8, 12, 12, 12),
+              child: Row(
+                children: [
+                  LikeButton(video.id, pale: true),
+                  SizedBox(width: 4),
+                  _Cover(size: 64, channel: video.channel),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          video.channel,
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cViolet),
+                        ),
+                        SizedBox(height: 2),
+                        Text(
+                          video.title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          [video.duration, if (done) ui('Открывали')].join(' · '),
+                          style: TextStyle(fontSize: 12, color: cMuted),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(width: 8),
+                  Semantics(
+                    button: true,
+                    label: ui('Играть'),
+                    child: Material(
+                      color: cViolet,
+                      shape: CircleBorder(),
+                      clipBehavior: Clip.antiAlias,
+                      child: InkWell(
+                        onTap: () => openPodcast(context, video, autoplay: true),
+                        child: SizedBox(width: 44, height: 44, child: Icon(KIcons.play, size: 22, color: cOnViolet)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -200,13 +209,7 @@ class _Cover extends StatelessWidget {
     return ExcludeSemantics(
       child: ClipRRect(
         borderRadius: radius,
-        child: Image.asset(
-          asset,
-          width: size,
-          height: size,
-          fit: BoxFit.cover,
-          errorBuilder: (_, _, _) => placeholder,
-        ),
+        child: Image.asset(asset, width: size, height: size, fit: BoxFit.cover, errorBuilder: (_, _, _) => placeholder),
       ),
     );
   }
@@ -376,7 +379,12 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     showWord(context, raw: raw, cue: cue, dict: _dict, videoId: id, flyTo: _wordsKey);
   }
 
-  void _push(Widget page) => Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'SubPage'), builder: (_) => page));
+  void _push(Widget page) => Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: RouteSettings(name: 'SubPage'),
+      builder: (_) => page,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -425,7 +433,12 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                                     SizedBox(height: 2),
                                     Text(
                                       widget.video.title,
-                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.3,
+                                        color: cText,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -512,7 +525,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                                     padding: EdgeInsets.fromLTRB(16, 16, 16, 14),
                                     decoration: BoxDecoration(
                                       color: cBg,
-                                      borderRadius: BorderRadius.circular(24),
+                                      borderRadius: BorderRadius.circular(8),
                                       boxShadow: [
                                         BoxShadow(
                                           color: Colors.black.withValues(alpha: 0.08),
@@ -534,12 +547,21 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                                                 children: [
                                                   Text(
                                                     widget.video.channel,
-                                                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cViolet),
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      fontWeight: FontWeight.w700,
+                                                      color: cViolet,
+                                                    ),
                                                   ),
                                                   SizedBox(height: 2),
                                                   Text(
                                                     widget.video.title,
-                                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.3, color: cText),
+                                                    style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight: FontWeight.w700,
+                                                      height: 1.3,
+                                                      color: cText,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -598,7 +620,11 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: onTap,
-          child: SizedBox(width: size, height: size, child: Icon(icon, size: size * 0.5, color: main ? cOnViolet : cInk)),
+          child: SizedBox(
+            width: size,
+            height: size,
+            child: Icon(icon, size: size * 0.5, color: main ? cOnViolet : cInk),
+          ),
         ),
       ),
     );
@@ -639,7 +665,13 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
           children: [
             SizedBox(width: 56),
             round(KIcons.back15, ui('Назад на 15 секунд'), () => _seek(_pos - 15)),
-            round(_playing ? KIcons.pause : KIcons.play, _playing ? ui('Пауза') : ui('Играть'), _toggle, size: 64, main: true),
+            round(
+              _playing ? KIcons.pause : KIcons.play,
+              _playing ? ui('Пауза') : ui('Играть'),
+              _toggle,
+              size: 64,
+              main: true,
+            ),
             round(KIcons.forward15, ui('Вперёд на 15 секунд'), () => _seek(_pos + 15)),
             SizedBox(width: 56),
           ],
@@ -667,7 +699,10 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                 Icon(icon, size: text.isEmpty ? 24 : 16, color: cInk),
                 if (text.isNotEmpty) ...[
                   SizedBox(width: 6),
-                  Text(text, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cInk)),
+                  Text(
+                    text,
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cInk),
+                  ),
                 ],
               ],
             ),
@@ -689,7 +724,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
     final ru = cue != null ? _ruFor(cue) : '';
     return Material(
       color: cAccent,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -709,7 +744,12 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                     SizedBox(height: 6),
                     Text(
                       ru,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, height: 1.4, color: cInk.withValues(alpha: 0.72)),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        height: 1.4,
+                        color: cInk.withValues(alpha: 0.72),
+                      ),
                     ),
                   ],
                 ],
@@ -743,7 +783,12 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                 ui('Задания'),
                 badge: _quiz.where((s) => store.quizResult(id, s.title) == null).length,
                 icon: KIcons.tasks,
-                onTap: () => _push(SubPage(title: ui('Задания'), child: QuizList(videoId: id, sections: _quiz))),
+                onTap: () => _push(
+                  SubPage(
+                    title: ui('Задания'),
+                    child: QuizList(videoId: id, sections: _quiz),
+                  ),
+                ),
               ),
             ),
           ),
@@ -753,7 +798,12 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
             ui('Слова'),
             badge: words,
             icon: KIcons.wordsOn,
-            onTap: () => _push(SubPage(title: ui('Словарь'), child: WordList(videoId: id, onSeek: _seek))),
+            onTap: () => _push(
+              SubPage(
+                title: ui('Словарь'),
+                child: WordList(videoId: id, onSeek: _seek),
+              ),
+            ),
           ),
         ),
       ],

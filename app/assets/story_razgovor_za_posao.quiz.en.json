@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Where did Luka work before?",
+     "o": [
+      "In Germany",
+      "In Austria",
+      "In Switzerland",
+      "In Sweden"
+     ],
+     "a": 0,
+     "e": "I worked in Germany."
+    },
+    {
+     "q": "What was the biggest challenge in his project?",
+     "o": [
+      "A new technology",
+      "A tight deadline: three months for six months of work",
+      "Quarrels in the team",
+      "A lack of money"
+     ],
+     "a": 1,
+     "e": "We had only three months, and work for six."
+    },
+    {
+     "q": "How did he cope?",
+     "o": [
+      "He worked at night",
+      "He hired helpers",
+      "He asked for more time",
+      "He made a priority list and updated it every week"
+     ],
+     "a": 3,
+     "e": "We made a list of priorities and updated it every week."
+    },
+    {
+     "q": "How many days a week can one work from home?",
+     "o": [
+      "One",
+      "Three",
+      "Two",
+      "None"
+     ],
+     "a": 2,
+     "e": "Two days a week."
+    },
+    {
+     "q": "Who will help with the work permit?",
+     "o": [
+      "The company's lawyer",
+      "Luka himself",
+      "The accountant",
+      "An agency"
+     ],
+     "a": 0,
+     "e": "We have a lawyer who deals with that."
+    },
+    {
+     "q": "How does the story end?",
+     "o": [
+      "He was turned down",
+      "They offered an internship",
+      "He got the job",
+      "They asked him to come again"
+     ],
+     "a": 2,
+     "e": "I am calling to tell you that you are accepted."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Luka je tri nedelje slao *biografiju* na razne oglase",
+     "o": [
+      "a letter",
+      "a CV",
+      "an application",
+      "a photo"
+     ],
+     "a": 1,
+     "e": "Biografija — a CV, a biography."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Šta vam je bio najveći *izazov*?",
+     "o": [
+      "success",
+      "rest",
+      "challenge",
+      "plan"
+     ],
+     "a": 2,
+     "e": "Izazov — a challenge."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Plata* je neto dve hiljade evra mesečno.",
+     "o": [
+      "salary",
+      "tax",
+      "holiday",
+      "bonus"
+     ],
+     "a": 0,
+     "e": "Plata — salary."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ostalo je u *kancelariji*.",
+     "o": [
+      "at home",
+      "in a café",
+      "outside",
+      "in the office"
+     ],
+     "a": 3,
+     "e": "Kancelarija — an office."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na *recepciji* ga je dočekala devojka sa osmehom.",
+     "o": [
+      "a reception sign",
+      "the parking",
+      "the kitchen",
+      "the reception desk"
+     ],
+     "a": 3,
+     "e": "Recepcija — reception."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Firma za razvoj mobilnih aplikacija ___ Beogradu zvala ga je na razgovor.",
+     "o": [
+      "na",
+      "kod",
+      "u",
+      "za"
+     ],
+     "a": 2,
+     "e": "Choose the preposition: “in Belgrade” — u Beogradu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Luka je duboko ___.",
+     "o": [
+      "udisao",
+      "udahnuo",
+      "udisati",
+      "udahnuti"
+     ],
+     "a": 1,
+     "e": "One deep breath — perfective, masculine: udahnuo."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je Nenad, naš ___ direktor",
+     "o": [
+      "tehnička",
+      "tehničko",
+      "tehničkog",
+      "tehnički"
+     ],
+     "a": 3,
+     "e": "Adjective with direktor (masc. nom.): tehnički."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na recepciji ga je dočekala devojka sa ___.",
+     "o": [
+      "osmeh",
+      "osmeha",
+      "osmehu",
+      "osmehom"
+     ],
+     "a": 3,
+     "e": "Sa + instrumental: sa osmehom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Luka je tri nedelje slao biografiju na razne ___.",
+     "o": [
+      "oglasi",
+      "oglasa",
+      "oglase",
+      "oglasima"
+     ],
+     "a": 2,
+     "e": "Na + accusative plural (where to?): na oglase."
+    }
+   ]
+  }
+ ]
+}

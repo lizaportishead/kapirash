@@ -34,12 +34,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   captureInitialLink();
   // Пока поднимаем облако и читаем сохранённое, показываем лоадер вместо пустого экрана.
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: KapLoader(size: 96, flip: true),
-    ),
-  );
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: KapLoader(size: 96, flip: true)));
   if (supabaseKey.isNotEmpty) {
     // На вебе автодетект сессии в адресе зависает на app_links.getInitialLink, и после входа через Google сессия
     // не появляется. Поэтому на вебе обмениваем код из адреса сами.
@@ -67,6 +62,7 @@ Future<void> main() async {
   }
   await store.load();
   await initAnalytics();
+  trackHomeScreenInstall();
   identifyUser(cloud?.auth.currentUser?.id);
   runApp(KapirasApp());
 }
@@ -138,13 +134,14 @@ class _KapirasAppState extends State<KapirasApp> {
         brightness: _dark ? Brightness.dark : Brightness.light,
         fontFamily: kFont,
         scaffoldBackgroundColor: cBg,
+        hoverColor: Colors.transparent,
         colorScheme: _dark
             ? ColorScheme.dark(primary: cViolet, onPrimary: cOnViolet, surface: cCard2, onSurface: cText)
             : ColorScheme.light(primary: cViolet, onPrimary: cOnViolet, surface: cCard2, onSurface: cText),
       ),
       builder: (_, child) => AnnotatedRegion<SystemUiOverlayStyle>(
         value: _dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
-        child: child!,
+        child: NotificationListener<ScrollNotification>(onNotification: HeaderShadow.handle, child: child!),
       ),
       home: home(),
       // Адрес вида /#/video/<id> не должен искать маршруты по частям: всегда стартуем с главной,

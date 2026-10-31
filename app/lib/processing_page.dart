@@ -108,7 +108,7 @@ class _ProcessingPageState extends State<ProcessingPage> {
                         padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(24),
+                            borderRadius: BorderRadius.circular(8),
                             child: AspectRatio(
                               aspectRatio: 16 / 9,
                               child: ColoredBox(

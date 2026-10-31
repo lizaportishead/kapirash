@@ -221,7 +221,7 @@ class _PlayerPageState extends State<PlayerPage> {
     final size = MediaQuery.sizeOf(context);
     // Свою раскладку показываем вместо полноэкранного режима плеера, поэтому autoFullScreen выключен.
     final player = ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(8),
       child: YoutubePlayer(key: _playerKey, controller: _yt, autoFullScreen: false),
     );
     // На планшете и в горизонтальном положении хватает высоты для обычной раскладки.
@@ -542,7 +542,7 @@ class _PlayerPageState extends State<PlayerPage> {
     final ru = cue != null && _showRu ? _ruFor(cue) : '';
     return Material(
       color: cAccent,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -674,24 +674,26 @@ class SubPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: kTopBarHeight,
-              child: Padding(
-                padding: EdgeInsets.only(left: 12, right: 12),
-                child: Row(
-                  children: [
-                    IconButton(
-                      tooltip: ui('Назад'),
-                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    Expanded(
-                      child: Text(
-                        title,
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+            HeaderAnchor(
+              child: SizedBox(
+                height: kTopBarHeight,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 12, right: 12),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        tooltip: ui('Назад'),
+                        icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                        onPressed: () => Navigator.pop(context),
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: Text(
+                          title,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: cText),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -1002,7 +1004,7 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
           child: Material(
             color: cBg,
             elevation: 8,
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(8),
             clipBehavior: Clip.antiAlias,
             child: ConstrainedBox(
               constraints: BoxConstraints(maxHeight: _cardH),
@@ -1062,7 +1064,7 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
       _ => QuizList(videoId: videoId, sections: widget.quiz, flat: true),
     };
     return Container(
-      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(24)),
+      decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(8)),
       clipBehavior: Clip.antiAlias,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1172,7 +1174,7 @@ class SettingsButton extends StatelessWidget {
       onPressed: () => showModalBottomSheet<void>(
         context: context,
         backgroundColor: cBg,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(32))),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
         builder: (_) => ListenableBuilder(
           listenable: Listenable.merge([store, rate]),
           builder: (ctx, _) => SafeArea(

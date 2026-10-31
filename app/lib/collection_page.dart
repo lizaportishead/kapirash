@@ -78,7 +78,7 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
                   children: [
                     if (searching)
                       Padding(
-                        padding: EdgeInsets.fromLTRB(12, 6, 12, 12),
+                        padding: EdgeInsets.fromLTRB(16, 6, 16, 12),
                         child: Row(
                           children: [
                             IconButton(
@@ -152,9 +152,9 @@ class _CollectionPageState<T> extends State<CollectionPage<T>> {
                                 )
                               : ListView.separated(
                                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-                                  padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                                   itemCount: list.length,
-                                  separatorBuilder: (_, _) => SizedBox(height: 12),
+                                  separatorBuilder: (_, _) => SizedBox(height: 16),
                                   itemBuilder: (_, i) => widget.tile(list[i]),
                                 ),
                         ),

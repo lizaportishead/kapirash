@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Why did Marko come to the bank?",
+     "o": [
+      "To take a loan",
+      "To open a current account",
+      "To exchange money",
+      "To close an old account"
+     ],
+     "a": 1,
+     "e": "I would like to open a current account."
+    },
+    {
+     "q": "Which accounts did he open?",
+     "o": [
+      "Only a dinar one",
+      "Only a foreign-currency one",
+      "None",
+      "Both"
+     ],
+     "a": 3,
+     "e": "Then I will take both."
+    },
+    {
+     "q": "How much does the account cost per month?",
+     "o": [
+      "200 dinars, the first three months free",
+      "Always free",
+      "200 dinars from day one",
+      "2 percent of the salary"
+     ],
+     "a": 0,
+     "e": "The monthly maintenance is two hundred dinars, and the first three months are free."
+    },
+    {
+     "q": "What is prekoračenje?",
+     "o": [
+      "A tax",
+      "A bank card",
+      "An overdraft",
+      "An exchange rate"
+     ],
+     "a": 2,
+     "e": "That is a permitted minus."
+    },
+    {
+     "q": "What should you do if you lose the card?",
+     "o": [
+      "Wait a week",
+      "Come to the bank on Monday",
+      "Write a letter",
+      "Call right away, the line works 24 hours"
+     ],
+     "a": 3,
+     "e": "Call this number immediately, it works twenty-four hours."
+    },
+    {
+     "q": "How can you pay for electricity and internet?",
+     "o": [
+      "Only at the post office",
+      "In the app by scanning a QR code",
+      "Only in cash",
+      "Only at the bank"
+     ],
+     "a": 1,
+     "e": "You scan the QR code from the bill and confirm the payment."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Želeo bih da otvorim *tekući* račun",
+     "o": [
+      "current",
+      "term",
+      "joint",
+      "children's"
+     ],
+     "a": 0,
+     "e": "Tekući račun — a current account."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Platna kartica je uključena u *paket*.",
+     "o": [
+      "contract",
+      "passport",
+      "package",
+      "bank"
+     ],
+     "a": 2,
+     "e": "Paket — a package."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Marko je pogledao *kursnu* listu.",
+     "o": [
+      "long",
+      "colourful",
+      "new",
+      "exchange-rate"
+     ],
+     "a": 3,
+     "e": "Kursna lista — an exchange-rate list."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "koverat sa *PIN* kodom",
+     "o": [
+      "passport",
+      "PIN",
+      "postal",
+      "secret"
+     ],
+     "a": 1,
+     "e": "PIN kod — a PIN code."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dajte ga računovođi, i od sledećeg meseca *plata* stiže ovde.",
+     "o": [
+      "tax",
+      "fee",
+      "loan",
+      "salary"
+     ],
+     "a": 3,
+     "e": "Plata — salary."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Plata mu je i dalje stizala ___ račun u inostranstvu.",
+     "o": [
+      "u",
+      "na",
+      "kod",
+      "za"
+     ],
+     "a": 1,
+     "e": "Choose the preposition: “arrived to the account” — na račun."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dajte ga ___, i od sledećeg meseca plata stiže ovde.",
+     "o": [
+      "računovođa",
+      "računovođu",
+      "računovođi",
+      "računovođom"
+     ],
+     "a": 2,
+     "e": "Give to whom? — dative: računovođi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Napolju je ___ aplikaciju, uneo aktivacioni kod",
+     "o": [
+      "instalirati",
+      "instalirao",
+      "instaliran",
+      "instalira"
+     ],
+     "a": 1,
+     "e": "Past tense, masculine: instalirao."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "___ kartica je uključena u paket.",
+     "o": [
+      "Platni",
+      "Platna",
+      "Platnu",
+      "Platno"
+     ],
+     "a": 1,
+     "e": "The adjective agrees with kartica (fem.): platna."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Jelena je počela da unosi ___ u računar.",
+     "o": [
+      "podaci",
+      "podataka",
+      "podatke",
+      "podacima"
+     ],
+     "a": 2,
+     "e": "What does she enter? — accusative plural: podatke."
+    }
+   ]
+  }
+ ]
+}

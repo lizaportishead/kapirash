@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What did Germany do when it did not have enough money for reparations?",
+     "o": [
+      "Printed more money",
+      "Sold its colonies",
+      "Declared war",
+      "Asked the US for a loan"
+     ],
+     "a": 0,
+     "e": "In the video: \"Možeš da odštampaš više novca.\" — you can print more money."
+    },
+    {
+     "q": "How many German marks was one dollar worth?",
+     "o": [
+      "4200 billion",
+      "10 marks",
+      "100,000 marks",
+      "One mark"
+     ],
+     "a": 0,
+     "e": "In the video: \"Jedan američki dolar vredeo je 4200 milijardi nemačkih maraka\" — one American dollar was worth 4200 billion German marks."
+    },
+    {
+     "q": "What did Hitler blame the Jews for?",
+     "o": [
+      "The economic situation in Germany",
+      "Losing the war at sea",
+      "Losing the colonies",
+      "Famine in Asia"
+     ],
+     "a": 0,
+     "e": "In the video: \"Adolf Hitler je krivio Jevreje za nemačko ekonomsko stanje\" — Adolf Hitler blamed the Jews for the German economic situation."
+    },
+    {
+     "q": "Why did Hindenburg appoint Hitler chancellor?",
+     "o": [
+      "Because of Hitler's sudden rise in popularity",
+      "Because of the threat of war",
+      "Because of illness",
+      "At England's request"
+     ],
+     "a": 0,
+     "e": "In the video: \"Hindenburg je zbog naglog rasta Hitlerove popularnosti morao da ga imenuje za kancelara\" — Hindenburg, because of Hitler's sudden rise in popularity, had to appoint him chancellor."
+    },
+    {
+     "q": "What goals did Mussolini have?",
+     "o": [
+      "To conquer Yugoslavia and the rest of the Balkans",
+      "To regain Italy's colonies in Asia",
+      "To unite with Britain",
+      "To found a republic"
+     ],
+     "a": 0,
+     "e": "In the video: \"Musolini je imao daleko veće ciljeve, osvajanje Jugoslavije i ostatka Balkana\" — Mussolini had far bigger goals, the conquest of Yugoslavia and the rest of the Balkans."
+    },
+    {
+     "q": "What did Britain and France do when Hitler sent troops into the Rhineland?",
+     "o": [
+      "Nothing",
+      "Declared war",
+      "Imposed sanctions",
+      "Sent an army"
+     ],
+     "a": 0,
+     "e": "In the video: \"Hitler šalje 3000 vojnika i uspostavlja neospornu vlast u regionu\" — Hitler sends 3000 soldiers and establishes undisputed power in the region."
+    },
+    {
+     "q": "What did they “forget” to do at the Munich conference?",
+     "o": [
+      "Invite Czechoslovakia",
+      "Invite Poland",
+      "Sign the treaty",
+      "Call Stalin"
+     ],
+     "a": 0,
+     "e": "In the video: \"nekako su zaboravili da pozovu upravo Čehoslovačku na tu konferenciju\" — somehow they forgot to invite Czechoslovakia itself to that conference."
+    },
+    {
+     "q": "What did the Molotov-Ribbentrop pact provide for?",
+     "o": [
+      "The division of central Europe between two states",
+      "A joint war against the USA",
+      "An alliance with Japan",
+      "Withdrawal of troops from Poland"
+     ],
+     "a": 0,
+     "e": "In the video: \"potpisuju pakt o nenapadanju koji je omogućio podelu centralne Evrope između dve države\" — sign a non-aggression pact which enabled the division of central Europe between the two states."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nemačka jednostavno nije imala tu *kintu*.",
+     "o": [
+      "money (slang)",
+      "army",
+      "land",
+      "time"
+     ],
+     "a": 0,
+     "e": "kinta — money (slang)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nezaposlenost je sa 30% pala na skoro *nulu*.",
+     "o": [
+      "zero",
+      "a hundred",
+      "ten",
+      "half"
+     ],
+     "a": 0,
+     "e": "nula — zero."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Spaljivanje knjiga, *streljanje* političkih neistomišljenika",
+     "o": [
+      "shooting",
+      "awarding",
+      "teaching",
+      "elections"
+     ],
+     "a": 0,
+     "e": "streljanje — shooting."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ok, Rajna je sada *nesumnjivo* Nemačka.",
+     "o": [
+      "undoubtedly",
+      "hardly",
+      "sometimes",
+      "yesterday"
+     ],
+     "a": 0,
+     "e": "nesumnjivo — undoubtedly."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hitler je iskoristio taj *izgovor* kako bi opravdao okupaciju Sudeta",
+     "o": [
+      "excuse",
+      "order",
+      "treaty",
+      "gift"
+     ],
+     "a": 0,
+     "e": "izgovor — excuse."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nemačka je bila obavezna da plati ono što je danas *ekvivalent* 250 milijardi dolara.",
+     "o": [
+      "equivalent",
+      "half",
+      "tax",
+      "loan"
+     ],
+     "a": 0,
+     "e": "ekvivalent — equivalent."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Njihova banka je *propadala*",
+     "o": [
+      "was going under",
+      "was being built",
+      "was growing",
+      "was opening"
+     ],
+     "a": 0,
+     "e": "propadati — to fail, collapse."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nemački narod je sistematski *učen* da je pripadnik nadmoćne arijevske rase",
+     "o": [
+      "taught",
+      "freed",
+      "punished",
+      "forgotten"
+     ],
+     "a": 0,
+     "e": "učen — taught."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvi svetski rat se završio, a četiri carstva su ___",
+     "o": [
+      "pala",
+      "pali",
+      "pao",
+      "palo"
+     ],
+     "a": 0,
+     "e": "Carstva (neut. pl.) takes pala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Italiji je u Londonskom sporazumu iz 1915. ___ mnogo toga",
+     "o": [
+      "obećano",
+      "obećao",
+      "obećala",
+      "obećali"
+     ],
+     "a": 0,
+     "e": "Impersonal passive with dative: Italiji je obećano."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "morao da ga ___ za kancelara",
+     "o": [
+      "imenuje",
+      "imenovao",
+      "imenovati",
+      "imenujući"
+     ],
+     "a": 0,
+     "e": "After da — present tense: da ga imenuje."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nezaposlenost je sa 30% pala ___ skoro nulu.",
+     "o": [
+      "na",
+      "u",
+      "do",
+      "od"
+     ],
+     "a": 0,
+     "e": "Pasti na + acc.: to fall to zero."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ubrzo počinje i naoružavanje ___",
+     "o": [
+      "zemlje",
+      "zemlja",
+      "zemlju",
+      "zemljom"
+     ],
+     "a": 0,
+     "e": "Naoružavanje + gen.: arming of the country."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nemački narod je sistematski učen da je pripadnik nadmoćne arijevske ___",
+     "o": [
+      "rase",
+      "rasa",
+      "rasu",
+      "rasom"
+     ],
+     "a": 0,
+     "e": "Pripadnik + gen.: member of the race."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Britanci i Francuzi ne ___ ništa.",
+     "o": [
+      "rade",
+      "radili",
+      "radiće",
+      "radeći"
+     ],
+     "a": 0,
+     "e": "Present tense: ne rade ništa."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ujedinjeno Kraljevstvo i Francuska sa svim svojim ___ širom sveta",
+     "o": [
+      "kolonijama",
+      "kolonije",
+      "kolonijom",
+      "kolonija"
+     ],
+     "a": 0,
+     "e": "Sa + instr. pl.: sa svim svojim kolonijama."
+    }
+   ]
+  }
+ ]
+}

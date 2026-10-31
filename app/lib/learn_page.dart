@@ -259,7 +259,7 @@ class _FlipCard extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       padding: EdgeInsets.all(24),
-                      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(28)),
+                      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Color(0x1A000000), blurRadius: 3, offset: Offset(0, 1))]),
                       // Оборот рисуем отзеркаленным, иначе текст после поворота читается задом наперёд.
                       child: showBack ? Transform.flip(flipX: true, child: back) : front,
                     ),
@@ -355,7 +355,7 @@ class _SwipeCardState extends State<_SwipeCard> with SingleTickerProviderStateMi
                         opacity: p.abs(),
                         child: DecoratedBox(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(28),
+                            borderRadius: BorderRadius.circular(8),
                             border: Border.all(color: color, width: 2),
                           ),
                           child: Align(

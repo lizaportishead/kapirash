@@ -22,6 +22,28 @@ const _topicGroups = <(String, List<String>)>[
   ('Люди и творчество', ['Психология', 'Культура', 'Дизайн', 'Юмор', 'Язык']),
 ];
 
+const _topicEmoji = <String, String>{
+  'Путешествия': '🧳',
+  'Город': '🏙️',
+  'История': '🏛️',
+  'Политика': '🗳️',
+  'Наука': '🔬',
+  'Эксперименты': '🧪',
+  'IT': '💻',
+  'Авто': '🚗',
+  'Быт': '🏠',
+  'Еда': '🍳',
+  'Здоровье': '🩺',
+  'Красота': '💄',
+  'Спорт': '⚽',
+  'Деньги': '💰',
+  'Психология': '🧠',
+  'Культура': '🎭',
+  'Дизайн': '🎨',
+  'Юмор': '😄',
+  'Язык': '🗣️',
+};
+
 /// Анкета после онбординга: родной язык, уровень и темы. Первый раз показывается вместо каталога, из профиля открывается поверх него.
 class SurveyPage extends StatefulWidget {
   const SurveyPage({super.key, this.edit = false});
@@ -225,7 +247,7 @@ class _SurveyPageState extends State<SurveyPage> {
             children: [
               for (final t in list)
                 Pill(
-                  topicLabel(t),
+                  '${_topicEmoji[t] ?? '✨'} ${topicLabel(t)}',
                   on: _topics.contains(t),
                   onColor: cAccent,
                   onTap: () => setState(() => _topics.contains(t) ? _topics.remove(t) : _topics.add(t)),
@@ -253,11 +275,11 @@ class _LangCard extends StatelessWidget {
       child: Material(
         color: selected ? cViolet.withValues(alpha: 0.1) : cCard,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           side: BorderSide(color: selected ? cViolet : Colors.transparent, width: 2),
         ),
         child: InkWell(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           onTap: onTap,
           child: Padding(
             padding: EdgeInsets.all(20),
@@ -293,11 +315,11 @@ class _LevelCard extends StatelessWidget {
       child: Material(
         color: selected ? cViolet.withValues(alpha: 0.1) : cCard,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           side: BorderSide(color: selected ? cViolet : Colors.transparent, width: 2),
         ),
         child: InkWell(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
           onTap: onTap,
           child: Padding(
             padding: EdgeInsets.all(16),

@@ -132,6 +132,8 @@ void setCatalog(Map<String, dynamic> j) {
 }
 
 const _builtInCreators = <String, Creator>{
+  'Ozbiljne teme': Creator('OzbiljneTeme'),
+  'Balkanska Uvjerenja by Danijela': Creator('danijelaostojic.psiholog'),
   'notAleksa': Creator('noaleksa', '5cXh0bO0fYWZZY7M9A-GYlN_xH7OpQF9tmUMFqxuxsPXtJLKdi7JsRLH78_53Fa2YbPQkH4Btw'),
   'Dario Kesegi': Creator(
     'DarioKesegiG0CA',
@@ -661,6 +663,30 @@ const _builtInVideos = <Video>[
     topic: 'Здоровье',
     level: 'B1',
     duration: '9:46',
+  ),
+  Video(
+    id: 'VAI5GxslifI',
+    title: 'Zašto anksioznost nije bolest?',
+    channel: 'Balkanska Uvjerenja by Danijela',
+    topic: 'Психология',
+    level: 'B2',
+    duration: '11:25',
+  ),
+  Video(
+    id: 'qHotWt4TFUI',
+    title: 'Zašto zastave SRBIJE i RUSIJE liče?',
+    channel: 'Ozbiljne teme',
+    topic: 'История',
+    level: 'B2',
+    duration: '24:47',
+  ),
+  Video(
+    id: 'EZ21rAA7WYE',
+    title: 'DRUGI SVETSKI RAT | KAKO I ZAŠTO JE POČEO?',
+    channel: 'Ozbiljne teme',
+    topic: 'История',
+    level: 'B2',
+    duration: '17:25',
   ),
 ];
 

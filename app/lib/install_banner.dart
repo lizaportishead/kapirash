@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'analytics.dart';
 import 'install_io.dart' if (dart.library.js_interop) 'install_web.dart';
 import 'l10n.dart';
 import 'theme.dart';
+
+/// События «добавил на экран Домой»: appinstalled (Android) и первый запуск из установленного приложения (iOS не шлёт appinstalled).
+/// В iOS PWA своё хранилище, поэтому флаг «уже слали» живёт внутри самого приложения.
+Future<void> trackHomeScreenInstall() async {
+  onAppInstalled(() => trackEvent('added_to_home_screen', {'source': 'appinstalled'}));
+  if (!isStandalone()) return;
+  final prefs = await SharedPreferences.getInstance();
+  if (prefs.getBool('install_tracked') == true) return;
+  await prefs.setBool('install_tracked', true);
+  trackEvent('added_to_home_screen', {'source': 'first_standalone_launch'});
+}
 
 /// Подсказка в мобильном браузере: добавить сайт на экран «Домой». Закрывается крестиком насовсем.
 class InstallBanner extends StatefulWidget {

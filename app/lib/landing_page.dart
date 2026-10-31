@@ -392,7 +392,7 @@ class _PhoneState extends State<LandingPhone> {
       decoration: BoxDecoration(
         color: Colors.black,
         border: Border.all(color: Colors.white24),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
         boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 30, offset: Offset(0, 12))],
       ),
       child: Column(
@@ -530,7 +530,7 @@ class _PhoneState extends State<LandingPhone> {
                     bottom: 18,
                     child: Container(
                       padding: EdgeInsets.fromLTRB(14, 12, 14, 14),
-                      decoration: BoxDecoration(color: cOnInk, borderRadius: BorderRadius.circular(22)),
+                      decoration: BoxDecoration(color: cOnInk, borderRadius: BorderRadius.circular(8)),
                       child: AnimatedSize(
                         duration: Duration(milliseconds: 250),
                         alignment: Alignment.bottomCenter,

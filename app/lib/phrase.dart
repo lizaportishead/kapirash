@@ -198,7 +198,7 @@ void showWord(
     builder: (ctx) => Container(
       margin: EdgeInsets.fromLTRB(10, 0, 10, 10 + MediaQuery.of(ctx).padding.bottom * 0.5),
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: cBg, borderRadius: BorderRadius.circular(32)),
+      decoration: BoxDecoration(color: cBg, borderRadius: BorderRadius.circular(8)),
       child: WordCard(
         raw: raw,
         cue: cue,

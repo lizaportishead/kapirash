@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What kind of apartment was in the ad?",
+     "o": [
+      "A three-room for 500 euros",
+      "A studio for 200 euros",
+      "A two-room, 60 sq. m, 300 euros a month",
+      "A house outside town"
+     ],
+     "a": 2,
+     "e": "A two-room apartment, sixty square metres, near the centre, three hundred euros a month."
+    },
+    {
+     "q": "What heating does the apartment have?",
+     "o": [
+      "Stove",
+      "Gas",
+      "Electric",
+      "District (central)"
+     ],
+     "a": 3,
+     "e": "Central, district heating."
+    },
+    {
+     "q": "What is not included in the rent?",
+     "o": [
+      "Electricity, water, heating and internet",
+      "Only the internet",
+      "Furniture",
+      "The elevator"
+     ],
+     "a": 0,
+     "e": "Electricity, water, heating and internet are on you."
+    },
+    {
+     "q": "Who pays for big repairs?",
+     "o": [
+      "The tenants",
+      "The neighbours",
+      "The owner",
+      "The city"
+     ],
+     "a": 2,
+     "e": "Small things you, big ones me."
+    },
+    {
+     "q": "Why is the owner ready to rent to them?",
+     "o": [
+      "They paid in advance",
+      "He likes to give the apartment to people who take care of it",
+      "There are no other candidates",
+      "They are his relatives"
+     ],
+     "a": 1,
+     "e": "I like to give the apartment to people who take care of it."
+    },
+    {
+     "q": "What happens on Saturday?",
+     "o": [
+      "They will sign the contract at the notary",
+      "The move",
+      "A viewing",
+      "A party at the neighbour's"
+     ],
+     "a": 0,
+     "e": "Come on Saturday at ten, we will sign the contract at the notary."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Kauciju* plaćate unapred, jedan mesec",
+     "o": [
+      "rent",
+      "tax",
+      "deposit",
+      "fine"
+     ],
+     "a": 2,
+     "e": "Kaucija — a deposit."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "sedamdesetogodišnji *penzioner* sa šeširom",
+     "o": [
+      "pensioner",
+      "teacher",
+      "policeman",
+      "painter"
+     ],
+     "a": 0,
+     "e": "Penzioner — a pensioner."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Treći sprat, nema *lifta*, ali zato je vazduh čist.",
+     "o": [
+      "windows",
+      "a balcony",
+      "an elevator",
+      "neighbours"
+     ],
+     "a": 2,
+     "e": "Lift — an elevator."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dole se videla mala *pijaca* i klupa ispod lipe.",
+     "o": [
+      "school",
+      "market",
+      "church",
+      "parking lot"
+     ],
+     "a": 1,
+     "e": "Pijaca — a market."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Da li su *komunalije* uključene u cenu?",
+     "o": [
+      "furniture",
+      "accommodation",
+      "repairs",
+      "utilities"
+     ],
+     "a": 3,
+     "e": "Komunalije — utilities."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Svako veče posle posla listali su oglase ___ internetu.",
+     "o": [
+      "u",
+      "na",
+      "po",
+      "preko"
+     ],
+     "a": 1,
+     "e": "Choose the preposition: “on the internet” — na internetu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sutradan su se našli sa vlasnikom ispred ___.",
+     "o": [
+      "zgrada",
+      "zgradi",
+      "zgradu",
+      "zgrade"
+     ],
+     "a": 3,
+     "e": "Ispred + genitive: ispred zgrade."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Katarina je ___ prozor.",
+     "o": [
+      "otvarala",
+      "otvoriti",
+      "otvorila",
+      "otvara"
+     ],
+     "a": 2,
+     "e": "One completed action, feminine — otvorila."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "___ kolače u celom Nišu pravi.",
+     "o": [
+      "Najbolji",
+      "Najbolje",
+      "Najboljeg",
+      "Najboljim"
+     ],
+     "a": 1,
+     "e": "Accusative plural: najbolje kolače."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dođite u subotu u deset, potpisaćemo ugovor kod ___.",
+     "o": [
+      "notar",
+      "notaru",
+      "notara",
+      "notarom"
+     ],
+     "a": 2,
+     "e": "Kod + genitive: kod notara."
+    }
+   ]
+  }
+ ]
+}

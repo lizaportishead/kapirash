@@ -7,6 +7,7 @@ import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'words_page.dart' show wordCard;
 import 'l10n.dart';
 
 /// Открывает ролики со звёздочкой поверх таббара.
@@ -51,7 +52,8 @@ class LikedPage extends StatelessWidget {
                         ]
                       : <Video>[];
                   final books = this.all ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
-                  final total = list.length + pods.length + books.length;
+                  final words = this.all ? store.words.reversed.where((w) => w.starred).toList() : <SavedWord>[];
+                  final total = list.length + pods.length + books.length + words.length;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -79,8 +81,8 @@ class LikedPage extends StatelessWidget {
                                         Text(
                                           ui(
                                             this.all
-                                                ? 'Ставь звёздочку тому, что хочешь сохранить: роликам, подкастам, рассказам. Это появится тут.'
-                                                : 'Ставь звёздочку роликам, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
+                                                ? 'Добавляй в избранное то, что хочешь сохранить: ролики, подкасты, рассказы. Это появится тут.'
+                                                : 'Добавляй в избранное ролики, которые хочешь посмотреть позже или пересмотреть. Они появятся тут.',
                                           ),
                                           textAlign: TextAlign.center,
                                           style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
@@ -92,7 +94,7 @@ class LikedPage extends StatelessWidget {
                                     builder: (_, box) {
                                       // Узкий экран — лента в одну колонку, на десктопе — плитки.
                                       final cols = (box.maxWidth / 340).floor().clamp(1, 4);
-                                      final cardW = (box.maxWidth - 24 - 12 * (cols - 1)) / cols;
+                                      final cardW = (box.maxWidth - 32 - 16 * (cols - 1)) / cols;
                                       Widget title(String t) => Padding(
                                         padding: EdgeInsets.fromLTRB(16, 8, 16, 10),
                                         child: Text(
@@ -105,7 +107,7 @@ class LikedPage extends StatelessWidget {
                                         child: ConstrainedBox(
                                           constraints: BoxConstraints(maxWidth: 720),
                                           child: Padding(
-                                            padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                                             child: Column(
                                               children: [
                                                 for (final t in tiles)
@@ -120,12 +122,12 @@ class LikedPage extends StatelessWidget {
                                           if (list.isNotEmpty) ...[
                                             if (this.all) SliverToBoxAdapter(child: title(ui('Видео'))),
                                             SliverPadding(
-                                              padding: EdgeInsets.fromLTRB(12, 0, 12, 16),
+                                              padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                                               sliver: SliverGrid.builder(
                                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                                   crossAxisCount: cols,
-                                                  crossAxisSpacing: 12,
-                                                  mainAxisSpacing: 12,
+                                                  crossAxisSpacing: 16,
+                                                  mainAxisSpacing: 16,
                                                   mainAxisExtent: videoCardHeight(cardW),
                                                 ),
                                                 itemCount: list.length,
@@ -144,6 +146,12 @@ class LikedPage extends StatelessWidget {
                                           if (books.isNotEmpty) ...[
                                             SliverToBoxAdapter(child: title(ui('Рассказы'))),
                                             SliverToBoxAdapter(child: column([for (final s in books) storyTile(s)])),
+                                          ],
+                                          if (words.isNotEmpty) ...[
+                                            SliverToBoxAdapter(child: title(ui('Слова'))),
+                                            SliverToBoxAdapter(
+                                              child: column([for (final w in words) wordCard(w)]),
+                                            ),
                                           ],
                                         ],
                                       );

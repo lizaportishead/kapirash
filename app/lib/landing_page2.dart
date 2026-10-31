@@ -154,7 +154,7 @@ class _LandingPage2State extends State<LandingPage2> {
           constraints: BoxConstraints(maxWidth: 1200),
           child: Container(
             width: double.infinity,
-            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(wide ? 48 : 32)),
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
             padding: EdgeInsets.symmetric(vertical: wide ? 96 : 56, horizontal: wide ? 56 : 20),
             child: Center(
               child: ConstrainedBox(
@@ -264,7 +264,7 @@ class _LandingPage2State extends State<LandingPage2> {
       aspectRatio: 1.35,
       child: Container(
         clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(40)),
+        decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(8)),
         child: art,
       ),
     );
@@ -627,7 +627,7 @@ class _ArtWatch extends StatelessWidget {
           right: b.maxWidth * 0.22,
           bottom: b.maxHeight * 0.2,
           child: Container(
-            decoration: BoxDecoration(color: cInk, borderRadius: BorderRadius.circular(24)),
+            decoration: BoxDecoration(color: cInk, borderRadius: BorderRadius.circular(8)),
             child: Stack(
               alignment: Alignment.center,
               children: [
@@ -695,7 +695,7 @@ class _ArtTap extends StatelessWidget {
           child: Container(
             width: 190,
             padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(24)),
+            decoration: BoxDecoration(color: cAccent, borderRadius: BorderRadius.circular(8)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -748,7 +748,7 @@ class _ArtTrain extends StatelessWidget {
             child: Container(
               width: 190,
               padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(color: cInk, borderRadius: BorderRadius.circular(24)),
+              decoration: BoxDecoration(color: cInk, borderRadius: BorderRadius.circular(8)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
