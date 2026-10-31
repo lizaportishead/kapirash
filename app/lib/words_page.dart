@@ -207,13 +207,42 @@ class _WordsPageState extends State<WordsPage> {
                         )
                       : list.isEmpty
                       ? Padding(
-                          padding: EdgeInsets.all(24),
-                          child: Text(
-                            all.isEmpty
-                                ? ui(_learnedTab ? 'Выученных слов пока нет.' : 'Все слова выучены.')
-                                : ui('Ничего не нашлось. Попробуй другой запрос.'),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 14, color: cMuted),
+                          padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                          child: SizedBox.expand(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if (all.isEmpty) ...[
+                                  Flexible(
+                                    child: ExcludeSemantics(child: Image.asset('assets/ill_words.png', height: 173)),
+                                  ),
+                                  SizedBox(height: 16),
+                                ],
+                                Text(
+                                  all.isEmpty
+                                      ? ui(_learnedTab ? 'Выученных слов пока нет.' : 'Все слова выучены.')
+                                      : ui('Ничего не нашлось. Попробуй другой запрос.'),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 14, height: 1.45, color: cMuted),
+                                ),
+                                if (all.isEmpty && _learnedTab) ...[
+                                  SizedBox(height: 20),
+                                  FilledButton(
+                                    style: FilledButton.styleFrom(
+                                      backgroundColor: cViolet,
+                                      foregroundColor: cOnViolet,
+                                      minimumSize: Size(0, 44),
+                                      padding: EdgeInsets.symmetric(horizontal: 22),
+                                      shape: StadiumBorder(),
+                                      textStyle: TextStyle(fontFamily: kFont, fontSize: 14, fontWeight: FontWeight.w700),
+                                    ),
+                                    onPressed: () => openLearn(context),
+                                    child: Text(ui('Учить слова')),
+                                  ),
+                                ],
+                              ],
+                            ),
                           ),
                         )
                       : ListView.separated(
