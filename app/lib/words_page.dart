@@ -222,7 +222,9 @@ class _WordsPageState extends State<WordsPage> {
                           padding: EdgeInsets.fromLTRB(16, 4, 16, _searching ? 16 : 72),
                           itemCount: rows.length,
                           separatorBuilder: (_, i) =>
-                              SizedBox(height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : 16),
+                              SizedBox(
+                                height: rows[i] is _Head || rows[i + 1] is _Head ? 0 : (MediaQuery.sizeOf(context).width < 600 ? 8 : 16),
+                              ),
                           itemBuilder: (_, i) {
                             final it = rows[i];
                             if (it is List<SavedWord>) {
