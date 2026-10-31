@@ -7,6 +7,7 @@ import 'store.dart';
 import 'theme.dart';
 import 'video_card.dart';
 import 'videos.dart';
+import 'words_page.dart' show wordCard;
 import 'l10n.dart';
 
 /// Открывает ролики со звёздочкой поверх таббара.
@@ -51,7 +52,8 @@ class LikedPage extends StatelessWidget {
                         ]
                       : <Video>[];
                   final books = this.all ? store.liked.reversed.map(storyById).nonNulls.toList() : [];
-                  final total = list.length + pods.length + books.length;
+                  final words = this.all ? store.words.reversed.where((w) => w.starred).toList() : <SavedWord>[];
+                  final total = list.length + pods.length + books.length + words.length;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -144,6 +146,12 @@ class LikedPage extends StatelessWidget {
                                           if (books.isNotEmpty) ...[
                                             SliverToBoxAdapter(child: title(ui('Рассказы'))),
                                             SliverToBoxAdapter(child: column([for (final s in books) storyTile(s)])),
+                                          ],
+                                          if (words.isNotEmpty) ...[
+                                            SliverToBoxAdapter(child: title(ui('Слова'))),
+                                            SliverToBoxAdapter(
+                                              child: column([for (final w in words) wordCard(w)]),
+                                            ),
                                           ],
                                         ],
                                       );

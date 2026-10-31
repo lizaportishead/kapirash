@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the seventh point of the big star on the Australian flag represent?",
+     "o": [
+      "All the Australian territories",
+      "New Zealand",
+      "The Southern Cross",
+      "The British crown"
+     ],
+     "a": 0,
+     "e": "In the video: \"Šest krakova predstavlja šest australijskih saveznih država, dok sedmi predstavlja sve australijske teritorije\" — six points are the states, while the seventh stands for all the territories."
+    },
+    {
+     "q": "Which constellation is shown on the flags of Australia and New Zealand?",
+     "o": [
+      "Southern Cross",
+      "Big Dipper",
+      "Orion",
+      "Cassiopeia"
+     ],
+     "a": 0,
+     "e": "In the video: \"Te zvezde zajedno formiraju sazvežđe Južni krst.\" — these stars together form the constellation Southern Cross."
+    },
+    {
+     "q": "Why do Australia and New Zealand not change their flags?",
+     "o": [
+      "They cannot agree who should change it",
+      "It is forbidden by law",
+      "The flags are too expensive",
+      "They are happy with the flags"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa zato što ne mogu da se dogovore oko toga ko treba da je menja\" — because they cannot agree on who should change it."
+    },
+    {
+     "q": "Which country did Colombia, Venezuela and Ecuador once form together?",
+     "o": [
+      "Gran Colombia",
+      "Greater Venezuela",
+      "New Granada",
+      "The Latin Union"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ove tri države su nekada bile deo Velike Kolumbije\" — these three countries were once part of Gran Colombia."
+    },
+    {
+     "q": "What did Francisco de Miranda dream of?",
+     "o": [
+      "Uniting all of Latin America",
+      "Becoming a king",
+      "Returning the colonies to Spain",
+      "Building a canal"
+     ],
+     "a": 0,
+     "e": "In the video: \"Njegova skromna vizija je bila da ujedini celu Latinsku Ameriku\" — his modest vision was to unite the whole of Latin America."
+    },
+    {
+     "q": "What inspired the colors of the flags of many African countries?",
+     "o": [
+      "Ethiopia's victory over Italy",
+      "The British flag",
+      "The French Revolution",
+      "Sea trade"
+     ],
+     "a": 0,
+     "e": "In the video: \"Etiopija, koja je 1896. uspešno odbila italijanske pokušaje kolonizacije\" — Ethiopia, which in 1896 successfully repelled Italian attempts at colonization."
+    },
+    {
+     "q": "What is pan-Slavism?",
+     "o": [
+      "A movement for uniting the Slavic peoples",
+      "A Slavic holiday",
+      "A Slavic religion",
+      "A trade union"
+     ],
+     "a": 0,
+     "e": "In the video: \"Panslavizam je politički pokret koji je za cilj imao oslobođenje\" — pan-Slavism is a political movement whose goal was liberation."
+    },
+    {
+     "q": "Whose flag was the Russian tricolor modeled on?",
+     "o": [
+      "The Dutch one",
+      "The French one",
+      "The British one",
+      "The Swedish one"
+     ],
+     "a": 0,
+     "e": "In the video: \"njihova trobojka je zapravo nastala po uzoru na holandsku trobojku\" — their tricolor actually came about modeled on the Dutch tricolor."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Danska zastava je vrlo verovatno *najduže* korišćena zastava na svetu",
+     "o": [
+      "longest",
+      "least often",
+      "most often",
+      "latest"
+     ],
+     "a": 0,
+     "e": "najduže — longest."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali zaboravljamo još jednog *žrtvu* francuskog dizajna, Andoru",
+     "o": [
+      "victim",
+      "author",
+      "neighbor",
+      "enemy"
+     ],
+     "a": 0,
+     "e": "žrtva — victim."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kondor na vrhu predstavlja *moć* Ekvadora",
+     "o": [
+      "power",
+      "weakness",
+      "wealth",
+      "silence"
+     ],
+     "a": 0,
+     "e": "moć — power."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo levo je *lovor* koji predstavlja pobedu republike",
+     "o": [
+      "laurel",
+      "oak",
+      "rose",
+      "olive"
+     ],
+     "a": 0,
+     "e": "lovor — laurel."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Jer, kao, lako ćeš *slomiti* jedan prut",
+     "o": [
+      "break",
+      "lift",
+      "buy",
+      "draw"
+     ],
+     "a": 0,
+     "e": "slomiti — to break."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mislim, pazi, svakako je *nebitno* ko je prvi.",
+     "o": [
+      "irrelevant",
+      "terrible",
+      "funny",
+      "known"
+     ],
+     "a": 0,
+     "e": "nebitno — irrelevant."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zelena predstavlja *bogatstvo* i plodnu zemlju, kao i nadu",
+     "o": [
+      "wealth",
+      "war",
+      "road",
+      "winter"
+     ],
+     "a": 0,
+     "e": "bogatstvo — wealth."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Tehnički, ni oni to nisu *ukrali* od Rumuna",
+     "o": [
+      "stole",
+      "bought",
+      "found",
+      "forgot"
+     ],
+     "a": 0,
+     "e": "ukrasti — to steal."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Australijanci ne prave baš najbolju razliku između srpske i ruske ___",
+     "o": [
+      "zastave",
+      "zastava",
+      "zastavu",
+      "zastavom"
+     ],
+     "a": 0,
+     "e": "Između + gen.: između srpske i ruske zastave."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ove tri države su nekada bile deo ___ Kolumbije",
+     "o": [
+      "Velike",
+      "Veliki",
+      "Velikoj",
+      "Veliku"
+     ],
+     "a": 0,
+     "e": "Deo + gen.: deo Velike Kolumbije."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "ali su sve one otišle u svom ___ sa zastavama",
+     "o": [
+      "smeru",
+      "smer",
+      "smera",
+      "smerom"
+     ],
+     "a": 0,
+     "e": "U svom smeru — locative: in their own direction."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hrvati su isto odavno koristili ove ___ boje",
+     "o": [
+      "tri",
+      "trima",
+      "trojica",
+      "treći"
+     ],
+     "a": 0,
+     "e": "Ove tri boje — numeral tri with the noun in the plural."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Srbi su koristili ove boje još ___ 13. veku",
+     "o": [
+      "u",
+      "na",
+      "iz",
+      "kod"
+     ],
+     "a": 0,
+     "e": "When? — u + loc.: u 13. veku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Čađani su terali Rumune da ___ zastavu",
+     "o": [
+      "promene",
+      "menjaju",
+      "promenili",
+      "menjali"
+     ],
+     "a": 0,
+     "e": "After da a single result takes the perfective: promene."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ekvador je promenio raspored ___",
+     "o": [
+      "pruga",
+      "pruge",
+      "prugu",
+      "prugom"
+     ],
+     "a": 0,
+     "e": "Raspored + gen. pl.: raspored pruga."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Tako da su zastave ove dve ___ u kombinaciji",
+     "o": [
+      "sile",
+      "sila",
+      "silu",
+      "silom"
+     ],
+     "a": 0,
+     "e": "Dve + gen. sg. (fem.): dve sile."
+    }
+   ]
+  }
+ ]
+}

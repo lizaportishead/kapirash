@@ -346,6 +346,9 @@ void _openSource(BuildContext context, String id, {double? t}) {
   }
 }
 
+/// Карточка слова для других страниц (избранное).
+Widget wordCard(SavedWord w) => _WordCard(w);
+
 /// Краткая карточка в списке: слово, перевод и озвучка. Остальное — в шторке по нажатию.
 class _WordCard extends StatelessWidget {
   const _WordCard(this.w);
@@ -521,6 +524,17 @@ class _WordSheet extends StatelessWidget {
                       letterSpacing: -0.6,
                       color: cText,
                     ),
+                  ),
+                ),
+                ListenableBuilder(
+                  listenable: store,
+                  builder: (_, _) => IconButton(
+                    tooltip: w.starred ? ui('Убрать из избранного') : ui('Добавить в избранное'),
+                    visualDensity: VisualDensity.compact,
+                    isSelected: w.starred,
+                    icon: Icon(KIcons.star, size: 22, color: cStarOff),
+                    selectedIcon: Icon(Icons.star_rounded, size: 26, color: cStarOn),
+                    onPressed: () => store.toggleStar(w.key),
                   ),
                 ),
                 IconButton(
