@@ -418,35 +418,54 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Row(
-                            children: [
-                              _Cover(size: 72, channel: widget.video.channel),
-                              SizedBox(width: 12),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                          Container(
+                            padding: EdgeInsets.fromLTRB(16, 16, 16, 14),
+                            decoration: BoxDecoration(
+                              color: cCard,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.08),
+                                  blurRadius: 16,
+                                  offset: Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Row(
                                   children: [
-                                    Text(
-                                      widget.video.channel,
-                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cViolet),
-                                    ),
-                                    SizedBox(height: 2),
-                                    Text(
-                                      widget.video.title,
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.3,
-                                        color: cText,
+                                    _Cover(size: 72, channel: widget.video.channel),
+                                    SizedBox(width: 12),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            widget.video.channel,
+                                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: cViolet),
+                                          ),
+                                          SizedBox(height: 2),
+                                          Text(
+                                            widget.video.title,
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.3,
+                                              color: cText,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
-                              ),
-                            ],
+                                SizedBox(height: 14),
+                                _transport(),
+                              ],
+                            ),
                           ),
-                          SizedBox(height: 14),
-                          _transport(),
                           SizedBox(height: 10),
                           _current(cue),
                           Align(
@@ -524,7 +543,7 @@ class _PodcastPlayerPageState extends State<PodcastPlayerPage> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(16, 16, 16, 14),
                                     decoration: BoxDecoration(
-                                      color: cBg,
+                                      color: cCard,
                                       borderRadius: BorderRadius.circular(8),
                                       boxShadow: [
                                         BoxShadow(

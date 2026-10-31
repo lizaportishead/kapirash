@@ -449,7 +449,7 @@ void _showWordSheet(BuildContext context, SavedWord w) {
     showDialog<void>(
       context: context,
       builder: (ctx) => Dialog(
-        backgroundColor: cBg,
+        backgroundColor: cCard,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 560), child: body(ctx)),
       ),
@@ -458,7 +458,7 @@ void _showWordSheet(BuildContext context, SavedWord w) {
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      backgroundColor: cBg,
+      backgroundColor: cCard,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
       builder: body,
     );
@@ -573,7 +573,7 @@ class _WordSheet extends StatelessWidget {
             if (links != null) ...[SizedBox(height: 18), links],
             SizedBox(height: 22),
             Material(
-              color: cCard,
+              color: cBg,
               borderRadius: BorderRadius.circular(14),
               child: InkWell(
                 borderRadius: BorderRadius.circular(14),

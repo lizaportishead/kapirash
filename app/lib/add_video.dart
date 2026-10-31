@@ -19,7 +19,7 @@ bool get canAddVideo => kDebugMode || kOwnerEmails.contains(store.user);
 Future<void> showAddVideo(BuildContext context) async {
   final video = await showModalBottomSheet<Video>(
     context: context,
-    backgroundColor: cBg,
+    backgroundColor: cCard,
     isScrollControlled: true,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
     builder: (_) => _AddVideoSheet(),
@@ -149,7 +149,7 @@ class _AddVideoSheetState extends State<_AddVideoSheet> {
                   onPressed: _busy ? null : _paste,
                 ),
                 filled: true,
-                fillColor: cCard,
+                fillColor: cBg,
                 contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
               ),

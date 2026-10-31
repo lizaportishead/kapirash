@@ -110,6 +110,7 @@ class _ProfilePageState extends State<ProfilePage> {
     final ok = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
+        backgroundColor: cCard,
         icon: Icon(Icons.error_rounded, color: Colors.red, size: 40),
         title: Text(ui('Удалить аккаунт?'), textAlign: TextAlign.center),
         content: Text(

@@ -1011,7 +1011,8 @@ class _StoryReaderState extends State<StoryReader> {
                             child: TapRegion(
                               onTapOutside: (_) => setState(() => _panel = null),
                               child: Material(
-                                color: cBg,
+                                color: cCard,
+                                surfaceTintColor: Colors.transparent,
                                 elevation: 8,
                                 borderRadius: BorderRadius.circular(8),
                                 clipBehavior: Clip.antiAlias,

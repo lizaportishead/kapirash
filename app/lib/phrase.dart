@@ -198,7 +198,7 @@ void showWord(
     builder: (ctx) => Container(
       margin: EdgeInsets.fromLTRB(10, 0, 10, 10 + MediaQuery.of(ctx).padding.bottom * 0.5),
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: cBg, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8)),
       child: WordCard(
         raw: raw,
         cue: cue,
@@ -291,7 +291,7 @@ class _WordCardState extends State<WordCard> {
     return RepaintBoundary(
       key: sheetKey,
       child: ColoredBox(
-        color: cBg,
+        color: cCard,
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
@@ -393,7 +393,7 @@ class _WordCardState extends State<WordCard> {
                     store.isSaved(key)
                         ? ui(isPhrase ? 'Убрать фразу' : 'Убрать слово')
                         : ui(isPhrase ? 'Сохранить фразу в словарь' : 'Сохранить в словарь'),
-                    bg: store.isSaved(key) ? cCard : null,
+                    bg: store.isSaved(key) ? cBg : null,
                     fg: store.isSaved(key) ? cText : null,
                     onTap: () async {
                       final already = store.isSaved(key);

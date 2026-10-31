@@ -1002,7 +1002,8 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
         child: TapRegion(
           onTapOutside: (_) => widget.word.value = null,
           child: Material(
-            color: cBg,
+            color: cCard,
+            surfaceTintColor: Colors.transparent,
             elevation: 8,
             borderRadius: BorderRadius.circular(8),
             clipBehavior: Clip.antiAlias,
@@ -1173,7 +1174,7 @@ class SettingsButton extends StatelessWidget {
       icon: Icon(Icons.settings_outlined, size: 22, color: cMuted),
       onPressed: () => showModalBottomSheet<void>(
         context: context,
-        backgroundColor: cBg,
+        backgroundColor: cCard,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
         builder: (_) => ListenableBuilder(
           listenable: Listenable.merge([store, rate]),
