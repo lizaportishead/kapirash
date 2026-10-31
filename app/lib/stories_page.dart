@@ -139,6 +139,30 @@ const stories = [
     landscape: true,
   ),
   Story(
+    id: 'setnja-sa-psom',
+    title: 'Šetnja sa psom',
+    author: 'Kapiraš',
+    blurb:
+        'Ivana izvodi psa Rikija u park i upoznaje komšije: gde pas sme bez povodca, '
+        'kome treba kesica i kod kog veterinara se čip stavlja.',
+    level: 'A2',
+    asset: 'story_setnja_sa_psom',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
+  ),
+  Story(
+    id: 'na-decjem-igralistu',
+    title: 'Na dečjem igralištu',
+    author: 'Kapiraš',
+    blurb:
+        'Marina sa sinom Lukom na igralištu upoznaje Jelenu: razgovor o vrtiću i pripremnoj grupi, '
+        'lopatica u pesku, ogrebano koleno i poziv na rođendan.',
+    level: 'A2',
+    asset: 'story_na_decjem_igralistu',
+    topic: 'Жизнь в Сербии',
+    landscape: true,
+  ),
+  Story(
     id: 'crvene-cipele',
     title: 'Crvene cipele',
     author: 'Hans Kristijan Andersen',

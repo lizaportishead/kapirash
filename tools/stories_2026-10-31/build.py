@@ -42,6 +42,8 @@ EXTRA_EN = {
  'zdravlja': ['health', 'zdravlje — health; gen. case'],
  'zvono': ['bell, ring', 'zvono — bell, ring; neut.'],
  'čuva': ['protects', 'čuvati — to protect; 3rd pers. sg.'],
+ 'doktorka': ['doctor (female)', 'doktorka — doctor (female); nom. case'],
+ 'napisala': ['wrote', 'napisati — to write; past fem. sg.'],
  'šezdeset': ['sixty', 'šezdeset — sixty; numeral'],
 }
 OVR_RU = {'pisalo': ['было написано', 'pisati — писать; прош. вр. ср. р. ед. ч.'],
@@ -51,6 +53,7 @@ def dump(d, path):
     open(path, 'w').write('{\n' + ',\n'.join(f'{json.dumps(k, ensure_ascii=False)}:{json.dumps(v, ensure_ascii=False)}' for k, v in sorted(d.items())) + '\n}\n')
 noen = set()
 for sid, d in Q.items():
+    if os.environ.get('ONLY') and sid not in os.environ['ONLY'].split(','): continue
     txt = open(f'{sid}.txt').read(); low = txt.lower()
     ws = sorted({cw(w).lower() for w in txt.split() if cw(w)})
     ru, en = {}, {}
