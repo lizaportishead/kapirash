@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "Why did Ana go to the police station?",
+     "o": [
+      "To extend her temporary residence permit",
+      "To get a passport",
+      "To apply for citizenship",
+      "To pay a fine"
+     ],
+     "a": 0,
+     "e": "I came to extend my temporary residence."
+    },
+    {
+     "q": "What did Ana not have at first?",
+     "o": [
+      "A photo",
+      "The proof of the paid fee",
+      "A passport",
+      "A lease"
+     ],
+     "a": 1,
+     "e": "But she did not have the proof of payment of the fee."
+    },
+    {
+     "q": "Which document did the clerk ask for?",
+     "o": [
+      "A work certificate",
+      "A bank statement",
+      "Confirmation of address registration",
+      "An insurance policy"
+     ],
+     "a": 2,
+     "e": "The confirmation of address registration is missing here."
+    },
+    {
+     "q": "Who had to register Ana at the address?",
+     "o": [
+      "Her colleague",
+      "Her neighbour",
+      "A notary",
+      "Her landlord"
+     ],
+     "a": 3,
+     "e": "Your landlord must register you at the address."
+    },
+    {
+     "q": "What did Mr. Petrović do?",
+     "o": [
+      "Sent a photo of the certificate",
+      "Came to the police station",
+      "Refused to help",
+      "Sent a new contract"
+     ],
+     "a": 0,
+     "e": "The certificate was there, with a stamp and a signature."
+    },
+    {
+     "q": "What did Ana learn?",
+     "o": [
+      "Not to go to the police",
+      "Always to bring one extra paper",
+      "To pay the fee in advance",
+      "To speak more slowly"
+     ],
+     "a": 1,
+     "e": "But I learned that you should always come with one paper too many."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Fotografija je tu, pasoš je tu, ugovor o *zakupu* je tu.",
+     "o": [
+      "lease",
+      "purchase",
+      "sale",
+      "insurance"
+     ],
+     "a": 0,
+     "e": "Zakup — lease."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za šalterom je sedela *službenica* sa naočarima",
+     "o": [
+      "a nurse",
+      "a clerk",
+      "a neighbour",
+      "a student"
+     ],
+     "a": 1,
+     "e": "Službenica — a (female) clerk."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vaš *stanodavac* mora da vas prijavi na adresi.",
+     "o": [
+      "neighbour",
+      "lawyer",
+      "boss",
+      "landlord"
+     ],
+     "a": 3,
+     "e": "Stanodavac — landlord."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ana je otrčala i vratila se sa *papirom*.",
+     "o": [
+      "a paper",
+      "a bag",
+      "a friend",
+      "a card"
+     ],
+     "a": 0,
+     "e": "Papir — paper."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "nešto mnogo važnije od boravka: prvu *komšinicu*",
+     "o": [
+      "a friend",
+      "a neighbour",
+      "a boss",
+      "an apartment"
+     ],
+     "a": 1,
+     "e": "Komšinica — a (female) neighbour."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvi put sam bila prošle godine, ali sam tada sve radila ___ advokatom.",
+     "o": [
+      "za",
+      "kod",
+      "sa",
+      "do"
+     ],
+     "a": 2,
+     "e": "Choose the preposition: “with a lawyer” — sa + instrumental."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ana je ___ napolje, platila taksu i vratila se baš kad se na tabli pojavio njen broj.",
+     "o": [
+      "trčala",
+      "istrčala",
+      "trčati",
+      "istrčati"
+     ],
+     "a": 1,
+     "e": "Choose the aspect: she ran out and came back — perfective, istrčala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Za šalterom je sedela službenica sa naočarima i ___ pogledom.",
+     "o": [
+      "umoran",
+      "umornom",
+      "umornim",
+      "umorna"
+     ],
+     "a": 2,
+     "e": "Sa + instrumental: sa umornim pogledom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ana se sklonila u stranu i odmah pozvala ___.",
+     "o": [
+      "stanodavac",
+      "stanodavca",
+      "stanodavcu",
+      "stanodavcem"
+     ],
+     "a": 1,
+     "e": "Animate masculine accusative = genitive: stanodavca."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Službenica je sve pregledala, udarila pečat i ___ joj list.",
+     "o": [
+      "dao",
+      "dala",
+      "dalo",
+      "dali"
+     ],
+     "a": 1,
+     "e": "The subject is feminine (službenica): dala."
+    }
+   ]
+  }
+ ]
+}

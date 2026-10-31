@@ -40,6 +40,84 @@ class Story {
 
 const stories = [
   Story(
+    id: 'na-salteru',
+    title: 'Na šalteru',
+    author: 'Kapiraš',
+    blurb:
+        'Ana želi da produži boravak u Srbiji, ali na šalteru joj uvek nešto nedostaje: '
+        'potvrda o taksi, prijava adrese, pa i štampani papir.',
+    level: 'A2',
+    asset: 'story_na_salteru',
+  ),
+  Story(
+    id: 'otvaranje-racuna',
+    title: 'Otvaranje računa',
+    author: 'Kapiraš',
+    blurb:
+        'Marko u banci otvara dinarski i devizni račun, pita za proviziju, karticu i plaćanje računa '
+        'preko aplikacije.',
+    level: 'A2',
+    asset: 'story_otvaranje_racuna',
+  ),
+  Story(
+    id: 'novi-stan',
+    title: 'Novi stan',
+    author: 'Kapiraš',
+    blurb:
+        'Katarina i Dimitrije traže stan u Nišu: razgledanje sa vlasnikom, zakup, kaucija, komunalije '
+        'i pitanje ko plaća popravke.',
+    level: 'A2',
+    asset: 'story_novi_stan',
+  ),
+  Story(
+    id: 'kod-lekara',
+    title: 'Kod lekara',
+    author: 'Kapiraš',
+    blurb:
+        'Sofija se razbolela: razgovor sa izabranim lekarom, recept, bolovanje i odlazak u apoteku.',
+    level: 'A2',
+    asset: 'story_kod_lekara',
+  ),
+  Story(
+    id: 'razgovor-za-posao',
+    title: 'Razgovor za posao',
+    author: 'Kapiraš',
+    blurb:
+        'Luka na razgovoru u beogradskoj IT firmi objašnjava svoje iskustvo, pita za platu, rad od kuće '
+        'i radnu dozvolu.',
+    level: 'B1',
+    asset: 'story_razgovor_za_posao',
+  ),
+  Story(
+    id: 'na-pijaci',
+    title: 'Na pijaci',
+    author: 'Kapiraš',
+    blurb:
+        'Subotnje jutro na pijaci: Milica kupuje paradajz, sir i jagode, cenka se i razgovara sa prodavcima.',
+    level: 'A2',
+    asset: 'story_na_pijaci',
+  ),
+  Story(
+    id: 'u-restoranu',
+    title: 'U restoranu',
+    author: 'Kapiraš',
+    blurb:
+        'Jelena i Tomas večeraju u Zemunu: jelovnik, ćevapi i pljeskavica, račun i pitanje koliko je '
+        'pristojna napojnica.',
+    level: 'A2',
+    asset: 'story_u_restoranu',
+  ),
+  Story(
+    id: 'slava-kod-komsija',
+    title: 'Slava kod komšija',
+    author: 'Kapiraš',
+    blurb:
+        'Olga se na stepeništu susreće sa komšijom koji je poziva na slavu, pa upoznaje običaje: '
+        'slavski kolač, rakiju i „živeli“.',
+    level: 'B1',
+    asset: 'story_slava_kod_komsija',
+  ),
+  Story(
     id: 'crvene-cipele',
     title: 'Crvene cipele',
     author: 'Hans Kristijan Andersen',

@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What does Milica want to buy from aunt Ruža?",
+     "o": [
+      "Apples and pears",
+      "Tomatoes, peppers and an onion",
+      "Meat",
+      "Bread and cheese"
+     ],
+     "a": 1,
+     "e": "I need a kilo of tomatoes, some peppers and an onion."
+    },
+    {
+     "q": "How much is a kilo of tomatoes for Milica?",
+     "o": [
+      "150 dinars",
+      "200 dinars",
+      "180 dinars",
+      "250 dinars"
+     ],
+     "a": 2,
+     "e": "Two hundred dinars a kilo. But for you, one hundred eighty."
+    },
+    {
+     "q": "How much cheese did she end up buying?",
+     "o": [
+      "Half a kilo",
+      "A kilo",
+      "Two hundred grams",
+      "Three hundred grams"
+     ],
+     "a": 3,
+     "e": "I can cut you three hundred grams, that is eight hundred dinars."
+    },
+    {
+     "q": "Why did she not take a whole piece of cheese?",
+     "o": [
+      "It is expensive",
+      "It is not tasty",
+      "It is too salty",
+      "It ran out"
+     ],
+     "a": 0,
+     "e": "It is expensive, she said."
+    },
+    {
+     "q": "What surprised Milica?",
+     "o": [
+      "The price of milk",
+      "Strawberries in October",
+      "A new seller",
+      "The closed market"
+     ],
+     "a": 1,
+     "e": "Strawberries in October?"
+    },
+    {
+     "q": "Whom did Milica invite to breakfast?",
+     "o": [
+      "A friend",
+      "Aunt Ruža",
+      "Her brother",
+      "A neighbour"
+     ],
+     "a": 3,
+     "e": "Come for breakfast, there is everything!"
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Evo *kusura*, trideset.",
+     "o": [
+      "change",
+      "the bill",
+      "the receipt",
+      "the wallet"
+     ],
+     "a": 0,
+     "e": "Kusur — change."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Kajmak* je dvesta pedeset za malu teglu.",
+     "o": [
+      "Sour cream",
+      "Kajmak (a creamy dairy spread)",
+      "Honey",
+      "Butter"
+     ],
+     "a": 1,
+     "e": "Kajmak — a creamy dairy spread."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Iz *plastenika*.",
+     "o": [
+      "the garden",
+      "the forest",
+      "a greenhouse",
+      "a shop"
+     ],
+     "a": 2,
+     "e": "Plastenik — a greenhouse."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Bio je *sladak* i sočan.",
+     "o": [
+      "bitter",
+      "sour",
+      "salty",
+      "sweet"
+     ],
+     "a": 3,
+     "e": "Sladak — sweet."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dajte mi *pet*.",
+     "o": [
+      "ten",
+      "five",
+      "three",
+      "two"
+     ],
+     "a": 1,
+     "e": "Pet — five."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Svake subote u osam ujutru Milica je odlazila ___ pijacu.",
+     "o": [
+      "u",
+      "za",
+      "do",
+      "na"
+     ],
+     "a": 3,
+     "e": "Choose the preposition: “to the market” — na pijacu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Treba mi kilo ___, malo paprike i jedan luk.",
+     "o": [
+      "paradajz",
+      "paradajza",
+      "paradajzu",
+      "paradajzom"
+     ],
+     "a": 1,
+     "e": "Kilo + genitive: kilo paradajza."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Milica je ___ krišku.",
+     "o": [
+      "gristi",
+      "ugrizla",
+      "grizla",
+      "ugristi"
+     ],
+     "a": 1,
+     "e": "She took one bite — perfective, feminine: ugrizla."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo su ___, slatke.",
+     "o": [
+      "rogat",
+      "rogata",
+      "rogato",
+      "rogate"
+     ],
+     "a": 3,
+     "e": "Adjective with paprike (fem. pl.): rogate."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prošla je dalje, do tezge sa ___.",
+     "o": [
+      "sir",
+      "sira",
+      "sirevima",
+      "sirevi"
+     ],
+     "a": 2,
+     "e": "Sa + instrumental plural: sa sirevima."
+    }
+   ]
+  }
+ ]
+}

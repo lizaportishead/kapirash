@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What did Olga notice when she entered the building?",
+     "o": [
+      "The smell of coffee",
+      "The smell of roast meat and cakes",
+      "The smell of paint",
+      "The smell of smoke"
+     ],
+     "a": 1,
+     "e": "As soon as Olga entered the building, she smelled roast meat and cakes."
+    },
+    {
+     "q": "Which saint does Dragan's family celebrate?",
+     "o": [
+      "St. George",
+      "St. Sava",
+      "St. Nicholas",
+      "St. John"
+     ],
+     "a": 2,
+     "e": "Saint Nicholas, our family slava!"
+    },
+    {
+     "q": "What did Olga bring?",
+     "o": [
+      "A bottle of juice and chocolate",
+      "A cake",
+      "Flowers",
+      "A bottle of rakija"
+     ],
+     "a": 0,
+     "e": "she took a bottle of juice from the fridge and a box of chocolates."
+    },
+    {
+     "q": "What do you do when you say “živeli”?",
+     "o": [
+      "Hug",
+      "Get up from the table",
+      "Close one's eyes",
+      "Look each other in the eye"
+     ],
+     "a": 3,
+     "e": "With us you say “živeli” and look in the eyes."
+    },
+    {
+     "q": "Why does a family celebrate its saint?",
+     "o": [
+      "So as not to get ill",
+      "So that he protects them from evil",
+      "To get presents",
+      "To meet the neighbours"
+     ],
+     "a": 1,
+     "e": "We celebrate him so that he protects us from evil."
+    },
+    {
+     "q": "What did Mira give Olga when she left?",
+     "o": [
+      "A jar of jam",
+      "A cake",
+      "A bottle of rakija",
+      "A bag of flatbreads"
+     ],
+     "a": 3,
+     "e": "Mira pushed a bag of pogačas into her hands."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U uglu je gorela *sveća* i stajao je okrugli hleb.",
+     "o": [
+      "lamp",
+      "candle",
+      "star",
+      "icon"
+     ],
+     "a": 1,
+     "e": "Sveća — a candle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Rakija*, naravno!",
+     "o": [
+      "Wine",
+      "Water",
+      "Juice",
+      "Rakija (fruit brandy)"
+     ],
+     "a": 3,
+     "e": "Rakija — fruit brandy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mira joj je stavila tanjir sa *sarmom*",
+     "o": [
+      "sarma (cabbage rolls)",
+      "soup",
+      "a pie",
+      "fish"
+     ],
+     "a": 0,
+     "e": "Sarma — cabbage rolls."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaka porodica ima svog sveca *zaštitnika*.",
+     "o": [
+      "an enemy",
+      "a patron",
+      "a teacher",
+      "a guest"
+     ],
+     "a": 1,
+     "e": "Zaštitnik — a patron."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mira joj je u ruke gurnula kesu *pogača*.",
+     "o": [
+      "pies",
+      "nuts",
+      "flatbreads (pogače)",
+      "apples"
+     ],
+     "a": 2,
+     "e": "Pogača — a flatbread."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mira joj je stavila tanjir ___ sarmom",
+     "o": [
+      "bez",
+      "kod",
+      "sa",
+      "za"
+     ],
+     "a": 2,
+     "e": "Choose the preposition: “with sarma” — sa sarmom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Na stepeništu je ___ i osmehnula se.",
+     "o": [
+      "stajati",
+      "zastala",
+      "stajala",
+      "zastati"
+     ],
+     "a": 1,
+     "e": "She stopped for a moment — perfective: zastala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U dnevnoj sobi bio je ___ sto",
+     "o": [
+      "dugačka",
+      "dugačko",
+      "dugačak",
+      "dugačkog"
+     ],
+     "a": 2,
+     "e": "Adjective with sto (masc.): dugačak."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dobro veče, ___!",
+     "o": [
+      "komšinica",
+      "komšinicu",
+      "komšinice",
+      "komšinicom"
+     ],
+     "a": 2,
+     "e": "Addressing someone — vocative: komšinice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hvala vam za ___, — rekla je Olga.",
+     "o": [
+      "svega",
+      "svemu",
+      "sve",
+      "svim"
+     ],
+     "a": 2,
+     "e": "Za + accusative: za sve."
+    }
+   ]
+  }
+ ]
+}

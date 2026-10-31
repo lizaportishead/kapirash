@@ -1,0 +1,211 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the story",
+   "questions": [
+    {
+     "q": "What symptoms does Sofija have?",
+     "o": [
+      "A pain in the leg",
+      "A fever, a cough and a sore throat",
+      "Dizziness",
+      "A rash"
+     ],
+     "a": 1,
+     "e": "I have a fever, a cough and my throat hurts."
+    },
+    {
+     "q": "Does she need to book in advance?",
+     "o": [
+      "No, she can come with her health card and an ID",
+      "Yes, a month ahead",
+      "Yes, only online",
+      "No, a passport is enough"
+     ],
+     "a": 0,
+     "e": "Just bring the health card and an ID."
+    },
+    {
+     "q": "Why did the doctor not prescribe an antibiotic?",
+     "o": [
+      "It ran out",
+      "It is too expensive",
+      "The infection is most likely viral",
+      "Sofija is allergic to everything"
+     ],
+     "a": 2,
+     "e": "Most infections like this are viral, and an antibiotic does not help against viruses."
+    },
+    {
+     "q": "What is Sofija allergic to?",
+     "o": [
+      "Dust",
+      "Nuts",
+      "Honey",
+      "Penicillin"
+     ],
+     "a": 3,
+     "e": "I am allergic to penicillin."
+    },
+    {
+     "q": "When should she come back to the doctor?",
+     "o": [
+      "If the fever does not go down in three days",
+      "Tomorrow morning",
+      "In a month",
+      "Only if it gets worse at night"
+     ],
+     "a": 0,
+     "e": "If the fever does not drop in three days, come back."
+    },
+    {
+     "q": "How much did Sofija pay at the pharmacy?",
+     "o": [
+      "180 dinars",
+      "200 dinars",
+      "380 dinars",
+      "480 dinars"
+     ],
+     "a": 2,
+     "e": "That is one hundred eighty dinars for the syrup and two hundred for the tablets, three hundred eighty in total."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the story and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imam temperaturu, kašalj i *grlo* me boli.",
+     "o": [
+      "stomach",
+      "throat",
+      "back",
+      "head"
+     ],
+     "a": 1,
+     "e": "Grlo — throat."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Pijte* puno tečnosti, odmarajte i uzimajte ovo.",
+     "o": [
+      "Eat",
+      "Sleep",
+      "Drink",
+      "Walk"
+     ],
+     "a": 2,
+     "e": "Piti — to drink; pijte — imperative."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Doktor je napisao *recept* i pružio joj ga.",
+     "o": [
+      "prescription",
+      "letter",
+      "referral",
+      "bill"
+     ],
+     "a": 0,
+     "e": "Recept — prescription."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Napisaću vam i potvrdu za *bolovanje*.",
+     "o": [
+      "holiday",
+      "a trip",
+      "sick leave",
+      "work"
+     ],
+     "a": 2,
+     "e": "Bolovanje — sick leave."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "a *pluća* su čista",
+     "o": [
+      "lungs",
+      "ears",
+      "eyes",
+      "kidneys"
+     ],
+     "a": 0,
+     "e": "Pluća — lungs."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and verb forms",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Za danas nemamo termina, ali možete da dođete sutra ___ osam",
+     "o": [
+      "na",
+      "do",
+      "u",
+      "za"
+     ],
+     "a": 2,
+     "e": "Choose the preposition of time: “at eight” — u osam."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sofija je ___ i krenula ka apoteci preko puta.",
+     "o": [
+      "izlazila",
+      "izaći",
+      "izašla",
+      "izlazi"
+     ],
+     "a": 2,
+     "e": "Choose the aspect: she went out and set off — perfective, izašla."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Doktor Savić bio je ___ čovek u belom mantilu",
+     "o": [
+      "visoka",
+      "visok",
+      "visoko",
+      "visokog"
+     ],
+     "a": 1,
+     "e": "Adjective with čovek (masc. nom.): visok."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pijete po jednu, tri puta dnevno, posle ___.",
+     "o": [
+      "jelo",
+      "jelu",
+      "jela",
+      "jelom"
+     ],
+     "a": 2,
+     "e": "Posle + genitive: posle jela."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pored nje je sedela žena sa ___ u naručju.",
+     "o": [
+      "dete",
+      "deteta",
+      "detetom",
+      "detetu"
+     ],
+     "a": 2,
+     "e": "Sa + instrumental: sa detetom."
+    }
+   ]
+  }
+ ]
+}
