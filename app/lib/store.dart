@@ -303,7 +303,7 @@ class AppStore extends ChangeNotifier {
   Future<void> load() async {
     final prefs = _prefs = await SharedPreferences.getInstance();
     try {
-      _stress = jsonDecode(await rootBundle.loadString('assets/stress.json')) as Map<String, dynamic>;
+      _stress = jsonDecode(await rootBundle.loadString('assets/stress.json').timeout(Duration(seconds: 6))) as Map<String, dynamic>;
     } catch (_) {}
     cyr = prefs.getString('kap.script') == 'cyr';
     dark = prefs.getString('kap.theme') == 'dark';

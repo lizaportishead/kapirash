@@ -49,21 +49,35 @@ Future<void> main() async {
       debugPrint('Supabase init: $e');
       unawaited(init.then<void>((_) {}, onError: (_) {}));
     }
-    final callback = webAuthCallback();
-    if (callback != null) {
-      try {
-        await Supabase.instance.client.auth.getSessionFromUrl(callback).timeout(Duration(seconds: 15));
-      } catch (e) {
-        debugPrint('Auth callback: $e');
+    try {
+      final callback = webAuthCallback();
+      if (callback != null) {
+        try {
+          await Supabase.instance.client.auth.getSessionFromUrl(callback).timeout(Duration(seconds: 15));
+        } catch (e) {
+          debugPrint('Auth callback: $e');
+        }
+        clearWebAuthCallback();
       }
-      clearWebAuthCallback();
+      cloud = Supabase.instance.client;
+    } catch (e) {
+      debugPrint('Supabase client: $e');
     }
-    cloud = Supabase.instance.client;
   }
-  await store.load();
-  await initAnalytics();
-  trackHomeScreenInstall();
-  identifyUser(cloud?.auth.currentUser?.id);
+  // Что бы ни случилось с сохранёнными данными или аналитикой, приложение всё равно должно открыться,
+  // иначе на первом запуске лоадер крутится вечно.
+  try {
+    await store.load().timeout(Duration(seconds: 10));
+  } catch (e) {
+    debugPrint('Store load: $e');
+  }
+  try {
+    await initAnalytics().timeout(Duration(seconds: 5));
+    trackHomeScreenInstall();
+    identifyUser(cloud?.auth.currentUser?.id);
+  } catch (e) {
+    debugPrint('Analytics: $e');
+  }
   runApp(KapirasApp());
 }
 
