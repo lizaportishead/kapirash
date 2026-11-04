@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['app/**']
+    paths: ['app/**', 'site/**', '.github/workflows/pages.yml']
 
 permissions:
   contents: read
@@ -24,14 +24,18 @@ jobs:
         with:
           channel: stable
           cache: true
-      - name: Build web
+      - name: Build Flutter app (served from /app/)
         working-directory: app
-        run: flutter build web --release --no-web-resources-cdn --base-href /
-      - name: SPA fallback
-        run: cp app/build/web/index.html app/build/web/404.html
+        run: flutter build web --release --no-web-resources-cdn --base-href /app/
+      - name: Assemble site (landing at /, app at /app/)
+        run: |
+          mkdir -p public
+          cp -R site/. public/
+          mkdir -p public/app
+          cp -R app/build/web/. public/app/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: app/build/web
+          path: public
 
   deploy:
     needs: build

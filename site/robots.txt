@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /landing/
+Disallow: /landing2/
+
+Sitemap: https://kapiras.app/sitemap.xml

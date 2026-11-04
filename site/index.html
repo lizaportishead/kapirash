@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<script>
+/* Старые ссылки приложения (/#/video/…, письма со входом с токеном в #) и установленное PWA ведут в приложение /app/ */
+(function(){try{
+  var h=location.hash||'',q=location.search||'';
+  var standalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone;
+  /* Вошедшие (в localStorage лежит сессия Supabase) открывают сразу приложение; гости и поисковые роботы видят лендинг */
+  var authed=false;try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(/^sb-.+-auth-token$/.test(k)){var v=JSON.parse(localStorage.getItem(k)||'null');if(v&&(v.access_token||v.currentSession||v.user)){authed=true;break;}}}}catch(e){}
+  if(/[?&]landing(&|=|$)/.test(q)){authed=false;standalone=false;}
+  if(h.length>1||standalone||authed){location.replace('/app/'+q+h);return;}
+  /* Прежний сервис-воркер приложения жил в корне и мог подсовывать старую версию: снимаем его */
+  if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(r.scope===location.origin+'/'){r.unregister();if(window.caches)caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});});}});});}
+}catch(e){}})();
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Капираш? — учить сербский по видео, подкастам и книгам</title>
+<meta name="description" content="Ленивый способ учить сербский: ролики, шортсы, подкасты и книги с сербскими субтитрами и переводом на русский. Нажимай на слова, сохраняй их в словарь и повторяй карточками.">
+<link rel="canonical" href="https://kapiras.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Капираш?">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="alternate" hreflang="ru" href="https://kapiras.app/">
+<link rel="alternate" hreflang="en" href="https://kapiras.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://kapiras.app/">
+<meta property="og:title" content="Капираш? — ленивый способ учить сербский">
+<meta property="og:description" content="Сербский по роликам, подкастам и книгам: субтитры с переводом, словарь, карточки и мини-тесты.">
+<meta property="og:url" content="https://kapiras.app/">
+<meta property="og:image" content="https://kapiras.app/og-image-v3.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Капираш? — учить сербский по видео, подкастам и книгам">
+<meta name="twitter:title" content="Капираш? — учить сербский по видео, подкастам и книгам">
+<meta name="twitter:image" content="https://kapiras.app/og-image-v3.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E6EC68">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/Icon-192.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/Icon-192.png">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="application-name" content="Kapiraš?">
+<meta name="apple-mobile-web-app-title" content="Kapiraš?">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap">
+<style>
+:root { --lime:#E6EC68; --violet:#7357F6; --bg:#E6EC68; --ink:#111114; --font:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); overflow-x:hidden; }
+a { color:inherit; text-decoration:none; }
+a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
+.hero { position:relative; overflow:hidden; min-height:100vh; min-height:100svh; display:flex; flex-direction:column; background:var(--bg); }
+.decor { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.cloud { position:absolute; width:var(--w); height:calc(var(--w) * .42); }
+.cloud::before { content:""; position:absolute; left:0; right:0; bottom:0; height:45%; background:#fff; border-radius:99px; }
+.cloud i { position:absolute; bottom:20%; border-radius:50%; background:#fff; aspect-ratio:1; }
+.cloud i:nth-child(1) { left:14%; width:30%; }
+.cloud i:nth-child(2) { left:38%; width:42%; }
+.cloud i:nth-child(3) { left:64%; width:26%; }
+.spark { position:absolute; width:var(--s); aspect-ratio:1; background:var(--c); clip-path:polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%); }
+.wrap { position:relative; z-index:2; max-width:1100px; width:100%; margin:0 auto; padding:0 24px; }
+.hero > .wrap { flex:1; display:flex; flex-direction:column; }
+.nav { display:flex; align-items:center; height:72px; }
+.logo { font-weight:900; font-size:24px; letter-spacing:-.8px; }
+.logo b { color:var(--violet); }
+.sp { flex:1; }
+.lang { display:flex; align-items:center; margin-right:24px; font-size:16px; font-weight:800; letter-spacing:.02em; }
+.lang a { padding:6px 0; color:rgba(17,17,20,.5); }
+.lang a[aria-current="true"] { color:var(--ink); }
+.lang a + a { margin-left:14px; padding-left:14px; border-left:1px solid rgba(17,17,20,.35); }
+.nav a.link { font-weight:700; font-size:14px; color:rgba(255,255,255,.7); padding:10px 0; }
+.cols { --pw:300px; display:grid; grid-template-columns:1fr var(--pw); gap:48px; align-items:stretch; min-height:0; flex:1; }
+.copy { align-self:center; padding-bottom:60px; }
+h1 { margin:0; font-weight:900; font-size:clamp(44px,5.6vw,80px); line-height:1.03; letter-spacing:-.03em; }
+h1 span { display:block; color:var(--violet); }
+.lead { margin:24px 0 0; max-width:420px; font-size:18px; font-weight:500; line-height:1.45; color:rgba(17,17,20,.72); }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
+.chips li { display:inline-flex; align-items:center; gap:8px; height:48px; padding:0 20px; border-radius:99px; background:#fff; border:0; color:var(--ink); font-size:15px; font-weight:500; }
+.btn { display:inline-flex; align-items:center; justify-content:center; height:56px; padding:0 36px; border-radius:99px; background:var(--violet); color:#fff; font-weight:800; font-size:16px; margin-top:32px; }
+.phone-wrap { width:var(--pw); margin:24px 0 40px; align-self:center; justify-self:center; }
+.phone { position:relative; width:100%; padding:calc(var(--pw) * .03); border-radius:calc(var(--pw) * .15); background:#0b0b0f; box-shadow:0 0 0 calc(var(--pw) * .006) #3b3b42, inset 0 0 0 calc(var(--pw) * .006) #26262c, 0 40px 70px rgba(17,17,20,.28); }
+.phone .scr { position:relative; width:100%; aspect-ratio:458 / 918; overflow:hidden; background:#fff; border-radius:calc(var(--pw) * .125); }
+.phone video { position:absolute; width:419.2%; height:auto; left:-253.5%; top:0; margin-top:-18.34%; pointer-events:none; }
+.phone video.flat { width:100%; height:100%; left:0; margin:0; object-fit:cover; }
+.phone .btn-s { position:absolute; width:calc(var(--pw) * .012); background:#2b2b31; border-radius:2px; }
+.phone .btn-s.l1 { left:calc(var(--pw) * -.011); top:12%; height:3.5%; }
+.phone .btn-s.l2 { left:calc(var(--pw) * -.011); top:19%; height:6.5%; }
+.phone .btn-s.l3 { left:calc(var(--pw) * -.011); top:27.5%; height:6.5%; }
+.phone .btn-s.r1 { right:calc(var(--pw) * -.011); top:21%; height:10%; }
+.how { background:var(--bg); padding:88px 0; }
+.how h2 { margin:0 0 48px; text-align:center; font-weight:900; font-size:clamp(30px,4vw,48px); letter-spacing:-.03em; }
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.card { background:#17171d; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px; }
+.card h3 { margin:0 0 12px; font-size:22px; font-weight:900; color:var(--lime); }
+.card p { margin:0; font-size:16px; line-height:1.5; color:rgba(255,255,255,.72); }
+.end { text-align:center; padding:0 24px 96px; }
+.end h2 { margin:0 0 12px; font-size:clamp(28px,4vw,44px); font-weight:900; letter-spacing:-.03em; }
+.end p { margin:0 0 8px; color:rgba(255,255,255,.7); }
+@media (max-width:860px) {
+  .cols { --pw:min(300px,72vw); grid-template-columns:1fr; gap:0; min-height:0; }
+  .copy { padding:24px 0 36px; text-align:center; }
+  .lead { margin-inline:auto; }
+  .chips { justify-content:center; }
+  .phone-wrap { align-self:center; margin:0 0 32px; }
+  .hero > .wrap { display:flex; flex-direction:column; }
+  .cards { grid-template-columns:1fr; }
+}
+
+/* HOW IT WORKS (иллюстрации — как на слайдах онбординга приложения) */
+.how-wrap { padding:0 40px 8px; }
+.how { max-width:1200px; margin:0 auto; background:#fff; border-radius:8px; padding:96px 56px; }
+.how h2 { margin:0 0 72px; text-align:center; font-weight:900; font-size:clamp(34px,4.4vw,56px); letter-spacing:-.04em; line-height:1.05; }
+.step { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; max-width:1100px; margin:0 auto 80px; }
+.step:last-child { margin-bottom:0; }
+.step.flip .art { order:2; }
+.step .copy { padding:0 24px; min-width:0; }
+.step h3 { margin:0 0 16px; font-size:clamp(28px,3.4vw,44px); font-weight:900; letter-spacing:-.03em; line-height:1.08; }
+.step h3 mark { background:var(--violet); color:#fff; padding:0 .18em; border-radius:10px; }
+.step p { margin:0; font-size:18px; font-weight:500; line-height:1.5; color:rgba(17,17,20,.72); }
+.art { position:relative; min-height:360px; border-radius:32px; overflow:hidden; display:grid; place-items:center; min-width:0; }
+.art.lime { background:var(--bg); }
+.art.vio { background:var(--violet); }
+.art .box { position:relative; }
+.art img { display:block; height:300px; width:auto; max-width:90%; }
+.word-art { width:330px; height:250px; }
+.card-art { width:320px; height:290px; }
+.st { position:absolute; padding:10px 18px; border-radius:999px; font-size:17px; font-weight:600; line-height:1.2; white-space:nowrap; }
+.st.ink { background:var(--ink); color:#fff; }
+.st.lime { background:var(--bg); color:var(--ink); }
+.sub-card { position:absolute; left:10px; right:10px; top:24px; padding:16px 20px 18px; background:#fff; border-radius:8px; transform:rotate(-2.3deg); }
+.sub-card small { display:block; font-size:12px; font-weight:700; color:#6E707B; margin-bottom:8px; }
+.sub-card .line { font-size:22px; font-weight:700; line-height:1.35; color:var(--ink); }
+.sub-card .line b { font-weight:700; background:var(--bg); border-radius:10px; padding:0 8px; }
+.sub-card .tr { margin-top:8px; font-size:14px; font-weight:600; line-height:1.35; color:#5A3FE0; }
+.wcard { position:absolute; width:240px; padding:14px 20px 16px; background:#fff; border:2px solid var(--ink); border-radius:8px; }
+.wcard b { display:block; font-size:22px; font-weight:800; color:var(--ink); }
+.wcard span { font-size:15px; font-weight:600; color:#5A3FE0; }
+.plus { position:absolute; right:0; top:20px; width:64px; height:64px; border-radius:50%; background:var(--violet); }
+.plus::before, .plus::after { content:""; position:absolute; left:50%; top:50%; background:#fff; border-radius:2px; transform:translate(-50%,-50%); }
+.plus::before { width:28px; height:4px; } .plus::after { width:4px; height:28px; }
+@media (max-width:860px) {
+  .how-wrap { padding:0 12px 24px; }
+  .how { padding:56px 20px; }
+  .how h2 { margin-bottom:40px; }
+  .step, .step.flip { grid-template-columns:1fr; gap:24px; margin-bottom:48px; }
+  .step.flip .art { order:0; }
+  .step .copy { padding:0; }
+  .art .box { transform:scale(.86); }
+}
+
+@keyframes drift { from { transform:translateX(-22px); } to { transform:translateX(22px); } }
+.decor .cloud { animation:drift var(--t,9s) ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) { .decor .cloud { animation:none; } }
+
+/* FINALE */
+.finale { position:relative; overflow:hidden; display:grid; place-items:center; text-align:center; min-height:440px; padding:16px 24px 24px; }
+.finale .in { position:relative; z-index:2; max-width:640px; display:flex; flex-direction:column; align-items:center; gap:18px; }
+.finale h2 { margin:0; font-size:clamp(34px,5vw,60px); font-weight:900; letter-spacing:-.04em; line-height:1.05; text-wrap:balance; }
+.finale p { margin:0 0 10px; font-size:18px; font-weight:500; color:rgba(17,17,20,.72); }
+.finale .ill { position:absolute; bottom:-6px; z-index:1; height:min(330px,52%); width:auto; }
+.finale .ill.l { left:max(2%, calc(50% - 640px)); }
+.finale .ill.r { right:max(2%, calc(50% - 640px)); height:min(350px,56%); bottom:-3px; }
+.finale .spark { position:absolute; width:var(--s); aspect-ratio:1; background:var(--c); clip-path:polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%); }
+@media (max-width:860px) { .finale { min-height:520px; padding:24px 20px 190px; } .finale .ill { height:170px; } .finale .ill.r { height:180px; } .finale .ill.l { left:4%; } .finale .ill.r { right:4%; } }
+
+@keyframes twinkle { 0%,100% { transform:scale(1) rotate(0deg); opacity:1; } 50% { transform:scale(.72) rotate(18deg); opacity:.7; } }
+.decor .spark, .finale .spark { animation:twinkle var(--ts,3.2s) ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .decor .spark, .finale .spark { animation:none; } }
+
+.foot { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 24px; padding:22px 24px 28px; font-size:13px; font-weight:500; color:rgba(255,255,255,.65); background:var(--ink); }
+.foot a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+.foot a:hover { color:#fff; }
+
+</style>
+<script>
+(function(){try{
+  var ua=navigator.userAgent||'';if(/bot|crawl|spider|slurp|google|bing|yandex|preview/i.test(ua))return;
+  var saved=localStorage.getItem('kap.landing.lang');
+  var want=saved||((navigator.language||'en').toLowerCase().match(/^(ru|uk|be|kk)/)?'ru':'en');
+  if(want==='en'&&location.pathname.indexOf('/en/')<0)location.replace('/en/'+location.search);
+  if(want==='ru'&&location.pathname.indexOf('/en/')>=0)location.replace('/'+location.search);
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-lang]');if(a)localStorage.setItem('kap.landing.lang',a.getAttribute('data-lang'));});
+}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kapiras.app/#org","name":"Капираш?","alternateName":["Kapiraš","Капираш","Kapiras"],"url":"https://kapiras.app/","logo":{"@type":"ImageObject","url":"https://kapiras.app/icons/Icon-512.png","width":512,"height":512},"email":"info@kapiras.app"},{"@type":"WebSite","@id":"https://kapiras.app/#website","url":"https://kapiras.app/","name":"Капираш?","inLanguage":["ru","en"],"publisher":{"@id":"https://kapiras.app/#org"}},{"@type":"WebApplication","@id":"https://kapiras.app/#app","name":"Капираш?","url":"https://kapiras.app/","applicationCategory":"EducationalApplication","operatingSystem":"Web, iOS","browserRequirements":"Requires JavaScript","inLanguage":["ru","en","sr"],"description":"Приложение для изучения сербского по видео, подкастам и книгам с субтитрами и переводом на русский.","image":"https://kapiras.app/og-image-v3.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@id":"https://kapiras.app/#org"}}]}</script>
+</head>
+<body>
+<header class="hero">
+  <div class="decor" aria-hidden="true">
+    <div class="cloud" style="--w:190px; right:6%; top:9%; --t:8s"><i></i><i></i><i></i></div>
+    <div class="cloud" style="--w:150px; right:27%; top:60%; --t:11s"><i></i><i></i><i></i></div>
+    <div class="cloud" style="--w:170px; right:-2%; top:56%; --t:9.5s"><i></i><i></i><i></i></div>
+    <div class="spark" style="--ts:2.8s; animation-delay:0s; --s:28px; --c:var(--violet); right:38%; top:20%"></div>
+    <div class="spark" style="--ts:3.6s; animation-delay:-1.2s; --s:18px; --c:var(--ink); right:1.5%; top:34%"></div>
+    <div class="spark" style="--ts:3.1s; animation-delay:-2s; --s:22px; --c:var(--violet); right:36%; top:80%"></div>
+  </div>
+  <div class="wrap">
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="logo" href="/">Капираш<b>?</b></a><span class="sp"></span>
+      <div class="lang" style="margin-right:0" role="group" aria-label="Язык"><a href="/" hreflang="ru" lang="ru" aria-current="true" data-lang="ru">RU</a><a href="/en/" hreflang="en" lang="en" data-lang="en">EN</a></div>
+    </nav>
+    <div class="cols">
+      <div class="copy">
+        <h1>Ленивый способ <span>учить сербский</span></h1>
+        <p class="lead">Учи новые слова с помощью интересных роликов и подкастов</p>
+        <ul class="chips"><li><span aria-hidden="true">🎬</span>Видео</li><li><span aria-hidden="true">📱</span>Шортсы</li><li><span aria-hidden="true">📖</span>Книги</li><li><span aria-hidden="true">🎧</span>Подкасты</li></ul>
+        <a class="btn" href="/app/?auth">Начать</a>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone">
+          <i class="btn-s l1"></i><i class="btn-s l2"></i><i class="btn-s l3"></i><i class="btn-s r1"></i>
+          <div class="scr"><video class="flat" src="/demo-ru.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Демо приложения Капираш: ролик с субтитрами и переводом слов"></video></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="how-wrap">
+  <section class="how" aria-labelledby="how-h">
+    <h2 id="how-h">Как это работает</h2>
+    <div class="step">
+      <div class="art lime"><div class="box"><img src="/ill-onboarding.png" alt="" width="739" height="497"></div></div>
+      <div class="copy"><h3>Учи <mark>сербский</mark> по&nbsp;роликам и&nbsp;тик-токам</h3><p>А ещё по&nbsp;книгам и&nbsp;подкастам — с&nbsp;сербскими субтитрами и&nbsp;переводом на&nbsp;русский</p></div>
+    </div>
+    <div class="step flip">
+      <div class="art vio" aria-hidden="true"><div class="box word-art">
+        <div class="sub-card"><small>notAleksa · 0:42</small><div class="line">Obišao sam <b>sela</b> sa najsmešnijim imenima</div><div class="tr">Я объехал сёла с самыми смешными названиями</div></div>
+        <span class="st ink" style="right:0;top:0;transform:rotate(11.5deg)">B1</span>
+        <span class="st lime" style="right:18px;bottom:6px;transform:rotate(6.9deg)">sela — сёла</span>
+        <span class="st ink" style="left:0;bottom:22px;transform:rotate(-12.6deg)">перевод</span>
+      </div></div>
+      <div class="copy"><h3>Нажми на&nbsp;<mark>слово</mark> — увидишь перевод</h3><p>Каждое слово в субтитрах и тексте книги можно открыть, не уходя с экрана</p></div>
+    </div>
+    <div class="step">
+      <div class="art lime" aria-hidden="true"><div class="box card-art">
+        <div class="wcard" style="left:0;top:0;transform:rotate(-5.7deg)"><b>kapiraš</b><span>понимаешь</span></div>
+        <div class="wcard" style="left:56px;top:94px;transform:rotate(3.4deg)"><b>selo</b><span>село</span></div>
+        <div class="wcard" style="left:14px;top:186px;transform:rotate(-1.7deg)"><b>ajde</b><span>давай</span></div>
+        <div class="plus"></div>
+        <span class="st ink" style="right:6px;bottom:0;transform:rotate(-8deg)">youtu.be/…</span>
+      </div></div>
+      <div class="copy"><h3>Собирай <mark>слова</mark> из&nbsp;роликов, подкастов и&nbsp;книг</h3><p>Сохранённые слова ждут в словарике — повторяй их карточками и мини-тестами, когда удобно</p></div>
+    </div>
+  </section>
+</main>
+<section class="finale">
+  <span class="spark" aria-hidden="true" style="--ts:3.9s; animation-delay:-0.6s; --s:26px; --c:var(--violet); left:24%; top:22%"></span>
+  <span class="spark" aria-hidden="true" style="--ts:2.6s; animation-delay:-1.6s; --s:18px; --c:var(--ink); right:24%; top:18%"></span>
+  <span class="spark" aria-hidden="true" style="--ts:3.3s; animation-delay:-2.4s; --s:22px; --c:var(--violet); right:30%; top:72%"></span>
+  <img class="ill l" src="/ill-words.png" alt="" width="505" height="580" loading="lazy">
+  <div class="in">
+    <h2>Начни учить новые слова сегодня</h2>
+    <p>Слова, лайки и прогресс сохранятся в облаке.</p>
+    <a class="btn" href="/app/?auth">Начать</a>
+  </div>
+  <img class="ill r" src="/ill-my-videos.png" alt="" width="569" height="592" loading="lazy">
+</section>
+
+
+
+<footer class="foot">
+  <span>© 2026 Капираш?</span>
+  <a href="/terms.html?lang=ru">Условия использования</a>
+  <a href="/privacy.html?lang=ru">Политика конфиденциальности</a>
+</footer>
+</body>
+</html>

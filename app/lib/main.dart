@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'add_video.dart';
 import 'analytics.dart';
@@ -224,7 +225,8 @@ class _HomeShellState extends State<HomeShell> {
   static const _words = _podcasts + 1;
   static const _profile = _podcasts + 2;
 
-  // Пасхалка: три быстрых тапа по вкладке «Профиль» заново открывают онбординг.
+  // Пасхалка: три быстрых тапа по вкладке «Профиль» на вебе открывают лендинг (/?landing не перекидывает вошедших обратно в приложение),
+  // в мобильном приложении заново показывают онбординг.
   int _profileTaps = 0;
   DateTime _lastProfileTap = DateTime(0);
 
@@ -234,7 +236,14 @@ class _HomeShellState extends State<HomeShell> {
         ? _profileTaps + 1
         : (tab == _profile ? 1 : 0);
     _lastProfileTap = now;
-    if (_profileTaps == 3) return store.replayOnboarding();
+    if (_profileTaps == 3) {
+      if (kIsWeb) {
+        _profileTaps = 0;
+        launchUrl(Uri.parse('${Uri.base.origin}/?landing'), webOnlyWindowName: '_self');
+        return;
+      }
+      return store.replayOnboarding();
+    }
     _navKey.currentState?.popUntil((r) => r.isFirst);
     setState(() => _tab = tab);
     trackScreen(_tabName(tab));
