@@ -1413,26 +1413,53 @@ class _StoryReaderState extends State<StoryReader> {
       );
     }
 
+    // Доля прочитанного: по последней видимой странице (на развороте — правой).
+    final last = _count - 1;
+    final seen = (_wide ? _i + 1 : _i).clamp(0, last);
+    final progress = last <= 0 ? 0.0 : seen / last;
+
     return Padding(
       padding: EdgeInsets.fromLTRB(16, 8, 16, 12),
-      child: Row(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          arrow(-1, KIcons.arrowLeft, ui('Предыдущая страница')),
-          Expanded(
-            child: Center(
-              child: Text(
-                _i == 0
-                    ? ui('Начало')
-                    : _i == _count - 1
-                    ? ui('Конец')
-                    : _wide
-                    ? '$_i–${(_i + 1).clamp(0, _count - 2)} из ${_count - 2}'
-                    : '$_i из ${_count - 2}',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+          Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(3),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0, end: progress),
+                duration: Duration(milliseconds: 250),
+                curve: Curves.easeOut,
+                builder: (_, v, _) => LinearProgressIndicator(
+                  value: v,
+                  minHeight: 5,
+                  backgroundColor: cLine,
+                  valueColor: AlwaysStoppedAnimation(cViolet),
+                ),
               ),
             ),
           ),
-          arrow(1, KIcons.arrowRight, ui('Следующая страница')),
+          Row(
+            children: [
+              arrow(-1, KIcons.arrowLeft, ui('Предыдущая страница')),
+              Expanded(
+                child: Center(
+                  child: Text(
+                    _i == 0
+                        ? ui('Начало')
+                        : _i == _count - 1
+                        ? ui('Конец')
+                        : _wide
+                        ? '$_i–${(_i + 1).clamp(0, _count - 2)} из ${_count - 2}'
+                        : '$_i из ${_count - 2}',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                  ),
+                ),
+              ),
+              arrow(1, KIcons.arrowRight, ui('Следующая страница')),
+            ],
+          ),
         ],
       ),
     );
