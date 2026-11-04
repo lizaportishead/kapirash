@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kapiraš? — учить сербский по видео, подкастам и книгам</title>
+<title>Капираш? — учить сербский по видео, подкастам и книгам</title>
 <meta name="description" content="Ленивый способ учить сербский: ролики, шортсы, подкасты и книги с сербскими субтитрами и переводом на русский. Нажимай на слова, сохраняй их в словарь и повторяй карточками.">
 <link rel="canonical" href="https://kapiras.app/landing2/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Kapiraš?">
-<meta property="og:title" content="Kapiraš? — ленивый способ учить сербский">
+<meta property="og:site_name" content="Капираш?">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="alternate" hreflang="ru" href="https://kapiras.app/landing2/">
+<link rel="alternate" hreflang="en" href="https://kapiras.app/landing2/en/">
+<link rel="alternate" hreflang="x-default" href="https://kapiras.app/landing2/">
+<meta property="og:title" content="Капираш? — ленивый способ учить сербский">
 <meta property="og:description" content="Сербский по роликам, подкастам и книгам: субтитры с переводом, словарь, карточки и мини-тесты.">
 <meta property="og:url" content="https://kapiras.app/landing2/">
 <meta property="og:image" content="https://kapiras.app/og-image-v3.png">
@@ -30,6 +35,9 @@ a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
 .logo { font-weight:900; font-size:24px; letter-spacing:-.8px; }
 .logo b { color:var(--lime); }
 .sp { flex:1; }
+.lang { display:flex; gap:2px; margin-right:20px; font-size:13px; font-weight:800; }
+.lang a { padding:6px 8px; border-radius:8px; color:rgba(255,255,255,.55); }
+.lang a[aria-current="true"] { color:#fff; background:rgba(255,255,255,.14); }
 .nav a.link { font-weight:700; font-size:14px; color:rgba(255,255,255,.7); padding:10px 0; }
 .cols { --pw:300px; display:grid; grid-template-columns:1fr var(--pw); gap:48px; align-items:stretch; min-height:0; flex:1; }
 .copy { align-self:center; padding-bottom:60px; }
@@ -68,6 +76,16 @@ h1 span { display:block; color:var(--lime); }
   .cards { grid-template-columns:1fr; }
 }
 </style>
+<script>
+(function(){try{
+  var ua=navigator.userAgent||'';if(/bot|crawl|spider|slurp|google|bing|yandex|preview/i.test(ua))return;
+  var saved=localStorage.getItem('kap.landing.lang');
+  var want=saved||((navigator.language||'en').toLowerCase().match(/^(ru|uk|be|kk)/)?'ru':'en');
+  if(want==='en'&&location.pathname.indexOf('/en/')<0)location.replace('/landing2/en/'+location.search);
+  if(want==='ru'&&location.pathname.indexOf('/en/')>=0)location.replace('/landing2/'+location.search);
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-lang]');if(a)localStorage.setItem('kap.landing.lang',a.getAttribute('data-lang'));});
+}catch(e){}})();
+</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kapiraš?","url":"https://kapiras.app/","applicationCategory":"EducationalApplication","operatingSystem":"Web, iOS","inLanguage":["ru","sr"],"description":"Приложение для изучения сербского по видео, подкастам и книгам с субтитрами и переводом."}</script>
 </head>
 <body>
@@ -75,7 +93,8 @@ h1 span { display:block; color:var(--lime); }
   <div class="glow"></div>
   <div class="wrap">
     <nav class="nav" aria-label="Основная навигация">
-      <a class="logo" href="/">Kapiraš<b>?</b></a><span class="sp"></span>
+      <a class="logo" href="/landing2/">Капираш<b>?</b></a><span class="sp"></span>
+      <div class="lang" role="group" aria-label="Язык"><a href="/landing2/" hreflang="ru" lang="ru" aria-current="true" data-lang="ru">RU</a><a href="/landing2/en/" hreflang="en" lang="en" data-lang="en">EN</a></div>
       <a class="link" href="/?auth">Войти</a>
     </nav>
     <div class="cols">
@@ -88,7 +107,7 @@ h1 span { display:block; color:var(--lime); }
       <div class="phone-wrap">
         <div class="phone">
           <i class="btn-s l1"></i><i class="btn-s l2"></i><i class="btn-s l3"></i><i class="btn-s r1"></i>
-          <div class="scr"><video src="/kapiras-demo-full.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Демо приложения Kapiraš: ролик с субтитрами и переводом слов"></video></div>
+          <div class="scr"><video src="/kapiras-demo-full.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Демо приложения Капираш: ролик с субтитрами и переводом слов"></video></div>
         </div>
       </div>
     </div>
