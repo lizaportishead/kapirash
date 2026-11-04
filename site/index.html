@@ -65,6 +65,8 @@ a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
 .nav { display:flex; align-items:center; height:72px; }
 .logo { font-weight:900; font-size:24px; letter-spacing:-.8px; }
 .logo b { color:var(--violet); }
+.logo { position:relative; }
+.logo small { position:absolute; left:0; top:100%; margin-top:-2px; font-size:12px; font-weight:600; letter-spacing:0; white-space:nowrap; color:rgba(17,17,17,.5); }
 .sp { flex:1; }
 .lang { display:flex; align-items:center; margin-right:24px; font-size:16px; font-weight:800; letter-spacing:.02em; }
 .lang a { padding:6px 0; color:rgba(17,17,20,.5); }
@@ -199,7 +201,7 @@ h1 span { display:block; color:var(--violet); }
   </div>
   <div class="wrap">
     <nav class="nav" aria-label="Основная навигация">
-      <a class="logo" href="/">Капираш<b>?</b></a><span class="sp"></span>
+      <a class="logo" href="/">Капираш<b>?</b><small>* понимаешь?</small></a><span class="sp"></span>
       <div class="lang" style="margin-right:0" role="group" aria-label="Язык"><a href="/" hreflang="ru" lang="ru" aria-current="true" data-lang="ru">RU</a><a href="/en/" hreflang="en" lang="en" data-lang="en">EN</a></div>
     </nav>
     <div class="cols">

@@ -11,6 +11,9 @@ import 'theme.dart';
 import 'l10n.dart';
 import 'legal.dart';
 
+/// Ссылка «Начать» с лендинга (/app/?auth): незалогиненному всегда показываем вход, даже если онбординг уже пройден. Сбрасывается кнопкой «Смотреть без авторизации».
+bool authRequested = kIsWeb && Uri.base.queryParameters.containsKey('auth');
+
 const _kLastEmail = 'last_email';
 final _emailRe = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
 
@@ -373,6 +376,7 @@ class _AuthPageState extends State<AuthPage> {
                 child: TextButton(
                   // С лендинга выйти без входа можно только отсюда, поэтому заодно закрываем онбординг.
                   onPressed: () {
+                    authRequested = false;
                     store.finishOnboarding();
                     if (!widget.start) Navigator.pop(context);
                   },

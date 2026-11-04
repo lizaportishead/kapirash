@@ -136,7 +136,7 @@ class _KapirasAppState extends State<KapirasApp> {
         duration: Duration(milliseconds: 250),
         // Вход необязателен: после онбординга поверх каталога один раз зовём войти, позже — из профиля.
         // Порядок: приветствие, предложение войти (поверх), анкета, потом приложение.
-        child: !store.onboarded
+        child: !store.onboarded || (authRequested && store.user == null)
             ? (kIsWeb ? _WebStart() : OnboardingPage())
             : !store.surveyDone
             ? SurveyPage()
