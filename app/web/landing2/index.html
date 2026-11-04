@@ -19,10 +19,10 @@
 <style>
 :root { --lime:#E6EC68; --violet:#7357F6; --bg:#0E0E12; --font:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif; color-scheme: dark; }
 * { box-sizing: border-box; }
-body { margin:0; background:#443389; color:#fff; font-family:var(--font); overflow-x:hidden; }
+body { margin:0; background:var(--bg); color:#fff; font-family:var(--font); overflow-x:hidden; }
 a { color:inherit; text-decoration:none; }
 a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
-.hero { position:relative; overflow:hidden; min-height:100vh; min-height:100svh; display:flex; flex-direction:column; background:linear-gradient(180deg, var(--bg) 0%, var(--bg) 38%, #2a1f66 78%, #443389 100%); }
+.hero { position:relative; overflow:hidden; min-height:0; border-radius:0 0 40px 40px; background:linear-gradient(180deg, var(--bg) 0%, var(--bg) 38%, #2a1f66 78%, #443389 100%); }
 .glow { position:absolute; right:12%; top:60px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(115,87,246,.45), transparent 65%); pointer-events:none; }
 .wrap { position:relative; z-index:2; max-width:1100px; width:100%; margin:0 auto; padding:0 24px; }
 .hero > .wrap { flex:1; display:flex; flex-direction:column; }
@@ -31,15 +31,15 @@ a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
 .logo b { color:var(--lime); }
 .sp { flex:1; }
 .nav a.link { font-weight:700; font-size:14px; color:rgba(255,255,255,.7); padding:10px 0; }
-.cols { --pw:clamp(340px, calc((100vh - 72px) * .6), 460px); --pw:clamp(340px, calc((100svh - 72px) * .6), 460px); display:grid; grid-template-columns:1fr var(--pw); gap:48px; align-items:end; min-height:700px; flex:1; }
+.cols { --pw:300px; display:grid; grid-template-columns:1fr var(--pw); gap:48px; align-items:end; min-height:0; }
 .copy { align-self:center; padding-bottom:60px; }
 h1 { margin:0; font-weight:900; font-size:clamp(36px,4vw,56px); line-height:1.03; letter-spacing:-.03em; }
 h1 span { display:block; color:var(--lime); }
 .lead { margin:24px 0 0; max-width:420px; font-size:18px; font-weight:500; line-height:1.45; color:rgba(255,255,255,.72); }
 .chips { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
-.chips li { padding:8px 14px; border-radius:99px; background:#000; border:1px solid rgba(255,255,255,.18); font-size:13px; font-weight:800; }
+.chips li { display:inline-flex; align-items:center; gap:8px; height:48px; padding:0 20px; border-radius:99px; background:#000; border:1px solid rgba(255,255,255,.18); font-size:15px; font-weight:800; }
 .btn { display:inline-flex; align-items:center; justify-content:center; height:56px; padding:0 36px; border-radius:99px; background:var(--lime); color:#111; font-weight:800; font-size:16px; margin-top:32px; }
-.phone-wrap { width:var(--pw); align-self:stretch; overflow:hidden; justify-self:center; }
+.phone-wrap { width:var(--pw); height:calc(var(--pw) * 1.5); overflow:hidden; justify-self:center; }
 .phone { position:relative; width:var(--pw); height:calc(var(--pw) * 788 / 440); }
 .phone .scr { position:absolute; left:5.682%; top:2.665%; width:88.636%; height:97.335%; overflow:hidden; border-radius:12.6% 12.6% 0 0 / 6.4% 6.4% 0 0; }
 .phone video { position:absolute; width:414.69%; height:118.61%; left:-250.11%; top:-8.57%; pointer-events:none; }
@@ -73,14 +73,14 @@ h1 span { display:block; color:var(--lime); }
   <div class="wrap">
     <nav class="nav" aria-label="Основная навигация">
       <a class="logo" href="/">Kapiraš<b>?</b></a><span class="sp"></span>
-      <a class="link" href="/">Войти</a>
+      <a class="link" href="/?auth">Войти</a>
     </nav>
     <div class="cols">
       <div class="copy">
         <h1>Ленивый способ <span>учить сербский</span></h1>
         <p class="lead">Учи новые слова с помощью интересных роликов и подкастов</p>
-        <ul class="chips"><li>Видео</li><li>Шортсы</li><li>Книги</li><li>Подкасты</li></ul>
-        <a class="btn" href="/">Начать</a>
+        <ul class="chips"><li><span aria-hidden="true">🎬</span>Видео</li><li><span aria-hidden="true">📱</span>Шортсы</li><li><span aria-hidden="true">📖</span>Книги</li><li><span aria-hidden="true">🎧</span>Подкасты</li></ul>
+        <a class="btn" href="/?auth">Начать</a>
       </div>
       <div class="phone-wrap">
         <div class="phone">

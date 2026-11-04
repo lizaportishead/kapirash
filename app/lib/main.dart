@@ -185,6 +185,8 @@ class _WebStart extends StatefulWidget {
 class _WebStartState extends State<_WebStart> {
   @override
   Widget build(BuildContext context) {
+    // Ссылка с лендинга (/?auth) ведёт сразу на вход, минуя слайды.
+    if (Uri.base.queryParameters.containsKey('auth')) _WebStart.slidesSeen = true;
     final narrow = MediaQuery.sizeOf(context).width < 1100;
     if (narrow && !_WebStart.slidesSeen && store.user == null) {
       return OnboardingPage(onDone: () => setState(() => _WebStart.slidesSeen = true));
