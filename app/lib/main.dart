@@ -41,7 +41,9 @@ Future<void> main() async {
     final init = Supabase.initialize(
       url: supabaseUrl,
       publishableKey: supabaseKey,
-      authOptions: FlutterAuthClientOptions(detectSessionInUri: !kIsWeb),
+      // Implicit: ссылка из письма несёт токены и входит в любом браузере. С PKCE она работала только там, где просили вход
+      // (проверочный код лежит в хранилище того браузера), а из Gmail открывалась в другом и снова просила почту.
+      authOptions: FlutterAuthClientOptions(authFlowType: AuthFlowType.implicit, detectSessionInUri: !kIsWeb),
     );
     try {
       await init.timeout(Duration(seconds: 8));
