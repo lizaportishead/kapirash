@@ -39,16 +39,15 @@ h1 span { display:block; color:var(--lime); }
 .chips { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
 .chips li { display:inline-flex; align-items:center; gap:8px; height:48px; padding:0 20px; border-radius:99px; background:#000; border:1px solid rgba(255,255,255,.18); font-size:15px; font-weight:800; }
 .btn { display:inline-flex; align-items:center; justify-content:center; height:56px; padding:0 36px; border-radius:99px; background:var(--lime); color:#111; font-weight:800; font-size:16px; margin-top:32px; }
-.phone-wrap { width:var(--pw); aspect-ratio:440 / 808; margin:24px 0 40px; align-self:center; justify-self:center; }
-.phone { position:relative; width:100%; height:100%; }
-.phone .scr { position:absolute; left:5.682%; top:calc(var(--pw) * 21 / 440); width:88.636%; bottom:calc(var(--pw) * 11 / 440); overflow:hidden; background:#fff; border-radius:calc(var(--pw) * 46 / 440); }
-.phone .vid { position:absolute; left:0; top:0; width:100%; aspect-ratio:390 / 777; overflow:hidden; }
-.phone video { position:absolute; width:414.69%; height:auto; left:-250.11%; top:0; margin-top:-16.85%; pointer-events:none; }
-.phone .fr { position:absolute; left:0; right:0; background-image:url(/landing2/phone.png); background-repeat:no-repeat; pointer-events:none; }
-.phone .fr.t { top:0; height:calc(var(--pw) * 600 / 440); background-size:100% auto; background-position:0 0; }
-.phone .fr.m { top:calc(var(--pw) * 600 / 440); bottom:calc(var(--pw) * 168 / 440); background-size:100% 3940%; background-position:0 78.12%; }
-.phone .fr.cap { bottom:0; left:calc(var(--pw) * 18 / 440); right:calc(var(--pw) * 18 / 440); height:calc(var(--pw) * 22 / 440); background:#0e0e12; border-radius:0 0 calc(var(--pw) * 55 / 440) calc(var(--pw) * 55 / 440); }
-.phone .fr.b { bottom:0; height:calc(var(--pw) * 168 / 440); background-size:100% auto; background-position:0 100%; }
+.phone-wrap { width:var(--pw); margin:24px 0 40px; align-self:center; justify-self:center; }
+.phone { position:relative; width:100%; padding:calc(var(--pw) * .03); border-radius:calc(var(--pw) * .15); background:#0b0b0f; box-shadow:0 0 0 calc(var(--pw) * .006) #3b3b42, inset 0 0 0 calc(var(--pw) * .006) #26262c, 0 40px 80px rgba(0,0,0,.45), 0 0 90px rgba(115,87,246,.28); }
+.phone .scr { position:relative; width:100%; aspect-ratio:458 / 918; overflow:hidden; background:#fff; border-radius:calc(var(--pw) * .125); }
+.phone video { position:absolute; width:419.2%; height:auto; left:-253.5%; top:0; margin-top:-18.34%; pointer-events:none; }
+.phone .btn-s { position:absolute; width:calc(var(--pw) * .012); background:#2b2b31; border-radius:2px; }
+.phone .btn-s.l1 { left:calc(var(--pw) * -.011); top:12%; height:3.5%; }
+.phone .btn-s.l2 { left:calc(var(--pw) * -.011); top:19%; height:6.5%; }
+.phone .btn-s.l3 { left:calc(var(--pw) * -.011); top:27.5%; height:6.5%; }
+.phone .btn-s.r1 { right:calc(var(--pw) * -.011); top:21%; height:10%; }
 .how { background:var(--bg); padding:88px 0; }
 .how h2 { margin:0 0 48px; text-align:center; font-weight:900; font-size:clamp(30px,4vw,48px); letter-spacing:-.03em; }
 .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -88,8 +87,8 @@ h1 span { display:block; color:var(--lime); }
       </div>
       <div class="phone-wrap">
         <div class="phone">
-          <div class="scr"><div class="vid"><video src="/kapiras-demo-full.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Демо приложения Kapiraš: ролик с субтитрами и переводом слов"></video></div></div>
-          <div class="fr t"></div><div class="fr m"></div><div class="fr b"></div><div class="fr cap"></div>
+          <i class="btn-s l1"></i><i class="btn-s l2"></i><i class="btn-s l3"></i><i class="btn-s r1"></i>
+          <div class="scr"><video src="/kapiras-demo-full.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Демо приложения Kapiraš: ролик с субтитрами и переводом слов"></video></div>
         </div>
       </div>
     </div>
