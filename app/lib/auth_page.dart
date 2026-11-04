@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
 
@@ -172,7 +174,7 @@ class _AuthPageState extends State<AuthPage> {
 
   // Тот же логотип, что в сайдбаре, с переводом под словом.
   Widget _logo() {
-    return Column(
+    final brand = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
@@ -189,6 +191,19 @@ class _AuthPageState extends State<AuthPage> {
         ),
         Text('* ${ui('понимаешь?')}', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: cMuted.withValues(alpha: 0.6))),
       ],
+    );
+    if (!kIsWeb) return brand;
+    // На вебе логотип ведёт на лендинг (?landing — чтобы не перекидывало обратно в приложение).
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => launchUrl(
+          Uri.parse('${Uri.base.origin}${store.lang == 'en' ? '/en/' : '/'}?landing'),
+          webOnlyWindowName: '_self',
+        ),
+        child: brand,
+      ),
     );
   }
 
