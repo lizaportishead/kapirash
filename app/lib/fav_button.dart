@@ -58,8 +58,15 @@ class _FavIconButtonState extends State<FavIconButton> with SingleTickerProvider
     super.dispose();
   }
 
-  void _pulse() {
-    if (mounted) _bump.forward(from: 0);
+  // Сколько звёздочек ещё летит к иконке: их +1 в счётчике появится, только когда долетят.
+  int _inFlight = 0;
+
+  void _hold() => setState(() => _inFlight++);
+
+  void _land() {
+    if (!mounted) return;
+    setState(() => _inFlight = math.max(0, _inFlight - 1));
+    _bump.forward(from: 0);
   }
 
   /// Иконка сейчас на экране: вкладка активна и страница не закрыта другим экраном.
@@ -80,7 +87,7 @@ class _FavIconButtonState extends State<FavIconButton> with SingleTickerProvider
     return ListenableBuilder(
       listenable: store,
       builder: (context, _) {
-        final n = favCount(widget.scope);
+        final n = math.max(0, favCount(widget.scope) - _inFlight);
         return IconButton(
           tooltip: widget.tooltip ?? ui('Избранное'),
           onPressed: widget.onPressed,
@@ -96,8 +103,8 @@ class _FavIconButtonState extends State<FavIconButton> with SingleTickerProvider
                     Positioned.fill(
                       child: Center(
                         child: Container(
-                          width: 24 + 22 * t,
-                          height: 24 + 22 * t,
+                          width: 28 + 26 * t,
+                          height: 28 + 26 * t,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(color: cStarOn.withValues(alpha: 1 - t), width: 2.5),
@@ -108,22 +115,22 @@ class _FavIconButtonState extends State<FavIconButton> with SingleTickerProvider
                   Transform.scale(scale: scale, child: child),
                   if (n > 0)
                     Positioned(
-                      right: -8,
-                      top: -6,
+                      right: -11,
+                      top: -9,
                       child: Transform.scale(
                         scale: scale,
                         child: Container(
-                          constraints: BoxConstraints(minWidth: 17, minHeight: 17),
-                          padding: EdgeInsets.symmetric(horizontal: 4),
+                          constraints: BoxConstraints(minWidth: 22, minHeight: 22),
+                          padding: EdgeInsets.symmetric(horizontal: 5),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: cViolet,
-                            borderRadius: BorderRadius.circular(9),
+                            borderRadius: BorderRadius.circular(11),
                             border: Border.all(color: cBg, width: 1.5),
                           ),
                           child: Text(
                             n > 99 ? '99+' : '$n',
-                            style: TextStyle(color: Colors.white, fontSize: 10, height: 1.1, fontWeight: FontWeight.w800),
+                            style: TextStyle(color: Colors.white, fontSize: 13, height: 1.1, fontWeight: FontWeight.w800),
                           ),
                         ),
                       ),
@@ -149,6 +156,7 @@ void flyToFav(BuildContext from) {
   final start = srcBox.localToGlobal(srcBox.size.center(Offset.zero));
   final end = target._center;
   if (end == null) return;
+  target._hold();
 
   late OverlayEntry entry;
   final ctrl = AnimationController(vsync: Navigator.of(from), duration: Duration(milliseconds: 750));
@@ -167,7 +175,7 @@ void flyToFav(BuildContext from) {
       builder: (_, _) {
         final t = curve.value;
         final p = at(t);
-        final size = 34 * (1 - 0.45 * t);
+        final size = 46 * (1 - 0.4 * t);
         return Positioned(
           left: p.dx - size / 2,
           top: p.dy - size / 2,
@@ -193,6 +201,6 @@ void flyToFav(BuildContext from) {
   ctrl.forward().whenComplete(() {
     entry.remove();
     ctrl.dispose();
-    target._pulse();
+    target._land();
   });
 }
