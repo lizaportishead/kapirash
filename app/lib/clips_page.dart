@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'creator_page.dart';
 import 'deep_link.dart';
+import 'fav_button.dart';
 import 'icons.dart';
 import 'liked_page.dart';
 import 'phrase.dart';
@@ -92,11 +93,7 @@ class _ClipsPageState extends State<ClipsPage> {
           ui('Шортсы'),
           back: back,
           actions: [
-            IconButton(
-              tooltip: ui('Избранное'),
-              icon: Icon(KIcons.star, size: 24, color: cText),
-              onPressed: () => openLiked(context),
-            ),
+            FavIconButton(scope: FavScope.videos, onPressed: () => openLiked(context)),
             IconButton(
               tooltip: ui('Поиск'),
               icon: Icon(KIcons.search, size: 24, color: cText),

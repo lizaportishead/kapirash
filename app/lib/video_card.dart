@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart' show RendererBinding;
 
 import 'clips_page.dart';
 import 'creator_page.dart';
+import 'fav_button.dart';
 import 'icons.dart';
 import 'player_page.dart';
 import 'store.dart';
@@ -200,7 +201,11 @@ class LikeButton extends StatelessWidget {
           isSelected: on,
           icon: Icon(KIcons.star, size: 22, color: pale ? cStarOff : cMuted),
           selectedIcon: Icon(Icons.star_rounded, size: 26, color: cStarOn),
-          onPressed: () => store.toggleLike(videoId),
+          onPressed: () {
+            final adding = !on;
+            store.toggleLike(videoId);
+            if (adding) flyToFav(context);
+          },
         );
       },
     );

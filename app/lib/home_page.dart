@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'feed_page.dart';
+import 'fav_button.dart';
 import 'icons.dart';
 import 'main.dart' show kStoriesTabEnabled;
 import 'liked_page.dart';
@@ -79,11 +80,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(
-                tooltip: ui('Избранное'),
-                icon: Icon(KIcons.star, size: 24, color: cText),
-                onPressed: () => openLiked(context, all: true),
-              ),
+              FavIconButton(scope: FavScope.all, onPressed: () => openLiked(context, all: true)),
               IconButton(
                 tooltip: ui('Поиск'),
                 icon: Icon(KIcons.search, size: 24, color: cText),

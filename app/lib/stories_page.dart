@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'collection_page.dart';
 import 'deep_link.dart';
 import 'feed_page.dart' show SectionHeader;
+import 'fav_button.dart';
 import 'icons.dart';
 import 'phrase.dart';
 import 'player_page.dart' show SubPage;
@@ -369,11 +370,7 @@ class StoriesPage extends StatelessWidget {
         PageTitle(
           ui('Рассказы'),
           actions: [
-            IconButton(
-              tooltip: ui('Избранное'),
-              icon: Icon(KIcons.star, size: 24, color: cText),
-              onPressed: () => _openCollection(context, searchHint: null),
-            ),
+            FavIconButton(scope: FavScope.stories, onPressed: () => _openCollection(context, searchHint: null)),
             IconButton(
               tooltip: ui('Поиск'),
               icon: Icon(KIcons.search, size: 24, color: cText),

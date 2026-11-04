@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'fav_button.dart';
 import 'icons.dart';
 import 'learn_page.dart';
 import 'liked_page.dart';
@@ -127,11 +128,7 @@ class _WordsPageState extends State<WordsPage> {
             PageTitle(
               ui('Словарь'),
               actions: [
-                IconButton(
-                  tooltip: ui('Избранные слова'),
-                  icon: Icon(KIcons.star, size: 24, color: cText),
-                  onPressed: () => openLiked(context, words: true),
-                ),
+                FavIconButton(scope: FavScope.words, tooltip: ui('Избранные слова'), onPressed: () => openLiked(context, words: true)),
                 if (every.isNotEmpty)
                   IconButton(
                     tooltip: _searching ? ui('Закрыть поиск') : ui('Поиск'),
@@ -412,7 +409,11 @@ class _WordCard extends StatelessWidget {
                   isSelected: w.starred,
                   icon: Icon(KIcons.star, size: 20, color: cStarOff),
                   selectedIcon: Icon(Icons.star_rounded, size: 23.5, color: cStarOn),
-                  onPressed: () => store.toggleStar(w.key),
+                  onPressed: () {
+                    final adding = !w.starred;
+                    store.toggleStar(w.key);
+                    if (adding) flyToFav(context);
+                  },
                 ),
                 SizedBox(width: 4),
                 Expanded(
@@ -572,7 +573,11 @@ class _WordSheet extends StatelessWidget {
                     isSelected: w.starred,
                     icon: Icon(KIcons.star, size: 22, color: cStarOff),
                     selectedIcon: Icon(Icons.star_rounded, size: 26, color: cStarOn),
-                    onPressed: () => store.toggleStar(w.key),
+                    onPressed: () {
+                    final adding = !w.starred;
+                    store.toggleStar(w.key);
+                    if (adding) flyToFav(context);
+                  },
                   ),
                 ),
                 IconButton(

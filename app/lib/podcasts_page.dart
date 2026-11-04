@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'collection_page.dart';
+import 'fav_button.dart';
 import 'icons.dart';
 import 'kap_loader.dart';
 import 'analytics.dart';
@@ -32,11 +33,7 @@ class PodcastsPage extends StatelessWidget {
           PageTitle(
             ui('Подкасты'),
             actions: [
-              IconButton(
-                tooltip: ui('Избранное'),
-                icon: Icon(KIcons.star, size: 24, color: cText),
-                onPressed: () => _open(context, searchHint: null),
-              ),
+              FavIconButton(scope: FavScope.podcasts, onPressed: () => _open(context, searchHint: null)),
               IconButton(
                 tooltip: ui('Поиск'),
                 icon: Icon(KIcons.search, size: 24, color: cText),

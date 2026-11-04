@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'add_video.dart';
 import 'clips_page.dart';
+import 'fav_button.dart';
 import 'icons.dart';
 import 'liked_page.dart';
 import 'search_page.dart';
@@ -42,11 +43,7 @@ class FeedPage extends StatelessWidget {
         PageTitle(
           ui('Видео'),
           actions: [
-            IconButton(
-              tooltip: ui('Избранное'),
-              icon: Icon(KIcons.star, size: 24, color: cText),
-              onPressed: () => openLiked(context),
-            ),
+            FavIconButton(scope: FavScope.videos, onPressed: () => openLiked(context)),
             IconButton(
               tooltip: ui('Поиск'),
               icon: Icon(KIcons.search, size: 24, color: cText),
