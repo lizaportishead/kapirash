@@ -62,7 +62,8 @@ a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
 .spark { position:absolute; width:var(--s); aspect-ratio:1; background:var(--c); clip-path:polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%); }
 .wrap { position:relative; z-index:2; max-width:1100px; width:100%; margin:0 auto; padding:0 24px; }
 .hero > .wrap { flex:1; display:flex; flex-direction:column; }
-.nav { display:flex; align-items:center; height:88px; }
+.nav { display:flex; align-items:center; height:88px; box-sizing:border-box; width:100vw; margin-left:calc(50% - 50vw); padding:0 46px; }
+@media (max-width:860px) { .nav { padding:0 24px; } }
 .logo { font-weight:900; font-size:32px; letter-spacing:-1px; line-height:1.2; }
 .logo b { color:var(--violet); }
 .logo { position:relative; }
