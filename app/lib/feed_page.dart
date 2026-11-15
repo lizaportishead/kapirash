@@ -1,3 +1,4 @@
+import 'deep_link.dart';
 import 'dart:ui' show PointerDeviceKind;
 
 import 'package:flutter/material.dart';
@@ -59,8 +60,8 @@ class FeedPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(bottom: 16),
             children: [
-              VideoSection(title: ui('Мои ролики'), list: mine),
               _SeriesBand(list: series),
+              VideoSection(title: ui('Мои ролики'), list: mine),
               VideoSection(title: ui('Популярное'), list: popular),
               VideoSection(title: ui('Новое'), list: newest.take(perSection).toList()),
               ClipsStrip(),
@@ -133,6 +134,12 @@ class _SeriesBand extends StatelessWidget {
                 Text(
                   ui('Сериалы'),
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, letterSpacing: -0.4, color: cViolet),
+                ),
+                Spacer(),
+                TextButton(
+                  onPressed: () => openSeries(context),
+                  style: TextButton.styleFrom(foregroundColor: cViolet),
+                  child: Text(ui('Смотреть все'), style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
                 ),
               ],
             ),
@@ -267,15 +274,26 @@ class ClipsStrip extends StatelessWidget {
 void openTopic(BuildContext context, String topic) {
   Navigator.of(context).push(
     MaterialPageRoute<void>(
-      settings: RouteSettings(name: 'TopicPage'),
+      settings: urlSettings('TopicPage', '/topic/${topicSlug(topic)}'),
       builder: (_) => TopicPage(topic),
     ),
   );
 }
 
+/// Все сериалы поверх таббара: адрес `/series`.
+void openSeries(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: urlSettings('TopicPage', '/series'),
+      builder: (_) => TopicPage('', series: true),
+    ),
+  );
+}
+
 class TopicPage extends StatelessWidget {
-  const TopicPage(this.topic, {super.key});
+  const TopicPage(this.topic, {super.key, this.series = false});
   final String topic;
+  final bool series;
 
   @override
   Widget build(BuildContext context) {
@@ -288,11 +306,11 @@ class TopicPage extends StatelessWidget {
             child: ListenableBuilder(
               listenable: store,
               builder: (context, _) {
-                final list = videos.where((v) => v.topic == topic).toList().reversed.toList();
+                final list = videos.where((v) => series ? _isSeries(v) : v.topic == topic).toList().reversed.toList();
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    ...pageHeader(context, topicLabel(topic)),
+                    ...pageHeader(context, series ? ui('Сериалы') : topicLabel(topic)),
                     Expanded(
                       child: LayoutBuilder(
                         builder: (_, box) {

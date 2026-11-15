@@ -268,16 +268,26 @@ class _HomeShellState extends State<HomeShell> {
       });
       return;
     }
+    BuildContext ctx() => _navKey.currentState?.overlay?.context ?? context;
+    if (seg.length == 1 && seg[0] == 'series') {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) openSeries(ctx());
+      });
+      return;
+    }
     if (seg.length != 2) return;
     final kind = seg[0], id = seg[1];
     // Страницы второго уровня в широкой раскладке открываются в своём навигаторе, чтобы меню слева осталось.
-    BuildContext ctx() => _navKey.currentState?.overlay?.context ?? context;
     bool tryOpen() {
       if (!mounted) return true;
       if (kind == 'video') {
         final v = videoById(id);
         if (v == null) return false;
         openVideo(ctx(), v);
+      } else if (kind == 'topic') {
+        final t = topicFromSlug(id, videos.map((v) => v.topic).where((t) => t.isNotEmpty).toSet());
+        if (t == null) return false;
+        openTopic(ctx(), t);
       } else if (kind == 'podcast') {
         final v = videoById(id);
         if (v == null) return false;
@@ -325,7 +335,7 @@ class _HomeShellState extends State<HomeShell> {
     if (link != null) {
       final seg = Uri.tryParse(link)?.pathSegments ?? const <String>[];
       final kind = seg.isEmpty ? '' : seg[0];
-      _tab = kind == 'feed' || kind == 'video'
+      _tab = kind == 'feed' || kind == 'video' || kind == 'topic' || kind == 'series'
           ? _feed
           : kind == 'words'
           ? _words

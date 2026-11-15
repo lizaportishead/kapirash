@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 
-/// Адрес экрана для ссылок: `/video/ID`, `/podcast/ID`, `/story/ID`, `/feed`, `/words`.
+/// Адрес экрана для ссылок: `/topic/humor`, `/series`, `/video/ID`, `/podcast/ID`, `/story/ID`, `/feed`, `/words`.
 /// Маршруты по-прежнему называются по экрану (для аналитики), а адрес лежит в arguments.
 class UrlPath {
   const UrlPath(this.path);

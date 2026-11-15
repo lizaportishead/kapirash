@@ -21,6 +21,17 @@ String ui(String ru, [List<Object> args = const []]) {
   return s;
 }
 
+/// Адрес темы: английское название латиницей (`humor`, `travel`), для неизвестных тем — само название.
+String topicSlug(String topic) => (_topics[topic] ?? topic).toLowerCase().replaceAll(' ', '-');
+
+/// Тема по адресу из [topicSlug]; null, если такой нет.
+String? topicFromSlug(String slug, Iterable<String> known) {
+  for (final t in known) {
+    if (topicSlug(t) == slug.toLowerCase() || t == slug) return t;
+  }
+  return null;
+}
+
 /// Тема каталога. В данных темы русские, на экране — на языке интерфейса.
 String topicLabel(String topic) => isEn ? (_topics[topic] ?? topic) : topic;
 
