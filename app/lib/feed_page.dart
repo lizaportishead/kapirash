@@ -7,7 +7,6 @@ import 'add_video.dart';
 import 'clips_page.dart';
 import 'fav_button.dart';
 import 'icons.dart';
-import 'request_sheet.dart';
 import 'liked_page.dart';
 import 'search_page.dart';
 import 'store.dart';
@@ -84,7 +83,7 @@ class FeedPage extends StatelessWidget {
         ),
       ],
     );
-    if (!canAddVideo && !canSendRequest) return page;
+    if (!canAddVideo) return page;
     return Stack(
       children: [
         page,
@@ -100,7 +99,7 @@ class FeedPage extends StatelessWidget {
               elevation: 3,
               clipBehavior: Clip.antiAlias,
               child: InkWell(
-                onTap: () => canSendRequest ? showSendRequest(context, podcast: false) : showAddVideo(context),
+                onTap: () => showAddVideo(context),
                 child: SizedBox(width: 56, height: 56, child: Icon(KIcons.plus, size: 28, color: cOnViolet)),
               ),
             ),
