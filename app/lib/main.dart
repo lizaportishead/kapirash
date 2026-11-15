@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'add_video.dart';
 import 'analytics.dart';
 import 'deep_link.dart';
+import 'leaderboard_page.dart';
 import 'feed_page.dart';
 import 'home_page.dart';
 import 'icons.dart';
@@ -261,6 +262,12 @@ class _HomeShellState extends State<HomeShell> {
   /// Открывает то, с чем пришли по ссылке: вкладку или экран поверх неё. Каталог мог ещё не загрузиться, тогда ждём его.
   void _openLink(String link) {
     final seg = Uri.tryParse(link)?.pathSegments ?? const <String>[];
+    if (seg.length == 1 && seg[0] == 'leaderboard') {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) openLeaderboard(_navKey.currentState?.overlay?.context ?? context);
+      });
+      return;
+    }
     if (seg.length != 2) return;
     final kind = seg[0], id = seg[1];
     // Страницы второго уровня в широкой раскладке открываются в своём навигаторе, чтобы меню слева осталось.
@@ -326,6 +333,8 @@ class _HomeShellState extends State<HomeShell> {
           ? _podcasts
           : kind == 'story' && kStoriesTabEnabled
           ? _stories
+          : kind == 'leaderboard'
+          ? _profile
           : _home;
       _openLink(link);
     }

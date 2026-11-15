@@ -688,10 +688,20 @@ class AppStore extends ChangeNotifier {
     await refreshRank();
   }
 
-  /// Место в рейтинге по числу выполненных заданий; null, пока нет ни одного задания или нет связи
+  /// Место в рейтинге: по заданиям, затем по просмотренным роликам; null, пока нет связи
   /// (или в облаке ещё нет supabase/rank.sql).
   int? rank;
   int? rankTotal;
+
+  /// Все пользователи (до 200); null — не вышло загрузить (нет связи или в облаке нет supabase/rank.sql).
+  Future<List<LeaderRow>?> fetchLeaderboard() async {
+    try {
+      final res = await cloud!.rpc('leaderboard');
+      return [for (final r in res as List) LeaderRow.fromJson(r as Map<String, dynamic>)];
+    } catch (_) {
+      return null;
+    }
+  }
 
   Future<void> refreshRank() async {
     final c = cloud;
@@ -906,3 +916,18 @@ class AppStore extends ChangeNotifier {
 }
 
 final store = AppStore();
+
+class LeaderRow {
+  LeaderRow.fromJson(Map<String, dynamic> j)
+    : rank = j['rank'] as int,
+      name = j['name'] as String,
+      avatar = j['avatar'] as String?,
+      videos = j['videos'] as int,
+      tasks = j['tasks'] as int,
+      level = j['level'] as String?,
+      isMe = j['is_me'] == true;
+  final int rank, videos, tasks;
+  final String name;
+  final String? avatar, level;
+  final bool isMe;
+}

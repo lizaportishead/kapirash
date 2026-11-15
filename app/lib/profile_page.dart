@@ -5,6 +5,7 @@ import 'auth_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'history_page.dart';
+import 'leaderboard_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
 import 'theme.dart';
@@ -155,6 +156,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ui('место в рейтинге'),
         Icons.emoji_events_rounded,
         cViolet,
+        onTap: () => openLeaderboard(context),
       ),
     ];
     return LayoutBuilder(
@@ -337,7 +339,8 @@ class _Row extends StatelessWidget {
 }
 
 class _Stat extends StatelessWidget {
-  const _Stat(this.value, this.label, this.icon, this.color);
+  const _Stat(this.value, this.label, this.icon, this.color, {this.onTap});
+  final VoidCallback? onTap;
   final String value;
   final String label;
   final IconData icon;
@@ -352,51 +355,54 @@ class _Stat extends StatelessWidget {
         boxShadow: [BoxShadow(color: Color(0x07000000), blurRadius: 3, offset: Offset(0, 1))],
       ),
       clipBehavior: Clip.antiAlias,
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(width: 4, color: color),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle),
-                      child: Icon(icon, size: 22, color: color),
-                    ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            value,
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: -0.5,
-                              color: cText,
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            label,
-                            textAlign: TextAlign.left,
-                            style: TextStyle(fontSize: 12, height: 1.25, color: cMuted),
-                          ),
-                        ],
+      child: InkWell(
+        onTap: onTap,
+        child: IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(width: 4, color: color),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle),
+                        child: Icon(icon, size: 22, color: color),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              value,
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: -0.5,
+                                color: cText,
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              label,
+                              textAlign: TextAlign.left,
+                              style: TextStyle(fontSize: 12, height: 1.25, color: cMuted),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
