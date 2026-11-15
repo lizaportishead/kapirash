@@ -37,6 +37,10 @@ class FeedPage extends StatelessWidget {
         if (v.topic.isNotEmpty) v.topic,
     ].toSet().toList();
     final mine = [for (final m in store.myVideos.reversed) m.video];
+    final series = [
+      for (final v in videos.reversed)
+        if (_isSeries(v)) v,
+    ];
     final page = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -56,6 +60,7 @@ class FeedPage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 16),
             children: [
               VideoSection(title: ui('Мои ролики'), list: mine),
+              _SeriesBand(list: series),
               VideoSection(title: ui('Популярное'), list: popular),
               VideoSection(title: ui('Новое'), list: newest.take(perSection).toList()),
               ClipsStrip(),
@@ -93,6 +98,48 @@ class FeedPage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Серия сериала: в названии «Epizoda» или «Serija».
+bool _isSeries(Video v) => RegExp(r'epizod|serij', caseSensitive: false).hasMatch(v.title) && !v.podcast && !v.tiktok;
+
+/// Выделенная полоса «Сериалы» на подсвеченном фоне.
+class _SeriesBand extends StatelessWidget {
+  const _SeriesBand({required this.list});
+  final List<Video> list;
+
+  @override
+  Widget build(BuildContext context) {
+    if (list.isEmpty) return SizedBox.shrink();
+    return Container(
+      margin: EdgeInsets.fromLTRB(8, 0, 8, 20),
+      padding: EdgeInsets.only(top: 12),
+      decoration: BoxDecoration(
+        color: cViolet.withValues(alpha: 0.10),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: cViolet.withValues(alpha: 0.35)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 4),
+            child: Row(
+              children: [
+                Icon(Icons.live_tv_rounded, size: 22, color: cViolet),
+                SizedBox(width: 8),
+                Text(
+                  ui('Сериалы'),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, letterSpacing: -0.4, color: cViolet),
+                ),
+              ],
+            ),
+          ),
+          VideoSection(title: '', list: list.take(_perSection(context)).toList(), hideHeader: true),
+        ],
+      ),
     );
   }
 }
@@ -135,8 +182,9 @@ class SectionHeader extends StatelessWidget {
 
 /// Заголовок темы со ссылкой «Смотреть все» и горизонтальная полоса из последних роликов.
 class VideoSection extends StatelessWidget {
-  const VideoSection({super.key, required this.title, required this.list, this.onAll});
+  const VideoSection({super.key, required this.title, required this.list, this.onAll, this.hideHeader = false});
   final String title;
+  final bool hideHeader;
   final List<Video> list;
   final VoidCallback? onAll;
 
@@ -148,7 +196,7 @@ class VideoSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SectionHeader(title, onAll: onAll),
+          if (!hideHeader) SectionHeader(title, onAll: onAll),
           LayoutBuilder(
             builder: (_, box) {
               // Телефон: одна карточка и краешек второй. Широкий экран: четыре в ряд.

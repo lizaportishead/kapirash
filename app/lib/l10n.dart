@@ -260,6 +260,7 @@ const _en = <String, String>{
   'Книги': 'Books',
   'Подкасты': 'Podcasts',
   'Сочный и кремовый пирог из тортильи из духовки': 'Juicy, creamy tortilla pie from the oven',
+  'Сериалы': 'Series',
   'Но настоящий секрет — в сырах.': 'But the real secret is in the cheeses.',
   'Домашние тефтели в томатном соусе.': 'Homemade meatballs in tomato sauce.',
   'а затем формируем шарики.': 'and then we shape balls.',
