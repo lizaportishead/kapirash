@@ -37,6 +37,9 @@ class FeedPage extends StatelessWidget {
       for (final v in videos)
         if (v.topic.isNotEmpty) v.topic,
     ].toSet().toList();
+    // Темы по популярности: чем больше суммарных просмотров роликов, тем выше.
+    final topicViews = {for (final t in topics) t: videos.where((v) => v.topic == t).fold(0, (a, v) => a + v.views)};
+    topics.sort((a, b) => topicViews[b]!.compareTo(topicViews[a]!));
     final mine = [for (final m in store.myVideos.reversed) m.video];
     final series = [
       for (final v in videos.reversed)
@@ -60,16 +63,22 @@ class FeedPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(bottom: 16),
             children: [
-              _SeriesBand(list: series),
               VideoSection(title: ui('Мои ролики'), list: mine),
               VideoSection(title: ui('Популярное'), list: popular),
               VideoSection(title: ui('Новое'), list: newest.take(perSection).toList()),
               ClipsStrip(),
+              VideoSection(
+                title: ui('Сериалы'),
+                list: series.take(perSection).toList(),
+                onAll: () => openSeries(context),
+                allButton: true,
+              ),
               for (final t in topics)
                 VideoSection(
                   title: topicLabel(t),
                   list: videos.where((v) => v.topic == t).toList().reversed.take(perSection).toList(),
                   onAll: () => openTopic(context, t),
+                  allButton: true,
                 ),
             ],
           ),
@@ -103,53 +112,9 @@ class FeedPage extends StatelessWidget {
   }
 }
 
-/// Серия сериала: в названии «Epizoda» или «Serija».
-bool _isSeries(Video v) => RegExp(r'epizod|serij', caseSensitive: false).hasMatch(v.title) && !v.podcast && !v.tiktok;
-
-/// Выделенная полоса «Сериалы» на подсвеченном фоне.
-class _SeriesBand extends StatelessWidget {
-  const _SeriesBand({required this.list});
-  final List<Video> list;
-
-  @override
-  Widget build(BuildContext context) {
-    if (list.isEmpty) return SizedBox.shrink();
-    return Container(
-      margin: EdgeInsets.fromLTRB(8, 0, 8, 20),
-      padding: EdgeInsets.only(top: 12),
-      decoration: BoxDecoration(
-        color: cViolet.withValues(alpha: 0.10),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: cViolet.withValues(alpha: 0.35)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 4),
-            child: Row(
-              children: [
-                Icon(Icons.live_tv_rounded, size: 22, color: cViolet),
-                SizedBox(width: 8),
-                Text(
-                  ui('Сериалы'),
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, letterSpacing: -0.4, color: cViolet),
-                ),
-                Spacer(),
-                TextButton(
-                  onPressed: () => openSeries(context),
-                  style: TextButton.styleFrom(foregroundColor: cViolet),
-                  child: Text(ui('Смотреть все'), style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                ),
-              ],
-            ),
-          ),
-          VideoSection(title: '', list: list.take(_perSection(context)).toList(), hideHeader: true),
-        ],
-      ),
-    );
-  }
-}
+/// Серия сериала: в названии «Epizoda» или «Serija», либо канал «Andrija i Andjelka».
+bool _isSeries(Video v) =>
+    !v.podcast && !v.tiktok && (RegExp(r'epizod|serij', caseSensitive: false).hasMatch(v.title) || v.channel == 'Andrija i Andjelka');
 
 // Высота карточки: превью 16:9 плюс подпись.
 double videoCardHeight(double w) => (w - 16) * 9 / 16 + 107;
@@ -189,9 +154,11 @@ class SectionHeader extends StatelessWidget {
 
 /// Заголовок темы со ссылкой «Смотреть все» и горизонтальная полоса из последних роликов.
 class VideoSection extends StatelessWidget {
-  const VideoSection({super.key, required this.title, required this.list, this.onAll, this.hideHeader = false});
+  const VideoSection({super.key, required this.title, required this.list, this.onAll, this.allButton = false});
   final String title;
-  final bool hideHeader;
+
+  /// Кнопка «Перейти ко всем видео» под полосой (нужен [onAll]).
+  final bool allButton;
   final List<Video> list;
   final VoidCallback? onAll;
 
@@ -203,7 +170,7 @@ class VideoSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (!hideHeader) SectionHeader(title, onAll: onAll),
+          SectionHeader(title, onAll: onAll),
           LayoutBuilder(
             builder: (_, box) {
               // Телефон: одна карточка и краешек второй. Широкий экран: четыре в ряд.
@@ -228,6 +195,22 @@ class VideoSection extends StatelessWidget {
               );
             },
           ),
+          if (allButton && onAll != null)
+            Padding(
+              padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+              child: SizedBox(
+                height: 44,
+                child: FilledButton.tonal(
+                  onPressed: onAll,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: cViolet.withValues(alpha: 0.12),
+                    foregroundColor: cViolet,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  ),
+                  child: Text(ui('Перейти ко всем видео'), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
+                ),
+              ),
+            ),
         ],
       ),
     );

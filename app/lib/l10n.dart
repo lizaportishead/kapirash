@@ -272,6 +272,8 @@ const _en = <String, String>{
   'Подкасты': 'Podcasts',
   'Сочный и кремовый пирог из тортильи из духовки': 'Juicy, creamy tortilla pie from the oven',
   'Сериалы': 'Series',
+  'Перейти ко всем видео': 'See all videos',
+  'Сочный и кремовый пирог из тортильи из духовки': 'Juicy, creamy tortilla pie from the oven',
   'Но настоящий секрет — в сырах.': 'But the real secret is in the cheeses.',
   'Домашние тефтели в томатном соусе.': 'Homemade meatballs in tomato sauce.',
   'а затем формируем шарики.': 'and then we shape balls.',
