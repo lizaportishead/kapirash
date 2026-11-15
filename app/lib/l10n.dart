@@ -270,7 +270,6 @@ const _en = <String, String>{
   'Учи новые слова с помощью интересных роликов и подкастов': 'Learn new words with interesting videos and podcasts',
   'Книги': 'Books',
   'Подкасты': 'Podcasts',
-  'Сочный и кремовый пирог из тортильи из духовки': 'Juicy, creamy tortilla pie from the oven',
   'Сериалы': 'Series',
   'Перейти ко всем видео': 'See all videos',
   'Сочный и кремовый пирог из тортильи из духовки': 'Juicy, creamy tortilla pie from the oven',
