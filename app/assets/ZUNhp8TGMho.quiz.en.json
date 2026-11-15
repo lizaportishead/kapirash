@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the video say at the start is “not clickbait”?",
+     "o": [
+      "Serbia loses a whole city every year",
+      "Serbia became the richest country",
+      "Many schools opened in Serbia",
+      "Serbia joined the EU"
+     ],
+     "a": 0,
+     "e": "In the video: \"Svake godine Srbija izgubi ceo jedan grad.\" — every year Serbia loses a whole city."
+    },
+    {
+     "q": "How many children per woman are needed for natural renewal?",
+     "o": [
+      "2.1",
+      "1.64",
+      "3.5",
+      "5.3"
+     ],
+     "a": 0,
+     "e": "In the video: \"potrebno je da svaka žena rodi 2,1 dete\" — every woman needs to give birth to 2.1 children."
+    },
+    {
+     "q": "What example is given about women's rights?",
+     "o": [
+      "Before WWI women were only 10% of students",
+      "Women used to be the majority of students",
+      "Women banned studying",
+      "Women didn't work after 1990"
+     ],
+     "a": 0,
+     "e": "In the video: \"pre Prvog svetskog rata žene su činile samo 10% studenata Beogradskog univerziteta\" — before the First World War women made up only 10% of students at the University of Belgrade."
+    },
+    {
+     "q": "Why were children once “profitable” for parents?",
+     "o": [
+      "They worked from a young age",
+      "They received benefits",
+      "They paid taxes",
+      "They ran the farm"
+     ],
+     "a": 0,
+     "e": "In the video: \"deca su neretko bila zaposlena od malih nogu\" — children were often employed from a young age."
+    },
+    {
+     "q": "How old is the average person who leaves Serbia?",
+     "o": [
+      "29",
+      "19",
+      "44",
+      "65"
+     ],
+     "a": 0,
+     "e": "In the video: \"prosečna starost osobe koja napusti zemlju samo 29 godina\" — the average age of a person who leaves the country is only 29."
+    },
+    {
+     "q": "Which salary does the author consider more realistic to look at?",
+     "o": [
+      "The median one — about 800 euros",
+      "The average one — about 1230 euros",
+      "The minimum one",
+      "A Belgrade salary of 2000 euros"
+     ],
+     "a": 0,
+     "e": "In the video: \"medijalnu platu, koja je iznosila oko 94.000 kinti, odnosno 800 evra\" — the median salary, which was about 94,000 dinars, that is, 800 euros."
+    },
+    {
+     "q": "What share of GDP do diaspora remittances make up?",
+     "o": [
+      "About 5–8%",
+      "About 50%",
+      "Less than 1%",
+      "About 20%"
+     ],
+     "a": 0,
+     "e": "In the video: \"iznose oko 5–8% BDP-a\" — amount to about 5–8% of GDP."
+    },
+    {
+     "q": "What is “brain drain”?",
+     "o": [
+      "High-skilled people leaving abroad",
+      "Mass return of scientists",
+      "Closing of universities",
+      "A lack of textbooks"
+     ],
+     "a": 0,
+     "e": "In the video: \"Odliv mozgova je odlazak visokokvalifikovanih, visokoobrazovanih ljudi\" — brain drain is the departure of highly qualified, highly educated people."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ako ovako nastavimo, do 2052. bismo mogli da izgubimo još ceo jedan Beograd i *padnemo* na samo 5,2 miliona stanovnika.",
+     "o": [
+      "fall",
+      "rise",
+      "move",
+      "earn"
+     ],
+     "a": 0,
+     "e": "pasti — to fall."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "dugoročnom periodu *opadanja* stanovništva",
+     "o": [
+      "decline",
+      "growth",
+      "transition",
+      "comparison"
+     ],
+     "a": 0,
+     "e": "opadanje — decline."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pritom su se razvili i pouzdani tipovi *kontracepcije*",
+     "o": [
+      "contraception",
+      "medicine",
+      "school",
+      "work"
+     ],
+     "a": 0,
+     "e": "kontracepcija — contraception."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ti radnici *finansiraju* penzioni, zdravstveni i socijalni sistem",
+     "o": [
+      "finance",
+      "break",
+      "control",
+      "lose"
+     ],
+     "a": 0,
+     "e": "finansirati — to finance."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ma temete, ovi mladi su samo *lenji* i ne žele decu.",
+     "o": [
+      "lazy",
+      "rich",
+      "ill",
+      "old"
+     ],
+     "a": 0,
+     "e": "lenj — lazy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Doznake*, odnosno novac koji ljudi zaposleni u inostranstvu šalju nazad svojim porodicama u Srbiji",
+     "o": [
+      "remittances",
+      "taxes",
+      "loans",
+      "pensions"
+     ],
+     "a": 0,
+     "e": "doznaka — remittance."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad, malo je *zeznuto* kvantifikovati koliko Srbija ovako zapravo gubi novca",
+     "o": [
+      "tricky",
+      "pleasant",
+      "cheap",
+      "quick"
+     ],
+     "a": 0,
+     "e": "zeznut — tricky (colloquial)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "I nije da naša država ne *flertuje* sa ovim idejama.",
+     "o": [
+      "flirts",
+      "fights",
+      "argues",
+      "fears"
+     ],
+     "a": 0,
+     "e": "flertovati — to flirt."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U Srbiji je stopa ___ samo 1,64",
+     "o": [
+      "fertiliteta",
+      "fertilitet",
+      "fertilitetu",
+      "fertilitetom"
+     ],
+     "a": 0,
+     "e": "stopa + genitive: fertiliteta."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ako ovako nastavimo, do 2052. bismo mogli da izgubimo još ceo jedan ___",
+     "o": [
+      "Beograd",
+      "Beograda",
+      "Beogradu",
+      "Beogradom"
+     ],
+     "a": 0,
+     "e": "Accusative of inanimate = nominative: Beograd."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ti radnici finansiraju penzioni, zdravstveni i socijalni ___",
+     "o": [
+      "sistem",
+      "sistema",
+      "sistemu",
+      "sistemom"
+     ],
+     "a": 0,
+     "e": "Direct object: sistem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zapravo, kad su mladi priupitani zbog čega razmišljaju da ___ zemlju",
+     "o": [
+      "napuste",
+      "napustiti",
+      "napustio",
+      "napuštaju"
+     ],
+     "a": 0,
+     "e": "After «da» — present tense: napuste."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "pre Prvog svetskog rata žene su činile samo 10% ___ Beogradskog univerziteta",
+     "o": [
+      "studenata",
+      "studenti",
+      "studente",
+      "studentima"
+     ],
+     "a": 0,
+     "e": "10% + genitive pl.: studenata."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Radi poređenja, 2015. se rodilo 65.000 ___",
+     "o": [
+      "beba",
+      "bebe",
+      "bebi",
+      "bebama"
+     ],
+     "a": 0,
+     "e": "After a number ≥5 — genitive pl.: beba."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prvi je premalo rođenih beba u ___ na broj umrlih.",
+     "o": [
+      "odnosu",
+      "odnos",
+      "odnosa",
+      "odnosom"
+     ],
+     "a": 0,
+     "e": "u odnosu na — «compared to»: odnosu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Vlada ti daje oko 500.000 kinti za prvo ___",
+     "o": [
+      "dete",
+      "deteta",
+      "detetu",
+      "detetom"
+     ],
+     "a": 0,
+     "e": "za + accusative: prvo dete."
+    }
+   ]
+  }
+ ]
+}

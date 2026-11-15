@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Beba do at the start when his mother has disappeared?",
+     "o": [
+      "Calls the police to report her missing",
+      "Goes to look for her at the market",
+      "Calls his brother",
+      "Goes to sleep"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ja bih, molim vas, da prijavim nestanak majke.\" — I'd like to report my mother missing."
+    },
+    {
+     "q": "Where does Ruža say she was?",
+     "o": [
+      "In a shop",
+      "Out for a walk",
+      "At her friend Jovanka's",
+      "At the clinic"
+     ],
+     "a": 1,
+     "e": "In the video: \"Bila sam u šetnji.\" — I was out for a walk."
+    },
+    {
+     "q": "What does Ruža say she hears?",
+     "o": [
+      "A little voice",
+      "Music from the street",
+      "Knocking at the door",
+      "The neighbours' TV"
+     ],
+     "a": 0,
+     "e": "In the video: \"Čujem neki mali glas.\" — I hear some little voice."
+    },
+    {
+     "q": "What does Mum suggest Beba does to meet \"them\"?",
+     "o": [
+      "Hide in the wardrobe",
+      "Go out on the balcony",
+      "Leave the flat",
+      "Go to bed"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa u orman.\" — Well, in the wardrobe."
+    },
+    {
+     "q": "Who was the milk for, according to Ruža?",
+     "o": [
+      "The neighbour's cat",
+      "Ruža herself",
+      "Beba",
+      "Mila"
+     ],
+     "a": 0,
+     "e": "In the video: \"Nećete verovati, sve je to mleko za nju.\" — You won't believe it, all this milk is for her."
+    },
+    {
+     "q": "How did Ruža find the organisation Let's Help the Elderly?",
+     "o": [
+      "On Facebook",
+      "In a newspaper",
+      "On TV",
+      "A friend gave it to her"
+     ],
+     "a": 0,
+     "e": "In the video: \"Da, to sam ih našla na Fejsbuku pre neki dan kad sam povredila nogu.\" — yes, I found them on Facebook the other day when I hurt my leg."
+    },
+    {
+     "q": "What does Beba warn Mum about regarding the social services visit?",
+     "o": [
+      "That she may be sent to a nursing home",
+      "That she'll be fined",
+      "That her pension will be taken",
+      "That she'll be taken to hospital"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ali možda oni odluče da te pošalju u dom.\" — But maybe they'll decide to send you to a nursing home."
+    },
+    {
+     "q": "What does Dragana promise at the end of the visit?",
+     "o": [
+      "That they will now be brought two lunches",
+      "That she'll send a doctor",
+      "That she'll pay for medicine",
+      "That she'll take Ruža to a home"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ja ću reći Milici da od sada donosi dva ručka.\" — I'll tell Milica to bring two lunches from now on."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja bih, molim vas, da prijavim *nestanak* majke.",
+     "o": [
+      "disappearance",
+      "return",
+      "illness",
+      "purchase"
+     ],
+     "a": 0,
+     "e": "nestanak — disappearance."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Idem samo tu iza *ćoška*.",
+     "o": [
+      "corner",
+      "house",
+      "shop",
+      "door"
+     ],
+     "a": 0,
+     "e": "ćoška — genitive of ćošak (corner)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Jesu li pominjali leteće *tanjire*?",
+     "o": [
+      "plates, saucers",
+      "boats",
+      "balloons",
+      "planes"
+     ],
+     "a": 0,
+     "e": "leteći tanjiri — flying saucers."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "On je tako *infantilan*.",
+     "o": [
+      "infantile",
+      "angry",
+      "shy",
+      "cunning"
+     ],
+     "a": 0,
+     "e": "infantilan — infantile."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ona je zdrava kao *dren*.",
+     "o": [
+      "dogwood",
+      "stone",
+      "bull",
+      "horse"
+     ],
+     "a": 0,
+     "e": "zdrav kao dren — fit as a fiddle (literally: like dogwood)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa ići ćeš u *zatvor*!",
+     "o": [
+      "prison",
+      "nursing home",
+      "school",
+      "police"
+     ],
+     "a": 0,
+     "e": "zatvor — prison."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja sam *usisala*, neću u dom, neću.",
+     "o": [
+      "vacuumed",
+      "washed",
+      "hid",
+      "bought"
+     ],
+     "a": 0,
+     "e": "usisati — to vacuum."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Šta radite *utorak* uveče?",
+     "o": [
+      "Tuesday",
+      "Thursday",
+      "Sunday",
+      "Monday"
+     ],
+     "a": 0,
+     "e": "utorak — Tuesday."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Idem samo tu iza ___.",
+     "o": [
+      "ćoška",
+      "ćošak",
+      "ćošku",
+      "ćoškom"
+     ],
+     "a": 0,
+     "e": "The preposition \"iza\" takes the genitive: iza ćoška."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam došla da pomognem vašoj ___, pošto je povredila nogu.",
+     "o": [
+      "majci",
+      "majka",
+      "majku",
+      "majke"
+     ],
+     "a": 0,
+     "e": "Pomoći + dative: vašoj majci."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ali ti si lagala ___ organizaciju, mama.",
+     "o": [
+      "humanitarnu",
+      "humanitarna",
+      "humanitarne",
+      "humanitarnoj"
+     ],
+     "a": 0,
+     "e": "Organizaciju is feminine accusative, so the adjective: humanitarnu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moja mama je danas došla i tvrdila mi ovde da se druži sa ___.",
+     "o": [
+      "vanzemaljcima",
+      "vanzemaljce",
+      "vanzemaljaca",
+      "vanzemaljci"
+     ],
+     "a": 0,
+     "e": "Družiti se sa + instrumental plural: sa vanzemaljcima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dobro, nećeš ići u ___, ne brini.",
+     "o": [
+      "dom",
+      "domu",
+      "doma",
+      "domom"
+     ],
+     "a": 0,
+     "e": "Where to? U + accusative: u dom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja ću reći Milici da od sada donosi dva ___.",
+     "o": [
+      "ručka",
+      "ručak",
+      "ručke",
+      "ručaka"
+     ],
+     "a": 0,
+     "e": "After \"dva\" — genitive singular: dva ručka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Koliko dugo zoveš organizaciju Pomozimo ___?",
+     "o": [
+      "starima",
+      "stari",
+      "starih",
+      "starim"
+     ],
+     "a": 0,
+     "e": "Pomoći + dative plural: starima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "A ja sam to ___.",
+     "o": [
+      "primetila",
+      "primetio",
+      "primetili",
+      "primetilo"
+     ],
+     "a": 0,
+     "e": "A woman speaks: past feminine — primetila."
+    }
+   ]
+  }
+ ]
+}

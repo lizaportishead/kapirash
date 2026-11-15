@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where does Ruža say she \"popped over\"?",
+     "o": [
+      "To Ugrinovci",
+      "To Hungary",
+      "To the market in Belgrade",
+      "To Budva"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa rekla sam ti, skoknula sam do Ugrinovaca.\" — I told you, I popped over to Ugrinovci."
+    },
+    {
+     "q": "How did Ruža get home?",
+     "o": [
+      "Hung on to a garbage truck",
+      "Took a taxi",
+      "Got on a tram",
+      "Came by bus"
+     ],
+     "a": 0,
+     "e": "In the video: \"ja se lepo popnem, ukačim se na kamion i tako stignem ovde\" — I nicely climb up, hang on to the truck and so I get here."
+    },
+    {
+     "q": "What did Ruža do in Ugrinovci?",
+     "o": [
+      "Was an extra in a TV show",
+      "Sold vegetables",
+      "Visited a friend",
+      "Took part in a rally"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ti si statirala u TV emisiji?\" — You were an extra on a TV show?"
+    },
+    {
+     "q": "How was Ruža invited to the show?",
+     "o": [
+      "Through Facebook",
+      "By phone",
+      "By letter",
+      "Through a neighbour"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ali to je bilo preko Fejsbuka.\" — But it was through Facebook."
+    },
+    {
+     "q": "What punishment does Beba threaten Mum with?",
+     "o": [
+      "No Ludo for a month",
+      "Lock her in for a week",
+      "Take her phone",
+      "Take her to a nursing home"
+     ],
+     "a": 0,
+     "e": "In the video: \"nećemo igrati Ne ljuti se čoveče mesec dana\" — we won't play Ludo for a month."
+    },
+    {
+     "q": "What does Miša offer his brother?",
+     "o": [
+      "To make him fifteen years younger",
+      "To pay his debts",
+      "To cure Mum",
+      "To find him a job"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ja ću da te podmladim za petnaest godina.\" — I'll make you fifteen years younger."
+    },
+    {
+     "q": "Why was Ruža held at the police?",
+     "o": [
+      "For stealing in a shop",
+      "For a fight",
+      "For driving without a licence",
+      "For defrauding a bank"
+     ],
+     "a": 0,
+     "e": "In the video: \"Majka ti je uhvaćena u krađi u jednoj prodavnici.\" — Your mother was caught stealing in a shop."
+    },
+    {
+     "q": "Why does Ruža want to sue the shop owner?",
+     "o": [
+      "A box was missing yellow pieces",
+      "He called her a thief",
+      "He didn't return her money",
+      "He threw her out of the shop"
+     ],
+     "a": 0,
+     "e": "In the video: \"Zato što je u jednoj kutiji falilo četiri figure žute.\" — Because one box was missing four yellow pieces."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zagrejao sam ti *papuče*.",
+     "o": [
+      "slippers",
+      "soup",
+      "tea",
+      "blanket"
+     ],
+     "a": 0,
+     "e": "papuče — slippers."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "To je jedan jako fini mladić, *ekološki* osvešćen.",
+     "o": [
+      "ecologically",
+      "politically",
+      "financially",
+      "physically"
+     ],
+     "a": 0,
+     "e": "ekološki — ecologically."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hoćeš da mi vadiš *krv*?",
+     "o": [
+      "blood",
+      "tooth",
+      "money",
+      "tears"
+     ],
+     "a": 0,
+     "e": "krv — blood."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja ću da te *podmladim* za petnaest godina.",
+     "o": [
+      "rejuvenate",
+      "punish",
+      "operate on",
+      "deceive"
+     ],
+     "a": 0,
+     "e": "podmladiti — to rejuvenate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vlasnik radnje je zvao i prijavio *krađu*.",
+     "o": [
+      "theft",
+      "fight",
+      "accident",
+      "fire"
+     ],
+     "a": 0,
+     "e": "krađa — theft."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ti ne plaćaš *porez*.",
+     "o": [
+      "tax",
+      "rent",
+      "fine",
+      "bill"
+     ],
+     "a": 0,
+     "e": "porez — tax."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nisu mi *lisice* stavili.",
+     "o": [
+      "handcuffs",
+      "glasses",
+      "chain",
+      "gloves"
+     ],
+     "a": 0,
+     "e": "lisice — handcuffs (literally: foxes)."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ulažem u *kulturu*.",
+     "o": [
+      "culture",
+      "land",
+      "cars",
+      "a house"
+     ],
+     "a": 0,
+     "e": "kultura — culture."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa ja sam ti celu mladost provela kačeći se na ___.",
+     "o": [
+      "tramvaje",
+      "tramvaj",
+      "tramvaja",
+      "tramvajima"
+     ],
+     "a": 0,
+     "e": "Kačiti se na + accusative plural: na tramvaje."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Idi u ___ radnju.",
+     "o": [
+      "gvožđarsku",
+      "gvožđarska",
+      "gvožđarske",
+      "gvožđarskoj"
+     ],
+     "a": 0,
+     "e": "Where to? U + feminine accusative: u gvožđarsku radnju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mogao bi onda ___ da posvetiš pažnju u tom smislu?",
+     "o": [
+      "majci",
+      "majku",
+      "majka",
+      "majke"
+     ],
+     "a": 0,
+     "e": "Posvetiti pažnju + dative: majci."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja ću da te podmladim za petnaest ___.",
+     "o": [
+      "godina",
+      "godine",
+      "godinu",
+      "godinama"
+     ],
+     "a": 0,
+     "e": "After \"petnaest\" — genitive plural: godina."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ali znaš zašto se nalaziš u ___?",
+     "o": [
+      "policiji",
+      "policiju",
+      "policije",
+      "policijom"
+     ],
+     "a": 0,
+     "e": "Where? U + locative: u policiji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa što mene nisi ___?",
+     "o": [
+      "zvala",
+      "zvao",
+      "zvali",
+      "zvalo"
+     ],
+     "a": 0,
+     "e": "Mum is female: nisi zvala."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zakažite sa ___ miting sa čekingom",
+     "o": [
+      "asistentkinjom",
+      "asistentkinja",
+      "asistentkinju",
+      "asistentkinje"
+     ],
+     "a": 0,
+     "e": "Sa + instrumental: sa asistentkinjom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kupi lanac, pa me ___ za radijator",
+     "o": [
+      "veži",
+      "vezuješ",
+      "vezati",
+      "vezao"
+     ],
+     "a": 0,
+     "e": "Imperative (perfective): veži."
+    }
+   ]
+  }
+ ]
+}

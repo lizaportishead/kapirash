@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where is the village of Dulin Brijeg?",
+     "o": [
+      "On the edge of the Tara River canyon",
+      "On a lake shore",
+      "In the centre of Sarajevo",
+      "By the sea"
+     ],
+     "a": 0,
+     "e": "In the video: \"Selo Dulin Brijeg nalazi se na samoj ivici kanjona reke Tare\" — the village of Dulin Brijeg lies right on the edge of the Tara River canyon."
+    },
+    {
+     "q": "How many residents does the village have?",
+     "o": [
+      "Three",
+      "Forty",
+      "A hundred",
+      "One"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ima samo tri stanovnika, među kojima je i Srđan.\" — it has only three residents, among them Srđan."
+    },
+    {
+     "q": "What tourist idea did Srđan come up with?",
+     "o": [
+      "Horse riding",
+      "A ski resort",
+      "Fishing",
+      "Hunting"
+     ],
+     "a": 0,
+     "e": "In the video: \"Šta bi moglo da bude? Konji.\" — what could it be? Horses."
+    },
+    {
+     "q": "What happened to him in the first year with horses?",
+     "o": [
+      "He broke his arm",
+      "He lost the herd",
+      "A wolf bit him",
+      "He fell in the river"
+     ],
+     "a": 0,
+     "e": "In the video: \"Čak sam prve godine odmah slomio ruku\" — in the very first year I even broke my arm right away."
+    },
+    {
+     "q": "What problem does the road he built solve?",
+     "o": [
+      "It's now 9 km to the rafting starting point",
+      "No more mud in the village",
+      "Horses run faster",
+      "Less petrol needed"
+     ],
+     "a": 0,
+     "e": "In the video: \"A ja sam sada do startne tačke 9 km.\" — and now I'm 9 km from the starting point."
+    },
+    {
+     "q": "What water temperature is promised in the pool?",
+     "o": [
+      "23–24 degrees",
+      "40 degrees",
+      "10 degrees",
+      "30 degrees"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa biće tu voda 23, 24 stepena.\" — well, the water will be 23, 24 degrees."
+    },
+    {
+     "q": "What is used to heat the pool?",
+     "o": [
+      "Wood",
+      "Gas",
+      "Electricity",
+      "Coal"
+     ],
+     "a": 0,
+     "e": "In the video: \"Na drva, hvala Bogu ima.\" — wood, thank God there's plenty."
+    },
+    {
+     "q": "What advice did Srđan give to people with an idea?",
+     "o": [
+      "Start working on it",
+      "Wait a year",
+      "Take a loan",
+      "Ask relatives"
+     ],
+     "a": 0,
+     "e": "In the video: \"svako ko ima neku ideju treba da krene u njenu realizaciju\" — everyone who has some idea should start on realizing it."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Do 2019. godine živeo je u Foči, a onda odlučuje da započne novo *poglavlje* u životu.",
+     "o": [
+      "chapter",
+      "house",
+      "job",
+      "country"
+     ],
+     "a": 0,
+     "e": "poglavlje — chapter."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Na samo tri kilometra od *granice* sa Crnom Gorom.",
+     "o": [
+      "border",
+      "river",
+      "mountain",
+      "road"
+     ],
+     "a": 0,
+     "e": "granica — border."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zatvaramo sada ova dva *ždrebeta* koja smo kupili skoro.",
+     "o": [
+      "foals",
+      "puppies",
+      "calves",
+      "lambs"
+     ],
+     "a": 0,
+     "e": "ždrebe — foal."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali vuk je pametan, planira napad, nije budala, ne *srlja*.",
+     "o": [
+      "rushes headlong",
+      "sleeps",
+      "cries",
+      "sings"
+     ],
+     "a": 0,
+     "e": "srljati — to rush headlong."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kada imamo ovako maglu ili oblak ispod nas, to je toplotna *inverzija*.",
+     "o": [
+      "inversion",
+      "erosion",
+      "revolution",
+      "reaction"
+     ],
+     "a": 0,
+     "e": "inverzija — inversion."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Vrata imamo, ali evo ne *koristimo*.",
+     "o": [
+      "use",
+      "sell",
+      "paint",
+      "lose"
+     ],
+     "a": 0,
+     "e": "koristiti — to use."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Cerada* je, da kažem, stara i mora se spraviti nova.",
+     "o": [
+      "canvas top",
+      "steering wheel",
+      "door",
+      "wheel"
+     ],
+     "a": 0,
+     "e": "cerada — canvas top."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prolazimo malu feratu da bismo došli do *ziplajna*",
+     "o": [
+      "zipline",
+      "pool",
+      "campsite",
+      "bridge"
+     ],
+     "a": 0,
+     "e": "ziplajn — zipline."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Selo Dulin Brijeg nalazi se na samoj ivici ___ reke Tare",
+     "o": [
+      "kanjona",
+      "kanjon",
+      "kanjonu",
+      "kanjonom"
+     ],
+     "a": 0,
+     "e": "na ivici + genitive: kanjona."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ima samo tri ___, među kojima je i Srđan.",
+     "o": [
+      "stanovnika",
+      "stanovnik",
+      "stanovnici",
+      "stanovniku"
+     ],
+     "a": 0,
+     "e": "After «tri» — genitive sg.: stanovnika."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Do 2019. godine živeo je u ___",
+     "o": [
+      "Foči",
+      "Foča",
+      "Fočom",
+      "Fočo"
+     ],
+     "a": 0,
+     "e": "Where? — locative: u Foči."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovaj kraj pripada ___ Foča",
+     "o": [
+      "opštini",
+      "opština",
+      "opštinu",
+      "opštinom"
+     ],
+     "a": 0,
+     "e": "pripadati + dative: opštini."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imamo pogled na ___",
+     "o": [
+      "Maglić",
+      "Maglića",
+      "Magliću",
+      "Maglićem"
+     ],
+     "a": 0,
+     "e": "pogled na + accusative: Maglić."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Moj put je prokopan krajem 2020. godine, a ___ je u funkciju u maju 21.",
+     "o": [
+      "pušten",
+      "pustio",
+      "pustiti",
+      "puštam"
+     ],
+     "a": 0,
+     "e": "Passive participle masc.: pušten (put)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Onda sam ja došao s ___, rekoh, imaću nešto u ponudi",
+     "o": [
+      "idejom",
+      "ideja",
+      "ideju",
+      "ideje"
+     ],
+     "a": 0,
+     "e": "s + instrumental: s idejom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja se grejem uz ___ i ovde kraj dana",
+     "o": [
+      "vatru",
+      "vatra",
+      "vatre",
+      "vatrom"
+     ],
+     "a": 0,
+     "e": "uz + accusative: uz vatru."
+    }
+   ]
+  }
+ ]
+}

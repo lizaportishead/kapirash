@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Why does she have a cheat meal?",
+     "o": [
+      "She and her husband are on a diet and a sugar crisis hit",
+      "It's her birthday",
+      "She lost a bet",
+      "The doctor allowed sweets"
+     ],
+     "a": 0,
+     "e": "In the video: \"Muž i ja smo već dve nedelje na dijeti i udarila je šećerna kriza\" — my husband and I have been on a diet for two weeks and a sugar crisis hit."
+    },
+    {
+     "q": "What will she compare in the series?",
+     "o": [
+      "Whether it's faster, cheaper and tastier to make at home",
+      "Which restaurant is closer",
+      "Who cooks better",
+      "Which delivery is politer"
+     ],
+     "a": 0,
+     "e": "In the video: \"gledaćemo da li je brže napraviti je kod kuće ili poručiti\" — we'll look at whether it's faster to make it at home or to order."
+    },
+    {
+     "q": "Why does she rarely make pancakes at home?",
+     "o": [
+      "You have to make a huge number of them",
+      "She has no flour",
+      "She doesn't like pancakes",
+      "No time on weekends"
+     ],
+     "a": 0,
+     "e": "In the video: \"Palačinke jako retko pravim kod kuće, zato što moraš da napraviš milion.\" — I very rarely make pancakes at home, because you have to make a million."
+    },
+    {
+     "q": "Which pancake did she choose to compare?",
+     "o": [
+      "Euro krem, Plazma in milk, banana",
+      "Nutella and strawberry",
+      "Cheese and ham",
+      "Jam and nuts"
+     ],
+     "a": 0,
+     "e": "In the video: \"Napravit ćemo moju omiljenu: euro krem, plazma u mleku, banana palačinku\" — we'll make my favourite: euro krem, Plazma in milk, banana pancake."
+    },
+    {
+     "q": "What went wrong with the first pan?",
+     "o": [
+      "Pancakes started to stick on it",
+      "It was too small",
+      "It broke",
+      "The butter ran out"
+     ],
+     "a": 0,
+     "e": "In the video: \"na ovom tiganju ne mogu da se prave palačinke, zato što je počeo da se lepi\" — you can't make pancakes on this pan, because it started to stick."
+    },
+    {
+     "q": "What did she add to the second batter?",
+     "o": [
+      "An egg",
+      "Vanilla",
+      "Cocoa",
+      "Sugar"
+     ],
+     "a": 0,
+     "e": "In the video: \"Stavit ću ovaj put jaje\" — this time I'll put in an egg."
+    },
+    {
+     "q": "How much did the pancakes weigh?",
+     "o": [
+      "Milki 560 g, homemade 706 g",
+      "Milki 706 g, homemade 560 g",
+      "Both 500 g",
+      "Milki 850 g"
+     ],
+     "a": 0,
+     "e": "In the video: \"Njihova ima 560 grama, svaka čast, a naša 706.\" — theirs is 560 grams, hats off, and ours is 706."
+    },
+    {
+     "q": "Which pancake did she like more?",
+     "o": [
+      "The homemade one",
+      "The Milki one",
+      "Both equally",
+      "Neither"
+     ],
+     "a": 0,
+     "e": "In the video: \"I iskreno, radije bih jela ovu domaću.\" — and honestly, I'd rather eat this homemade one."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Većinu sastojaka sam kupila u ovim malim *pakovanjima*",
+     "o": [
+      "packages",
+      "shops",
+      "jars",
+      "hands"
+     ],
+     "a": 0,
+     "e": "pakovanje — package."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Stavit ću *mrvicu* soli",
+     "o": [
+      "a pinch",
+      "a kilogram",
+      "a spoonful",
+      "a handful"
+     ],
+     "a": 0,
+     "e": "mrvica — crumb, pinch."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo ću izliti još ovog putera, da bude minimalno *masna*.",
+     "o": [
+      "greasy",
+      "sweet",
+      "hot",
+      "thin"
+     ],
+     "a": 0,
+     "e": "masan — greasy."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sad ćemo da *ugrejemo* naš tiganj",
+     "o": [
+      "heat up",
+      "wash",
+      "buy",
+      "take out"
+     ],
+     "a": 0,
+     "e": "ugrejati — to heat up."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "tako da smo *bitku* za vreme izgubili",
+     "o": [
+      "battle",
+      "book",
+      "race",
+      "game"
+     ],
+     "a": 0,
+     "e": "bitka — battle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prebacit ćemo je na naš *tanjir*.",
+     "o": [
+      "plate",
+      "table",
+      "pan",
+      "scale"
+     ],
+     "a": 0,
+     "e": "tanjir — plate."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Tako da tu mi dobijamo *poen*.",
+     "o": [
+      "point",
+      "prize",
+      "money",
+      "pancake"
+     ],
+     "a": 0,
+     "e": "poen — point."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prosto moraju viljuškom i *nožem*.",
+     "o": [
+      "knife",
+      "spoon",
+      "hand",
+      "chopsticks"
+     ],
+     "a": 0,
+     "e": "nož — knife; instr."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Tako da ovo takmičenje nije nikakav hejt prema ___ ili poručivanju",
+     "o": [
+      "restoranima",
+      "restorani",
+      "restorana",
+      "restoran"
+     ],
+     "a": 0,
+     "e": "After prema — dative: restoranima."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Za prvi obrok gledamo moju omiljenu ___.",
+     "o": [
+      "palačinku",
+      "palačinka",
+      "palačinke",
+      "palačinkom"
+     ],
+     "a": 0,
+     "e": "Direct object — accusative: palačinku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U ovo naše brašno dodat ćemo vruću vodu iz ___",
+     "o": [
+      "česme",
+      "česma",
+      "česmu",
+      "česmom"
+     ],
+     "a": 0,
+     "e": "After iz — genitive: česme."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je bukvalno veličine moje ___.",
+     "o": [
+      "glave",
+      "glava",
+      "glavu",
+      "glavi"
+     ],
+     "a": 0,
+     "e": "veličine + genitive: moje glave."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Za cenu mleka koristit ću ono od pola ___ od Imleka",
+     "o": [
+      "litre",
+      "litra",
+      "litru",
+      "litrom"
+     ],
+     "a": 0,
+     "e": "pola + genitive: pola litre."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam pogledala, ___ su prilično slične",
+     "o": [
+      "cene",
+      "cena",
+      "ceni",
+      "cenu"
+     ],
+     "a": 0,
+     "e": "Plural subject: cene."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mala je ___, nije idealna.",
+     "o": [
+      "pukla",
+      "pukao",
+      "puklo",
+      "puknu"
+     ],
+     "a": 0,
+     "e": "Mala (fem.) — pukla."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Setila sam se ja sad dok sam ___ da mogu i ja da ugrejem euro krem",
+     "o": [
+      "pakovala",
+      "pakovao",
+      "pakovalo",
+      "pakovali"
+     ],
+     "a": 0,
+     "e": "A woman speaking: pakovala."
+    }
+   ]
+  }
+ ]
+}

@@ -149,6 +149,9 @@ const _builtInCreators = <String, Creator>{
   'Tomi tamas': Creator('kulacity', 'ytc/AIdro_nudmK7fH0b6TVfYxDQQynF9fbEagmHJzcW5yA-2sr9qJ8'),
   'What Do You Want / Šta hoćeš': Creator('WdoyouwOrg', 'ytc/AIdro_mdX8JUKCLbtD7DwTZwHq5s-BWVlSHasDmu68_CLxiaxQ'),
   'KCNS': Creator('KCnovisad', 'ytc/AIdro_mvjIgdbC1NmmEpUTnaGDXRzWaP_9wCXpIcjvN-MuQcfg'),
+  'Pivokosa': Creator('Pivokosa'),
+  'Masa Memedovic': Creator('mashamemedovic'),
+  'Izazovi avanturu': Creator('IzazoviAvanturu'),
 };
 
 const _builtInVideos = <Video>[
@@ -513,6 +516,22 @@ const _builtInVideos = <Video>[
     duration: '26:31',
   ),
   Video(
+    id: 'K_nn3jYg2_Y',
+    title: 'Mamini Sinovi | Epizoda 2 (Domaća Serija)HD',
+    channel: 'Fresh Blekbuk Serije',
+    topic: 'Юмор',
+    level: 'C1',
+    duration: '26:25',
+  ),
+  Video(
+    id: 'lxG7zm8exaM',
+    title: 'Mamini Sinovi | Epizoda 3 (Domaća Serija)HD',
+    channel: 'Fresh Blekbuk Serije',
+    topic: 'Юмор',
+    level: 'C1',
+    duration: '28:27',
+  ),
+  Video(
     id: 'pZKCi5CwagI',
     title: 'Vredno priče 19 - Na Drini ćuprija / Ivo Andrić (gost: Tihomir Brajović)',
     channel: 'Vredno priče',
@@ -687,6 +706,38 @@ const _builtInVideos = <Video>[
     topic: 'История',
     level: 'B2',
     duration: '17:25',
+  ),
+  Video(
+    id: 'go1BfhN6-Zk',
+    title: 'Da li mogu da napravim PALAČINKU SA KREMOM I PLAZMOM bolje od palačinkarnice',
+    channel: 'Pivokosa',
+    topic: 'Еда',
+    level: 'B1',
+    duration: '19:05',
+  ),
+  Video(
+    id: 'OmQjgITIkh8',
+    title: 'BUVLJAK U PANČEVU: PRONAŠLA SAM TORBU KOJU SAM BACILA?!',
+    channel: 'Masa Memedovic',
+    topic: 'Быт',
+    level: 'B2',
+    duration: '26:19',
+  ),
+  Video(
+    id: 'VzEA84tcOHY',
+    title: 'U NAPUŠTENOM selu izgradio OAZU za ODMOR | Beg iz GRADA | Konji mu spasili ŽIVOT',
+    channel: 'Izazovi avanturu',
+    topic: 'Путешествия',
+    level: 'B2',
+    duration: '30:12',
+  ),
+  Video(
+    id: 'ZUNhp8TGMho',
+    title: 'Zašto Srbija nestaje?',
+    channel: 'Ozbiljne teme',
+    topic: 'Общество',
+    level: 'B2',
+    duration: '24:22',
   ),
 ];
 

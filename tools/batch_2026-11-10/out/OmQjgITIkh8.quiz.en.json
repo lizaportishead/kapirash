@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the problem with the flea market in Pančevo?",
+     "o": [
+      "It has no designated space",
+      "It's too expensive",
+      "It runs at night",
+      "There are no sellers"
+     ],
+     "a": 0,
+     "e": "In the video: \"Problem sa buvljakom u Pančevu je što nema određeni prostor za buvljak.\" — the problem with the flea market in Pančevo is that it has no designated space."
+    },
+    {
+     "q": "What incredible thing did she find?",
+     "o": [
+      "Her own discarded bag",
+      "Her mom's old jacket",
+      "A gift from a friend",
+      "A lost phone"
+     ],
+     "a": 0,
+     "e": "In the video: \"Znači, ja sam našla moju torbu i to mora da je moja torba\" — so I found my bag and it must be my bag."
+    },
+    {
+     "q": "What was the bag originally?",
+     "o": [
+      "A leather skirt",
+      "A jacket",
+      "A belt",
+      "A suitcase"
+     ],
+     "a": 0,
+     "e": "In the video: \"ovo nije bila ni torba, ovo je bila suknja, kožna.\" — it wasn't even a bag, it was a skirt, a leather one."
+    },
+    {
+     "q": "Why did she throw the bag away?",
+     "o": [
+      "It can't be sold or given away",
+      "She broke it",
+      "She got tired of it",
+      "It was stolen"
+     ],
+     "a": 0,
+     "e": "In the video: \"ja sam je bacila jer to ne može da se proda\" — I threw it away because it can't be sold."
+    },
+    {
+     "q": "How can labels show the things are good?",
+     "o": [
+      "Old labels mean good things",
+      "Bright labels",
+      "English labels",
+      "Labels without a price"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ako odmah vidim neke stare etikete, znači da su dobre stvari tu.\" — if I immediately see some old labels, it means good things are there."
+    },
+    {
+     "q": "What does she advise about haggling?",
+     "o": [
+      "Don't accept the first price",
+      "Never haggle",
+      "Pay right away",
+      "Haggle only at the end of the day"
+     ],
+     "a": 0,
+     "e": "In the video: \"Prva cena, ne.\" — the first price, no."
+    },
+    {
+     "q": "How much did the candlesticks cost?",
+     "o": [
+      "600 dinars for four",
+      "600 dinars each",
+      "20,000 dinars",
+      "300 euros"
+     ],
+     "a": 0,
+     "e": "In the video: \"Četiri komada, 600 dinara.\" — four pieces, 600 dinars."
+    },
+    {
+     "q": "What can you do on the first weekend of the month?",
+     "o": [
+      "Put out large waste by the container",
+      "Ride transport for free",
+      "Sell on the street",
+      "Hand in recyclables for money"
+     ],
+     "a": 0,
+     "e": "In the video: \"svakog prvog vikenda u mesecu možete takođe izbaciti neki malo veći otpad na kontejner\" — every first weekend of the month you can put out some larger waste into the container."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Smeće* je veliki problem na bilo kom buvljaku gde sam bila",
+     "o": [
+      "trash",
+      "noise",
+      "heat",
+      "queue"
+     ],
+     "a": 0,
+     "e": "smeće — trash."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Imam mnogo *džepova*, što je meni dosta bitno",
+     "o": [
+      "pockets",
+      "bags",
+      "buttons",
+      "colours"
+     ],
+     "a": 0,
+     "e": "džep — pocket."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ne može se koristiti, nema *drške*, nema ništa.",
+     "o": [
+      "handle",
+      "bottom",
+      "lock",
+      "colour"
+     ],
+     "a": 0,
+     "e": "drška — handle."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ranije sam umela da *preteram*",
+     "o": [
+      "overdo it",
+      "be late",
+      "pay",
+      "leave"
+     ],
+     "a": 0,
+     "e": "preterati — to overdo."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "idu kola, idu *kamioni*, milion ljudi",
+     "o": [
+      "trucks",
+      "trains",
+      "horses",
+      "planes"
+     ],
+     "a": 0,
+     "e": "kamion — truck."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Čiviluk* mesingani",
+     "o": [
+      "coat rack",
+      "suitcase",
+      "chair",
+      "mirror"
+     ],
+     "a": 0,
+     "e": "čiviluk — coat rack."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ne volim one predrasude i *gađenje*.",
+     "o": [
+      "squeamishness",
+      "joy",
+      "greed",
+      "boredom"
+     ],
+     "a": 0,
+     "e": "gađenje — disgust, squeamishness."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nakit volim, ali ovde nešto *slabo*.",
+     "o": [
+      "rather weak",
+      "expensive",
+      "beautiful",
+      "noisy"
+     ],
+     "a": 0,
+     "e": "slabo — weak, poor."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Nikada ne razmišljam o tome šta ću da ___",
+     "o": [
+      "kupim",
+      "kupiti",
+      "kupio",
+      "kupovati"
+     ],
+     "a": 0,
+     "e": "After «ću da» — present tense: kupim."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "i stvari uglavnom ___ mene",
+     "o": [
+      "pronađu",
+      "pronađe",
+      "pronašla",
+      "pronalaziti"
+     ],
+     "a": 0,
+     "e": "Stvari (plural) — pronađu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kad mislim da sam došla do ___, onda ima još",
+     "o": [
+      "kraja",
+      "kraj",
+      "kraju",
+      "krajem"
+     ],
+     "a": 0,
+     "e": "After do — genitive: kraja."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Danas idem na buvljak u ___.",
+     "o": [
+      "Pančevu",
+      "Pančevo",
+      "Pančeva",
+      "Pančevom"
+     ],
+     "a": 0,
+     "e": "Where? — locative: u Pančevu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne mogu da verujem da sam ja našla ___ torbu tamo",
+     "o": [
+      "moju",
+      "moja",
+      "moje",
+      "mojoj"
+     ],
+     "a": 0,
+     "e": "Torbu — accusative fem.: moju."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je ___ buvljak.",
+     "o": [
+      "divlji",
+      "divlja",
+      "divlje",
+      "divljem"
+     ],
+     "a": 0,
+     "e": "Buvljak — masc.: divlji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Možda čak više volim da idem po ___",
+     "o": [
+      "unutrašnjosti",
+      "unutrašnjost",
+      "unutrašnjošću",
+      "unutrašnjostima"
+     ],
+     "a": 0,
+     "e": "po + dative/locative: po unutrašnjosti."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ako odmah vidim neke ___ etikete",
+     "o": [
+      "stare",
+      "stari",
+      "staro",
+      "starih"
+     ],
+     "a": 0,
+     "e": "Etikete (fem. pl., acc.) — stare."
+    }
+   ]
+  }
+ ]
+}
