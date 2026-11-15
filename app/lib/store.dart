@@ -513,6 +513,7 @@ class AppStore extends ChangeNotifier {
     quiz['$videoId/$section'] = [right, total];
     trackEvent('quiz_completed', {'video_id': videoId, 'section': section, 'right': right, 'total': total});
     _prefs?.setString('kap.quiz', jsonEncode(quiz));
+    _touch();
     notifyListeners();
   }
 
@@ -684,6 +685,28 @@ class AppStore extends ChangeNotifier {
       // Нет сети — отправим при следующем изменении или запуске.
     }
     await _pushProfile();
+    await refreshRank();
+  }
+
+  /// Место в рейтинге по числу выполненных заданий; null, пока нет ни одного задания или нет связи
+  /// (или в облаке ещё нет supabase/rank.sql).
+  int? rank;
+  int? rankTotal;
+
+  Future<void> refreshRank() async {
+    final c = cloud;
+    if (c == null || user == null) return;
+    try {
+      if (quiz.isNotEmpty) await c.rpc('set_tasks_done', params: {'n': quiz.length});
+      final res = await c.rpc('my_rank');
+      final rows = res is List ? res : const [];
+      final r = rows.isEmpty ? null : rows.first as Map<String, dynamic>;
+      final (nr, nt) = (r?['rank'] as int?, r?['total'] as int?);
+      if (nr == rank && nt == rankTotal) return;
+      rank = nr;
+      rankTotal = nt;
+      notifyListeners();
+    } catch (_) {}
   }
 
   /// Анкета лежит отдельным запросом: пока в облаке нет колонок (supabase/profile.sql), остальное не страдает.

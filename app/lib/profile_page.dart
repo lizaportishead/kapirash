@@ -20,6 +20,12 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   @override
+  void initState() {
+    super.initState();
+    store.refreshRank();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
       listenable: store,
@@ -39,7 +45,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return [
       if (email == null) _SignIn() else _account(email),
       SizedBox(height: 18),
-      // Карточки с фактами пока скрыты: _stats().
+      if (email != null) ...[_stats(), SizedBox(height: 12)],
       _Group([
         _Row(
           icon: Icons.translate_rounded,
@@ -138,18 +144,38 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
-  // ignore: unused_element
   Widget _stats() {
     const tags = {'A': 'A2', 'B1': 'B1', 'B2': 'B2+'};
-    final tasks = store.quiz.length;
-    return Row(
-      children: [
-        Expanded(child: _Stat(tags[store.level] ?? '—', ui('уровень'))),
-        SizedBox(width: 8),
-        Expanded(child: _Stat('$tasks', ui('заданий выполнено'))),
-        SizedBox(width: 8),
-        Expanded(child: _Stat('${store.words.length}', ui('слов добавлено'))),
-      ],
+    final cards = [
+      _Stat('${store.history.length}', ui('роликов просмотрено'), Icons.play_arrow_rounded, cViolet),
+      _Stat('${store.quiz.length}', ui('заданий выполнено'), Icons.check_rounded, cViolet),
+      _Stat(tags[store.level] ?? '—', ui('уровень языка'), Icons.bar_chart_rounded, cViolet),
+      _Stat(
+        store.rank == null ? '—' : '#${store.rank}',
+        ui('место в рейтинге'),
+        Icons.emoji_events_rounded,
+        cViolet,
+      ),
+    ];
+    return LayoutBuilder(
+      builder: (context, c) {
+        final perRow = c.maxWidth >= 640 ? 4 : 2;
+        return Column(
+          children: [
+            for (var i = 0; i < cards.length; i += perRow) ...[
+              if (i > 0) SizedBox(height: 8),
+              Row(
+                children: [
+                  for (var j = i; j < i + perRow; j++) ...[
+                    if (j > i) SizedBox(width: 8),
+                    Expanded(child: j < cards.length ? cards[j] : SizedBox()),
+                  ],
+                ],
+              ),
+            ],
+          ],
+        );
+      },
     );
   }
 
@@ -311,32 +337,67 @@ class _Row extends StatelessWidget {
 }
 
 class _Stat extends StatelessWidget {
-  const _Stat(this.value, this.label);
+  const _Stat(this.value, this.label, this.icon, this.color);
   final String value;
   final String label;
+  final IconData icon;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
       decoration: BoxDecoration(
         color: cCard,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [BoxShadow(color: Color(0x07000000), blurRadius: 3, offset: Offset(0, 1))],
       ),
-      child: Column(
-        children: [
-          Text(
-            value,
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.5, color: cText),
-          ),
-          SizedBox(height: 4),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, height: 1.25, color: cMuted),
-          ),
-        ],
+      clipBehavior: Clip.antiAlias,
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(width: 4, color: color),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle),
+                      child: Icon(icon, size: 22, color: color),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            value,
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: -0.5,
+                              color: cText,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            label,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontSize: 12, height: 1.25, color: cMuted),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
