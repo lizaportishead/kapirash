@@ -7,6 +7,7 @@ import 'add_video.dart';
 import 'clips_page.dart';
 import 'fav_button.dart';
 import 'icons.dart';
+import 'request_sheet.dart';
 import 'liked_page.dart';
 import 'search_page.dart';
 import 'store.dart';
@@ -71,21 +72,19 @@ class FeedPage extends StatelessWidget {
                 title: ui('Сериалы'),
                 list: series.take(perSection).toList(),
                 onAll: () => openSeries(context),
-                allButton: true,
               ),
               for (final t in topics)
                 VideoSection(
                   title: topicLabel(t),
                   list: videos.where((v) => v.topic == t).toList().reversed.take(perSection).toList(),
                   onAll: () => openTopic(context, t),
-                  allButton: true,
-                ),
+                  ),
             ],
           ),
         ),
       ],
     );
-    if (!canAddVideo) return page;
+    if (!canAddVideo && !canSendRequest) return page;
     return Stack(
       children: [
         page,
@@ -101,7 +100,7 @@ class FeedPage extends StatelessWidget {
               elevation: 3,
               clipBehavior: Clip.antiAlias,
               child: InkWell(
-                onTap: () => showAddVideo(context),
+                onTap: () => canSendRequest ? showSendRequest(context, podcast: false) : showAddVideo(context),
                 child: SizedBox(width: 56, height: 56, child: Icon(KIcons.plus, size: 28, color: cOnViolet)),
               ),
             ),
@@ -154,11 +153,8 @@ class SectionHeader extends StatelessWidget {
 
 /// Заголовок темы со ссылкой «Смотреть все» и горизонтальная полоса из последних роликов.
 class VideoSection extends StatelessWidget {
-  const VideoSection({super.key, required this.title, required this.list, this.onAll, this.allButton = false});
+  const VideoSection({super.key, required this.title, required this.list, this.onAll});
   final String title;
-
-  /// Кнопка «Перейти ко всем видео» под полосой (нужен [onAll]).
-  final bool allButton;
   final List<Video> list;
   final VoidCallback? onAll;
 
@@ -195,22 +191,6 @@ class VideoSection extends StatelessWidget {
               );
             },
           ),
-          if (allButton && onAll != null)
-            Padding(
-              padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
-              child: SizedBox(
-                height: 44,
-                child: FilledButton.tonal(
-                  onPressed: onAll,
-                  style: FilledButton.styleFrom(
-                    backgroundColor: cViolet.withValues(alpha: 0.12),
-                    foregroundColor: cViolet,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                  ),
-                  child: Text(ui('Перейти ко всем видео'), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
-                ),
-              ),
-            ),
         ],
       ),
     );
@@ -263,6 +243,16 @@ void openTopic(BuildContext context, String topic) {
   );
 }
 
+/// Все ролики каталога поверх таббара: адрес `/all`.
+void openAllVideos(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      settings: urlSettings('TopicPage', '/all'),
+      builder: (_) => TopicPage('', all: true),
+    ),
+  );
+}
+
 /// Все сериалы поверх таббара: адрес `/series`.
 void openSeries(BuildContext context) {
   Navigator.of(context).push(
@@ -274,9 +264,9 @@ void openSeries(BuildContext context) {
 }
 
 class TopicPage extends StatelessWidget {
-  const TopicPage(this.topic, {super.key, this.series = false});
+  const TopicPage(this.topic, {super.key, this.series = false, this.all = false});
   final String topic;
-  final bool series;
+  final bool series, all;
 
   @override
   Widget build(BuildContext context) {
@@ -289,26 +279,53 @@ class TopicPage extends StatelessWidget {
             child: ListenableBuilder(
               listenable: store,
               builder: (context, _) {
-                final list = videos.where((v) => series ? _isSeries(v) : v.topic == topic).toList().reversed.toList();
+                final list = videos.where((v) => all || (series ? _isSeries(v) : v.topic == topic)).toList().reversed.toList();
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    ...pageHeader(context, series ? ui('Сериалы') : topicLabel(topic)),
+                    ...pageHeader(context, all ? ui('Все видео') : series ? ui('Сериалы') : topicLabel(topic)),
                     Expanded(
                       child: LayoutBuilder(
                         builder: (_, box) {
                           final cols = (box.maxWidth / 340).floor().clamp(1, 4);
                           final cardW = (box.maxWidth - 32 - 16 * (cols - 1)) / cols;
-                          return GridView.builder(
-                            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: cols,
-                              crossAxisSpacing: 16,
-                              mainAxisSpacing: box.maxWidth < 600 ? 8 : 16,
-                              mainAxisExtent: videoCardHeight(cardW),
-                            ),
-                            itemCount: list.length,
-                            itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                          return CustomScrollView(
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+                                sliver: SliverGrid.builder(
+                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: cols,
+                                    crossAxisSpacing: 16,
+                                    mainAxisSpacing: box.maxWidth < 600 ? 8 : 16,
+                                    mainAxisExtent: videoCardHeight(cardW),
+                                  ),
+                                  itemCount: list.length,
+                                  itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                                ),
+                              ),
+                              if (!all)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 24),
+                                    child: SizedBox(
+                                      height: 48,
+                                      child: FilledButton(
+                                        onPressed: () => openAllVideos(context),
+                                        style: FilledButton.styleFrom(
+                                          backgroundColor: cViolet,
+                                          foregroundColor: cOnViolet,
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                        ),
+                                        child: Text(
+                                          ui('Перейти ко всем видео'),
+                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
                           );
                         },
                       ),

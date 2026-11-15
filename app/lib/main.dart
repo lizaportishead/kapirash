@@ -269,9 +269,10 @@ class _HomeShellState extends State<HomeShell> {
       return;
     }
     BuildContext ctx() => _navKey.currentState?.overlay?.context ?? context;
-    if (seg.length == 1 && seg[0] == 'series') {
+    if (seg.length == 1 && (seg[0] == 'series' || seg[0] == 'all')) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) openSeries(ctx());
+        if (!mounted) return;
+        seg[0] == 'all' ? openAllVideos(ctx()) : openSeries(ctx());
       });
       return;
     }
@@ -335,7 +336,7 @@ class _HomeShellState extends State<HomeShell> {
     if (link != null) {
       final seg = Uri.tryParse(link)?.pathSegments ?? const <String>[];
       final kind = seg.isEmpty ? '' : seg[0];
-      _tab = kind == 'feed' || kind == 'video' || kind == 'topic' || kind == 'series'
+      _tab = kind == 'feed' || kind == 'video' || kind == 'topic' || kind == 'series' || kind == 'all'
           ? _feed
           : kind == 'words'
           ? _words
