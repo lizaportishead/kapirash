@@ -397,7 +397,12 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   // Горизонтальный телефон: видео слева на всю высоту, справа — панель с фразой и стрелками.
+  // Минимальная ширина панели с фразой в горизонтальном режиме.
+  static const _minPanel = 260.0;
+
   Widget _landscape(Widget player, Cue? cue) {
+    // Вырез слева считаем снаружи SafeArea: внутри него отступ уже снят.
+    final leftInset = MediaQuery.paddingOf(context).left;
     return Scaffold(
       body: Row(
         children: [
@@ -408,8 +413,10 @@ class _PlayerPageState extends State<PlayerPage> {
               child: LayoutBuilder(
                 builder: (context, c) {
                   final h = c.maxHeight;
-                  // Видео не шире 80% экрана, чтобы справа осталось место под фразу.
-                  final w = (h * 16 / 9).clamp(0.0, MediaQuery.sizeOf(context).width * 0.8);
+                  // Видео не шире 80% экрана и так, чтобы справа оставалось не меньше _minPanel: иначе фраза рвётся по буквам.
+                  final screen = MediaQuery.sizeOf(context).width;
+                  final maxW = (screen * 0.8).clamp(0.0, screen - leftInset - _minPanel);
+                  final w = (h * 16 / 9).clamp(0.0, maxW);
                   return SizedBox(width: w, height: h, child: Center(child: player));
                 },
               ),
