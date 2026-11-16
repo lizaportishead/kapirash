@@ -41,7 +41,7 @@ a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
 .lang a[aria-current="true"] { color:#fff; }
 .lang a + a { margin-left:14px; padding-left:14px; border-left:1px solid rgba(255,255,255,.35); }
 .nav a.link { font-weight:700; font-size:14px; color:rgba(255,255,255,.7); padding:10px 0; }
-.cols { --pw:300px; display:grid; grid-template-columns:1fr var(--pw); gap:48px; align-items:stretch; min-height:0; flex:1; }
+.cols { --pw:300px; display:grid; grid-template-columns:1fr var(--pw); gap:48px; align-items:stretch; flex:1; }
 .copy { align-self:center; padding-bottom:60px; }
 h1 { margin:0; font-weight:900; font-size:clamp(36px,4vw,56px); line-height:1.03; letter-spacing:-.03em; }
 h1 span { display:block; color:var(--lime); }
@@ -49,7 +49,7 @@ h1 span { display:block; color:var(--lime); }
 .chips { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 0; padding:0; list-style:none; }
 .chips li { display:inline-flex; align-items:center; gap:8px; height:48px; padding:0 20px; border-radius:99px; background:transparent; border:1px solid rgba(255,255,255,.28); font-size:15px; font-weight:800; }
 .btn { display:inline-flex; align-items:center; justify-content:center; height:56px; padding:0 36px; border-radius:99px; background:var(--lime); color:#111; font-weight:800; font-size:16px; margin-top:32px; }
-.phone-wrap { width:var(--pw); margin:24px 0 40px; align-self:center; justify-self:center; }
+.phone-wrap { width:var(--pw); margin:24px 0 72px; align-self:center; justify-self:center; }
 .phone { position:relative; width:100%; padding:calc(var(--pw) * .03); border-radius:calc(var(--pw) * .15); background:#0b0b0f; box-shadow:0 0 0 calc(var(--pw) * .006) #3b3b42, inset 0 0 0 calc(var(--pw) * .006) #26262c, 0 40px 80px rgba(0,0,0,.45), 0 0 90px rgba(115,87,246,.28); }
 .phone .scr { position:relative; width:100%; aspect-ratio:458 / 918; overflow:hidden; background:#fff; border-radius:calc(var(--pw) * .125); }
 .phone video { position:absolute; width:419.2%; height:auto; left:-253.5%; top:0; margin-top:-18.34%; pointer-events:none; }

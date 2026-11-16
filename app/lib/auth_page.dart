@@ -161,7 +161,9 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     final wide = MediaQuery.sizeOf(context).width >= 1100;
     final showcase = wide && (widget.start || widget.intro);
-    final form = _form(wide, showcase);
+    // Вход поверх широкой раскладки: слева сайдбар с логотипом, поэтому логотип не дублируем, а «назад» ставим в угол.
+    final sidebarPage = wide && !showcase && !widget.intro && !widget.start;
+    final form = _form(wide, showcase, sidebarPage);
     return Scaffold(
       body: SafeArea(
         child: showcase
@@ -175,6 +177,21 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                   Positioned(left: 40, top: 32, child: _logo()),
                   if (widget.intro) Positioned(right: 32, top: 32, child: LangSwitch(color: cText)),
+                ],
+              )
+            : sidebarPage
+            ? Stack(
+                children: [
+                  form,
+                  Positioned(
+                    left: 16,
+                    top: 16,
+                    child: IconButton(
+                      tooltip: ui('Назад'),
+                      icon: Icon(Icons.arrow_back_ios_new, size: 18, color: cText),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ),
                 ],
               )
             : form,
@@ -217,7 +234,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  Widget _form(bool wide, bool showcase) {
+  Widget _form(bool wide, bool showcase, bool sidebarPage) {
     return Center(
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 480),
@@ -231,7 +248,9 @@ class _AuthPageState extends State<AuthPage> {
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
                   children: [
-                    if (widget.intro)
+                    if (sidebarPage)
+                      SizedBox.shrink()
+                    else if (widget.intro)
                       SizedBox(height: wide ? 0 : 12)
                     else
                       Align(
@@ -245,7 +264,7 @@ class _AuthPageState extends State<AuthPage> {
                           ),
                         ),
                       ),
-                    if (showcase)
+                    if (showcase || sidebarPage)
                       SizedBox.shrink()
                     else if (widget.intro)
                       Stack(

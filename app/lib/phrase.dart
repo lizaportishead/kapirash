@@ -398,7 +398,13 @@ class _WordCardState extends State<WordCard> {
                     fg: store.isSaved(key) ? cText : null,
                     onTap: () async {
                       final already = store.isSaved(key);
-                      if (!already && !requireAuth(context)) return;
+                      if (!already && store.user == null && store.canSignIn) {
+                        // Сначала убираем поповер/шторку со словом, потом открываем вход.
+                        final nav = Navigator.of(context);
+                        widget.onClose();
+                        nav.push(MaterialPageRoute<void>(settings: RouteSettings(name: 'AuthPage'), builder: (_) => AuthPage()));
+                        return;
+                      }
                       if (already) {
                         store.remove(key);
                         if (mounted) widget.onClose();
