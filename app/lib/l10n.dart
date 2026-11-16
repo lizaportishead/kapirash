@@ -463,7 +463,7 @@ const _en = <String, String>{
   'Перевод: {0}': 'Translation: {0}',
   'Слово {0}, нажми, чтобы увидеть перевод': 'Word {0}, tap to see the translation',
   'Повторено слов: {0}': 'Words reviewed: {0}',
-  'Не пройдено · {0}': 'Not completed · {0}',
+  'Не пройдено': 'Not completed',
   'Пройдено · {0} из {1}': 'Completed · {0} of {1}',
   '{0} из {1}': '{0} of {1}',
   'Вопрос {0}': 'Question {0}',

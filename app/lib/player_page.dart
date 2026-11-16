@@ -968,6 +968,7 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
   // Карточка перевода плавает над страницей рядом со словом, по которому нажали.
   OverlayEntry? _card;
   static const _cardW = 320.0, _cardH = 480.0;
+  final _panelKey = GlobalKey();
 
   void _onWord() {
     if (widget.word.value == null) {
@@ -987,17 +988,16 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
     final box = Overlay.of(this.context).context.findRenderObject();
     final origin = box is RenderBox ? box.localToGlobal(Offset.zero) : Offset.zero;
     final area = box is RenderBox ? box.size : MediaQuery.sizeOf(context);
-    final at = word.$3.shift(-origin);
-    final right = at.right + 12;
-    final left = (right + _cardW <= area.width - 8 ? right : at.left - 12 - _cardW).clamp(
-      8.0,
-      (area.width - _cardW - 8).clamp(8.0, double.infinity),
-    );
-    final top = at.top.clamp(8.0, (area.height - _cardH - 8).clamp(8.0, double.infinity));
+    // Карточка стоит внизу правой колонки, чтобы не закрывать субтитры под видео.
+    final pbox = _panelKey.currentContext?.findRenderObject();
+    final panel = pbox is RenderBox && pbox.attached ? (pbox.localToGlobal(Offset.zero) - origin) & pbox.size : null;
+    final cardW = panel == null ? _cardW : panel.width - 24;
+    final left = panel == null ? 8.0 : panel.left + 12;
+    final bottom = panel == null ? 8.0 : area.height - panel.bottom + 12;
     return Positioned(
       left: left,
-      top: top,
-      width: _cardW,
+      bottom: bottom,
+      width: cardW,
       child: PointerInterceptor(
         child: TapRegion(
           onTapOutside: (_) => widget.word.value = null,
@@ -1065,6 +1065,7 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
       _ => QuizList(videoId: videoId, sections: widget.quiz, flat: true),
     };
     return Container(
+      key: _panelKey,
       decoration: BoxDecoration(color: cCard.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(8)),
       clipBehavior: Clip.antiAlias,
       child: Column(

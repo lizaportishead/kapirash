@@ -146,18 +146,25 @@ class QuizList extends StatelessWidget {
                       Row(
                         children: [
                           if (r != null) ...[Icon(KIcons.done, size: 16, color: cAccentText), SizedBox(width: 4)],
-                          Text(
-                            r == null
-                                ? ui('Не пройдено · {0}', [
-                                    '${s.questions.length} ${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}',
-                                  ])
-                                : ui('Пройдено · {0} из {1}', [r[0], r[1]]),
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w700,
-                              color: r == null ? cFaint : cAccentText,
+                          if (r == null) ...[
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                              decoration: BoxDecoration(color: cViolet, borderRadius: BorderRadius.circular(20)),
+                              child: Text(
+                                '${s.questions.length} ${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}',
+                                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cOnViolet),
+                              ),
                             ),
-                          ),
+                            SizedBox(width: 8),
+                            Text(
+                              ui('Не пройдено'),
+                              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cFaint),
+                            ),
+                          ] else
+                            Text(
+                              ui('Пройдено · {0} из {1}', [r[0], r[1]]),
+                              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cAccentText),
+                            ),
                         ],
                       ),
                     ],
