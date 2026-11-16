@@ -92,6 +92,28 @@
      ],
      "a": 0,
      "e": "In the video: \"Kaže Jovanka da je otputovao na neko savetovanje u Vrnjačku banju.\" — Jovanka says he went to some conference in Vrnjačka Banja."
+    },
+    {
+     "q": "What does the passenger say about Serbian taxi drivers?",
+     "o": [
+      "They can't drive",
+      "They charge too much",
+      "They are too slow",
+      "They are rude"
+     ],
+     "a": 0,
+     "e": "In the video: \"samo u Srbiji taksisti ne znaju da voze.\" — only in Serbia taxi drivers can't drive."
+    },
+    {
+     "q": "What puzzles the heroine as she drinks water?",
+     "o": [
+      "The water is warm",
+      "There isn't enough",
+      "She isn't thirsty at all",
+      "It tastes bad"
+     ],
+     "a": 2,
+     "e": "In the video: \"Nije mi jasno zašto ja pijem ovu vodu, a uopšte nisam žedna.\" — I don't get why I'm drinking water when I'm not thirsty."
     }
    ]
   },
@@ -195,6 +217,30 @@
      ],
      "a": 0,
      "e": "teško — hard, difficult."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Uopšte nisam *žedna*.",
+     "o": [
+      "thirsty",
+      "hungry",
+      "tired",
+      "angry"
+     ],
+     "a": 0,
+     "e": "žedna — thirsty (nisam žedna — I'm not thirsty)."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Samo u Srbiji *taksisti* ne znaju da voze.",
+     "o": [
+      "taxi drivers",
+      "doctors",
+      "bus drivers",
+      "police officers"
+     ],
+     "a": 0,
+     "e": "taksisti — taxi drivers."
     }
    ]
   },
@@ -298,6 +344,30 @@
      ],
      "a": 1,
      "e": "After «dve» the genitive singular: dve noći."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Onaj čovek se krstio i levom i ___ rukom.",
+     "o": [
+      "desnom",
+      "desna",
+      "desnoj",
+      "desne"
+     ],
+     "a": 0,
+     "e": "Hand is instrumental fem.: i levom, i desnom rukom."
+    },
+    {
+     "t": "Choose the correct verb form",
+     "q": "Pa šta imaš ti mene da ___?",
+     "o": [
+      "gledaš",
+      "gledam",
+      "gleda",
+      "gledate"
+     ],
+     "a": 0,
+     "e": "After «da» the verb agrees with the subject «ti»: da gledaš."
     }
    ]
   }

@@ -1,0 +1,19 @@
+689.4|693.2|Nije mi jasno zašto ja pijem ovu vodu, a uopšte nisam žedna.|Не понимаю, зачем я пью эту воду, ведь мне совсем не хочется пить.|I don't get why I'm drinking this water when I'm not thirsty at all.
+693.4|696.2|Evo zbog ovoga, Ros! Da ugasiš vatru!|Вот поэтому, Рос! Чтобы потушить огонь!|That's why, Ros! To put out the fire!
+781.94|784.3|Kada se to prvi put desilo?|Когда это случилось в первый раз?|When did that first happen?
+913.1|917.0|Ja da sam znala da vozim, ja bih ga direktno odvezla u onaj Kragujevac|Если бы я умела водить, я бы отвезла его прямо в тот Крагуевац,|If I knew how to drive, I'd have taken him straight to that Kragujevac
+917.1|918.0|gde mi je tražio da ga vozim.|куда он просил меня его отвезти.|where he asked me to take him.
+918.1|920.0|Onaj čovek se krstio i levom i desnom rukom, kaže:|Тот человек крестился и левой, и правой рукой и говорит:|That man crossed himself with both his left and right hand and said:
+920.1|922.0|samo u Srbiji taksisti ne znaju da voze.|только в Сербии таксисты не умеют водить.|only in Serbia do taxi drivers not know how to drive.
+934.2|936.0|E, moja seko!|Ох, сестрёнка моя!|Oh, my sister!
+936.2|938.0|S kim si ti našla čardaš da igraš?|С кем это ты нашла, чтобы чардаш танцевать?|Who did you find to dance the csárdás with?
+1227.96|1230.2|Neće doći.|Он не приедет.|He won't come.
+1230.32|1232.0|Neće? Znala sam.|Не приедет? Я знала.|He won't? I knew it.
+1234.86|1236.9|To je tužna vest.|Это грустная новость.|That's sad news.
+1342.0|1344.8|Joj, Miša, ne mogu sad da pričam, molim te, javiću ti se.|Ой, Миша, не могу сейчас говорить, пожалуйста, я тебе перезвоню.|Oh, Miša, I can't talk now, please, I'll call you back.
+1345.0|1346.0|Mače, mače!|Киска, киска!|Kitty, kitty!
+1526.5|1531.4|Možemo reći tužnu vest i jednu vrlo, vrlo radosnu vest.|Можем сообщить одну грустную новость и одну очень-очень радостную.|We can share a sad piece of news and a very, very happy one.
+1543.2|1547.5|Moram da odem na to putovanje, daj mi tu kartu!|Мне надо поехать в эту поездку, дай мне билет!|I have to go on that trip, give me that ticket!
+1547.64|1550.4|Pa možemo i zajedno negde da otputujemo, možemo!|Мы ведь можем и вместе куда-нибудь поехать, можем!|We could travel somewhere together, we could!
+1550.46|1551.95|Stani, Roso, stani, Roso!|Стой, Роса, стой, Роса!|Stop, Rosa, stop, Rosa!
+1558.64|1561.4|Pa šta imaš ti mene da gledaš?|Ну и что ты на меня смотришь?|So what are you staring at me for?
