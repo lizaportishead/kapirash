@@ -429,7 +429,10 @@ class _HomeShellState extends State<HomeShell> {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                NavigationBar(
+                MediaQuery.removePadding(
+                  context: context,
+                  removeBottom: kIsWeb,
+                  child: NavigationBar(
                   selectedIndex: _tab < _plus ? _tab : _tab + 1,
                   onDestinationSelected: (i) => i == _plus ? _addVideo() : _select(i < _plus ? i : i - 1),
                   destinations: [
@@ -475,10 +478,12 @@ class _HomeShellState extends State<HomeShell> {
                       label: ui('Профиль'),
                     ),
                   ],
+                  ),
                 ),
                 if (kAddVideoEnabled)
                   SafeArea(
                     top: false,
+                    bottom: !kIsWeb,
                     child: Semantics(
                       button: true,
                       label: ui('Добавить ролик'),
