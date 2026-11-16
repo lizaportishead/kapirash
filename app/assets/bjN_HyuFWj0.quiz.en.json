@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Milentije say happened to the cat Kiki?",
+     "o": [
+      "She ran away from home",
+      "Dad ran her over with the car",
+      "She got sick",
+      "A neighbor took her"
+     ],
+     "a": 1,
+     "e": "In the video: \"Kiki je mrtva. Mama, tata ju je zgazio kolima\" — Kiki is dead. Mom, Dad ran her over with the car."
+    },
+    {
+     "q": "What does Rosa suggest buying instead of a cat?",
+     "o": [
+      "A dog",
+      "A canary",
+      "A parrot",
+      "A hamster"
+     ],
+     "a": 1,
+     "e": "In the video: \"onda možemo jednog kanarinca, onako finog, malog\" — then we could get a canary, a nice little one."
+    },
+    {
+     "q": "Why does Milentije urgently need his mother to move?",
+     "o": [
+      "He needs her room",
+      "Mom wants to live with Miša",
+      "He is going on holiday",
+      "Nina agreed to return, thinking he no longer lives with Mom"
+     ],
+     "a": 3,
+     "e": "In the video: \"ubedio sam Ninu da mi se vrati, ali sam joj rekao da više ne živim sa mamom\" — I convinced Nina to come back, but I told her I no longer live with Mom."
+    },
+    {
+     "q": "What is Milentije's brother's profession?",
+     "o": [
+      "Plastic surgeon",
+      "Teacher",
+      "Lawyer",
+      "Baker"
+     ],
+     "a": 0,
+     "e": "In the video: \"On je plastični hirurg, ali ona njega voli više nego mene\" — He is a plastic surgeon, but she loves him more than me."
+    },
+    {
+     "q": "How many cream cakes did Rosa eat?",
+     "o": [
+      "Four",
+      "Eight",
+      "Ten",
+      "Two"
+     ],
+     "a": 1,
+     "e": "In the video: \"Osam krempita si pojela, Roso\" — You ate eight cream cakes, Rosa."
+    },
+    {
+     "q": "What do the brothers agree on?",
+     "o": [
+      "Leave Mom at home with the canary",
+      "Sell the apartment",
+      "Take Mom to a nursing home and split the cost",
+      "Hire a nurse"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ostavimo je tamo, platimo dom. Platimo po pola\" — We'll leave her there, we'll pay for the home. We'll split it."
+    },
+    {
+     "q": "Why was Milentije not born in a maternity ward?",
+     "o": [
+      "She didn't get there in time",
+      "No beds were free",
+      "The doctor was on holiday",
+      "She wanted to watch the last episode of a TV series"
+     ],
+     "a": 3,
+     "e": "In the video: \"jer je htela da pogleda poslednju epizodu «Otpisanih»\" — because she wanted to watch the last episode of \"Otpisani\"."
+    },
+    {
+     "q": "Why does the nursing home manager come at the end?",
+     "o": [
+      "To return Rosa to her family",
+      "To buy the apartment",
+      "She brought a gift",
+      "She is looking for a lost suitcase"
+     ],
+     "a": 0,
+     "e": "In the video: \"hteli bismo da vam je vratimo\" — we would like to return her to you."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Roza odjednom postane *senilna*.",
+     "o": [
+      "senile",
+      "cheerful",
+      "hungry",
+      "sick"
+     ],
+     "a": 0,
+     "e": "senilan — senile; fem.: senilna."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ti znaš da ja kad god se najedem, *zaspim*.",
+     "o": [
+      "wake up",
+      "fall asleep",
+      "start singing",
+      "start crying"
+     ],
+     "a": 1,
+     "e": "zaspati — to fall asleep; 1st sg.: zaspim."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Meni se moj *kofer* sviđa.",
+     "o": [
+      "wardrobe",
+      "coat",
+      "suitcase",
+      "key"
+     ],
+     "a": 2,
+     "e": "kofer — suitcase; masc."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ona je vrlo *živahna* žena.",
+     "o": [
+      "lazy",
+      "angry",
+      "boring",
+      "lively"
+     ],
+     "a": 3,
+     "e": "živahan — lively; fem.: živahna."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Svi ste me *izneverili*.",
+     "o": [
+      "let me down",
+      "praised me",
+      "recognized me",
+      "visited me"
+     ],
+     "a": 0,
+     "e": "izneveriti — to let down; past pl.: izneverili."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Nama je stalo da obrazujemo naše *pacijente*.",
+     "o": [
+      "neighbors",
+      "patients",
+      "teachers",
+      "guests"
+     ],
+     "a": 1,
+     "e": "pacijent — patient; acc. pl.: pacijente."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ja *garanciju* na ludilo ne mogu da dam.",
+     "o": [
+      "a warranty",
+      "a discount",
+      "mercy",
+      "a reason"
+     ],
+     "a": 0,
+     "e": "garancija — warranty; fem.; acc.: garanciju."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ona je uvek bila lepo *vaspitana*.",
+     "o": [
+      "dressed",
+      "well brought up",
+      "fired",
+      "woken up"
+     ],
+     "a": 1,
+     "e": "vaspitan — well brought up; fem.: vaspitana."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Choose the correct form",
+     "q": "Ona je odrasla u tako vrlo ___ atmosferi.",
+     "o": [
+      "čudnoj",
+      "čudna",
+      "čudnu",
+      "čudnim"
+     ],
+     "a": 0,
+     "e": "after the preposition u — locative fem.: u čudnoj atmosferi."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Dok njene drugarice slušaju ___ muziku, ona divlja uz rokenrol.",
+     "o": [
+      "klasična",
+      "klasičnu",
+      "klasične",
+      "klasičnoj"
+     ],
+     "a": 1,
+     "e": "muzika is fem., accusative: klasičnu muziku."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Nije htela da ___ poslednju epizodu.",
+     "o": [
+      "propušta",
+      "propuštala",
+      "propusti",
+      "propuštam"
+     ],
+     "a": 2,
+     "e": "after da — present tense, perfective: da propusti."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Mi jesmo ___ vašu majku u dom.",
+     "o": [
+      "primila",
+      "primilo",
+      "primio",
+      "primili"
+     ],
+     "a": 3,
+     "e": "the subject «mi» (plural) — past plural: primili."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Ti bar da znaš koliko ja brinem ___ mami.",
+     "o": [
+      "o",
+      "za",
+      "na",
+      "kod"
+     ],
+     "a": 0,
+     "e": "brinuti o + locative: brinem o mami."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Ona ga je ___ i tresla.",
+     "o": [
+      "duvao",
+      "duvale",
+      "duvala",
+      "duvalo"
+     ],
+     "a": 2,
+     "e": "the subject «ona» — past fem.: duvala."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Ona je uvek bila lepo ___.",
+     "o": [
+      "vaspitan",
+      "vaspitana",
+      "vaspitano",
+      "vaspitani"
+     ],
+     "a": 1,
+     "e": "ona — fem.: vaspitana."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Hteli bismo da ___ je vratimo.",
+     "o": [
+      "vas",
+      "vaš",
+      "vi",
+      "vam"
+     ],
+     "a": 3,
+     "e": "vratiti nekome — dative: vratiti vam."
+    }
+   ]
+  }
+ ]
+}

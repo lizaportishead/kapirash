@@ -1,0 +1,3710 @@
+{
+ "12": [
+  "twelve",
+  "dvanaest"
+ ],
+ "2": [
+  "two",
+  "dva"
+ ],
+ "a": [
+  "and",
+  "conjunction: a, but"
+ ],
+ "ah": [
+  "ah",
+  "interjection"
+ ],
+ "ajde": [
+  "come on",
+  "hajde — come on, let's go (colloquial)"
+ ],
+ "ajmo": [
+  "let's go",
+  "hajdemo — let's go (colloquial)"
+ ],
+ "ako": [
+  "if",
+  "conjunction"
+ ],
+ "albumu": [
+  "album",
+  "album — album; masc.; loc. sg."
+ ],
+ "aleksu": [
+  "Aleksa",
+  "Aleksa — a name; acc."
+ ],
+ "ali": [
+  "but",
+  "conjunction"
+ ],
+ "alo": [
+  "hello",
+  "alo — hello (phone)"
+ ],
+ "ama": [
+  "but, oh",
+  "ama — but, oh (emphasis)"
+ ],
+ "atmosferi": [
+  "atmosphere",
+  "atmosfera — atmosphere; loc. sg."
+ ],
+ "auta": [
+  "car",
+  "auto; gen. case sg.; tri auta — three cars"
+ ],
+ "autu": [
+  "car",
+  "auto — car; loc. case: u autu — in the car"
+ ],
+ "bar": [
+  "at least",
+  "bar / barem — at least, at the very least"
+ ],
+ "baš": [
+  "straight up, very",
+  "intensifying particle: exactly, just, very"
+ ],
+ "beatlesi": [
+  "the Beatles",
+  "the Beatles; pl."
+ ],
+ "bebo": [
+  "Beba (nickname)",
+  "beba — baby; vocative"
+ ],
+ "belo": [
+  "white",
+  "belo meso — white meat (chicken breast)"
+ ],
+ "beskvasni": [
+  "unleavened",
+  "beskvasan — unleavened; masc."
+ ],
+ "bez": [
+  "without",
+  "preposition + gen. case"
+ ],
+ "bi": [
+  "would",
+  "particle conditional (3rd pers.)"
+ ],
+ "biblioteka": [
+  "library",
+  "biblioteka — library; fem."
+ ],
+ "bicikl": [
+  "bicycle",
+  "noun masc."
+ ],
+ "bih": [
+  "would (I)",
+  "conditional, 1st pers. sg.: voleo bih — I would like"
+ ],
+ "bila": [
+  "was",
+  "biti — to be; past, fem."
+ ],
+ "bilo": [
+  "was",
+  "biti — to be; bilo koji — any"
+ ],
+ "bio": [
+  "was",
+  "biti — to be; past, masc."
+ ],
+ "bismo": [
+  "would (we)",
+  "conditional, 1st pers. pl.: naišli bismo — we would run into"
+ ],
+ "biste": [
+  "would (you)",
+  "aux. verb conditional. mood, 2nd pers. pl."
+ ],
+ "biti": [
+  "to be",
+  "infinitive; neće biti — won't be"
+ ],
+ "bivšu": [
+  "former",
+  "bivši; acc. case fem."
+ ],
+ "bogati": [
+  "rich",
+  ""
+ ],
+ "bogu": [
+  "God",
+  "Bog; hvala Bogu — thank God"
+ ],
+ "boli": [
+  "hurts",
+  "boleti; 3rd pers. sg.; boli me dupe — I don't care (rudely)"
+ ],
+ "boraviti": [
+  "to stay, to reside",
+  "boraviti — to stay; infinitive"
+ ],
+ "bosna": [
+  "Bosnia",
+  "mirna Bosna — \"all quiet\", set phrase"
+ ],
+ "bože": [
+  "God",
+  "bog; voc. case"
+ ],
+ "braco": [
+  "brother (address)",
+  "brat — brother; vocative"
+ ],
+ "brat": [
+  "brother",
+  "noun masc."
+ ],
+ "brata": [
+  "brother",
+  "brat; gen. case"
+ ],
+ "brate": [
+  "brother, bro",
+  "brat — brother; voc. case, address"
+ ],
+ "bračnom": [
+  "marital",
+  "bračni — marital; loc. fem."
+ ],
+ "bre": [
+  "well, come on (intensifying particle)",
+  "colloquial Balkan particle"
+ ],
+ "briga": [
+  "concern, worry",
+  "briga — concern; fem."
+ ],
+ "brinem": [
+  "I worry",
+  "brinuti se — to worry; present 1st sg."
+ ],
+ "brineš": [
+  "you worry, take care",
+  "brinuti — to worry, care; 2nd pers. sg."
+ ],
+ "broj": [
+  "number",
+  "noun masc.; broj poena — number of points"
+ ],
+ "bude": [
+  "will be; happens",
+  "biti — to be; zna da bude — it happens"
+ ],
+ "budila": [
+  "woke up",
+  "buditi se — to wake up; past fem."
+ ],
+ "budite": [
+  "be",
+  "biti; imperative, pl."
+ ],
+ "bukvalno": [
+  "literally",
+  "adverb"
+ ],
+ "cela": [
+  "all",
+  "ceo — all, whole; fem."
+ ],
+ "cene": [
+  "prices",
+  "cena; nema cene — it is priceless"
+ ],
+ "cenu": [
+  "price",
+  "cena; acc. case: smanjiti cenu — to lower the price"
+ ],
+ "ceo": [
+  "all",
+  "ceo, cela, celo — all, whole"
+ ],
+ "civilizovanom": [
+  "civilized",
+  "civilizovan — civilized; loc. masc."
+ ],
+ "crnog": [
+  "black",
+  "crn — black"
+ ],
+ "cvrkuću": [
+  "chirp",
+  "cvrkutati — to chirp; 3rd pl."
+ ],
+ "da": [
+  "that; so that; yes",
+  "conjunction: that, so that; da + verb = infinitive («da vidim» — to see); also «yes»"
+ ],
+ "dalje": [
+  "further",
+  "adverb"
+ ],
+ "dam": [
+  "I will give, I will hand over",
+  "dati — to give; 1st pers. sg."
+ ],
+ "dan": [
+  "day",
+  "noun masc.; dobar dan — good afternoon"
+ ],
+ "dana": [
+  "days",
+  "dan — day; nedelju dana — week"
+ ],
+ "danas": [
+  "today",
+  "adverb"
+ ],
+ "danima": [
+  "days",
+  "dan; loc. pl."
+ ],
+ "date": [
+  "you will give",
+  "dati — to give"
+ ],
+ "deco": [
+  "children",
+  "dete — child; voc. case, pl.: deco!"
+ ],
+ "decu": [
+  "children",
+  "deca; acc. case"
+ ],
+ "deda": [
+  "grandfather",
+  "noun masc."
+ ],
+ "definitivno": [
+  "definitely",
+  "adverb"
+ ],
+ "deratizaciju": [
+  "rodent control",
+  "deratizacija — rodent extermination; fem.; acc."
+ ],
+ "desi": [
+  "will happen",
+  "desiti se; 3rd pers. sg."
+ ],
+ "desnu": [
+  "right",
+  "desni — right; acc. case, fem."
+ ],
+ "detinjstvo": [
+  "childhood",
+  "detinjstvo — childhood; neut."
+ ],
+ "dezinformacije": [
+  "misinformation",
+  "dezinformacija — misinformation; nom. pl."
+ ],
+ "dezinsekciju": [
+  "insect control",
+  "dezinsekcija — insect extermination; fem.; acc."
+ ],
+ "direktna": [
+  "direct, frank",
+  "direktan — direct; fem."
+ ],
+ "disciplinu": [
+  "discipline",
+  "disciplina — discipline; fem.; acc."
+ ],
+ "divan": [
+  "wonderful",
+  "divan — wonderful; masc."
+ ],
+ "divlja": [
+  "wild",
+  "divlji; divlja svinja — boar"
+ ],
+ "divno": [
+  "wonderful",
+  "divan; neut."
+ ],
+ "do": [
+  "until",
+  "preposition + gen. case"
+ ],
+ "dobar": [
+  "good",
+  "dobar, dobra, dobro"
+ ],
+ "dobro": [
+  "well; good",
+  "dobro veče — good evening; dobro je što — good thing that"
+ ],
+ "događa": [
+  "happens",
+  "događati se; 3rd pers. sg."
+ ],
+ "dogovor": [
+  "agreement, deal",
+  "dogovor kuću gradi — a deal is a deal"
+ ],
+ "dogovorili": [
+  "agreed",
+  "dogovoriti se; past, pl."
+ ],
+ "dogovorimo": [
+  "we will agree",
+  "dogovoriti se; 1st pers. pl."
+ ],
+ "dogovorio": [
+  "agreed",
+  "dogovoriti se — to agree; past masc."
+ ],
+ "dogovorite": [
+  "agree",
+  "dogovoriti se — to agree; imperative 2nd pl."
+ ],
+ "dok": [
+  "while; for now",
+  "conjunction: while, whereas"
+ ],
+ "dolazi": [
+  "comes; arrive",
+  "dolaziti (se); 3rd pers. sg."
+ ],
+ "dom": [
+  "house; dormitory",
+  "studentski dom — student dormitory"
+ ],
+ "domu": [
+  "dormitory; house",
+  "studentski dom — student dormitory; loc. case"
+ ],
+ "donela": [
+  "brought",
+  "doneti — to bring; fem., past"
+ ],
+ "doneo": [
+  "brought, delivered",
+  "doneti; past, masc."
+ ],
+ "donesi": [
+  "bring",
+  "doneti; imperative"
+ ],
+ "doneti": [
+  "to bring, to deliver",
+  "infinitive; perfective"
+ ],
+ "donosio": [
+  "brought; published",
+  "donositi; past, masc."
+ ],
+ "doručak": [
+  "breakfast",
+  "noun masc."
+ ],
+ "doručkuješ": [
+  "have breakfast",
+  "doručkovati — to have breakfast; 2nd sg."
+ ],
+ "dovedem": [
+  "bring",
+  "dovesti — to bring (a person); 1st sg."
+ ],
+ "dovodiš": [
+  "bring",
+  "dovoditi — to bring (a person); 2nd sg."
+ ],
+ "doći": [
+  "to come, to arrive",
+  "infinitive; perfective"
+ ],
+ "dođem": [
+  "I will get there, I will arrive",
+  "doći; 1st pers. sg.: doći do — to get to"
+ ],
+ "dođeš": [
+  "you will arrive, you will come",
+  "doći; 2nd pers. sg."
+ ],
+ "dragana": [
+  "Dragan",
+  "Dragan; gen./acc. case"
+ ],
+ "dragi": [
+  "dear",
+  "dragi — dear; pl."
+ ],
+ "drugarice": [
+  "female friends",
+  "drugarica — female friend; pl."
+ ],
+ "drugačije": [
+  "otherwise, differently",
+  "adverb"
+ ],
+ "drugi": [
+  "other; second",
+  "adj masc."
+ ],
+ "drugo": [
+  "second",
+  "drugi — second; other"
+ ],
+ "drugom": [
+  "other",
+  "drugi; loc. case"
+ ],
+ "družićeš": [
+  "will socialize",
+  "družiti se — to socialize; future 2nd sg."
+ ],
+ "držali": [
+  "held",
+  "držati — to hold; past masc. pl."
+ ],
+ "duvala": [
+  "blew",
+  "duvati — to blow; past fem."
+ ],
+ "duvao": [
+  "blew",
+  "duvati; past, masc."
+ ],
+ "duvate": [
+  "blow",
+  "duvati — to blow; 2nd pl."
+ ],
+ "dušo": [
+  "soul",
+  "duša — soul; voc. case sg."
+ ],
+ "dušu": [
+  "soul",
+  "duša; acc. case"
+ ],
+ "duže": [
+  "longer",
+  "comparative of dugo"
+ ],
+ "dva": [
+  "two",
+  "numeral"
+ ],
+ "dve": [
+  "two",
+  "numeral fem. (masc. — dva)"
+ ],
+ "dvesta": [
+  "two hundred",
+  "dvesta — two hundred; numeral"
+ ],
+ "dvoje": [
+  "two",
+  "collect. numeral"
+ ],
+ "džabe": [
+  "in vain; for free",
+  "adverb (colloquial, from Turk.)"
+ ],
+ "džemper": [
+  "sweater",
+  "džemper — sweater; masc."
+ ],
+ "e": [
+  "uh, well",
+  "interjection; e sad — well then, so"
+ ],
+ "eh": [
+  "oh well",
+  "interjection"
+ ],
+ "ej": [
+  "hey",
+  "interjection"
+ ],
+ "epizodu": [
+  "series, episode",
+  "epizoda; acc. case"
+ ],
+ "eto": [
+  "here",
+  "demonstrative particle"
+ ],
+ "everest": [
+  "Everest",
+  "Mont Everest — Mount Everest"
+ ],
+ "evo": [
+  "here",
+  "evo ga — here he is; evo nas — here we are"
+ ],
+ "evra": [
+  "euro",
+  "evro; gen. case (after numerals)"
+ ],
+ "fenomenalno": [
+  "phenomenally",
+  "adverb"
+ ],
+ "fiksni": [
+  "fixed",
+  "adj, masc."
+ ],
+ "fino": [
+  "neatly, well",
+  "adverb"
+ ],
+ "finog": [
+  "fine, nice",
+  "fin — fine, delicate; gen. masc."
+ ],
+ "frižider": [
+  "refrigerator",
+  "noun masc."
+ ],
+ "fruti": [
+  "fruti",
+  "from the playful rhyme \"nutri, tuti, fruti\""
+ ],
+ "ga": [
+  "his",
+  "short form of njega; «ili ti ga» — «or, in other words» (colloquial)"
+ ],
+ "garanciju": [
+  "warranty, guarantee",
+  "garancija — guarantee; fem.; acc."
+ ],
+ "garantuje": [
+  "guarantees",
+  "garantovati — to guarantee; 3rd pers. sg."
+ ],
+ "gde": [
+  "where; to where",
+  "gde si — hi, how are you (colloquial)"
+ ],
+ "general": [
+  "general",
+  "general — general; masc."
+ ],
+ "gluva": [
+  "deaf",
+  "gluv; fem."
+ ],
+ "god": [
+  "whatever, any",
+  "particle: šta god — anything"
+ ],
+ "godina": [
+  "years; year",
+  "godina; gen. pl.: 10 godina — 10 years"
+ ],
+ "godine": [
+  "year",
+  "godina — year; gen. case: naredne godine — next year"
+ ],
+ "goli": [
+  "bare",
+  "Goli otok — Goli Otok island (political prison camp)"
+ ],
+ "gomilu": [
+  "heap",
+  "gomila; acc. case"
+ ],
+ "gospode": [
+  "Lord",
+  "Gospod; voc. case"
+ ],
+ "gospođo": [
+  "madam",
+  "gospođa — madam; vocative"
+ ],
+ "gost": [
+  "guest",
+  "noun masc."
+ ],
+ "gradu": [
+  "city",
+  "grad; loc. case: po gradu — around the city"
+ ],
+ "grešiš": [
+  "sin, are wrong",
+  "griješiti/grešiti — to sin; 2nd sg.; grešiti dušu — to sin against one's conscience"
+ ],
+ "grijat": [
+  "to warm",
+  "ijekavian: grijati — to warm (in a Šantić quote)"
+ ],
+ "grije": [
+  "warms",
+  "ijekavian: grijati — to warm; 3rd sg. (in a Šantić quote)"
+ ],
+ "grobnici": [
+  "tomb",
+  "grobnica — tomb; fem.; dat."
+ ],
+ "grobnicu": [
+  "tomb",
+  "grobnica — tomb; fem.; acc."
+ ],
+ "grudi": [
+  "chest",
+  "grudi — chest (pl.)"
+ ],
+ "hajde": [
+  "come on, let's",
+  "hajde — hortative particle"
+ ],
+ "halo": [
+  "hello",
+  "halo — hello (on the phone)"
+ ],
+ "help": [
+  "\"Help!\"",
+  "title of a Beatles album"
+ ],
+ "higijeni": [
+  "hygiene",
+  "higijena; loc. case"
+ ],
+ "hirurg": [
+  "surgeon",
+  "hirurg — surgeon; nom."
+ ],
+ "hleb": [
+  "bread",
+  "hleb — bread (masc.)"
+ ],
+ "hotelu": [
+  "hotel",
+  "hotel; loc. case"
+ ],
+ "hoće": [
+  "wants, want",
+  "hteti — to want; 3rd pers."
+ ],
+ "hoćemo": [
+  "we want",
+  "hteti; 1st pers. pl."
+ ],
+ "hoćete": [
+  "you want",
+  "hteti — to want; 2nd pers. pl."
+ ],
+ "hoćeš": [
+  "you want",
+  "hteti; 2nd pers. sg."
+ ],
+ "hoću": [
+  "I want",
+  "hteti — to want; 1st pers. sg."
+ ],
+ "hrana": [
+  "food",
+  "noun fem."
+ ],
+ "hrane": [
+  "food",
+  "hrana; gen. case"
+ ],
+ "hranu": [
+  "food",
+  "hrana — food; acc. case"
+ ],
+ "hrčeš": [
+  "snore",
+  "hrkati — to snore; 2nd sg."
+ ],
+ "htela": [
+  "wanted",
+  "hteti — to want; past, fem.; htela bih — I would like"
+ ],
+ "hteli": [
+  "wanted",
+  "hteti — to want; past, pl."
+ ],
+ "hteo": [
+  "wanted",
+  "hteti — to want; past, masc."
+ ],
+ "hvala": [
+  "thank you",
+  "hvala vam puno — thank you very much"
+ ],
+ "i": [
+  "and; also",
+  "conjunction; before the word — «and, also, even»"
+ ],
+ "iako": [
+  "although",
+  "conjunction"
+ ],
+ "ide": [
+  "goes; ride",
+  "ići — to go, to ride; gde se ide — where you need to go"
+ ],
+ "idem": [
+  "I go, I ride",
+  "ići — to go, to ride; 1st pers. sg."
+ ],
+ "idemo": [
+  "we go, we ride",
+  "ići — to go, to ride; 1st pers. pl."
+ ],
+ "ideš": [
+  "you go",
+  "ići; 2nd pers. sg."
+ ],
+ "idi": [
+  "go",
+  "ići — to go; imperative"
+ ],
+ "ikada": [
+  "ever",
+  "adverb"
+ ],
+ "ili": [
+  "or",
+  "conjunction; «ili ti ga» — «or, in other words» (colloquial)"
+ ],
+ "ima": [
+  "is, has",
+  "imati — to have; ima = «there is, there exists»"
+ ],
+ "imaju": [
+  "have",
+  "imati; 3rd pers. pl."
+ ],
+ "imala": [
+  "had",
+  "imati; past, fem."
+ ],
+ "imali": [
+  "had; we had",
+  "imati; past, pl."
+ ],
+ "imam": [
+  "I have",
+  "imati — to have; 1st pers. sg."
+ ],
+ "imati": [
+  "to have",
+  "infinitive"
+ ],
+ "imaš": [
+  "you have",
+  "imati; 2nd pers. sg."
+ ],
+ "intimi": [
+  "intimacy",
+  "intima — intimacy; fem.; loc."
+ ],
+ "isto": [
+  "likewise, also",
+  "adverb; isto kao — just as"
+ ],
+ "iz": [
+  "from",
+  "preposition + gen. case"
+ ],
+ "izazivala": [
+  "caused, provoked",
+  "izazivati — to provoke; past fem."
+ ],
+ "izađi": [
+  "come out",
+  "izaći — to go out; imperative"
+ ],
+ "izbalansirano": [
+  "balanced",
+  "izbalansiran — balanced; neut."
+ ],
+ "izdržiš": [
+  "will endure",
+  "izdržati — to endure; 2nd sg."
+ ],
+ "izgledam": [
+  "I look",
+  "izgledati — to look; 1st pers. sg."
+ ],
+ "izgledaš": [
+  "you look",
+  "izgledati — to look; 2nd pers. sg."
+ ],
+ "izgubim": [
+  "I will lose",
+  "izgubiti; 1st pers. sg."
+ ],
+ "izgubiš": [
+  "you get lost",
+  "izgubiti se — to get lost; present 2nd sg."
+ ],
+ "izigramo": [
+  "play around",
+  "izigrati se — to have fun playing; 1st pl."
+ ],
+ "iznenađenje": [
+  "surprise",
+  "noun neut."
+ ],
+ "izneverili": [
+  "let down",
+  "izneveriti — to let down; past pl."
+ ],
+ "izuzetno": [
+  "exclusively",
+  "adverb"
+ ],
+ "izvini": [
+  "sorry",
+  "izviniti; imperative"
+ ],
+ "izvinite": [
+  "excuse me",
+  "izviniti; imperative, pl."
+ ],
+ "izvinjavam": [
+  "I apologize",
+  "izvinjavati se — to apologize; 1st pers. sg."
+ ],
+ "izvolite": [
+  "I'm listening; please",
+  "polite formula (seller — to the buyer)"
+ ],
+ "ja": [
+  "I",
+  "pronoun"
+ ],
+ "jaja": [
+  "eggs; eggs",
+  "jaje; pl."
+ ],
+ "jaje": [
+  "egg",
+  "noun neut."
+ ],
+ "jako": [
+  "very",
+  "adverb; also «strongly»"
+ ],
+ "jao": [
+  "oh, ouch",
+  "interjection"
+ ],
+ "jasno": [
+  "clearly",
+  "adverb"
+ ],
+ "javim": [
+  "I will answer (a call)",
+  "javiti se; 1st pers. sg."
+ ],
+ "je": [
+  "is (exists)",
+  "biti — to be, 3rd pers. sg.; auxiliary verb past; je l' — «really, or what»"
+ ],
+ "jedan": [
+  "one",
+  "numeral; also «a certain»"
+ ],
+ "jedem": [
+  "I eat",
+  "jesti; 1st pers. sg."
+ ],
+ "jedemo": [
+  "we eat; (we go) to eat",
+  "jesti — to eat; 1st pers. pl."
+ ],
+ "jedeš": [
+  "you eat",
+  "jesti; 2nd pers. sg."
+ ],
+ "jedi": [
+  "you eat",
+  "jesti; imperative"
+ ],
+ "jednog": [
+  "one",
+  "jedan; gen./acc. case masc."
+ ],
+ "jednom": [
+  "once",
+  "adverb"
+ ],
+ "jel": [
+  "really; whether",
+  "jel = je li (colloquial) — interrogative particle: jel ti jasno? — do you understand?"
+ ],
+ "jer": [
+  "because",
+  "conjunction"
+ ],
+ "jesam": [
+  "yes (I am)",
+  "biti; full form, 1st pers. sg."
+ ],
+ "jesi": [
+  "(you) are; right?",
+  "biti, 2nd pers. sg., full form; in questions: jesi siguran? — you're sure?"
+ ],
+ "jesmo": [
+  "(we) are",
+  "biti, 1st pers. pl., full form; ko što i jesmo — as it is"
+ ],
+ "jeste": [
+  "(really) there is",
+  "biti, 3rd pers. sg., full stress form"
+ ],
+ "joj": [
+  "her",
+  ""
+ ],
+ "joka": [
+  "Joka (nickname for Jovanka)",
+  "Joka — Jovanka; nom."
+ ],
+ "joko": [
+  "Joka (nickname for Jovanka)",
+  "Joka — Jovanka; vocative"
+ ],
+ "jovanke": [
+  "Jovanka's",
+  "Jovanka — Jovanka; gen."
+ ],
+ "još": [
+  "still",
+  "još malo — a little more"
+ ],
+ "ju": [
+  "her",
+  ""
+ ],
+ "kad": [
+  "when",
+  "conjunction, = kada"
+ ],
+ "kada": [
+  "when",
+  "conjunction"
+ ],
+ "kako": [
+  "how; as",
+  "kako bismo — so that (we)"
+ ],
+ "kakva": [
+  "which",
+  "kakav; fem."
+ ],
+ "kakvi": [
+  "which",
+  "kakav; pl. masc."
+ ],
+ "kakvom": [
+  "any",
+  "kakav — which; instr. case fem.: sa bilo kakvom — with any kind of"
+ ],
+ "kanarinca": [
+  "canary",
+  "kanarinac — canary; acc./gen."
+ ],
+ "kanarince": [
+  "canaries",
+  "kanarinac — canary; masc.; acc. pl."
+ ],
+ "kao": [
+  "like, as if",
+  "comparative conjunction"
+ ],
+ "kapak": [
+  "eyelid",
+  "kapak — eyelid; masc."
+ ],
+ "kapaka": [
+  "eyelids",
+  "kapak — eyelid; gen. pl."
+ ],
+ "kažem": [
+  "I will say, I say",
+  "kazati — to say; 1st pers. sg.; da kažem — let's say"
+ ],
+ "kaži": [
+  "say",
+  "kazati; imperative"
+ ],
+ "kevu": [
+  "mother (slang)",
+  "keva — mother (slang); fem.; acc."
+ ],
+ "kiki": [
+  "Kiki",
+  "a cat's name"
+ ],
+ "kineza": [
+  "Kinez",
+  "Kinez; acc. case"
+ ],
+ "klasičnu": [
+  "classical",
+  "klasičan — classical; fem.; acc."
+ ],
+ "ključ": [
+  "key",
+  "noun masc."
+ ],
+ "ko": [
+  "who; how",
+  "ko zna — who knows; colloquial abbreviation of kao — «how»"
+ ],
+ "kod": [
+  "at, near",
+  "preposition + gen. case: kod znaka — by the sign; kod Marija — at Mario's"
+ ],
+ "kofer": [
+  "suitcase",
+  "kofer — suitcase; masc."
+ ],
+ "koja": [
+  "which",
+  "koji — which; fem.; also «which» (koja su to sela)"
+ ],
+ "koji": [
+  "which",
+  "relative pronoun"
+ ],
+ "kojim": [
+  "which, by which",
+  "koji; instr. case: bilo kojim putem — any road"
+ ],
+ "koju": [
+  "which",
+  "koji; acc. case fem."
+ ],
+ "koliko": [
+  "how much",
+  "adverb"
+ ],
+ "kolima": [
+  "in the car",
+  "kola; instr. case"
+ ],
+ "kom": [
+  "which",
+  "koji; loc. case (= kojem)"
+ ],
+ "kome": [
+  "which; to whom",
+  "koji; loc. case: u kome živim — in which I live"
+ ],
+ "komšijinu": [
+  "neighbor's",
+  "komšijin — neighbor's; fem.; acc."
+ ],
+ "kontakt": [
+  "contact",
+  "kontakt"
+ ],
+ "kost": [
+  "bone",
+  "kost — bone; fem."
+ ],
+ "koštalo": [
+  "would cost",
+  "koštati — to cost; past neut."
+ ],
+ "kraju": [
+  "end",
+  "kraj — end; na kraju — in the end, ultimately"
+ ],
+ "krempita": [
+  "cream cakes",
+  "krempita — cream cake; gen. pl."
+ ],
+ "krempite": [
+  "cream cakes",
+  "krempita — cream cake; pl."
+ ],
+ "krenem": [
+  "I will begin; I will set off",
+  "krenuti; 1st pers. sg."
+ ],
+ "krevet": [
+  "bed",
+  ""
+ ],
+ "krevetu": [
+  "in the bed",
+  "krevet — bed; loc. case sg."
+ ],
+ "krstiš": [
+  "cross yourself",
+  "krstiti se — to cross oneself; 2nd sg."
+ ],
+ "kupaju": [
+  "swim",
+  "kupati se; 3rd pers. pl."
+ ],
+ "kupila": [
+  "bought",
+  "kupiti; past, fem."
+ ],
+ "kupimo": [
+  "we will buy",
+  "kupiti; 1st pers. pl."
+ ],
+ "kupio": [
+  "bought",
+  "kupiti; past, masc."
+ ],
+ "kupiću": [
+  "I will buy",
+  "kupiti; future, 1st pers. sg."
+ ],
+ "kupovala": [
+  "bought",
+  "kupovati; past, fem."
+ ],
+ "kuvano": [
+  "boiled",
+  "kuvan — boiled; neut."
+ ],
+ "kuća": [
+  "houses",
+  "kuća; gen. pl. (also nom. sg. — house)"
+ ],
+ "kuće": [
+  "home",
+  "kuća — house; pl."
+ ],
+ "kućom": [
+  "with the house",
+  "kuća — house; instr. case sg."
+ ],
+ "kuću": [
+  "house",
+  "kuća; acc. case"
+ ],
+ "kučeta": [
+  "puppy",
+  "kuče — puppy; gen."
+ ],
+ "kvariš": [
+  "spoil",
+  "kvariti — to spoil; 2nd sg."
+ ],
+ "l'": [
+  "whether",
+  "li — interrogative particle; je l' — «really, or what» (colloquial)"
+ ],
+ "labudovu": [
+  "swan (adj.)",
+  "labudov — swan's; fem.; acc."
+ ],
+ "laže": [
+  "lies",
+  "lagati — to lie; present 3rd sg."
+ ],
+ "lažeš": [
+  "you lie",
+  "lagati; 2nd pers. sg."
+ ],
+ "lekar": [
+  "doctor",
+  "masc."
+ ],
+ "lep": [
+  "beautiful, lovely",
+  "adj masc."
+ ],
+ "lepi": [
+  "handsome; beautiful",
+  "lep; voc. form / pl."
+ ],
+ "lepo": [
+  "beautifully",
+  "lep — beautiful"
+ ],
+ "lepom": [
+  "wonderful",
+  "lep; loc. case"
+ ],
+ "li": [
+  "whether",
+  "interrogative particle; da li — whether"
+ ],
+ "lice": [
+  "face",
+  "noun neut."
+ ],
+ "ljubav": [
+  "love",
+  "noun fem."
+ ],
+ "ljubavi": [
+  "love",
+  "ljubav — love"
+ ],
+ "ljubica": [
+  "Ljubica",
+  "a name; also \"violet\""
+ ],
+ "ljubim": [
+  "I kiss",
+  "ljubiti — to kiss; 1st pers. sg."
+ ],
+ "ljudi": [
+  "people; guys",
+  "pl. of čovek; as a form of address — «folks, guys»"
+ ],
+ "ljudima": [
+  "people",
+  "ljudi; dat. case"
+ ],
+ "ljutiš": [
+  "you are angry",
+  "ljutiti se — to be angry; 2nd pers. sg."
+ ],
+ "ludilo": [
+  "madness; awesomeness",
+  "noun neut.; colloquial: very cool"
+ ],
+ "luksuz": [
+  "luxury",
+  "luksuz — luxury; masc."
+ ],
+ "luster": [
+  "chandelier",
+  "luster — chandelier; masc."
+ ],
+ "ma": [
+  "yes (well)",
+  "intensifying particle: ma nemoguće — no way"
+ ],
+ "mac": [
+  "kitty",
+  "call for a cat"
+ ],
+ "majci": [
+  "mother",
+  "majka — mother; dat."
+ ],
+ "majka": [
+  "mother",
+  "noun fem."
+ ],
+ "majke": [
+  "mother",
+  "majka — mother"
+ ],
+ "majkom": [
+  "mother",
+  "majka — mother; instr."
+ ],
+ "majku": [
+  "mother",
+  "majka — mother (acc. case)"
+ ],
+ "majstore": [
+  "workmen",
+  "majstor — craftsman; masc.; acc. pl."
+ ],
+ "malo": [
+  "a little",
+  "adverb"
+ ],
+ "malog": [
+  "small",
+  "mali — small; gen. case"
+ ],
+ "mama": [
+  "mom",
+  "noun fem."
+ ],
+ "mami": [
+  "to mom",
+  "mama — mom; dat. case"
+ ],
+ "mamica": [
+  "mommy",
+  "mamica — mommy; fem."
+ ],
+ "mamice": [
+  "Mummy",
+  "mamica — mummy; vocative"
+ ],
+ "mamom": [
+  "mom",
+  "mama — mom; instr. case"
+ ],
+ "maršira": [
+  "marches",
+  "marširati — to march; 3rd sg."
+ ],
+ "mačeta": [
+  "kitten",
+  "mače — kitten; gen."
+ ],
+ "mačka": [
+  "cat",
+  "divlja mačka — wildcat"
+ ],
+ "mačku": [
+  "to the cat",
+  "mačka — cat; dat. case sg."
+ ],
+ "me": [
+  "me",
+  "short form of mene"
+ ],
+ "mene": [
+  "me",
+  "ja; acc./gen. case: po mene — after me"
+ ],
+ "meni": [
+  "me",
+  "full form dat. case of ja"
+ ],
+ "menjaš": [
+  "change",
+  "menjati — to change; 2nd sg."
+ ],
+ "meseca": [
+  "month",
+  "mesec; gen. case"
+ ],
+ "mesecu": [
+  "month",
+  "mesec; loc. case"
+ ],
+ "meso": [
+  "meat",
+  "noun neut."
+ ],
+ "mesto": [
+  "place; settlement",
+  "noun neut."
+ ],
+ "međutim": [
+  "however",
+  "parenthetical word"
+ ],
+ "mi": [
+  "we; me",
+  "mi — we; short form «me» (potreban mi je — I need)"
+ ],
+ "mile": [
+  "Mile",
+  "male name"
+ ],
+ "milentije": [
+  "Milentije (name)",
+  "Milentije — Milentije; vocative"
+ ],
+ "mirišeš": [
+  "you sniff, you smell",
+  "mirisati; 2nd pers. sg."
+ ],
+ "mirna": [
+  "quiet, calm",
+  "miran — calm"
+ ],
+ "mislim": [
+  "I mean; I think",
+  "misliti — to think; as an introductory word — «I mean, that is»"
+ ],
+ "mislio": [
+  "thought",
+  "misliti — to think; past, masc."
+ ],
+ "miša": [
+  "mice, mouse",
+  "miš; gen./acc. case"
+ ],
+ "miše": [
+  "mice",
+  "miš — mouse; acc. case pl."
+ ],
+ "mišinu": [
+  "Miša's",
+  "Mišin — Miša's; fem.; acc."
+ ],
+ "mišu": [
+  "Miša (name)",
+  "Miša — Miša; acc."
+ ],
+ "mjaučem": [
+  "meow",
+  "mjaukati — to meow; 1st sg."
+ ],
+ "mnogo": [
+  "very, a lot",
+  "adverb"
+ ],
+ "mogli": [
+  "could",
+  "moći; past, pl."
+ ],
+ "mogu": [
+  "I can",
+  "moći — to be able; 1st pers. sg. (also 3rd pers. pl. — «they can»)"
+ ],
+ "moj": [
+  "my",
+  "possessive pronoun"
+ ],
+ "moja": [
+  "my",
+  "moj; fem."
+ ],
+ "moju": [
+  "my",
+  "moj; acc. case fem."
+ ],
+ "molim": [
+  "I ask",
+  "moliti — to ask; molim te — please"
+ ],
+ "momenat": [
+  "moment",
+  "momenat — moment; nom./acc."
+ ],
+ "mont": [
+  "Mont",
+  "Mont Everest — Mount Everest"
+ ],
+ "moraju": [
+  "must",
+  "morati; 3rd pers. pl."
+ ],
+ "morala": [
+  "had to",
+  "morati; past, fem."
+ ],
+ "moram": [
+  "must, I need to",
+  "morati — to be supposed to; 1st pers. sg."
+ ],
+ "moramo": [
+  "must, we need to",
+  "morati — to be supposed to; 1st pers. pl."
+ ],
+ "moći": [
+  "I will be able, to be able",
+  "infinitive «to be able»; da li ću moći — will I be able to"
+ ],
+ "može": [
+  "may, can",
+  "moći — to be able; 3rd pers. sg.; «može» — «all right, it's okay»"
+ ],
+ "možemo": [
+  "we can",
+  "moći; 1st pers. pl."
+ ],
+ "možete": [
+  "you can",
+  "moći; 2nd pers. pl."
+ ],
+ "možeš": [
+  "you can",
+  "moći; 2nd pers. sg."
+ ],
+ "mrakovi": [
+  "dark moods",
+  "mrak — darkness; masc.; pl."
+ ],
+ "mrtva": [
+  "dead",
+  "mrtav — dead; fem."
+ ],
+ "muziku": [
+  "music",
+  "muzika — music"
+ ],
+ "muški": [
+  "male, masculine",
+  "muški — masculine; nom. masc."
+ ],
+ "na": [
+  "on; in",
+  "preposition: na jugu — in the south, na Instagram — in Instagram"
+ ],
+ "nagovorila": [
+  "talked into",
+  "nagovoriti — to persuade; past fem."
+ ],
+ "najbolje": [
+  "the very best",
+  "superlative of dobar; nije baš najbolje — not the best"
+ ],
+ "najedem": [
+  "eat my fill",
+  "najesti se — to eat one's fill; 1st sg."
+ ],
+ "najlepšeg": [
+  "the most beautiful",
+  "najlepši — most beautiful; gen./acc. masc."
+ ],
+ "najmilijih": [
+  "dearest",
+  "najmiliji — dearest; gen. pl."
+ ],
+ "najosnovnije": [
+  "the most basic",
+  "najosnovniji — most basic; acc. pl."
+ ],
+ "najstarijima": [
+  "the eldest",
+  "najstariji — eldest; dat. pl."
+ ],
+ "najtežu": [
+  "hardest",
+  "najteži — hardest; fem.; acc."
+ ],
+ "najvažnija": [
+  "the most important",
+  "superlative of važan; fem."
+ ],
+ "nam": [
+  "us",
+  "short form of nama"
+ ],
+ "nama": [
+  "us, to us",
+  "mi — we; s nama — with us"
+ ],
+ "napao": [
+  "attacked",
+  "napasti — to attack; past masc."
+ ],
+ "napolju": [
+  "outside",
+  "adverb (place)"
+ ],
+ "napusti": [
+  "leaves",
+  "napustiti — to leave; present 3rd sg."
+ ],
+ "naravno": [
+  "of course",
+  "adverb"
+ ],
+ "nas": [
+  "us",
+  "mi — we; gen./acc. case"
+ ],
+ "nastavi": [
+  "will continue",
+  "nastaviti — to continue"
+ ],
+ "nastavimo": [
+  "we will continue",
+  "nastaviti; 1st pers. pl."
+ ],
+ "nastaviti": [
+  "to continue",
+  "nastaviti — to continue; infinitive"
+ ],
+ "naučite": [
+  "you will learn",
+  "naučiti; 2nd pers. pl."
+ ],
+ "nazad": [
+  "back",
+  ""
+ ],
+ "nađi": [
+  "find",
+  "naći; imperative; nađi se s — meet with"
+ ],
+ "naše": [
+  "our",
+  "naš; acc. pl."
+ ],
+ "naših": [
+  "our",
+  "naš; gen. pl."
+ ],
+ "našim": [
+  "our",
+  "naš; instr./dat. case"
+ ],
+ "našli": [
+  "found",
+  "naći — to find; past, pl."
+ ],
+ "ne": [
+  "not; no",
+  "negation"
+ ],
+ "neba": [
+  "sky",
+  "nebo — sky"
+ ],
+ "nedelju": [
+  "week",
+  "nedelja — week (also Sunday); acc. case"
+ ],
+ "negativan": [
+  "negative",
+  "negativan — negative; masc."
+ ],
+ "nego": [
+  "than",
+  "brže nego što — faster than; pre nego što — before"
+ ],
+ "negu": [
+  "care",
+  "nega — care; fem.; acc."
+ ],
+ "neguju": [
+  "take care of",
+  "negovati — to take care of; 3rd pl."
+ ],
+ "neka": [
+  "some; some",
+  "neki — some, a certain; fem. sg. or neut. pl."
+ ],
+ "nekako": [
+  "somehow",
+  "adverb"
+ ],
+ "neke": [
+  "some, certain",
+  "neki; acc. pl."
+ ],
+ "neki": [
+  "some",
+  "indefinite pronoun"
+ ],
+ "neko": [
+  "some",
+  "neki; neut. (also «someone»)"
+ ],
+ "nekog": [
+  "some",
+  "neki; gen. case"
+ ],
+ "nekom": [
+  "some",
+  "neki; loc. case masc./neut."
+ ],
+ "nema": [
+  "no (something)",
+  "nemati — not to have; nema znaka — there is no sign"
+ ],
+ "nemamo": [
+  "we don't have",
+  "nemati — not to have; 1st pers. pl."
+ ],
+ "nemoj": [
+  "don't",
+  "negative command: nemoj da promašiš — don't miss"
+ ],
+ "nemojte": [
+  "don't",
+  "nemoj; neg. imperative, pl.: nemojte biti — don't be"
+ ],
+ "neodržavana": [
+  "neglected",
+  "neodržavan — neglected; fem."
+ ],
+ "nerede": [
+  "disorder, riots",
+  "nered — disorder; masc.; acc. pl."
+ ],
+ "nesrećna": [
+  "unhappy",
+  "nesrećan — unhappy; fem."
+ ],
+ "nezdrave": [
+  "unhealthy",
+  "nezdrav — unhealthy; fem. pl."
+ ],
+ "neće": [
+  "won't be",
+  "negation future (ne + hteti); 3rd pers. sg."
+ ],
+ "nećete": [
+  "you won't be, you won't be able to",
+  "ne + hteti; 2nd pers. pl.; nećete moći — you won't be able"
+ ],
+ "nećeš": [
+  "you won't; you don't want to",
+  "neg. form of hteti; 2nd pers. sg."
+ ],
+ "neću": [
+  "I won't; I don't want to",
+  "neg. form of hteti; 1st pers. sg."
+ ],
+ "nešto": [
+  "something",
+  "indefinite pronoun"
+ ],
+ "neženja": [
+  "bachelor",
+  "neženja — bachelor; masc."
+ ],
+ "nežnost": [
+  "tenderness",
+  "nežnost — tenderness; fem."
+ ],
+ "ni": [
+  "not even",
+  "nije čak ni selo — this is not even a village"
+ ],
+ "nije": [
+  "not (is)",
+  "negation of je: nije selo — this is not a village"
+ ],
+ "nikad": [
+  "never",
+  "adverb"
+ ],
+ "nikakav": [
+  "no",
+  "pronoun masc."
+ ],
+ "nikako": [
+  "by no means",
+  "adverb"
+ ],
+ "niko": [
+  "no one",
+  "neg. pronoun"
+ ],
+ "nikog": [
+  "no one",
+  "niko; gen. case"
+ ],
+ "nikoga": [
+  "no one",
+  "niko; gen. case"
+ ],
+ "nikom": [
+  "nobody",
+  "niko — nobody; dat./instr./loc."
+ ],
+ "nina": [
+  "Nina",
+  "Nina — Nina; nom."
+ ],
+ "ninu": [
+  "Nina",
+  "Nina — Nina; acc."
+ ],
+ "nisam": [
+  "I don't",
+  "negation of auxiliary verba, 1st pers. sg."
+ ],
+ "nisi": [
+  "you don't",
+  "negation of auxiliary verba, 2nd pers. sg."
+ ],
+ "nismo": [
+  "we don't",
+  "negation of auxiliary verba, 1st pers. pl."
+ ],
+ "niste": [
+  "you don't",
+  "negation of auxiliary verba, 2nd pers. pl."
+ ],
+ "nisu": [
+  "not (they)",
+  "negation of su: nisu Gorčinci — this is not Gorčinci"
+ ],
+ "ništa": [
+  "nothing",
+  "at the beginning of a sentence — «well then, anyway»"
+ ],
+ "njega": [
+  "him",
+  "on — he; gen./acc. case: pored njega — past him"
+ ],
+ "njemu": [
+  "him; to him",
+  "on; loc./dat. case"
+ ],
+ "njene": [
+  "her",
+  "njen — her"
+ ],
+ "njim": [
+  "them",
+  "on — he; s njim — with him"
+ ],
+ "njoj": [
+  "her",
+  ""
+ ],
+ "njom": [
+  "her",
+  "ona — she; instr. case (s njom — with her)"
+ ],
+ "nju": [
+  "her",
+  ""
+ ],
+ "normalan": [
+  "normal",
+  "adj masc."
+ ],
+ "nos": [
+  "nose",
+  "nos — nose"
+ ],
+ "nosa": [
+  "nose",
+  "nos; gen. case"
+ ],
+ "novac": [
+  "money",
+  "noun masc. (sg.)"
+ ],
+ "novaca": [
+  "of money",
+  "novac — money; gen. case sg."
+ ],
+ "novce": [
+  "coins",
+  "novac — coin, money; acc. case pl."
+ ],
+ "nutri": [
+  "nutri",
+  "from the playful rhyme \"nutri, tuti, fruti\""
+ ],
+ "o": [
+  "oh!",
+  "interjection-greeting; how preposition — «about»"
+ ],
+ "obesim": [
+  "hang",
+  "obesiti se — to hang oneself; 1st sg."
+ ],
+ "obezbedio": [
+  "provided",
+  "obezbediti — to provide; past masc."
+ ],
+ "obišli": [
+  "went around, drove around",
+  "obići; past, pl."
+ ],
+ "obrazujemo": [
+  "we educate, we teach",
+  "obrazovati; 1st pers. pl."
+ ],
+ "obraćate": [
+  "address",
+  "obraćati se — to address; 2nd pl."
+ ],
+ "obzir": [
+  "attention, consideration",
+  "obzir (uzeti u obzir — to take into account)"
+ ],
+ "od": [
+  "from, out of",
+  "preposition + gen. case: jedno od naselja — one of the settlements"
+ ],
+ "odakle": [
+  "from where",
+  "adverb"
+ ],
+ "odavde": [
+  "from here",
+  "adverb"
+ ],
+ "odeš": [
+  "you will go, you will leave",
+  "otići; 2nd pers. sg."
+ ],
+ "odjednom": [
+  "suddenly",
+  "adverb"
+ ],
+ "odlučite": [
+  "decide",
+  "odlučiti se — to decide, to make up one's mind; 2nd pers. pl."
+ ],
+ "odradio": [
+  "did, completed",
+  "odraditi — to do, to complete; past masc."
+ ],
+ "odrasla": [
+  "adult",
+  "odrastao — adult"
+ ],
+ "održavaju": [
+  "maintain",
+  "održavati — to maintain; 3rd pl."
+ ],
+ "odvedeš": [
+  "take (somewhere)",
+  "odvesti — to take away; 2nd sg."
+ ],
+ "odvedi": [
+  "take away",
+  "odvesti — to take away; imperative"
+ ],
+ "odvrnuo": [
+  "unscrewed",
+  "odvrnuti — to unscrew; past masc."
+ ],
+ "oh": [
+  "oh my god",
+  "English"
+ ],
+ "okačim": [
+  "I will post",
+  "okačiti — to hang, to post; 1st pers. sg."
+ ],
+ "oko": [
+  "around",
+  "preposition + gen. case; also «around», «eye»"
+ ],
+ "okrenete": [
+  "dial",
+  "okrenuti telefon — to dial; 2nd pl."
+ ],
+ "okrečiš": [
+  "whitewash",
+  "okrečiti — to whitewash; 2nd sg."
+ ],
+ "on": [
+  "he",
+  "pronoun"
+ ],
+ "ona": [
+  "that; she",
+  "onaj — that; fem.; also pronoun «she»"
+ ],
+ "onaj": [
+  "that",
+  "demonstrative pronoun, masc."
+ ],
+ "onako": [
+  "so, just so",
+  "čisto onako — just like that, simply"
+ ],
+ "onda": [
+  "then, at that time",
+  "adverb"
+ ],
+ "ono": [
+  "that, that one over there",
+  "demonstrative pronoun, neut."
+ ],
+ "osam": [
+  "eight",
+  "numeral"
+ ],
+ "osim": [
+  "except, besides",
+  "preposition + gen. case; osim što — besides the fact that"
+ ],
+ "osloniš": [
+  "rely",
+  "osloniti se — to rely; 2nd sg."
+ ],
+ "osoba": [
+  "person",
+  "noun fem."
+ ],
+ "osoblje": [
+  "staff",
+  "collect. noun neut."
+ ],
+ "ostajte": [
+  "stay",
+  "ostajati — to stay; imperative pl."
+ ],
+ "ostanete": [
+  "stay",
+  "ostati — to stay; 2nd pl."
+ ],
+ "ostavi": [
+  "leave",
+  "ostaviti — to leave (imperative)"
+ ],
+ "ostavimo": [
+  "we will leave",
+  "ostaviti; 1st pers. pl."
+ ],
+ "ostavljam": [
+  "I leave",
+  "ostavljati — to leave; 1st pers. sg."
+ ],
+ "otac": [
+  "father",
+  "noun masc."
+ ],
+ "oterala": [
+  "drove away",
+  "oterati — to drive away; past fem. sg."
+ ],
+ "otišao": [
+  "left, went away",
+  "otići; past, masc."
+ ],
+ "otok": [
+  "swelling",
+  "otok — swelling; nom./acc."
+ ],
+ "otpao": [
+  "fell off",
+  "otpasti — to fall off; past masc."
+ ],
+ "otpisanih": [
+  "\"Otpisani\"",
+  "\"Otpisani\" — Yugoslav TV series (1974); gen. pl."
+ ],
+ "otvori": [
+  "will open; will open up",
+  "otvoriti (se); 3rd pers. sg."
+ ],
+ "ovaj": [
+  "this",
+  "demonstrative pronoun, masc."
+ ],
+ "ovako": [
+  "so, like this",
+  "pa ovako — well, so then"
+ ],
+ "ovakvim": [
+  "such",
+  "ovakav; instr. case pl."
+ ],
+ "ovde": [
+  "here, hither",
+  "adverb"
+ ],
+ "ovdje": [
+  "here",
+  "ijekavian form (ekav. ovde)"
+ ],
+ "ovi": [
+  "these",
+  "ovaj; pl. masc. (in the video dial. instead of ovim)"
+ ],
+ "ovo": [
+  "this",
+  "ovaj — this; neut."
+ ],
+ "ovom": [
+  "this",
+  "ovaj; loc. case"
+ ],
+ "ovu": [
+  "this",
+  "ovaj; acc. case fem."
+ ],
+ "ozbiljio": [
+  "became serious",
+  "ozbiljiti se — to become serious; past masc."
+ ],
+ "ozbiljne": [
+  "serious",
+  "ozbiljan; pl. fem."
+ ],
+ "ozbiljni": [
+  "serious",
+  "ozbiljan; pl."
+ ],
+ "ozbiljno": [
+  "seriously",
+  ""
+ ],
+ "pa": [
+  "well; and, so",
+  "particle at the start of a line — «well»; conjunction — «and, therefore»"
+ ],
+ "pacijente": [
+  "patients",
+  "pacijent — patient; masc.; acc. pl."
+ ],
+ "pamti": [
+  "remembers, memorizes",
+  "pamtiti; 3rd pers. sg."
+ ],
+ "pare": [
+  "money",
+  "pl. (colloquial)"
+ ],
+ "pazim": [
+  "I watch out, I pay attention",
+  "paziti — to be careful; 1st pers. sg."
+ ],
+ "pažljiv": [
+  "attentive",
+  "pažljiv — attentive; masc."
+ ],
+ "pažljivi": [
+  "careful",
+  "pažljiv — careful; masc. pl."
+ ],
+ "pažnja": [
+  "attention",
+  "pažnja"
+ ],
+ "pažnju": [
+  "attention",
+  "pažnja; skrenuti pažnju — to pay attention"
+ ],
+ "pedeset": [
+  "fifty",
+  "pedeset — fifty"
+ ],
+ "pegla": [
+  "is ironed",
+  "peglati — to iron; 3rd sg. (passive)"
+ ],
+ "pesmu": [
+  "song; poem",
+  "pesma; acc. case"
+ ],
+ "pet": [
+  "five",
+  "numeral"
+ ],
+ "peva": [
+  "sings",
+  "pevati — to sing"
+ ],
+ "pijacu": [
+  "market",
+  "pijaca; acc. case"
+ ],
+ "pitaj": [
+  "ask",
+  "pitati — to ask; imperative 2nd pers. sg."
+ ],
+ "pitala": [
+  "asked",
+  "pitati; past, fem."
+ ],
+ "pitam": [
+  "I will ask, I ask",
+  "pitati; 1st pers. sg."
+ ],
+ "plastični": [
+  "plastic",
+  "plastičan — plastic; masc."
+ ],
+ "platimo": [
+  "pay",
+  "platiti — to pay; 1st pl."
+ ],
+ "platio": [
+  "paid",
+  "platiti; past, masc."
+ ],
+ "platiti": [
+  "to pay",
+  "infinitive; perfective"
+ ],
+ "plavoj": [
+  "blue, light blue",
+  "plav; loc. case fem."
+ ],
+ "plavu": [
+  "blue, light blue",
+  "plav; acc. case fem."
+ ],
+ "po": [
+  "by; in",
+  "po mraku — in the dark; po jedan — one by one; dva i po — two and a half"
+ ],
+ "pobrkala": [
+  "mixed up",
+  "pobrkati — to mix up; past fem."
+ ],
+ "pod": [
+  "under; to",
+  "preposition; spada pod — refers to"
+ ],
+ "podarila": [
+  "gave, granted",
+  "podariti — to give as a gift; past fem."
+ ],
+ "pogled": [
+  "look",
+  "baciti pogled — to glance"
+ ],
+ "pogleda": [
+  "will look",
+  "pogledati; 3rd pers. sg."
+ ],
+ "pogledaj": [
+  "look",
+  "pogledati; imperative"
+ ],
+ "pogrešan": [
+  "wrong",
+  ""
+ ],
+ "pojedi": [
+  "eat up",
+  "pojesti — to eat up; imperative"
+ ],
+ "pojela": [
+  "ate",
+  "pojesti — to eat up; past fem. sg."
+ ],
+ "pokriće": [
+  "coverage",
+  "pokriće — coverage; neut."
+ ],
+ "pola": [
+  "half, half-",
+  "pola kila — half a kilo"
+ ],
+ "polako": [
+  "slowly",
+  "adverb: slowly, gradually"
+ ],
+ "pomognem": [
+  "I will help",
+  "pomoći; 1st pers. sg."
+ ],
+ "ponedeljkom": [
+  "on Mondays",
+  "ponedeljak — Monday; instr."
+ ],
+ "poneo": [
+  "took along",
+  "poneti — to take along; past, masc."
+ ],
+ "porazgovaram": [
+  "have a talk",
+  "porazgovarati — to have a talk; 1st sg."
+ ],
+ "porazgovaramo": [
+  "we will talk",
+  "porazgovarati; 1st pers. pl."
+ ],
+ "porodila": [
+  "arose",
+  "poroditi se — to arise; past fem. sg."
+ ],
+ "porodilište": [
+  "maternity ward",
+  "neut."
+ ],
+ "posećujem": [
+  "I visit",
+  "posećivati — to visit; present 1st sg."
+ ],
+ "poslao": [
+  "sent",
+  "poslati — to send; past, masc."
+ ],
+ "poslaću": [
+  "I will send",
+  "poslati — to send; future 1st sg."
+ ],
+ "posle": [
+  "then, after",
+  "adverb; preposition + gen. case"
+ ],
+ "poslednju": [
+  "last",
+  "poslednji; acc. case fem."
+ ],
+ "postane": [
+  "will become",
+  "postati; 3rd pers. sg."
+ ],
+ "postao": [
+  "became",
+  "postati; past, masc."
+ ],
+ "postoji": [
+  "exists, there is",
+  "postojati; 3rd pers. sg."
+ ],
+ "posvetite": [
+  "devote yourself",
+  "posvetiti se — to devote oneself; imperative pl."
+ ],
+ "potrebno": [
+  "necessary, needed",
+  "potreban — necessary; neut."
+ ],
+ "povrće": [
+  "vegetables",
+  "noun neut., collect."
+ ],
+ "poziv": [
+  "invitation, call",
+  "poziv"
+ ],
+ "poznajem": [
+  "I know (am acquainted with)",
+  "poznavati — to know, to be acquainted; 1st pers. sg."
+ ],
+ "pošto": [
+  "since",
+  "conjunction: since"
+ ],
+ "pravim": [
+  "real",
+  "pravi; instr. pl."
+ ],
+ "predlažem": [
+  "I offer",
+  "predlagati; 1st pers. sg."
+ ],
+ "predložio": [
+  "offered",
+  "predložiti — to offer; past, masc."
+ ],
+ "predstavljao": [
+  "represented",
+  "predstavljati — to represent; past masc."
+ ],
+ "prekinula": [
+  "interrupted",
+  "prekinuti — to interrupt; past fem."
+ ],
+ "preko": [
+  "through, across; for",
+  "preposition + gen. case: preko reke — beyond the river; preko puta — opposite"
+ ],
+ "prema": [
+  "to, toward",
+  "preposition + dat. case"
+ ],
+ "preseljenju": [
+  "move, relocation",
+  "preseljenje — relocation; neut.; loc."
+ ],
+ "preživela": [
+  "survived",
+  "preživeti; past, fem."
+ ],
+ "preživi": [
+  "will survive, will pull through",
+  "preživeti — to survive; 3rd pers. sg."
+ ],
+ "prikupilo": [
+  "collected",
+  "prikupiti — to collect; past neut."
+ ],
+ "prilagode": [
+  "adapt",
+  "prilagoditi — to adapt; 3rd pl."
+ ],
+ "primili": [
+  "settled in",
+  "primiti se — to take up, to take root; past, pl."
+ ],
+ "primim": [
+  "accept, take in",
+  "primiti — to accept; 1st sg."
+ ],
+ "primitivče": [
+  "you primitive",
+  "primitivac — primitive person; vocative"
+ ],
+ "pričao": [
+  "said",
+  "pričati; past, masc."
+ ],
+ "pričaš": [
+  "you say, you talk",
+  "pričati — to speak, to tell; 2nd pers. sg."
+ ],
+ "problem": [
+  "problem",
+  "noun masc."
+ ],
+ "prodaju": [
+  "will sell; sell",
+  "prodati / prodavati; 3rd pers. pl."
+ ],
+ "prohteve": [
+  "whims, desires",
+  "prohtev — whim, desire; masc.; acc. pl."
+ ],
+ "promenio": [
+  "changed",
+  "promeniti; past, masc."
+ ],
+ "propusti": [
+  "miss",
+  "propustiti — to miss; after \"nije htela da\""
+ ],
+ "propušten": [
+  "missed",
+  "propušten poziv — missed call; masc."
+ ],
+ "prođemo": [
+  "we will pass",
+  "proći — to pass; 1st pers. pl."
+ ],
+ "prošlog": [
+  "last",
+  "prošli; gen. case"
+ ],
+ "prošlost": [
+  "past",
+  ""
+ ],
+ "pružamo": [
+  "we give, we provide",
+  "pružati; 1st pers. pl."
+ ],
+ "prvi": [
+  "first",
+  "ordinal numeral"
+ ],
+ "prvo": [
+  "at first, firstly",
+  "adverb; also «first»"
+ ],
+ "prvog": [
+  "first",
+  "prvi; gen. case"
+ ],
+ "pusti": [
+  "let in, turn on",
+  "pustiti; imperative: pusti vodu — fill up/turn on water"
+ ],
+ "put": [
+  "road, way",
+  "also «time» (ovog puta — this time)"
+ ],
+ "puta": [
+  "roads; times",
+  "put — road, way; gen. case: preko puta — opposite, across the road"
+ ],
+ "radi": [
+  "works",
+  "raditi — to work, to do; 3rd pers. sg."
+ ],
+ "radila": [
+  "worked, did",
+  "raditi; past fem."
+ ],
+ "radim": [
+  "I do",
+  "raditi; 1st pers. sg."
+ ],
+ "radimo": [
+  "we do",
+  "raditi; 1st pers. pl."
+ ],
+ "radiš": [
+  "you do",
+  "raditi; 2nd pers. sg."
+ ],
+ "radmila": [
+  "Radmila",
+  "a name"
+ ],
+ "raspada": [
+  "falls apart",
+  "raspadati se — to fall apart; 3rd pers. sg."
+ ],
+ "rata": [
+  "war",
+  "rat; gen. case"
+ ],
+ "razgovaram": [
+  "I talk",
+  "razgovarati; 1st pers. sg."
+ ],
+ "razgovaramo": [
+  "we talk",
+  "razgovarati; 1st pers. pl."
+ ],
+ "razumem": [
+  "I understand",
+  "razumeti; 1st pers. sg."
+ ],
+ "razumeš": [
+  "you understand",
+  "razumeti; 2nd pers. sg."
+ ],
+ "računa": [
+  "account",
+  "voditi računa — to look after, to care for"
+ ],
+ "raženi": [
+  "rye (adj.)",
+  "ražani/raženi — rye; masc."
+ ],
+ "recite": [
+  "say",
+  "reći; imperative"
+ ],
+ "red": [
+  "queue; order",
+  "noun masc.; doći na red — to reach (about the queue)"
+ ],
+ "redu": [
+  "queue",
+  "red — row, queue; na redu — next in line"
+ ],
+ "rekao": [
+  "said",
+  "reći — to say; past, masc."
+ ],
+ "rekli": [
+  "said",
+  "reći — to say; past, pl."
+ ],
+ "revolver": [
+  "\"Revolver\"",
+  "title of a Beatles album"
+ ],
+ "rezervisao": [
+  "booked",
+  "rezervisati — to book; past masc."
+ ],
+ "reći": [
+  "to say",
+  "infinitive"
+ ],
+ "reči": [
+  "words",
+  "reč; ostaviti bez reči — to leave speechless"
+ ],
+ "rešavamo": [
+  "solve",
+  "rešavati — to solve; 1st pl."
+ ],
+ "rešimo": [
+  "we will decide",
+  "rešiti; 1st pers. pl."
+ ],
+ "rešiću": [
+  "will sort out",
+  "rešiti — to solve; future 1st sg."
+ ],
+ "rodila": [
+  "bore a poor crop; gave birth",
+  "roditi; past, fem."
+ ],
+ "rodio": [
+  "was born",
+  "roditi se; past, masc."
+ ],
+ "rokenrol": [
+  "rock and roll",
+  "rokenrol — rock and roll; masc."
+ ],
+ "rombove": [
+  "diamonds",
+  "romb — rhombus; masc.; acc. pl."
+ ],
+ "rose": [
+  "Rose",
+  "English «rose»; Wish Me a Rose — shade name"
+ ],
+ "roso": [
+  "Roza",
+  "Rosa — Roza; vocative"
+ ],
+ "roza": [
+  "Roza",
+  "Roza — Roza; nom."
+ ],
+ "rozalija": [
+  "Rozalija",
+  "Rozalija — Rozalija; nom."
+ ],
+ "rozom": [
+  "Rosa",
+  "Roza; instr."
+ ],
+ "ruku": [
+  "hand",
+  "ruka — hand"
+ ],
+ "ručak": [
+  "lunch",
+  "noun masc."
+ ],
+ "s": [
+  "with",
+  "preposition, short form of sa"
+ ],
+ "sa": [
+  "with",
+  "preposition + instr. case; + gen. case — «with, from» (sa mape — from the map)"
+ ],
+ "sad": [
+  "now, at present",
+  "= sada; e sad — well then, so"
+ ],
+ "sada": [
+  "now, at present",
+  "adverb"
+ ],
+ "sahranili": [
+  "buried",
+  "sahraniti — to bury; past pl."
+ ],
+ "sahranu": [
+  "funeral",
+  "sahrana — funeral; fem.; acc."
+ ],
+ "sam": [
+  "(I) — auxiliary verb",
+  "biti, 1st pers. sg.: rekao sam — I said"
+ ],
+ "sami": [
+  "themselves",
+  "sam — alone, one; pl."
+ ],
+ "samo": [
+  "only",
+  "adverb; also «simply»"
+ ],
+ "samog": [
+  "the very",
+  "sam; gen. case"
+ ],
+ "saopštimo": [
+  "tell",
+  "saopštiti — to announce; 1st pl."
+ ],
+ "saradnju": [
+  "cooperation",
+  "saradnja; acc. case"
+ ],
+ "sačekajte": [
+  "wait",
+  "sačekati — to wait; imperative 2nd pers. pl."
+ ],
+ "se": [
+  "oneself, -self",
+  "reflexive particle: slikamo se — we take photos of ourselves"
+ ],
+ "sedalna": [
+  "sitting (bone)",
+  "sedalni — of sitting; fem.; sedalna kost — sitting bone"
+ ],
+ "sedamnaest": [
+  "seventeen",
+  "numeral"
+ ],
+ "sede": [
+  "sit",
+  "sedeti; 3rd pers. pl."
+ ],
+ "sedi": [
+  "sits",
+  "sedeti — to sit; 3rd pers. sg."
+ ],
+ "sedim": [
+  "I sit",
+  "sedeti; 1st pers. sg."
+ ],
+ "sedite": [
+  "sit",
+  "sedeti; 2nd pers. pl."
+ ],
+ "sednem": [
+  "I will sit down",
+  "sesti; 1st pers. sg."
+ ],
+ "senilna": [
+  "senile",
+  "senilan — senile; fem."
+ ],
+ "servisiraju": [
+  "service",
+  "servisirati — to service; 3rd pl."
+ ],
+ "setim": [
+  "I will remember",
+  "setiti se; 1st pers. sg."
+ ],
+ "sećaš": [
+  "you remember",
+  "sećati se — to remember; 2nd pers. sg."
+ ],
+ "si": [
+  "(you) — auxiliary verb",
+  "biti, 2nd pers. sg.; gde si — hi, how are you (colloquial)"
+ ],
+ "sin": [
+  "son",
+  "noun masc."
+ ],
+ "sina": [
+  "son",
+  "sin; dva sina — two sons"
+ ],
+ "sine": [
+  "sonny; dude",
+  "sin; voc. case (colloquial address)"
+ ],
+ "sinom": [
+  "son",
+  "sin — son; instr."
+ ],
+ "sinoć": [
+  "last night",
+  "adverb"
+ ],
+ "situaciju": [
+  "situation",
+  "situacija; acc. case"
+ ],
+ "sjajan": [
+  "excellent, brilliant",
+  "adj masc."
+ ],
+ "sjajno": [
+  "brightly",
+  "sjajan — brilliant"
+ ],
+ "skače": [
+  "jumps",
+  "skakati; 3rd pers. sg."
+ ],
+ "skidaj": [
+  "take off",
+  "skidati — to take off; imperative"
+ ],
+ "skuvala": [
+  "cooked",
+  "skuvati — to cook; past fem. sg."
+ ],
+ "skuvano": [
+  "boiled",
+  "skuvan — boiled; neut."
+ ],
+ "slatko": [
+  "sweet",
+  "sladak; neut."
+ ],
+ "slavin": [
+  "Slava's",
+  "Slava — a name; possessive adj."
+ ],
+ "sledećeg": [
+  "next",
+  "sledeći; gen. case"
+ ],
+ "slobodan": [
+  "free",
+  "slobodan — free; masc."
+ ],
+ "slobodno": [
+  "boldly, freely",
+  "adverb"
+ ],
+ "slobodnu": [
+  "free",
+  "slobodan — free; fem.; acc."
+ ],
+ "slušaj": [
+  "listen",
+  "slušati; imperative"
+ ],
+ "slušaju": [
+  "listen",
+  "slušati — to listen"
+ ],
+ "slušalice": [
+  "headphones",
+  "slušalica — earphone (pl. number)"
+ ],
+ "smela": [
+  "would dare",
+  "smeti — to dare; past fem."
+ ],
+ "smestili": [
+  "settled",
+  "smestiti se; past, pl."
+ ],
+ "smestim": [
+  "place",
+  "smestiti — to accommodate; 1st sg."
+ ],
+ "smestimo": [
+  "place",
+  "smestiti — to accommodate; 1st pl."
+ ],
+ "smo": [
+  "(we) — auxiliary verb",
+  "biti, 1st pers. pl.: stigli smo — we arrived"
+ ],
+ "smršala": [
+  "lost weight",
+  "smršati — to lose weight; past fem."
+ ],
+ "sobama": [
+  "rooms",
+  "soba — room; loc. pl."
+ ],
+ "spakovane": [
+  "packed",
+  "spakovati — to pack; past participle fem. pl."
+ ],
+ "sram": [
+  "shame",
+  "sram — shame; nom."
+ ],
+ "srce": [
+  "heart",
+  ""
+ ],
+ "srede": [
+  "of the middle",
+  "sredina — middle; gen. case sg."
+ ],
+ "sredim": [
+  "I will tidy up",
+  "srediti; 1st pers. sg."
+ ],
+ "sredinu": [
+  "Wednesday",
+  "sredina; acc. case"
+ ],
+ "sresćemo": [
+  "will meet",
+  "sresti se — to meet; future 1st pl."
+ ],
+ "stali": [
+  "stopped",
+  "stati; past, pl."
+ ],
+ "stalo": [
+  "matters",
+  "stalo mi je do — I care about"
+ ],
+ "stan": [
+  "apartment",
+  "noun masc."
+ ],
+ "stana": [
+  "apartment",
+  "stan — apartment; gen. case"
+ ],
+ "stanu": [
+  "apartment",
+  "stan — apartment; loc. case"
+ ],
+ "starački": [
+  "old people's",
+  "starački dom — nursing home"
+ ],
+ "staračkom": [
+  "old people's",
+  "starački — old people's; loc. masc."
+ ],
+ "stare": [
+  "old",
+  "star; pl. fem."
+ ],
+ "stavi": [
+  "will put",
+  "staviti; 3rd pers. sg."
+ ],
+ "ste": [
+  "(you) — auxiliary verb",
+  "biti, 2nd pers. pl.: što ste tu — what are you doing here"
+ ],
+ "sto": [
+  "table",
+  "noun masc. (also «hundred»)"
+ ],
+ "strašno": [
+  "scary",
+  "adverb"
+ ],
+ "stresom": [
+  "stress",
+  "stres — stress; instr."
+ ],
+ "stvari": [
+  "things",
+  "stvar — thing; pl."
+ ],
+ "su": [
+  "(they) — auxiliary verb; there is",
+  "biti, 3rd pers. pl.: sela su — villages — this…"
+ ],
+ "sunce": [
+  "sun",
+  ""
+ ],
+ "super": [
+  "super, great",
+  "indeclinable"
+ ],
+ "sutra": [
+  "tomorrow",
+  "adverb"
+ ],
+ "svakom": [
+  "every",
+  "svaki; loc. case masc."
+ ],
+ "svaku": [
+  "every",
+  "svaki; acc. case fem."
+ ],
+ "sve": [
+  "everything; all",
+  "sav — all; neut. sg. or pl."
+ ],
+ "svetu": [
+  "world",
+  "svet — world; loc. case"
+ ],
+ "svi": [
+  "all",
+  "sav; pl. masc."
+ ],
+ "sviđa": [
+  "likes",
+  "sviđati se; 3rd pers. sg."
+ ],
+ "svog": [
+  "own",
+  "svoj; gen. case"
+ ],
+ "svoj": [
+  "own",
+  "possessive reflexive pronoun"
+ ],
+ "ta": [
+  "that",
+  "taj — that, this; fem."
+ ],
+ "tada": [
+  "then",
+  "adverb"
+ ],
+ "taj": [
+  "that, this",
+  "demonstrative pronoun"
+ ],
+ "tako": [
+  "so",
+  "tako da — so"
+ ],
+ "takođe": [
+  "also, too",
+  "adverb"
+ ],
+ "tamo": [
+  "there, thither",
+  "adverb"
+ ],
+ "tata": [
+  "dad",
+  "noun masc."
+ ],
+ "tatu": [
+  "dad",
+  "tata — dad; acc. case"
+ ],
+ "tačno": [
+  "exactly",
+  "adverb"
+ ],
+ "te": [
+  "you",
+  "short form of tebe"
+ ],
+ "tebe": [
+  "you",
+  "ti; gen./acc. case"
+ ],
+ "tebi": [
+  "you",
+  "ti; dat. case"
+ ],
+ "telefon": [
+  "phone",
+  "noun masc."
+ ],
+ "telefona": [
+  "phone",
+  "telefon; gen. case"
+ ],
+ "temu": [
+  "topic",
+  "tema; acc. case"
+ ],
+ "teško": [
+  "hard, heavy",
+  "adverb"
+ ],
+ "ti": [
+  "you",
+  "pronoun; «ili ti ga» — «or, in other words» (colloquial)"
+ ],
+ "titov": [
+  "Tito's",
+  "Tito — Tito; possessive adj."
+ ],
+ "to": [
+  "this, that",
+  "demonstrative pronoun, neut."
+ ],
+ "tobom": [
+  "you",
+  "ti; instr. case"
+ ],
+ "tog": [
+  "that, this",
+  "taj; gen. case"
+ ],
+ "toliko": [
+  "so much, as much",
+  "adverb"
+ ],
+ "tradicionalan": [
+  "traditional",
+  "tradicionalan — traditional; masc."
+ ],
+ "treba": [
+  "necessary",
+  "trebati — to be needed; treba ti — you need"
+ ],
+ "trebala": [
+  "had to",
+  "trebati; past, fem."
+ ],
+ "trenutak": [
+  "moment",
+  "noun masc.; trenutak istine — moment of truth"
+ ],
+ "tresete": [
+  "you shake",
+  "tresti — to shake; present 2nd pl."
+ ],
+ "tresla": [
+  "shook",
+  "tresti — to shake; past fem."
+ ],
+ "tri": [
+  "three",
+  "numeral"
+ ],
+ "troje": [
+  "three",
+  "numeral"
+ ],
+ "trube": [
+  "bugle",
+  "truba — bugle, trumpet; fem.; gen."
+ ],
+ "trubu": [
+  "bugle",
+  "truba — bugle, trumpet; fem.; acc."
+ ],
+ "tu": [
+  "here",
+  "adverb"
+ ],
+ "tunela": [
+  "tunnel",
+  "tunel — tunnel; masc.; gen."
+ ],
+ "tuti": [
+  "tuti",
+  "from the playful rhyme \"nutri, tuti, fruti\""
+ ],
+ "tuđeg": [
+  "someone else's",
+  "tuđ — someone else's; gen. case masc."
+ ],
+ "tvoj": [
+  "your",
+  "possessive pronoun"
+ ],
+ "tvoja": [
+  "your",
+  "tvoj; fem."
+ ],
+ "tvojih": [
+  "your",
+  "gen. case pl."
+ ],
+ "tvom": [
+  "your",
+  "tvoj — your; loc. case"
+ ],
+ "tvrdo": [
+  "firmly, rigidly",
+  "adverb"
+ ],
+ "u": [
+  "in",
+  "preposition: + loc. case — where, + acc. case — where to"
+ ],
+ "ubedio": [
+  "convinced",
+  "ubediti — to convince; past masc."
+ ],
+ "ubije": [
+  "will kill",
+  "ubiti — to kill; 3rd sg."
+ ],
+ "ubijem": [
+  "kill (myself)",
+  "ubiti se — to kill oneself; 1st sg."
+ ],
+ "ubilo": [
+  "killed",
+  "ubiti — to kill; past neut."
+ ],
+ "ubiti": [
+  "to kill",
+  "ubiti se — to kill oneself"
+ ],
+ "udoban": [
+  "comfortable",
+  "udoban — comfortable; masc."
+ ],
+ "ugradi": [
+  "instill, build in",
+  "ugraditi — to build in, to instill; infinitive / 3rd"
+ ],
+ "ujeo": [
+  "bit",
+  "ujesti — to bite; past masc."
+ ],
+ "ujutru": [
+  "morning, in the morning",
+  "u šest ujutru — at six in the morning"
+ ],
+ "umro": [
+  "died",
+  "umreti; past, masc."
+ ],
+ "uopšte": [
+  "at all",
+  "adverb"
+ ],
+ "upadati": [
+  "barge in",
+  "upadati — to barge in; infinitive"
+ ],
+ "upravo": [
+  "exactly; precisely",
+  "adverb: exactly, right now"
+ ],
+ "uradim": [
+  "I will do",
+  "uraditi; 1st pers. sg."
+ ],
+ "uradio": [
+  "made",
+  "uraditi; past, masc."
+ ],
+ "uspeli": [
+  "managed",
+  "uspeti; past, pl."
+ ],
+ "uvek": [
+  "always",
+  "adverb; još uvek — still"
+ ],
+ "uz": [
+  "with, at, together with",
+  "preposition + acc. case"
+ ],
+ "ući": [
+  "to enter, to insert",
+  "infinitive; perfective"
+ ],
+ "uđem": [
+  "I will enter",
+  "ući — to enter"
+ ],
+ "uđeš": [
+  "you will enter, you will drop by",
+  "ući; 2nd pers. sg."
+ ],
+ "uđi": [
+  "come in",
+  "ući — to enter; imperative"
+ ],
+ "valjda": [
+  "probably, apparently",
+  "particle"
+ ],
+ "vam": [
+  "to you",
+  "short form of vama"
+ ],
+ "van": [
+  "outside",
+  "preposition + gen. case"
+ ],
+ "vas": [
+  "you",
+  "short/full form acc. case of vi"
+ ],
+ "vaspitana": [
+  "well brought up",
+  "vaspitan — well brought up; fem."
+ ],
+ "vaša": [
+  "your; yours",
+  "vaš; pl. neut. or sg. fem."
+ ],
+ "vašeg": [
+  "your",
+  "vaš; gen. case"
+ ],
+ "vašoj": [
+  "your",
+  "vaš — your; loc./dat. fem."
+ ],
+ "vašu": [
+  "your",
+  "vaš; acc. case fem."
+ ],
+ "važna": [
+  "important",
+  "važan; fem."
+ ],
+ "veruj": [
+  "believe",
+  "verovati — to believe; imperative"
+ ],
+ "već": [
+  "already; and",
+  "adverb «already»; after negation — «a» (nije selo već gradić)"
+ ],
+ "veče": [
+  "evening",
+  "dobro veče — good evening"
+ ],
+ "večera": [
+  "dinner",
+  "noun fem."
+ ],
+ "večeras": [
+  "tonight",
+  "adverb"
+ ],
+ "večeru": [
+  "dinner",
+  "večera — dinner; acc. case sg."
+ ],
+ "vi": [
+  "you",
+  "pronoun"
+ ],
+ "vidi": [
+  "look; sees",
+  "videti; imperative or 3rd pers. sg."
+ ],
+ "vidimo": [
+  "we will see; see you",
+  "videti; da vidimo — we will see; vidimo se — see you"
+ ],
+ "vidite": [
+  "you see",
+  "videti; 2nd pers. pl."
+ ],
+ "vidićete": [
+  "you will see",
+  "videti — to see; future 2nd pl."
+ ],
+ "vidiš": [
+  "you will see, you see",
+  "videti; 2nd pers. sg."
+ ],
+ "vina": [
+  "wine",
+  "vino; gen. case"
+ ],
+ "više": [
+  "more",
+  "comparative of mnogo"
+ ],
+ "vodi": [
+  "leads, carries",
+  "voditi — to lead; 3rd pers. sg."
+ ],
+ "vodimo": [
+  "we lead",
+  "voditi; vodimo računa — we take care"
+ ],
+ "vodite": [
+  "you lead",
+  "voditi; 2nd pers. pl."
+ ],
+ "vojno": [
+  "militarily",
+  "vojno — militarily"
+ ],
+ "vojnu": [
+  "military",
+  "vojni — military; fem.; acc."
+ ],
+ "volela": [
+  "would like, liked",
+  "voleti; past fem."
+ ],
+ "voleo": [
+  "would like",
+  "voleti — to love; voleo bih — I would like"
+ ],
+ "voli": [
+  "loves",
+  "voleti; 3rd pers. sg."
+ ],
+ "volim": [
+  "I love",
+  "voleti; 1st pers. sg."
+ ],
+ "voliš": [
+  "you love",
+  "voleti; 2nd pers. sg."
+ ],
+ "vozi": [
+  "drives",
+  "voziti — to drive, to lead (car); 3rd pers. sg."
+ ],
+ "vozilu": [
+  "vehicle",
+  "vozilo; loc. case"
+ ],
+ "vrata": [
+  "door",
+  "pl. neut. (only pl.)"
+ ],
+ "vrati": [
+  "will return",
+  "vratiti se; 3rd pers. sg."
+ ],
+ "vratim": [
+  "I will return; I will give back",
+  "vratiti (se); 1st pers. sg."
+ ],
+ "vratimo": [
+  "we will return",
+  "vratiti se — to return; 1st pers. pl."
+ ],
+ "vratio": [
+  "returned",
+  "vratiti se; past, masc."
+ ],
+ "vrlo": [
+  "very",
+  "adverb"
+ ],
+ "yesterday": [
+  "\"Yesterday\"",
+  "a Beatles song"
+ ],
+ "za": [
+  "for; on",
+  "preposition: za to — for this; skretanje za — turn onto"
+ ],
+ "zabavlja": [
+  "amuses",
+  "zabavljati; 3rd pers. sg."
+ ],
+ "zaboravan": [
+  "forgetful",
+  "zaboravan — forgetful; masc."
+ ],
+ "zaboravi": [
+  "forgot",
+  "zaboraviti — to forget; past 3rd pers. sg."
+ ],
+ "zaboravio": [
+  "forgot",
+  "zaboraviti — to forget; past, masc."
+ ],
+ "zaista": [
+  "really, truly",
+  "adverb"
+ ],
+ "zajedno": [
+  "together",
+  "adverb"
+ ],
+ "zar": [
+  "really",
+  "zar ne? — isn't it?"
+ ],
+ "zaspim": [
+  "fall asleep",
+  "zaspati — to fall asleep; 1st sg."
+ ],
+ "zato": [
+  "therefore",
+  "adverb"
+ ],
+ "zatreba": [
+  "will be needed",
+  "zatrebati; 3rd pers. sg."
+ ],
+ "zatvorenike": [
+  "prisoners",
+  "zatvorenik — prisoner; masc.; acc. pl."
+ ],
+ "zavlačiš": [
+  "string along",
+  "zavlačiti — to drag out, to string along; 2nd sg."
+ ],
+ "zašto": [
+  "why",
+  "interrogative adverb"
+ ],
+ "zbog": [
+  "because of",
+  "preposition + gen. case"
+ ],
+ "zgazio": [
+  "ran over",
+  "zgaziti — to run over; past masc."
+ ],
+ "zgrada": [
+  "buildings",
+  "zgrada — building; gen. case pl."
+ ],
+ "znala": [
+  "knew",
+  "znati; past, fem."
+ ],
+ "znam": [
+  "I know",
+  "znati — to know; 1st pers. sg."
+ ],
+ "znao": [
+  "knew",
+  "znati — to know; past, masc."
+ ],
+ "znate": [
+  "you know",
+  "znati; 2nd pers. pl."
+ ],
+ "znači": [
+  "means",
+  "značiti — to mean; as an introductory word — «so, in short»"
+ ],
+ "znaš": [
+  "you know",
+  "znati; 2nd pers. sg."
+ ],
+ "zove": [
+  "is called",
+  "zvati se — to be called"
+ ],
+ "zovite": [
+  "call",
+  "zvati — to call; imperative pl."
+ ],
+ "zvaćeš": [
+  "will call",
+  "zvati — to call; future 2nd sg."
+ ],
+ "zvaću": [
+  "I will call",
+  "zvati — to call; future 1st sg."
+ ],
+ "zvoni": [
+  "rings",
+  "zvoniti — to ring; present 3rd sg."
+ ],
+ "zvono": [
+  "bell, ring",
+  "zvono — bell, ring; neut."
+ ],
+ "zvuk": [
+  "sound",
+  "noun masc."
+ ],
+ "ćao": [
+  "hi; bye",
+  "colloquial (from Ital. ciao)"
+ ],
+ "će": [
+  "will be",
+  "auxiliary verb future, 3rd pers."
+ ],
+ "ćemo": [
+  "(we) will be",
+  "auxiliary verb future, 1st pers. pl."
+ ],
+ "ćete": [
+  "you will be",
+  "hteti; aux. verb future, 2nd pers. pl."
+ ],
+ "ćeš": [
+  "you will be",
+  "hteti; aux. verb future, 2nd pers. sg."
+ ],
+ "ću": [
+  "(I) will be",
+  "auxiliary verb future, 1st pers. sg."
+ ],
+ "ćureće": [
+  "turkey, made of turkey",
+  "ćureći; neut. / pl."
+ ],
+ "ćuti": [
+  "be quiet",
+  "ćutati — to be silent"
+ ],
+ "čašu": [
+  "glass",
+  "čaša — glass; acc."
+ ],
+ "čekaj": [
+  "wait",
+  "čekati — to wait; imperative, sg."
+ ],
+ "čekati": [
+  "to wait",
+  "čekati"
+ ],
+ "čemu": [
+  "to what",
+  "nema na čemu — you're welcome"
+ ],
+ "četiri": [
+  "four",
+  "numeral; četiri i po — four and a half"
+ ],
+ "četvrtka": [
+  "Thursday",
+  "četvrtak — Thursday; gen."
+ ],
+ "četvrtkom": [
+  "on Thursdays",
+  "četvrtak — Thursday; instr."
+ ],
+ "čiji": [
+  "whose",
+  "čiji — whose"
+ ],
+ "čini": [
+  "does",
+  "činiti; 3rd pers. sg."
+ ],
+ "čitali": [
+  "read",
+  "čitati — to read; past masc. pl."
+ ],
+ "čovek": [
+  "person",
+  "pl. — ljudi"
+ ],
+ "čoveče": [
+  "damn, dude",
+  "čovek — person; voc. case; as an exclamation — «wow, you're something»"
+ ],
+ "čudan": [
+  "strange",
+  "čudan — strange; masc."
+ ],
+ "čudna": [
+  "strange",
+  "čudan; neut. gender pl."
+ ],
+ "čudno": [
+  "strangely",
+  "čudan — strange"
+ ],
+ "čudnoj": [
+  "strange",
+  "čudan — strange; loc. fem."
+ ],
+ "čudom": [
+  "miracle",
+  "čudo — miracle; neut.; instr."
+ ],
+ "čula": [
+  "heard",
+  "čuti — to hear"
+ ],
+ "čuvali": [
+  "looked after",
+  "čuvati — to look after; past pl."
+ ],
+ "čuvaš": [
+  "look after",
+  "čuvati — to look after; 2nd sg."
+ ],
+ "šantića": [
+  "Šantić",
+  "Aleksa Šantić — a poet; gen."
+ ],
+ "šest": [
+  "six",
+  "numeral"
+ ],
+ "šećer": [
+  "sugar",
+  "noun masc."
+ ],
+ "šećera": [
+  "sugar",
+  "šećer; gen. case"
+ ],
+ "škoditi": [
+  "to harm",
+  "škoditi — to harm; infinitive"
+ ],
+ "šop": [
+  "shop",
+  "pet šop — pet shop"
+ ],
+ "šta": [
+  "that; what",
+  "interrogative pronoun"
+ ],
+ "što": [
+  "what; why",
+  "conjunction «what»; colloquial question «of what, why» (što si se sredio?)"
+ ],
+ "želi": [
+  "wants",
+  "želeti — to want"
+ ],
+ "žena": [
+  "woman",
+  "also «wife»"
+ ],
+ "ženu": [
+  "wife; woman",
+  "žena; acc. case"
+ ],
+ "živ": [
+  "living; raw",
+  "adj masc."
+ ],
+ "živahna": [
+  "lively",
+  "živahan — lively; fem."
+ ],
+ "živi": [
+  "alive",
+  "živ — alive; pl."
+ ],
+ "živim": [
+  "I live",
+  "živeti; 1st pers. sg."
+ ],
+ "živimo": [
+  "we live",
+  "živeti; 1st pers. pl."
+ ],
+ "život": [
+  "life",
+  "noun masc."
+ ],
+ "životu": [
+  "life",
+  "život — life; loc. case"
+ ]
+}
