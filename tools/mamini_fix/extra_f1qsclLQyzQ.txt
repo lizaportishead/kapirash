@@ -1,0 +1,26 @@
+64.5|67.8|Da, uzela sam papire od advokata.|Да, я взяла бумаги у адвоката.|Yes, I took the papers from the lawyer.
+89.62|90.94|Ma nemoj da se praviš da ne znaš, brate.|Да не притворяйся, что не знаешь, брат.|Come on, don't pretend you don't know, man.
+300.16|301.3|Dobro veče, Roso.|Добрый вечер, Роса.|Good evening, Rosa.
+641.3|643.2|Pa kako majci možeš tako da kažeš?|Как ты можешь так говорить матери?|How can you say that to your mother?
+643.3|644.2|Majko, lažeš!|Мама, ты лжёшь!|Mom, you're lying!
+646.3|649.2|Lažeš, izmišljaš i prisluškuješ.|Врёшь, выдумываешь и подслушиваешь.|You lie, you make things up and you eavesdrop.
+663.3|666.2|E, sad za kaznu nećeš izlaziti.|Ну, а теперь в наказание никуда не пойдёшь.|Well, now as punishment you're not going out.
+939.32|942.4|E, skloni ovo, molim te, ne podnosim đubre po hodnicima.|Так, убери это, пожалуйста, не выношу мусор в коридорах.|Move this, please, I can't stand junk in the hallways.
+1185.6|1187.5|Dovoljno.|Достаточно.|Enough.
+1304.4|1309.7|Da li se sećaš kad si imao dve godine?|Помнишь, когда тебе было два года?|Do you remember when you were two years old?
+1309.84|1311.1|Ma kako se ne bi sećao, naravno.|Да как же не помнить, конечно.|How could you not remember, of course.
+1311.28|1319.5|Ti si onda imao grip, a ja sam imala kartu za koncert koji sam dugo, dugo iščekivala i ja nisam otišla na koncert.|Тогда у тебя был грипп, а у меня был билет на концерт, которого я долго-долго ждала, и я не пошла на концерт.|You had the flu then, and I had a ticket for a concert I'd been waiting for a long, long time, and I didn't go to the concert.
+1319.76|1323.3|Ne, nego sam ostala kod kuće da tebi menjam obloge.|Нет, я осталась дома менять тебе компрессы.|No, I stayed home to change your compresses.
+1323.38|1327.8|Eto, kad ti budeš imala grip, ja ću ostati kod kuće da tebi menjam obloge i neću ići na koncert.|Вот, когда у тебя будет грипп, я останусь дома менять тебе компрессы и не пойду на концерт.|There, when you have the flu, I'll stay home to change your compresses and won't go to the concert.
+1327.88|1328.46|Ili mogu sad da idem?|Или мне уже можно идти?|Or can I go now?
+1334.4|1336.4|Pazi da ti ne kažem!|Смотри, как бы я тебе не сказала!|Watch out, or I'll tell you!
+1396.4|1399.4|Da nazdravimo novoj bebi.|Давайте выпьем за новорождённого.|Let's drink to the new baby.
+1403.4|1405.18|Nazdravljamo i razvodu?|Мы пьём и за развод?|Are we toasting the divorce too?
+1453|1455|Mama, otkuda ti?|Мама, ты откуда?|Mom, where did you come from?
+1490.8|1491.8|Dobro veče, Roso.|Добрый вечер, Роса.|Good evening, Rosa.
+1493.8|1494.8|Nina.|Нина.|Nina.
+1494.8|1495.8|Dobro veče, Nina.|Добрый вечер, Нина.|Good evening, Nina.
+1498.8|1500.8|Jel' ja prekidam nešto?|Я что-то прерываю?|Am I interrupting something?
+1525.7|1532.6|Slušaj, Roso, ti kad napraviš požar u kuhinji, to nije požar, to je stihija. Istopila si džezvu.|Слушай, Роса, когда ты устраиваешь пожар на кухне, это не пожар, а стихия. Ты расплавила джезву.|Listen, Rosa, when you start a fire in the kitchen it's not a fire, it's a natural disaster. You melted the coffee pot.
+1532.7|1537.6|Pa to je zato što si insistirao da ja sama pravim čaj.|Это потому, что ты настоял, чтобы я сама заваривала чай.|That's because you insisted that I make the tea myself.
+1540.7|1542.7|Jesi dobro?|Ты в порядке?|Are you okay?

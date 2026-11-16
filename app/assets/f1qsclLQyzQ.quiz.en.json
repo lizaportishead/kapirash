@@ -92,6 +92,28 @@
      ],
      "a": 1,
      "e": "In the video: \"Ja sam Bosa.\" — I'm Bosa."
+    },
+    {
+     "q": "Why didn't the mother go to the concert when her son was two?",
+     "o": [
+      "He had the flu",
+      "She had no ticket",
+      "The concert was cancelled",
+      "No one to look after the cat"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ti si onda imao grip, a ja sam imala kartu za koncert\" — you had the flu then, and I had a ticket for the concert."
+    },
+    {
+     "q": "What happened to the coffee pot in the kitchen?",
+     "o": [
+      "It was stolen",
+      "It melted",
+      "It broke",
+      "It got lost"
+     ],
+     "a": 1,
+     "e": "In the video: \"to nije požar, to je stihija. Istopila si džezvu.\" — it's not a fire, it's a natural disaster. You melted the coffee pot."
     }
    ]
   },
@@ -195,6 +217,30 @@
      ],
      "a": 0,
      "e": "nesanica — insomnia."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ti si onda imao *grip*.",
+     "o": [
+      "flu",
+      "a cold",
+      "a cough",
+      "a fever"
+     ],
+     "a": 0,
+     "e": "grip — flu."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Koncert koji sam dugo *iščekivala*.",
+     "o": [
+      "was waiting for",
+      "saw",
+      "lost",
+      "bought"
+     ],
+     "a": 0,
+     "e": "iščekivati — to await."
     }
    ]
   },
@@ -298,6 +344,30 @@
      ],
      "a": 2,
      "e": "The vocative of Rosa is Roso."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Ne podnosim đubre po ___.",
+     "o": [
+      "hodnicima",
+      "hodnik",
+      "hodnika",
+      "hodniku"
+     ],
+     "a": 0,
+     "e": "«po» meaning 'all over' takes the plural: po hodnicima."
+    },
+    {
+     "t": "Choose the correct verb form",
+     "q": "Da li se ___ kad si imao dve godine?",
+     "o": [
+      "sećaš",
+      "sećam",
+      "seća",
+      "sećate"
+     ],
+     "a": 0,
+     "e": "Addressing one person with «ti»: da li se sećaš."
     }
    ]
   }
