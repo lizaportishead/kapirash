@@ -132,7 +132,12 @@ List<(String?, List<Video>)> _seriesGroups(List<Video> list) {
   for (final v in list) {
     (map[_seriesName(v)] ??= []).add(v);
   }
-  return [for (final e in map.entries) (e.key, e.value)];
+  final groups = [for (final e in map.entries) (e.key, e.value)];
+  // «Andrija i Andjelka» всегда первыми; остальные — в порядке появления.
+  return [
+    ...groups.where((g) => g.$1 == 'Andrija i Andjelka'),
+    ...groups.where((g) => g.$1 != 'Andrija i Andjelka'),
+  ];
 }
 
 // Высота карточки: превью 16:9 плюс подпись.
