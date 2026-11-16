@@ -20,6 +20,7 @@ import 'processing_page.dart';
 import 'videos.dart';
 import 'analytics.dart';
 import 'deep_link.dart';
+import 'install_banner.dart';
 import 'l10n.dart';
 
 /// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
@@ -225,7 +226,12 @@ class _PlayerPageState extends State<PlayerPage> {
       child: YoutubePlayer(key: _playerKey, controller: _yt, autoFullScreen: false),
     );
     // На планшете и в горизонтальном положении хватает высоты для обычной раскладки.
-    if (size.width > size.height && size.height < 600) return _landscape(player, cue);
+    if (size.width > size.height && size.height < 600) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) maybeShowLandscapeInstallDialog(context);
+      });
+      return _landscape(player, cue);
+    }
     if (size.width >= 960) return _desktop(player, cue);
     return Scaffold(
       body: SafeArea(

@@ -81,3 +81,43 @@ class _InstallBannerState extends State<InstallBanner> {
     );
   }
 }
+
+bool _landscapeDialogShown = false;
+
+/// В горизонтальном положении в мобильном браузере: диалог «добавь на экран Домой, чтобы смотреть без интерфейса браузера».
+/// Раз за сессию; «Больше не показывать» отключает насовсем.
+Future<void> maybeShowLandscapeInstallDialog(BuildContext context) async {
+  if (_landscapeDialogShown) return;
+  final platform = installPlatform();
+  if (platform == null) return;
+  _landscapeDialogShown = true;
+  final prefs = await SharedPreferences.getInstance();
+  if (prefs.getBool('install_landscape_dismissed') == true) return;
+  if (!context.mounted) return;
+  final never = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: Text(ui('Смотри на весь экран'), style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+      content: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 420),
+        child: Text(
+          platform == 'ios'
+              ? ui('Добавь Капираш на экран «Домой»: нажми «Поделиться» и «На экран Домой». Тогда видео с субтитрами откроется на весь экран, без панелей браузера.')
+              : ui('Добавь Капираш на главный экран: меню браузера → «Установить приложение». Тогда видео с субтитрами откроется на весь экран, без панелей браузера.'),
+          style: TextStyle(fontSize: 14, height: 1.35),
+        ),
+      ),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(ctx, true), child: Text(ui('Больше не показывать'))),
+        FilledButton(
+          style: FilledButton.styleFrom(backgroundColor: cViolet, foregroundColor: cOnViolet),
+          onPressed: () => Navigator.pop(ctx, false),
+          child: Text(ui('Понятно')),
+        ),
+      ],
+    ),
+  );
+  if (never == true) await prefs.setBool('install_landscape_dismissed', true);
+}
