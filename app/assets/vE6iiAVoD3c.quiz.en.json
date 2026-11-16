@@ -92,6 +92,28 @@
      ],
      "a": 2,
      "e": "In the video: \"Hvala, pravo ime mi je Slavko, ali pošto me Rosa zove Lazar, neka ostane tako.\" — thanks, my real name is Slavko, but since Rosa calls me Lazar, let it stay that way."
+    },
+    {
+     "q": "What does the husband recall about his wife's gold bag?",
+     "o": [
+      "She wanted silver but he insisted on gold",
+      "He forgot to buy it",
+      "It was too expensive for him",
+      "It was stolen"
+     ],
+     "a": 0,
+     "e": "In the video: \"A sećam se kad si htela srebrnu torbu umesto te zlatne torbe, znaš?\" — I remember you wanted a silver bag instead of that gold one."
+    },
+    {
+     "q": "What do they say about the flowers for 'Mom'?",
+     "o": [
+      "The flower shop must have made a mistake",
+      "The flowers wilted",
+      "The flowers were very expensive",
+      "The flowers were meant for her sister"
+     ],
+     "a": 0,
+     "e": "In the video: \"Sasvim sigurno su pogrešili u cvećari.\" — the flower shop must have made a mistake."
     }
    ]
   },
@@ -195,6 +217,30 @@
      ],
      "a": 3,
      "e": "braća — brothers."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Eto, *minđuše* su bile skupe.",
+     "o": [
+      "earrings",
+      "watches",
+      "gloves",
+      "bracelets"
+     ],
+     "a": 0,
+     "e": "minđuše — earrings."
+    },
+    {
+     "t": "Choose the translation of the highlighted word",
+     "q": "Ne smeš da *zaključavaš* vrata.",
+     "o": [
+      "lock",
+      "open",
+      "break",
+      "paint"
+     ],
+     "a": 0,
+     "e": "zaključavati — to lock."
     }
    ]
   },
@@ -298,6 +344,30 @@
      ],
      "a": 2,
      "e": "«Na» for a place takes the locative: na terasi."
+    },
+    {
+     "t": "Choose the correct form",
+     "q": "Sasvim sigurno su pogrešili u ___.",
+     "o": [
+      "cvećari",
+      "cvećara",
+      "cvećaru",
+      "cvećarom"
+     ],
+     "a": 0,
+     "e": "«u» with a location takes the locative: u cvećari."
+    },
+    {
+     "t": "Choose the correct verb form",
+     "q": "Ne ___ da zaključavaš vrata od ovog stana!",
+     "o": [
+      "smeš",
+      "smem",
+      "sme",
+      "smete"
+     ],
+     "a": 0,
+     "e": "Addressing one person: ti smeš."
     }
    ]
   }

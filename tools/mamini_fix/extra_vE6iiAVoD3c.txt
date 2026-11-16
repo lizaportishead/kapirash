@@ -1,0 +1,20 @@
+465|466.5|Za mamu, a?|Для мамы, да?|For Mom, huh?
+466.6|467.6|Otkad se mama zove Rada?|С каких пор маму зовут Рада?|Since when is Mom called Rada?
+467.7|469.6|Sasvim sigurno su pogrešili u cvećari.|Наверняка в цветочном ошиблись.|The flower shop must have made a mistake.
+638.6|646.5|Minđuše su strašno skupe bile, ali kada ih vidim na tebi, to je potpuno opravdana investicija.|Серьги были ужасно дорогими, но когда я вижу их на тебе, это полностью оправданное вложение.|The earrings were terribly expensive, but when I see them on you, it's a completely justified investment.
+648.68|652.38|A sećam se kad si htela srebrnu torbu umesto te zlatne torbe, znaš?|А помню, ты хотела серебряную сумку вместо этой золотой, знаешь?|And I remember when you wanted a silver bag instead of that gold one, you know?
+652.9|657.6|A ja kažem, ne, za moju ženu samo zlatno, makar ceo dan morao da gladujem.|А я говорю: нет, для моей жены только золотая, пусть даже мне придётся целый день голодать.|And I said no, for my wife only gold, even if I have to starve all day.
+827.5|829.4|Miša, pije li Rada vino?|Миша, Рада пьёт вино?|Miša, does Rada drink wine?
+829.5|831.4|Otkud ja znam da li Rada pije vino?|Откуда мне знать, пьёт ли Рада вино?|How should I know whether Rada drinks wine?
+839.5|841.4|Fenomenalno!|Феноменально!|Phenomenal!
+877.6|880.6|Prvi put u životu čujem da za bebu neko kaže «lepi».|Впервые в жизни слышу, чтобы про ребёнка кто-то говорил «красивый».|It's the first time in my life I've heard someone call a baby "handsome".
+1192.9|1195.5|Opa! Rolovana piletina!|Опа! Куриный рулет!|Wow! Rolled chicken!
+1366.6|1371.5|Izvinite, molim vas. Idem da proverim rernu.|Извините, пожалуйста. Пойду проверю духовку.|Excuse me, please. I'm going to check the oven.
+1375.34|1377.86|Ja ne znam ko je izmislio to čudo tehnike.|Не знаю, кто выдумал это чудо техники.|I don't know who invented that wonder of technology.
+1409.5|1413.5|Ne smeš da zaključavaš vrata od ovog stana, Jovanka!|Нельзя запирать дверь этой квартиры, Йованка!|You mustn't lock the door of this apartment, Jovanka!
+1423.5|1425.4|Oprostite, gospođo, u redu?|Простите, госпожа, всё в порядке?|Excuse me, ma'am, is everything all right?
+1425.5|1427.4|Sve u redu, sve u redu.|Всё в порядке, всё в порядке.|All fine, all fine.
+1443|1445.5|Ostali smo ukratko bez večere.|В общем, мы остались без ужина.|In short, we're left without dinner.
+1529.7|1534.6|Milentije, nikad te ništa nisam molio.|Милентие, я тебя никогда ни о чём не просил.|Milentije, I've never asked you for anything.
+1597.8|1599.7|Dobro jutro.|Доброе утро.|Good morning.
+1599.8|1601.7|Dobro jutro, bebo.|Доброе утро, малыш.|Good morning, baby.
