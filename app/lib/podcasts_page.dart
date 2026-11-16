@@ -10,6 +10,7 @@ import 'analytics.dart';
 import 'deep_link.dart';
 import 'l10n.dart';
 import 'phrase.dart';
+import 'request_sheet.dart';
 import 'pod_audio.dart';
 import 'player_page.dart';
 import 'quiz_page.dart';
@@ -33,6 +34,12 @@ class PodcastsPage extends StatelessWidget {
           PageTitle(
             ui('Подкасты'),
             actions: [
+              if (canSendRequest)
+                IconButton(
+                  tooltip: ui('Заявка на подкаст'),
+                  icon: Icon(Icons.add_rounded, size: 26, color: cText),
+                  onPressed: () => showSendRequest(context, podcast: true),
+                ),
               FavIconButton(scope: FavScope.podcasts, onPressed: () => _open(context, searchHint: null)),
               IconButton(
                 tooltip: ui('Поиск'),

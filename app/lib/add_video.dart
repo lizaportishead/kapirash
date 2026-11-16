@@ -9,6 +9,7 @@ import 'player_page.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'videos.dart';
+import 'adaptive_sheet.dart';
 import 'l10n.dart';
 
 /// Кнопка «+» в каталоге видна только владельцу: пока ролики добавляет один человек.
@@ -17,13 +18,7 @@ bool get canAddVideo => kDebugMode || kOwnerEmails.contains(store.user);
 
 /// Шторка «Добавить ролик». После ссылки открывает экран ролика: на нём видно, как идёт подготовка.
 Future<void> showAddVideo(BuildContext context) async {
-  final video = await showModalBottomSheet<Video>(
-    context: context,
-    backgroundColor: cCard,
-    isScrollControlled: true,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
-    builder: (_) => _AddVideoSheet(),
-  );
+  final video = await showAdaptiveSheet<Video>(context, (_) => _AddVideoSheet());
   if (video != null && context.mounted) openVideo(context, video);
 }
 

@@ -318,7 +318,13 @@ class AppStore extends ChangeNotifier {
     user = cloud?.auth.currentUser?.email;
     cloud?.auth.onAuthStateChange.listen((s) {
       final email = s.session?.user.email;
-      if (s.event == AuthChangeEvent.signedIn) identifyUser(s.session?.user.id);
+      if (s.event == AuthChangeEvent.signedIn) {
+        identifyUser(s.session?.user.id);
+        // Только реальный вход (user == null), а не восстановление сессии при старте.
+        if (user == null && email != null) {
+          trackEvent('login', {'method': s.session?.user.appMetadata['provider']?.toString() ?? 'unknown'});
+        }
+      }
       if (s.event == AuthChangeEvent.signedOut) identifyUser(null);
       if (s.event == AuthChangeEvent.signedIn && user == null && email != null) {
         // Ввели код или открыли ссылку из письма.
@@ -420,9 +426,7 @@ class AppStore extends ChangeNotifier {
         final story = storyById(e.key);
         final video = videoById(e.key);
         if (story?.asset != null) {
-          dict = jsonDecode(
-            await assetText('${story!.asset}.dict.json', en: '${story.asset}.dict.en.json'),
-          ) as Map<String, dynamic>;
+          dict = await storyDict(story!);
         } else if (video != null) {
           dict = (await loadSubs(video))?.dict;
         }

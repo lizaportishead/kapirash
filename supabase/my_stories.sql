@@ -18,8 +18,14 @@ create table public.my_stories (
 
 alter table public.my_stories enable row level security;
 
--- Видит, добавляет и удаляет только владелец. Заявки разбирает Claude с секретным ключом: RLS он обходит.
+-- Видит, добавляет и удаляет только iamkurm@gmail.com. Заявки разбирает Claude с секретным ключом: RLS он обходит.
 create policy "owner" on public.my_stories
   for all to authenticated
-  using ((auth.jwt() ->> 'email') in ('ilovekurm@gmail.com', 'iamkurm@gmail.com'))
-  with check ((auth.jwt() ->> 'email') in ('ilovekurm@gmail.com', 'iamkurm@gmail.com'));
+  using ((auth.jwt() ->> 'email') = 'iamkurm@gmail.com')
+  with check ((auth.jwt() ->> 'email') = 'iamkurm@gmail.com');
+
+-- Если таблица уже создана с двумя почтами, достаточно заменить политику:
+--   drop policy "owner" on public.my_stories;
+--   create policy "owner" on public.my_stories for all to authenticated
+--     using ((auth.jwt() ->> 'email') = 'iamkurm@gmail.com')
+--     with check ((auth.jwt() ->> 'email') = 'iamkurm@gmail.com');

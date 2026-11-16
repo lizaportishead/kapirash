@@ -7,6 +7,7 @@ import 'add_video.dart';
 import 'clips_page.dart';
 import 'fav_button.dart';
 import 'icons.dart';
+import 'request_sheet.dart';
 import 'liked_page.dart';
 import 'search_page.dart';
 import 'store.dart';
@@ -33,13 +34,7 @@ class FeedPage extends StatelessWidget {
     final newest = videos.reversed.toList();
     final perSection = _perSection(context);
     final popular = (videos.toList()..sort((a, b) => b.views.compareTo(a.views))).take(perSection).toList();
-    final topics = <String>[
-      for (final v in videos)
-        if (v.topic.isNotEmpty) v.topic,
-    ].toSet().toList();
-    // Темы по популярности: чем больше суммарных просмотров роликов, тем выше.
-    final topicViews = {for (final t in topics) t: videos.where((v) => v.topic == t).fold(0, (a, v) => a + v.views)};
-    topics.sort((a, b) => topicViews[b]!.compareTo(topicViews[a]!));
+    final topics = _topicsByViews();
     final mine = [for (final m in store.myVideos.reversed) m.video];
     final series = [
       for (final v in videos.reversed)
@@ -83,7 +78,7 @@ class FeedPage extends StatelessWidget {
         ),
       ],
     );
-    if (!canAddVideo) return page;
+    if (!canAddVideo && !canSendRequest) return page;
     return Stack(
       children: [
         page,
@@ -99,7 +94,7 @@ class FeedPage extends StatelessWidget {
               elevation: 3,
               clipBehavior: Clip.antiAlias,
               child: InkWell(
-                onTap: () => showAddVideo(context),
+                onTap: () => canSendRequest ? showSendRequest(context, podcast: false) : showAddVideo(context),
                 child: SizedBox(width: 56, height: 56, child: Icon(KIcons.plus, size: 28, color: cOnViolet)),
               ),
             ),
@@ -108,6 +103,17 @@ class FeedPage extends StatelessWidget {
       ],
     );
   }
+}
+
+/// Темы каталога по популярности: чем больше суммарных просмотров роликов, тем выше.
+List<String> _topicsByViews() {
+  final topics = <String>[
+    for (final v in videos)
+      if (v.topic.isNotEmpty) v.topic,
+  ].toSet().toList();
+  final views = {for (final t in topics) t: videos.where((v) => v.topic == t).fold(0, (a, v) => a + v.views)};
+  topics.sort((a, b) => views[b]!.compareTo(views[a]!));
+  return topics;
 }
 
 /// Серия сериала: в названии «Epizoda» или «Serija», либо канал «Andrija i Andjelka».
@@ -233,13 +239,12 @@ class ClipsStrip extends StatelessWidget {
 }
 
 /// Все ролики одной темы поверх таббара.
-void openTopic(BuildContext context, String topic) {
-  Navigator.of(context).push(
-    MaterialPageRoute<void>(
-      settings: urlSettings('TopicPage', '/topic/${topicSlug(topic)}'),
-      builder: (_) => TopicPage(topic),
-    ),
+void openTopic(BuildContext context, String topic, {bool replace = false}) {
+  final route = MaterialPageRoute<void>(
+    settings: urlSettings('TopicPage', '/topic/${topicSlug(topic)}'),
+    builder: (_) => TopicPage(topic),
   );
+  replace ? Navigator.of(context).pushReplacement(route) : Navigator.of(context).push(route);
 }
 
 /// Все ролики каталога поверх таббара: адрес `/all`.
@@ -253,13 +258,12 @@ void openAllVideos(BuildContext context) {
 }
 
 /// Все сериалы поверх таббара: адрес `/series`.
-void openSeries(BuildContext context) {
-  Navigator.of(context).push(
-    MaterialPageRoute<void>(
-      settings: urlSettings('TopicPage', '/series'),
-      builder: (_) => TopicPage('', series: true),
-    ),
+void openSeries(BuildContext context, {bool replace = false}) {
+  final route = MaterialPageRoute<void>(
+    settings: urlSettings('TopicPage', '/series'),
+    builder: (_) => TopicPage('', series: true),
   );
+  replace ? Navigator.of(context).pushReplacement(route) : Navigator.of(context).push(route);
 }
 
 class TopicPage extends StatelessWidget {
@@ -303,27 +307,31 @@ class TopicPage extends StatelessWidget {
                                   itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
                                 ),
                               ),
-                              if (!all)
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 24),
-                                    child: SizedBox(
-                                      height: 48,
-                                      child: FilledButton(
-                                        onPressed: () => openAllVideos(context),
-                                        style: FilledButton.styleFrom(
-                                          backgroundColor: cViolet,
-                                          foregroundColor: cOnViolet,
-                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                        ),
-                                        child: Text(
-                                          ui('Перейти ко всем видео'),
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                                        ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(16, 8, 16, 32),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        ui('Ролики в других категориях'),
+                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
                                       ),
-                                    ),
+                                      SizedBox(height: 12),
+                                      Wrap(
+                                        spacing: 8,
+                                        runSpacing: 8,
+                                        children: [
+                                          if (!series) Pill(ui('Сериалы'), onTap: () => openSeries(context, replace: true)),
+                                          for (final t in _topicsByViews())
+                                            if (series || t != topic)
+                                              Pill(topicLabel(t), onTap: () => openTopic(context, t, replace: true)),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
+                              ),
                             ],
                           );
                         },

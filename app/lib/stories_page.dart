@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:flutter/services.dart';
 
+import 'add_story.dart';
 import 'collection_page.dart';
 import 'deep_link.dart';
 import 'feed_page.dart' show SectionHeader;
@@ -32,8 +33,18 @@ class Story {
     this.source = '',
     this.landscape = false,
     this.topic = '',
+    this.mine = false,
+    this.body,
+    this.dictRu,
+    this.dictEn,
+    this.status = 'ready',
   });
   final String id, title, author, blurb, level, source;
+  // Свой рассказ владельца из облака: текст и словарь лежат в самом объекте, а не в assets.
+  final bool mine;
+  final String? body;
+  final Map<String, dynamic>? dictRu, dictEn;
+  final String status;
   // Тема для секций на странице рассказов (по-русски, как у видео; перевод — topicLabel).
   final String topic;
   final String? asset;
@@ -46,7 +57,7 @@ class Story {
   String get wordKey => 'story:$id';
 }
 
-const stories = [
+const _builtInStories = [
   Story(
     id: 'na-salteru',
     title: 'Na šalteru',
@@ -341,6 +352,66 @@ const stories = [
   ),
 ];
 
+/// Встроенные рассказы плюс свои из облака (если вошёл владелец).
+List<Story> stories = [..._builtInStories];
+final storiesRev = ValueNotifier<int>(0);
+const kMyTopic = 'Мои тексты';
+
+/// Подтягивает свои рассказы из таблицы my_stories; у остальных пользователей таблица пуста или недоступна.
+Future<void> loadMyStories() async {
+  final db = cloud;
+  if (db == null || !canAddStory) return;
+  try {
+    final rows = await db.from('my_stories').select().order('created_at', ascending: false);
+    final mine = [
+      for (final r in rows as List)
+        Story(
+          id: 'my-${r['id']}',
+          title: r['title'] as String,
+          author: (r['author'] as String).isEmpty ? ui('Мой текст') : r['author'] as String,
+          level: r['level'] as String,
+          asset: 'my_${r['id']}',
+          topic: kMyTopic,
+          mine: true,
+          body: r['body'] as String,
+          dictRu: Map<String, dynamic>.from(r['dict'] as Map),
+          dictEn: r['dict_en'] == null ? null : Map<String, dynamic>.from(r['dict_en'] as Map),
+          status: r['status'] as String,
+          blurb: ((r['body'] as String).split('\n\n').first).length > 160
+              ? '${((r['body'] as String).split('\n\n').first).substring(0, 160)}…'
+              : (r['body'] as String).split('\n\n').first,
+        ),
+    ];
+    stories = [...mine, ..._builtInStories];
+    storiesRev.value++;
+  } catch (_) {}
+}
+
+Future<void> deleteMyStory(Story s) async {
+  await cloud!.from('my_stories').delete().eq('id', s.id.substring(3));
+  await loadMyStories();
+}
+
+/// Текст рассказа: свой — из памяти, встроенный — из assets.
+Future<String> storyText(Story s) async => s.body ?? await rootBundle.loadString('assets/${s.asset}.txt');
+
+/// Словарь рассказа; у своего может быть пустым, пока Claude не обработал заявку.
+Future<Map<String, dynamic>> storyDict(Story s) async {
+  if (s.mine) return (store.lang == 'en' ? s.dictEn : null) ?? s.dictRu ?? {};
+  return jsonDecode(await store.assetText('${s.asset}.dict.json', en: '${s.asset}.dict.en.json'))
+      as Map<String, dynamic>;
+}
+
+Widget storyCoverImage(Story s, {BoxFit fit = BoxFit.cover, double? width}) => Image.asset(
+  'assets/${s.asset}.png',
+  fit: fit,
+  width: width,
+  errorBuilder: (_, _, _) => ColoredBox(
+    color: cCard2,
+    child: Center(child: Icon(KIcons.stories, size: 36, color: cFaint)),
+  ),
+);
+
 Story? storyById(String wordKey) {
   for (final s in stories) {
     if (s.wordKey == wordKey) return s;
@@ -359,17 +430,39 @@ void openStory(BuildContext context, Story s, {int? page}) {
   );
 }
 
-class StoriesPage extends StatelessWidget {
+class StoriesPage extends StatefulWidget {
   const StoriesPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<StoriesPage> createState() => _StoriesPageState();
+}
+
+class _StoriesPageState extends State<StoriesPage> {
+  @override
+  void initState() {
+    super.initState();
+    loadMyStories();
+  }
+
+  @override
+  Widget build(BuildContext context) => ValueListenableBuilder<int>(
+    valueListenable: storiesRev,
+    builder: (context, _, _) => _body(context),
+  );
+
+  Widget _body(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         PageTitle(
           ui('Рассказы'),
           actions: [
+            if (canAddStory)
+              IconButton(
+                tooltip: ui('Добавить рассказ'),
+                icon: Icon(Icons.add_rounded, size: 26, color: cText),
+                onPressed: () => showAddStory(context),
+              ),
             FavIconButton(scope: FavScope.stories, onPressed: () => _openCollection(context, searchHint: null)),
             IconButton(
               tooltip: ui('Поиск'),
@@ -471,12 +564,27 @@ void _openCollection(BuildContext context, {required String? searchHint}) {
   );
 }
 
+Future<void> _confirmDelete(BuildContext context, Story s) async {
+  final ok = await showDialog<bool>(
+    context: context,
+    builder: (c) => AlertDialog(
+      title: Text(ui('Удалить рассказ?')),
+      content: Text(store.conv(s.title)),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(c, false), child: Text(ui('Отмена'))),
+        TextButton(onPressed: () => Navigator.pop(c, true), child: Text(ui('Удалить'))),
+      ],
+    ),
+  );
+  if (ok == true) await deleteMyStory(s);
+}
+
 final _pageCounts = <String, Future<int>>{};
 
 /// Число страниц текста рассказа (без обложки); считаем один раз на рассказ.
 Future<int> _storyPages(Story s) => _pageCounts.putIfAbsent(s.id, () async {
   try {
-    final text = await rootBundle.loadString('assets/${s.asset}.txt');
+    final text = await storyText(s);
     return _StoryReaderState._paginate(text).length;
   } catch (_) {
     return 0;
@@ -564,14 +672,7 @@ class _StoryCard extends StatelessWidget {
                       fit: StackFit.expand,
                       children: [
                         ExcludeSemantics(
-                          child: Image.asset(
-                            'assets/${story.asset}.png',
-                            fit: BoxFit.cover,
-                            errorBuilder: (_, _, _) => ColoredBox(
-                              color: cCard2,
-                              child: Icon(KIcons.stories, size: 36, color: cFaint),
-                            ),
-                          ),
+                          child: storyCoverImage(story),
                         ),
                         Positioned(left: 0, right: 0, bottom: 0, child: _StoryProgress(story)),
                       ],
@@ -632,7 +733,11 @@ class _StoryCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: Stack(
           children: [
-            InkWell(onTap: () => openStory(context, story), child: body),
+            InkWell(
+              onTap: () => openStory(context, story),
+              onLongPress: story.mine ? () => _confirmDelete(context, story) : null,
+              child: body,
+            ),
             Positioned(top: 4, right: 4, child: _StoryStar(story, onCover: false)),
           ],
         ),
@@ -646,7 +751,12 @@ class _StoryCard extends StatelessWidget {
     child: Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 12,
-      children: [if (story.level.isNotEmpty) DifficultyLabel(story.level), _PageCount(story, inline: true)],
+      children: [
+        if (story.level.isNotEmpty) DifficultyLabel(story.level),
+        _PageCount(story, inline: true),
+        if (story.mine && story.status != 'ready')
+          Text(ui('Словарик готовится'), style: TextStyle(fontSize: 13, color: cViolet)),
+      ],
     ),
   );
 
@@ -667,14 +777,7 @@ class _StoryCard extends StatelessWidget {
                       fit: StackFit.expand,
                       children: [
                         ExcludeSemantics(
-                          child: Image.asset(
-                            'assets/${story.asset}.png',
-                            fit: BoxFit.cover,
-                            errorBuilder: (_, _, _) => ColoredBox(
-                              color: cCard2,
-                              child: Icon(KIcons.stories, size: 36, color: cFaint),
-                            ),
-                          ),
+                          child: storyCoverImage(story),
                         ),
                         Positioned(left: 0, right: 0, bottom: 0, child: _StoryProgress(story)),
                       ],
@@ -736,7 +839,11 @@ class _StoryCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: Stack(
           children: [
-            InkWell(onTap: () => openStory(context, story), child: body),
+            InkWell(
+              onTap: () => openStory(context, story),
+              onLongPress: story.mine ? () => _confirmDelete(context, story) : null,
+              child: body,
+            ),
             Positioned(top: 8, right: 8, child: _StoryStar(story, onCover: true)),
           ],
         ),
@@ -784,9 +891,11 @@ class _StoryReaderState extends State<StoryReader> {
     super.initState();
     _ctl = PageController(initialPage: _i);
     _load();
-    loadQuiz(widget.story.asset!).then((q) {
-      if (mounted && q.isNotEmpty) setState(() => _quiz = q);
-    });
+    if (!widget.story.mine) {
+      loadQuiz(widget.story.asset!).then((q) {
+        if (mounted && q.isNotEmpty) setState(() => _quiz = q);
+      });
+    }
   }
 
   @override
@@ -800,10 +909,8 @@ class _StoryReaderState extends State<StoryReader> {
 
   Future<void> _load() async {
     try {
-      final asset = widget.story.asset!;
-      final text = await rootBundle.loadString('assets/$asset.txt');
-      final dict =
-          jsonDecode(await store.assetText('$asset.dict.json', en: '$asset.dict.en.json')) as Map<String, dynamic>;
+      final text = await storyText(widget.story);
+      final dict = await storyDict(widget.story);
       if (!mounted) return;
       setState(() {
         _pages = _paginate(text);
@@ -1244,14 +1351,14 @@ class _StoryReaderState extends State<StoryReader> {
                         ? SizedBox(
                             width: double.infinity,
                             height: box.maxHeight * 0.34,
-                            child: Image.asset('assets/${s.asset}.png', fit: BoxFit.cover),
+                            child: storyCoverImage(s),
                           )
                         : _wide
                         ? ConstrainedBox(
                             constraints: BoxConstraints(maxHeight: box.maxHeight * 0.34),
-                            child: Image.asset('assets/${s.asset}.png', fit: BoxFit.contain),
+                            child: storyCoverImage(s, fit: BoxFit.contain),
                           )
-                        : Image.asset('assets/${s.asset}.png', width: double.infinity, fit: BoxFit.fitWidth),
+                        : storyCoverImage(s, fit: BoxFit.fitWidth, width: double.infinity),
                   ),
                 ),
               ),
