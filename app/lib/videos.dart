@@ -46,7 +46,7 @@ class Video {
 }
 
 /// Ролики, где речь распознана не целиком: над плеером показываем плашку-предупреждение.
-/// Сейчас — шесть серий «Mamini sinovi» (1–6).
+/// Серии «Mamini sinovi» (1–6) и ролики, где по звуку неразмеченной речи больше ~10 %.
 const _roughSubs = <String>{
   'bjN_HyuFWj0',
   'K_nn3jYg2_Y',
@@ -54,6 +54,12 @@ const _roughSubs = <String>{
   'Haw-E4vxBYg',
   'f1qsclLQyzQ',
   'vE6iiAVoD3c',
+  'j4Dn9F_sIg0', // Bluz garavih sokaka
+  'KzUV2G3IOm4', // Srđan Dinčić – StandUpFest 2020
+  'iKhNlMwn4aw', // Hipkon Lajt 2020
+  'VzEA84tcOHY', // U NAPUŠTENOM selu izgradio OAZU
+  'hBS0MniD5b4', // 7 ČUDA PRIRODE ISTOČNE SRBIJE
+  'vBFoKok2AwA', // Andrija i Andjelka – porodični izlet
 };
 
 /// Просмотры на YouTube на 17.10.2026 — по ним собирается «Популярное». Для новых роликов без записи считаем 0.
