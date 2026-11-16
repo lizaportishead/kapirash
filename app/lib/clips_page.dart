@@ -552,6 +552,8 @@ class _ClipPageState extends State<_ClipPage> {
 
   // Карточка фразы: кнопки листания сверху, под ними сама фраза.
   Widget _current() {
+    // В невысоком окне длинные фразы съедают видео: шрифт и отступы меньше.
+    final short = MediaQuery.sizeOf(context).height < 800;
     return Material(
       color: cAccent,
       borderRadius: BorderRadius.circular(8),
@@ -562,8 +564,11 @@ class _ClipPageState extends State<_ClipPage> {
         children: [
           Padding(padding: EdgeInsets.fromLTRB(12, 12, 12, 0), child: StepButtons(onStep: _step)),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-            child: ConstrainedBox(constraints: BoxConstraints(minHeight: 68), child: _phraseBody()),
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: short ? 8 : 14),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: short ? 48 : 68),
+              child: short ? _phraseBody(size: 16, ruSize: 12) : _phraseBody(),
+            ),
           ),
         ],
       ),

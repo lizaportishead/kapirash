@@ -24,8 +24,10 @@ class PhraseWords extends StatefulWidget {
     this.spacing = 7,
     this.pad = 4,
     this.center = false,
+    this.color = cInk,
   });
   final Cue cue;
+  final Color color;
   final void Function(String word, Rect at) onWord;
   final double size, spacing, pad;
   final bool center;
@@ -130,12 +132,12 @@ class _PhraseWordsState extends State<PhraseWords> {
                     fontSize: widget.size,
                     fontWeight: FontWeight.w700,
                     height: 1.3,
-                    color: cInk,
+                    color: widget.color,
                     decoration: TextDecoration.underline,
                     decorationThickness: 2,
                     decorationColor: store.isSaved(toLat(cleanWord(words[i])).toLowerCase())
                         ? cViolet
-                        : cInk.withValues(alpha: 0.25),
+                        : widget.color.withValues(alpha: 0.35),
                   ),
                 ),
               ),
@@ -196,10 +198,12 @@ void showWord(
     context: context,
     backgroundColor: Colors.transparent,
     isScrollControlled: true,
+    constraints: BoxConstraints(maxWidth: double.infinity),
     builder: (ctx) => Container(
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 10 + MediaQuery.of(ctx).padding.bottom * 0.5),
+      width: double.infinity,
+      padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).padding.bottom),
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(color: cCard, borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
       child: WordCard(
         raw: raw,
         cue: cue,

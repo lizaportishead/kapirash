@@ -238,7 +238,7 @@ class _PlayerPageState extends State<PlayerPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id), _settingsButton()]),
+                  Row(children: [_back(), Spacer(), _youtubeButton(), LikeButton(widget.video.id), _settingsButton(onText: _openText)]),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
@@ -275,17 +275,6 @@ class _PlayerPageState extends State<PlayerPage> {
                           player,
                           SizedBox(height: 10),
                           _current(cue),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: TextButton.icon(
-                              onPressed: _openText,
-                              icon: Icon(KIcons.text, size: 18, color: cMuted),
-                              label: Text(
-                                ui('Весь текст'),
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: cMuted),
-                              ),
-                            ),
-                          ),
                         ],
                       ),
                     ),
@@ -398,43 +387,46 @@ class _PlayerPageState extends State<PlayerPage> {
     );
   }
 
-  // Горизонтальный телефон: видео как можно крупнее, под ним — только строка субтитров.
+  // Горизонтальный телефон: видео слева на всю высоту, справа — панель с фразой и стрелками.
   Widget _landscape(Widget player, Cue? cue) {
     return Scaffold(
-      body: Column(
+      body: Row(
         children: [
-          Expanded(
-            // По бокам от видео — чёрные поля до самых краёв экрана, как в полноэкранном плеере.
-            child: ColoredBox(
-              color: Colors.black,
-              child: SafeArea(
-                bottom: false,
-                // Кнопка «назад» стоит сбоку от видео, где всё равно пусто; отступ справа держит видео по центру.
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _back(color: cOnInk),
-                    Expanded(child: Center(child: player)),
-                    SizedBox(width: 48),
-                  ],
-                ),
+          ColoredBox(
+            color: Colors.black,
+            child: SafeArea(
+              right: false,
+              child: LayoutBuilder(
+                builder: (context, c) {
+                  final h = c.maxHeight;
+                  // Видео не шире 75% экрана, чтобы справа осталось место под фразу.
+                  final w = (h * 16 / 9).clamp(0.0, MediaQuery.sizeOf(context).width * 0.75);
+                  return SizedBox(width: w, height: h, child: Center(child: player));
+                },
               ),
             ),
           ),
-          // Высота постоянная, чтобы видео не прыгало от фразы к фразе.
-          ColoredBox(
-            color: cAccent,
-            child: SafeArea(
-              top: false,
-              minimum: EdgeInsets.only(bottom: 4),
-              child: SizedBox(
-                height: 70,
-                // Стрелки по бокам листают фразы, как кнопки под видео в вертикальном режиме.
-                child: Row(
+          Expanded(
+            child: ColoredBox(
+              color: Colors.black,
+              child: SafeArea(
+                left: false,
+                child: Stack(
                   children: [
-                    _stepArrow(-1),
-                    Expanded(child: Center(child: _strip(cue))),
-                    _stepArrow(1),
+                    Column(
+                      children: [
+                        // Фраза по центру панели; высота постоянная, чтобы ничего не прыгало.
+                        Expanded(child: Padding(padding: EdgeInsets.only(top: 40), child: Center(child: _strip(cue, big: true)))),
+                        SizedBox(
+                          height: 56,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [_stepArrow(-1), _stepArrow(1)],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Align(alignment: Alignment.topLeft, child: _back(color: cOnInk)),
                   ],
                 ),
               ),
@@ -448,12 +440,12 @@ class _PlayerPageState extends State<PlayerPage> {
   Widget _stepArrow(int d) {
     return IconButton(
       tooltip: d < 0 ? ui('Предыдущая фраза') : ui('Следующая фраза'),
-      icon: Icon(d < 0 ? KIcons.arrowLeft : KIcons.arrowRight, size: 24, color: cInk),
+      icon: Icon(d < 0 ? KIcons.arrowLeft : KIcons.arrowRight, size: 24, color: cOnInk),
       onPressed: () => _step(d),
     );
   }
 
-  Widget _strip(Cue? cue) {
+  Widget _strip(Cue? cue, {bool big = false}) {
     if (cue == null) return SizedBox.shrink();
     final ru = _showRu ? _ruFor(cue) : '';
     return SingleChildScrollView(
@@ -462,18 +454,18 @@ class _PlayerPageState extends State<PlayerPage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (_showSr)
-            PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at), size: 16, spacing: 5, pad: 0, center: true),
+            PhraseWords(cue, onWord: (w, at) => _openWord(w, cue, at), size: 16, spacing: 5, pad: 0, center: true, color: cOnInk),
           if (ru.isNotEmpty)
             Text(
               ru,
               textAlign: TextAlign.center,
-              maxLines: 2,
+              maxLines: big ? 4 : 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 height: 1.3,
-                color: cInk.withValues(alpha: 0.72),
+                color: cOnInk.withValues(alpha: 0.75),
               ),
             ),
         ],
@@ -599,7 +591,8 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   // Шестерёнка в шапке: какие субтитры показывать и каким письмом.
-  Widget _settingsButton() => SettingsButton(title: ui('Настройки ролика'), subtitles: true, rate: _rate);
+  Widget _settingsButton({VoidCallback? onText}) =>
+      SettingsButton(title: ui('Настройки ролика'), subtitles: true, rate: _rate, onText: onText);
 
   // Закреплены внизу: весь текст и сохранённые слова ролика открываются отдельными экранами.
   void _openText() {
@@ -1161,8 +1154,11 @@ class StepButtons extends StatelessWidget {
 
 /// Шестерёнка с листом настроек: письмо (латиница/кириллица) и, для роликов, показ субтитров.
 class SettingsButton extends StatelessWidget {
-  const SettingsButton({super.key, required this.title, this.subtitles = false, this.rate});
+  const SettingsButton({super.key, required this.title, this.subtitles = false, this.rate, this.onText});
   final String title;
+
+  /// Строка «Весь текст» (на телефоне): закрывает шторку и открывает текст.
+  final VoidCallback? onText;
   final bool subtitles;
 
   /// Скорость воспроизведения; без неё строки «Скорость» нет.
@@ -1223,6 +1219,19 @@ class SettingsButton extends StatelessWidget {
                           Pill('1×', on: r.value == 1, onTap: () => r.value = 1),
                         ],
                       ),
+                    ),
+                  if (onText case final open?)
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(KIcons.text, size: 22, color: cMuted),
+                      title: Text(
+                        ui('Весь текст'),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: cText),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        open();
+                      },
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8),

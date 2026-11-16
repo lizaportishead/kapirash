@@ -327,10 +327,8 @@ class DifficultyLabel extends StatelessWidget {
   }
 }
 
-/// Шапка страницы второго уровня: на десктопе «назад» и заголовок в одной строке, на телефоне — отдельная полоса сверху.
-List<Widget> pageHeader(BuildContext context, String text, {IconData? icon}) => MediaQuery.sizeOf(context).width >= 600
-    ? [PageTitle(text, icon: icon, back: true)]
-    : [BackBar(), PageTitle(text, icon: icon)];
+/// Шапка страницы второго уровня: «назад» и заголовок в одной строке.
+List<Widget> pageHeader(BuildContext context, String text, {IconData? icon}) => [PageTitle(text, icon: icon, back: true)];
 
 /// Шапка страницы второго уровня: кнопка «Назад» у левого края на всю ширину экрана.
 class BackBar extends StatelessWidget {
