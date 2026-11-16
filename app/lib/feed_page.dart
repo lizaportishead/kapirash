@@ -120,6 +120,21 @@ List<String> _topicsByViews() {
 bool _isSeries(Video v) =>
     !v.podcast && !v.tiktok && (RegExp(r'epizod|serij', caseSensitive: false).hasMatch(v.title) || v.channel == 'Andrija i Andjelka');
 
+/// Название сериала: по названию ролика или каналу.
+String _seriesName(Video v) {
+  if (v.title.toLowerCase().contains('mamini sinovi')) return 'Mamini Sinovi';
+  return v.channel;
+}
+
+/// Ролики по сериалам, в порядке первого появления.
+List<(String?, List<Video>)> _seriesGroups(List<Video> list) {
+  final map = <String, List<Video>>{};
+  for (final v in list) {
+    (map[_seriesName(v)] ??= []).add(v);
+  }
+  return [for (final e in map.entries) (e.key, e.value)];
+}
+
 // Высота карточки: превью 16:9 плюс подпись.
 double videoCardHeight(double w) => (w - 16) * 9 / 16 + 107;
 
@@ -294,19 +309,31 @@ class TopicPage extends StatelessWidget {
                           final cardW = (box.maxWidth - 32 - 16 * (cols - 1)) / cols;
                           return CustomScrollView(
                             slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                                sliver: SliverGrid.builder(
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: cols,
-                                    crossAxisSpacing: 16,
-                                    mainAxisSpacing: box.maxWidth < 600 ? 8 : 16,
-                                    mainAxisExtent: videoCardHeight(cardW),
+                              for (final g in series ? _seriesGroups(list) : [(null as String?, list)]) ...[
+                                if (g.$1 != null)
+                                  SliverToBoxAdapter(
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(16, 8, 16, 12),
+                                      child: Text(
+                                        g.$1!,
+                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, letterSpacing: -0.3, color: cText),
+                                      ),
+                                    ),
                                   ),
-                                  itemCount: list.length,
-                                  itemBuilder: (_, i) => VideoCard(list[i], key: ValueKey(list[i].id)),
+                                SliverPadding(
+                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+                                  sliver: SliverGrid.builder(
+                                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: cols,
+                                      crossAxisSpacing: 16,
+                                      mainAxisSpacing: box.maxWidth < 600 ? 8 : 16,
+                                      mainAxisExtent: videoCardHeight(cardW),
+                                    ),
+                                    itemCount: g.$2.length,
+                                    itemBuilder: (_, i) => VideoCard(g.$2[i], key: ValueKey(g.$2[i].id)),
+                                  ),
                                 ),
-                              ),
+                              ],
                               SliverToBoxAdapter(
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(16, 8, 16, 32),
