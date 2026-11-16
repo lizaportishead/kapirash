@@ -48,6 +48,8 @@ class PlayerPage extends StatefulWidget {
 }
 
 class _PlayerPageState extends State<PlayerPage> {
+  // Блок субтитров под видео: карточка слова на десктопе встаёт вровень с его верхом.
+  final _subsKey = GlobalKey();
   late final YoutubePlayerController _yt;
   StreamSubscription<YoutubeVideoState>? _sub;
   final _rate = ValueNotifier<double>(1);
@@ -356,7 +358,7 @@ class _PlayerPageState extends State<PlayerPage> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                                    children: [player, SizedBox(height: 16), _current(cue)],
+                                    children: [player, SizedBox(height: 16), KeyedSubtree(key: _subsKey, child: _current(cue))],
                                   ),
                                 ),
                               ),
@@ -390,6 +392,7 @@ class _PlayerPageState extends State<PlayerPage> {
       word: _word,
       flyTo: _wordsKey,
       onPause: _yt.pauseVideo,
+      alignTo: _subsKey,
     );
   }
 
@@ -405,8 +408,8 @@ class _PlayerPageState extends State<PlayerPage> {
               child: LayoutBuilder(
                 builder: (context, c) {
                   final h = c.maxHeight;
-                  // Видео не шире 75% экрана, чтобы справа осталось место под фразу.
-                  final w = (h * 16 / 9).clamp(0.0, MediaQuery.sizeOf(context).width * 0.75);
+                  // Видео не шире 80% экрана, чтобы справа осталось место под фразу.
+                  final w = (h * 16 / 9).clamp(0.0, MediaQuery.sizeOf(context).width * 0.8);
                   return SizedBox(width: w, height: h, child: Center(child: player));
                 },
               ),
@@ -927,7 +930,10 @@ class VideoSidePanel extends StatefulWidget {
     this.subsLoading = false,
     this.quiz = const [],
     this.flyTo,
+    this.alignTo,
   });
+  // Карточка слова поднимается до верха этого блока (если он есть на экране).
+  final GlobalKey? alignTo;
   final String videoId;
   final List<Cue> sr;
   final ValueListenable<int> cur;
@@ -993,9 +999,14 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
     final cardW = panel == null ? _cardW : panel.width - 24;
     final left = panel == null ? 8.0 : panel.left + 12;
     final bottom = panel == null ? 8.0 : area.height - panel.bottom + 12;
+    // Верх карточки — вровень с верхом блока субтитров; кнопка остаётся внизу.
+    final sbox = widget.alignTo?.currentContext?.findRenderObject();
+    final top = sbox is RenderBox && sbox.attached && panel != null ? sbox.localToGlobal(Offset.zero).dy - origin.dy : null;
+    final aligned = top != null && area.height - bottom - top > 220;
     return Positioned(
       left: left,
       bottom: bottom,
+      top: aligned ? top : null,
       width: cardW,
       child: PointerInterceptor(
         child: TapRegion(
@@ -1007,10 +1018,11 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
             borderRadius: BorderRadius.circular(8),
             clipBehavior: Clip.antiAlias,
             child: ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: _cardH),
+              constraints: BoxConstraints(maxHeight: aligned ? double.infinity : _cardH),
               child: Stack(
                 children: [
-                  SingleChildScrollView(
+                  SizedBox(
+                    height: aligned ? double.infinity : null,
                     child: WordCard(
                       key: ValueKey('${word.$1}@${word.$2.start}'),
                       raw: word.$1,
@@ -1019,6 +1031,7 @@ class _VideoSidePanelState extends State<VideoSidePanel> {
                       videoId: widget.videoId,
                       flyTo: widget.flyTo,
                       compact: true,
+                      fill: aligned,
                       onClose: () => widget.word.value = null,
                     ),
                   ),

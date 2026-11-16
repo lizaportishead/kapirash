@@ -90,9 +90,9 @@ class QuizList extends StatelessWidget {
         physics: inline ? NeverScrollableScrollPhysics() : null,
         padding: inline
             ? EdgeInsets.only(top: 4)
-            : EdgeInsets.fromLTRB(16, 8, 16, 16 + MediaQuery.paddingOf(context).bottom),
+            : EdgeInsets.fromLTRB(16, flat ? 0 : 8, 16, 16 + MediaQuery.paddingOf(context).bottom),
         itemCount: sections.length,
-        separatorBuilder: (_, _) => SizedBox(height: 16),
+        separatorBuilder: (_, _) => SizedBox(height: flat ? 4 : 16),
         itemBuilder: (context, i) => _card(context, sections[i]),
       ),
     );
@@ -120,7 +120,7 @@ class QuizList extends StatelessWidget {
             );
           },
           child: Padding(
-            padding: EdgeInsets.all(14),
+            padding: EdgeInsets.all(flat ? 10 : 14),
             child: Row(
               children: [
                 Container(
@@ -149,10 +149,10 @@ class QuizList extends StatelessWidget {
                           if (r == null) ...[
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                              decoration: BoxDecoration(color: cViolet, borderRadius: BorderRadius.circular(20)),
+                              decoration: BoxDecoration(color: cViolet.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(20)),
                               child: Text(
                                 '${s.questions.length} ${plural(s.questions.length, 'вопрос', 'вопроса', 'вопросов')}',
-                                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cOnViolet),
+                                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: cViolet),
                               ),
                             ),
                             SizedBox(width: 8),

@@ -252,8 +252,11 @@ class WordCard extends StatefulWidget {
     this.place,
     this.flyTo,
     this.compact = false,
+    this.fill = false,
   });
   final bool compact;
+  // Карточка растянута на всю высоту, кнопка прижата вниз.
+  final bool fill;
   final String raw, videoId;
   final Cue cue;
   final Map<String, dynamic> dict;
@@ -301,19 +304,28 @@ class _WordCardState extends State<WordCard> {
           child: Padding(
             padding: EdgeInsets.fromLTRB(24, 20, 24, 20),
             // В горизонтальном режиме карточка может не поместиться по высоте.
-            child: SingleChildScrollView(
-              child: Column(
+            child: LayoutBuilder(builder: (context, box) {
+              Widget wrap(Widget col) => SingleChildScrollView(
+                child: widget.fill && box.hasBoundedHeight
+                    ? ConstrainedBox(constraints: BoxConstraints(minHeight: box.maxHeight), child: IntrinsicHeight(child: col))
+                    : col,
+              );
+              return wrap(Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    store.cyr ? cyr : lat,
-                    style: TextStyle(
-                      fontSize: isPhrase ? 26 : 32,
-                      fontWeight: FontWeight.w800,
-                      height: 1.1,
-                      letterSpacing: -0.6,
-                      color: cText,
+                  // В плавающей карточке справа лежит крестик: заголовок не должен заходить под него.
+                  Padding(
+                    padding: EdgeInsets.only(right: widget.compact ? 36 : 0),
+                    child: Text(
+                      store.cyr ? cyr : lat,
+                      style: TextStyle(
+                        fontSize: isPhrase ? 26 : 32,
+                        fontWeight: FontWeight.w800,
+                        height: 1.1,
+                        letterSpacing: -0.6,
+                        color: cText,
+                      ),
                     ),
                   ),
                   SizedBox(height: 14),
@@ -392,7 +404,8 @@ class _WordCardState extends State<WordCard> {
                         ),
                       ],
                     ),
-                  SizedBox(height: 12),
+                  if (widget.fill) Spacer() else SizedBox(height: 12),
+                  if (widget.fill) SizedBox(height: 12),
                   BigButton(
                     compact: widget.compact,
                     store.isSaved(key)
@@ -444,8 +457,8 @@ class _WordCardState extends State<WordCard> {
                     },
                   ),
                 ],
-              ),
-            ),
+              ));
+            }),
           ),
         ),
       ),
