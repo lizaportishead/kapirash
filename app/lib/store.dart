@@ -540,6 +540,10 @@ class AppStore extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Плашку «речь распознана не целиком» пользователь закрыл (запоминаем по ролику).
+  bool roughHidden(String id) => _prefs?.getBool('kap.roughHidden.$id') ?? false;
+  void hideRough(String id) => _prefs?.setBool('kap.roughHidden.$id', true);
+
   void setShowSr(bool v) {
     showSr = v;
     _prefs?.setBool('kap.showSr', v);

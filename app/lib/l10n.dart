@@ -123,6 +123,7 @@ const _forms = <String, String>{
 };
 
 const _en = <String, String>{
+  'Часть речи не распознана — такие места помечены «[…]».': 'Some speech wasn\'t recognized — those spots are marked «[…]».',
   'Путешествия и мир': 'Travel & world',
   'Наука и технологии': 'Science & tech',
   'Повседневная жизнь': 'Everyday life',

@@ -56,6 +56,7 @@ class _PlayerPageState extends State<PlayerPage> {
   final _rate = ValueNotifier<double>(1);
   List<Cue> _sr = [], _ru = [];
   bool _subsLoading = true;
+  bool _roughClosed = false;
   Map<String, dynamic> _dict = {};
   List<QuizSection> _quiz = [];
   // Какие строки субтитров показывать — настраивается кнопкой в шапке.
@@ -228,6 +229,14 @@ class _PlayerPageState extends State<PlayerPage> {
       borderRadius: BorderRadius.circular(8),
       child: YoutubePlayer(key: _playerKey, controller: _yt, autoFullScreen: false),
     );
+    // Плашка над видео, если речь распознана не целиком; в полноэкранной раскладке плеера её нет.
+    final framed = widget.video.roughSubs && !_roughClosed && !store.roughHidden(widget.video.id)
+        ? Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [_roughBanner(), player],
+          )
+        : player;
     // На планшете и в горизонтальном положении хватает высоты для обычной раскладки.
     if (size.width > size.height && size.height < 600) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -237,7 +246,7 @@ class _PlayerPageState extends State<PlayerPage> {
       if (isStandalone()) return _landscapeBottom(player, cue);
       return _landscape(player, cue);
     }
-    if (size.width >= 960) return _desktop(player, cue);
+    if (size.width >= 960) return _desktop(framed, cue);
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -283,7 +292,7 @@ class _PlayerPageState extends State<PlayerPage> {
                               ],
                             ),
                           ),
-                          player,
+                          framed,
                           SizedBox(height: 10),
                           _current(cue),
                         ],
@@ -298,6 +307,39 @@ class _PlayerPageState extends State<PlayerPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _roughBanner() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 8),
+      padding: EdgeInsets.fromLTRB(12, 10, 12, 10),
+      decoration: BoxDecoration(color: Color(store.dark ? 0xFF2A2447 : 0xFFE9E5FD), borderRadius: BorderRadius.circular(12)),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.info_outline_rounded, size: 18, color: cAccentText),
+          SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              ui('Часть речи не распознана — такие места помечены «[…]».'),
+              style: TextStyle(fontSize: 13, height: 1.35, color: cAccentText),
+            ),
+          ),
+          SizedBox(width: 4),
+          InkResponse(
+            onTap: () {
+              store.hideRough(widget.video.id);
+              setState(() => _roughClosed = true);
+            },
+            radius: 16,
+            child: Padding(
+              padding: EdgeInsets.all(2),
+              child: Icon(Icons.close_rounded, size: 18, color: cAccentText),
+            ),
+          ),
+        ],
       ),
     );
   }

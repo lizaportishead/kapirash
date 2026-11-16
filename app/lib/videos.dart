@@ -21,6 +21,9 @@ class Video {
   final String audio;
 
   int get views => _ytViews[id] ?? 0;
+
+  /// Субтитры у ролика неполные: часть речи не удалось разобрать (шум, музыка, перебивающие голоса).
+  bool get roughSubs => _roughSubs.contains(id);
   bool get tiktok => kind == 'tiktok';
   bool get podcast => kind == 'podcast';
 
@@ -41,6 +44,17 @@ class Video {
     audio: j['audio'] ?? '',
   );
 }
+
+/// Ролики, где речь распознана не целиком: над плеером показываем плашку-предупреждение.
+/// Сейчас — шесть серий «Mamini sinovi» (1–6).
+const _roughSubs = <String>{
+  'bjN_HyuFWj0',
+  'K_nn3jYg2_Y',
+  'lxG7zm8exaM',
+  'Haw-E4vxBYg',
+  'f1qsclLQyzQ',
+  'vE6iiAVoD3c',
+};
 
 /// Просмотры на YouTube на 17.10.2026 — по ним собирается «Популярное». Для новых роликов без записи считаем 0.
 const _ytViews = <String, int>{
