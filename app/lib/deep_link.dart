@@ -14,10 +14,14 @@ RouteSettings urlSettings(String name, String path) => RouteSettings(name: name,
 /// Ссылка, с которой открыли веб; ждёт, пока пользователь пройдёт онбординг и попадёт на главную оболочку.
 String? pendingLink;
 
+/// Открыли веб по конкретному адресу: показываем экран сразу, без онбординга, входа и анкеты (даже без авторизации).
+bool openedByDeepLink = false;
+
 void captureInitialLink() {
   if (!kIsWeb) return;
   final name = WidgetsBinding.instance.platformDispatcher.defaultRouteName;
   pendingLink = name == '/' || name.isEmpty ? null : name;
+  openedByDeepLink = pendingLink != null;
 }
 
 /// Держит адрес в строке браузера: открытый экран второго уровня или адрес вкладки под ним.

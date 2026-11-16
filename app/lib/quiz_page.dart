@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 
 import 'icons.dart';
 import 'player_page.dart' show SubPage;
+import 'auth_page.dart';
 import 'store.dart';
 import 'theme.dart';
 import 'l10n.dart';
@@ -106,15 +107,18 @@ class QuizList extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         child: InkWell(
           borderRadius: BorderRadius.circular(8),
-          onTap: () => Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              settings: RouteSettings(name: 'SubPage'),
-              builder: (_) => SubPage(
-                title: s.title,
-                child: QuizPage(s, videoId: videoId),
+          onTap: () {
+            if (!requireAuth(context)) return;
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                settings: RouteSettings(name: 'SubPage'),
+                builder: (_) => SubPage(
+                  title: s.title,
+                  child: QuizPage(s, videoId: videoId),
+                ),
               ),
-            ),
-          ),
+            );
+          },
           child: Padding(
             padding: EdgeInsets.all(14),
             child: Row(

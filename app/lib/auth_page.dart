@@ -22,6 +22,13 @@ void openAuth(BuildContext context, {bool intro = false}) {
   Navigator.of(context).push(MaterialPageRoute<void>(settings: RouteSettings(name: 'AuthPage'),builder: (_) => AuthPage(intro: intro)));
 }
 
+/// Сохранение слов и тесты доступны только после входа. Гостя ведём на экран входа (с него можно вернуться); true — можно продолжать.
+bool requireAuth(BuildContext context) {
+  if (store.user != null || !store.canSignIn) return true;
+  openAuth(context);
+  return false;
+}
+
 // Вход в два шага: почта, затем ссылка или код из письма.
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key, this.intro = false, this.start = false});

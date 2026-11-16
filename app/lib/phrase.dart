@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
+import 'auth_page.dart';
 import 'store.dart';
 import 'supabase_config.dart';
 import 'subs.dart';
@@ -397,6 +398,7 @@ class _WordCardState extends State<WordCard> {
                     fg: store.isSaved(key) ? cText : null,
                     onTap: () async {
                       final already = store.isSaved(key);
+                      if (!already && !requireAuth(context)) return;
                       if (already) {
                         store.remove(key);
                         if (mounted) widget.onClose();
