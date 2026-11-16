@@ -5,7 +5,6 @@ import 'auth_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'history_page.dart';
-import 'leaderboard_page.dart';
 import 'store.dart';
 import 'survey_page.dart';
 import 'theme.dart';
@@ -156,7 +155,6 @@ class _ProfilePageState extends State<ProfilePage> {
         ui('место в рейтинге'),
         Icons.emoji_events_rounded,
         cViolet,
-        onTap: () => openLeaderboard(context),
       ),
     ];
     return LayoutBuilder(
