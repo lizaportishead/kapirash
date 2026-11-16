@@ -13,14 +13,17 @@ assert len(sr)==len(ru) and (en is None or len(en)==len(sr))
 if os.environ.get('RESTORE'): pass
 rows=[[sr[k][0],sr[k][1],sr[k][2],ru[k][2],en[k][2] if en else ''] for k in range(len(sr))]
 ex=[]
-for l in open(f'tools/mamini_fix/extra_{vid}.txt',encoding='utf-8'):
+GAPS=bool(os.environ.get('GAPS'))
+for l in open(f'tools/mamini_fix/extra_{"gaps_" if GAPS else ""}{vid}.txt',encoding='utf-8'):
     if l.strip():
         a,b,s,r,e=l.rstrip('\n').split('|'); ex.append([float(a),float(b),s,r,e])
-have={r[2] for r in rows}
+have={r[2] for r in rows} if not GAPS else set()
+if GAPS: rows=[r for r in rows if r[2]!='[…]']
 rows=[r for r in rows if True]; added=0
 for a,b,s,r,e in ex:
     if s in have: continue
     ov=[x for x in rows if x[0]<b-0.2 and x[1]>a+0.2]
+    if ov and GAPS: continue
     if ov:  # trim extra to fit between neighbours; drop if no room
         prev=max([x[1] for x in rows if x[1]<=a+0.2] or [0]); nxt=min([x[0] for x in rows if x[0]>=b-0.2] or [1e9])
         # existing cue overlaps: shorten the existing cue
