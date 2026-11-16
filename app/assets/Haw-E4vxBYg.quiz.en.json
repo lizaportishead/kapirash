@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Why doesn't Milentije want to go to Budapest by car?",
+     "o": [
+      "He has no licence",
+      "The car is old and may break down",
+      "No money for petrol",
+      "The car is being repaired"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ako crkne, nema ko da ga gura.\" — if it dies, there's nobody to push it."
+    },
+    {
+     "q": "What does Roza first assume about the tickets her son is looking for?",
+     "o": [
+      "That they are cinema tickets",
+      "That they are football tickets",
+      "That they are train tickets",
+      "That they are admission tickets to Kalemegdan"
+     ],
+     "a": 3,
+     "e": "In the video: \"Bože, pa nisam znala da naplaćuju ulaznice na Kalemegdanu.\" — God, I didn't know they charge admission at Kalemegdan."
+    },
+    {
+     "q": "What do the tickets turn out to be?",
+     "o": [
+      "Circus tickets",
+      "Concert tickets",
+      "Tickets to Budapest",
+      "Tickets to Vienna"
+     ],
+     "a": 2,
+     "e": "In the video: \"Ali ovo su karte za Budimpeštu.\" — But these are tickets for Budapest."
+    },
+    {
+     "q": "Why did Milentije lie to Mum and Miša?",
+     "o": [
+      "So that Miša would marry",
+      "So that Miša would come to look after Mum and he could get away",
+      "To get money",
+      "So that Mum would see a doctor"
+     ],
+     "a": 1,
+     "e": "In the video: \"Slagao sam tebe, slagao sam Mišu da bi on došao da te čuva, ali jedino tako ja mogu da odem na par dana.\" — I lied to you, I lied to Miša so he'd come to look after you, but that's the only way I can get away for a couple of days."
+    },
+    {
+     "q": "What does Roza do when her son demands the tickets?",
+     "o": [
+      "Hands over the tickets at once",
+      "Calls the police",
+      "Gives him a psychoanalysis session",
+      "Hides in the wardrobe"
+     ],
+     "a": 2,
+     "e": "In the video: \"Janoš, izvini, molim te, ovo će sada biti psihoanalitička seansa, a tebe ću posle zvati Frojd.\" — Janoš, sorry, please, this will now be a psychoanalytic session, and I'll call you Freud afterwards."
+    },
+    {
+     "q": "What does the interviewer write down after «Vrnjačka Banja, Partizanske Vode, Budva»?",
+     "o": [
+      "Europe",
+      "Asia",
+      "Africa",
+      "America"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ako vam je svejedno, zapisaću Azija.\" — if it's all the same to you, I'll write down Asia."
+    },
+    {
+     "q": "What does Miša offer his brother?",
+     "o": [
+      "To drive them to Budapest",
+      "To stay with Mum while he himself «steps in» for the girl",
+      "To lend money",
+      "To call Seka"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ti se nađi mami ovde, a devojci ću ja da priskočim.\" — You take care of Mum here, and I'll step in for the girl."
+    },
+    {
+     "q": "Where, according to Jovanka, is Miša supposed to be?",
+     "o": [
+      "At a conference in Vrnjačka Banja",
+      "In the hospital",
+      "In Budapest",
+      "With friends in Novi Sad"
+     ],
+     "a": 0,
+     "e": "In the video: \"Kaže Jovanka da je otputovao na neko savetovanje u Vrnjačku banju.\" — Jovanka says he went to some conference in Vrnjačka Banja."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja bih mogao *udžbenik* da napišem.",
+     "o": [
+      "textbook",
+      "letter",
+      "dictionary",
+      "novel"
+     ],
+     "a": 0,
+     "e": "udžbenik — textbook."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ima Wi-Fi, ima *klimu*, ima televizor, ima WC.",
+     "o": [
+      "balcony",
+      "air conditioning",
+      "kitchen",
+      "bed"
+     ],
+     "a": 1,
+     "e": "klima — air conditioning."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nekako si postao isuviše *posesivan*, znaš.",
+     "o": [
+      "lazy",
+      "tired",
+      "possessive",
+      "cheerful"
+     ],
+     "a": 2,
+     "e": "posesivan — possessive."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kaže da su karte u *džepu*.",
+     "o": [
+      "pocket",
+      "bag",
+      "wardrobe",
+      "drawer"
+     ],
+     "a": 0,
+     "e": "džep — pocket; džepu is the locative."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Biću *odsutan* samo tri dana.",
+     "o": [
+      "free",
+      "busy",
+      "ill",
+      "absent"
+     ],
+     "a": 3,
+     "e": "odsutan — absent."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nemoj, šta će da kaže komšija Mađarević ako mu *ubiješ* mačku.",
+     "o": [
+      "you find",
+      "you feed",
+      "you buy",
+      "you kill"
+     ],
+     "a": 3,
+     "e": "ubiti — to kill; ubiješ is 2nd sg."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ima da te lepo *isečem* na komade i da te prodam kineskom restoranu!",
+     "o": [
+      "I'll chop",
+      "I'll wash",
+      "I'll teach",
+      "I'll write"
+     ],
+     "a": 0,
+     "e": "iseći — to cut up; isečem is 1st sg."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mnogo je *teško* sa starima.",
+     "o": [
+      "hard",
+      "fun",
+      "cheap",
+      "fast"
+     ],
+     "a": 0,
+     "e": "teško — hard, difficult."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Šta ćeš ti tri dana na ___?",
+     "o": [
+      "Kalemegdan",
+      "Kalemegdanu",
+      "Kalemegdanom",
+      "Kalemegdana"
+     ],
+     "a": 1,
+     "e": "«Na» for a place takes the locative: na Kalemegdanu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pitaš jednog od njih ___ i eto.",
+     "o": [
+      "dvojici",
+      "dvojicu",
+      "dvojica",
+      "dvojice"
+     ],
+     "a": 3,
+     "e": "After «od» comes the genitive: od njih dvojice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sa ___, čeka me dole u autu",
+     "o": [
+      "Seka",
+      "Sekom",
+      "Seke",
+      "Seku"
+     ],
+     "a": 1,
+     "e": "«Sa» takes the instrumental: sa Sekom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pošto je Azija, zapisaću ___.",
+     "o": [
+      "avionu",
+      "avionom",
+      "aviona",
+      "avion"
+     ],
+     "a": 1,
+     "e": "Means of transport takes the instrumental: avionom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kojim prevoznim ___ najviše volite da putujete?",
+     "o": [
+      "sredstva",
+      "sredstvom",
+      "sredstvo",
+      "sredstvu"
+     ],
+     "a": 1,
+     "e": "Kojim ... sredstvom — neuter instrumental."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa zašto me nisi upoznao sa ___?",
+     "o": [
+      "prijateljicom",
+      "prijateljice",
+      "prijateljica",
+      "prijateljicu"
+     ],
+     "a": 0,
+     "e": "Upoznati sa + instrumental: sa prijateljicom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam tu da ti ___.",
+     "o": [
+      "pomogao",
+      "pomogneš",
+      "pomognem",
+      "pomoći"
+     ],
+     "a": 2,
+     "e": "After «da» the present tense, 1st sg.: da ti pomognem."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa dve ___, tri dana.",
+     "o": [
+      "noćima",
+      "noći",
+      "noćom",
+      "noć"
+     ],
+     "a": 1,
+     "e": "After «dve» the genitive singular: dve noći."
+    }
+   ]
+  }
+ ]
+}

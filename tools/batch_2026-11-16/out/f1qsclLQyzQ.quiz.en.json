@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does Roza offer her son on Saturday night?",
+     "o": [
+      "To watch a series",
+      "To call Nina",
+      "To go out somewhere with him",
+      "To play cards"
+     ],
+     "a": 2,
+     "e": "In the video: \"E, hoćeš možda da ja izađem s tobom?\" — well, do you want me to go out with you?"
+    },
+    {
+     "q": "Why can't Milentije go out alone?",
+     "o": [
+      "He's afraid of the dark",
+      "Nina forbade him",
+      "He has no money",
+      "After half an hour he has to come back to Mum and her medicines"
+     ],
+     "a": 3,
+     "e": "In the video: \"posle pola sata da se vraćam kući\" — come back home after half an hour"
+    },
+    {
+     "q": "What does Roza read aloud?",
+     "o": [
+      "A pie recipe",
+      "The news",
+      "Dating ads",
+      "A letter from Nina"
+     ],
+     "a": 2,
+     "e": "In the video: \"Zovem se Dragoljubka\" — my name is Dragoljubka"
+    },
+    {
+     "q": "How does Roza speak about Nina when she arrives?",
+     "o": [
+      "She says she hates her",
+      "She says she adores her",
+      "She doesn't recognise her",
+      "She says she's a stranger"
+     ],
+     "a": 1,
+     "e": "In the video: \"A pa obožavam Ninu.\" — oh, I adore Nina."
+    },
+    {
+     "q": "What did Roza use to say about Nina?",
+     "o": [
+      "That she's older than Milentije",
+      "That she'd never been to the opera",
+      "That she can't drive",
+      "That she spends too much"
+     ],
+     "a": 1,
+     "e": "In the video: \"da ima čukljeve i da nikad u životu nije bila u operi\" — that she has bunions and has never been to the opera in her life"
+    },
+    {
+     "q": "How old is Nina's young man?",
+     "o": [
+      "Forty",
+      "Thirty",
+      "Eighteen",
+      "Twenty-four"
+     ],
+     "a": 2,
+     "e": "In the video: \"Osamnaest!\" — Eighteen!"
+    },
+    {
+     "q": "Why is there no tea in the house?",
+     "o": [
+      "Nobody bought it",
+      "Roza burned the little pot",
+      "Roza drank it all",
+      "Milentije threw it away"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ali je izgorelo lonče.\" — but the little pot burned."
+    },
+    {
+     "q": "What is the name of the babysitter Jovanka sends?",
+     "o": [
+      "Nina",
+      "Bosa",
+      "Seka",
+      "Roza"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ja sam Bosa.\" — I'm Bosa."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mnogi ljudi nemaju s kim da izađu *subotom* uveče.",
+     "o": [
+      "on Sunday",
+      "on Friday",
+      "on Saturdays",
+      "in the mornings"
+     ],
+     "a": 2,
+     "e": "subotom — on Saturdays."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ili na *korzo* da prošetamo, opusti se.",
+     "o": [
+      "the stadium",
+      "the cemetery",
+      "the market",
+      "the promenade"
+     ],
+     "a": 3,
+     "e": "korzo — the evening promenade."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa možemo i u *diskoteku*.",
+     "o": [
+      "disco",
+      "library",
+      "bathhouse",
+      "pharmacy"
+     ],
+     "a": 0,
+     "e": "diskoteka — disco."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Starateljstvo.",
+     "o": [
+      "deposit",
+      "divorce",
+      "inheritance",
+      "guardianship"
+     ],
+     "a": 3,
+     "e": "starateljstvo — guardianship."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo ima *pesnički* talenat, da.",
+     "o": [
+      "acting",
+      "musical",
+      "poetic",
+      "mathematical"
+     ],
+     "a": 2,
+     "e": "pesnički — poetic."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Nisam *gladna*.",
+     "o": [
+      "tired",
+      "ill",
+      "hungry",
+      "angry"
+     ],
+     "a": 2,
+     "e": "gladan — hungry."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "U ovoj kući samo ja imam pravo da baratam *oštrim* predmetima.",
+     "o": [
+      "other people's",
+      "sharp",
+      "old",
+      "heavy"
+     ],
+     "a": 1,
+     "e": "oštar — sharp."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa to ti je *nesanica*.",
+     "o": [
+      "insomnia",
+      "tiredness",
+      "a migraine",
+      "a cold"
+     ],
+     "a": 0,
+     "e": "nesanica — insomnia."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hoćeš da ti čitam ___?",
+     "o": [
+      "novine",
+      "novinama",
+      "novina",
+      "novinom"
+     ],
+     "a": 0,
+     "e": "Čitati + accusative: novine (plural)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Imam to što je ostavila ___ sina.",
+     "o": [
+      "mog",
+      "moj",
+      "moja",
+      "mojem"
+     ],
+     "a": 0,
+     "e": "Animate masculine accusative: mog sina."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Idem ja da skuvam čaj, a vi me čekajte u ___.",
+     "o": [
+      "sobe",
+      "soba",
+      "sobu",
+      "sobi"
+     ],
+     "a": 3,
+     "e": "«U» for a place takes the locative: u sobi."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne znam da li je taj čaj dobar na ___ stomak.",
+     "o": [
+      "praznog",
+      "prazna",
+      "prazno",
+      "prazan"
+     ],
+     "a": 3,
+     "e": "Inanimate masculine accusative: prazan stomak."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja ću ti doneti iz ___ kolač.",
+     "o": [
+      "restoranom",
+      "restorana",
+      "restoranu",
+      "restoran"
+     ],
+     "a": 1,
+     "e": "The preposition «iz» takes the genitive: iz restorana."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zato privedite taj razvod ___.",
+     "o": [
+      "kraja",
+      "krajem",
+      "kraj",
+      "kraju"
+     ],
+     "a": 3,
+     "e": "Privesti kraju — to bring to an end (dative)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne umem da ___.",
+     "o": [
+      "štrika",
+      "štrikaš",
+      "štrikam",
+      "štrikaju"
+     ],
+     "a": 2,
+     "e": "After «da» the present tense; 1st sg.: štrikam."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dobro veče, ___.",
+     "o": [
+      "Rosa",
+      "Rosu",
+      "Roso",
+      "Rosom"
+     ],
+     "a": 2,
+     "e": "The vocative of Rosa is Roso."
+    }
+   ]
+  }
+ ]
+}

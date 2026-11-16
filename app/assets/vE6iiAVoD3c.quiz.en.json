@@ -1,0 +1,305 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What did Milentije buy Mum for her birthday?",
+     "o": [
+      "Perfume",
+      "Flowers",
+      "Burek",
+      "A cake"
+     ],
+     "a": 2,
+     "e": "In the video: \"Burek. Šta da ti kupim u pet ujutru, samo je pekara otvorena.\" — burek. What should I buy you at five in the morning, only the bakery is open."
+    },
+    {
+     "q": "What is written on the card with the flowers?",
+     "o": [
+      "I'll be waiting for you tonight",
+      "Don't forget me",
+      "To the most beautiful flower from the garden of paradise",
+      "Happy birthday, Roza"
+     ],
+     "a": 2,
+     "e": "In the video: \"Kaže: najlepšem cvetu iz rajske bašte.\" — it says: to the most beautiful flower from the garden of paradise."
+    },
+    {
+     "q": "What does Roza say about men's names?",
+     "o": [
+      "She likes to give nicknames",
+      "She has always had trouble with them",
+      "She likes the name Lazar",
+      "She remembers them all"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pa, znaš da sam uvek imala problem sa muškim imenima.\" — well, you know I've always had trouble with men's names."
+    },
+    {
+     "q": "Whom did Roza invite to dinner?",
+     "o": [
+      "Her sister",
+      "Her new man friend",
+      "A neighbour",
+      "Doctor Miša"
+     ],
+     "a": 1,
+     "e": "In the video: \"Večeras, brate, zvala sam ga na večeru.\" — tonight, man, I invited him to dinner."
+    },
+    {
+     "q": "What «secret» does Roza add to her apple pie?",
+     "o": [
+      "Oregano",
+      "Ginger",
+      "Pepper",
+      "Honey"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ja lepo stavim vanilin šećer, doduše to stavim na kraju, i stavim malo origana.\" — I nicely add vanilla sugar, although at the end, and I add a little oregano."
+    },
+    {
+     "q": "What does Milentije find in the oven?",
+     "o": [
+      "Keys",
+      "A cat",
+      "A shoe",
+      "A tennis ball"
+     ],
+     "a": 3,
+     "e": "In the video: \"Jao, Roso, otkud teniska loptica u rerni?\" — oh, Roza, where does a tennis ball in the oven come from?"
+    },
+    {
+     "q": "What news do Jovanka and Miša hear?",
+     "o": [
+      "Mum is moving out",
+      "Mum has a boyfriend",
+      "Mum is selling the flat",
+      "Milentije is getting married"
+     ],
+     "a": 1,
+     "e": "In the video: \"Mama ima dečka.\" — Mum has a boyfriend."
+    },
+    {
+     "q": "What is «Lazar»'s real name?",
+     "o": [
+      "Miloš",
+      "Milan",
+      "Slavko",
+      "Milenko"
+     ],
+     "a": 2,
+     "e": "In the video: \"Hvala, pravo ime mi je Slavko, ali pošto me Rosa zove Lazar, neka ostane tako.\" — thanks, my real name is Slavko, but since Rosa calls me Lazar, let it stay that way."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sram te bilo, *zlotvore* jedan.",
+     "o": [
+      "villain",
+      "slacker",
+      "friend",
+      "fool"
+     ],
+     "a": 0,
+     "e": "zlotvor — villain."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ljubomora je pretirani strah od *gubitka*.",
+     "o": [
+      "mistake",
+      "illness",
+      "loss",
+      "death"
+     ],
+     "a": 2,
+     "e": "gubitak — loss; gubitka is the genitive."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Pa se još pitam šta će ti *biber* u piti od jabuka.",
+     "o": [
+      "sugar",
+      "salt",
+      "honey",
+      "pepper"
+     ],
+     "a": 3,
+     "e": "biber — pepper."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Daj mi *cimet*.",
+     "o": [
+      "a bowl",
+      "cinnamon",
+      "a spoon",
+      "a knife"
+     ],
+     "a": 1,
+     "e": "cimet — cinnamon."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Kako se kaže mera za *dragocenost*?",
+     "o": [
+      "speed",
+      "length",
+      "preciousness",
+      "weather"
+     ],
+     "a": 2,
+     "e": "dragocenost — preciousness."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Svaka *kuvarica* ima svoj recept.",
+     "o": [
+      "neighbour (f.)",
+      "cook (f.)",
+      "doctor",
+      "teacher (f.)"
+     ],
+     "a": 1,
+     "e": "kuvarica — a female cook."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A kad se mama *uda*, šta ćeš ti da radiš?",
+     "o": [
+      "falls ill",
+      "leaves",
+      "wakes up",
+      "gets married"
+     ],
+     "a": 3,
+     "e": "udati se — (of a woman) to get married."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mogu da vam čuvam decu, pa da spavamo kao *braća*.",
+     "o": [
+      "neighbours",
+      "guests",
+      "friends",
+      "brothers"
+     ],
+     "a": 3,
+     "e": "braća — brothers."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ti si čovek sa mnogo dobrih ___.",
+     "o": [
+      "osobine",
+      "osobina",
+      "osobinu",
+      "osobinama"
+     ],
+     "a": 1,
+     "e": "After «mnogo» the genitive plural: osobina."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa moram i ja s nekim da se ___.",
+     "o": [
+      "družiš",
+      "družim",
+      "družimo",
+      "družio"
+     ],
+     "a": 1,
+     "e": "After «da» the present tense; 1st sg.: družim se."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Kome ćeš ti da ___?",
+     "o": [
+      "pripadneš",
+      "pripadnem",
+      "pripadnemo",
+      "pripala"
+     ],
+     "a": 0,
+     "e": "After «da» the 2nd sg.: pripadneš."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Mogla si nešto ___ da obučeš.",
+     "o": [
+      "drugog",
+      "druga",
+      "drugo",
+      "drugi"
+     ],
+     "a": 2,
+     "e": "After «nešto» the neuter adjective: nešto drugo."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Poslednji put je bio u ___ 1984. godine.",
+     "o": [
+      "pozorištu",
+      "pozorišta",
+      "pozorište",
+      "pozorištem"
+     ],
+     "a": 0,
+     "e": "«U» for a place takes the locative: u pozorištu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja sam mislio kod ___.",
+     "o": [
+      "vama",
+      "vas",
+      "vi",
+      "vaš"
+     ],
+     "a": 1,
+     "e": "The preposition «kod» takes the genitive: kod vas."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ljudi, idem da vidim šta je sa ___.",
+     "o": [
+      "pitu",
+      "pita",
+      "pite",
+      "pitom"
+     ],
+     "a": 3,
+     "e": "«Sa» takes the instrumental: sa pitom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne, ne možeš, zamrznućeš se na ___.",
+     "o": [
+      "terasa",
+      "terase",
+      "terasi",
+      "terasu"
+     ],
+     "a": 2,
+     "e": "«Na» for a place takes the locative: na terasi."
+    }
+   ]
+  }
+ ]
+}
