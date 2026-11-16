@@ -21,6 +21,7 @@ import 'videos.dart';
 import 'analytics.dart';
 import 'deep_link.dart';
 import 'install_banner.dart';
+import 'install_io.dart' if (dart.library.js_interop) 'install_web.dart' show isStandalone;
 import 'l10n.dart';
 
 /// Открывает плеер поверх таббара; у клипов из TikTok он свой, вертикальный.
@@ -232,6 +233,8 @@ class _PlayerPageState extends State<PlayerPage> {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) maybeShowLandscapeInstallDialog(context);
       });
+      // В установленном приложении панелей браузера нет: видео на весь экран, субтитры снизу на чёрном.
+      if (isStandalone()) return _landscapeBottom(player, cue);
       return _landscape(player, cue);
     }
     if (size.width >= 960) return _desktop(player, cue);
@@ -397,6 +400,42 @@ class _PlayerPageState extends State<PlayerPage> {
   }
 
   // Горизонтальный телефон: видео слева на всю высоту, справа — панель с фразой и стрелками.
+  // Горизонтальный режим в установленном приложении: видео сверху, под ним на чёрном фраза со стрелками.
+  Widget _landscapeBottom(Widget player, Cue? cue) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, c) {
+                      final w = (c.maxHeight * 16 / 9).clamp(0.0, c.maxWidth);
+                      return Center(child: SizedBox(width: w, height: c.maxHeight, child: player));
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 84,
+                  child: Row(
+                    children: [
+                      _stepArrow(-1),
+                      Expanded(child: Center(child: _strip(cue, big: true))),
+                      _stepArrow(1),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Align(alignment: Alignment.topLeft, child: _back(color: cOnInk)),
+          ],
+        ),
+      ),
+    );
+  }
+
   // Минимальная ширина панели с фразой в горизонтальном режиме.
   static const _minPanel = 260.0;
 
