@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What title does the girl give for the first clip?",
+     "o": [
+      "Bolji život",
+      "Selo gori, baba se češlja",
+      "Urgentni centar",
+      "Naša mala klinika"
+     ],
+     "a": 0,
+     "e": "In the video: \"Pa Bolji život\" — well, Bolji život."
+    },
+    {
+     "q": "Which title does the guy name for one of the clips?",
+     "o": [
+      "Urgentni centar",
+      "Bolji život",
+      "Dnevnik",
+      "Vesti"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ovo, brate, Urgentni centar\" — this, man, is Urgentni centar."
+    },
+    {
+     "q": "What is the girl's score?",
+     "o": [
+      "0 of 4",
+      "2 of 4",
+      "3 of 4",
+      "4 of 4"
+     ],
+     "a": 0,
+     "e": "In the video: \"nula od četiri\" — zero out of four."
+    },
+    {
+     "q": "Which series is the answer to the later clip?",
+     "o": [
+      "Selo gori, baba se češlja",
+      "Bolji život",
+      "Urgentni centar",
+      "Naša mala klinika"
+     ],
+     "a": 0,
+     "e": "In the video: \"Selo gori, baba se češlja\" — Selo gori, baba se češlja."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za početak, *odakle* je ovo?",
+     "o": [
+      "from where",
+      "where to",
+      "when",
+      "why"
+     ],
+     "a": 0,
+     "e": "Odakle — from where."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Možeš neki *hint*, možda?",
+     "o": [
+      "hint",
+      "question",
+      "chance",
+      "money"
+     ],
+     "a": 0,
+     "e": "Hint — English loanword."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Ništa*? Ništa, nema veze.",
+     "o": [
+      "nothing",
+      "everything",
+      "a lot",
+      "nobody"
+     ],
+     "a": 0,
+     "e": "Ništa — nothing."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo je neka *bolnica*, ne?",
+     "o": [
+      "hospital",
+      "school",
+      "prison",
+      "hotel"
+     ],
+     "a": 0,
+     "e": "Bolnica — hospital."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da. Iz ___ serije?",
+     "o": [
+      "koje",
+      "koja",
+      "koju",
+      "kojoj"
+     ],
+     "a": 0,
+     "e": "Iz + genitive: iz koje serije?"
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Emitovalo se na ___?",
+     "o": [
+      "Pinku",
+      "Pink",
+      "Pinka",
+      "Pinkom"
+     ],
+     "a": 0,
+     "e": "Locative: na Pinku."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "U ___ serije je posao?",
+     "o": [
+      "imenu",
+      "ime",
+      "imena",
+      "imenom"
+     ],
+     "a": 0,
+     "e": "In what? — locative: u imenu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je neka ___, ne?",
+     "o": [
+      "bolnica",
+      "bolnicu",
+      "bolnice",
+      "bolnici"
+     ],
+     "a": 0,
+     "e": "Nominative: neka bolnica."
+    }
+   ]
+  }
+ ]
+}

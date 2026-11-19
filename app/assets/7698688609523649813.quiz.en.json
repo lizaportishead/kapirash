@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What are the girls asked?",
+     "o": [
+      "which plates in Serbia are BČ",
+      "how much a car costs",
+      "where the nearest petrol station is",
+      "what the driver is called"
+     ],
+     "a": 0,
+     "e": "In the video: \"koje su u Srbiji tablice BČ\" — which plates in Serbia are BČ."
+    },
+    {
+     "q": "What does the one who guesses get?",
+     "o": [
+      "money",
+      "a gift",
+      "a car",
+      "a phone"
+     ],
+     "a": 0,
+     "e": "In the video: \"dobijete pare\" — you get money."
+    },
+    {
+     "q": "Which town does one of the girls suggest?",
+     "o": [
+      "Paraćin",
+      "Novi Sad",
+      "Niš",
+      "Kruševac"
+     ],
+     "a": 0,
+     "e": "In the video: \"Da nije možda Paraćin\" — could it be Paraćin."
+    },
+    {
+     "q": "What does the guy say about Baračin?",
+     "o": [
+      "it does not exist",
+      "it is his hometown",
+      "he has been there",
+      "it is nearby"
+     ],
+     "a": 0,
+     "e": "In the video: \"Baračin ne postoji\" — Baračin does not exist."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Jesi čula nekad za te *tablice*?",
+     "o": [
+      "plates",
+      "tables",
+      "tablets",
+      "charts"
+     ],
+     "a": 0,
+     "e": "Tablice — licence plates."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ako pogodite — ovo je baš teško — dobijete *pare*.",
+     "o": [
+      "money",
+      "gift",
+      "prize",
+      "chance"
+     ],
+     "a": 0,
+     "e": "Pare — money."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Mora, moramo da te *nagradimo*.",
+     "o": [
+      "reward",
+      "punish",
+      "ask",
+      "find"
+     ],
+     "a": 0,
+     "e": "Nagraditi — to reward."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ljudi, konačno imamo nekoga ko zna BČ tablice, *svaka čast*.",
+     "o": [
+      "well done",
+      "goodbye",
+      "sorry",
+      "thanks"
+     ],
+     "a": 0,
+     "e": "Svaka čast — well done."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Devojke, da li znate koje su u ___ tablice BČ?",
+     "o": [
+      "Srbiji",
+      "Srbija",
+      "Srbiju",
+      "Srbije"
+     ],
+     "a": 0,
+     "e": "Where? — locative: u Srbiji."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Da nije možda ___?",
+     "o": [
+      "Paraćin",
+      "Paraćina",
+      "Paraćinu",
+      "Paraćinom"
+     ],
+     "a": 0,
+     "e": "After da nije — nominative: Paraćin."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Jesi čula nekad za te ___?",
+     "o": [
+      "tablice",
+      "tablica",
+      "tablicu",
+      "tablicama"
+     ],
+     "a": 0,
+     "e": "Za + accusative plural: za te tablice."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ljudi, konačno imamo ___ ko zna BČ tablice, svaka čast.",
+     "o": [
+      "nekoga",
+      "neko",
+      "nekome",
+      "nekim"
+     ],
+     "a": 0,
+     "e": "Imati + accusative: nekoga."
+    }
+   ]
+  }
+ ]
+}

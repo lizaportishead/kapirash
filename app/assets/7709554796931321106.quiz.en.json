@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the mother ask to be turned on?",
+     "o": [
+      "the TV",
+      "an AI (she calls it \"LGBT\")",
+      "the radio",
+      "the light"
+     ],
+     "a": 1,
+     "e": "In the video: \"Upali mi onaj LGBT\" — turn on that LGBT for me."
+    },
+    {
+     "q": "What is the thing she wants really called?",
+     "o": [
+      "ChatGPT",
+      "Instagram",
+      "YouTube",
+      "Netflix"
+     ],
+     "a": 0,
+     "e": "In the video: \"nije LGBT nego ChatGPT\" — it is not LGBT, it is ChatGPT."
+    },
+    {
+     "q": "What does the mother say when her son corrects her?",
+     "o": [
+      "that she was wrong",
+      "that it is all the same to her",
+      "that she did not hear",
+      "that he is wrong"
+     ],
+     "a": 1,
+     "e": "In the video: \"Meni to isto\" — to me it is the same."
+    },
+    {
+     "q": "What does Željko do at the end?",
+     "o": [
+      "turns ChatGPT on for her",
+      "leaves the room",
+      "calls his brother",
+      "laughs and refuses"
+     ],
+     "a": 0,
+     "e": "In the video: \"Evo, palim ti\" — here, I am turning it on for you."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Željko, ajde upali mi onaj LGBT da ga nešto *pitam*.",
+     "o": [
+      "I ask",
+      "I answer",
+      "I buy",
+      "I remember"
+     ],
+     "a": 0,
+     "e": "Pitati — to ask."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ajde, ne *zanovetaj*, bre, nego mi uključi.",
+     "o": [
+      "nag",
+      "go",
+      "look",
+      "speak"
+     ],
+     "a": 0,
+     "e": "Zanovetati — to nag."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Evo, palim ti, kaže se ChatGPT, *zapamti*.",
+     "o": [
+      "remember",
+      "forget",
+      "repeat",
+      "switch off"
+     ],
+     "a": 0,
+     "e": "Zapamtiti — to remember."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Majko, nije LGBT *nego* ChatGPT.",
+     "o": [
+      "but rather",
+      "because",
+      "if",
+      "when"
+     ],
+     "a": 0,
+     "e": "Nije X nego Y — not X but Y."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ajde, ne zanovetaj, bre, nego mi ___.",
+     "o": [
+      "uključi",
+      "uključim",
+      "uključio",
+      "uključiti"
+     ],
+     "a": 0,
+     "e": "Imperative: uključi — turn on."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Upali ___ onaj LGBT.",
+     "o": [
+      "mi",
+      "me",
+      "ja",
+      "mene"
+     ],
+     "a": 0,
+     "e": "Dative: mi — \"for me\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Evo, ___ ti, kaže se ChatGPT, zapamti.",
+     "o": [
+      "palim",
+      "pališ",
+      "pali",
+      "paljenje"
+     ],
+     "a": 0,
+     "e": "First person singular: palim — I turn on."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "A šta ___ ja rekla?",
+     "o": [
+      "sam",
+      "je",
+      "smo",
+      "si"
+     ],
+     "a": 0,
+     "e": "Ja → sam: \"what did I say\"."
+    }
+   ]
+  }
+ ]
+}

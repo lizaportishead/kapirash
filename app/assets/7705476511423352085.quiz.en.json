@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does the first girl say about her ex?",
+     "o": [
+      "Everything nice lasts a short time",
+      "He is the best",
+      "I forgot him",
+      "I dream of him"
+     ],
+     "a": 0,
+     "e": "In the video: \"Sve što je lepo kratko traje\" — everything that is nice lasts a short time."
+    },
+    {
+     "q": "What did the second girl do to her ex?",
+     "o": [
+      "blocked him",
+      "wrote to him",
+      "invited him on a date",
+      "thanked him"
+     ],
+     "a": 0,
+     "e": "In the video: \"Blokirala sam, nema poruke za njega\" — I blocked him, there is no message for him."
+    },
+    {
+     "q": "Why is there no message for him?",
+     "o": [
+      "he lied",
+      "he left",
+      "he is poor",
+      "he forgot"
+     ],
+     "a": 0,
+     "e": "In the video: \"Zato što je lagao\" — because he lied."
+    },
+    {
+     "q": "Does she say his name?",
+     "o": [
+      "no, she keeps it secret",
+      "yes, right away",
+      "only the surname",
+      "she shows a photo"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ne treba, brate, ajde, ostaćemo u tajnosti\" — no need, man, come on, let us keep it secret."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Blokirala* sam, nema poruke za njega.",
+     "o": [
+      "blocked",
+      "called",
+      "forgave",
+      "forgot"
+     ],
+     "a": 0,
+     "e": "Blokirati — to block."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Zato što je *lagao*.",
+     "o": [
+      "lied",
+      "joked",
+      "was ill",
+      "was silent"
+     ],
+     "a": 0,
+     "e": "Lagati — to lie."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Sve što je lepo *kratko* traje.",
+     "o": [
+      "briefly",
+      "long",
+      "loudly",
+      "rarely"
+     ],
+     "a": 0,
+     "e": "Kratko — briefly."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Hoćeš da kažeš njegovo *ime* da ga prozovemo?",
+     "o": [
+      "name",
+      "face",
+      "photo",
+      "place"
+     ],
+     "a": 0,
+     "e": "Ime — name."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Poruka za ___ dečka.",
+     "o": [
+      "bivšeg",
+      "bivši",
+      "bivšem",
+      "bivšim"
+     ],
+     "a": 0,
+     "e": "For whom? — genitive masculine: bivšeg dečka."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Blokirala sam, nema ___ za njega.",
+     "o": [
+      "poruke",
+      "poruka",
+      "poruku",
+      "poruci"
+     ],
+     "a": 0,
+     "e": "After nema — genitive: nema poruke."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dosta ___ je lagao, brate.",
+     "o": [
+      "stvari",
+      "stvar",
+      "stvarima",
+      "stvarju"
+     ],
+     "a": 0,
+     "e": "After dosta — genitive plural: stvari."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ne treba, brate, ajde, ___ u tajnosti.",
+     "o": [
+      "ostaćemo",
+      "ostao",
+      "ostati",
+      "ostanite"
+     ],
+     "a": 0,
+     "e": "Future tense, 1st plural: ostaćemo."
+    }
+   ]
+  }
+ ]
+}

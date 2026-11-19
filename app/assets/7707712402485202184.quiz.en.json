@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is she making the bald head out of?",
+     "o": [
+      "foil",
+      "paper",
+      "fabric",
+      "clay"
+     ],
+     "a": 0,
+     "e": "In the video: \"kako od folije da napravim ćelavu glavu\" — how to make a bald head out of foil."
+    },
+    {
+     "q": "Whose concert is she going to?",
+     "o": [
+      "Pitbull",
+      "Jay-Z",
+      "Marko Luka",
+      "Nirvana"
+     ],
+     "a": 0,
+     "e": "In the video: \"ova dama na Pitbulla ne ide ćelava\" — this lady is not going to Pitbull bald."
+    },
+    {
+     "q": "Why does she need cheap make-up?",
+     "o": [
+      "she does not mind squeezing out a lot",
+      "it is free",
+      "it is brighter",
+      "it dries faster"
+     ],
+     "a": 0,
+     "e": "In the video: \"mi nije žao da istisnem ovoga koliko god treba\" — I do not mind squeezing out as much as needed."
+    },
+    {
+     "q": "What does she lack for the outfit?",
+     "o": [
+      "a white shirt and a black tie",
+      "a suit",
+      "shoes",
+      "glasses"
+     ],
+     "a": 0,
+     "e": "In the video: \"nemam ni običnu belu košulju ni običnu crnu kravatu\" — I do not have an ordinary white shirt or an ordinary black tie."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Za početak sam napravila ovu *punđu*, najtanju moguću",
+     "o": [
+      "bun",
+      "braid",
+      "ponytail",
+      "hat"
+     ],
+     "a": 0,
+     "e": "Punđa — a hair bun."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ok, sada ćemo da *izbušimo* ovde za uvo",
+     "o": [
+      "poke a hole",
+      "draw",
+      "close",
+      "wipe"
+     ],
+     "a": 0,
+     "e": "Izbušiti — to make a hole."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovo možda i bude *funkcionisalo*.",
+     "o": [
+      "worked",
+      "broke",
+      "fell",
+      "vanished"
+     ],
+     "a": 0,
+     "e": "Funkcionisati — to work."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ja ne mogu da verujem da nemam ni običnu belu *košulju* ni običnu",
+     "o": [
+      "shirt",
+      "jacket",
+      "skirt",
+      "hat"
+     ],
+     "a": 0,
+     "e": "Košulja — shirt."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ipak ova dama na ___ ne ide ćelava",
+     "o": [
+      "Pitbulla",
+      "Pitbull",
+      "Pitbullu",
+      "Pitbullom"
+     ],
+     "a": 0,
+     "e": "Where to? — accusative: na Pitbulla."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "jer sam našla tutorijal kako od ___ da napravim ćelavu glavu",
+     "o": [
+      "folije",
+      "folija",
+      "foliju",
+      "folijom"
+     ],
+     "a": 0,
+     "e": "Od + genitive: od folije — out of foil."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovo je prvi ___, ne znam kako izgleda od pozadi",
+     "o": [
+      "sloj",
+      "sloja",
+      "sloju",
+      "slojem"
+     ],
+     "a": 0,
+     "e": "Nominative: prvi sloj."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ja ne mogu da verujem da nemam ni običnu belu košulju ni običnu crnu ___",
+     "o": [
+      "kravatu",
+      "kravata",
+      "kravate",
+      "kravati"
+     ],
+     "a": 0,
+     "e": "Imati + accusative: kravatu."
+    }
+   ]
+  }
+ ]
+}

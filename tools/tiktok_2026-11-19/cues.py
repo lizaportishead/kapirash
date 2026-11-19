@@ -1,0 +1,220 @@
+# (start, end, sr, ru, en); a segment is split between its sentences in proportion to their length
+CUES = {}
+def seg(a, b, parts):
+    tot = sum(len(p[0]) for p in parts); t = a; out = []
+    for p in parts:
+        d = (b - a) * len(p[0]) / tot
+        out.append((round(t, 2), round(t + d, 2), p[0], p[1], p[2])); t += d
+    return out
+def clip(i, *segs):
+    CUES[i] = [c for s in segs for c in s]
+
+def L(a, b, sr, ru, en): return [(a, b, sr, ru, en)]
+def P(sr, ru, en): return (sr, ru, en)
+
+# Željko Malenović — majka i ChatGPT
+clip('7709554796931321106',
+ L(0.0, 3.14, "Željko, ajde upali mi onaj LGBT da ga nešto pitam.", "Желько, включи мне этот ЛГБТ, я хочу его кое о чём спросить.", "Željko, turn on that LGBT for me so I can ask it something."),
+ L(3.44, 3.86, "Molim?", "Что?", "Sorry?"),
+ L(4.06, 5.22, "Upali mi onaj LGBT.", "Включи мне этот ЛГБТ.", "Turn on that LGBT for me."),
+ L(5.64, 6.78, "Kakav, bre, LGBT?", "Какой ещё ЛГБТ?", "What LGBT, man?"),
+ L(7.12, 8.3, "Ono vaše, bre, AI.", "Ну это ваше, блин, ИИ.", "That AI thing of yours, man."),
+ L(8.56, 10.7, "Majko, nije LGBT nego ChatGPT.", "Мама, это не ЛГБТ, а ChatGPT.", "Mom, it is not LGBT, it is ChatGPT."),
+ L(11.16, 12.44, "A šta sam ja rekla?", "А что я сказала?", "And what did I say?"),
+ L(12.82, 13.34, "LGBT.", "ЛГБТ.", "LGBT."),
+ L(13.84, 14.66, "Meni to isto.", "Мне это одно и то же.", "To me it is the same."),
+ L(18.48, 20.34, "Ajde, ne zanovetaj, bre, nego mi uključi.", "Давай, не придирайся, просто включи мне.", "Come on, stop nagging and just turn it on for me."),
+ L(20.52, 23.7, "Evo, palim ti, kaže se ChatGPT, zapamti.", "Вот, включаю тебе. Это называется ChatGPT, запомни.", "Here, I am turning it on for you. It is called ChatGPT, remember that."),
+)
+
+# Željko Malenović — baba i salama
+clip('7706903451451641106',
+ L(0.0, 2.02, "Sad će tebe baba da napravi jedan sendvič.", "Сейчас бабушка сделает тебе бутерброд.", "Now grandma will make you a sandwich."),
+ L(2.16, 2.5, "Ajde.", "Давай.", "Okay."),
+ L(2.7, 4.28, "Samo tanje reži salamu.", "Только режь салями потоньше.", "Just slice the salami thinner."),
+ L(4.4, 5.76, "Dobro, sine, tanko će baba.", "Хорошо, сынок, бабушка нарежет тонко.", "All right, son, grandma will slice it thin."),
+ L(5.94, 10.64, "Tanje, baba, tanje reži, ja volim kad je tanko rezano.", "Тоньше, бабушка, тоньше режь, я люблю, когда нарезано тонко.", "Thinner, grandma, slice it thinner, I like it when it is cut thin."),
+ L(10.82, 11.82, "Ništa ti ne brini.", "Ты ни о чём не волнуйся.", "Do not you worry about anything."),
+ L(12.66, 14.28, "Baba pravi da jedeš.", "Бабушка делает, чтобы ты поел.", "Grandma is making it so that you eat."),
+ L(15.9, 16.74, "Izvolite sendvič.", "Пожалуйста, бутерброд.", "Here is your sandwich."),
+ L(16.98, 18.62, "Dobro, baba, je l' ti je to tanko rezano?", "Ну ладно, бабушка, это у тебя тонко нарезано?", "Well, grandma, is that thinly sliced?"),
+ L(19.82, 21.78, "Pa sine, ja tanje nisam mogla.", "Ну сынок, тоньше я не смогла.", "Well, son, I could not do it thinner."),
+ L(21.96, 24.8, "Meni je muka samo dok gledam to, znači ne mogu da jedem.", "Меня тошнит, только когда я на это смотрю, значит, я не могу это есть.", "I feel sick just looking at it, so I cannot eat it."),
+ L(25.12, 26.92, "Ajde, ne lupaj, nego jedi.", "Давай, не болтай, а ешь.", "Come on, do not talk nonsense, just eat."),
+ L(27.06, 29.12, "E, daj, ja ću ti to izrezati, ajde.", "Ну дай, я сама тебе это нарежу, давай.", "Oh, give it here, I will cut it for you, come on."),
+)
+
+# Gagi — test poverenja pt.10
+clip('7702504712997768468',
+ L(0.0, 0.98, "Koliko dugo ste u vezi?", "Как давно вы вместе?", "How long have you been together?"),
+ L(1.14, 1.86, "Tri meseca.", "Три месяца.", "Three months."),
+ L(1.98, 3.02, "Da li verujete jedno drugom?", "Вы доверяете друг другу?", "Do you trust each other?"),
+ L(3.22, 3.8, "Da. Da.", "Да. Да.", "Yes. Yes."),
+ L(4.08, 9.4, "Danas radimo test poverenja: treba da zamenite telefone na jedan minut i da vidite da li ste verni jedno drugom.", "Сегодня мы делаем тест на доверие: вы должны поменяться телефонами на одну минуту и посмотреть, верны ли вы друг другу.", "Today we are doing a trust test: you have to swap phones for one minute and see whether you are faithful to each other."),
+ L(9.46, 10.48, "Ko će prvi da da telefon?", "Кто первым отдаст телефон?", "Who will hand over their phone first?"),
+ L(10.58, 11.42, "Evo ja ću. Ajde.", "Вот я. Давай.", "I will. Come on."),
+ L(11.52, 12.84, "Vreme kreće sad.", "Время пошло.", "The time starts now."),
+ L(13.14, 15.28, "Okej, ušao si na Instagram.", "Так, ты зашёл в Инстаграм.", "Okay, you went into Instagram."),
+ L(15.38, 19.02, "Gledam poruke, s kim se dopisuješ. Ko je Milica?", "Смотрю сообщения, с кем ты переписываешься. Кто такая Милица?", "I am looking at the messages, who you are writing to. Who is Milica?"),
+ L(19.32, 23.58, "To mu je majka, to mu je majka. Okej, to verujem.", "Это его мама, это его мама. Ладно, этому я верю.", "That is his mother, that is his mother. Okay, that I believe."),
+ L(27.42, 29.36, "Je l' ti je okej što mu šalju domaći?", "Тебе нормально, что ему присылают домашку?", "Is it okay with you that they send him homework?"),
+ L(29.42, 30.42, "Da, to je skroz okej.", "Да, это абсолютно нормально.", "Yes, that is totally fine."),
+ L(30.64, 32.44, "A što mu ti ne pomogneš oko domaćeg?", "А почему ты ему не поможешь с домашкой?", "And why do you not help him with homework?"),
+ L(32.56, 34.94, "Ne idemo zajedno u istu školu.", "Мы не ходим вместе в одну школу.", "We do not go to the same school."),
+ L(34.98, 35.88, "E, ko je ovo?", "Так, а это кто?", "Hey, who is this?"),
+ L(38.82, 39.84, "Aha, to neću da čitam naglas.", "Ага, это я вслух читать не буду.", "Aha, I will not read that out loud."),
+ L(41.3, 44.06, "Znači za sad je okej. Uđi na WhatsApp.", "Значит, пока всё нормально. Зайди в WhatsApp.", "So far it is okay. Go into WhatsApp."),
+ L(45.16, 46.02, "Gledaću ti Viber.", "Посмотрю твой Вайбер.", "I will check your Viber."),
+ L(47.92, 49.6, "Što? Ništa, ništa, ništa.", "Что? Ничего, ничего, ничего.", "What? Nothing, nothing, nothing."),
+ L(50.02, 51.36, "Ti muvaš ribe na Viberu?", "Ты клеишь девчонок в Вайбере?", "You chat up girls on Viber?"),
+ L(51.5, 51.66, "Ne.", "Нет.", "No."),
+ L(53.28, 55.76, "Koja Anika? Domaći je. Dobro, verujem.", "Какая Аника? Это домашка. Ладно, верю.", "Which Anika? It is homework. Fine, I believe you."),
+ L(55.84, 57.46, "Tebi svaka devojka šalje domaći.", "Тебе каждая девушка присылает домашку.", "Every girl sends you homework."),
+ L(57.54, 59.2, "Pa tako je, treba da se šalje domaći.", "Ну да, домашку же нужно присылать.", "Well yes, homework has to be sent."),
+ L(59.26, 61.84, "Imaš još pet sekundi. Tri, dva, jedan.", "У тебя ещё пять секунд. Три, два, один.", "You have five more seconds. Three, two, one."),
+ L(62.0, 63.78, "Dobro, dobro. Ništa nisi našla.", "Хорошо, хорошо. Ты ничего не нашла.", "Good, good. You did not find anything."),
+ L(63.96, 65.34, "Znači dobar dečko. Jeste dobar.", "Значит, хороший парень. Да, хороший.", "So he is a good boyfriend. Yes, he is good."),
+ L(65.4, 67.04, "Ajde da vidimo da li si ti dobra, daj mu telefon.", "Давай посмотрим, хорошая ли ты, дай ему телефон.", "Let us see whether you are good, give him the phone."),
+ L(69.44, 71.28, "Imaš jedan minut, vreme kreće sad.", "У тебя одна минута, время пошло.", "You have one minute, the time starts now."),
+ L(71.4, 73.28, "Da vidimo, ulazi na Instagram. Ovo je Veljko.", "Посмотрим, заходит в Инстаграм. Это Велько.", "Let us see, he goes into Instagram. This is Veljko."),
+ L(73.76, 77.26, "Veljko, drug. Dobro, dobro, ovo je drug.", "Велько, друг. Ладно, ладно, это друг.", "Veljko, a friend. Okay, okay, this is a friend."),
+ L(77.38, 78.72, "Znaš tog Veljka? Ne.", "Ты знаешь этого Велько? Нет.", "Do you know that Veljko? No."),
+ L(79.02, 80.84, "Kako ga on ne zna? Nisam ga spomenula.", "Как это он его не знает? Я о нём не говорила.", "How come he does not know him? I never mentioned him."),
+ L(88.82, 90.72, "I kako se ti sad dopisuješ s njim?", "И как ты теперь с ним переписываешься?", "And how are you writing to him now?"),
+ L(90.86, 93.66, "Nisam odgovarala, nisam odgovarala. A nisi ništa odgovarala, aha, onda okej, onda super.", "Я не отвечала, не отвечала. А ты ничего не отвечала? Ага, тогда окей, тогда отлично.", "I did not reply, I did not reply. You did not reply at all? Aha, then okay, then great."),
+ L(96.52, 98.46, "Pitao me da izađemo napolje, ali to nisam pristala.", "Он звал меня погулять, но я не согласилась.", "He asked me to go out, but I did not agree."),
+ L(98.52, 100.52, "Zašto ga nisi blokirala? Zaboravila sam.", "Почему ты его не заблокировала? Забыла.", "Why did you not block him? I forgot."),
+ L(100.66, 102.2, "Daj da vidimo WhatsApp, negde uđi.", "Давай посмотрим WhatsApp, куда-нибудь зайди.", "Let us look at WhatsApp, go in somewhere."),
+ L(105.9, 109.26, "Lignoslav, ko je Lignoslav? Lugarica. Jakša, ko je Jakša?", "Лигнослав, кто такой Лигнослав? Лесничиха. Якша, кто такой Якша?", "Lignoslav, who is Lignoslav? A forester. Jakša, who is Jakša?"),
+ L(109.26, 111.74, "Dva, jedan, gotovo, vreme. Ma ništa nisi našao, brate.", "Два, один, всё, время. Да ты ничего не нашёл, брат.", "Two, one, done, time is up. You did not find anything, man."),
+ L(111.9, 114.2, "Jeste li ostali u vezi? Da. Da.", "Вы остались вместе? Да. Да.", "Are you still together? Yes. Yes."),
+ L(114.5, 116.0, "Lajkujte ovaj klip i zapratite me.", "Ставьте лайк этому клипу и подписывайтесь на меня.", "Like this clip and follow me."),
+)
+
+# Gagi — poruka za bivšeg dečka
+clip('7705476511423352085',
+ L(0.0, 1.14, "Poruka za bivšeg dečka.", "Сообщение для бывшего парня.", "A message for your ex-boyfriend."),
+ L(1.24, 2.54, "Sve što je lepo kratko traje.", "Всё хорошее длится недолго.", "Everything that is nice lasts a short time."),
+ L(2.68, 4.0, "Opa, znači bilo je lepo.", "Ого, значит, было хорошо.", "Oh, so it was nice."),
+ L(4.12, 4.56, "Pa jeste.", "Ну да.", "Well, yes."),
+ L(4.8, 6.22, "Neko i nešto lepo da kaže.", "Кто-то и что-то хорошее сказать может.", "Someone has something nice to say, too."),
+ L(6.32, 7.12, "Poruka za bivšeg.", "Сообщение для бывшего.", "A message for the ex."),
+ L(7.28, 8.52, "Blokirala sam, nema poruke za njega.", "Я заблокировала, для него нет сообщения.", "I blocked him, there is no message for him."),
+ L(8.6, 10.32, "Znači nema poruke za njega, a zbog čega?", "Значит, для него нет сообщения, а почему?", "So there is no message for him, and why is that?"),
+ L(10.46, 11.14, "Zato što je lagao.", "Потому что он врал.", "Because he lied."),
+ L(11.3, 12.16, "A šta je to lagao?", "А что он такое врал?", "And what did he lie about?"),
+ L(12.26, 14.22, "Dosta stvari je lagao, brate.", "Много чего он врал, брат.", "He lied about a lot of things, man."),
+ L(14.42, 15.56, "I treba tako.", "И правильно.", "And rightly so."),
+ L(15.64, 17.54, "Hoćeš da kažeš njegovo ime da ga prozovemo?", "Хочешь назвать его имя, чтобы мы его назвали?", "Do you want to say his name so we can call him out?"),
+ L(17.62, 19.12, "Ne treba, brate, ajde, ostaćemo u tajnosti.", "Не надо, брат, давай, останемся в тайне.", "No need, man, come on, let us keep it secret."),
+ L(20.54, 22.08, "Lajkujte ovaj klip i zapratite me.", "Ставьте лайк этому клипу и подписывайтесь на меня.", "Like this clip and follow me."),
+)
+
+# Luka Averić — SMS za lečenje
+clip('7703990028006870293',
+ L(0.0, 3.74, "Ovi ljudi stoje po kiši kako bi skupili novac za lečenje njene sestre.", "Эти люди стоят под дождём, чтобы собрать деньги на лечение её сестры.", "These people stand in the rain to raise money for her sister's treatment."),
+ L(3.86, 6.06, "A mi idemo da ih iznenadimo malim poklonom.", "А мы идём удивить их небольшим подарком.", "And we are going to surprise them with a small gift."),
+ L(6.46, 7.2, "Jeste dobro?", "Всё хорошо?", "Is it going well?"),
+ L(7.62, 9.3, "Je l' nešto košta ili kako?", "Это что-то стоит или как?", "Does it cost something, or how does it work?"),
+ L(11.2, 17.22, "Ona nam je i rođaka, i komšinica, i drugarica, od malena smo zajedno.", "Она нам и родственница, и соседка, и подруга, мы вместе с детства.", "She is our relative, and our neighbour, and a friend, we have been together since childhood."),
+ L(17.28, 20.02, "Ima multiplu sklerozu već pet godina.", "У неё рассеянный склероз уже пять лет.", "She has had multiple sclerosis for five years."),
+ L(26.48, 28.78, "Ima troje dece, najmlađe ima četiri godine.", "У неё трое детей, младшему четыре года.", "She has three children, the youngest is four."),
+ L(31.24, 36.68, "Da, u Moskvi može da se uradi operacija, ali treba da se skupi 56.000.", "Да, в Москве можно сделать операцию, но нужно собрать 56 000.", "Yes, the operation can be done in Moscow, but 56,000 has to be raised."),
+ L(36.78, 38.88, "Evo mali poklon za vas. Slobodno.", "Вот небольшой подарок для вас. Не стесняйтесь.", "Here is a small gift for you. Go ahead."),
+ L(39.0, 40.1, "Evo, izvucite i pogledajte.", "Вот, достаньте и посмотрите.", "Here, pull it out and have a look."),
+ L(40.56, 42.96, "Unutra ima 50.000 dinara.", "Внутри 50 000 динаров.", "There are 50,000 dinars inside."),
+ L(44.28, 47.08, "Tako da je to mali poklon za sada.", "Так что это пока небольшой подарок.", "So that is a small gift for now."),
+ L(47.2, 49.0, "Ali biće potrebno još puno novca.", "Но понадобится ещё много денег.", "But a lot more money will be needed."),
+ L(49.12, 55.06, "Zato pozivam i vas da pošaljete poruku za Aleksandru sa brojem 2032 na 3030, ako ste u mogućnosti.", "Поэтому призываю и вас отправить сообщение для Александры с номером 2032 на 3030, если у вас есть возможность.", "That is why I invite you too to send a message for Aleksandra with the number 2032 to 3030, if you are able to."),
+ L(55.06, 60.0, "Hajde zajedno da pomognemo mama Aleksandri da se vrati što pre kući svojoj deci.", "Давайте вместе поможем маме Александре как можно скорее вернуться домой к своим детям.", "Let us help mum Aleksandra together so she can get back home to her children as soon as possible."),
+)
+
+# Luka Averić — novac na drvetu
+clip('7702768555548314901',
+ seg(0.0, 6.76, [P("Ko je rekao da novac ne raste na drvetu?", "Кто сказал, что деньги не растут на деревьях?", "Who said that money does not grow on trees?"), P("Vidjet ćemo da li će ljudi biti pošteni i uzimati samo po jednu novčanicu.", "Посмотрим, будут ли люди честными и возьмут ли только по одной купюре.", "We will see whether people will be honest and take only one banknote each.")]),
+ L(7.12, 14.7, "Prolaznici su u početku bili malo zbunjeni, ali su ubrzo počeli da prilaze i uzimaju novac, dok su neki i dalje gledali čudno sa strane.", "Прохожие сначала были немного растеряны, но вскоре начали подходить и брать деньги, а некоторые всё ещё странно смотрели со стороны.", "At first the passers-by were a bit confused, but soon they started to come over and take money, while some still looked on strangely from the side."),
+ L(14.94, 17.78, "Čekamo da vidimo da li će svi do kraja biti pošteni.", "Ждём, посмотрим, будут ли все честными до конца.", "We are waiting to see whether everyone will stay honest to the end."),
+ L(18.2, 21.98, "Ostalo je još jako malo.", "Осталось совсем немного.", "Very little is left."),
+ seg(22.12, 27.06, [P("I posljednja novčanica je otišla.", "И последняя купюра ушла.", "And the last banknote is gone."), P("Baš mi je drago da su svi uzeli samo po jednu.", "Я очень рад, что все взяли только по одной.", "I am really glad that everyone took only one.")]),
+)
+
+# BalkanBet — pogodi seriju
+clip('7709123974646517012',
+ L(0.0, 1.52, "Za početak, odakle je ovo?", "Для начала, откуда это?", "To start with, where is this from?"),
+ L(1.62, 2.9, "U smislu, iz neke serije?", "В смысле, из какого-то сериала?", "I mean, from some TV series?"),
+ L(2.94, 4.46, "Da. Iz koje serije?", "Да. Из какого сериала?", "Yes. From which series?"),
+ L(4.58, 5.16, "Bolji život.", "«Лучшая жизнь».", "Bolji život."),
+ L(5.78, 8.4, "Nije. Ajde dalje, ajde dalje.", "Нет. Давай дальше, давай дальше.", "No. Let us move on, let us move on."),
+ L(8.46, 9.3, "Ovo znate sigurno?", "Это вы точно знаете?", "You surely know this one?"),
+ L(11.98, 13.72, "Iz koje je serije? Pa Bolji život.", "Из какого это сериала? Ну, «Лучшая жизнь».", "Which series is it from? Well, Bolji život."),
+ L(14.34, 15.88, "Nije, nije Bolji život.", "Нет, нет, не «Лучшая жизнь».", "No, no, it is not Bolji život."),
+ L(19.1, 20.78, "Ništa? Ništa, nema veze.", "Ничего? Ничего, не страшно.", "Nothing? Nothing, never mind."),
+ L(20.82, 22.08, "Dobro, i za kraj, ovo znaš sigurno?", "Хорошо, и напоследок, это ты знаешь наверняка?", "Okay, and finally, you surely know this one?"),
+ L(22.32, 24.18, "Ovo, brate, Urgentni centar.", "Это, брат, «Скорая помощь».", "This, man, is Urgentni centar."),
+ L(24.18, 26.04, "Nije. Jeste, ali iz koje serije?", "Нет. Да, но из какого сериала?", "No. Yes, but from which series?"),
+ L(27.34, 29.76, "Au, ništa, nula od četiri!", "Ох, ничего, ноль из четырёх!", "Wow, nothing, zero out of four!"),
+ L(29.84, 31.38, "Okej, odakle je ovo, znaš iz koje serije?", "Окей, откуда это, знаешь, из какого сериала?", "Okay, where is this from, do you know which series?"),
+ L(32.42, 33.68, "Selo gori, baba se češlja.", "«Село горит, а бабушка причёсывается».", "Selo gori, baba se češlja."),
+ L(35.34, 37.22, "Ovo znaš sigurno?", "Это ты знаешь точно?", "You surely know this one?"),
+ L(37.34, 38.46, "Naša serija.", "Наш сериал.", "Our series."),
+ L(40.34, 41.54, "Možeš neki hint, možda?", "Можно какую-нибудь подсказку?", "Could you give a hint, maybe?"),
+ L(41.74, 44.76, "U imenu serije je posao? Koji posao?", "В названии сериала есть работа? Какая работа?", "Is there a job in the name of the series? What job?"),
+ L(46.52, 48.08, "Ne, dobro, ajde dalje.", "Нет, хорошо, давай дальше.", "No, okay, let us move on."),
+ L(48.2, 50.44, "Ovo znaš sigurno. Emitovalo se na Pinku?", "Это ты знаешь точно. Шло на «Пинке»?", "You surely know this one. Was it broadcast on Pink?"),
+ L(54.14, 54.74, "Dobro, dobro.", "Хорошо, хорошо.", "Good, good."),
+ L(55.14, 55.76, "I za kraj...", "И напоследок...", "And finally..."),
+ L(56.98, 60.1, "Joj, poznato mi je. Ovo je neka bolnica, ne? Tako je. Klinika je.", "Ой, знакомо. Это какая-то больница, да? Верно. Это клиника.", "Oh, this looks familiar. It is some hospital, right? Exactly. It is a clinic."),
+ L(61.1, 64.98, "Klinika? Nemam pojma. Naša mala klinika.", "Клиника? Понятия не имею. «Наша маленькая клиника».", "A clinic? No idea. Naša mala klinika."),
+ L(66.74, 70.3, "Znači ništa, ljudi, pišite u komentarima da li ste provalili koje su serije u pitanju.", "Значит, ничего, ребята, пишите в комментариях, догадались ли вы, какие это сериалы.", "So nothing, folks, write in the comments whether you figured out which series they are."),
+ L(70.42, 71.94, "Lajkujte ovaj video i zapratite profil.", "Ставьте лайк этому видео и подписывайтесь на профиль.", "Like this video and follow the profile."),
+)
+
+# BalkanBet — tablice BČ
+clip('7698688609523649813',
+ L(0.0, 2.38, "Devojke, da li znate koje su u Srbiji tablice BČ?", "Девушки, вы знаете, чьи в Сербии номера BČ?", "Girls, do you know which plates in Serbia are BČ?"),
+ L(2.84, 3.16, "Ne.", "Нет.", "No."),
+ L(3.32, 5.26, "Ako pogodite — ovo je baš teško — dobijete pare.", "Если угадаете — это очень трудно — получите деньги.", "If you guess it, and this is really hard, you get money."),
+ L(5.88, 6.6, "Ne? BČ?", "Нет? BČ?", "No? BČ?"),
+ L(7.52, 8.82, "Jesi čula nekad za te tablice?", "Ты когда-нибудь слышала про эти номера?", "Have you ever heard of those plates?"),
+ L(9.78, 10.78, "Ne, okej, okej.", "Нет, окей, окей.", "No, okay, okay."),
+ L(10.84, 11.84, "Da nije možda Paraćin?", "Может, это Параћин?", "Could it be Paraćin?"),
+ L(13.56, 14.9, "Paraćin. Ne, ne, BČ.", "Параћин. Нет, нет, BČ.", "Paraćin. No, no, BČ."),
+ L(14.92, 15.5, "Eto, ne znam.", "Вот, не знаю.", "There, I do not know."),
+ L(16.2, 18.66, "Baračin ne postoji, ali dobro, pokušaj.", "Бараћина не существует, но ладно, пробуй.", "Baračin does not exist, but fine, give it a try."),
+ L(18.74, 21.02, "Gde je brat, gde je brat?", "Где брат, где брат?", "Where is my brother, where is my brother?"),
+ L(21.1, 22.5, "Koje su tablice u Srbiji BČ?", "Чьи в Сербии номера BČ?", "Which plates in Serbia are BČ?"),
+ L(31.94, 32.94, "Mora, moramo da te nagradimo.", "Надо, мы должны тебя наградить.", "We have to, we must reward you."),
+ L(34.24, 35.82, "Evo ga, evo ga, svaka čast.", "Вот он, вот он, молодец.", "There he is, there he is, well done."),
+ L(37.5, 40.28, "Ljudi, konačno imamo nekoga ko zna BČ tablice, svaka čast.", "Люди, наконец-то у нас есть тот, кто знает номера BČ, молодец.", "Folks, we finally have someone who knows the BČ plates, well done."),
+ L(40.36, 41.62, "Lajkujte video i zapratite profil.", "Ставьте лайк видео и подписывайтесь на профиль.", "Like the video and follow the profile."),
+)
+
+# Aveilora — put do američke porodice
+clip('7688788596018498823',
+ L(0.0, 5.54, "I danas odlazim iz kuće u kojoj sam živjela celo leto, jer napokon idemo kod moje američke porodice.", "И сегодня я уезжаю из дома, в котором жила всё лето, потому что мы наконец едем к моей американской семье.", "Today I am leaving the house where I lived all summer, because we are finally going to my American family."),
+ L(5.74, 12.08, "Prvi izazov je bio nagurati sve ove kofre u auto i to smo uradile kako smo znale i umele i put može da počne.", "Первая задача была запихнуть все эти чемоданы в машину, и мы сделали это как смогли, и путь может начаться.", "The first challenge was to cram all these suitcases into the car, and we did it as best we could, so the trip can begin."),
+ L(12.2, 17.84, "Krenuli smo za Boston do kog nam treba oko četiri sata, ali uz dobru ekipu vreme je prošlo prebrzo.", "Мы поехали в Бостон, до которого нам около четырёх часов, но в хорошей компании время прошло слишком быстро.", "We set off for Boston, which takes about four hours, but with good company the time went by far too fast."),
+ L(21.66, 28.66, "Tačno mi je bilo žao kada smo stigle u Boston jer sam tu već morala da se pozdravim sa svojim drugaricama i dalje put nastavljam sama.", "Мне было очень жаль, когда мы приехали в Бостон, потому что здесь мне уже пришлось попрощаться с подругами, и дальше я еду одна.", "I was really sorry when we arrived in Boston, because there I already had to say goodbye to my friends and continue the trip alone."),
+ seg(28.66, 37.82, [P("I sledeća stanica je New York i tamo idem autobusom.", "И следующая остановка — Нью-Йорк, и туда я еду автобусом.", "And the next stop is New York, and I am going there by bus."), P("Ne znam da li sam jedina, ali ja stvarno volim da putujem autobusom, posebno kada su novi i poluprazni.", "Не знаю, одна ли я такая, но я правда люблю ездить на автобусе, особенно когда он новый и полупустой.", "I do not know if I am the only one, but I really like travelling by bus, especially when it is new and half empty.")]),
+ L(37.88, 42.28, "Iskreno sam previše uzbuđena da bih spavala, tako da sam jela mek i gledala Mentalistu.", "Если честно, я слишком взволнована, чтобы спать, так что я ела макдоналдс и смотрела «Менталиста».", "Honestly I am too excited to sleep, so I ate McDonald's and watched The Mentalist."),
+ seg(42.36, 58.36, [P("I pošto Amerikanci ubijaju sa klimom, da se ne bih smrzla, presvukla sam se u pidžamu i to je bila jedna jako velika greška,", "А поскольку американцы убивают кондиционерами, чтобы не замёрзнуть, я переоделась в пижаму, и это была очень большая ошибка,", "And since Americans overdo the air conditioning, so as not to freeze I changed into pyjamas, and that was a very big mistake,"), P("jer nisam znala da će nas autobus ostaviti u centru New Yorka, tako da sam se ja našla između Empire State Buildinga i Times Squarea u pidžami.", "потому что я не знала, что автобус высадит нас в центре Нью-Йорка, так что я оказалась между Эмпайр-стейт-билдинг и Таймс-сквер в пижаме.", "because I did not know the bus would leave us in the centre of New York, so I found myself between the Empire State Building and Times Square in pyjamas.")]),
+ L(58.36, 63.88, "Od sramote sam odmah uzela Uber do aerodroma i samo sam usput trebala da ostavim velike kofere na čuvanje.", "От стыда я сразу взяла Убер до аэропорта, мне только нужно было по пути оставить большие чемоданы на хранение.", "Out of embarrassment I immediately took an Uber to the airport, and I only needed to drop off the big suitcases for storage on the way."),
+ L(63.96, 72.9, "Kada sam ja to bukirala online, sve se činilo legitimno, međutim, Uber staje kod nekih geto kuća i ja gledam šta je ovo kad tu stoji znak za ostavljanje kofera.", "Когда я бронировала это онлайн, всё казалось законным, однако Убер остановился у каких-то гетто-домов, и я смотрю: что это, раз тут стоит знак «оставить чемоданы».", "When I booked it online, everything looked legitimate, but the Uber stops by some ghetto houses and I think, what is this, when there is a sign here for leaving suitcases."),
+ L(73.06, 83.4, "Ljudi, jedan ujutru je, nemam puno izbora, tako da sam stavila kofere sa mojim vrednim stvarima u shopping kolica, kao što piše, i pomolila se da sve bude u redu, tako da se i vi pomolite za mene.", "Люди, час ночи, выбора у меня немного, так что я положила чемоданы с моими ценными вещами в тележки для покупок, как написано, и помолилась, чтобы всё было в порядке, так что и вы помолитесь за меня.", "Guys, it is one in the morning, I do not have much choice, so I put the suitcases with my valuable things into shopping carts, as it says, and prayed that everything would be okay, so you pray for me too."),
+ L(83.4, 89.12, "I napokon sam stigla na aerodrom koji je bio skoro prazan, tako da sam spavala i na aerodromu i u avionu.", "И наконец я добралась до аэропорта, который был почти пуст, так что я спала и в аэропорту, и в самолёте.", "And finally I reached the airport, which was almost empty, so I slept both in the airport and on the plane."),
+ L(89.26, 100.0, "Let je trajao malo manje od dva sata i ja sam stigla u Charlotte oko osam ujutru i jedva sam čekala da se iskrcam jer sam preuzbuđena da vidim svoju američku porodicu i kuću nakon četiri godine.", "Полёт длился чуть меньше двух часов, и я прилетела в Шарлотт около восьми утра и еле дождалась, когда смогу выйти, потому что очень взволнована: увижу свою американскую семью и дом после четырёх лет.", "The flight took a little under two hours and I got to Charlotte around eight in the morning and could hardly wait to get off, because I am so excited to see my American family and house after four years."),
+ L(100.12, 104.88, "Osećaj biti ponovo ovde je nerealan jer sam mislila da se nikada neće vratiti, ali evo.", "Ощущение снова быть здесь нереальное, ведь я думала, что оно никогда не вернётся, но вот.", "The feeling of being here again is unreal, because I thought it would never come back, but here it is."),
+ L(110.42, 116.24, "Zvanično sam opet u svojoj američkoj sobi, a vama hvala što ste putovali sa mnom i do sledećeg viđenja. Ćao!", "Официально я снова в своей американской комнате, а вам спасибо, что путешествовали со мной, и до следующей встречи. Пока!", "Officially I am back in my American room, and thank you for travelling with me, and see you next time. Bye!"),
+)
+
+# Aveilora — ćelava za Pitbulla
+clip('7707712402485202184',
+ L(0.0, 5.56, "Ipak ova dama na Pitbulla ne ide ćelava, jer sam našla tutorijal kako od folije da napravim ćelavu glavu.", "Всё-таки эта дама пойдёт на Питбуля не лысой, потому что я нашла туториал, как сделать из фольги лысую голову.", "This lady is not going to Pitbull bald after all, because I found a tutorial on how to make a bald head out of foil."),
+ L(5.7, 12.74, "Za početak sam napravila ovu punđu, najtanju moguću, i sada ću ovo da omotam folijom, valjda.", "Для начала я сделала вот этот пучок, самый тонкий из возможных, и сейчас обмотаю его фольгой, наверное.", "First I made this bun, the thinnest possible, and now I will wrap it in foil, I guess."),
+ L(22.68, 30.5, "Ok, sada ćemo da izbušimo ovde za uvo, jer ne čujem ništa, kao da mi je uvo u kesi, mada tehnički jeste.", "Окей, сейчас мы проделаем тут дырку для уха, потому что я ничего не слышу, как будто ухо в пакете, хотя технически так и есть.", "Okay, now we will poke a hole here for the ear, because I cannot hear anything, as if my ear is in a bag, although technically it is."),
+ L(33.7, 41.68, "E vidite, ovo su situacije u kojima vam trebaju jeftini make-up proizvodi, jer mi nije žao da istisnem ovoga koliko god treba.", "Вот видите, это ситуации, когда вам нужна дешёвая косметика, потому что мне не жалко выдавить этого сколько угодно.", "You see, these are the situations where you need cheap make-up products, because I do not mind squeezing out as much of this as needed."),
+ L(42.14, 44.58, "Ovo možda i bude funkcionisalo.", "Возможно, это даже сработает.", "This might actually work."),
+ L(45.16, 50.28, "Ovo je prvi sloj, ne znam kako izgleda od pozadi, ali ću svakako uraditi drugi sloj.", "Это первый слой, не знаю, как это выглядит сзади, но второй слой я всё равно сделаю.", "This is the first layer, I do not know how it looks from behind, but I will do a second layer anyway."),
+ L(50.92, 57.5, "Ja ne mogu da verujem da nemam ni običnu belu košulju ni običnu crnu kravatu, ali zato nema ni izgovora.", "Не могу поверить, что у меня нет ни обычной белой рубашки, ни обычного чёрного галстука, но зато и отговорок нет.", "I cannot believe I do not have an ordinary white shirt or an ordinary black tie, but then there are no excuses either."),
+ L(57.64, 60.42, "Ja sam Pitbull večeras.", "Сегодня вечером я — Питбуль.", "I am Pitbull tonight."),
+)

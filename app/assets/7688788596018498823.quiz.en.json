@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Where is she going?",
+     "o": [
+      "to her American family",
+      "to Belgrade",
+      "to the seaside",
+      "to university"
+     ],
+     "a": 0,
+     "e": "In the video: \"idemo kod moje američke porodice\" — we are going to my American family."
+    },
+    {
+     "q": "How many hours does it take to get to Boston?",
+     "o": [
+      "about two",
+      "about four",
+      "about eight",
+      "about ten"
+     ],
+     "a": 1,
+     "e": "In the video: \"do kog nam treba oko četiri sata\" — which takes about four hours."
+    },
+    {
+     "q": "What big mistake did she make?",
+     "o": [
+      "changed into pyjamas",
+      "lost her passport",
+      "took the wrong bus",
+      "forgot her phone"
+     ],
+     "a": 0,
+     "e": "In the video: \"presvukla sam se u pidžamu\" — I changed into pyjamas."
+    },
+    {
+     "q": "What did she do with her suitcases at one a.m.?",
+     "o": [
+      "put them in shopping carts",
+      "gave them to the driver",
+      "left them on the bus",
+      "took them on the plane"
+     ],
+     "a": 0,
+     "e": "In the video: \"sam stavila kofere sa mojim vrednim stvarima u shopping kolica\" — I put the suitcases with my valuable things in shopping carts."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Prvi izazov je bio *nagurati* sve ove kofre u auto",
+     "o": [
+      "cram",
+      "buy",
+      "lose",
+      "open"
+     ],
+     "a": 0,
+     "e": "Nagurati — to cram in."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Osećaj biti ponovo ovde je *nerealan*",
+     "o": [
+      "unreal",
+      "ordinary",
+      "scary",
+      "quiet"
+     ],
+     "a": 0,
+     "e": "Nerealan — unreal."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Od *sramote* sam odmah uzela Uber do aerodroma",
+     "o": [
+      "shame",
+      "joy",
+      "boredom",
+      "cold"
+     ],
+     "a": 0,
+     "e": "Sramota — shame."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Let* je trajao malo manje od dva sata",
+     "o": [
+      "flight",
+      "day",
+      "road",
+      "rain"
+     ],
+     "a": 0,
+     "e": "Let — flight."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "I danas odlazim iz ___ u kojoj sam živjela celo leto",
+     "o": [
+      "kuće",
+      "kuća",
+      "kuću",
+      "kući"
+     ],
+     "a": 0,
+     "e": "Iz + genitive: iz kuće."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Krenuli smo za Boston do kog nam treba oko četiri ___",
+     "o": [
+      "sata",
+      "sati",
+      "sat",
+      "satova"
+     ],
+     "a": 0,
+     "e": "After 2–4 — genitive singular: četiri sata."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "i ja sam stigla u Charlotte oko ___ ujutru",
+     "o": [
+      "osam",
+      "osmi",
+      "osmog",
+      "osmoj"
+     ],
+     "a": 0,
+     "e": "Oko + numeral: oko osam — around eight."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Zvanično sam opet u svojoj američkoj ___",
+     "o": [
+      "sobi",
+      "soba",
+      "sobu",
+      "sobe"
+     ],
+     "a": 0,
+     "e": "Where? — locative: u svojoj sobi."
+    }
+   ]
+  }
+ ]
+}

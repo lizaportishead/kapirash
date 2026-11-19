@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What does grandma want to make?",
+     "o": [
+      "soup",
+      "a sandwich",
+      "a salad",
+      "a pie"
+     ],
+     "a": 1,
+     "e": "In the video: \"Sad će tebe baba da napravi jedan sendvič\" — now grandma will make you a sandwich."
+    },
+    {
+     "q": "What does the grandson ask for?",
+     "o": [
+      "to slice the salami thinner",
+      "to add cheese",
+      "not to use bread",
+      "to serve it hot"
+     ],
+     "a": 0,
+     "e": "In the video: \"Samo tanje reži salamu\" — just slice the salami thinner."
+    },
+    {
+     "q": "Why did grandma not slice it thinner?",
+     "o": [
+      "there was no knife",
+      "she could not",
+      "she did not want to",
+      "she forgot"
+     ],
+     "a": 1,
+     "e": "In the video: \"Pa sine, ja tanje nisam mogla\" — well, son, I could not do it thinner."
+    },
+    {
+     "q": "Why can the grandson not eat the sandwich?",
+     "o": [
+      "he feels sick just looking at it",
+      "he is already full",
+      "he is allergic",
+      "he does not like bread"
+     ],
+     "a": 0,
+     "e": "In the video: \"Meni je muka samo dok gledam to\" — I feel sick just looking at it."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Samo tanje reži *salamu*.",
+     "o": [
+      "salami",
+      "cheese",
+      "bread",
+      "butter"
+     ],
+     "a": 0,
+     "e": "Salama — salami."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Dobro, sine, *tanko* će baba.",
+     "o": [
+      "thinly",
+      "thickly",
+      "quickly",
+      "tastily"
+     ],
+     "a": 0,
+     "e": "Tanko — thinly."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Meni je *muka* samo dok gledam to",
+     "o": [
+      "nauseous",
+      "fun",
+      "hot",
+      "scary"
+     ],
+     "a": 0,
+     "e": "Muka mi je — I feel sick."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Izvolite *sendvič*.",
+     "o": [
+      "sandwich",
+      "soup",
+      "tea",
+      "cake"
+     ],
+     "a": 0,
+     "e": "Sendvič — a sandwich."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Sad će tebe baba da napravi jedan ___.",
+     "o": [
+      "sendvič",
+      "sendviča",
+      "sendviču",
+      "sendvičem"
+     ],
+     "a": 0,
+     "e": "Inanimate accusative = nominative: sendvič."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Samo tanje reži ___.",
+     "o": [
+      "salamu",
+      "salama",
+      "salame",
+      "salami"
+     ],
+     "a": 0,
+     "e": "Accusative feminine: salamu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Pa sine, ja tanje ___ mogla.",
+     "o": [
+      "nisam",
+      "nije",
+      "nismo",
+      "nisi"
+     ],
+     "a": 0,
+     "e": "Ja → nisam: \"I could not\"."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Dobro, baba, je l' ti je to ___ rezano?",
+     "o": [
+      "tanko",
+      "tanak",
+      "tanka",
+      "tanke"
+     ],
+     "a": 0,
+     "e": "Adverb: tanko — thinly."
+    }
+   ]
+  }
+ ]
+}

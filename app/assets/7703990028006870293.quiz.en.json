@@ -1,0 +1,165 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "Why are the people standing in the rain?",
+     "o": [
+      "raising money for treatment",
+      "waiting for a bus",
+      "selling umbrellas",
+      "filming a clip"
+     ],
+     "a": 0,
+     "e": "In the video: \"kako bi skupili novac za lečenje njene sestre\" — to raise money for her sister's treatment."
+    },
+    {
+     "q": "What illness does Aleksandra have?",
+     "o": [
+      "multiple sclerosis",
+      "flu",
+      "diabetes",
+      "asthma"
+     ],
+     "a": 0,
+     "e": "In the video: \"Ima multiplu sklerozu već pet godina\" — she has had multiple sclerosis for five years."
+    },
+    {
+     "q": "How many children does she have?",
+     "o": [
+      "two",
+      "three",
+      "four",
+      "five"
+     ],
+     "a": 1,
+     "e": "In the video: \"Ima troje dece\" — she has three children."
+    },
+    {
+     "q": "How many dinars are in the gift?",
+     "o": [
+      "5,000",
+      "15,000",
+      "50,000",
+      "500,000"
+     ],
+     "a": 2,
+     "e": "In the video: \"Unutra ima 50.000 dinara\" — there are 50,000 dinars inside."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ovi ljudi stoje po kiši kako bi skupili novac za *lečenje* njene sestre.",
+     "o": [
+      "treatment",
+      "education",
+      "trip",
+      "wedding"
+     ],
+     "a": 0,
+     "e": "Lečenje — treatment."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ima troje *dece*, najmlađe ima četiri godine.",
+     "o": [
+      "children",
+      "dogs",
+      "brothers",
+      "cars"
+     ],
+     "a": 0,
+     "e": "Deca — children; troje dece — three children."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ali biće potrebno još puno *novca*.",
+     "o": [
+      "money",
+      "time",
+      "people",
+      "food"
+     ],
+     "a": 0,
+     "e": "Novac — money; gen. novca."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "A mi idemo da ih *iznenadimo* malim poklonom.",
+     "o": [
+      "surprise",
+      "ask",
+      "find",
+      "offend"
+     ],
+     "a": 0,
+     "e": "Iznenaditi — to surprise."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ovi ljudi stoje po ___",
+     "o": [
+      "kiši",
+      "kiša",
+      "kišu",
+      "kiše"
+     ],
+     "a": 0,
+     "e": "Po + locative: po kiši — in the rain."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "A mi idemo da ih iznenadimo malim ___",
+     "o": [
+      "poklonom",
+      "poklon",
+      "poklona",
+      "poklone"
+     ],
+     "a": 0,
+     "e": "Instrumental: with what? — malim poklonom."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ima ___ dece, najmlađe ima četiri godine.",
+     "o": [
+      "troje",
+      "tri",
+      "trojica",
+      "treći"
+     ],
+     "a": 0,
+     "e": "For children, the collective numeral: troje dece."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Hajde zajedno da pomognemo mama Aleksandri da se ___ što pre kući",
+     "o": [
+      "vrati",
+      "vratiti",
+      "vratila",
+      "vraćanje"
+     ],
+     "a": 0,
+     "e": "da + present: da se vrati — so that she returns."
+    }
+   ]
+  }
+ ]
+}

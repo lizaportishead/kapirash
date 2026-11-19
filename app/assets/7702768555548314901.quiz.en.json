@@ -1,0 +1,130 @@
+{
+ "sections": [
+  {
+   "title": "Meaning",
+   "icon": "idea",
+   "about": "What happens in the video",
+   "questions": [
+    {
+     "q": "What is the experiment?",
+     "o": [
+      "people may take one banknote each",
+      "people pay for a tree",
+      "people look for treasure",
+      "people sell money"
+     ],
+     "a": 0,
+     "e": "In the video: \"uzimati samo po jednu novčanicu\" — take only one banknote each."
+    },
+    {
+     "q": "How did the passers-by behave at first?",
+     "o": [
+      "were confused",
+      "ran away",
+      "laughed",
+      "quarrelled"
+     ],
+     "a": 0,
+     "e": "In the video: \"bili malo zbunjeni\" — were a bit confused."
+    },
+    {
+     "q": "How did the experiment end?",
+     "o": [
+      "everyone took one banknote",
+      "somebody took all",
+      "nobody came",
+      "police arrived"
+     ],
+     "a": 0,
+     "e": "In the video: \"svi uzeli samo po jednu\" — everyone took only one."
+    }
+   ]
+  },
+  {
+   "title": "Vocabulary",
+   "icon": "translate",
+   "about": "Words from the video and their translations",
+   "questions": [
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Ko je rekao da *novac* ne raste na drvetu?",
+     "o": [
+      "money",
+      "flowers",
+      "vegetables",
+      "children"
+     ],
+     "a": 0,
+     "e": "Novac — money."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "*Prolaznici* su u početku bili malo zbunjeni",
+     "o": [
+      "passers-by",
+      "tourists",
+      "children",
+      "neighbours"
+     ],
+     "a": 0,
+     "e": "Prolaznik — passer-by."
+    },
+    {
+     "t": "Выбери перевод выделенного слова",
+     "q": "Čekamo da vidimo da li će svi do kraja biti *pošteni*.",
+     "o": [
+      "honest",
+      "rich",
+      "angry",
+      "tired"
+     ],
+     "a": 0,
+     "e": "Pošten — honest."
+    }
+   ]
+  },
+  {
+   "title": "Grammar",
+   "icon": "puzzle",
+   "about": "Cases and prepositions",
+   "questions": [
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Ko je rekao da novac ne raste na ___",
+     "o": [
+      "drvetu",
+      "drvo",
+      "drveta",
+      "drvetom"
+     ],
+     "a": 0,
+     "e": "On what? — locative: na drvetu."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Baš mi je drago da su svi uzeli samo po ___",
+     "o": [
+      "jednu",
+      "jedna",
+      "jedne",
+      "jednom"
+     ],
+     "a": 0,
+     "e": "Po + accusative: po jednu (banknote)."
+    },
+    {
+     "t": "Выбери правильную форму слова",
+     "q": "Prolaznici su u početku bili malo ___",
+     "o": [
+      "zbunjeni",
+      "zbunjen",
+      "zbunjena",
+      "zbunjeno"
+     ],
+     "a": 0,
+     "e": "Agrees with masculine plural: zbunjeni."
+    }
+   ]
+  }
+ ]
+}
