@@ -58,10 +58,10 @@ class FeedPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(bottom: 16),
             children: [
+              ClipsStrip(),
               VideoSection(title: ui('Мои ролики'), list: mine),
               VideoSection(title: ui('Популярное'), list: popular),
               VideoSection(title: ui('Новое'), list: newest.take(perSection).toList()),
-              ClipsStrip(),
               VideoSection(
                 title: ui('Сериалы'),
                 list: series.take(perSection).toList(),
