@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'add_video.dart';
 import 'analytics.dart';
+import 'clips_page.dart';
 import 'deep_link.dart';
 import 'leaderboard_page.dart';
 import 'feed_page.dart';
