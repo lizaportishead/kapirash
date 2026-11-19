@@ -278,6 +278,12 @@ class _HomeShellState extends State<HomeShell> {
       });
       return;
     }
+    if (seg.length == 1 && seg[0] == 'shorts') {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) openClips(ctx());
+      });
+      return;
+    }
     if (seg.length != 2) return;
     final kind = seg[0], id = seg[1];
     // Страницы второго уровня в широкой раскладке открываются в своём навигаторе, чтобы меню слева осталось.
@@ -338,7 +344,7 @@ class _HomeShellState extends State<HomeShell> {
     if (link != null) {
       final seg = Uri.tryParse(link)?.pathSegments ?? const <String>[];
       final kind = seg.isEmpty ? '' : seg[0];
-      _tab = kind == 'feed' || kind == 'video' || kind == 'topic' || kind == 'series' || kind == 'all'
+      _tab = kind == 'feed' || kind == 'video' || kind == 'topic' || kind == 'series' || kind == 'all' || kind == 'shorts'
           ? _feed
           : kind == 'words'
           ? _words
